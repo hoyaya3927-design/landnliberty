@@ -2867,6 +2867,8 @@ body.admin-mode{background:#F5F7FA}
 <script>
 (function(){
   var root=document.getElementById('page-admin'); if(!root) return;
+  var aFit=function(){var hd=document.getElementById('site-header'); if(hd) root.style.paddingTop=(hd.offsetHeight+16)+'px';};
+  aFit(); window.addEventListener('resize',aFit);
   var SKEY='lf_admin_ok';
   var EXEC='https://script.google.com/macros/s/AKfycbw9Np6zYZX5ns9UX2AuJYaajtt6MDywr9RweE0RI_WwBx-kzNuC4_WD37C9mXnaYAc9yQ/exec', STOKEN='4SErtvuuNkC8tCF0';
   var PW='', EMAILS=[];   /* 암호는 이 탭 세션에만 보관 — 페이지 소스에는 저장하지 않음 */
