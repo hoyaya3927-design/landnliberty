@@ -2513,12 +2513,10 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (_) {}
 
     try {
-      const res = await fetch('/api/join', {
+      const res = await fetch('https://script.google.com/macros/s/AKfycbw9Np6zYZX5ns9UX2AuJYaajtt6MDywr9RweE0RI_WwBx-kzNuC4_WD37C9mXnaYAc9yQ/exec', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ email, src: 'join', consent: true }),
-        redirect: 'manual',
-        credentials: 'same-origin',
+                body: JSON.stringify({ email, src: 'join', consent: true }),
+                credentials: 'same-origin',
       });
       if (res.type === 'opaqueredirect' || (res.status >= 300 && res.status < 400)) {
         return { ok: false, error: '접근 차단(redirect)' };
@@ -3038,9 +3036,9 @@ body.admin-mode{background:#F5F7FA}
     if(!/^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(e)) return;
     local(e);
     try{
-      fetch('/api/join',{
+      fetch('https://script.google.com/macros/s/AKfycbw9Np6zYZX5ns9UX2AuJYaajtt6MDywr9RweE0RI_WwBx-kzNuC4_WD37C9mXnaYAc9yQ/exec',{
         method:'POST',
-        headers:{'Content-Type':'application/json'},
+        
         credentials:'same-origin',
         body:JSON.stringify({email:e, src:'join',consent:true})
       }).catch(function(){});
