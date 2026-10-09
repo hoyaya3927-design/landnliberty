@@ -2852,6 +2852,8 @@ body.admin-mode{background:#F5F7FA}
 (function(){
   var root=document.getElementById('page-admin'); if(!root) return;
   var API='/api', STORE='lf_emails_v1', SKEY='lf_admin_ok';
+  var EXEC='https://script.google.com/macros/s/AKfycbw9Np6zYZX5ns9UX2AuJYaajtt6MDywr9RweE0RI_WwBx-kzNuC4_WD37C9mXnaYAc9yQ/exec', STOKEN='4SErtvuuNkC8tCF0';
+  var SHEET_COUNT=-1;   /* 운영자 콘솔: 구글 시트 실제 적립 수 (미확보 시 -1) */
   var OFFLINE_PASS='landfree2026';           /* 서버 미연결 시에만 쓰이는 로컬 암호 */
   var ONLINE=false, EMAILS=[];
   function $(i){return document.getElementById(i);}
@@ -2867,7 +2869,7 @@ body.admin-mode{background:#F5F7FA}
   }
   function modeText(){
     var b=$('a-mode'); if(!b) return;
-    b.textContent = ONLINE ? ('서버 연결됨 · '+EMAILS.length+'명') : '오프라인 모드 · 이 브라우저에만 저장';
+    b.textContent = ONLINE ? ('서버 연결됨 · '+EMAILS.length+'명') : (SHEET_COUNT>=0 ? ('오프라인 모드 · 구글 시트 '+SHEET_COUNT+'명 적립 · 이 목록은 이 브라우저 저장') : '오프라인 모드 · 이 브라우저에만 저장');
     b.className = 'a-badge '+(ONLINE?'a-on':'a-off');
   }
   function rows(){
@@ -2963,6 +2965,21 @@ body.admin-mode{background:#F5F7FA}
       navigator.clipboard.writeText(t).then(function(){flash(arr.length+'개 주소를 복사했습니다.');},function(){flash('복사 권한이 없습니다. CSV를 이용하세요.');});
     } else { flash('이 브라우저에서는 자동 복사가 안 됩니다. CSV를 이용하세요.'); }
   }
+  function offlineLogin(pw){
+    if(pw===OFFLINE_PASS){
+      ONLINE=false; $('a-err').textContent=''; $('a-pass').value='';
+      try{ sessionStorage.setItem(SKEY,'1'); }catch(e){}
+      unlock(true); loadCount();
+    } else { $('a-err').textContent='서버에 연결할 수 없고, 오프라인 암호도 맞지 않습니다.'; }
+  }
+  function loadCount(){   /* 구글 시트 실제 적립 수 조회 (카운트만, 이메일 미포함) */
+    SHEET_COUNT=-1;
+    try{
+      fetch(EXEC+'?action=status&token='+encodeURIComponent(STOKEN)).then(function(r){ return r.json(); }).then(function(j){
+        if(j&&j.ok&&typeof j.count==='number'){ SHEET_COUNT=j.count; modeText(); }
+      }).catch(function(){});
+    }catch(e){}
+  }
   function login(){
     var pw=$('a-pass').value;
     if(!pw){ $('a-err').textContent='암호를 입력하세요.'; return; }
@@ -2974,14 +2991,9 @@ body.admin-mode{background:#F5F7FA}
         loadEmails();
       } else if(r.status===401){ $('a-err').textContent='암호가 맞지 않습니다.'; }
       else if(r.status===429){ $('a-err').textContent='시도가 너무 많습니다. 잠시 후 다시 시도하세요.'; }
+      else if(r.status===404||r.status===405){ offlineLogin(pw); }   /* 서버리스(GitHub Pages): 오프라인 로그인으로 전환 */
       else { $('a-err').textContent='서버 오류 ('+r.status+')'; }
-    }).catch(function(){
-      if(pw===OFFLINE_PASS){
-        ONLINE=false; $('a-err').textContent=''; $('a-pass').value='';
-        try{ sessionStorage.setItem(SKEY,'1'); }catch(e){}
-        unlock(true);
-      } else { $('a-err').textContent='서버에 연결할 수 없고, 오프라인 암호도 맞지 않습니다.'; }
-    });
+    }).catch(function(){ offlineLogin(pw); });
   }
   function loadEmails(){
     api('/admin/emails',{method:'GET'}).then(function(r){
@@ -3010,8 +3022,9 @@ body.admin-mode{background:#F5F7FA}
   });
   $('a-search').addEventListener('input',render);
 
-  api('/status',{method:'GET'}).then(function(r){ return r.json(); }).then(function(j){
-    ONLINE = !!(j&&j.ok);
+  fetch(EXEC+'?action=status&token='+encodeURIComponent(STOKEN)).then(function(r){ return r.json(); }).then(function(j){
+    if(j&&j.ok&&typeof j.count==='number'){ SHEET_COUNT=j.count; }
+    ONLINE=false;
   }).catch(function(){ ONLINE=false; }).then(function(){
     var ok=false; try{ ok=sessionStorage.getItem(SKEY)==='1'; }catch(e){}
     if(!ok){ gate.hidden=false; con.hidden=true; modeText(); return; }
