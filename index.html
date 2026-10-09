@@ -1706,6 +1706,7 @@ img,svg,table{max-width:100%}
       <li><a href="#/salriki" data-page="salriki" class="hover:text-teal">대한민국 살리기</a></li>
     </ul>
     <p>디지털 대동법 연구소(DDLI) · <a href="https://blog.naver.com/hoyaya" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="hover:text-teal transition">blog.naver.com/hoyaya</a>
+      <a href="/admin" class="ml-2 text-ink/25 hover:text-teal transition" aria-label="운영자 페이지" title="운영자 전용"><i class="fa-solid fa-lock text-xs"></i></a>
     </p>
   </div>
 </footer></div><div class="lnl-page" id="page-policy" hidden>
@@ -2255,7 +2256,7 @@ img,svg,table{max-width:100%}
 <div class="cd">
 <div class="card"><div class="num" id="d1" data-dday="2026-12-02">-</div><h3>2027 예산안 법정 처리기한</h3><p><b data-date="2026-12-02" data-date-format="full">2026년 12월 2일</b> — 국회법 제85조, 회계연도 개시 30일 전. 이날까지 못 의결하면 정부는 헌법 제54조 ③에 따라 다음 해 2월 28일까지 전년 기준으로 지출합니다(준예산) — 신규 사업은 공백. 정부는 <b data-date="2026-09-03" data-date-format="md">9월 3일</b> 총지출 <b>820조 9,000억 원</b>(2026년 본예산 727조 9,000억 대비 +93조, +12.8% — 역대 최대 증가율)을 제출했습니다. 국회는 깎을 수만 있습니다(제57조) — 감시 포인트는 총액이 아니라 세부 과목.</p></div>
 <div class="card"><div class="num" id="d4" data-dday="2026-12-05">-</div><h3>선관위 특검 1차 수사기한</h3><p><b data-date="2026-12-05" data-date-format="full">2026년 12월 5일</b>. 이태한 특검이 <b data-date="2026-09-07" data-date-format="md">9월 7일</b> 본수사 착수(8월 18일 임명, 준비 20일) 후 90일간 수사 — 연장이 없으면 이날 만료. 연장은 30일씩 최대 2회(본수사 최장 150일, 준비기간 포함 170일). 검경 합동수사본부의 기록과 인력을 인계받아 출범 10일 만인 <b data-date="2026-09-17" data-date-format="md">9월 17일</b> 중앙·지역선관위 등 <b>10곳 동시 압수수색</b>에 나섰습니다. 수사 대상은 투표용지 부족·투표 통계 조작·외유성 출장·입찰 비리 등 <b>12개 의혹</b>, 수사팀은 특검보 5명 포함 최대 <b>165명</b>.</p></div>
-<div class="card"><div class="num" id="d2" data-dday="2027-06-30">-</div><h3>개헌 국민투표 목표</h3><p><b data-date="2027-06-30" data-date-format="half">2027년 상반기</b>(여당 목표, 미확정). 절차는 헌법이 고정합니다: 재적의원 <b>3분의 2(200명)</b> 찬성으로 의결(제129조) → 20일 이내 국민투표 회유 → 투표권자 <b>과반 참여·과반 찬성</b>(제130조). 1987년 제9차 개헌 이후 <b>39년째</b> 성사된 개헌이 없습니다 — 거대여당도 실패한 관문입니다. 조문 독해는 지금부터.</p></div>
+<div class="card"><div class="num" id="d2" data-dday="2027-06-30">-</div><h3>개헌 국민투표 목표</h3><p><b data-date="2027-06-30" data-date-format="half">2027년 상반기</b>(여당 목표, 미확정). 절차는 헌법이 고정합니다: 재적의원 <b>3분의 2(200명)</b> 찬성으로 의결(제129조) → 20일 이내 국민투표 회부 → 투표권자 <b>과반 참여·과반 찬성</b>(제130조). 1987년 제9차 개헌 이후 <b>39년째</b> 성사된 개헌이 없습니다 — 거대여당도 실패한 관문입니다. 조문 독해는 지금부터.</p></div>
 <div class="card"><div class="num" id="d3" data-dday="2028-04-12">-</div><h3>제23대 총선</h3><p><b data-date="2028-04-12" data-date-format="full">2028년 4월 12일 (수)</b> — 사전투표는 <b data-date="2028-04-07" data-date-format="md">4월 7일</b>~8일, 22대 국회 임기는 <b data-date="2028-05-29" data-date-format="md">5월 29일</b>에 끝나고 다음 날 새 국회가 시작됩니다. 참관인 네트워크 완성 목표 — 공직선거법 제181조의 <b>선거권자 개표참관인</b>(만 18세 이상, 선관위 홈페이지 또는 주소지 관할 구·시·군선관위 신청)은 개표참관인석에서 <b>1~2미터</b> 거리에서 개표를 직접 참관합니다. 다중 신청 시 취소될 수 있으니 한 곳에만.</p></div>
 </div>
 </section>
@@ -2719,7 +2720,13 @@ upd();
   window.addEventListener('hashchange',route);
   document.addEventListener('DOMContentLoaded',function(){
     if((location.hash||'').indexOf('#/')===0){route();}
-    else{show(INITIAL,(location.hash||'').replace('#','')||null,false);}
+    else{
+      var _p=location.pathname.split('/').filter(Boolean);
+      var seg=(_p.length?_p[_p.length-1]:'').toLowerCase();
+      var ent={policy:'policy',salriki:'salriki',admin:'admin'}[seg];
+      if(ent){ try{history.replaceState(null,'','#/'+ent);}catch(e){location.hash='#/'+ent;} route(); }
+      else{ show(INITIAL,(location.hash||'').replace('#','')||null,false); }
+    }
   });
 })();
 </script>
@@ -3059,6 +3066,7 @@ body.admin-mode{background:#F5F7FA}
   },true);
 })();
 </script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 </body></html>
