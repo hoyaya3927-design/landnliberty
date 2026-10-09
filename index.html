@@ -1,0 +1,3053 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>토지와 자유 — 노력의 열매는 개인에게, 땅의 이익은 국민에게</title>
+<meta name="description" content="토지자유당(LandnLiberty). 평생 일해도 집 한 채 못 사는 세상은 이상하다. 땅이 만든 부는 국민 모두의 것. 디지털 대동법으로 토지가치를 국민에게 돌려줍니다." />
+<meta property="og:title" content="토지와 자유 — 땅의 이익은 국민에게" />
+<meta property="og:description" content="노력의 열매는 개인에게, 땅의 이익은 국민에게, 금융의 위험은 숨김없이. 3대 특권 해체 프로젝트." />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" />
+<style>
+/* ===== 토지와 자유 — 라이트 테마 커스텀 스타일 =====
+   브랜드 컬러(창당전략 제1부 1-1 근거)
+   - 주색   teal  #0F766E  신뢰·질서·토지·지속가능성
+   - 보조색 gold  #C9A227  자유·번영·시민배당·공동상속
+   - 경고   clay  #E0553F
+   - 배경   paper #FAFAF7 / mist #EEF3F1
+   - 본문   ink   #14213D
+*/
+
+:root {
+  --teal: #0F766E;
+  --teal-dark: #0B5A54;
+  --teal-soft: rgba(15, 118, 110, 0.08);
+  --gold: #C9A227;
+  --gold-soft: rgba(201, 162, 39, 0.14);
+  --clay: #E0553F;
+  --paper: #FAFAF7;
+  --mist: #EEF3F1;
+  --ink: #14213D;
+  --line: rgba(20, 33, 61, 0.10);
+}
+
+html { scroll-behavior: smooth; }
+body { scroll-padding-top: 80px; background: var(--paper); color: var(--ink); }
+
+/* 스크롤 시 헤더 배경 */
+#site-header {
+  background: rgba(250, 250, 247, 0.65);
+  backdrop-filter: blur(10px);
+}
+#site-header.scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 6px 24px rgba(20, 33, 61, 0.06);
+}
+
+/* 모바일 메뉴 */
+#mobile-menu { display: none; }
+#mobile-menu.open { display: block; }
+
+/* 히어로 배경 광원 (밝은 톤) */
+.hero-glow {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 55vw;
+  height: 55vw;
+  max-width: 720px;
+  max-height: 720px;
+  background: radial-gradient(circle, rgba(15, 118, 110, 0.16) 0%, rgba(15, 118, 110, 0) 68%);
+  filter: blur(30px);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-glow-gold {
+  top: 30%;
+  left: -10%;
+  right: auto;
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.18) 0%, rgba(201, 162, 39, 0) 70%);
+}
+.hero-glow-bottom {
+  top: auto;
+  bottom: -20%;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.16) 0%, rgba(201, 162, 39, 0) 70%);
+}
+
+/* 은은한 격자 배경 */
+/* 은은한 격자 배경 — 격자만 ::before 로 분리(글씨는 절대 흐려지지 않게) */
+.grid-bg { position: relative; }
+.grid-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(20, 33, 61, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 33, 61, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse at top, black 40%, transparent 85%);
+  mask-image: radial-gradient(ellipse at top, black 40%, transparent 85%);
+}
+
+/* 스크롤 리빌 — 실패 안전(fail-safe) 설계:
+   스크린샷·미리보기·JS 미실행 등 어떤 환경에서도 글씨가 항상 보이도록
+   투명도·위치 이동으로 콘텐츠를 숨기지 않습니다. */
+.reveal { opacity: 1; transform: none; }
+
+/* 공통 카드 */
+.card {
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(20, 33, 61, 0.04), 0 10px 30px -18px rgba(20, 33, 61, 0.18);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  border-color: rgba(15, 118, 110, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 2px 4px rgba(20, 33, 61, 0.04), 0 22px 40px -20px rgba(15, 118, 110, 0.35);
+}
+
+/* 카드류 공통 */
+.stat-card, .identity-card, .con-card, .usage-card, .roadmap-card, .package-card, .law-card {
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(20, 33, 61, 0.04), 0 10px 30px -18px rgba(20, 33, 61, 0.18);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.stat-card:hover, .identity-card:hover, .con-card:hover, .usage-card:hover, .roadmap-card:hover, .package-card:hover, .law-card:hover {
+  border-color: rgba(15, 118, 110, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 2px 4px rgba(20, 33, 61, 0.04), 0 22px 40px -20px rgba(15, 118, 110, 0.35);
+}
+.con-card { padding: 1.6rem; border-radius: 1.25rem; }
+.package-card { padding: 1.6rem; border-radius: 1.25rem; }
+.law-card { padding: 1.25rem 1.5rem; border-radius: 1rem; display: flex; gap: 1rem; align-items: flex-start; }
+.law-num {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  background: var(--teal-soft);
+  color: var(--teal);
+}
+.law-card.is-new .law-num { background: var(--gold-soft); color: #8a6d12; }
+
+/* 3대 특권 행 */
+.privilege-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+}
+.privilege-row:hover {
+  border-color: rgba(15, 118, 110, 0.45);
+  background: linear-gradient(160deg, rgba(15, 118, 110, 0.05), #fff 60%);
+  box-shadow: 0 22px 40px -20px rgba(15, 118, 110, 0.3);
+}
+.privilege-num {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(15, 118, 110, 0.35);
+  line-height: 1;
+}
+.privilege-icon {
+  font-size: 2rem;
+  color: rgba(15, 118, 110, 0.7);
+}
+@media (max-width: 640px) {
+  .privilege-row { grid-template-columns: auto 1fr; }
+  .privilege-icon { display: none; }
+}
+
+/* 슬라이더 */
+.tlq-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(20, 33, 61, 0.12);
+  outline: none;
+}
+.tlq-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--teal);
+  border: 3px solid #fff;
+  cursor: pointer;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.2);
+  transition: transform 0.15s;
+}
+.tlq-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+.tlq-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--teal);
+  cursor: pointer;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.2);
+}
+
+/* 단계 프리셋 버튼 (계산기) */
+.phase-btn {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: rgba(20, 33, 61, 0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.phase-btn:hover { border-color: var(--teal); color: var(--teal); }
+.phase-btn.is-active { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+/* 계보 타임라인 */
+.lineage-item { padding-left: 1.75rem; position: relative; }
+.lineage-dot {
+  position: absolute;
+  left: -9px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--paper);
+}
+.lineage-dot-active {
+  background: var(--teal);
+  box-shadow: 0 0 0 5px rgba(15, 118, 110, 0.2);
+  animation: pulseDot 2s infinite;
+}
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 5px rgba(15, 118, 110, 0.2); }
+  50% { box-shadow: 0 0 0 9px rgba(15, 118, 110, 0.05); }
+}
+
+/* 로드맵 카드 */
+.roadmap-card { padding: 1.75rem; }
+.roadmap-card-final {
+  background: linear-gradient(160deg, var(--teal), var(--teal-dark));
+  border-color: var(--teal);
+  color: #fff;
+}
+.roadmap-card-final .roadmap-step, .roadmap-card-final .roadmap-ic { color: rgba(255,255,255,0.85); }
+.roadmap-step {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+}
+.roadmap-ic { font-size: 1.75rem; color: var(--teal); }
+.roadmap-done {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--gold-soft);
+  color: #8a6d12;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+/* 아이콘 */
+.identity-ic { font-size: 1.9rem; color: var(--teal); }
+.con-ic { font-size: 1.5rem; color: var(--teal); }
+.usage-ic { font-size: 2.25rem; color: var(--teal); }
+
+/* 토지가치세 활용 카드 */
+.usage-card { position: relative; border-radius: 1.75rem; padding: 2.25rem; }
+.usage-card-accent {
+  background: linear-gradient(160deg, rgba(15, 118, 110, 0.07), #fff 55%);
+  border-color: rgba(15, 118, 110, 0.35);
+}
+.usage-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: var(--mist);
+  color: rgba(20, 33, 61, 0.6);
+}
+.usage-badge-accent { background: var(--teal); color: #fff; }
+
+/* 인용 */
+.con-quote {
+  border-left: 4px solid var(--gold);
+  padding: 1.5rem 1.75rem;
+  border-radius: 0 1rem 1rem 0;
+  background: linear-gradient(90deg, var(--gold-soft), transparent);
+}
+
+/* ===== 국제 사례 탭 ===== */
+.global-tab {
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: rgba(20, 33, 61, 0.65);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.global-tab:hover { border-color: rgba(15, 118, 110, 0.6); color: var(--teal); }
+.global-tab.is-active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+.global-panel {
+  display: none;
+  border: 1px solid var(--line);
+  border-radius: 1.75rem;
+  padding: 2.25rem;
+  background: #fff;
+  box-shadow: 0 10px 30px -18px rgba(20, 33, 61, 0.18);
+  animation: fadeInPanel 0.4s ease;
+}
+.global-panel.is-active { display: block; }
+@keyframes fadeInPanel {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 표 */
+.tlq-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.tlq-table th {
+  text-align: left;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: 'Space Grotesk', monospace;
+  color: var(--teal);
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid rgba(15, 118, 110, 0.25);
+  background: var(--teal-soft);
+}
+.tlq-table td { padding: 0.9rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tlq-table tr:last-child td { border-bottom: none; }
+.tlq-table-wrap { border: 1px solid var(--line); border-radius: 1.25rem; overflow: hidden; background: #fff; }
+
+/* 내부 페이지 히어로 */
+.page-hero {
+  padding: 9rem 0 4rem;
+  background: linear-gradient(180deg, var(--mist), var(--paper));
+  border-bottom: 1px solid var(--line);
+}
+.breadcrumb a { color: var(--teal); }
+.breadcrumb a:hover { text-decoration: underline; }
+
+/* 프로즈 */
+.prose-tlq h3 { font-weight: 800; font-size: 1.35rem; margin: 2.25rem 0 0.75rem; }
+.prose-tlq p { color: rgba(20, 33, 61, 0.75); line-height: 1.8; margin-bottom: 1rem; }
+.prose-tlq ul { list-style: none; padding: 0; margin: 0 0 1rem; }
+.prose-tlq li { position: relative; padding-left: 1.5rem; color: rgba(20, 33, 61, 0.78); line-height: 1.7; margin-bottom: 0.4rem; }
+.prose-tlq li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+/* ===== SNS 이동 안내 모달 ===== */
+.sns-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+.sns-modal[hidden] { display: none; }
+.sns-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 33, 61, 0.45);
+  backdrop-filter: blur(6px);
+}
+.sns-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 30rem;
+  border: 1px solid rgba(15, 118, 110, 0.25);
+  border-radius: 1.75rem;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 30px 80px rgba(20, 33, 61, 0.25);
+  animation: fadeInPanel 0.25s ease;
+}
+.sns-modal-x {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  color: rgba(20, 33, 61, 0.5);
+  transition: background 0.2s, color 0.2s;
+}
+.sns-modal-x:hover { background: var(--mist); color: var(--ink); }
+body.sns-modal-open { overflow: hidden; }
+
+
+
+/* ===== 토지와 자유 — 라이트 테마 커스텀 스타일 =====
+   브랜드 컬러(창당전략 제1부 1-1 근거)
+   - 주색   teal  #0F766E  신뢰·질서·토지·지속가능성
+   - 보조색 gold  #C9A227  자유·번영·시민배당·공동상속
+   - 경고   clay  #E0553F
+   - 배경   paper #FAFAF7 / mist #EEF3F1
+   - 본문   ink   #14213D
+*/
+
+:root {
+  --teal: #0F766E;
+  --teal-dark: #0B5A54;
+  --teal-soft: rgba(15, 118, 110, 0.08);
+  --gold: #C9A227;
+  --gold-soft: rgba(201, 162, 39, 0.14);
+  --clay: #E0553F;
+  --paper: #FAFAF7;
+  --mist: #EEF3F1;
+  --ink: #14213D;
+  --line: rgba(20, 33, 61, 0.10);
+}
+
+html { scroll-behavior: smooth; }
+body { scroll-padding-top: 80px; background: var(--paper); color: var(--ink); }
+
+/* 스크롤 시 헤더 배경 */
+#site-header {
+  background: rgba(250, 250, 247, 0.65);
+  backdrop-filter: blur(10px);
+}
+#site-header.scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 6px 24px rgba(20, 33, 61, 0.06);
+}
+
+/* 모바일 메뉴 */
+#mobile-menu { display: none; }
+#mobile-menu.open { display: block; }
+
+/* 히어로 배경 광원 (밝은 톤) */
+.hero-glow {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 55vw;
+  height: 55vw;
+  max-width: 720px;
+  max-height: 720px;
+  background: radial-gradient(circle, rgba(15, 118, 110, 0.16) 0%, rgba(15, 118, 110, 0) 68%);
+  filter: blur(30px);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-glow-gold {
+  top: 30%;
+  left: -10%;
+  right: auto;
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.18) 0%, rgba(201, 162, 39, 0) 70%);
+}
+.hero-glow-bottom {
+  top: auto;
+  bottom: -20%;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.16) 0%, rgba(201, 162, 39, 0) 70%);
+}
+
+/* 은은한 격자 배경 */
+/* 은은한 격자 배경 — 격자만 ::before 로 분리(글씨는 절대 흐려지지 않게) */
+.grid-bg { position: relative; }
+.grid-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(20, 33, 61, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 33, 61, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse at top, black 40%, transparent 85%);
+  mask-image: radial-gradient(ellipse at top, black 40%, transparent 85%);
+}
+
+/* 스크롤 리빌 애니메이션 */
+/* 스크롤 리빌 — 실패 안전(fail-safe) 설계.
+   스크린샷·PDF 저장·미리보기·스크립트 차단 등 어떤 환경에서도
+   투명도로 콘텐츠를 숨기지 않아 글씨가 항상 보입니다. */
+.reveal { opacity: 1; transform: none; }
+
+/* 공통 카드 */
+.card {
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(20, 33, 61, 0.04), 0 10px 30px -18px rgba(20, 33, 61, 0.18);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  border-color: rgba(15, 118, 110, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 2px 4px rgba(20, 33, 61, 0.04), 0 22px 40px -20px rgba(15, 118, 110, 0.35);
+}
+
+/* 카드류 공통 */
+.stat-card, .identity-card, .con-card, .usage-card, .roadmap-card, .package-card, .law-card {
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(20, 33, 61, 0.04), 0 10px 30px -18px rgba(20, 33, 61, 0.18);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.stat-card:hover, .identity-card:hover, .con-card:hover, .usage-card:hover, .roadmap-card:hover, .package-card:hover, .law-card:hover {
+  border-color: rgba(15, 118, 110, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 2px 4px rgba(20, 33, 61, 0.04), 0 22px 40px -20px rgba(15, 118, 110, 0.35);
+}
+.con-card { padding: 1.6rem; border-radius: 1.25rem; }
+.package-card { padding: 1.6rem; border-radius: 1.25rem; }
+.law-card { padding: 1.25rem 1.5rem; border-radius: 1rem; display: flex; gap: 1rem; align-items: flex-start; }
+.law-num {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  background: var(--teal-soft);
+  color: var(--teal);
+}
+.law-card.is-new .law-num { background: var(--gold-soft); color: #8a6d12; }
+
+/* 3대 특권 행 */
+.privilege-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+}
+.privilege-row:hover {
+  border-color: rgba(15, 118, 110, 0.45);
+  background: linear-gradient(160deg, rgba(15, 118, 110, 0.05), #fff 60%);
+  box-shadow: 0 22px 40px -20px rgba(15, 118, 110, 0.3);
+}
+.privilege-num {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(15, 118, 110, 0.35);
+  line-height: 1;
+}
+.privilege-icon {
+  font-size: 2rem;
+  color: rgba(15, 118, 110, 0.7);
+}
+@media (max-width: 640px) {
+  .privilege-row { grid-template-columns: auto 1fr; }
+  .privilege-icon { display: none; }
+}
+
+/* 슬라이더 */
+.tlq-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(20, 33, 61, 0.12);
+  outline: none;
+}
+.tlq-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--teal);
+  border: 3px solid #fff;
+  cursor: pointer;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.2);
+  transition: transform 0.15s;
+}
+.tlq-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+.tlq-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--teal);
+  cursor: pointer;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.2);
+}
+
+/* 단계 프리셋 버튼 (계산기) */
+.phase-btn {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: rgba(20, 33, 61, 0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.phase-btn:hover { border-color: var(--teal); color: var(--teal); }
+.phase-btn.is-active { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+/* 계보 타임라인 */
+.lineage-item { padding-left: 1.75rem; position: relative; }
+.lineage-dot {
+  position: absolute;
+  left: -9px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--paper);
+}
+.lineage-dot-active {
+  background: var(--teal);
+  box-shadow: 0 0 0 5px rgba(15, 118, 110, 0.2);
+  animation: pulseDot 2s infinite;
+}
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 5px rgba(15, 118, 110, 0.2); }
+  50% { box-shadow: 0 0 0 9px rgba(15, 118, 110, 0.05); }
+}
+
+/* 로드맵 카드 */
+.roadmap-card { padding: 1.75rem; }
+.roadmap-card-final {
+  background: linear-gradient(160deg, var(--teal), var(--teal-dark));
+  border-color: var(--teal);
+  color: #fff;
+}
+.roadmap-card-final .roadmap-step, .roadmap-card-final .roadmap-ic { color: rgba(255,255,255,0.85); }
+.roadmap-step {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+}
+.roadmap-ic { font-size: 1.75rem; color: var(--teal); }
+.roadmap-done {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--gold-soft);
+  color: #8a6d12;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+/* 아이콘 */
+.identity-ic { font-size: 1.9rem; color: var(--teal); }
+.con-ic { font-size: 1.5rem; color: var(--teal); }
+.usage-ic { font-size: 2.25rem; color: var(--teal); }
+
+/* 토지가치세 활용 카드 */
+.usage-card { position: relative; border-radius: 1.75rem; padding: 2.25rem; }
+.usage-card-accent {
+  background: linear-gradient(160deg, rgba(15, 118, 110, 0.07), #fff 55%);
+  border-color: rgba(15, 118, 110, 0.35);
+}
+.usage-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: var(--mist);
+  color: rgba(20, 33, 61, 0.6);
+}
+.usage-badge-accent { background: var(--teal); color: #fff; }
+
+/* 인용 */
+.con-quote {
+  border-left: 4px solid var(--gold);
+  padding: 1.5rem 1.75rem;
+  border-radius: 0 1rem 1rem 0;
+  background: linear-gradient(90deg, var(--gold-soft), transparent);
+}
+
+/* ===== 국제 사례 탭 ===== */
+.global-tab {
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: rgba(20, 33, 61, 0.65);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.global-tab:hover { border-color: rgba(15, 118, 110, 0.6); color: var(--teal); }
+.global-tab.is-active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+.global-panel {
+  display: none;
+  border: 1px solid var(--line);
+  border-radius: 1.75rem;
+  padding: 2.25rem;
+  background: #fff;
+  box-shadow: 0 10px 30px -18px rgba(20, 33, 61, 0.18);
+  animation: fadeInPanel 0.4s ease;
+}
+.global-panel.is-active { display: block; }
+@keyframes fadeInPanel {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 표 */
+.tlq-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.tlq-table th {
+  text-align: left;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: 'Space Grotesk', monospace;
+  color: var(--teal);
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid rgba(15, 118, 110, 0.25);
+  background: var(--teal-soft);
+}
+.tlq-table td { padding: 0.9rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tlq-table tr:last-child td { border-bottom: none; }
+.tlq-table-wrap { border: 1px solid var(--line); border-radius: 1.25rem; overflow: hidden; background: #fff; }
+
+/* 내부 페이지 히어로 */
+.page-hero {
+  padding: 9rem 0 4rem;
+  background: linear-gradient(180deg, var(--mist), var(--paper));
+  border-bottom: 1px solid var(--line);
+}
+.breadcrumb a { color: var(--teal); }
+.breadcrumb a:hover { text-decoration: underline; }
+
+/* 프로즈 */
+.prose-tlq h3 { font-weight: 800; font-size: 1.35rem; margin: 2.25rem 0 0.75rem; }
+.prose-tlq p { color: rgba(20, 33, 61, 0.75); line-height: 1.8; margin-bottom: 1rem; }
+.prose-tlq ul { list-style: none; padding: 0; margin: 0 0 1rem; }
+.prose-tlq li { position: relative; padding-left: 1.5rem; color: rgba(20, 33, 61, 0.78); line-height: 1.7; margin-bottom: 0.4rem; }
+.prose-tlq li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+/* ===== SNS 이동 안내 모달 ===== */
+.sns-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+.sns-modal[hidden] { display: none; }
+.sns-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 33, 61, 0.45);
+  backdrop-filter: blur(6px);
+}
+.sns-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 30rem;
+  border: 1px solid rgba(15, 118, 110, 0.25);
+  border-radius: 1.75rem;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 30px 80px rgba(20, 33, 61, 0.25);
+  animation: fadeInPanel 0.25s ease;
+}
+.sns-modal-x {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  color: rgba(20, 33, 61, 0.5);
+  transition: background 0.2s, color 0.2s;
+}
+.sns-modal-x:hover { background: var(--mist); color: var(--ink); }
+body.sns-modal-open { overflow: hidden; }
+
+
+
+/* ===== 단일 파일 사이트(SPA) ===== */
+.lnl-page[hidden]{display:none;}
+body.sal-mode{background:#0a0e1a;}
+#site-header .is-current, #mobile-menu .is-current{color:var(--teal)!important;font-weight:800;}
+#site-header .is-current.cta, #mobile-menu .is-current.cta{color:#fff!important;}
+#site-header nav ul a.nav-join{white-space:nowrap}
+
+:root{--bg:#0a0e1a;--card:#121829;--line:#24304d;--txt:#e8ecf5;--mut:#8a97b5;
+--neon:#3cf0c5;--blue:#5b8cff;--fact:#3cf0c5;--press:#5b8cff;--probe:#ffc94d;--debate:#ff6b9a}.lnl-sal *{box-sizing:border-box;margin:0;padding:0}.lnl-sal{font-family:'Pretendard','Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(--bg);color:var(--txt);line-height:1.7}.lnl-sal a{color:var(--neon)}.lnl-sal .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.lnl-sal nav{position:sticky;top:0;z-index:9;background:rgba(10,14,26,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.lnl-sal nav .in{max-width:1100px;margin:auto;display:flex;gap:18px;align-items:center;padding:12px 20px;overflow-x:auto;white-space:nowrap}.lnl-sal nav b{color:var(--neon);margin-right:auto}.lnl-sal nav a{color:var(--mut);text-decoration:none;font-size:14px}.lnl-sal nav a:hover{color:var(--txt)}.lnl-sal section{max-width:1100px;margin:auto;padding:70px 20px}.lnl-sal .hero{text-align:center;padding:110px 20px 80px;background:radial-gradient(circle at 50% 0,#1b2a55 0,transparent 60%)}.lnl-sal .hero small{color:var(--neon);letter-spacing:3px;font-weight:700}.lnl-sal .hero h1{font-size:clamp(34px,6vw,64px);line-height:1.2;margin:16px 0}.lnl-sal .hero h1 span{background:linear-gradient(90deg,var(--neon),var(--blue));-webkit-background-clip:text;color:transparent}.lnl-sal .hero p{color:var(--mut);max-width:680px;margin:auto;font-size:18px}.lnl-sal .hero p.slogan{color:var(--txt);font-weight:700;margin-top:12px;font-size:17px}.lnl-sal .hero p.os{color:var(--txt);margin-top:16px;font-size:15px}.lnl-sal .hero p.os b{color:var(--neon)}.lnl-sal .btn{display:inline-block;margin:28px 6px 0;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid var(--neon)}.lnl-sal .btn.p{background:var(--neon);color:#04110d}.lnl-sal .btn.g{color:var(--neon)}.lnl-sal h2{font-size:clamp(26px,4vw,38px);margin-bottom:10px}.lnl-sal h3.sec{margin:44px 0 14px;font-size:22px}.lnl-sal .sub{color:var(--mut);margin-bottom:30px}.lnl-sal .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}.lnl-sal .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.2s}.lnl-sal .card:hover{border-color:var(--blue);transform:translateY(-3px)}.lnl-sal .card h3{font-size:18px;margin:10px 0 8px}.lnl-sal .card p, .lnl-sal .card li{color:#c4cce0;font-size:15px}.lnl-sal .card ul{padding-left:18px;margin-top:8px}.lnl-sal .act{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:14px}.lnl-sal .act b{color:var(--neon)}.lnl-sal .tag{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}.lnl-sal .fact{background:rgba(60,240,197,.12);color:var(--fact)}.lnl-sal .press{background:rgba(91,140,255,.12);color:var(--press)}.lnl-sal .probe{background:rgba(255,201,77,.12);color:var(--probe)}.lnl-sal .debate{background:rgba(255,107,154,.12);color:var(--debate)}.lnl-sal .frame{background:rgba(91,140,255,.12);color:var(--blue)}.lnl-sal .note{background:rgba(255,201,77,.07);border:1px solid rgba(255,201,77,.35);border-radius:12px;padding:12px 16px;font-size:13.5px;color:#e3d5b3;margin-top:14px}.lnl-sal .note b{color:var(--probe)}.lnl-sal .steps{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.lnl-sal .steps span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13.5px;color:#c4cce0}.lnl-sal details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px}.lnl-sal summary{cursor:pointer;padding:16px 20px;font-weight:700;font-size:15px}.lnl-sal details .body{padding:0 20px 18px;color:#c4cce0;font-size:14px;line-height:1.8}.lnl-sal details .body b{color:var(--neon)}.lnl-sal .dnum{display:inline-block;width:24px;height:24px;border-radius:50%;background:rgba(60,240,197,.12);color:var(--neon);font-weight:800;text-align:center;line-height:24px;font-size:12.5px;margin-bottom:8px}.lnl-sal .pcard{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:14px;color:#c4cce0}.lnl-sal .pcard b{color:var(--neon)}.lnl-sal .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.lnl-sal .filters button{background:transparent;border:1px solid var(--line);color:var(--txt);padding:8px 16px;border-radius:999px;cursor:pointer}.lnl-sal .filters button.on{background:var(--blue);border-color:var(--blue)}.lnl-sal .pillar{font-size:13px;color:var(--mut)}.lnl-sal .legend{display:flex;gap:16px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:26px;font-size:14px}.lnl-sal .cd{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.lnl-sal .cd .card{text-align:center}.lnl-sal .cd .num{font-size:44px;font-weight:800;color:var(--neon)}.lnl-sal table{width:100%;border-collapse:collapse;font-size:14px}.lnl-sal th, .lnl-sal td{border-bottom:1px solid var(--line);padding:12px 10px;text-align:left;vertical-align:top}.lnl-sal th{color:var(--neon)}.lnl-sal .bad{color:#ff8fa3}.lnl-sal .good{color:var(--neon)}.lnl-sal .chk label{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line);cursor:pointer}.lnl-sal .chk input{width:20px;height:20px;accent-color:var(--neon);margin-top:4px}.lnl-sal .bar{height:10px;background:var(--line);border-radius:99px;overflow:hidden;margin:14px 0}.lnl-sal .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--neon),var(--blue));transition:.4s}.lnl-sal .red{border-color:#ff4d6d!important}.lnl-sal .red h3{color:#ff8fa3}.lnl-sal .new{position:relative}.lnl-sal .new::after{content:"NEW";position:absolute;top:16px;right:16px;font-size:10px;font-weight:800;letter-spacing:1px;color:#04110d;background:var(--neon);padding:2px 8px;border-radius:999px}.lnl-sal footer{border-top:1px solid var(--line);color:var(--mut);font-size:13px;text-align:center;padding:40px 20px}
+
+</style>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#14213D',
+          paper: '#FAFAF7',
+          mist: '#EEF3F1',
+          teal: '#0F766E',
+          tealdark: '#0B5A54',
+          gold: '#C9A227',
+          clay: '#E0553F',
+        },
+        fontFamily: {
+          sans: ['Pretendard', 'system-ui', 'sans-serif'],
+          mono: ['Space Grotesk', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+/* ===== 살리기 페이지 상단 탭 네비게이션 (참고: fig4 / fig5) ===== */
+body.sal-mode #site-header{display:none !important;}
+.lnl-sal > nav{position:sticky;top:0;z-index:9;background:rgba(10,14,26,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line,rgba(255,255,255,.12));}
+.lnl-sal > nav .in{max-width:1100px;margin:auto;display:flex;gap:14px;align-items:center;padding:10px 20px;overflow-x:auto;white-space:nowrap}
+.lnl-sal > nav b{color:var(--neon,#3cf0c5);font-weight:800;font-size:15px;display:inline-flex;align-items:center;gap:8px;margin-right:10px;flex:0 0 auto}
+.lnl-sal > nav b .bolt{background:linear-gradient(180deg,#ffb46b 0%,#ff5f7e 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-size:16px;line-height:1}
+.lnl-sal > nav a.tab{color:var(--mut,#8b949e);text-decoration:none;font-size:14px;flex:0 0 auto}
+.lnl-sal > nav a.tab:hover{color:var(--txt,#e6ecff)}
+.lnl-sal > nav a.home-link{margin-left:auto;display:inline-flex;align-items:center;gap:7px;border:1px solid var(--neon,#3cf0c5);border-radius:999px;padding:6px 16px;color:var(--neon,#3cf0c5);font-weight:700;font-size:13px;text-decoration:none;flex:0 0 auto}
+.lnl-sal > nav a.home-link:hover{background:rgba(60,240,197,.13);color:var(--neon,#3cf0c5)}
+.lnl-sal > nav a.tab{position:relative}
+.lnl-sal > nav a.tab.is-active{color:var(--neon,#3cf0c5);font-weight:800}
+.lnl-sal > nav a.tab.is-active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:linear-gradient(90deg,#3cf0c5,#5b8cff)}
+.lnl-sal .gov{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.lnl-sal .gov a.card{display:block;text-decoration:none}
+.lnl-sal .gov a.card h3{font-size:16px;margin-top:0}
+.lnl-sal .gov a.card em{display:block;font-style:normal;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;color:var(--mut);margin-top:8px;word-break:break-all}
+.lnl-sal .clockline{color:#8b949e;font-size:14px;margin-top:14px}
+.lnl-sal .clockline b{color:var(--neon)}
+
+#site-header nav ul a.nav-sec{position:relative}
+#site-header nav ul a.nav-sec.is-active{color:var(--teal,#0F766E);font-weight:800}
+#site-header nav ul a.nav-sec.is-active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:linear-gradient(90deg,#0F766E,#2feaa8)}
+#mobile-menu a.nav-sec.is-active{color:var(--teal,#0F766E);font-weight:800}
+</style>
+<style id="mobile-guard">
+/* ===== 모바일 안전망 (390px 기준 점검 반영) ===== */
+html{word-break:keep-all;overflow-wrap:anywhere}
+img,svg,table{max-width:100%}
+.ink-black{color:#0B0B0B !important}
+.tlq-table-wrap{overflow-x:auto !important;-webkit-overflow-scrolling:touch}
+.tlq-table-wrap::-webkit-scrollbar{height:6px}
+.tlq-table-wrap::-webkit-scrollbar-thumb{background:rgba(20,33,61,.25);border-radius:99px}
+@media(max-width:640px){
+  .tlq-table{min-width:0 !important;font-size:0.78rem !important}
+  .tlq-table th,.tlq-table td{padding:8px 7px !important;vertical-align:top}
+  .tlq-table th{font-size:0.66rem !important;letter-spacing:0.02em !important}
+  .tlq-table td{line-height:1.45}
+  .lnl-sal section{padding:56px 16px}
+  .lnl-sal nav .in{padding:10px 14px;gap:12px}
+  .lnl-sal .hero p{font-size:16px}
+  .hero-glow{display:none}
+  .foot-note{font-size:0.78rem !important;line-height:1.65}
+  .tbl-usage td.font-mono{white-space:nowrap}
+}
+</style>
+</head>
+<body class="bg-paper text-ink font-sans antialiased overflow-x-hidden">
+
+<!-- ===== 네비게이션 ===== -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <nav class="max-w-6xl mx-auto flex items-center justify-between px-5 py-4">
+    <a href="#/" data-page="home" data-anchor="hero" class="flex items-center gap-2 font-mono font-bold text-lg tracking-tight">
+      <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-teal text-white">土</span>
+      <span><b>토지와 자유</b></span>
+    </a>
+    <ul class="hidden md:flex items-center gap-3 lg:gap-6 text-sm font-semibold text-ink/70">
+      <li><a href="#/home#problem" data-page="home" data-anchor="problem" class="nav-sec hover:text-teal transition">왜 지금</a></li>
+      <li><a href="#/home#privilege" data-page="home" data-anchor="privilege" class="nav-sec hover:text-teal transition">3대 특권 해체</a></li>
+      <li><a href="#/home#dividend" data-page="home" data-anchor="dividend" class="nav-sec hover:text-teal transition">토지배당</a></li>
+      <li><a href="#/home#finance" data-page="home" data-anchor="finance" class="nav-sec hover:text-teal transition">금융·회계</a></li><li><a href="#/#global" data-page="home" data-anchor="global" class="nav-sec hover:text-teal transition">지금 세계는</a></li>
+      <li><a href="#/policy" data-page="policy" class="hover:text-teal transition">정책</a></li>
+      <li><a href="#/salriki" data-page="salriki" class="cta inline-flex items-center gap-1.5 rounded-full bg-clay px-4 py-1.5 text-white font-extrabold shadow-sm hover:shadow-md hover:scale-105 transition"><i class="fa-solid fa-flag"></i>대한민국 살리기</a></li>
+      <li><a href="#/home#join" data-page="home" data-anchor="join" class="nav-join cta inline-flex items-center gap-1.5 rounded-full bg-teal px-4 py-1.5 text-white font-extrabold shadow-sm hover:shadow-md hover:scale-105 transition"><i class="fa-solid fa-hand-holding-heart"></i>함께하기</a></li>
+    </ul>
+    <div class="flex items-center gap-2">
+      <a href="#/home#join" data-page="home" data-anchor="join" class="cta md:hidden inline-flex rounded-full bg-teal px-4 py-2 text-xs font-extrabold text-white hover:bg-tealdark hover:scale-105 transition">
+        함께하기 <i class="fa-solid fa-arrow-right ml-1"></i>
+      </a>
+      <button id="menu-toggle" class="md:hidden h-10 w-10 rounded-full border border-ink/10 bg-white text-ink/70" aria-label="메뉴" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="md:hidden border-t border-ink/10 bg-white/95 backdrop-blur">
+    <ul class="max-w-6xl mx-auto px-5 py-4 grid grid-cols-2 gap-2 text-sm font-semibold text-ink/80">
+      <li><a class="nav-sec block rounded-lg px-3 py-2 hover:bg-mist" href="#/home#problem" data-page="home" data-anchor="problem">왜 지금</a></li>
+      <li><a class="nav-sec block rounded-lg px-3 py-2 hover:bg-mist" href="#/home#privilege" data-page="home" data-anchor="privilege">3대 특권 해체</a></li>
+      <li><a class="nav-sec block rounded-lg px-3 py-2 hover:bg-mist" href="#/home#dividend" data-page="home" data-anchor="dividend">토지배당</a></li>
+      <li><a class="nav-sec block rounded-lg px-3 py-2 hover:bg-mist" href="#/home#finance" data-page="home" data-anchor="finance">금융·회계</a></li><li><a class="nav-sec block rounded-lg px-3 py-2 hover:bg-mist" href="#/#global" data-page="home" data-anchor="global">지금 세계는</a></li>
+      <li><a class="block rounded-lg px-3 py-2 hover:bg-mist" href="#/policy" data-page="policy">정책</a></li>
+      <li><a class="block rounded-lg px-3 py-2 bg-clay text-white font-extrabold" href="#/salriki" data-page="salriki"><i class="fa-solid fa-flag mr-1"></i>대한민국 살리기</a></li>
+      <li><a class="block rounded-lg px-3 py-2 text-teal font-extrabold" href="#/home#join" data-page="home" data-anchor="join">함께하기</a></li>
+    </ul>
+  </div>
+</header><div class="lnl-page" id="page-home">
+
+<main>
+<!-- ===== 히어로 ===== -->
+<section id="hero" class="relative min-h-screen flex items-center pt-28 pb-16 grid-bg">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-gold" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto px-5 w-full relative z-10">
+    <span class="inline-flex flex-col items-start gap-0.5 rounded-full border border-teal/30 bg-white px-4 py-2 text-xs font-mono font-bold text-teal mb-7 shadow-sm reveal">
+      <span class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-teal animate-pulse flex-shrink-0"></span>3대 특권 해체를 위한</span>
+      <span class="pl-4">플랫폼 <b>토지와 자유</b></span>
+    </span>
+    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight reveal">
+      평생 일해도<br />
+      집 한 채 못 사는 세상,<br />
+      <span class="text-teal">이상하지 않아요?</span>
+    </h1>
+    <p class="mt-7 max-w-xl text-lg text-ink/75 leading-relaxed reveal">
+      당신이 밤새 일해서 번 돈은 물가 상승에 녹아내리고,<br class="hidden sm:block" />
+      가만히 땅 깔고 앉은 사람의 자산은 저절로 불어납니다.<br class="hidden sm:block" />
+      <span class="text-ink font-semibold">이건 능력의 문제가 아니라, 게임의 규칙이 잘못된 겁니다.</span>
+    </p>
+    <div class="mt-9 flex flex-wrap gap-4 reveal">
+      <a href="#/home#dividend" data-page="home" data-anchor="dividend" class="rounded-full bg-teal px-7 py-3.5 font-extrabold text-white shadow-lg shadow-teal/25 hover:bg-tealdark hover:scale-105 transition">
+        내 토지배당 계산하기 <i class="fa-solid fa-calculator ml-1"></i>
+      </a>
+      <a href="#/home#problem" data-page="home" data-anchor="problem" class="rounded-full border border-ink/15 bg-white px-7 py-3.5 font-bold text-ink hover:border-teal hover:text-teal transition">
+        무슨 얘기인지 알려줘
+      </a>
+    </div>
+
+    <p class="mt-14 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full bg-teal px-5 py-2.5 font-mono text-xs sm:text-sm font-bold text-white tracking-wide shadow-lg shadow-teal/25 reveal">
+      노력의 열매는 개인에게 <span class="text-gold">·</span> 땅의 이익은 국민에게 <span class="text-gold">·</span> 금융의 위험은 숨김없이
+    </p>
+    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm reveal">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 10월 9일 (금)</b> · 시각은 1분마다 자동 갱신</p>
+  </div>
+  <a href="#/home#problem" data-page="home" data-anchor="problem" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-ink/60 animate-bounce" aria-label="아래로 스크롤">
+    <i class="fa-solid fa-chevron-down text-xl"></i>
+  </a>
+</section>
+
+<!-- ===== 문제 제기 ===== -->
+<section id="problem" class="py-24 border-t border-ink/5">
+  <div class="max-w-6xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">THE PROBLEM</p>
+    <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-14 reveal">
+      우리가 화나는 진짜 이유
+    </h2>
+
+    <div class="grid md:grid-cols-4 gap-6">
+      <article class="stat-card reveal">
+        <div class="text-5xl font-mono font-bold text-clay mb-3" data-count="15.4" data-suffix="배">15.4배</div>
+        <h3 class="font-bold text-lg mb-2">집값 vs 월급</h3>
+        <p class="text-ink/60 text-sm leading-relaxed">서울에서 내 집 마련까지 걸리는 시간. 안 쓰고 모아도 15년 이상. 그런데 땅값은 그 사이 또 오릅니다.</p>
+      </article>
+      <article class="stat-card reveal">
+        <div class="text-5xl font-mono font-bold text-gold mb-3" data-count="75.8" data-suffix="%">75.8%</div>
+        <h3 class="font-bold text-lg mb-2">부동산 쏠림</h3>
+        <p class="text-ink/60 text-sm leading-relaxed">한국 가계 자산의 약 75.8%가 부동산 등 실물 자산. '어디 땅을 샀냐'가 부를 가릅니다.
+          <span class="block text-ink/40 mt-2 text-xs">출처: 통계청 「2025 가계금융복지조사」</span></p>
+      </article>
+      <article class="stat-card reveal">
+        <div class="text-5xl font-mono font-bold text-teal mb-3" data-count="4.7" data-suffix="배">4.7배</div>
+        <h3 class="font-bold text-lg mb-2">토지 총액 ÷ GDP</h3>
+        <p class="text-ink/60 text-sm leading-relaxed">한국 토지 총액 약 1경 2,400조 원, 명목 GDP의 약 4.7배. 그런데 토지 보유세 실효세율은 0.17~0.20%로 OECD 평균의 60% 수준.
+          <span class="block text-ink/40 mt-2 text-xs">2025년 기준</span></p>
+      </article>
+      <article class="stat-card reveal">
+        <div class="text-5xl font-mono font-bold text-ink/30 mb-3" data-count="0" data-suffix="원">0원</div>
+        <h3 class="font-bold text-lg mb-2">지금 당신 몫</h3>
+        <p class="text-ink/60 text-sm leading-relaxed">사회가 만든 땅값 상승분 중, 지금 땅 없는 당신에게 돌아오는 몫. 우리는 바로 이걸 바꿉니다.</p>
+      </article>
+    </div>
+
+    <div class="mt-14 rounded-3xl border border-teal/20 bg-gradient-to-br from-white to-mist p-8 sm:p-12 shadow-sm reveal">
+      <p class="text-xl sm:text-2xl font-bold leading-relaxed">
+        <span class="text-teal">"노력의 열매는 개인에게, 땅의 이익은 국민에게."</span><br />
+        <span class="text-ink/65 text-lg font-normal mt-3 block">
+          당신이 노력해서 번 것은 100% 당신의 것입니다. 하지만 아무도 만들지 않았는데 저절로 생긴 <b class="text-ink">토지가치</b>는 우리 모두가 함께 만든 것입니다. 그래서 국민 모두에게 돌아와야 합니다.
+        </span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3대 특권 해체 ===== -->
+<section id="privilege" class="py-24 bg-mist border-t border-ink/5">
+  <div class="max-w-6xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">OUR MISSION</p>
+    <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-4 reveal">3대 특권 해체</h2>
+    <p class="text-ink/65 max-w-2xl mb-14 reveal">
+      질서를 지키기 위해 특권을 해체하고, 자유시장을 살리기 위해 토지가치를 국민에게 돌려줍니다.
+      <b class="text-ink">반시장이 아니라 반특권입니다.</b>
+    </p>
+
+    <div class="space-y-5">
+      <article class="privilege-row reveal">
+        <span class="privilege-num">01</span>
+        <div>
+          <h3 class="text-2xl font-extrabold mb-2">권력기관 특권 해체 <span class="text-teal text-base font-mono">검증 가능한 선거</span></h3>
+          <p class="text-ink/65 leading-relaxed">선관위·법원·경찰·헌법재판소·중수청·공수처는 <b class="text-ink">투명하게</b>. 당일투표 원칙·수개표 의무화·선관위 외부감사·판결문 전면 공개·전관예우 차단. "우리는 특정 결과를 강요하지 않는다. 우리는 검증 가능한 선거를 요구한다."</p>
+        </div>
+        <i class="fa-solid fa-scale-balanced privilege-icon"></i>
+      </article>
+      <article class="privilege-row reveal">
+        <span class="privilege-num">02</span>
+        <div>
+          <h3 class="text-2xl font-extrabold mb-2">정치 특권 해체 <span class="text-teal text-base font-mono">국회의원 1인 연 7~8억 → 절반</span></h3>
+          <p class="text-ink/65 leading-relaxed">정치는 <b class="text-ink">반값으로</b>. 세비·보좌진·연금·교통 특혜를 외부 독립위원회 감독 하에 절반으로 감축하고 전면 공개. 재임 중 주식·부동산 신탁 의무화, 로비 등록제. "국민에게 긴축을 요구하기 전에 특권 정치부터 끝내야 한다."</p>
+        </div>
+        <i class="fa-solid fa-landmark-dome privilege-icon"></i>
+      </article>
+      <article class="privilege-row reveal">
+        <span class="privilege-num">03</span>
+        <div>
+          <h3 class="text-2xl font-extrabold mb-2">토지 특권 해체 <span class="text-teal text-base font-mono">= 디지털 대동법</span></h3>
+          <p class="text-ink/65 leading-relaxed">토지가치는 <b class="text-ink">국민에게</b>. 사회가 만든 땅값 상승분을 토지가치세로 환수하고, <b class="text-teal">3대 세금(소득세·법인세·부가가치세) 인하</b>와 <b class="text-teal">17개 광역시도별 토지배당기금</b>으로 돌려줍니다. 건물·개량 가치는 과세 제외, 실거주 1주택 고령층은 납부이연으로 보호.</p>
+        </div>
+        <i class="fa-solid fa-seedling privilege-icon"></i>
+      </article>
+    </div>
+
+    <div class="mt-8 text-center reveal">
+      <a href="#/policy" data-page="policy" class="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-white px-6 py-3 font-bold text-teal hover:bg-teal hover:text-white transition">
+        5대 정책 패키지·9대 법안 자세히 보기 <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 토지배당 계산기 ===== -->
+<section id="dividend" class="py-24 border-t border-ink/5">
+  <div class="max-w-5xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">TRY IT YOURSELF</p>
+    <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-4 reveal">토지배당 시뮬레이터</h2>
+    <p class="text-ink/65 max-w-2xl mb-8 reveal">
+      토지가치세로 걷은 돈을 <b class="text-ink">국민 모두에게 1/N로 똑같이</b> 나눠준다면? 슬라이더를 움직여보세요.
+      <span class="block text-xs text-ink/45 mt-2 foot-note">* 교육용 개념 시뮬레이션입니다. 확정 세율이 아니라 설계 원칙이며, 실제 규모는 이후 「토지가치세 금융안정 스트레스 테스트」 백서로 확정합니다.</span>
+    </p>
+
+    <!-- 단계 프리셋 (창당전략 4-3 3단계 로드맵) -->
+    <div class="flex flex-wrap items-center gap-2 mb-6 reveal">
+      <span class="text-xs font-mono font-bold text-ink/50 mr-1">단계 프리셋</span>
+      <button class="phase-btn" data-tax="10" data-lvt="0.1">1단계 2028~30 · 신규 세금 없음</button>
+      <button class="phase-btn" data-tax="25" data-lvt="0.5">2단계 2031~33 · 0.2→0.5%p</button>
+      <button class="phase-btn is-active" data-tax="50" data-lvt="1.0">3단계 2034~ · 연 40~50조</button>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 rounded-3xl border border-ink/10 bg-white p-8 shadow-sm reveal">
+      <div class="space-y-7">
+        <div>
+          <label for="tax-revenue" class="flex justify-between text-sm font-semibold mb-3">
+            <span>연간 토지가치세 세수 규모</span>
+            <span id="tax-revenue-label" class="font-mono text-teal">50조 원</span>
+          </label>
+          <input id="tax-revenue" type="range" min="10" max="150" value="50" step="5" class="tlq-slider w-full" />
+        </div>
+        <div>
+          <label for="population" class="flex justify-between text-sm font-semibold mb-3">
+            <span>배당 대상 국민 수</span>
+            <span id="population-label" class="font-mono text-teal">5,100만 명</span>
+          </label>
+          <input id="population" type="range" min="3000" max="5200" value="5100" step="100" class="tlq-slider w-full" />
+        </div>
+        <div>
+          <label for="household" class="flex justify-between text-sm font-semibold mb-3">
+            <span>우리 가구 인원</span>
+            <span id="household-label" class="font-mono text-teal">2명</span>
+          </label>
+          <input id="household" type="range" min="1" max="6" value="2" step="1" class="tlq-slider w-full" />
+        </div>
+        <div class="h-px bg-ink/10"></div>
+        <p class="text-xs font-mono font-bold text-ink/50">우리 가구 상황 (선택)</p>
+        <div>
+          <label for="loan" class="flex justify-between text-sm font-semibold mb-3">
+            <span>주택담보대출 잔액</span>
+            <span id="loan-label" class="font-mono text-teal">2억 원</span>
+          </label>
+          <input id="loan" type="range" min="0" max="10" value="2" step="0.5" class="tlq-slider w-full" />
+        </div>
+        <div>
+          <label for="loan-rate" class="flex justify-between text-sm font-semibold mb-3">
+            <span>대출 금리</span>
+            <span id="loan-rate-label" class="font-mono text-teal">4.0%</span>
+          </label>
+          <input id="loan-rate" type="range" min="2" max="8" value="4" step="0.1" class="tlq-slider w-full" />
+        </div>
+        <div>
+          <label for="land-value" class="flex justify-between text-sm font-semibold mb-3">
+            <span>보유 토지분 가치 (건물 제외)</span>
+            <span id="land-value-label" class="font-mono text-teal">0억 원</span>
+          </label>
+          <input id="land-value" type="range" min="0" max="30" value="0" step="0.5" class="tlq-slider w-full" />
+        </div>
+        <div>
+          <label for="lvt-rate" class="flex justify-between text-sm font-semibold mb-3">
+            <span>토지가치세 실효세율</span>
+            <span id="lvt-rate-label" class="font-mono text-teal">1.00%</span>
+          </label>
+          <input id="lvt-rate" type="range" min="0" max="1.5" value="1.0" step="0.05" class="tlq-slider w-full" />
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-5">
+        <div class="flex flex-col justify-center items-center text-center rounded-2xl bg-gradient-to-br from-teal to-tealdark text-white p-8">
+          <p class="text-white/75 text-sm font-semibold mb-1">우리 가구가 매년 받는 토지배당</p>
+          <p id="dividend-household" class="font-mono text-4xl sm:text-5xl font-bold text-white mb-6">0원</p>
+          <div class="w-full h-px bg-white/20 mb-6"></div>
+          <div class="grid grid-cols-2 gap-4 w-full">
+            <div>
+              <p class="text-white/70 text-xs mb-1">1인당 연간</p>
+              <p id="dividend-person" class="font-mono text-xl font-bold">0원</p>
+            </div>
+            <div>
+              <p class="text-white/70 text-xs mb-1">1인당 월</p>
+              <p id="dividend-month" class="font-mono text-xl font-bold text-gold">0원</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3열 비교 (창당전략 5-5: 주담대 이자 · 실효 보유세 · 예상 배당) -->
+        <div class="rounded-2xl border border-ink/10 bg-mist p-6">
+          <p class="text-xs font-mono font-bold text-ink/55 mb-4">우리 가구 연간 3열 비교</p>
+          <div class="grid grid-cols-3 gap-3 text-center">
+            <div class="rounded-xl bg-white p-3">
+              <p class="text-[11px] text-ink/55 mb-1">예상 배당</p>
+              <p id="col-dividend" class="font-mono text-base font-bold text-teal">0</p>
+            </div>
+            <div class="rounded-xl bg-white p-3">
+              <p class="text-[11px] text-ink/55 mb-1">주담대 이자</p>
+              <p id="col-interest" class="font-mono text-base font-bold text-clay">0</p>
+            </div>
+            <div class="rounded-xl bg-white p-3">
+              <p class="text-[11px] text-ink/55 mb-1">실효 보유세</p>
+              <p id="col-lvt" class="font-mono text-base font-bold text-ink/80">0</p>
+            </div>
+          </div>
+          <div class="mt-4 flex items-baseline justify-between">
+            <p class="text-sm font-semibold text-ink/70">배당 − 보유세 순효과</p>
+            <p id="col-net" class="font-mono text-2xl font-bold text-teal">+0</p>
+          </div>
+          <p class="text-[11px] text-ink/45 mt-2">땅이 없거나 적으면 배당이 보유세보다 커집니다. 감세(소득세·법인세·부가세)는 별도 플러스.</p>
+        </div>
+      </div>
+    </div>
+    <p class="mt-6 text-center text-ink/55 text-sm reveal">
+      땅에서 나온 이익을, 소수의 특권이 아니라 <b class="text-teal">모두의 토지배당</b>으로. 이게 <b>디지털 대동법</b>입니다.
+    </p>
+  </div>
+</section>
+
+<!-- ===== 사상 계보 ===== -->
+<section id="lineage" class="py-24 bg-mist border-t border-ink/5">
+  <div class="max-w-6xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">400년의 계보 · K-보수주의 3.0</p>
+    <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-4 reveal">갑자기 튀어나온 생각이 아닙니다</h2>
+    <p class="text-ink/65 max-w-2xl mb-14 reveal">
+      '땅의 이익은 공공의 것'이라는 아이디어는 조선 후기 대동법부터 이어진 <b class="text-ink">자유시장 친화적 토지 공공성</b>의 계보 위에 있습니다. 여섯 개의 물줄기가 한반도에서 합류합니다.
+    </p>
+
+    <ol class="relative border-l-2 border-ink/10 ml-3 space-y-10">
+      <li class="lineage-item reveal">
+        <span class="lineage-dot"></span>
+        <p class="font-mono text-gold text-sm">1608–1708</p>
+        <h3 class="text-xl font-extrabold mt-1">대동법 <span class="text-xs font-mono text-ink/40 ml-1">조세 특권 해체</span></h3>
+        <p class="text-ink/65 text-sm mt-1">토지 결수에 비례한 공평·단순 과세로 방납업자와 토지 과다 소유자의 특권을 해체. 양반 지주의 100년 저항을 뚫은 점진개혁 모델.</p>
+      </li>
+      <li class="lineage-item reveal">
+        <span class="lineage-dot"></span>
+        <p class="font-mono text-gold text-sm">1797</p>
+        <h3 class="text-xl font-extrabold mt-1">토마스 페인 · 『농업 정의』</h3>
+        <p class="text-ink/65 text-sm mt-1">"땅은 인류 공동의 유산." 지대 일부를 시민 모두에게 균등 배당 — 국유화가 아닌 지대 환수와 보편 배당. 광역시도별 토지배당기금의 직접적 원형.</p>
+      </li>
+      <li class="lineage-item reveal">
+        <span class="lineage-dot"></span>
+        <p class="font-mono text-gold text-sm">1879</p>
+        <h3 class="text-xl font-extrabold mt-1">헨리 조지 · 『진보와 빈곤』</h3>
+        <p class="text-ink/65 text-sm mt-1">노동·자본이 아니라 토지가치에 과세. 토지 공급은 고정되어 사중손실이 없기에 '최선의 세금' — 밀턴 프리드먼과 조셉 스티글리츠도 인정한 논리.</p>
+      </li>
+      <li class="lineage-item reveal">
+        <span class="lineage-dot"></span>
+        <p class="font-mono text-gold text-sm">1950</p>
+        <h3 class="text-xl font-extrabold mt-1">이승만 정부 - 농지개혁 <span class="text-xs font-mono text-ink/40 ml-1">K-보수주의 1.0</span></h3>
+        <p class="text-ink/65 text-sm mt-1">제헌헌법 제86조에 따라 자경지 비율 35%→96%. 지주 특권을 해체하고 공산화를 막은 체제 수호형 분배. "이승만의 농지개혁도 사회주의인가?"</p>
+      </li>
+      <li class="lineage-item reveal">
+        <span class="lineage-dot"></span>
+        <p class="font-mono text-gold text-sm">1980년대 초</p>
+        <h3 class="text-xl font-extrabold mt-1">전두환 정부 - 김재익 안정 자유주의 <span class="text-xs font-mono text-ink/40 ml-1">K-보수주의 2.0</span></h3>
+        <p class="text-ink/65 text-sm mt-1">안정·자율·개방. 30% 물가를 5%대로 잡은 안정화 시책. 독일 질서자유주의와 통하지만, 부동산(토지) 지대 구조에는 미치지 못한 미완의 과제.</p>
+      </li>
+      <li class="lineage-item reveal">
+        <span class="lineage-dot"></span>
+        <p class="font-mono text-gold text-sm">1989</p>
+        <h3 class="text-xl font-extrabold mt-1">노태우 정부 - 토지공개념 <span class="text-xs font-mono text-ink/40 ml-1">K-보수주의 2.5</span></h3>
+        <p class="text-ink/65 text-sm mt-1">서울 아파트값 1년 50% 폭등 속 보수정권의 토지공개념 3법·종합토지세. 국민 84.7% 찬성. 헌재도 토지공개념의 헌법적 정당성 인정 (헌법 제122조, 제119조 제2항, 제23조 제2항·제3항).</p>
+      </li>
+      <li class="lineage-item reveal">
+        <span class="lineage-dot lineage-dot-active"></span>
+        <p class="font-mono text-teal text-sm">2026 →</p>
+        <h3 class="text-xl font-extrabold mt-1 text-teal">디지털 대동법 <span class="text-xs font-mono text-ink/40 ml-1">K-보수주의 3.0</span></h3>
+        <p class="text-ink/65 text-sm mt-1">AI·블록체인·원화 스테이블 코인 시대의 농지개혁. 땅에서 난 이익을 3대 세금 감세와 토지배당으로 — 현금·예금·규제형 스테이블코인 중 <b class="text-ink">수령자가 선택</b>. 이제 <b class="text-ink">우리 세대</b>의 차례입니다.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== 이념 정체성 ===== -->
+<section id="identity" class="py-24 border-t border-ink/5">
+  <div class="max-w-6xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">OUR IDENTITY</p>
+    <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-4 reveal">우리는 어떤 플랫폼인가?</h2>
+    <p class="text-ink/65 max-w-2xl mb-14 reveal">
+      <b class="text-ink">자유시장은 지키되, 땅의 특권은 깨는</b> 제3의 좌표.
+      세 갈래 사상이 하나로 결합된 <b class="text-teal">한국형 경쟁질서 자유주의</b>입니다.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <article class="identity-card reveal">
+        <i class="fa-solid fa-scroll identity-ic"></i>
+        <h3 class="font-extrabold text-xl mt-4 mb-2">토지 자유주의</h3>
+        <p class="text-ink/45 text-xs font-mono mb-3">Geolibertarianism</p>
+        <p class="text-ink/65 text-sm leading-relaxed">내 노력·자본의 열매는 100% 내 것. 하지만 <b class="text-ink">땅은 아무도 만들지 않았으니</b> 그 가치는 모두의 것. 토지가치세는 세금이 아니라 '공동 자산의 사용료', 증세가 아니라 세제 구조 개혁(Tax Shift).</p>
+      </article>
+      <article class="identity-card reveal">
+        <i class="fa-solid fa-scale-balanced identity-ic"></i>
+        <h3 class="font-extrabold text-xl mt-4 mb-2">경쟁질서 자유주의</h3>
+        <p class="text-ink/45 text-xs font-mono mb-3">Ordoliberalism · 한국형</p>
+        <p class="text-ink/65 text-sm leading-relaxed">"국가는 시장을 지휘하지 않는다. 그러나 경쟁이 무너지지 않도록 질서를 설계한다." 오이켄·뵘·에르하르트. 국가의 역할은 축소가 아니라 <b class="text-ink">개입에서 구조 설계로의 전환</b>.</p>
+      </article>
+      <article class="identity-card reveal">
+        <i class="fa-solid fa-shield-halved identity-ic"></i>
+        <h3 class="font-extrabold text-xl mt-4 mb-2">안정 자유주의</h3>
+        <p class="text-ink/45 text-xs font-mono mb-3">김재익 · 미제스 계열</p>
+        <p class="text-ink/65 text-sm leading-relaxed">물가와 통화의 안정이 서민을 지킨다. <b class="text-ink">인플레이션은 가장 잔인한 세금</b>. 재정준칙·중앙은행 독립·관치금융 축소 위에 토지배당을 얹습니다.</p>
+      </article>
+    </div>
+
+    <div class="rounded-3xl border border-teal/25 bg-gradient-to-br from-white to-mist p-8 sm:p-10 shadow-sm reveal">
+      <p class="font-mono text-teal text-sm font-bold mb-3">우리의 좌표</p>
+      <p class="text-lg sm:text-xl font-bold leading-relaxed">
+        "권력기관은 <span class="text-teal">투명하게</span>, 정치는 <span class="text-teal">반값으로</span>, 토지가치는 <span class="text-teal">국민에게</span>."
+      </p>
+      <p class="text-ink/65 mt-3 leading-relaxed">
+        분배를 위해 시장을 죽이는 것도, 시장을 위해 특권을 눈감는 것도 거부합니다.
+        <b class="text-ink">기득권 보수의 자산 편향과 기득권 진보의 국가 의존을 동시에 넘어서는</b> 한국형 중도보수 개혁 플랫폼 — 이게 <b class="ink-black">토지와 자유</b>의 정체성입니다.
+      </p>
+    </div>
+
+    <!-- 왜 보수인가 -->
+    <div class="mt-16">
+      <h3 class="text-2xl sm:text-3xl font-extrabold mb-3 reveal">그런데, 왜 '보수주의'인가요?</h3>
+      <p class="text-ink/65 max-w-2xl mb-8 reveal">
+        보수주의는 "변화를 반대하는 것"이 아닙니다. 보수는 <b class="text-ink">인간과 사회의 한계를 인정하는 현실주의</b>예요.
+        우리가 토지배당을 <b class="text-ink">급진적인 실험이 아니라 검증된 개혁</b>으로 미는 이유가 여기 있습니다.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <article class="con-card reveal">
+          <i class="fa-solid fa-users-gear con-ic"></i>
+          <h4 class="font-extrabold text-lg mt-3 mb-2">인간은 불완전하다</h4>
+          <p class="text-ink/65 text-sm leading-relaxed">사람은 이기적이고 선동 당하기 쉽습니다. 그래서 좋은 제도는 <b class="text-ink">선의가 아니라 약점을 전제로</b> 설계돼야 해요. 유토피아 설계도가 아니라, 특권을 못 만들게 막는 규칙이 필요합니다.</p>
+        </article>
+        <article class="con-card reveal">
+          <i class="fa-solid fa-scale-balanced con-ic"></i>
+          <h4 class="font-extrabold text-lg mt-3 mb-2">자유는 질서 위에서만 산다</h4>
+          <p class="text-ink/65 text-sm leading-relaxed">규칙 없는 시장은 결국 <b class="text-ink">힘센 자들의 놀이터</b>가 됩니다. 자유시장을 진짜 살리려면, 그 시장을 갉아먹는 지대·특권·독점부터 걷어내야 합니다.</p>
+        </article>
+        <article class="con-card reveal">
+          <i class="fa-solid fa-seedling con-ic"></i>
+          <h4 class="font-extrabold text-lg mt-3 mb-2">전통의 지혜를 존중한다</h4>
+          <p class="text-ink/65 text-sm leading-relaxed">우리는 없던 걸 지어내지 않았습니다. <b class="text-ink">대동법·농지개혁·토지공개념</b> — 이미 우리 역사가 검증한 지혜를 AI 시대에 이어받을 뿐입니다.</p>
+        </article>
+        <article class="con-card reveal">
+          <i class="fa-solid fa-people-roof con-ic"></i>
+          <h4 class="font-extrabold text-lg mt-3 mb-2">미래 세대와의 계약</h4>
+          <p class="text-ink/65 text-sm leading-relaxed">지금 세대가 땅값 잔치로 다 써버리면 다음 세대는 뭘 물려받나요? 땅의 이익을 <b class="text-ink">모두의, 그리고 다음 세대의 몫</b>으로 지키는 게 진짜 보수주의입니다.</p>
+        </article>
+      </div>
+
+      <blockquote class="con-quote reveal">
+        <p class="text-lg sm:text-xl font-bold leading-relaxed text-ink">
+          "사회는 살아있는 자들만의 계약이 아니라,<br class="hidden sm:block" />
+          <span class="text-teal">죽은 자·살아있는 자·아직 태어나지 않은 자들 사이의 계약</span>이다."
+        </p>
+        <cite class="block text-ink/55 text-sm mt-3 not-italic">— 에드먼드 버크, 보수주의의 아버지</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 토지가치세 활용: 감세 + 토지배당 ===== -->
+<section id="usage" class="py-24 bg-mist border-t border-ink/5">
+  <div class="max-w-6xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">WHERE THE MONEY GOES</p>
+    <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-4 reveal">걷은 돈, 두 갈래로 돌려드립니다</h2>
+    <p class="text-ink/65 max-w-2xl mb-14 reveal">
+      토지가치세로 걷은 재원은 정부 곳간에 쌓아두지 않습니다. <b class="text-ink">토지가치 및 개발이익 환수액을 전 국민에게</b> —
+      한쪽은 <b class="text-teal">감세</b>로, 한쪽은 <b class="text-teal">토지배당</b>으로.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <article class="usage-card reveal">
+        <div class="usage-badge">용도 ①</div>
+        <i class="fa-solid fa-arrow-trend-down usage-ic"></i>
+        <h3 class="font-extrabold text-2xl mt-4 mb-3">감세 <span class="text-ink/40 text-base font-normal">Tax Shift</span></h3>
+        <p class="text-ink/65 leading-relaxed mb-4">
+          땅값 상승분에 과세하는 대신, <b class="text-ink">노동·자본·소비에 붙는 세금은 줄입니다.</b>
+          세금을 '움직이는 것'에서 '가만히 있는 땅'으로 옮깁니다. 목표는 <b class="text-ink">총세수 중립</b> — 증세가 아닙니다.
+        </p>
+        <ul class="space-y-2 text-sm text-ink/75">
+          <li><i class="fa-solid fa-check text-teal mr-2"></i>소득세 중간 세율 구간 완화, 근로소득 공제 현실화</li>
+          <li><i class="fa-solid fa-check text-teal mr-2"></i>법인세: IFRS 18 '영업' 이익(생산·판매)에만 감세, '투자' 이익(부동산 운용)은 현행 유지</li>
+          <li><i class="fa-solid fa-check text-teal mr-2"></i>취득세·등록세 단계적 인하, 실거주 주택 양도차익 비과세 확대</li>
+          <li><i class="fa-solid fa-check text-teal mr-2"></i>복잡한 부동산세를 하나의 투명한 토지세로 (종부세 단계적·조건부 통합)</li>
+        </ul>
+      </article>
+
+      <article class="usage-card usage-card-accent reveal">
+        <div class="usage-badge usage-badge-accent">용도 ②</div>
+        <i class="fa-solid fa-hand-holding-dollar usage-ic"></i>
+        <h3 class="font-extrabold text-2xl mt-4 mb-3">토지배당 <span class="text-ink/40 text-base font-normal">Land Dividend</span></h3>
+        <p class="text-ink/65 leading-relaxed mb-4">
+          개발이익 환수금은 <b class="text-ink">17개 광역시도별 토지배당기금</b>(서울기금·경기기금·인천기금…)에 적립되어 지역 주민에게 1인당 동등하게 배당됩니다.
+          땅 없는 청년도, 신생아도, 누구나 '<b class="text-ink">대한민국의 주주</b>'.
+        </p>
+        <ul class="space-y-2 text-sm text-ink/75">
+          <li><i class="fa-solid fa-check text-teal mr-2"></i>조건·심사 없는 보편 배당 — 청년 주거비 지원 우선</li>
+          <li><i class="fa-solid fa-check text-teal mr-2"></i>기금 배분: 토지배당 40 · 교통·주거 인프라 30 · 경기안정화준비금 20 · 청년 주거·직업훈련 10</li>
+          <li><i class="fa-solid fa-check text-teal mr-2"></i>현금·은행계좌·선불수단·규제형 원화 스테이블 코인 중 수령자 자유 선택 (강제 지급 금지)</li>
+          <li><i class="fa-solid fa-check text-teal mr-2"></i>토마스 페인·알래스카 영구기금 모델의 한국판</li>
+        </ul>
+        <a href="#/home#dividend" data-page="home" data-anchor="dividend" class="inline-block mt-5 text-teal font-bold text-sm hover:underline">내 배당액 계산해보기 <i class="fa-solid fa-arrow-right ml-1"></i></a>
+      </article>
+    </div>
+
+    <!-- 3단계 배당 로드맵 -->
+    <div class="mt-10 tlq-table-wrap reveal">
+      <table class="tlq-table tbl-usage">
+        <thead>
+          <tr><th>단계</th><th>시기</th><th>재원 방식</th><th>예상 배당액 (1인당 연)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="font-bold">1단계</td><td class="font-mono">2028~2030</td><td>기존 공유지 임대수익·개발부담금·재건축초과이익환수금 활용 <b class="text-teal">(신규 세금 없음)</b></td><td class="font-mono font-bold">10~15만 원</td></tr>
+          <tr><td class="font-bold">2단계</td><td class="font-mono">2031~2033</td><td>토지가치세 0.2%p→0.5%p 단계 인상, 종부세·양도세 정비</td><td class="font-mono font-bold">30~50만 원</td></tr>
+          <tr><td class="font-bold">3단계</td><td class="font-mono">2034~</td><td>토지 관련 세금 단일화, 세율 1.0%p 상한, 연 40~50조 원 세수</td><td class="font-mono font-bold text-teal">50~100만 원</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-ink/45 text-xs mt-4 reveal foot-note">* 감세와 토지배당의 배분 비율, 세율은 국회 논의·재정 상황·금융안정 스트레스 테스트 결과에 따라 조정되는 정책 설계 변수입니다. 실거주 65세 이상 1주택자는 납부이연(사망·처분 시 정산), 장기거주자 연간 세부담 증가율 상한 적용.</p>
+  </div>
+</section>
+
+<!-- ===== [신규] 금융의 위험은 숨김없이 — 바젤Ⅲ × IFRS 18 ===== -->
+<section id="finance" class="py-24 border-t border-ink/5">
+  <div class="max-w-6xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">DIGITAL DAEDONG LAW 2.0 · 금융의 위험은 숨김없이</p>
+    <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-4 reveal">땅값에 돈이 묶이는 나라에서,<br class="hidden sm:block" />일하는 기업에 돈이 흐르는 나라로</h2>
+    <p class="text-ink/65 max-w-3xl mb-14 reveal">
+      2027년, 돈의 규칙이 바뀝니다. <b class="text-ink">바젤Ⅲ 엔드게임</b>은 은행에게 "담보가 얼마짜리인가"가 아니라 "이 사업에서 실제 현금이 얼마나 나오는가"를 묻게 하고,
+      <b class="text-ink">IFRS 18</b>(2027.1.1 시행)은 기업 손익을 영업·투자·재무로 강제 분류해 "누가 땅으로 벌었고, 누가 기술로 벌었는가"를 재무제표로 드러냅니다.
+      디지털 대동법은 이 금융 OS 업데이트에 맞춰 <b class="text-teal">토지에 묶인 신용을 생산·기술·고용으로 이동시키는 국가 차원의 자본 배분 개혁</b>으로 레벨업합니다.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      <article class="package-card reveal">
+        <i class="fa-solid fa-building-columns text-teal text-2xl"></i>
+        <h3 class="font-extrabold text-lg mt-3 mb-2">바젤Ⅲ 엔드게임</h3>
+        <p class="text-ink/65 text-sm leading-relaxed">토지매입·개발·건설(ADC) 대출 위험가중치 150%, Output Floor 70%→72.5%. 한국은 2026.1 주담대 위험가중치 하한 15%→20% 상향. <b class="text-ink">"부동산 담보보다 현금 흐름"</b> — 우리 노선과 정확히 일치.</p>
+      </article>
+      <article class="package-card reveal">
+        <i class="fa-solid fa-file-invoice text-teal text-2xl"></i>
+        <h3 class="font-extrabold text-lg mt-3 mb-2">IFRS 18 · 회계 착시 방지</h3>
+        <p class="text-ink/65 text-sm leading-relaxed">손익을 영업·투자·재무·법인세·중단영업 5범주로 강제 분류. DDLI는 매년 <b class="text-ink">「대한민국 기업 지대소득 지수」</b>(생산이익·지대이익 브리지)를 발표해 감정이 아니라 재무제표로 보여줍니다.</p>
+      </article>
+      <article class="package-card reveal">
+        <i class="fa-solid fa-coins text-teal text-2xl"></i>
+        <h3 class="font-extrabold text-lg mt-3 mb-2">감시화폐보다 선택권</h3>
+        <p class="text-ink/65 text-sm leading-relaxed">감시형·통제형 소매 CBDC(영장 없는 거래 추적, 프로그래머블 머니, 강제 수령)는 금지. 완전준비·일별 공시·외부감사를 갖춘 <b class="text-ink">적격 원화 스테이블 코인(KRW-S)</b>은 배당 레일로 허용.</p>
+      </article>
+    </div>
+
+    <div class="rounded-3xl border border-gold/40 bg-gradient-to-br from-white to-gold/10 p-8 sm:p-10 shadow-sm reveal">
+      <div class="flex flex-col md:flex-row md:items-center gap-6">
+        <div class="flex-1">
+          <p class="font-mono text-xs font-bold text-gold mb-2">전환경로 동기화 · TRANSITION PATH SYNCHRONIZATION</p>
+          <p class="text-lg sm:text-xl font-bold leading-relaxed">"토지가치세를 올리는 만큼, 주담대 위험가중치 하한을 되돌린다."</p>
+          <p class="text-ink/65 mt-3 leading-relaxed text-sm">토지개혁은 금융위기를 일으키지 않아야 완주할 수 있습니다. 지가 −10% / −20% / −30% 시나리오별 은행 CET1·PF 부도율·자본확충액을 공개하는 <b class="text-ink">「토지가치세 금융안정 스트레스 테스트」 백서</b>와, 은행 CET1·PF 연체율에 연동한 세율 속도조절 장치를 함께 설계합니다.</p>
+        </div>
+        <div class="grid grid-cols-3 gap-3 text-center">
+          <div class="rounded-2xl bg-white border border-ink/10 p-4"><p class="font-mono text-2xl font-bold text-teal">−10%</p><p class="text-[11px] text-ink/55 mt-1">완만한 조정<br/>CET1·LTV·지방세수</p></div>
+          <div class="rounded-2xl bg-white border border-ink/10 p-4"><p class="font-mono text-2xl font-bold text-gold">−20%</p><p class="text-[11px] text-ink/55 mt-1">중간 충격<br/>PF 부도율·건설사</p></div>
+          <div class="rounded-2xl bg-white border border-ink/10 p-4"><p class="font-mono text-2xl font-bold text-clay">−30%</p><p class="text-[11px] text-ink/55 mt-1">심각한 충격<br/>은행 자본확충액</p></div>
+        </div>
+      </div>
+    </div>
+    <p class="text-ink/45 text-xs mt-4 reveal foot-note">* 담보가치·자본비율 시뮬레이션(LRIM 포함)은 회계사·은행 리스크 실무자의 검증을 거치지 않은 내부 분석이며, 백서 발간 전 외부 검증을 거칩니다.</p>
+  </div>
+</section>
+
+<!-- ===== 국제 비교 사례 (탭) ===== -->
+<section id="global" class="py-24 bg-mist border-t border-ink/5">
+  <div class="max-w-6xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">AROUND THE WORLD</p>
+    <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-4 reveal">이미 세계는 하고 있습니다</h2>
+    <p class="text-ink/65 max-w-2xl mb-10 reveal">
+      토지가치세도, 토지배당도 상상이 아닙니다. <b class="text-ink">실제로 작동 중인 제도들</b>을 탭으로 살펴보세요.
+    </p>
+
+    <div class="reveal">
+      <div id="global-tabs" class="flex flex-wrap gap-2 mb-8" role="tablist">
+        <button class="global-tab is-active" data-tab="korea" role="tab">🇰🇷 사상적 정통성</button>
+        <button class="global-tab" data-tab="alaska" role="tab">🇺🇸 알래스카</button>
+        <button class="global-tab" data-tab="singapore" role="tab">🇸🇬 싱가포르</button>
+        <button class="global-tab" data-tab="estonia" role="tab">🇪🇪 에스토니아</button>
+        <button class="global-tab" data-tab="denmark" role="tab">🇩🇰 덴마크</button>
+        <button class="global-tab" data-tab="taiwan" role="tab">🇹🇼 대만</button>
+        <button class="global-tab" data-tab="australia" role="tab">🇦🇺 호주 ACT</button>
+        <button class="global-tab" data-tab="usa" role="tab">🏙️ 미국 도시들</button>
+        <button class="global-tab" data-tab="hungary" role="tab">🇭🇺 헝가리 (정치)</button>
+      </div>
+
+      <div class="global-panels">
+        <article class="global-panel is-active" data-panel="korea">
+          <h3 class="text-2xl font-extrabold mb-2">K-보수주의 계보 · 토지 공공성 400년</h3>
+          <p class="text-teal font-mono text-sm mb-4">대동법(1608~1708) → 농지개혁(1950) → 김재익(1980s) → 토지공개념(1989) → 디지털 대동법(2026)</p>
+          <p class="text-ink/75 leading-relaxed mb-4">
+            <b>토지와 자유</b>의 뿌리는 수입된 이념이 아니라 <b class="text-ink">한국 보수주의 정통 계보</b>입니다.
+            '땅의 이익은 공공의 것'이라는 원리는 조선 후기 대동법에서 시작해, 세계 사상(토마스 페인·헨리 조지)과 만나고, 대한민국 정부의 실제 정책으로 이어졌습니다.
+          </p>
+          <ul class="space-y-2.5 text-sm text-ink/75 mb-4">
+            <li><i class="fa-solid fa-angle-right text-teal mr-2"></i><b class="text-ink">대동법(1608~1708)</b> — 토지 보유에 따른 공평 과세, 100년의 조세 개혁</li>
+            <li><i class="fa-solid fa-angle-right text-teal mr-2"></i><b class="text-ink">이승만 정부의 농지개혁(1950)</b> — "경자유전", 자경지 35%→96%</li>
+            <li><i class="fa-solid fa-angle-right text-teal mr-2"></i><b class="text-ink">전두환 정부의 김재익 안정 자유주의(1980년대)</b> — 물가·통화 안정주의</li>
+            <li><i class="fa-solid fa-angle-right text-teal mr-2"></i><b class="text-ink">노태우 정부의 토지공개념(1989)</b> — 헌법적 근거: 제122조, 제119조 제2항, 제23조 제2항·제3항</li>
+          </ul>
+          <p class="text-ink/55 text-sm"><b class="text-ink/75">핵심:</b> 토지배당은 <b class="text-ink">전통을 잇는 개혁</b>이지, 뿌리 없는 실험이 아닙니다.</p>
+        </article>
+
+        <article class="global-panel" data-panel="alaska">
+          <h3 class="text-2xl font-extrabold mb-2">알래스카 영구기금 배당 (APFD)</h3>
+          <p class="text-teal font-mono text-sm mb-4">1976년~ · 자원수익의 국민 배당 · 40년 초당적 지지</p>
+          <p class="text-ink/75 leading-relaxed mb-4">석유라는 <b class="text-ink">공유 자원</b>에서 나온 수익을 기금으로 적립하고, 주민 전원에게 매년 배당금을 지급합니다. 연도별로 1인당 대략 <b class="text-teal">1,000~2,000달러</b> 안팎.</p>
+          <p class="text-ink/55 text-sm"><b class="text-ink/75">토지배당과의 연결:</b> "공짜 돈·포퓰리즘" 공격에 대한 답. 공동 자산 수익의 정당한 배당이며, 좌우를 넘어 40년간 유지된 제도입니다.</p>
+        </article>
+
+        <article class="global-panel" data-panel="singapore">
+          <h3 class="text-2xl font-extrabold mb-2">싱가포르 국유지 · 99년 리스</h3>
+          <p class="text-teal font-mono text-sm mb-4">토지의 대부분을 국가가 보유</p>
+          <p class="text-ink/75 leading-relaxed mb-4">국토의 상당 부분을 국가가 소유하고 <b class="text-ink">장기 임대(리스)</b>로 공급합니다. 토지가치가 소수 지주가 아닌 <b class="text-teal">국가 재정과 공공주택(HDB)</b>으로 환류됩니다.</p>
+          <p class="text-ink/55 text-sm"><b class="text-ink/75">시사점:</b> 자유로운 시장경제 국가이면서도 토지 공공성으로 주거 안정과 재정을 동시에 달성한 사례.</p>
+        </article>
+
+        <article class="global-panel" data-panel="estonia">
+          <h3 class="text-2xl font-extrabold mb-2">에스토니아 토지세 (Land Tax)</h3>
+          <p class="text-teal font-mono text-sm mb-4">건물엔 과세 안 함, 오직 땅값에만 · 10년 연속 OECD 최고 조세체계</p>
+          <p class="text-ink/75 leading-relaxed mb-4">건물·개량물에는 세금을 매기지 않고 <b class="text-ink">순수 토지 가치에만</b> 과세. 헨리 조지 원리에 가장 가까운 실제 세제.</p>
+          <p class="text-ink/55 text-sm"><b class="text-ink/75">시사점:</b> 건물을 지을수록 세금이 늘지 않으니 <b class="text-ink">개발·투자를 오히려 장려</b>. "토지엔 과세, 노동·자본엔 감세"의 실증.</p>
+        </article>
+
+        <article class="global-panel" data-panel="denmark">
+          <h3 class="text-2xl font-extrabold mb-2">덴마크 토지가치세 (Grundskyld)</h3>
+          <p class="text-teal font-mono text-sm mb-4">100년 넘게 운영된 지방 토지세</p>
+          <p class="text-ink/75 leading-relaxed mb-4">지방정부가 <b class="text-ink">토지 평가액에 비례해</b> 매년 부과. 안정적 지방 재정원이자 부동산 투기 억제 장치.</p>
+          <p class="text-ink/55 text-sm"><b class="text-ink/75">시사점:</b> 토지가치세가 <b class="text-ink">지속 가능한 지방 재정 기반</b>이 될 수 있음을 보여주는 장기 사례.</p>
+        </article>
+
+        <article class="global-panel" data-panel="taiwan">
+          <h3 class="text-2xl font-extrabold mb-2">대만 지가세·토지증치세 (平均地權)</h3>
+          <p class="text-teal font-mono text-sm mb-4">1949년~ · 쑨원의 '평균지권' 사상 → 헌법 명시</p>
+          <p class="text-ink/75 leading-relaxed mb-4">쑨원의 <b class="text-ink">평균지권</b> 사상에 뿌리를 두고 지가세와 토지증치세(양도차익 과세)를 헌법·법률로 운영.</p>
+          <p class="text-ink/55 text-sm"><b class="text-ink/75">시사점:</b> "현실성 없는 이상론" 공격에 대한 답. 아시아·유교 문화권에서 75년 이상 운영 중인 제도.</p>
+        </article>
+
+        <article class="global-panel" data-panel="australia">
+          <h3 class="text-2xl font-extrabold mb-2">호주 ACT 준주 · 인지세 → 토지가치세 전환</h3>
+          <p class="text-teal font-mono text-sm mb-4">2012년~ · 20년 단계적 세제 전환(Tax Shift)</p>
+          <p class="text-ink/75 leading-relaxed mb-4">거래세(인지세)를 단계적으로 폐지하고 <b class="text-ink">토지가치 기반 보유세</b>로 전환 중. 급격한 충격 없이 20년에 걸쳐 진행하는 점진 개혁.</p>
+          <p class="text-ink/55 text-sm"><b class="text-ink/75">시사점:</b> "거래세 인하 + 토지 보유세 강화"라는 우리 세제 전환 경로의 실증. 10년 단계 전환 설계의 참고 모델.</p>
+        </article>
+
+        <article class="global-panel" data-panel="usa">
+          <h3 class="text-2xl font-extrabold mb-2">미국 펜실베이니아 · 분리과세 (Split-Rate Tax)</h3>
+          <p class="text-teal font-mono text-sm mb-4">100년 이상 운용 · 피츠버그 등</p>
+          <p class="text-ink/75 leading-relaxed mb-4">건물보다 <b class="text-ink">토지에 훨씬 높은 세율</b>을 매기는 분리과세. 유휴지·투기적 방치를 줄이고 도심 재생을 촉진.</p>
+          <p class="text-ink/55 text-sm"><b class="text-ink/75">시사점:</b> 국가 전체가 아니라 <b class="text-ink">도시 단위에서도</b> 토지가치세 원리를 부분 적용할 수 있음을 보여주는 실험.</p>
+        </article>
+
+        <article class="global-panel" data-panel="hungary">
+          <h3 class="text-2xl font-extrabold mb-2">헝가리 · 페테르 머저르의 2년</h3>
+          <p class="text-teal font-mono text-sm mb-4">2024~2026 · 소수 개혁세력이 16년 체제를 바꾼 방법</p>
+          <p class="text-ink/75 leading-relaxed mb-4">조직도 자금도 없던 개혁세력이 <b class="text-ink">'부패 = 생활 문제'라는 단일 메시지를 2년간 반복</b>해, 2026년 4월 총선에서 199석 중 141석을 얻었습니다. 기존 지지층을 적으로 돌리지 않고, 보수 유권자도 택할 수 있는 <b class="text-ink">대안적 중도우파</b>로 자리 잡은 것이 핵심.</p>
+          <p class="text-ink/55 text-sm"><b class="text-ink/75">우리의 적용:</b> "부패 = 지대 구조 = 집값 문제"를 하나의 서사로. 이념 대결 대신 질서개혁 프레임으로 보수 무당층과 중도층을 동시에. 다만 한국은 양당 구조이므로 목표는 '단숨의 정권 교체'가 아닌 <b class="text-ink">원내교섭단체급 캐스팅보트</b>입니다.</p>
+        </article>
+      </div>
+      <p class="text-ink/45 text-xs mt-6 foot-note">* 각 제도의 세율·배당액은 연도와 정책 변화에 따라 달라집니다. 본 내용은 제도의 원리와 방향을 소개하는 교육용 요약입니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== [신규] 예상 공격과 반박 (FAQ) ===== -->
+<section id="faq" class="py-24 border-t border-ink/5">
+  <div class="max-w-4xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">FRAME WAR · 자주 듣는 질문</p>
+    <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-12 reveal">"그거 토지 사회주의 아니에요?"</h2>
+
+    <div class="space-y-4">
+      <details class="group rounded-2xl border border-ink/10 bg-white p-6 shadow-sm reveal" open>
+        <summary class="flex cursor-pointer items-center justify-between font-extrabold text-lg list-none">
+          <span><i class="fa-solid fa-circle-question text-clay mr-2"></i>토지 사회주의, 재산권 침해 아닌가요?</span>
+          <i class="fa-solid fa-chevron-down text-ink/40 transition group-open:rotate-180"></i>
+        </summary>
+        <p class="mt-4 text-ink/70 leading-relaxed">몰수·국유화가 아니라 불로소득 일부 환수이며, 현행 세법도 이미 하는 일입니다. 이승만 정부의 농지개혁, 노태우 정부의 토지공개념, 헌법 제122조가 모두 같은 정신에서 출발합니다. <b class="text-ink">"이승만의 농지개혁도 사회주의인가?"</b> 실거주와 생업 기반은 보호하고, 노동·자본 소득은 100% 개인의 것입니다.</p>
+      </details>
+      <details class="group rounded-2xl border border-ink/10 bg-white p-6 shadow-sm reveal">
+        <summary class="flex cursor-pointer items-center justify-between font-extrabold text-lg list-none">
+          <span><i class="fa-solid fa-circle-question text-clay mr-2"></i>세금폭탄, 보유세 공포는요?</span>
+          <i class="fa-solid fa-chevron-down text-ink/40 transition group-open:rotate-180"></i>
+        </summary>
+        <p class="mt-4 text-ink/70 leading-relaxed">증세가 아니라 <b class="text-ink">세제 전환(Tax Shift)</b>입니다. 총세수 중립을 전제로 10년간 단계 전환하며, 걷은 만큼 소득세·법인세·부가세·거래세를 내립니다. 65세 이상 장기 실거주 1주택자는 납부이연(사망·처분 시 정산), 장기거주자는 연간 세부담 증가율 상한을 둡니다. 1단계(2028~30)는 신규 세금 없이 기존 공유지 수익만으로 시작합니다.</p>
+      </details>
+      <details class="group rounded-2xl border border-ink/10 bg-white p-6 shadow-sm reveal">
+        <summary class="flex cursor-pointer items-center justify-between font-extrabold text-lg list-none">
+          <span><i class="fa-solid fa-circle-question text-clay mr-2"></i>지가 폭락하면 은행이 무너지는 거 아닌가요?</span>
+          <i class="fa-solid fa-chevron-down text-ink/40 transition group-open:rotate-180"></i>
+        </summary>
+        <p class="mt-4 text-ink/70 leading-relaxed">가장 진지한 반론이고, 그래서 우리가 가장 먼저 답합니다. 지가 −10/−20/−30% 시나리오별 은행 CET1·PF 부도율을 공개하는 <b class="text-ink">금융안정 스트레스 테스트 백서</b>를 발간하고, 은행 건전성 지표에 연동해 세율 속도를 조절하며, "토지가치세를 올리는 만큼 주담대 위험가중치 하한을 되돌리는" <b class="text-ink">전환경로 동기화</b>로 은행권을 적에서 중립으로 만듭니다. 토지개혁은 금융위기를 일으키지 않아야 완주할 수 있습니다.</p>
+      </details>
+      <details class="group rounded-2xl border border-ink/10 bg-white p-6 shadow-sm reveal">
+        <summary class="flex cursor-pointer items-center justify-between font-extrabold text-lg list-none">
+          <span><i class="fa-solid fa-circle-question text-clay mr-2"></i>공짜 돈 뿌리는 포퓰리즘 아닌가요?</span>
+          <i class="fa-solid fa-chevron-down text-ink/40 transition group-open:rotate-180"></i>
+        </summary>
+        <p class="mt-4 text-ink/70 leading-relaxed">알래스카 영구기금은 40년간 초당적으로 유지된 제도입니다. 토지배당은 세금으로 만든 복지가 아니라 <b class="text-ink">공동 자산 수익의 정당한 배당</b>입니다. 기금은 IFRS형 적립·배당·운용수익 중간합계와 외부감사로 공시하고, 개발이익은 전액 즉시 배당하지 않고 40%만 배당·20%는 경기안정화준비금으로 적립합니다.</p>
+      </details>
+      <details class="group rounded-2xl border border-ink/10 bg-white p-6 shadow-sm reveal">
+        <summary class="flex cursor-pointer items-center justify-between font-extrabold text-lg list-none">
+          <span><i class="fa-solid fa-circle-question text-clay mr-2"></i>스테이블코인 배당? 국가가 내 거래를 감시하는 거 아니에요?</span>
+          <i class="fa-solid fa-chevron-down text-ink/40 transition group-open:rotate-180"></i>
+        </summary>
+        <p class="mt-4 text-ink/70 leading-relaxed">정반대입니다. 우리는 영장 없는 거래 추적, 사용처·유효기간 지정(프로그래머블 머니), 강제 수령 같은 <b class="text-ink">감시형·통제형 소매 CBDC를 법으로 금지</b>하자는 쪽입니다. 배당은 현금·은행계좌·선불수단·규제형 스테이블코인 중 <b class="text-ink">수령자가 자유롭게 선택</b>하며, 스테이블코인 강제 지급은 금지합니다. 감시화폐보다 선택권.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 참여 CTA ===== -->
+<section id="join" class="py-28 border-t border-ink/5 relative overflow-hidden">
+  <div class="hero-glow hero-glow-bottom" aria-hidden="true"></div>
+  <div class="max-w-3xl mx-auto px-5 text-center relative z-10">
+    <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-5 reveal">
+      규칙을 바꾸는 건<br /><span class="text-teal">우리 세대의 몫</span>입니다
+    </h2>
+    <p class="text-ink/65 mb-10 reveal">
+      화만 내고 끝낼 건가요? 이 흐름에 이름을 남기세요. 뉴스레터로 3대 특권 해체의 여정을 함께합니다.<br />
+      <span class="text-sm text-ink/50">화 내는 사람 말고, 설명하는 사람이 됩시다.</span>
+    </p>
+    <form id="join-form" class="flex flex-col gap-3 max-w-lg mx-auto reveal">
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input id="join-email" type="email" required placeholder="이메일 주소" class="flex-1 rounded-full bg-white border border-ink/15 px-5 py-3.5 text-ink placeholder-ink/40 focus:border-teal focus:ring-2 focus:ring-teal/20 focus:outline-none shadow-sm" />
+        <button type="submit" class="rounded-full bg-teal px-7 py-3.5 font-extrabold text-white hover:bg-tealdark hover:scale-105 transition whitespace-nowrap shadow-lg shadow-teal/25">
+          함께하기
+        </button>
+      </div>
+      <label for="join-consent" class="flex items-start gap-2 text-left text-xs text-ink/55 leading-relaxed cursor-pointer select-none">
+        <input id="join-consent" name="consent" type="checkbox" required class="mt-0.5 h-4 w-4 shrink-0 accent-teal" />
+        <span><b class="text-ink/75">(필수)</b> 뉴스레터 발송을 위한 <b class="text-ink/75">이메일 주소 수집·이용</b>에 동의합니다. 동의는 언제든 철회할 수 있고, 철회하면 지체 없이 파기합니다. <span class="text-ink/45">(보유기간: 동의 철회 시까지)</span> 자세한 내용은 <a href="#/policy" data-page="policy" class="text-teal underline decoration-teal/40 hover:decoration-teal">정책 페이지</a>를 확인해 주세요.</span>
+      </label>
+    </form>
+    <p id="join-msg" class="mt-4 text-sm text-teal font-semibold h-5"></p>
+<p class="mt-3 text-xs text-ink/40"><a href="#/admin" data-page="admin" class="hover:text-teal transition"><i class="fa-solid fa-lock mr-1"></i>운영자 페이지</a></p>
+
+    <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm reveal">
+      <a href="#/salriki" data-page="salriki" class="rounded-full border border-ink/15 bg-white px-5 py-2.5 font-bold text-ink/80 hover:border-teal hover:text-teal transition"><i class="fa-solid fa-flag mr-1"></i> 대한민국 살리기</a>
+      <a href="https://blog.naver.com/hoyaya" target="_blank" rel="noopener noreferrer" class="rounded-full border border-ink/15 bg-white px-5 py-2.5 font-bold text-ink/80 hover:border-teal hover:text-teal transition"><i class="fa-solid fa-book-open mr-1"></i> 연구소 블로그</a>
+    </div>
+
+    <div id="sns-links" class="mt-10 flex justify-center gap-5 text-ink/50 reveal">
+      <a href="https://www.instagram.com/digitaldaedong/" data-sns="instagram" data-handle="@digitaldaedong" data-label="인스타그램" target="_blank" rel="noopener noreferrer nofollow" referrerpolicy="no-referrer" class="hover:text-teal transition" aria-label="인스타그램 @digitaldaedong" title="인스타그램 @digitaldaedong"><i class="fa-brands fa-instagram text-2xl"></i></a>
+      <a href="https://www.youtube.com/@landnliberty" data-sns="youtube" data-handle="@landnliberty" data-label="유튜브" target="_blank" rel="noopener noreferrer nofollow" referrerpolicy="no-referrer" class="hover:text-teal transition" aria-label="유튜브 @landnliberty" title="유튜브 @landnliberty"><i class="fa-brands fa-youtube text-2xl"></i></a>
+      <a href="https://x.com/digitaldaedong" data-sns="x" data-handle="@digitaldaedong" data-label="X (트위터)" target="_blank" rel="noopener noreferrer nofollow" referrerpolicy="no-referrer" class="hover:text-teal transition" aria-label="X @digitaldaedong" title="X @digitaldaedong"><i class="fa-brands fa-x-twitter text-2xl"></i></a>
+      <a href="https://www.threads.com/@digitaldaedong" data-sns="threads" data-handle="@digitaldaedong" data-label="스레드" target="_blank" rel="noopener noreferrer nofollow" referrerpolicy="no-referrer" class="hover:text-teal transition" aria-label="스레드 @digitaldaedong" title="스레드 @digitaldaedong"><i class="fa-brands fa-threads text-2xl"></i></a>
+    </div>
+    <p class="mt-4 text-xs text-ink/40 reveal">
+      <i class="fa-solid fa-shield-halved mr-1"></i>외부 SNS로 이동합니다. 이 사이트는 어떤 SNS 계정 정보에도 접근하지 않습니다.
+    </p>
+  </div>
+</section>
+
+<!-- ===== SNS 이동 안내 모달 ===== -->
+<div id="sns-modal" class="sns-modal" hidden role="dialog" aria-modal="true" aria-labelledby="sns-modal-title">
+  <div class="sns-modal-backdrop" data-sns-close></div>
+  <div class="sns-modal-card">
+    <button type="button" class="sns-modal-x" data-sns-close aria-label="닫기"><i class="fa-solid fa-xmark"></i></button>
+    <p class="text-xs font-mono text-teal mb-2"><i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>외부 사이트로 이동</p>
+    <h3 id="sns-modal-title" class="text-2xl font-extrabold mb-1"><span id="sns-modal-label">SNS</span></h3>
+    <div class="flex items-center gap-2 mb-5">
+      <code id="sns-modal-handle" class="font-mono text-teal text-lg">@handle</code>
+      <button type="button" id="sns-copy" class="rounded-full border border-ink/15 px-3 py-1 text-xs font-semibold text-ink/70 hover:border-teal hover:text-teal transition"><i class="fa-regular fa-copy mr-1"></i>복사</button>
+    </div>
+    <ul class="text-sm text-ink/65 space-y-2 mb-6 leading-relaxed">
+      <li><i class="fa-solid fa-circle-info text-gold mr-2"></i>로그인 화면이 나오면 그건 <b class="text-ink">해당 SNS 플랫폼의 요구</b>입니다. 이 사이트와는 무관하며, 계정 정보는 이 사이트로 전달되지 않습니다.</li>
+      <li><i class="fa-solid fa-user-slash text-gold mr-2"></i>로그인 없이 보려면 <b class="text-ink">"나중에 / 취소"</b>를 누르거나, SNS 앱에서 위 계정명을 직접 검색하세요.</li>
+      <li><i class="fa-solid fa-user-check text-gold mr-2"></i>이미 로그인된 계정이 보인다면 <b class="text-ink">이 기기에 저장된 본인 로그인</b>입니다. 공용 기기라면 SNS에서 로그아웃하세요.</li>
+    </ul>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a id="sns-go" href="#" target="_blank" rel="noopener noreferrer nofollow" referrerpolicy="no-referrer" class="flex-1 text-center rounded-full bg-teal px-6 py-3 font-extrabold text-white hover:bg-tealdark transition">새 탭에서 열기 <i class="fa-solid fa-arrow-right ml-1"></i></a>
+      <button type="button" data-sns-close class="rounded-full border border-ink/15 px-6 py-3 font-semibold text-ink/70 hover:border-ink/40 transition">닫기</button>
+    </div>
+    <label class="mt-4 flex items-center gap-2 text-xs text-ink/50 cursor-pointer select-none">
+      <input id="sns-skip" type="checkbox" class="accent-teal" /> 다음부터 이 안내 없이 바로 열기
+    </label>
+  </div>
+</div>
+</main>
+
+<!-- ===== 푸터 ===== -->
+<footer class="border-t border-ink/10 bg-white py-10">
+  <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-ink/50">
+    <p class="font-mono">© 2026 <b>토지와 자유</b> · www.LandnLiberty.kr</p>
+    <ul class="flex flex-wrap gap-4 text-xs font-semibold">
+      <li><a href="#/policy" data-page="policy" class="hover:text-teal">정책</a></li>
+      <li><a href="#/salriki" data-page="salriki" class="hover:text-teal">대한민국 살리기</a></li>
+    </ul>
+    <p>디지털 대동법 연구소(DDLI) · <a href="https://blog.naver.com/hoyaya" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="hover:text-teal transition">blog.naver.com/hoyaya</a>
+      <a href="/admin" class="ml-2 text-ink/25 hover:text-teal transition" aria-label="운영자 페이지" title="운영자 전용"><i class="fa-solid fa-lock text-xs"></i></a>
+    </p>
+  </div>
+</footer></div><div class="lnl-page" id="page-policy" hidden>
+<section class="page-hero grid-bg relative">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto px-5 relative z-10">
+    <p class="breadcrumb text-xs font-mono text-ink/70 mb-4"><a href="#/" data-page="home">홈</a> / 정책</p>
+    <p class="font-mono text-teal text-sm font-bold mb-3">POLICY · 한국형 경쟁질서 자유주의</p>
+    <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight">반시장이 아니라,<br /><span class="text-teal">반특권</span>입니다</h1>
+    <p class="mt-6 max-w-2xl text-lg text-ink/75 leading-relaxed">
+      "국가는 시장을 지휘하지 않는다. 그러나 경쟁이 무너지지 않도록 질서를 설계한다." 김재익식 안정, 바젤Ⅲ식 건전성, IFRS 18식 투명성, 헨리 조지식 토지가치 환수를 결합한 경제 운영 원리입니다.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-2 text-sm">
+      <a href="#/policy#principles" data-page="policy" data-anchor="principles" class="rounded-full bg-white border border-ink/15 px-4 py-2 font-bold text-ink hover:border-teal hover:text-teal transition">5대 원칙</a>
+      <a href="#/policy#packages" data-page="policy" data-anchor="packages" class="rounded-full bg-white border border-ink/15 px-4 py-2 font-bold text-ink hover:border-teal hover:text-teal transition">5대 정책 패키지</a>
+      <a href="#/policy#tax" data-page="policy" data-anchor="tax" class="rounded-full bg-white border border-ink/15 px-4 py-2 font-bold text-ink hover:border-teal hover:text-teal transition">세제 전환표</a>
+      <a href="#/policy#laws" data-page="policy" data-anchor="laws" class="rounded-full bg-white border border-ink/15 px-4 py-2 font-bold text-ink hover:border-teal hover:text-teal transition">9대 법안</a>
+      <a href="#/policy#hundred" data-page="policy" data-anchor="hundred" class="rounded-full bg-white border border-ink/15 px-4 py-2 font-bold text-ink hover:border-teal hover:text-teal transition">100일 입법</a>
+      <a href="#/policy#messages" data-page="policy" data-anchor="messages" class="rounded-full bg-white border border-ink/15 px-4 py-2 font-bold text-ink hover:border-teal hover:text-teal transition">대상별 메시지</a>
+    </div>
+    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 10월 9일 (금)</b> · 시각은 1분마다 자동 갱신</p>
+  </div>
+</section>
+
+<!-- 5대 원칙 -->
+<section id="principles" class="py-20">
+  <div class="max-w-6xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">01 · 기본 노선</p>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-10 reveal">한국형 경쟁질서 자유주의 5대 원칙</h2>
+    <div class="grid md:grid-cols-5 gap-4">
+      <article class="package-card reveal"><p class="font-mono text-teal text-xs font-bold">01</p><h3 class="font-extrabold mt-2 mb-2">사유재산권 보호</h3><p class="text-ink/65 text-sm leading-relaxed">토지·자본·기업 활동의 자유를 보장하되, 독점적 지대 추구는 제한한다.</p></article>
+      <article class="package-card reveal"><p class="font-mono text-teal text-xs font-bold">02</p><h3 class="font-extrabold mt-2 mb-2">경쟁질서 보장</h3><p class="text-ink/65 text-sm leading-relaxed">재벌·플랫폼·금융·토지 독과점과 진입장벽을 억제한다.</p></article>
+      <article class="package-card reveal"><p class="font-mono text-teal text-xs font-bold">03</p><h3 class="font-extrabold mt-2 mb-2">물가 안정</h3><p class="text-ink/65 text-sm leading-relaxed">통화·재정 남용을 억제하고 실질 구매력을 보호한다. 인플레이션은 가장 잔인한 세금.</p></article>
+      <article class="package-card reveal"><p class="font-mono text-teal text-xs font-bold">04</p><h3 class="font-extrabold mt-2 mb-2">재정 규율</h3><p class="text-ink/65 text-sm leading-relaxed">적자 재정의 상시화를 막고 복지는 지속 가능한 범위에서 설계한다.</p></article>
+      <article class="package-card reveal"><p class="font-mono text-teal text-xs font-bold">05</p><h3 class="font-extrabold mt-2 mb-2">사회적 하한선</h3><p class="text-ink/65 text-sm leading-relaxed">경쟁에서 탈락한 사람에게 최소 안전망을 제공하되 시장 가격 왜곡은 최소화한다.</p></article>
+    </div>
+
+    <div class="mt-10 tlq-table-wrap reveal">
+      <table class="tlq-table">
+        <thead><tr><th>구분</th><th>방임형 자유주의</th><th>경쟁질서 자유주의 (우리)</th></tr></thead>
+        <tbody>
+          <tr><td class="font-bold">국가 역할</td><td>최소</td><td class="text-teal font-bold">강한 "규칙 설계자"</td></tr>
+          <tr><td class="font-bold">시장 이해</td><td>자연적 균형</td><td class="text-teal font-bold">설계된 경쟁 구조</td></tr>
+          <tr><td class="font-bold">독점</td><td>자연 발생 허용</td><td class="text-teal font-bold">적극적으로 제거</td></tr>
+          <tr><td class="font-bold">정책</td><td>비개입</td><td class="text-teal font-bold">질서 개입</td></tr>
+          <tr><td class="font-bold">목표</td><td>자유</td><td class="text-teal font-bold">자유 + 경쟁 유지</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl border border-clay/30 bg-white p-6 reveal">
+        <p class="font-mono text-xs font-bold text-clay mb-3"><i class="fa-solid fa-ban mr-1"></i>금지해야 할 국가 운영 규칙</p>
+        <ul class="space-y-2 text-sm text-ink/75">
+          <li><i class="fa-solid fa-xmark text-clay mr-2"></i>가격 직접 통제</li>
+          <li><i class="fa-solid fa-xmark text-clay mr-2"></i>행정적 대출 총량규제 의존</li>
+          <li><i class="fa-solid fa-xmark text-clay mr-2"></i>특정 기업·노조·이익집단 봐주기</li>
+          <li><i class="fa-solid fa-xmark text-clay mr-2"></i>관치금융(정치적 신용배분)</li>
+          <li><i class="fa-solid fa-xmark text-clay mr-2"></i>선거용 재정 살포</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-teal/30 bg-white p-6 reveal">
+        <p class="font-mono text-xs font-bold text-teal mb-3"><i class="fa-solid fa-check-double mr-1"></i>강화해야 할 국가 운영 규칙</p>
+        <ul class="space-y-2 text-sm text-ink/75">
+          <li><i class="fa-solid fa-check text-teal mr-2"></i>독점·카르텔 해체</li>
+          <li><i class="fa-solid fa-check text-teal mr-2"></i>DSR·LTV·경기대응완충자본을 결합한 위험기반 거시건전성 규제</li>
+          <li><i class="fa-solid fa-check text-teal mr-2"></i>부동산(토지) 불로소득 추적</li>
+          <li><i class="fa-solid fa-check text-teal mr-2"></i>금융 리스크 감독, 은행 자본 건전성 감독(바젤Ⅲ)</li>
+          <li><i class="fa-solid fa-check text-teal mr-2"></i>재정준칙 확립, 사유재산권·계약질서 보호</li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-ink/50 text-xs mt-4 reveal foot-note">* "대출 총량규제 폐지"라는 단순 구호는 쓰지 않습니다. 관치는 줄이되 건전성 감독(차주 단위 DSR·스트레스 DSR·다주택 높은 위험가중치 등 금융안전벨트)은 유지합니다.</p>
+  </div>
+</section>
+
+<!-- 5대 정책 패키지 -->
+<section id="packages" class="py-20 bg-mist border-t border-ink/5">
+  <div class="max-w-6xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">02 · 분야별 적용</p>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-10 reveal">5대 정책 패키지</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <article class="package-card reveal"><i class="fa-solid fa-seedling text-teal text-xl"></i><h3 class="font-extrabold mt-3 mb-2">① 토지가치세 + 광역시도별 토지배당기금</h3><p class="text-ink/65 text-sm leading-relaxed">건물 감세·토지 증세. 개발이익은 17개 광역 기금에 적립해 주민 1/N 배당.</p></article>
+      <article class="package-card reveal"><i class="fa-solid fa-arrow-trend-down text-teal text-xl"></i><h3 class="font-extrabold mt-3 mb-2">② 3대 세금 감세</h3><p class="text-ink/65 text-sm leading-relaxed">소득세·법인세·부가가치세 단계적 인하. 노력소득은 가볍게, 토지가치는 공평하게.</p></article>
+      <article class="package-card reveal"><i class="fa-solid fa-building-columns text-teal text-xl"></i><h3 class="font-extrabold mt-3 mb-2">③ 관치금융 해체 + 금융 건전성 강화</h3><p class="text-ink/65 text-sm leading-relaxed">정치적 신용배분을 해체하고 위험기반 거시건전성 규제로 전환. 현금흐름 기반 중소기업 평가.</p></article>
+      <article class="package-card reveal"><i class="fa-solid fa-users-slash text-teal text-xl"></i><h3 class="font-extrabold mt-3 mb-2">④ 4대 특권 동시 개혁</h3><p class="text-ink/65 text-sm leading-relaxed">재벌 해체가 아니라 특권 해체 — 재벌·노조·관료·전문직 특권을 동시에.</p></article>
+      <article class="package-card reveal"><i class="fa-solid fa-scale-balanced text-teal text-xl"></i><h3 class="font-extrabold mt-3 mb-2">⑤ 물가 안정·재정준칙·중앙은행 독립</h3><p class="text-ink/65 text-sm leading-relaxed">균형재정 원칙·채무 상한 헌법 명문화. 김재익 안정화 시책의 현대적 계승.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 세제 전환표 -->
+<section id="tax" class="py-20 border-t border-ink/5">
+  <div class="max-w-6xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">03 · 디지털 대동법 세제 설계</p>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 reveal">복잡한 부동산세를 하나의 투명한 토지세로</h2>
+    <p class="text-ink/65 max-w-2xl mb-10 reveal">모든 수치는 「토지가치세 금융안정 스트레스 테스트」 백서로 확정하며, 창당 전에는 확정 세율이 아니라 <b class="text-ink">설계 원칙</b>으로 제시합니다.</p>
+    <div class="tlq-table-wrap reveal">
+      <table class="tlq-table">
+        <thead><tr><th>세목</th><th>방향</th><th>세부 내용</th></tr></thead>
+        <tbody>
+          <tr><td class="font-bold">토지가치세</td><td class="text-teal font-bold">신설 (핵심 재원)</td><td>목표실효세율 = 감세 필요재원 + 지방재정 보전액 + 배당재원 − 기존 토지세수. 실거주 보호와 총세수 중립 전제로 10년 단계 전환. 건물·개량 가치는 과세 제외.</td></tr>
+          <tr><td class="font-bold">종합부동산세</td><td>단계적·조건부 통합</td><td>분리평가 정확성 → 지방재정 보전 공식 → 고령층 납부이연 → 시범 도입 → 중복 통합 → 최종 폐지 여부 결정.</td></tr>
+          <tr><td class="font-bold">취득세·등록세</td><td>단계적 인하</td><td>거래 활성화, 토지 보유세로 과세 중심 이동.</td></tr>
+          <tr><td class="font-bold">양도소득세</td><td>완화 (토지 제외)</td><td>실거주 주택 양도차익 비과세 확대. 토지 지가 상승분은 토지가치세로 환수.</td></tr>
+          <tr><td class="font-bold">소득세</td><td>중산층 감세</td><td>중간 세율 구간 완화, 근로소득 공제 현실화.</td></tr>
+          <tr><td class="font-bold">법인세</td><td>투자·고용 감세</td><td>IFRS 18 "영업" 범주 이익(생산·판매)에만 감세. "투자" 범주 이익(부동산·금융자산 운용)은 현행 유지 또는 강화.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-3 gap-5">
+      <div class="rounded-2xl bg-white border border-ink/10 p-6 reveal">
+        <p class="font-mono text-xs font-bold text-teal mb-2">실거주 1주택 고령층 보호</p>
+        <p class="text-ink/70 text-sm leading-relaxed">65세 이상 장기 실거주 1주택자 납부이연(사망·처분 시 정산), 상속인 선택 분할정산, 이연 이자율 법정 상한. 장기거주자 연간 세부담 증가율 상한.</p>
+      </div>
+      <div class="rounded-2xl bg-white border border-ink/10 p-6 reveal">
+        <p class="font-mono text-xs font-bold text-teal mb-2">개발이익 산정 기준선</p>
+        <p class="text-ink/70 text-sm leading-relaxed">(사업 완료 후 토지 감정평가액 − 착수 전 감정평가액) − (실제 투입 비용 × 정상 이윤율 8%). 재건축·재개발은 1단계 환수 유예, 2단계부터 10→20→30% 단계 인상.</p>
+      </div>
+      <div class="rounded-2xl bg-white border border-ink/10 p-6 reveal">
+        <p class="font-mono text-xs font-bold text-teal mb-2">지급 레일 3층 구조</p>
+        <p class="text-ink/70 text-sm leading-relaxed">① 현금·예금(시민 주권) ② 도매 CBDC/RTGS(기관 간) ③ 바젤 적격·완전준비·실시간 공시 원화 스테이블 코인(배당·소액결제). 스테이블코인 강제 지급 금지.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9대 법안 -->
+<section id="laws" class="py-20 bg-mist border-t border-ink/5">
+  <div class="max-w-6xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">04 · 2027.4~7 법안 캠페인</p>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 reveal">9대 법안</h2>
+    <p class="text-ink/65 max-w-2xl mb-10 reveal">기존 7대 법안에 바젤Ⅲ·IFRS 18 대응에서 도출된 신규 2개(<span class="inline-block rounded-full bg-gold/20 px-2 text-xs font-bold text-[#8a6d12]">NEW</span>)를 더했습니다.</p>
+    <div class="grid md:grid-cols-2 gap-4">
+      <article class="law-card reveal"><span class="law-num">01</span><div><h3 class="font-extrabold">국회의원 총비용 공개법</h3><p class="text-ink/60 text-sm mt-1">1인당 연 7~8억 원 비용의 전면 공개·외부 독립위원회 재산정.</p></div></article>
+      <article class="law-card reveal"><span class="law-num">02</span><div><h3 class="font-extrabold">당일투표·수개표법</h3><p class="text-ink/60 text-sm mt-1">당일투표 원칙, 수개표 의무화(전자개표기 보조), 시민 참관 확대, 투표용지 110% 인쇄.</p></div></article>
+      <article class="law-card reveal"><span class="law-num">03</span><div><h3 class="font-extrabold">선관위 외부감사법</h3><p class="text-ink/60 text-sm mt-1">선관위 예산·회계 감사원 감사 의무화, 위원 임명 다원화.</p></div></article>
+      <article class="law-card reveal"><span class="law-num">04</span><div><h3 class="font-extrabold">토지가치세 기본법</h3><p class="text-ink/60 text-sm mt-1">건물 제외 토지가치 과세, 10년 단계 전환, 실거주 보호. 금융안정 스트레스 테스트 결과 첨부.</p></div></article>
+      <article class="law-card reveal"><span class="law-num">05</span><div><h3 class="font-extrabold">광역시도별 토지배당기금법</h3><p class="text-ink/60 text-sm mt-1">17개 광역 기금 설치, 배당 40·인프라 30·안정화 20·청년 10 배분.</p></div></article>
+      <article class="law-card reveal"><span class="law-num">06</span><div><h3 class="font-extrabold">소매 CBDC 프로그래밍·강제수납 제한법</h3><p class="text-ink/60 text-sm mt-1">감시형·통제형 CBDC만 금지하는 조건부 금지. 도매 CBDC·프라이버시형 파일럿은 허용.</p></div></article>
+      <article class="law-card reveal"><span class="law-num">07</span><div><h3 class="font-extrabold">원화 스테이블 코인 지급결제법</h3><p class="text-ink/60 text-sm mt-1">준비자산·액면 상환·일별 공시·외부감사 적격요건. 디지털자산기본법 2단계 입법과 연동.</p></div></article>
+      <article class="law-card is-new reveal"><span class="law-num">08</span><div><h3 class="font-extrabold">금융회사 토지·부동산 익스포저 공시 및 편중위험 보고법 <span class="inline-block rounded-full bg-gold/20 px-2 text-[10px] font-bold text-[#8a6d12] align-middle">NEW</span></h3><p class="text-ink/60 text-sm mt-1">바젤 공시 정신의 국내 시민형 버전. 업무용/투자용 토지 구분, PF 우발채무, 유휴토지 공시.</p></div></article>
+      <article class="law-card is-new reveal"><span class="law-num">09</span><div><h3 class="font-extrabold">공공·준공공 기금 IFRS형 성과·MPM 공시법 <span class="inline-block rounded-full bg-gold/20 px-2 text-[10px] font-bold text-[#8a6d12] align-middle">NEW</span></h3><p class="text-ink/60 text-sm mt-1">토지배당기금에 선적용. 적립/배당/운용수익/비용 중간합계 + 고정 MPM 3~5개.</p></div></article>
+    </div>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
+      <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-ink/10 bg-white p-5 hover:border-teal hover:-translate-y-0.5 transition block"><p class="font-mono text-xs font-bold text-teal mb-1"><i class="fa-solid fa-scale-balanced mr-1"></i>국가법령정보센터</p><p class="text-ink/60 text-sm leading-snug">법령·조문 원문 — 법안 비교의 기준점</p><span class="font-mono text-xs text-ink/40">www.law.go.kr</span></a>
+      <a href="https://record.assembly.go.kr/assembly/mnts/main.do" target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-ink/10 bg-white p-5 hover:border-teal hover:-translate-y-0.5 transition block"><p class="font-mono text-xs font-bold text-teal mb-1"><i class="fa-solid fa-landmark mr-1"></i>국회 회의록</p><p class="text-ink/60 text-sm leading-snug">본회의·상임위 발언·표결 기록</p><span class="font-mono text-xs text-ink/40">record.assembly.go.kr</span></a>
+      <a href="https://opinion.lawmaking.go.kr" target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-ink/10 bg-white p-5 hover:border-teal hover:-translate-y-0.5 transition block"><p class="font-mono text-xs font-bold text-teal mb-1"><i class="fa-solid fa-pen-to-square mr-1"></i>국민참여입법</p><p class="text-ink/60 text-sm leading-snug">입법예고 의견 제출 — 법안·시행령 의견</p><span class="font-mono text-xs text-ink/40">opinion.lawmaking.go.kr</span></a>
+      <a href="https://www.gwanbo.go.kr" target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-ink/10 bg-white p-5 hover:border-teal hover:-translate-y-0.5 transition block"><p class="font-mono text-xs font-bold text-teal mb-1"><i class="fa-solid fa-newspaper mr-1"></i>관보</p><p class="text-ink/60 text-sm leading-snug">법률 공포·감사 결과의 최종 증거</p><span class="font-mono text-xs text-ink/40">www.gwanbo.go.kr</span></a>
+    </div>
+    <p class="text-ink/50 text-xs mt-4 reveal foot-note">* 정보공개청구·민원·신고 등 서류 작성용 공공 창구 전체는 <a href="#/salriki" data-page="salriki" data-anchor="toolkit" class="text-teal underline decoration-teal/40 hover:decoration-teal">살리기 페이지 툴킷</a>의 "공공 서류·청구 창구 15종"에 모여 있습니다.</p>
+  </div>
+</section>
+
+<!-- 100일 입법 로드맵 -->
+<section id="hundred" class="py-20 border-t border-ink/5">
+  <div class="max-w-6xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">05 · 총선 후</p>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-10 reveal">100일 입법 로드맵</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-3xl border border-ink/10 bg-white p-7 reveal">
+        <p class="font-mono text-4xl font-bold text-teal">D+30</p>
+        <ul class="mt-4 space-y-2 text-sm text-ink/75">
+          <li><i class="fa-solid fa-file-signature text-teal mr-2"></i>국회의원 특권 해체 법안 발의</li>
+          <li><i class="fa-solid fa-file-signature text-teal mr-2"></i>3대 특권 해체 개헌안 초안 공개</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border border-ink/10 bg-white p-7 reveal">
+        <p class="font-mono text-4xl font-bold text-teal">D+60</p>
+        <ul class="mt-4 space-y-2 text-sm text-ink/75">
+          <li><i class="fa-solid fa-file-signature text-teal mr-2"></i>선관위 외부감사·수개표 법안 발의</li>
+          <li><i class="fa-solid fa-file-signature text-teal mr-2"></i>소매 CBDC 프로그래밍·강제수납 제한법 발의</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border border-teal bg-gradient-to-br from-teal to-tealdark text-white p-7 reveal">
+        <p class="font-mono text-4xl font-bold">D+100</p>
+        <ul class="mt-4 space-y-2 text-sm text-white/85">
+          <li><i class="fa-solid fa-file-signature mr-2"></i>토지가치세 기본법 (스트레스 테스트 첨부)</li>
+          <li><i class="fa-solid fa-file-signature mr-2"></i>광역시도 토지배당기금법</li>
+          <li><i class="fa-solid fa-file-signature mr-2"></i>소득세·법인세·부가세 감세 패키지</li>
+          <li><i class="fa-solid fa-file-signature mr-2"></i>원화 스테이블 코인 지급결제법</li>
+          <li><i class="fa-solid fa-file-signature mr-2"></i>토지·부동산 익스포저 공시법</li>
+          <li><i class="fa-solid fa-file-signature mr-2"></i>기금 IFRS형 성과·MPM 공시법</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 대상별 메시지 -->
+<section id="messages" class="py-20 bg-mist border-t border-ink/5">
+  <div class="max-w-6xl mx-auto px-5">
+    <p class="font-mono text-teal text-sm font-bold mb-3 reveal">06 · 집값을 잡는 가장 보수적인 방법</p>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-10 reveal">당신에게 이 개혁은 무엇인가요?</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <article class="package-card reveal"><p class="font-mono text-xs font-bold text-teal">2030 무주택 청년</p><p class="mt-2 font-bold leading-relaxed">"집이 없는 것도, 통장이 안 느는 것도, '담보 있는 특권'이 신용과 지대를 먼저 가져가기 때문입니다. 부모 찬스 없는 청년도 대한민국 땅의 공동 상속자입니다."</p></article>
+      <article class="package-card reveal"><p class="font-mono text-xs font-bold text-teal">보수층</p><p class="mt-2 font-bold leading-relaxed">"좌파식 토지국유화가 아니라 이승만 정부 - 농지개혁 → 전두환 정부 - 김재익 안정 자유주의 → 노태우 정부 - 토지공개념을 잇는 보수주의 개혁입니다."</p></article>
+      <article class="package-card reveal"><p class="font-mono text-xs font-bold text-teal">중도층</p><p class="mt-2 font-bold leading-relaxed">"부동산 불로소득은 줄이고, 일해서 번 돈의 세금은 낮추자."</p></article>
+      <article class="package-card reveal"><p class="font-mono text-xs font-bold text-teal">1주택 고령층</p><p class="mt-2 font-bold leading-relaxed">"오래 산 집 때문에 쫓겨나지 않게 납부이연과 상한제를 둡니다."</p></article>
+      <article class="package-card reveal"><p class="font-mono text-xs font-bold text-teal">기업</p><p class="mt-2 font-bold leading-relaxed">"토지 투기보다 생산·기술·수출·고용에 보상하는 세제로. 부동산 담보보다 현금 흐름, 회계 착시보다 진짜 이익."</p></article>
+      <article class="package-card reveal"><p class="font-mono text-xs font-bold text-teal">소상공인</p><p class="mt-2 font-bold leading-relaxed">"임대료만의 문제가 아니라 상가 담보·보증·위험가중이 만드는 임대 권력입니다. 구조를 바꾸고 토지배당으로 소비를 살립니다."</p></article>
+      <article class="package-card reveal"><p class="font-mono text-xs font-bold text-teal">5060 부모세대</p><p class="mt-2 font-bold leading-relaxed">"자녀가 집 살 수 있는 구조를 만드는 보수적인 개혁입니다. 농지개혁처럼, 보수가 먼저."</p></article>
+      <article class="package-card reveal"><p class="font-mono text-xs font-bold text-teal">재정 건전성 중시 중도층</p><p class="mt-2 font-bold leading-relaxed">"알래스카 영구기금처럼 지속 가능하게 설계된 보편 배당. 상장사보다 엄격한 기준으로 공시하는 최초의 조직."</p></article>
+      <article class="package-card reveal bg-gradient-to-br from-teal to-tealdark text-white border-teal"><p class="font-mono text-xs font-bold text-white/80">총선용 한 줄</p><p class="mt-2 font-extrabold text-lg leading-relaxed">"땅값에 돈이 묶이는 나라에서, 일하는 기업에 돈이 흐르는 나라로."</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 text-center border-t border-ink/5">
+  <div class="max-w-3xl mx-auto px-5 reveal">
+    <h2 class="text-2xl sm:text-3xl font-extrabold mb-4">정책이 마음에 드셨다면</h2>
+    <p class="text-ink/65 mb-8">뉴스레터로 백서·법안 초안·팩트체크를 먼저 받아보세요.</p>
+    <a href="#/" data-page="home" data-anchor="join" class="inline-flex rounded-full bg-teal px-8 py-4 font-extrabold text-white hover:bg-tealdark transition shadow-lg shadow-teal/25">함께하기 <i class="fa-solid fa-arrow-right ml-2"></i></a>
+  </div>
+</section>
+<footer class="border-t border-ink/10 bg-white py-10">
+  <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-ink/50">
+    <p class="font-mono">© 2026 <b>토지와 자유</b> · www.LandnLiberty.kr</p>
+    <ul class="flex flex-wrap gap-4 text-xs font-semibold">
+      <li><a href="#/" data-page="home" class="hover:text-teal">홈</a></li>
+      <li><a href="#/salriki" data-page="salriki" class="hover:text-teal">대한민국 살리기</a></li>
+    </ul>
+    <p>디지털 대동법 연구소(DDLI) · <a href="https://blog.naver.com/hoyaya" target="_blank" rel="noopener noreferrer" class="hover:text-teal transition">blog.naver.com/hoyaya</a></p>
+  </div>
+</footer></div><div class="lnl-page lnl-sal" id="page-salriki" hidden>
+<nav><div class="in">
+  <b><i class="fa-solid fa-bolt bolt" aria-hidden="true"></i>대한민국 살리기</b>
+  <a class="tab" href="#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a>
+  <a class="tab" href="#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a>
+  <a class="tab" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a>
+  <a class="tab" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a>
+  <a class="tab" href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a>
+  <a class="tab" href="#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
+  <a class="tab" href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a>
+  <a class="home-link" href="#/" data-page="home"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>토지와 자유 홈</a>
+</div></nav>
+
+<header class="hero">
+<small>CIVIC CAMPAIGN 2026</small>
+<h1>망가져 가는 대한민국<br><span>살리기</span></h1>
+<p>단정 말고 <b style="color:#fff">검증</b>. 분노 말고 <b style="color:#fff">절차</b>.<br>헌법이 이미 우리 손에 쥐여 준 도구로 권력을 감시합니다.</p>
+<p class="slogan">안보는 빈틈없이. <b>재정</b>을 <b>책임</b> 있게. 권력은 헌법 안에.</p>
+<p class="os">정권은 <b>앱</b>, 헌법은 <b>OS</b>. 앱이 OS 권한을 흡수하는 순간을 시민이 문서로 감시합니다.</p>
+<p class="clockline">현재 기준 <b data-date="today" data-date-format="fulltime">2026년 10월 9일 (금)</b> · 시각은 1분마다 자동 갱신됩니다</p>
+<a class="btn p" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">지금 할 수 있는 일 보기</a>
+<a class="btn g" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈 팩트 체크</a>
+<a class="btn g" href="#/salriki#demands" data-page="salriki" data-anchor="demands">16대 요구안 보기</a>
+</header>
+
+<section id="principle">
+<h2>🧭 하나의 원칙</h2>
+<p class="sub">“근대인은 사적 독립을 누릴 권리가 있다. 그러나 정치적 감시를 포기하는 순간, 그 독립마저 사라진다.” — 벵자맹 콩스탕, 1819</p>
+<div class="grid">
+<div class="card"><span class="tag fact">확정 사실</span><h3>판결 · 공포된 법률 · 공식 통계</h3><p>문서로 확인된 것만 말합니다. 가장 강력한 무기입니다.</p></div>
+<div class="card"><span class="tag probe">수사·진행 중</span><h3>특검 · 소송 · 감사 진행 사안</h3><p>결론이 나기 전엔 단정하지 않습니다. 대신 끝까지 추적합니다.</p></div>
+<div class="card"><span class="tag debate">해석·논쟁</span><h3>여야의 상반된 명분</h3><p>상대 논리를 정확히 알고 반박합니다. 기준은 진영이 아니라 절차입니다.</p></div>
+</div>
+<div class="grid" style="margin-top:18px">
+<div class="card"><span class="tag fact">원칙</span><h3>📋 모든 문장에 ‘정보 상태’를 붙입니다</h3>
+<p>정책에 반대하는 것과 위법을 입증하는 것은 다릅니다. 정책 비판을 곧바로 범죄·위헌·선거조작으로 표시하지 않습니다. 카드 태그는 4단계(확정·보도·진행·논쟁), 문장별 근거는 아래 5단계를 따릅니다.</p>
+<ul>
+<li><b>법령·공식문서 확인</b> — 법률·관보·예산서·공식 통계로 확인</li>
+<li><b>보도로 확인</b> — 취재 보도는 있으나 원자료는 미확보</li>
+<li><b>수사·재판 중</b> — 혐의 또는 쟁점이 존재, 결론 미확정</li>
+<li><b>검증 중</b> — 제보·주장의 근거를 확인하는 단계</li>
+<li><b>정책 평가·제안</b> — 사실이 아니라 캠페인의 판단·요구</li>
+</ul></div>
+<div class="card"><span class="tag fact">원칙</span><h3>⚖ 국가가 망가지는지 판단하는 7축</h3>
+<table>
+<tr><td><b>국가안보</b></td><td>국민과 장병을 보호하는 능력이 실제로 약화됐는가?</td></tr>
+<tr><td><b>재정 책임</b></td><td>지출의 근거·성과·재원·미래 부담이 설명되는가?</td></tr>
+<tr><td><b>권력분립</b></td><td>권한이 집중될 때 독립적 견제 수단도 강화되는가?</td></tr>
+<tr><td><b>적법절차</b></td><td>수사·재판·선거·행정이 정해진 절차를 지키는가?</td></tr>
+<tr><td><b>투명성</b></td><td>오류·변경·사고의 기록을 국민이 확인할 수 있는가?</td></tr>
+<tr><td><b>책임성</b></td><td>문제 발생 뒤 조사·시정·구제가 실제 이루어지는가?</td></tr>
+<tr><td><b>기본권</b></td><td>안보·개혁·효율의 명분으로 권리가 과도히 제한되는가?</td></tr>
+</table></div>
+</div>
+</section>
+
+<section id="frame">
+<h2>🧠 우리의 프레임</h2>
+<p class="sub">사실을 나열하는 것과, 사실을 꿰는 관점은 다릅니다. 캠페인이 어떤 눈으로 세상을 읽는지 먼저 밝힙니다.</p>
+<div class="grid">
+<div class="card new"><span class="tag frame">프레임</span><h3>정권은 앱, 헌법은 OS</h3>
+<p>정권은 5년마다 갈아 끼우는 <b>앱</b>이고, 헌법은 그 앱들이 돌아가는 <b>OS</b>입니다. 문제는 앱이 자기 권한을 넘어 OS 권한을 흡수할 때 생깁니다. 어느 앱이 깔려도 OS는 같아야 합니다.</p>
+<p style="margin-top:10px">업데이트는 환영, 권한 요청은 심사.</p>
+<div class="act"><b>할 일 →</b> 모든 개혁을 “이게 OS를 고치는가, 앱 권한을 키우는가”로 분류</div></div>
+
+<div class="card new"><span class="tag frame">프레임</span><h3>카드마다 4칸을 반드시</h3>
+<p>상태 · 출처·날짜 · 다음 확인일 · 청구할 문서. 이 네 칸이 비어 있는 문장은 홈에 올리지 않습니다. 빈 칸은 약점이 아니라 <b>신뢰의 표시</b>입니다.</p>
+<table style="margin-top:8px">
+<tr><th>칸</th><th>의미</th><th>사이트에서 하는 일</th></tr>
+<tr><td>확정</td><td>판결·공포된 법·공식 통계·감사 결과</td><td>본문</td></tr>
+<tr><td>진행</td><td>수사·소송·감사 중</td><td>“결론 전” 배지, 단정 금지</td></tr>
+<tr><td>해석</td><td>여야 명분, 인과 추론</td><td>별도 탭, 사실 카드와 분리</td></tr>
+<tr><td>확인 문서</td><td>시민이 직접 청구할 문서명</td><td>버튼 하나</td></tr>
+</table></div>
+
+<div class="card new"><span class="tag frame">프레임</span><h3>저항권은 메뉴에 넣지 않습니다</h3>
+<p>청원·집회·소송·선거·정보공개가 열려 있는 한, 저항권의 <b>보충성 요건</b>을 못 채웁니다(헌재 97헌가4 취지). 도구가 남아 있는 동안 우리는 도구를 씁니다. 저항권은 최후의 비상구이지, 첫 번째 버튼이 아닙니다.</p>
+<div class="act"><b>할 일 →</b> 도구함 5종을 먼저 소진하고, 그 기록을 남기기</div></div>
+
+<div class="card new"><span class="tag frame">프레임</span><h3>다음 정권 테스트용 3가지 질문</h3>
+<p>오늘의 개혁이 내일의 무기가 되지 않는지, 세 질문으로 검사합니다.</p>
+<ul>
+<li><b>① 특정인, 특정 사건 겨냥인가</b> — 이름·사건을 겨눈 조항인가?</li>
+<li><b>② 다음 정권에도 같은가</b> — 일반 규범으로 남는가?</li>
+<li><b>③ 당사자 의견을 반영했나</b> — 절차가 열려 있었나?</li>
+</ul>
+<div class="act"><b>할 일 →</b> 모든 법안·기금·개편안에 이 3가지 질문 체크리스트 적용</div></div>
+</div>
+</section>
+
+<section id="issues">
+<h2>📡 이슈 트래커</h2>
+<p class="sub"><b data-date="today" data-date-format="fulltime">2026년 10월 9일 (금)</b> 기준 · 시각은 1분마다 자동 갱신. 새로운 사실이 나오면 업데이트합니다.</p>
+<div class="legend"><span><span class="tag fact">확정</span> 공식 확인</span><span><span class="tag press">보도</span> 언론 확인(원문 확보 전)</span><span><span class="tag probe">진행</span> 수사·심사 중</span><span><span class="tag debate">논쟁</span> 해석 대립</span></div>
+<div class="filters">
+<button class="on" data-f="all">전체</button><button data-f="sec">🛡 안보</button>
+<button data-f="fis">💰 재정</button><button data-f="con">⚖ 헌정</button><button data-f="me">🔐 내 정보</button>
+<button data-f="exp">🗣 표현</button><button data-f="future">🌱 미래세대</button>
+</div>
+<div class="grid" id="issueGrid">
+
+<div class="card" data-p="sec"><span class="tag press">보도</span> <span class="pillar">안보</span>
+<h3>전방 전 군단 ‘빈총 경계’</h3>
+<p>국방부 자체 감사에서 육군 1·2·3·5군단과 해병2사단(수도군단 지시)에서 <b>비삽탄(빈총) 운용</b>이 확인됐다는 보도가 나왔습니다(조선일보·강선영 의원실 자료 기반). 원칙은 삽탄인데 지침 개정·근거 공문 없이 일부 부대·일부 화기를 휴대 운용했고, 합참·지작사는 몰랐다고 감사는 판단했습니다. 지작사·1·2·3군단 예하 22사단에 기관 경고, 합참엔 개선 처분이 예정됐고 개인 징계는 0명입니다(시기·지시자 특정 곤란). ※ “대통령이 전방 무장해제를 지시했다”는 확대 해석은 확인된 근거가 없습니다. 국방부 표현은 “일부 부대, 일부 화기”입니다.</p>
+<div class="act"><b>할 일 →</b> 비밀 제외 감사 요약본·기관 경고 공문·개인 징계를 하지 않은 이유서·삽탄 원칙 지침 개정 여부 정보공개청구, 국방위·지역구 의원 질의 요청, 군인권보호관 진정(안전·인권 침해 시)</div>
+<div class="note">감시 목표는 취약점 공개가 아니라 <b>시정</b>입니다. 배치·작전계획·교전 수칙 등 기밀은 묻지 않습니다. 핵심은 “최전방 실탄 원칙이 문서로 안 지켜졌고, 책임은 묻지 않았다”입니다.</div></div>
+
+<div class="card" data-p="sec"><span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="pillar">안보</span>
+<h3>DMZ 지뢰 폭발 (9.21, 25사단)</h3>
+<p>수색로 개척 중 폭발로 간부 3명이 다쳤습니다(2명 중상 보도). 합참은 ‘북한군 지뢰’로 공식 규정하고 사과를 요구했습니다. 현장에서 북한 <b>수지반보병지뢰</b>가 추가 발견됐다는 보도도 있습니다. 다음 날 같은 사단 대위가 숨진 채 발견됐으며 사고와의 관련성은 미확인입니다. ※ 폭발물이 북한 신규 매설분인지 우리 측 잔여 지뢰인지는 초기 보도에서 닫히지 않았습니다 — “북한이 심은 지뢰에 정부가 장병을 밀어 넣었다”는 아직 확정이 아닙니다.</p>
+<div class="act"><b>할 일 →</b> 사고조사 결과의 비밀·신원 제외 요약본 공개 요구, 부상 장병 치료·재활·보상 입법 지지, 군인권보호관(국가인권위) 조사 요청 — 가족·지인도 진정 가능</div></div>
+
+<div class="card" data-p="sec"><span class="tag debate">논쟁</span> <span class="pillar">안보·재정</span>
+<h3>대북 지원 예산</h3>
+<p>2025년 인도지원 집행 실적 0원, 2026년 예산 90% 넘게 증액, 2027년 남북협력기금 1조 115억 원 — 정부는 ‘관계 개선 대비 예비금’이라고 설명합니다. ※ 편성된 돈과 전달된 돈은 다릅니다: 정부안 → 국회 확정액 → 승인액 → 집행액 → 수혜자 전달·평가, 5단계로 확인해야 합니다(통일부 월별 통계 공개). “작년 0원, 예산 90% 증액”은 출처가 한쪽으로 기울어 있어 <b>홈에 숫자로 박기 전 통일부 결산·열린재정 재검증</b>이 필요합니다.</p>
+<div class="act"><b>할 일 →</b> 사업별 승인·집행·정산·평가 문서 정보공개, 외교통일위 집행률·모니터링 질의, 예결위에 조건부 편성·사후 공개 의견(12.2 기한 전). 시민이 묻는 3가지 질문: <b>누가 받았나 · 전용을 막는 모니터링이 있나 · 예산 대비 실제 전달은 얼마인가</b></div></div>
+
+<div class="card" data-p="sec me"><span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="pillar">안보·내 정보</span>
+<h3>금융권 동시다발 해킹</h3>
+<p>신한(2만 5,729명)·KB국민·하나·BNK부산은행 유출이 확인됐고, 예가람저축은행은 약 4만 명 추정(접근 9.18 시작, 은행 인지 9.30), 현대캐피탈 등으로 확산됐습니다. 공격은 9.18 시작 — 검찰청 폐지(10.2, 이후 공소청·중대범죄수사청 체제 전환) <b>이전</b>입니다. KB국민은 주민등록번호 66건·개인식별정보(CI) 97건을 포함한 119명분 유출이 공식 확인됐고(10.3 보도), 피해 은행들은 금전 피해 '전액 보상'을 내걸었습니다 — 보상 기준·절차의 구체화가 다음 확인 대상입니다. ※ 은행 보안 실패 원인과 수사체계 전환 문제는 별개로 검증합니다: ① 사고 예방·피해 구제 트랙 ② 접수·배당·인계 등 수사체계 트랙. “폐지한 그날 터졌다 = 폐지 때문에 뚫렸다”는 시간 근접을 범인으로 둔갑시키는 문장입니다.</p>
+<div class="act"><b>할 일 →</b> 아래 ‘내 정보 지키기’ 툴킷 즉시 실행, 은행별 유출 범위·피해구제 절차 확인, 개인정보 집단분쟁조정 참여. 수법·취약점·공격 재현은 올리지 않습니다 — 피해자 권리와 기관 책임만.</div></div>
+
+<div class="card" data-p="fis"><span class="tag fact">확정</span> <span class="pillar">재정</span>
+<h3>2027 예산 820.9조 (+12.8%)</h3>
+<p>증가율로 역대 최고(2009년 10.6% 상회)이고 국가채무는 약 1,519.8조 원으로 전망됩니다. 총수입 880.8조(+30.4%)로 반도체 호황 세수가 배경입니다 — “세금이 없어 뿌린다”는 거짓입니다. ※ 아직 <b>정부안</b>입니다 — 국회 확정예산도 집행 결과도 아닙니다. 물을 질문은 “왜 늘렸나”가 아니라 “어떤 사업에, 왜 기존 사업으로는 해결이 안 되고, 효과가 없으면 언제 줄이거나 끝내나”입니다.</p>
+<div class="act"><b>할 일 →</b> 열린재정에서 사업별 증액분 확인, 국회예산정책처 분석 공유, 감액 대상 특정</div></div>
+
+<div class="card" data-p="fis"><span class="tag fact">확정</span> <span class="pillar">재정</span>
+<h3>국고채: 총발행 ≠ 새 빚</h3>
+<p>2027년 정부안 기준 국고채 총발행 222.8조, <b>순증 96.3조</b>, 이자상환 35조 원 전망입니다. 총발행에는 기존 빚을 갚는 차환발행이 포함되므로 전부를 새 부채라 말하면 안 됩니다. 채무비율 하락(비율)과 채무액 감소(액수)도 별개 — GDP가 더 빨리 자라면 액수가 늘어도 비율은 내려갑니다.</p>
+<div class="act"><b>할 일 →</b> 이자비용·만기 구조·세수오차 대시보드화, 예결위에 중기재정계획 대비 실적 매년 공개 요구</div></div>
+
+<div class="card" data-p="fis"><span class="tag debate">논쟁</span> <span class="pillar">재정·헌정</span>
+<h3>미래대응기금 162.3조</h3>
+<p>내년 사업비 45.4조 원(4대 분야), 주요 지출의 30%(약 13.6조 원)를 국회 의결 없이 변경 가능(일반 기금은 20%). 국채 신규 발행 축소에 12.5조, 여유 104.4조 규모로 거론됩니다. 국회 의정회 검토보고서(10.4 보도)는 NEXT 선정 원칙의 법안 미반영, 기존 회계·기금과 중복, 공공자금관리기금 기능 중복, 정책·재정심사 분리 위험을 지적했습니다. 제정안 입법예고가 통상 40일 아닌 단 5일 만에 끝나 '졸속' 논쟁도 있습니다(보도 기준). 콩스탕 언어로 번역하면 — “미래”라는 이름으로 중립적 재정 통제를 앱 권한으로 흡수하려는 설계인가.</p>
+<div class="act"><b>할 일 →</b> ⚠ 정부 입법예고는 8.28 종료 — 지금은 <b>국회 법안 심사 단계</b>입니다. 소관 상임위·지역구 의원에게 ‘선정 기준 명문화 · 중복 검토 공개 · 변경 재량 20% 이하 · 분기별 성과 보고’ 의견 전달</div></div>
+
+<div class="card" data-p="fis"><span class="tag press">보도</span> <span class="pillar">재정</span>
+<h3>특검 예산: 배정·집행·불용</h3>
+<p>2025년 출범한 4개 특검 기준(법무부 의원실 제출 자료, 법률신문 보도): 배정 523.3억, 2026년 7월 기준 집행 342.3억, 불용 181억 원. ※ 불용액은 이미 낭비한 돈이 아니라 과다 편성·수요예측 오류의 검토 대상입니다. 집행액이 크다고 부패가 입증되는 것도 아니고, 성과를 기소 건수만으로 평가해서도 안 됩니다. <b>출처 없는 숫자는 만들지 않습니다.</b></p>
+<div class="act"><b>할 일 →</b> 인건비·임차료·특수활동비 등 항목별 집행액 공개 요구, 기소·유죄 성과 대비 비용 대시보드화, ‘특검 비용 공시 의무화’ 청원</div></div>
+
+<div class="card" data-p="fis con"><span class="tag debate">논쟁</span> <span class="pillar">재정·헌정</span>
+<h3>국회 자기 예산 · 세비</h3>
+<p>세비 ‘셀프 인상’ 논란이 반복되고 있습니다. 감시 대상은 의원 수당·특수활동비·업무추진비·해외출장·연구용역·수의계약 등 구체 항목입니다. ※ 예산정책처·입법조사처 같은 행정부 견제 분석기능까지 일괄 축소하면 역효과입니다. 국회 예산 삭감은 국민이 직접 못 합니다 — 헌법 57조는 오히려 국회가 정부 동의 없이 지출을 늘리지 못하게 막습니다. “국회 예산 삭감 버튼”을 만들면 없는 권능을 파는 겁니다.</p>
+<div class="act"><b>할 일 →</b> 국회사무처 정보공개청구(경비 집행 내역·증빙·불용), 낭비 항목 겨냥 감액 의견, 독립 세비심의기구 신설 청원</div></div>
+
+<div class="card new" data-p="fis future"><span class="tag press">보도</span> <span class="pillar">재정·미래세대</span>
+<h3>지방교육재정교부금, 55년 만의 손질</h3>
+<p>교부금의 <b>내국세 연동 방식</b>을 55년 만에 손대는 개편이 추진되고 있습니다. 정부는 지출 구조조정(107.6조 주장)의 큰 축으로 설명하지만 성과는 미검증입니다. ※ 미래세대 재정에서 이보다 큰 항목이 드뭅니다 — 개편의 목적·대체 재원·교육 현장 영향까지 한 묶음으로 봐야 합니다. “지금 뿌린 돈의 OS 권한은 누가 갖는가.”</p>
+<div class="act"><b>할 일 →</b> 개편안 조문·시뮬레이션 공개 요구, 교육청·학교 현장 의견 청취, 성과지표 사전 설정</div></div>
+
+<div class="card" data-p="fis future"><span class="tag press">보도</span> <span class="pillar">재정·미래세대</span>
+<h3>2030년 총지출 1,005조 전망</h3>
+<p>정부 전망 기준 2030년 총지출은 약 1,005조 원 규모로 거론됩니다(전망치, 실현 미확정). 오늘의 지출이 만든 재량이 다음 정권·다음 세대에 그대로 <b>승계</b>되는지가 본게임입니다. 관리재정수지(GDP 대비 -3.9% → -0.1%)와 채무비율(51.6% → 48.3%)도 정부 전망이므로 결산으로 검증합니다 — 파탄 단정도, 낙관 확정도 아닙니다.</p>
+<div class="act"><b>할 일 →</b> 중기재정계획 대비 실적 매년 공개, 세대 간 부담 추계 공개, 기금·재량의 승계 조항 점검</div></div>
+
+<div class="card" data-p="con"><span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="pillar">헌정</span>
+<h3>사법개혁 3법</h3>
+<p>재판소원, 법 왜곡죄(10년 이하), 대법관 26명 증원이 2026.3.12 시행됐고 위헌 제청·헌법소원이 진행 중입니다. 재판소원은 마음에 드는 대로 다시 다투는 4심이 아니라 <b>확정재판 + 요건 제한(헌재 결정 반하는 재판 · 적법절차 미준수 · 기본권 침해 명백)</b>이며 확정일부터 30일입니다. 법왜곡죄는 요건 명확성과 보복성 고소 방지가 관건입니다.</p>
+<div class="act"><b>할 일 →</b> 재판부 배당·구성 모니터링, 전문가가 설계한 소수 정밀 헌법소원 지원. 조직 설계와 재판 개입은 구분하고, 특정 사건 겨냥인지는 배당 데이터로만 검증</div></div>
+
+<div class="card" data-p="con me"><span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="pillar">헌정</span>
+<h3>검찰청 폐지 · 중수청 출범 (10.2)</h3>
+<p>검찰청은 10.2 폐지되고 공소청(법무부)과 중수청(행안부, 정원 2,874명)이 출범했습니다. 수사권이 경찰·중수청 등으로 모이는 구조입니다. 대통령 스스로 “경찰이 가장 큰 권력”이라고 말했고, 진보 시민단체도 민주적 통제를 요구합니다. 출범 시점 중수청장 인선 미확정·지휘부 공석·시행령·형사소송법 후속 미완은 보도가 지적합니다. 추적 지표: 접수·배당·이첩 기간, 장기 미처리 사건, 금융·사이버 전문 역량, KICS 전환 안정성.</p>
+<div class="act"><b>할 일 →</b> 시행령 의견 제출, 이첩·처리기간 통계 공개 요구, 경찰·중수청 통제기구 신설 청원(진영 공통 의제)</div>
+<div class="note">불송치·불기소 불복 절차는 처분 종류와 당사자 지위별로 다릅니다 — “누구나 이의신청 가능”으로 단순화하지 않습니다.</div></div>
+
+<div class="card" data-p="con me"><span class="tag press">보도</span> <span class="pillar">헌정·수사공백</span>
+<h3>공석의 권력 — 권한은 커졌는데 이름이 없다</h3>
+<p>중수청장 인선·지휘부 구성·시행령 후속이 미완인 상태에서 경찰청장 직무대행 장기화까지 겹칩니다. 권한은 커졌는데 책임자 이름이 없는 상태가 콩스탕식 위험입니다. 대시보드 첫 줄 질문: <b>“오늘, 이 권한의 이름은 누구인가?”</b></p>
+<div class="act"><b>할 일 →</b> 지휘부 공석 일수·직무대행 현황 공개 요구, 시행령 의견 제출, 인선·권한 이관 일정 공개 청구</div></div>
+
+<div class="card" data-p="con"><span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="pillar">헌정</span>
+<h3>선관위: 부실의 누적에서 부정으로 더 가까이</h3>
+<p>6·3 지방선거: 전국 1만 4,288개 투표소 중 140곳 추가 송부, 91곳 실사용, 26곳 일시 중단. 통계 수정 약 72건, 투표함 봉인 훼손·조기 폐기, 전 사무총장(김세환) 채용비리 1심 징역 2년(항소) — 이태한 특검은 2026.9.7 출범해 수사 중이며, 준비 기간 포함 수사 기한은 최대 150일입니다. ‘조직적 조작’은 미확정이며 <b>신뢰 훼손과 조작 여부는 구분</b>해야 합니다. ※ 헌재 2023헌라5: 감사원의 직무감찰은 선관위 독립성 침해 — 단, 회계검사·국회 통제·수사·정보공개는 별개로 작동 가능합니다.</p>
+<div class="act"><b>할 일 →</b> 개표 참관인 신청(자격 제한·추첨 선정 — 신청한다고 자동 선정은 아님), 통계 수정 이력·사고 기록 정보공개, 회계검사 후속조치·기록 관리 강화 청원</div></div>
+
+<div class="card" data-p="con"><span class="tag debate">논쟁</span> <span class="pillar">헌정</span>
+<h3>중립권력의 설계 · 개헌</h3>
+<p>구조적 사실은 이겁니다 — 선관위원장 대법관 겸직(63년), 헌법 114조의 독립, 그런데 2025년 2월 헌재가 감사원의 선관위 직무감찰을 위헌으로 본 뒤 외부 감사 공백. 독립이 무책임의 면제가 되면 콩스탕의 중립권력은 이름을 남기고 기능을 잃습니다. 여야가 이미 개헌 의제로 올려 둔 지점입니다. 페이지 제목은 “연합”이 아니라 <b>“중립권력의 설계”</b>입니다.</p>
+<div class="act"><b>할 일 →</b> 개헌안 조문 독해 모임, 겸직 관행 개선·선거쟁송 기록 공개 의제 지지, ‘다음 정권에도 똑같이 적용되나?’ 체크리스트로 평가</div></div>
+
+<div class="card" data-p="con exp"><span class="tag fact">확정</span> <span class="pillar">헌정·표현</span>
+<h3>대북전단 금지 — 안보와 표현의 자유는 다른 트랙</h3>
+<p>2025년 12월 「경찰관직무집행법」「항공안전법」 개정으로 접경지역 대북전단 살포가 제도적으로 막혔습니다. 이는 안보 정책인 동시에 <b>헌법 제21조 표현의 자유 쟁점</b>입니다. ※ ‘지원 결산을 묻는 일’과 ‘금지 조항의 과잉금지를 다투는 일’은 서로 다른 페이지입니다. 한 카드에 섞으면 둘 다 약해집니다.</p>
+<div class="act"><b>할 일 →</b> 금지 조항의 일몰·재검토 조항 확인, 과잉금지 심사 포인트(목적·수단·최소침해·법익균형) 정리, 위헌 여부는 헌재·법원 판단으로</div></div>
+
+</div>
+<div class="note" style="margin-top:22px">🔭 <b>확장 의제(로드맵)</b> — 공공기관·지방공기업 부채 · 조달·보조금·채용 · 연금·건강보험 재정 · 에너지·핵심 공급망 · 재난·산업·생활 안전 · 표현의 자유·개인정보 · <b>주거·토지·지역개발(연구소 특화)</b> · 인구·교육·R&D · <b>미래세대 재정(교부금·기금 승계)</b> · <b>공익신고 통로</b> · <b>지방 훈련장(조례·감사·투표·소환)</b></div>
+</section>
+
+<section id="toolkit">
+<h2>🧰 헌법 안의 행동 툴킷</h2>
+<p class="sub">모두 합법이고, 모두 지금 당장 쓸 수 있습니다. 서명 수보다 중요한 것은 문제를 정확히 분류하는 일입니다.</p>
+<div class="steps"><span>① 공개자료 확인</span><span>② 정보 확보</span><span>③ 오류·위법·정책문제 분류</span><span>④ 시정 요구</span><span>⑤ 불복·감사·입법</span><span>⑥ 결과 공개</span></div>
+<div class="note" style="margin:0 0 26px">긴급한 생명·안전 위험이나 법정 기한이 임박한 사건은 이 흐름보다 <b>신고·구제·법률 검토가 먼저</b>입니다. 법률 기한은 게시 전 변호사가 조문을 다시 확인합니다 — 기한을 틀리게 쓰면 시민이 불리합니다.</div>
+<table>
+<tr><th>도구</th><th>법적 근거</th><th>방법 / 링크</th></tr>
+<tr><td>국민동의청원</td><td>헌법 제26조, 국회법</td><td>공개 후 30일 안에 5만 명이 동의하면 접수·상임위 회부(법률 통과를 뜻하지는 않음) · <a href="https://petitions.assembly.go.kr" target="_blank">petitions.assembly.go.kr</a> — 1호 후보는 <b>선관위 외부 감사 제도화</b> 또는 <b>기금 주요 항목 변경의 국회 통제</b></td></tr>
+<tr><td>정보공개청구</td><td>정보공개법</td><td>통상 청구일부터 10일 내 공개 여부 결정(부득하면 10일 연장). 문서명·기간·기관·형식을 특정하고 부분공개도 함께 요청. “왜 그랬냐”가 아니라 문서명만. 비공개 시 이의신청·행정심판·행정소송 · <a href="https://www.open.go.kr" target="_blank">open.go.kr</a></td></tr>
+<tr><td>국민감사청구</td><td>부패방지권익위법</td><td>18세 이상 300명 이상 연서로 감사원에 감사 청구. 감사원 권한 밖·수사·재판 관련 사항은 제한. 선관위에는 헌재 결정으로 안 닿을 수 있음 — 메뉴에 예외 명시 · <a href="https://www.bai.go.kr" target="_blank">bai.go.kr</a></td></tr>
+<tr><td>비실명 대리신고</td><td>부패방지권익위법</td><td>신고자 신원을 변호사가 봉인해 권익위에 제출하는 법적 절차 — 사이트 익명 게시글과 다릅니다. 공익신고는 내부자가 빈총 지침·용지 결재·기금 전용을 말할 통로 — 신상 털기의 정반대로 설계</td></tr>
+<tr><td>예산 감시</td><td>국가재정법</td><td>열린재정(<a href="https://www.openfiscaldata.go.kr" target="_blank">openfiscaldata.go.kr</a>), 국회예산정책처(<a href="https://www.nabo.go.kr" target="_blank">nabo.go.kr</a>), 예산낭비신고·불법지출 시정요구(제100조), 국민참여예산</td></tr>
+<tr><td>헌법소원·재판소원</td><td>헌법재판소법 제68·69조</td><td>기본권을 직접 침해받은 당사자가 청구 — 침해를 안 날부터 90일, 발생일부터 1년. 재판소원(확정재판, 요건 제한)은 확정일부터 30일. ‘많이’보다 ‘정확하게’</td></tr>
+<tr><td>선거 참관</td><td>공직선거법 제161·181조</td><td>투표 참관(정당·후보 추천) / 개표 참관(선거권자 신청, 자격 제한·추첨 선정) · <a href="https://www.nec.go.kr" target="_blank">nec.go.kr</a></td></tr>
+<tr><td>선거 쟁송</td><td>공직선거법 제219~229조</td><td>대선·총선: 선거일부터 30일 이내 대법원 선거소송 / 지방선거: 14일 이내 소청, 결정 불복 시 10일 이내 소송. 선거무효는 ‘결과에 영향을 미쳤는지’ 별도 판단. 증거보전(제228조)은 정당·후보자 절차</td></tr>
+<tr><td>지방자치 도구</td><td>지방자치법 제21·22조 등</td><td>주민감사청구(연서: 시·도 300 / 인구 50만↑ 200 / 기타 150명 이내, 사무 종료 후 3년 이내) · 주민소송(90일, 감사 선행) · 주민소환(지방 공직자 대상) · 조례 발안 · 주민참여예산 · <a href="https://www.juminegov.go.kr" target="_blank">juminegov.go.kr</a> — 중앙 저항 버튼은 없고, 로컬 버튼은 있습니다</td></tr>
+<tr><td>평화적 집회·결사</td><td>헌법 제21조, 집시법 제6조</td><td>옥외집회는 원칙적으로 시작 720시간 전부터 48시간 전까지 신고. 신고는 허가가 아님. 비폭력 — 공무를 물리적으로 막는 봉쇄·점거는 정당성을 잃습니다</td></tr>
+<tr><td>🔐 내 정보 지키기</td><td>개인정보보호법 제39조의2</td><td>명의도용 방지(<a href="https://www.msafer.or.kr" target="_blank">엠세이퍼</a>), 금감원 개인정보노출자 사고예방시스템, 여신거래 안심차단, 내 계좌 한눈에(어카운트인포), 분쟁조정·법정손해배상(300만 원 이하), 해킹 신고 118. 정치 내비게이션과 분리된 별도 화면으로 운영</td></tr>
+</table>
+
+<h3 class="sec">🏛 공공 서류·청구 창구 — 바로가기</h3>
+<p class="sub">서류 작성·근거 확인·청구 제출에 쓰는 공공 사이트만 모았습니다. 전부 공식 도메인이며 새 탭으로 열립니다.</p>
+<div class="grid gov">
+<a class="card" href="https://www.gov.kr" target="_blank" rel="noopener noreferrer"><h3>정부24</h3><p>주민·가족·등기·토지대장 등 증명서 발급과 전자민원의 첫 관문</p><em>www.gov.kr</em></a>
+<a class="card" href="https://www.iros.go.kr" target="_blank" rel="noopener noreferrer"><h3>대법원 인터넷등기소</h3><p>등기부등본·법인등기 발급 — 부동산 서류의 기본</p><em>www.iros.go.kr</em></a>
+<a class="card" href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer"><h3>홈택스</h3><p>납세증명서·과세증명·재산세 내역 — 재정·세제 논쟁의 원자료</p><em>www.hometax.go.kr</em></a>
+<a class="card" href="https://www.eum.go.kr" target="_blank" rel="noopener noreferrer"><h3>세움터</h3><p>건축물대장·인허가 이력 조회 — 주거·재개발 쟁점 확인</p><em>www.eum.go.kr</em></a>
+<a class="card" href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer"><h3>국가법령정보센터</h3><p>법령·행정규칙·조문 원문 확인 — 모든 주장의 조문 근거</p><em>www.law.go.kr</em></a>
+<a class="card" href="https://www.gwanbo.go.kr" target="_blank" rel="noopener noreferrer"><h3>관보</h3><p>법률 공포·감사 결과·고시 — "공포됐다"의 최종 증거</p><em>www.gwanbo.go.kr</em></a>
+<a class="card" href="https://record.assembly.go.kr/assembly/mnts/main.do" target="_blank" rel="noopener noreferrer"><h3>국회 회의록</h3><p>본회의·상임위 회의록·의사중계 — 누가 무엇을 말했나</p><em>record.assembly.go.kr</em></a>
+<a class="card" href="https://opinion.lawmaking.go.kr" target="_blank" rel="noopener noreferrer"><h3>국민참여입법</h3><p>입법예고 의견 제출 — 기금법·시행령 의견은 여기로</p><em>opinion.lawmaking.go.kr</em></a>
+<a class="card" href="https://kosis.kr" target="_blank" rel="noopener noreferrer"><h3>KOSIS 국가통계포털</h3><p>인구·가계·토지 통계 — 숫자 주장의 출처 확인</p><em>kosis.kr</em></a>
+<a class="card" href="https://www.archives.go.kr" target="_blank" rel="noopener noreferrer"><h3>국가기록원</h3><p>행정문서·영구기록물 검색 — 과거 답변 기록 추적</p><em>www.archives.go.kr</em></a>
+<a class="card" href="https://www.open.go.kr" target="_blank" rel="noopener noreferrer"><h3>정보공개포털</h3><p>정보공개청구 접수 — 문서명만 특정하면 10일 내 결정</p><em>www.open.go.kr</em></a>
+<a class="card" href="https://www.epeople.go.kr" target="_blank" rel="noopener noreferrer"><h3>국민신문고</h3><p>민원·생활불편·정책제안 접수 — 기관 응답 기록이 남습니다</p><em>www.epeople.go.kr</em></a>
+<a class="card" href="https://www.clean.go.kr" target="_blank" rel="noopener noreferrer"><h3>청렴포털 (국민권익위)</h3><p>부패·공익신고 접수 — 비실명 대리신고는 권익위만 가능</p><em>www.clean.go.kr</em></a>
+<a class="card" href="https://www.kopico.go.kr" target="_blank" rel="noopener noreferrer"><h3>개인정보분쟁조정위원회</h3><p>분쟁조정·집단분쟁조정 신청 — 유출 피해 구제 트랙</p><em>www.kopico.go.kr</em></a>
+<a class="card" href="https://www.humanrights.go.kr" target="_blank" rel="noopener noreferrer"><h3>국가인권위원회</h3><p>진정 접수 — 군인권보호관 조사 요청 등 인권 침해 구제</p><em>www.humanrights.go.kr</em></a>
+</div>
+<div class="note">📌 <b>서류 작성 순서 추천</b> — ① 법령정보센터에서 조문 확인 → ② 관보·국회 회의록으로 공포·발언 확인 → ③ 정부24·인터넷등기소·세움터에서 증명서 수집 → ④ 정보공개포털로 문서 청구 → ⑤ 구제가 필요하면 국민신문고·청렴포털·분쟁조정·인권위. 링크가 끊기면 기관명으로 검색하세요 — 도메인은 바뀌어도 기관은 남습니다.</div>
+<h3 class="sec">📄 바로 쓰는 서식</h3>
+<details><summary>① 정보공개청구 — 경계 지침 감사 문서 (안보판)</summary><div class="body">
+<p><b>제목:</b> 경계작전 지침 변경 관련 비밀 제외 문서 공개 청구</p>
+<p style="margin-top:8px"><b>기간·기관·문서:</b> 2026-01-01 ~ 2026-10-05, 국방부 — 전방 부대 탄약 휴대·삽탄 관련 감사 결과, 기관 경고 통지, 지침 개정 공문 목록. 전자파일.</p>
+<p style="margin-top:8px">공개 가능한 요약본, 시정조치 요구서, 후속 조치 이행점검 문서의 공개를 요청합니다. 군사기밀·개인정보 등 비공개 대상이 포함돼 있다면 해당 부분을 가린 <b>부분공개</b>를 요청합니다. 비공개·부존재 결정 시 관련 법적 근거와 구체적 사유를 밝혀 주시기 바랍니다.</p>
+<p style="margin-top:8px">※ <b>부대 위치·작전계획·교전 수칙 전문은 청구하지 않습니다.</b> 묻는 범위는 책임·예산·규정·징계로 고정하세요.</p>
+</div></details>
+<details><summary>② 미래대응기금 의견서 — 국회 법안 심사용 (재정판)</summary><div class="body">
+<p><b>기간·기관·문서:</b> 2026-08-01 ~ 2026-10-05, 기획예산처 — 미래대응기금 설치 근거 법안, 30% 변경 권한 관련 국가재정법 개정안, 4대 계정 사업 목록. 전자파일.</p>
+<p style="margin-top:8px">다음을 법안·운용계획 심사에 반영해 주시기 바랍니다.</p>
+<p style="margin-top:8px">① 기존 회계·기금과의 <b>중복 검토</b>　② 잠재성장률·인적자본 형성 등 <b>성과 기준</b>　③ 연중 운용계획 변경의 <b>보고·승인 절차</b>　④ 사업 소관 상임위원회와의 <b>연계 심사</b>　⑤ 저성과 사업의 <b>축소·종료 기준</b>　⑥ 변경 재량 <b>20% 이하</b>로 축소</p>
+</div></details>
+<details><summary>③ 국회 예산 점검 요청서 — 항목 겨냥형</summary><div class="body">
+<p>대상 사업·경비: ㅇㅇ / 정부안 또는 요구액: ㅇㅇ / 확인한 자료: ㅇㅇ</p>
+<p style="margin-top:8px">문제: 중복 · 성과 부족 · 증빙 불명확 · 위법 의심<br>요청 자료: 집행내역·계약·결과보고서·평가<br>제안: 공개 · 감액 · 조건부 편성 · 제도개선<br>예상 영향 및 보호할 기능: ㅇㅇ</p>
+<p style="margin-top:8px">“전액 삭감”보다 <b>어느 항목을 얼마나 조정할지</b>가 명확한 문서가 심사에 유용합니다.</p>
+</div></details>
+<details><summary>④ 정보공개청구 — 선거관리 기록 (선관위판)</summary><div class="body">
+<p><b>기간·기관·문서:</b> 2024-01-01 ~ 2026-08-31, 중앙선거관리위원회 — 투표지분류기 검수보고서·장애보고서·유지보수 계약서, 투표함 인계·봉인 기록, 통계 수정 이력. 전자파일.</p>
+<p style="margin-top:8px">조작 여부를 단정하려는 것이 아니라, <b>기록이 존재하고 보존되는지</b>를 확인하려는 청구입니다. 부분공개도 함께 요청합니다.</p>
+</div></details>
+
+<h3 class="sec">🧾 청구서 마법사 — 5문항이면 초안 완성</h3>
+<div class="grid">
+<div class="pcard"><b>1</b><span>어느 기관인가? (부서·과까지)</span></div>
+<div class="pcard"><b>2</b><span>무슨 문서인가? (문서명을 특정)</span></div>
+<div class="pcard"><b>3</b><span>어느 기간인가? (시작일~종료일)</span></div>
+<div class="pcard"><b>4</b><span>전자파일로 받을 것인가?</span></div>
+<div class="pcard"><b>5</b><span>비공개면 불복(이의신청·심판·소송)할 것인가?</span></div>
+</div>
+</section>
+
+<section id="demands">
+<h2>📌 16대 요구안</h2>
+<p class="sub">확인된 쟁점에서 도출한 정책 제안입니다. 확정된 법적 결론이 아닙니다.</p>
+<div class="grid">
+<div class="card"><span class="dnum">1</span><h3>군 경계 지침 공개</h3><p>지침 변경·보고 체계와 감사 후속 조치 공개</p></div>
+<div class="card"><span class="dnum">2</span><h3>DMZ 사고</h3><p>독립적 원인 조사와 장병 치료·재활·보상 강화</p></div>
+<div class="card"><span class="dnum">3</span><h3>대북지원 전 구간 공개</h3><p>편성·승인·집행·전달·평가까지 공개</p></div>
+<div class="card"><span class="dnum">4</span><h3>금융·사이버 대응</h3><p>사고 대응과 수사기관 간 책임·인계 체계 검증</p></div>
+<div class="card"><span class="dnum">5</span><h3>지원사업 정리</h3><p>대규모 지원사업의 중복·성과·종료 기준 공개</p></div>
+<div class="card"><span class="dnum">6</span><h3>국채 구분 공시</h3><p>총발행·순증·이자·전망 위험의 구분 공시</p></div>
+<div class="card"><span class="dnum">7</span><h3>미래대응기금 통제</h3><p>선정 기준·중복 방지·국회 통제 명문화</p></div>
+<div class="card"><span class="dnum">8</span><h3>특검 예산 검증</h3><p>수사기관 예산의 일관된 사후 검증</p></div>
+<div class="card"><span class="dnum">9</span><h3>선거관리 기록</h3><p>통계 수정·투표함 인계·사고 기록의 감사 가능성 강화</p></div>
+<div class="card"><span class="dnum">10</span><h3>독립성·이해충돌</h3><p>선관위·사법기관 독립성 유지, 이해충돌·겸직 문제 개선</p></div>
+<div class="card"><span class="dnum">11</span><h3>개혁 효과 점검</h3><p>수사·기소 체계와 사법개혁의 실제 효과·권리침해 점검</p></div>
+<div class="card"><span class="dnum">12</span><h3>국회가 쓰는 비용 정리</h3><p>낭비성 경비·불명확 특활비는 줄이고 독립적 분석 기능은 보호</p></div>
+<div class="card"><span class="dnum">13</span><h3>표현의 자유 사후검증</h3><p>대북전단 금지 조항의 과잉금지 심사·일몰·재검토 조항 명문화</p></div>
+<div class="card"><span class="dnum">14</span><h3>공석·권한 대시보드</h3><p>지휘부 공석 일수·직무대행 현황·권한 이관 일정 공개</p></div>
+<div class="card"><span class="dnum">15</span><h3>교부금·미래세대 재정</h3><p>교부금 연동 개편의 목적·대체 재원·성과·승계 조항 공개</p></div>
+<div class="card"><span class="dnum">16</span><h3>공익신고 보호</h3><p>내부 제보 통로·신변 보호·보복 금지 — 신상 털기의 정반대 설계</p></div>
+</div>
+<div class="note" style="margin-top:18px">🏁 <b>1호 국민동의청원 후보</b> — ① 선관위 외부 감사의 제도화 또는 ② 미래대응기금 주요 항목 변경의 국회 통제. 경찰·중수청 민주적 통제는 진보 시민단체도 이미 말하는 지점이라 <b>진영 공통 의제 2호</b>가 맞습니다.</div>
+</section>
+
+<section id="sentences">
+<h2>🖋 문장 레드라인 — 이렇게 쓰면 캠페인이 진다</h2>
+<p class="sub">사실은 같아도 문장이 다르면 신뢰가 갈립니다. 왼쪽은 쓰지 않고, 오른쪽으로 씁니다.</p>
+<table>
+<tr><th>쓰지 마세요 ✗</th><th>이렇게 쓰세요 ✓</th></tr>
+<tr><td class="bad">“6·3은 부정선거”</td><td class="good">선거관리 부실은 확정, 조직적 조작은 미확정 — 기록 보존과 감사 가능성을 요구</td></tr>
+<tr><td class="bad">“검찰청을 없애서 은행이 털렸다”</td><td class="good">재배치 공백기에 금융범죄 대응 주체가 누구인지, 인계 체계가 작동하는지 검증</td></tr>
+<tr><td class="bad">“빈총은 고의 무장해제”</td><td class="good">최전방 삽탄 원칙이 문서로 안 지켜졌고, 상급부대는 몰랐다 하고, 책임은 묻지 않았다</td></tr>
+<tr><td class="bad">지뢰 매설 위치·부대 배치·교전 지침 전문</td><td class="good">책임·예산·규정·징계 범위만 청구 (작전 세부는 캠페인이 지킨다)</td></tr>
+<tr><td class="bad">해킹 재현·취약점 이용법·공격자 인프라</td><td class="good">피해자 권리와 기관 책임만 — 유출 통지, 구제 절차, 인계 체계</td></tr>
+<tr><td class="bad">법관·검사·선관위 직원·장병 가족 신상</td><td class="good">제도·기록·통계로 압박 (사람이 아니라 시스템을 겨눈다)</td></tr>
+<tr><td class="bad">“대통령 주민소환”, “국회의원 소환”</td><td class="good">주민소환은 지방 공직자까지 — 없는 권리를 파는 버튼은 만들지 않는다</td></tr>
+<tr><td class="bad">출처 없는 예산 숫자 (특히 특검비)</td><td class="good">출처 URL + 상태 배지 + “청구 중” 빈 칸 (빈 칸이 신뢰다)</td></tr>
+</table>
+<div class="note" style="margin-top:16px">💡 <b>재치는 문장에서, 신뢰는 각주에서.</b> 전 국민 캠페인이니 은어로 도배하지 않습니다. 톤은 짧게, 판단은 5060도 따라오게.</div>
+</section>
+
+<section id="calendar">
+<h2>⏳ 골든타임 D-Day</h2>
+<p class="sub">타이밍을 놓치면 도구가 무뎌집니다.</p>
+<p class="sub" style="margin-top:-8px">오늘 <b data-date="today" data-date-format="fulltime">오늘</b> 기준 · 날짜·시각은 1분마다 자동으로 갱신됩니다.</p>
+<div class="cd">
+<div class="card"><div class="num" id="d1" data-dday="2026-12-02">-</div><h3>2027 예산안 법정 처리기한</h3><p><b data-date="2026-12-02" data-date-format="full">2026년 12월 2일</b> (헌법 제54조). 국회는 깎을 수만 있습니다(제57조).</p></div>
+<div class="card"><div class="num" id="d2" data-dday="2027-06-30">-</div><h3>개헌 국민투표 목표</h3><p><b data-date="2027-06-30" data-date-format="half">2027년 상반기</b>(여당 목표, 미확정). 조문 독해는 지금부터.</p></div>
+<div class="card"><div class="num" id="d3" data-dday="2028-04-12">-</div><h3>제23대 총선</h3><p><b data-date="2028-04-12" data-date-format="full">2028년 4월 12일</b>. 참관인 네트워크 완성 목표.</p></div>
+</div>
+</section>
+
+<section id="line">
+<h2>🚫 넘지 말아야 할 선</h2>
+<p class="sub">헌법을 지키려는 운동이 헌법을 부수면, 이기는 쪽은 없습니다.</p>
+<div class="grid">
+<div class="card red"><h3>국가기관 점거·폭력</h3><p>개표소·법원 점거, 폭력 선동</p></div>
+<div class="card red"><h3>공직자 신상 털기</h3><p>법관·검사·경찰·선관위 직원과 가족 협박</p></div>
+<div class="card red"><h3>미검증 정보 단정</h3><p>출처 불명 자료를 사실처럼 유포</p></div>
+<div class="card red"><h3>군·경 정치 개입 요구</h3><p>판결 불복을 폭력으로 연결</p></div>
+<div class="card red"><h3>‘반국민’ 낙인</h3><p>상대 진영 전체를 적으로 규정</p></div>
+</div>
+</section>
+
+<section id="promise">
+<h2>🤝 우리의 참여 약속</h2>
+<p class="sub">캠페인 스스로 지킬 10가지입니다. 위반을 발견하면 누구나 지적해 주세요.</p>
+<div class="grid">
+<div class="pcard"><b>01</b><span>확인되지 않은 일을 확정 사실처럼 말하지 않습니다</span></div>
+<div class="pcard"><b>02</b><span>정부와 기관의 설명도 함께 확인합니다</span></div>
+<div class="pcard"><b>03</b><span>선거관리 부실과 선거조작을 구분합니다</span></div>
+<div class="pcard"><b>04</b><span>정책 반대와 위법 입증을 구분합니다</span></div>
+<div class="pcard"><b>05</b><span>폭력·협박·신상털기를 하지 않습니다</span></div>
+<div class="pcard"><b>06</b><span>군사기밀과 개인정보를 보호합니다</span></div>
+<div class="pcard"><b>07</b><span>청원·신고·소송의 자격과 기한을 지킵니다</span></div>
+<div class="pcard"><b>08</b><span>제보는 비공개 접수·검증 후 공개합니다</span></div>
+<div class="pcard"><b>09</b><span>우리의 오류도 공개합니다</span></div>
+<div class="pcard"><b>10</b><span>세금 거부·점거·허위 고발·무단 해킹은 행동 목록에 넣지 않습니다</span></div>
+</div>
+</section>
+
+<section id="pledge">
+<h2>✅ 나의 시민 퀘스트</h2>
+<p class="sub">체크는 이 브라우저에만 저장됩니다. 하나씩 깨 보세요.</p>
+<div class="bar"><i id="prog"></i></div><p id="ptxt" class="sub">0 / 8 완료</p>
+<div class="chk" id="chk">
+<label><input type="checkbox">내 명의도용 방지·여신거래 안심차단 설정하기</label>
+<label><input type="checkbox">관심 이슈 하나를 골라 공식 문서(판결문·예산서) 직접 읽기</label>
+<label><input type="checkbox">정보공개청구 1건 제출하기 (위 서식 활용)</label>
+<label><input type="checkbox">국민동의청원 1건 동의 또는 발의하기</label>
+<label><input type="checkbox">기금법(국회 심사)·중수청 시행령에 의견 1건 제출하기</label>
+<label><input type="checkbox">지역구 국회의원에게 예산 감액 의견 메일 보내기</label>
+<label><input type="checkbox">다음 선거 개표 참관인 신청 방법 확인하기</label>
+<label><input type="checkbox">가짜뉴스 하나를 출처로 반박해 보기 (공유 전 3초 멈춤)</label>
+</div>
+</section>
+
+<footer>
+「콩스탕의 경고와 2026년 대한민국」(2026.10.3)<br>
+본 사이트의 사실관계는 <b data-date="today" data-date-format="fulltime">2026년 10월 9일 (금)</b> 기준 언론 보도·공식 발표에 근거하며, 수사·재판 결과에 따라 달라질 수 있습니다.<br>
+의심은 증거를 요구하고, 신앙은 요구하지 않습니다 — 이 사이트의 경쟁력은 더 뜨겁지 않은 대신, 다음 정권에도 같은 기준으로 남는다는 점입니다.<br>
+법률 정보는 일반 안내이며, 개별 사안은 변호사와 상담하십시오.
+<div style="text-align:center;color:#8a97b5;font-size:13px;padding:0 20px 40px">이 페이지는 <a href="#/" data-page="home">토지와 자유</a> · 대한민국 살리기 캠페인 페이지입니다. 정책은 <a href="#/policy" data-page="policy">정책</a> 페이지에서 확인하세요.</div>
+</footer>
+
+</div><script>
+/* ===== 토지와 자유 — 인터랙션 (라이트 테마) ===== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  /* --- 헤더 스크롤 배경 --- */
+  const header = document.getElementById('site-header');
+  if (header) {
+    const onScroll = () => {
+      if (window.scrollY > 30) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* --- 모바일 메뉴 --- */
+  const menuBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.querySelector('i').className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    });
+    mobileMenu.querySelectorAll('a').forEach((a) =>
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuBtn.querySelector('i').className = 'fa-solid fa-bars';
+      })
+    );
+  }
+
+  /* --- 스크롤 리빌 --- */
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  revealEls.forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 4) * 80}ms`;
+    io.observe(el);
+  });
+
+  /* --- 숫자 카운트업 --- */
+  const counters = document.querySelectorAll('[data-count]');
+  const counterIO = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseFloat(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        const isFloat = !Number.isInteger(target);
+        const dur = 1400;
+        const t0 = performance.now();
+        const tick = (now) => {
+          const p = Math.min((now - t0) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const val = target * eased;
+          el.textContent = (isFloat ? val.toFixed(1) : Math.round(val)) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+          else el.textContent = (isFloat ? target.toFixed(1) : target) + suffix;
+        };
+        requestAnimationFrame(tick);
+        counterIO.unobserve(el);
+      });
+    },
+    { threshold: 0.6 }
+  );
+  counters.forEach((el) => counterIO.observe(el));
+
+  /* --- 토지배당 계산기 (3열: 배당 · 주담대 이자 · 실효 보유세) --- */
+  const taxEl = document.getElementById('tax-revenue');
+  const popEl = document.getElementById('population');
+  const hhEl = document.getElementById('household');
+  const loanEl = document.getElementById('loan');
+  const rateEl = document.getElementById('loan-rate');
+  const landEl = document.getElementById('land-value');
+  const lvtEl = document.getElementById('lvt-rate');
+
+  const won = (n) => Math.round(n).toLocaleString('ko-KR') + '원';
+  const manwon = (n) => {
+    const m = Math.round(n / 10000);
+    if (Math.abs(m) >= 10000) return (m / 10000).toFixed(1).replace(/\.0$/, '') + '억 원';
+    return m.toLocaleString('ko-KR') + '만 원';
+  };
+  const setText = (id, v) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = v;
+  };
+
+  function updateDividend() {
+    if (!taxEl || !popEl || !hhEl) return;
+    const taxJo = parseFloat(taxEl.value); // 조 원
+    const popMan = parseFloat(popEl.value); // 만 명
+    const hh = parseInt(hhEl.value, 10);
+
+    setText('tax-revenue-label', `${taxJo}조 원`);
+    setText('population-label', `${popMan.toLocaleString('ko-KR')}만 명`);
+    setText('household-label', `${hh}명`);
+
+    const totalRevenue = taxJo * 1e12;
+    const peopleCount = popMan * 10000;
+    const perPerson = totalRevenue / peopleCount;
+    const perHousehold = perPerson * hh;
+    const perMonth = perPerson / 12;
+
+    setText('dividend-household', won(perHousehold));
+    setText('dividend-person', won(perPerson));
+    setText('dividend-month', won(perMonth));
+
+    // 확장 3열 (선택 입력)
+    if (loanEl && rateEl && landEl && lvtEl) {
+      const loan = parseFloat(loanEl.value) * 1e8; // 억 원 → 원
+      const rate = parseFloat(rateEl.value) / 100;
+      const land = parseFloat(landEl.value) * 1e8; // 억 원 → 원 (보유 토지분 공시가)
+      const lvt = parseFloat(lvtEl.value) / 100;
+
+      setText('loan-label', `${parseFloat(loanEl.value)}억 원`);
+      setText('loan-rate-label', `${parseFloat(rateEl.value).toFixed(1)}%`);
+      setText('land-value-label', `${parseFloat(landEl.value)}억 원`);
+      setText('lvt-rate-label', `${parseFloat(lvtEl.value).toFixed(2)}%`);
+
+      const interest = loan * rate;
+      const lvtTax = land * lvt;
+      const net = perHousehold - lvtTax;
+
+      setText('col-dividend', manwon(perHousehold));
+      setText('col-interest', manwon(interest));
+      setText('col-lvt', manwon(lvtTax));
+      const netEl = document.getElementById('col-net');
+      if (netEl) {
+        netEl.textContent = (net >= 0 ? '+' : '−') + manwon(Math.abs(net));
+        netEl.className =
+          'font-mono text-2xl font-bold ' + (net >= 0 ? 'text-teal' : 'text-clay');
+      }
+    }
+  }
+
+  [taxEl, popEl, hhEl, loanEl, rateEl, landEl, lvtEl]
+    .filter(Boolean)
+    .forEach((el) => el.addEventListener('input', updateDividend));
+  updateDividend();
+
+  /* --- 단계 프리셋 (창당전략 4-3 로드맵 표 근거) --- */
+  document.querySelectorAll('.phase-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.phase-btn').forEach((b) => b.classList.toggle('is-active', b === btn));
+      if (taxEl && btn.dataset.tax) taxEl.value = btn.dataset.tax;
+      if (lvtEl && btn.dataset.lvt) lvtEl.value = btn.dataset.lvt;
+      updateDividend();
+    });
+  });
+
+  /* --- 국제 사례 탭 --- */
+  const tabBtns = document.querySelectorAll('.global-tab');
+  const panels = document.querySelectorAll('.global-panel');
+  tabBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.tab;
+      tabBtns.forEach((b) => b.classList.toggle('is-active', b === btn));
+      panels.forEach((p) => p.classList.toggle('is-active', p.dataset.panel === key));
+    });
+  });
+
+  /* --- 뉴스레터 폼 --- */
+  const form = document.getElementById('join-form');
+  const msg = document.getElementById('join-msg');
+  if (form && msg) {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('join-email').value.trim();
+      if (!email) return;
+
+      submitBtn.disabled = true;
+      msg.className = 'mt-4 text-sm text-ink/60 font-semibold h-5';
+      msg.textContent = '전송 중…';
+
+      const result = await saveSubscriber(email);
+
+      if (result.ok) {
+        msg.className = 'mt-4 text-sm text-teal font-semibold h-5';
+        msg.textContent = result.duplicate
+          ? '이미 합류하신 이메일이에요. 소식은 계속 보내드릴게요.'
+          : '합류 완료! 3대 특권 해체 여정의 소식을 보내드릴게요.';
+        form.reset();
+      } else {
+        msg.className = 'mt-4 text-sm text-clay font-semibold h-5';
+        msg.textContent = `서버 저장에 실패했어요 (${result.error}). 잠시 후 다시 시도해 주세요.`;
+      }
+      submitBtn.disabled = false;
+      setTimeout(() => (msg.textContent = ''), 7000);
+    });
+  }
+
+  async function saveSubscriber(email) {
+    const joined_at = Date.now();
+    try {
+      const list = JSON.parse(localStorage.getItem('tlq_subscribers') || '[]');
+      const exists = list.some((r) => (r.email || '').trim().toLowerCase() === email.toLowerCase());
+      if (!exists) {
+        list.push({ email, joined_at, consent_at: new Date().toISOString() });
+        localStorage.setItem('tlq_subscribers', JSON.stringify(list));
+      }
+    } catch (_) {}
+
+    try {
+      const res = await fetch('/api/join', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ email, src: 'join', consent: true }),
+        redirect: 'manual',
+        credentials: 'same-origin',
+      });
+      if (res.type === 'opaqueredirect' || (res.status >= 300 && res.status < 400)) {
+        return { ok: false, error: '접근 차단(redirect)' };
+      }
+      const ct = res.headers.get('content-type') || '';
+      if (!ct.includes('application/json')) return { ok: false, error: `HTTP ${res.status} non-JSON` };
+      const data = await res.json();
+      if (!res.ok || !data.ok) return { ok: false, error: data.error || `HTTP ${res.status}` };
+      return { ok: true, duplicate: !!data.duplicate };
+    } catch (err) {
+      console.warn('구독 저장(서버) 실패, 로컬 백업만 유지:', err.message);
+      return { ok: false, error: '네트워크 오류' };
+    }
+  }
+
+  /* --- SNS 이동 안내 모달 --- */
+  (() => {
+    const modal = document.getElementById('sns-modal');
+    const links = document.querySelectorAll('#sns-links a[data-sns]');
+    if (!modal || !links.length) return;
+
+    const label = document.getElementById('sns-modal-label');
+    const handle = document.getElementById('sns-modal-handle');
+    const go = document.getElementById('sns-go');
+    const copyBtn = document.getElementById('sns-copy');
+    const skip = document.getElementById('sns-skip');
+    const SKIP_KEY = 'tlq_sns_skip_notice';
+    let lastFocus = null;
+
+    const open = (a) => {
+      label.textContent = a.dataset.label;
+      handle.textContent = a.dataset.handle;
+      go.href = a.href;
+      skip.checked = false;
+      lastFocus = a;
+      modal.hidden = false;
+      document.body.classList.add('sns-modal-open');
+      go.focus();
+    };
+    const close = () => {
+      modal.hidden = true;
+      document.body.classList.remove('sns-modal-open');
+      if (lastFocus) lastFocus.focus();
+    };
+
+    links.forEach((a) => {
+      a.addEventListener('click', (e) => {
+        if (localStorage.getItem(SKIP_KEY) === '1') return;
+        e.preventDefault();
+        open(a);
+      });
+    });
+    go.addEventListener('click', () => {
+      if (skip.checked) localStorage.setItem(SKIP_KEY, '1');
+      close();
+    });
+    modal.querySelectorAll('[data-sns-close]').forEach((el) => el.addEventListener('click', close));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.hidden) close();
+    });
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(handle.textContent);
+        copyBtn.innerHTML = '<i class="fa-solid fa-check mr-1"></i>복사됨';
+        setTimeout(() => (copyBtn.innerHTML = '<i class="fa-regular fa-copy mr-1"></i>복사'), 1500);
+      } catch (_) {}
+    });
+  })();
+});
+
+</script><script>
+  tailwind.config = { theme: { extend: {
+    colors: { ink:'#14213D', paper:'#FAFAF7', mist:'#EEF3F1', teal:'#0F766E', tealdark:'#0B5A54', gold:'#C9A227', clay:'#E0553F' },
+    fontFamily: { sans:['Pretendard','system-ui','sans-serif'], mono:['Space Grotesk','monospace'] },
+  } } };
+</script>
+<script>
+// 이슈 필터
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  const f=b.dataset.f;
+  document.querySelectorAll('#issueGrid .card').forEach(c=>{
+    c.style.display=(f==='all'||c.dataset.p.split(' ').includes(f))?'':'none';});
+});
+// ===== 골든타임 D-Day · 날짜 자동 변환 장치 (v2) =====
+// ① data-dday="YYYY-MM-DD" → 하루가 지날 때마다 자동으로 1씩 줄어드는 D-숫자
+// ② data-date="YYYY-MM-DD" → 화면에 보이는 날짜를 자동 표기 (today = 오늘 날짜)
+// ③ data-date-format="ymd|md|full|fulltime|half|year|compact"
+// ④ 자정 타이머 + 탭 복귀/포커스 시 재계산 → 날짜가 멈추지 않습니다. 외부 라이브러리 없음.
+(function(){
+  var DAY = 86400000;
+  var WD = ['일','월','화','수','목','금','토'];
+  function parse(ymd){ var p=String(ymd).split('-'); return new Date(+p[0], ((+p[1])||1)-1, (+p[2])||1, 0,0,0,0); }
+  function midnight(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate(), 0,0,0,0); }
+  function fmt(d, mode){
+    var y=d.getFullYear(), m=d.getMonth()+1, dd=d.getDate();
+    if(mode==='md')   return m+'월 '+dd+'일';
+    if(mode==='year') return y+'년';
+    if(mode==='half') return y+'년 '+(m<=6?'상반기':'하반기');
+    if(mode==='full') return y+'년 '+m+'월 '+dd+'일 ('+WD[d.getDay()]+')';
+    if(mode==='fulltime'){ var h24=d.getHours(), ap=h24<12?'오전':'오후', h12=h24%12; if(h12===0)h12=12; return y+'년 '+m+'월 '+dd+'일 ('+WD[d.getDay()]+') '+ap+' '+h12+':'+('0'+d.getMinutes()).slice(-2); }
+    if(mode==='compact') return y+'.'+('0'+m).slice(-2)+'.'+('0'+dd).slice(-2);
+    return y+'년 '+m+'월 '+dd+'일';
+  }
+  function render(){
+    var now = new Date();
+    var today = midnight(now);
+    var i, el, raw, diff, txt;
+    var nodes = document.querySelectorAll('[data-dday]');
+    for(i=0;i<nodes.length;i++){
+      el = nodes[i]; raw = (el.getAttribute('data-dday')||'').trim();
+      if(!raw) continue;
+      diff = Math.round((parse(raw)-today)/DAY);
+      txt = diff>0 ? 'D-'+diff : (diff===0 ? 'D-DAY' : 'D+'+Math.abs(diff));
+      if(el.getAttribute('data-dday-format')==='remain'){ txt = diff>0 ? ('남은 '+diff+'일') : (diff===0 ? '오늘' : ('D+'+Math.abs(diff)+'일')); }
+      el.textContent = txt;
+      el.setAttribute('title', fmt(parse(raw),'full') + (diff>0 ? (' · '+diff+'일 남음') : ''));
+    }
+    var dts = document.querySelectorAll('[data-date]');
+    for(i=0;i<dts.length;i++){
+      el = dts[i]; raw = (el.getAttribute('data-date')||'').trim();
+      if(!raw) continue;
+      el.textContent = (raw==='today') ? fmt(now, el.getAttribute('data-date-format')||'ymd') : fmt(parse(raw), el.getAttribute('data-date-format')||'ymd');
+    }
+  }
+  function msToMidnight(){
+    var n=new Date(), t=new Date(n.getFullYear(), n.getMonth(), n.getDate()+1, 0,0,1,0);
+    return t.getTime()-n.getTime();
+  }
+  function schedule(){ if(window.__dateMid) clearTimeout(window.__dateMid); window.__dateMid=setTimeout(function(){ render(); schedule(); }, msToMidnight()); }
+  function boot(){
+    render(); schedule();
+    setInterval(render, 60000);
+    document.addEventListener('visibilitychange', function(){ if(!document.hidden) render(); });
+    window.addEventListener('focus', render);
+  }
+  window.__dateDevice = { render: render, fmt: fmt, targets: function(){ return document.querySelectorAll('[data-dday],[data-date]').length; } };
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
+})();
+// 퀘스트 체크리스트 (localStorage)
+const boxes=[...document.querySelectorAll('#chk input')];
+const saved=JSON.parse(localStorage.getItem('quest')||'[]');
+boxes.forEach((b,i)=>{b.checked=!!saved[i];b.onchange=upd;});
+function upd(){const s=boxes.map(b=>b.checked);localStorage.setItem('quest',JSON.stringify(s));
+  const n=s.filter(Boolean).length;document.getElementById('prog').style.width=(n/boxes.length*100)+'%';
+  document.getElementById('ptxt').textContent=n+' / '+boxes.length+' 완료'+(n===boxes.length?' 🏆 콩스탕이 인정한 시민':'');}
+upd();
+</script>
+<script>
+(function(){
+  var PAGES={home:'page-home',policy:'page-policy',salriki:'page-salriki',admin:'page-admin'};
+  var INITIAL='home';
+  function show(name,anchor,push){
+    name=PAGES[name]?name:'home';
+    Object.keys(PAGES).forEach(function(k){var el=document.getElementById(PAGES[k]); if(el) el.hidden=(k!==name);});
+    document.body.classList.toggle('sal-mode',name==='salriki');
+    document.body.classList.toggle('admin-mode',name==='admin');
+    document.querySelectorAll('#site-header [data-page], #mobile-menu [data-page]').forEach(function(a){a.classList.toggle('is-current',a.getAttribute('data-page')===name);});
+    if(push){ try{ history.replaceState(null,'','#/'+name); }catch(e){ location.hash='#/'+name; } }
+    if(anchor){var t=document.getElementById(anchor); if(t){t.scrollIntoView({behavior:'smooth',block:'start'}); if(window.__salTabsSpy)window.__salTabsSpy.jump(anchor); if(window.__homeTabsSpy)window.__homeTabsSpy.jump(anchor); return;}}
+    window.scrollTo(0,0);
+    if(window.__salTabsSpy)window.__salTabsSpy.refresh();
+    if(window.__homeTabsSpy)window.__homeTabsSpy.refresh();
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest?e.target.closest('[data-page]'):null;
+    if(!a) return;
+    e.preventDefault();
+    var mm=document.getElementById('mobile-menu'); if(mm) mm.classList.remove('open');
+    show(a.getAttribute('data-page'),a.getAttribute('data-anchor')||null,true);
+  });
+  function route(){
+    var h=(location.hash||'').replace(/^#\/?/,'');
+    var p=h.split('#');
+    var name=p[0]||INITIAL, anchor=p[1]||null;
+    if(!PAGES[name]){
+      var el=name?document.getElementById(name):null;
+      if(el){ anchor=name; name='home';
+        Object.keys(PAGES).forEach(function(k){var pe=document.getElementById(PAGES[k]); if(pe&&pe.contains(el)) name=k;});
+      } else { name=INITIAL; }
+    }
+    show(name,anchor,false);
+  }
+  window.addEventListener('hashchange',route);
+  document.addEventListener('DOMContentLoaded',function(){
+    if((location.hash||'').indexOf('#/')===0){route();}
+    else{show(INITIAL,(location.hash||'').replace('#','')||null,false);}
+  });
+})();
+</script>
+<script>
+/* ===== 살리기 상단 탭 active 상태 (클릭 + 스크롤 스파이) ===== */
+(function(){
+  var nav=document.querySelector('#page-salriki > nav');
+  if(!nav) return;
+  var tabs=[].slice.call(nav.querySelectorAll('a.tab'));
+  if(!tabs.length) return;
+  var items=tabs.map(function(a){return {a:a,el:document.getElementById(a.getAttribute('data-anchor'))};}).filter(function(o){return o.el;});
+  var cur=null, lockUntil=0, ticking=false;
+  function setActive(a){ if(cur===a) return; cur=a; tabs.forEach(function(t){ t.classList.toggle('is-active', t===a); }); }
+  function spy(){
+    if(!document.body.classList.contains('sal-mode')){ setActive(null); return; }
+    if(Date.now()<lockUntil) return;
+    var line=window.scrollY+140, pick=null;
+    for(var i=0;i<items.length;i++){ if(items[i].el.offsetTop<=line) pick=items[i].a; else break; }
+    var doc=document.documentElement;
+    if(pick && (window.innerHeight+window.scrollY)>=(doc.scrollHeight-4)) pick=items[items.length-1].a;
+    setActive(pick);
+  }
+  function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(function(){ ticking=false; spy(); }); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+  tabs.forEach(function(a){ a.addEventListener('click', function(){ setActive(a); lockUntil=Date.now()+900; }); });
+  window.__salTabsSpy={ spy:spy, refresh:function(){ cur=null; spy(); },
+    jump:function(anchor){ var hit=null; items.forEach(function(o){ if(o.el.id===anchor) hit=o.a; }); if(hit){ setActive(hit); lockUntil=Date.now()+900; } } };
+})();
+</script>
+<script>
+/* ===== 홈 헤더 탭 active 상태 (스크롤 스파이) ===== */
+(function(){
+  var links=[].slice.call(document.querySelectorAll('#site-header nav ul a.nav-sec, #mobile-menu a.nav-sec'));
+  if(!links.length) return;
+  var order=['problem','privilege','dividend','finance','global'];
+  var cur=null, ticking=false;
+  function setActive(k){ if(cur===k) return; cur=k; links.forEach(function(a){ a.classList.toggle('is-active', a.getAttribute('data-anchor')===k); }); }
+  function spy(){
+    if(document.body.classList.contains('sal-mode')){ setActive(null); return; }
+    var home=document.getElementById('page-home');
+    if(home && home.hidden){ setActive(null); return; }
+    var line=window.scrollY+160, pick=null;
+    for(var i=0;i<order.length;i++){ var el=document.getElementById(order[i]); if(el && el.offsetTop<=line) pick=order[i]; else break; }
+    setActive(pick);
+  }
+  function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(function(){ ticking=false; spy(); }); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+  links.forEach(function(a){ a.addEventListener('click', function(){ setActive(a.getAttribute('data-anchor')); }); });
+  window.__homeTabsSpy={ spy:spy, refresh:function(){ cur=null; spy(); }, jump:function(k){ if(order.indexOf(k)>=0) setActive(k); } };
+})();
+</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+<div id="page-admin" hidden>
+<style>
+body.admin-mode{background:#F5F7FA}
+#page-admin{--a-ink:#14213D;--a-line:#E3E8F0;--a-teal:#0F766E;--a-mut:#6B7A90;background:#F5F7FA;color:var(--a-ink);min-height:100vh;padding:28px 16px 90px}
+#page-admin *{box-sizing:border-box}
+#page-admin .a-wrap{max-width:920px;margin:0 auto}
+#page-admin .a-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+#page-admin .a-brand{font-weight:900;font-size:1.3rem;letter-spacing:-.02em}
+#page-admin .a-brand span{color:var(--a-teal)}
+#page-admin .a-sub{font-size:.78rem;color:var(--a-mut);font-weight:600;margin-top:3px}
+#page-admin .a-card{background:#fff;border:1px solid var(--a-line);border-radius:18px;padding:18px;box-shadow:0 6px 24px rgba(20,33,61,.05)}
+#page-admin .a-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:16px}
+#page-admin .a-stat{background:#fff;border:1px solid var(--a-line);border-radius:16px;padding:14px 16px}
+#page-admin .a-stat small{display:block;font-size:.72rem;color:var(--a-mut);font-weight:700}
+#page-admin .a-stat b{display:block;font-size:1.55rem;font-weight:900;letter-spacing:-.02em;margin-top:2px}
+#page-admin textarea{width:100%;min-height:110px;border:1px solid var(--a-line);border-radius:14px;padding:12px 14px;font-size:.9rem;font-family:inherit;resize:vertical;outline:none;background:#FBFCFE;color:var(--a-ink)}
+#page-admin textarea:focus{border-color:var(--a-teal);box-shadow:0 0 0 3px rgba(15,118,110,.12)}
+#page-admin .a-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+#page-admin button{border:0;border-radius:999px;padding:11px 18px;font-weight:800;font-size:.86rem;cursor:pointer;transition:.15s;font-family:inherit}
+#page-admin .a-primary{background:var(--a-teal);color:#fff}
+#page-admin .a-primary:hover{background:#0b5d57}
+#page-admin .a-ghost{background:#fff;border:1px solid var(--a-line);color:var(--a-ink)}
+#page-admin .a-ghost:hover{border-color:var(--a-teal);color:var(--a-teal)}
+#page-admin .a-danger{background:#fff;border:1px solid #F3C9C9;color:#B4232A}
+#page-admin .a-note{font-size:.78rem;color:var(--a-mut);line-height:1.65;margin-top:12px}
+#page-admin .a-list{margin-top:14px;border:1px solid var(--a-line);border-radius:16px;overflow:hidden;background:#fff}
+#page-admin .a-item{display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid #F1F4F8;font-size:.9rem}
+#page-admin .a-item:last-child{border-bottom:0}
+#page-admin .a-item .e{flex:1;word-break:break-all;font-weight:600}
+#page-admin .a-item .d{font-size:.72rem;color:var(--a-mut);white-space:nowrap}
+#page-admin .a-item button{padding:6px 12px;font-size:.74rem}
+#page-admin .a-empty{padding:26px 14px;text-align:center;color:var(--a-mut);font-size:.85rem}
+#page-admin .a-gate{max-width:420px;margin:7vh auto 0;text-align:center}
+#page-admin .a-gate input{width:100%;border:1px solid var(--a-line);border-radius:14px;padding:13px 16px;font-size:1rem;text-align:center;letter-spacing:.18em;outline:none;margin:14px 0 6px;background:#FBFCFE;color:var(--a-ink)}
+#page-admin .a-gate input:focus{border-color:var(--a-teal);box-shadow:0 0 0 3px rgba(15,118,110,.12)}
+#page-admin .a-err{color:#B4232A;font-size:.82rem;font-weight:700;min-height:20px}
+#page-admin .a-search{flex:1;min-width:170px;border:1px solid var(--a-line);border-radius:999px;padding:10px 16px;font-size:.86rem;outline:none;background:#fff;color:var(--a-ink)}
+#page-admin .a-badge{display:inline-block;font-size:.7rem;font-weight:800;padding:5px 11px;border-radius:999px;background:#EAF6F4;color:var(--a-teal)}
+#page-admin .a-link{text-decoration:none;border-radius:999px;padding:11px 18px;font-weight:800;font-size:.86rem;border:1px solid var(--a-line);color:var(--a-ink);background:#fff}
+@media(max-width:640px){#page-admin{padding:16px 12px 70px}#page-admin .a-item{flex-wrap:wrap}#page-admin .a-item .d{order:3;width:100%}#page-admin .a-stats{grid-template-columns:1fr 1fr}}
+#page-admin .a-badge.a-on{background:#EAF6F4;color:#0F766E}
+#page-admin .a-badge.a-off{background:#FDF3E7;color:#B45309}
+</style>
+<div class="a-wrap">
+  <div id="a-gate" class="a-gate">
+    <div class="a-card">
+      <div style="font-size:2rem">🔐</div>
+      <div class="a-brand" style="margin-top:6px">운영자 <span>콘솔</span></div>
+      <div class="a-sub">토지와 자유 · 함께하기 구독자 수집함</div>
+      <input id="a-pass" type="password" placeholder="접속 암호" autocomplete="off" />
+      <div class="a-err" id="a-err"></div>
+      <button class="a-primary" id="a-login" style="width:100%;margin-top:4px">접속</button>
+      <div class="a-note">운영자 전용 페이지입니다. 접속 인증은 서버 세션으로 처리됩니다.</div>
+    </div>
+  </div>
+  <div id="a-console" hidden>
+    <div class="a-top">
+      <div>
+        <div class="a-brand">함께하기 <span>구독자 수집함</span></div>
+        <div class="a-sub" id="a-updated">—</div>
+        <div class="a-badge" id="a-mode" style="margin-top:8px">연결 확인 중…</div>
+      </div>
+      <div class="a-row" style="margin:0">
+        <a href="#/" data-page="home" class="a-link">← 사이트로</a>
+        <button class="a-ghost" id="a-lock">잠금</button>
+      </div>
+    </div>
+    <div class="a-stats">
+      <div class="a-stat"><small>전체 구독자</small><b id="a-total">0명</b></div>
+      <div class="a-stat"><small>오늘 추가</small><b id="a-today">0명</b></div>
+      <div class="a-stat"><small>최근 추가</small><b id="a-last" style="font-size:1rem">—</b></div>
+    </div>
+    <div class="a-card">
+      <div style="font-weight:800;margin-bottom:8px">이메일 주소 추가</div>
+      <textarea id="a-input" placeholder="한 줄에 하나씩 붙여넣으세요. 쉼표·세미콜론으로 구분해도 됩니다.&#10;hong@example.com&#10;kim@example.com"></textarea>
+      <div class="a-row">
+        <button class="a-primary" id="a-add">목록에 추가</button>
+        <button class="a-ghost" id="a-csv">CSV 내려받기</button>
+        <button class="a-ghost" id="a-copy">주소만 복사</button>
+        <button class="a-danger" id="a-clear">전체 삭제</button>
+      </div>
+      <div class="a-note" id="a-flash">형식 검사·중복 제거 후 저장됩니다.</div>
+    </div>
+    <div class="a-row" style="margin:18px 0 0">
+      <input id="a-search" class="a-search" placeholder="이메일 검색…" />
+      <span class="a-badge" id="a-shown">0명 표시</span>
+    </div>
+    <div class="a-list" id="a-list"></div>
+    <div class="a-note">※ 서버에 연결되면 함께하기 폼으로 접수된 주소가 <b>서버 저장소</b>에 모입니다. 서버 미연결(오프라인) 시에만 이 브라우저 저장소를 사용합니다. 접속 인증은 서버 세션 쿠키(HttpOnly)로 처리되고, 운영자 암호는 서버 환경변수에 해시로만 보관됩니다. 접수 시 개인정보 수집·이용 동의를 받고 동의 시각을 함께 기록합니다.</div>
+  </div>
+</div>
+<script>
+(function(){
+  var root=document.getElementById('page-admin'); if(!root) return;
+  var API='/api', STORE='lf_emails_v1', SKEY='lf_admin_ok';
+  var OFFLINE_PASS='landfree2026';           /* 서버 미연결 시에만 쓰이는 로컬 암호 */
+  var ONLINE=false, EMAILS=[];
+  function $(i){return document.getElementById(i);}
+  var gate=$('a-gate'), con=$('a-console');
+  function valid(e){ return /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(e); }
+  function fmt(iso){ var d=new Date(iso); if(isNaN(d)) return ''; function p(n){return String(n).padStart(2,'0');} return d.getFullYear()+'.'+p(d.getMonth()+1)+'.'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes()); }
+  function flash(t){ var f=$('a-flash'); if(f) f.textContent=t; }
+  function local(){ try{ return JSON.parse(localStorage.getItem(STORE)||'[]'); }catch(e){ return []; } }
+  function saveLocal(a){ try{ localStorage.setItem(STORE, JSON.stringify(a)); }catch(e){} }
+  function api(path,opt){
+    var o=Object.assign({credentials:'same-origin',headers:{'Content-Type':'application/json'}},opt||{});
+    return fetch(API+path,o);
+  }
+  function modeText(){
+    var b=$('a-mode'); if(!b) return;
+    b.textContent = ONLINE ? ('서버 연결됨 · '+EMAILS.length+'명') : '오프라인 모드 · 이 브라우저에만 저장';
+    b.className = 'a-badge '+(ONLINE?'a-on':'a-off');
+  }
+  function rows(){
+    var arr = ONLINE ? EMAILS : local();
+    var q=($('a-search').value||'').toLowerCase();
+    return arr.filter(function(x){ return !q || String(x.email).toLowerCase().indexOf(q)>-1; });
+  }
+  function render(){
+    var arr = ONLINE ? EMAILS : local();
+    var today=new Date().toDateString();
+    $('a-total').textContent=arr.length+'명';
+    $('a-today').textContent=arr.filter(function(x){return new Date(x.at).toDateString()===today;}).length+'명';
+    $('a-last').textContent=arr.length?fmt(arr[arr.length-1].at):'—';
+    $('a-updated').textContent=arr.length?('총 '+arr.length+'명 · 마지막 갱신 '+fmt(new Date().toISOString())):'아직 수집된 주소가 없습니다.';
+    modeText();
+    var r=rows().map(function(x,i){return {x:x,i:i};}).reverse();
+    $('a-shown').textContent=r.length+'명 표시';
+    var list=$('a-list'); list.innerHTML='';
+    if(!r.length){ var d=document.createElement('div'); d.className='a-empty'; d.textContent=arr.length?'검색 결과가 없습니다.':'아직 등록된 이메일이 없습니다. 위에 붙여넣어 추가하세요.'; list.appendChild(d); return; }
+    r.forEach(function(o){
+      var it=document.createElement('div'); it.className='a-item';
+      var e=document.createElement('div'); e.className='e'; e.textContent=o.x.email;
+      var d=document.createElement('div'); d.className='d';
+      d.textContent=(o.x.src==='join'?'함께하기 폼 · ':(o.x.src==='import'?'가져오기 · ':'직접 추가 · '))+fmt(o.x.at);
+      var b=document.createElement('button'); b.className='a-danger'; b.textContent='삭제';
+      b.addEventListener('click',function(){ del(o.x.email); });
+      it.appendChild(e); it.appendChild(d); it.appendChild(b); list.appendChild(it);
+    });
+  }
+  function unlock(ok){ gate.hidden=ok; con.hidden=!ok; if(ok) render(); }
+  function lock(msg){
+    if(ONLINE){ try{ api('/admin/logout',{method:'POST'}).catch(function(){}); }catch(e){} }
+    try{ sessionStorage.removeItem(SKEY); }catch(e){}
+    $('a-err').textContent = msg ? '세션이 만료되었습니다. 다시 로그인하세요.' : '';
+    unlock(false);
+  }
+  function del(email){
+    if(!ONLINE){
+      var a=local().filter(function(x){return String(x.email).toLowerCase()!==String(email).toLowerCase();});
+      saveLocal(a); render(); flash('1건 삭제했습니다. (오프라인)'); return;
+    }
+    api('/admin/emails',{method:'DELETE',body:JSON.stringify({email:email})}).then(function(r){
+      if(r.status===401) return lock(true);
+      return r.json().then(function(j){ EMAILS=j.emails||[]; render(); flash('1건 삭제했습니다.'); });
+    }).catch(function(){ flash('서버에 연결하지 못했습니다.'); });
+  }
+  function add(){
+    var raw=($('a-input').value||'');
+    if(!raw.trim()){ flash('추가할 주소를 입력하세요.'); return; }
+    if(!ONLINE){
+      var parts=raw.split(/[\s,;]+/).filter(Boolean), arr=local(), seen={};
+      arr.forEach(function(x){ seen[String(x.email).toLowerCase()]=1; });
+      var a=0,dup=0,bad=0;
+      parts.forEach(function(p){
+        var e=p.trim().replace(/^[<(]+|[>)]+$/g,'').replace(/^mailto:/i,'');
+        if(!valid(e)){ bad++; return; }
+        if(seen[e.toLowerCase()]){ dup++; return; }
+        seen[e.toLowerCase()]=1; arr.push({email:e, at:new Date().toISOString(), src:'manual'}); a++;
+      });
+      if(a) saveLocal(arr);
+      $('a-input').value='';
+      flash('추가 '+a+'건 · 중복 '+dup+'건 · 형식오류 '+bad+'건 (오프라인 저장)');
+      render(); return;
+    }
+    api('/admin/emails',{method:'POST',body:JSON.stringify({text:raw})}).then(function(r){
+      if(r.status===401) return lock(true);
+      return r.json().then(function(j){
+        EMAILS=j.emails||[]; $('a-input').value='';
+        flash('추가 '+j.added+'건 · 중복 '+j.duplicate+'건 · 형식오류 '+j.invalid+'건');
+        render();
+      });
+    }).catch(function(){ flash('서버에 연결하지 못했습니다.'); });
+  }
+  function csv(){
+    if(ONLINE){
+      var a=document.createElement('a'); a.href=API+'/admin/export.csv'; a.download='';
+      document.body.appendChild(a); a.click(); a.remove();
+      flash('서버에서 CSV를 내려받습니다.'); return;
+    }
+    var arr=local(); if(!arr.length){ flash('내려받을 주소가 없습니다.'); return; }
+    var body=[['이메일','등록일시','경로']].concat(arr.map(function(x){return [x.email,fmt(x.at),x.src||''];} )).map(function(r){
+      return r.map(function(c){ return '"'+String(c).replace(/"/g,'""')+'"'; }).join(',');
+    }).join('\r\n');
+    var d=new Date(), nm='landfree_emails_'+d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+'.csv';
+    var url=URL.createObjectURL(new Blob(['\ufeff'+body],{type:'text/csv;charset=utf-8'}));
+    var a2=document.createElement('a'); a2.href=url; a2.download=nm; document.body.appendChild(a2); a2.click(); a2.remove();
+    flash(arr.length+'건을 '+nm+' 로 내려받았습니다. (오프라인)');
+  }
+  function copy(){
+    var arr=ONLINE?EMAILS:local(); if(!arr.length){ flash('복사할 주소가 없습니다.'); return; }
+    var t=arr.map(function(x){return x.email;}).join(', ');
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(function(){flash(arr.length+'개 주소를 복사했습니다.');},function(){flash('복사 권한이 없습니다. CSV를 이용하세요.');});
+    } else { flash('이 브라우저에서는 자동 복사가 안 됩니다. CSV를 이용하세요.'); }
+  }
+  function login(){
+    var pw=$('a-pass').value;
+    if(!pw){ $('a-err').textContent='암호를 입력하세요.'; return; }
+    $('a-err').textContent='확인 중…';
+    api('/admin/login',{method:'POST',body:JSON.stringify({password:pw})}).then(function(r){
+      if(r.status===200){
+        ONLINE=true; $('a-err').textContent=''; $('a-pass').value='';
+        try{ sessionStorage.setItem(SKEY,'1'); }catch(e){}
+        loadEmails();
+      } else if(r.status===401){ $('a-err').textContent='암호가 맞지 않습니다.'; }
+      else if(r.status===429){ $('a-err').textContent='시도가 너무 많습니다. 잠시 후 다시 시도하세요.'; }
+      else { $('a-err').textContent='서버 오류 ('+r.status+')'; }
+    }).catch(function(){
+      if(pw===OFFLINE_PASS){
+        ONLINE=false; $('a-err').textContent=''; $('a-pass').value='';
+        try{ sessionStorage.setItem(SKEY,'1'); }catch(e){}
+        unlock(true);
+      } else { $('a-err').textContent='서버에 연결할 수 없고, 오프라인 암호도 맞지 않습니다.'; }
+    });
+  }
+  function loadEmails(){
+    api('/admin/emails',{method:'GET'}).then(function(r){
+      if(r.status===401){ return lock(true); }
+      return r.json().then(function(j){ EMAILS=j.emails||[]; unlock(true); });
+    }).catch(function(){
+      ONLINE=false;
+      var ok=false; try{ ok=sessionStorage.getItem(SKEY)==='1'; }catch(e){}
+      if(ok) unlock(true); else { gate.hidden=false; con.hidden=true; modeText(); }
+    });
+  }
+  $('a-login').addEventListener('click',login);
+  $('a-pass').addEventListener('keydown',function(e){ if(e.key==='Enter') login(); });
+  $('a-lock').addEventListener('click',function(){ lock(false); });
+  $('a-add').addEventListener('click',add);
+  $('a-csv').addEventListener('click',csv);
+  $('a-copy').addEventListener('click',copy);
+  $('a-clear').addEventListener('click',function(){
+    var n=(ONLINE?EMAILS:local()).length; if(!n) return;
+    if(!window.confirm('저장된 이메일 주소 '+n+'건을 모두 삭제할까요? 되돌릴 수 없습니다.')) return;
+    if(!ONLINE){ saveLocal([]); render(); flash('전체 삭제했습니다. (오프라인)'); return; }
+    api('/admin/clear',{method:'POST'}).then(function(r){
+      if(r.status===401) return lock(true);
+      return r.json().then(function(){ EMAILS=[]; render(); flash('전체 삭제했습니다.'); });
+    }).catch(function(){ flash('서버에 연결하지 못했습니다.'); });
+  });
+  $('a-search').addEventListener('input',render);
+
+  api('/status',{method:'GET'}).then(function(r){ return r.json(); }).then(function(j){
+    ONLINE = !!(j&&j.ok);
+  }).catch(function(){ ONLINE=false; }).then(function(){
+    var ok=false; try{ ok=sessionStorage.getItem(SKEY)==='1'; }catch(e){}
+    if(!ok){ gate.hidden=false; con.hidden=true; modeText(); return; }
+    if(ONLINE) loadEmails(); else unlock(true);
+  });
+})();
+
+(function(){
+  var f=document.getElementById('join-form'); if(!f) return;
+  var STORE='lf_emails_v1';
+  function local(e){
+    try{
+      var a=JSON.parse(localStorage.getItem(STORE)||'[]');
+      if(!a.some(function(x){ return String(x.email).toLowerCase()===e.toLowerCase(); })){
+        a.push({email:e, at:new Date().toISOString(), src:'join', consent_at:new Date().toISOString()});
+        localStorage.setItem(STORE, JSON.stringify(a));
+      }
+    }catch(err){}
+  }
+  f.addEventListener('submit',function(){
+    var el=document.getElementById('join-email'); var e=((el&&el.value)||'').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(e)) return;
+    local(e);
+    try{
+      fetch('/api/join',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        credentials:'same-origin',
+        body:JSON.stringify({email:e, src:'join',consent:true})
+      }).catch(function(){});
+    }catch(err){}
+  });
+})();
+</script>
+</div>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body></html>
