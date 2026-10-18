@@ -22,7 +22,7 @@ a{color:var(--neon)}
 .mono{font-family:var(--mono)}
 .wrap{max-width:1060px;margin:auto;padding:0 20px}
 /* ---- nav ---- */
-nav{position:sticky;top:0;z-index:20;background:rgba(10,14,26,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:20;background:rgba(10,14,26,.9);border-bottom:1px solid var(--line)}
 nav .in{max-width:1060px;margin:auto;display:flex;gap:16px;align-items:center;padding:10px 20px;overflow-x:auto;white-space:nowrap}
 nav b{color:var(--neon);font-weight:800;font-size:15px;display:inline-flex;align-items:center;gap:8px;margin-right:auto;flex:0 0 auto}
 nav a{color:var(--mut);text-decoration:none;font-size:13.5px;flex:0 0 auto}
@@ -137,6 +137,17 @@ footer a{color:var(--neon)}
   section{padding:44px 16px 6px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+  /* ── 10.29 검증 게시판 크로스링크 ── */
+  nav a.vlink{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff!important;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 13px;font-weight:800;font-size:12.5px;box-shadow:0 0 16px rgba(255,71,87,.55);text-decoration:none}
+  nav a.vlink:hover{background:#ff5c6b;box-shadow:0 0 22px rgba(255,71,87,.8)}
+  .vbanner{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:20px 0 0;padding:14px 18px;border:1.5px solid rgba(255,71,87,.8);border-radius:14px;background:linear-gradient(100deg,rgba(255,71,87,.20),rgba(60,240,197,.10));text-decoration:none;color:var(--txt);box-shadow:0 0 24px rgba(255,71,87,.30);transition:.18s}
+  .vbanner:hover{border-color:var(--neon);box-shadow:0 0 28px rgba(60,240,197,.40);transform:translateY(-1px)}
+  .vbanner .vb-tag{flex:0 0 auto;background:var(--red);color:#fff;font-weight:900;font-size:15px;padding:7px 12px;border-radius:9px;letter-spacing:.02em}
+  .vbanner .vb-txt{flex:1 1 230px;display:block;line-height:1.4}
+  .vbanner .vb-txt b{display:block;font-size:17px;color:#fff;letter-spacing:-.01em}
+  .vbanner .vb-txt small{display:block;color:var(--mut);font-size:12.5px;margin-top:4px}
+  .vbanner .vb-go{flex:0 0 auto;color:var(--neon);font-weight:800;font-size:13.5px;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -144,6 +155,7 @@ footer a{color:var(--neon)}
 <nav aria-label="파일 탐색">
   <div class="in">
     <b><span class="mono">📁</span> 선관위 특검 수사 파일</b>
+    <a class="vlink" href="verify.html" title="10.29 투표용지 공개 검증 게시판 (D-day 자동 반영)">🔴 10.29 검증 게시판 →</a>
     <a href="#summary" style="color:var(--red);font-weight:800">10.18 New</a>
     <a href="#summary">요약</a>
     <a href="#timeline">타임라인</a>
@@ -186,6 +198,12 @@ footer a{color:var(--neon)}
         <span class="metanew">New 10.18 · 국세청 세무조사 요청</span>
         <span class="metanew">10.14 영장 <b>기각 1건 → 재청구</b></span>
       </div>
+
+      <a class="vbanner" href="verify.html">
+        <span class="vb-tag">10.29</span>
+        <span class="vb-txt"><b>투표용지 공개 검증 게시판</b><small>올림픽공원 247만 장 · D-day 자동 반영 · 절차·참관·쟁점·체크리스트</small></span>
+        <span class="vb-go">게시판 바로 가기 →</span>
+      </a>
     </div>
   </div>
 </header>
@@ -485,18 +503,18 @@ footer a{color:var(--neon)}
   <h2 class="sec-t">팩트체크 — 원 보고 대조 결과</h2>
   <p class="sub">10.18 2차 수정판은 직전 판본(10.14)의 <b>9장 불일치 항목 7개를 원 보도로 대조해 확정</b>했습니다. 아래는 그 결과이며, 확정 수치는 위 2장·5장에도 반영했습니다. <b>확정된 것은 "그렇게 보도됐다"는 사실관계</b>이지 유죄 확정이 아닙니다.</p>
   <div class="tbox"><table>
-    <thead><tr><th>항목</th><th>원 보도로 확정된 사실</th><th>판정</th><th>출처</th></tr></thead>
+    <thead><tr><th>항목</th><th>원 보도로 확정된 사실</th><th>출처</th></tr></thead>
     <tbody>
-      <tr><td>노태악 출장비 횡령</td><td>합수본이 2026.7.20 중앙선관위 등에 압수수색. 영장에 <b>피의자 노태악 전 위원장</b>과 성명불상 선관위 직원을 적시하고 혐의는 <b>업무상 횡령</b>으로 기재. 노 전 위원장은 공직선거법 위반·직무유기 혐의로 <b>입건된 피의자 14명 중 1명</b>이며 특검이 9.28 출국금지를 연장</td><td><b>그록판 일치</b></td><td><a href="https://www.yonhapnewstv.co.kr/news/AKR20260720093255149">[59]</a> <a href="https://news.kbs.co.kr/news/view.do?ncd=8614641">[60]</a></td></tr>
-      <tr><td>허철훈 입건 여부</td><td>10.5 조선일보·뉴시스·YTN이 모두 "6·3 지방선거 투표용지 부족 사태와 관련해 <b>공직선거법 위반 및 직무유기 등 혐의로 입건된 상태</b>"라고 보도. 같은 날 특검이 출국금지를 연장</td><td><b>그록판 일치</b></td><td><a href="https://www.news1.kr/society/court-prosecution/6310614">[7]</a> <a href="https://www.chosun.com/national/court_law/2026/10/05/ADLT5VEVPZFQ7LZI5OTAZZ2JWI/">[28]</a></td></tr>
-      <tr><td>투표자 수 지침 범위</td><td>중앙선관위가 선거 당일 시·도 선관위에 「오류가 나도 원칙적으로 수정하지 않되 부득이하면 반드시 보고·승인 후 처리」, 「큰 오류가 아니면 다음 시각 보고 때 가감」 취지의 지침을 내린 정황을 합수본이 확인. <b>2025년 대선 81건·2024년 총선 65건</b>의 사후 수정 이력도 확인. 윗선 관여와 과거 선거 동일 방식 여부가 조사 대상</td><td><b>양쪽 모두 일치</b></td><td><a href="https://www.newdaily.co.kr/site/data/html/2026/08/01/2026080100025.html">[53]</a> <a href="https://www.yna.co.kr/view/AKR20260804040500004">[54]</a></td></tr>
-      <tr><td>60→50% 하향</td><td>2025.12.10 「제9회 지방선거 종합관리지침」을 <b>사무총장 전결</b>로, 12.24 「공직선거절차사무편람」을 <b>선거정책실장 전결</b>로 개정. <b>위원회 의결 없음</b>. 규칙·지침 구분 기준이 없다고 선관위가 답한 회의록 확인. 시민단체가 노 전 위원장 등 <b>6명을 직권남용·직무유기로 고발</b></td><td><b>양쪽 모두 일치</b></td><td><a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=222435">[55]</a> <a href="https://www.joongang.co.kr/article/25433967">[56]</a></td></tr>
-      <tr><td>선거소청 규모·시점</td><td>중앙선관위가 8.7·8.12에 <b>소청 261건을 기각 112건·각하 149건</b>으로 결정. 전국 접수는 130건에서 350건, <b>685~690건</b>으로 늘었고 4년 전 지방선거(46건)의 <b>약 15배</b>. <b>"약 2만 건"은 어느 원 보도에서도 확인되지 않음</b></td><td><b>그록판 수치 미확인</b></td><td><a href="https://www.yna.co.kr/view/AKR20260812160051001">[50]</a> <a href="https://www.hani.co.kr/arti/politics/politics_general/1267136.html">[51]</a></td></tr>
-      <tr><td>선거무효소송</td><td>국민의힘 법률자문위가 8.27 서울시장·서울시의회 비례 등 <b>6건 소장을 대법원</b>에 접수, 송파구 4건은 8.28까지 관할 고등법원에 순차 접수(<b>합계 10건</b>). 앞서 국민의힘 제기 소청 122건은 전부 기각</td><td><b>챗지피티판 일치</b></td><td><a href="https://www.yna.co.kr/view/AKR20260827071700001">[52]</a></td></tr>
-      <tr><td>국민청원</td><td>탄핵소추 청원은 중앙선관위 위원 9명·서울선관위 위원 8명을 포함한 각급 선관위 위원 <b>65명</b>을 대상으로 6.11~7.11 진행. 임태희 전 경기도교육감 등이 추진한 선거제도 개정 국민동의청원은 <b>10월 중 5만 명 동의를 넘어</b> 국회 소관 상임위 회부 요건을 충족</td><td><b>챗지피티판 일치</b></td><td><a href="https://www.daenews.co.kr/25508">[57]</a> <a href="https://weekly.hankooki.com/news/articleViewAmp.html?idxno=7189347">[58]</a></td></tr>
+      <tr><td>노태악 출장비 횡령</td><td>합수본이 2026.7.20 중앙선관위 등에 압수수색. 영장에 <b>피의자 노태악 전 위원장</b>과 성명불상 선관위 직원을 적시하고 혐의는 <b>업무상 횡령</b>으로 기재. 노 전 위원장은 공직선거법 위반·직무유기 혐의로 <b>입건된 피의자 14명 중 1명</b>이며 특검이 9.28 출국금지를 연장</td><td><a href="https://www.yonhapnewstv.co.kr/news/AKR20260720093255149">[59]</a> <a href="https://news.kbs.co.kr/news/view.do?ncd=8614641">[60]</a></td></tr>
+      <tr><td>허철훈 입건 여부</td><td>10.5 조선일보·뉴시스·YTN이 모두 "6·3 지방선거 투표용지 부족 사태와 관련해 <b>공직선거법 위반 및 직무유기 등 혐의로 입건된 상태</b>"라고 보도. 같은 날 특검이 출국금지를 연장</td><td><a href="https://www.news1.kr/society/court-prosecution/6310614">[7]</a> <a href="https://www.chosun.com/national/court_law/2026/10/05/ADLT5VEVPZFQ7LZI5OTAZZ2JWI/">[28]</a></td></tr>
+      <tr><td>투표자 수 지침 범위</td><td>중앙선관위가 선거 당일 시·도 선관위에 「오류가 나도 원칙적으로 수정하지 않되 부득이하면 반드시 보고·승인 후 처리」, 「큰 오류가 아니면 다음 시각 보고 때 가감」 취지의 지침을 내린 정황을 합수본이 확인. <b>2025년 대선 81건·2024년 총선 65건</b>의 사후 수정 이력도 확인. 윗선 관여와 과거 선거 동일 방식 여부가 조사 대상</td><td><a href="https://www.newdaily.co.kr/site/data/html/2026/08/01/2026080100025.html">[53]</a> <a href="https://www.yna.co.kr/view/AKR20260804040500004">[54]</a></td></tr>
+      <tr><td>60→50% 하향</td><td>2025.12.10 「제9회 지방선거 종합관리지침」을 <b>사무총장 전결</b>로, 12.24 「공직선거절차사무편람」을 <b>선거정책실장 전결</b>로 개정. <b>위원회 의결 없음</b>. 규칙·지침 구분 기준이 없다고 선관위가 답한 회의록 확인. 시민단체가 노 전 위원장 등 <b>6명을 직권남용·직무유기로 고발</b></td><td><a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=222435">[55]</a> <a href="https://www.joongang.co.kr/article/25433967">[56]</a></td></tr>
+      <tr><td>선거소청 규모·시점</td><td>중앙선관위가 8.7·8.12에 <b>소청 261건을 기각 112건·각하 149건</b>으로 결정. 전국 접수는 130건에서 350건, <b>685~690건</b>으로 늘었고 4년 전 지방선거(46건)의 <b>약 15배</b>. <b>"약 2만 건"은 어느 원 보도에서도 확인되지 않음</b></td><td><a href="https://www.yna.co.kr/view/AKR20260812160051001">[50]</a> <a href="https://www.hani.co.kr/arti/politics/politics_general/1267136.html">[51]</a></td></tr>
+      <tr><td>선거무효소송</td><td>국민의힘 법률자문위가 8.27 서울시장·서울시의회 비례 등 <b>6건 소장을 대법원</b>에 접수, 송파구 4건은 8.28까지 관할 고등법원에 순차 접수(<b>합계 10건</b>). 앞서 국민의힘 제기 소청 122건은 전부 기각</td><td><a href="https://www.yna.co.kr/view/AKR20260827071700001">[52]</a></td></tr>
+      <tr><td>국민청원</td><td>탄핵소추 청원은 중앙선관위 위원 9명·서울선관위 위원 8명을 포함한 각급 선관위 위원 <b>65명</b>을 대상으로 6.11~7.11 진행. 임태희 전 경기도교육감 등이 추진한 선거제도 개정 국민동의청원은 <b>10월 중 5만 명 동의를 넘어</b> 국회 소관 상임위 회부 요건을 충족</td><td><a href="https://www.daenews.co.kr/25508">[57]</a> <a href="https://weekly.hankooki.com/news/articleViewAmp.html?idxno=7189347">[58]</a></td></tr>
     </tbody>
   </table></div>
-  <div class="note"><b>판정 요약</b> — 실제로 두 판본이 어긋난 항목은 <b>4개</b>입니다. 노태악 출장비 횡령과 허철훈 입건은 그록판이, 선거무효소송은 챗지피티판이 원 보도와 일치합니다. 선거소청 규모는 그록판의 「약 2만 건」이 원 보도에서 확인되지 않아 수치가 잘못된 것으로 봅니다. 나머지 3개(투표자 수 지침 범위·60→50% 하향·국민청원)는 서로 상충하지 않았습니다 — 같은 사안을 <b>다른 층위에서 기술</b>한 것이므로 두 판본을 합쳐야 원 보도 수준의 정보가 됩니다.</div>
+  <div class="note"><b>판정 요약</b> — 원 보도로 확정된 사실관계는 위 표와 같습니다. 선거소청 규모의 「약 2만 건」은 어느 원 보도에서도 확인되지 않아 <b>수치가 잘못된 것</b>으로 봅니다. 나머지 항목은 원 보도와 어긋나지 않았고, 같은 사안을 <b>다른 층위에서 기술</b>한 경우가 있어 함께 읽어야 원 보도 수준의 정보가 됩니다. 확정된 것은 "그렇게 보도됐다"는 <b>사실관계</b>이지 유죄 확정이 아닙니다.</div>
   <h3 class="mini" style="margin-top:30px">이 파일이 앞서 교정·보강한 항목</h3>
   <div class="tbox"><table>
     <thead><tr><th>원자료의 불일치·오차</th><th>대조 결과</th></tr></thead>
@@ -524,6 +542,7 @@ footer a{color:var(--neon)}
     <div class="a"><b>"탈세 정황 포착 = 탈세 확정"</b><small>세무조사 결과가 관건입니다 [45][46]</small></div>
   </div>
   <div class="note"><b>기준일 정리</b> — 10월 5일 이후 <b>소환·구속영장·기소 속보는 10월 18일 기준 공개 보도에서 확인되지 않았습니다</b>. 압수수색·출국금지·영장 청구·영장 기각은 모두 유·무죄 판단이 아닙니다.</div>
+  <div class="note" style="border-color:rgba(255,71,87,.55)"><b style="color:var(--red)">10.29 공개 검증</b> — 올림픽공원 보관 투표용지 247만 장의 공개 검증 일정·절차·참관 방법은 <a href="verify.html" style="color:var(--neon);font-weight:800">투표용지 공개 검증 게시판 →</a> 에서 D-day와 함께 확인하세요.</div>
 </section>
 
 <section id="videos">
@@ -540,9 +559,13 @@ footer a{color:var(--neon)}
     <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/Q5ju_1eFXvs" title="3차 청문회·재검표 충돌 (KBS)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/Q5ju_1eFXvs"></iframe></div><div class="cap">KBS 2026.8.10 — '투표용지 부족 사태' 3차 청문회…'올공' 재검표 일정 여야 충돌</div></div>
     <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/ZT0xri9RON0" title="잠실 투표지 247만 장 재검표 (KBS 뉴스9)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/ZT0xri9RON0"></iframe></div><div class="cap">KBS 뉴스9 — '잠실 투표지' 247만 장 내달 18일 전격 재검표…'170일 수사' 특검법 처리</div></div>
     <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/LKddy1t-x8Q" title="선관위 진상규명위 경위 발표 (채널A)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/LKddy1t-x8Q"></iframe></div><div class="cap">채널A 2026.6.12 — 선관위 진상규명위 '투표용지 부족 사태' 경위 발표 [현장영상]</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/HKxFB_QU8Ho" title="특검, 선관위 동시다발 압수수색 — 투표자 허위 입력 30곳 (KBS)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/HKxFB_QU8Ho"></iframe></div><div class="cap">KBS 2026.10.15 — 특검, 선관위 동시다발 압수수색…"투표자 허위 입력 5곳→30곳"</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/grTZvNB9OsY" title="특검, 선거물품 독점 특혜계약 10개 선관위 압수수색 (연합뉴스TV)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/grTZvNB9OsY"></iframe></div><div class="cap">연합뉴스TV — 특검, '선거물품 독점 특혜계약' 10개 선관위 압수수색 (10.15)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/KGgc4ukfMDk" title="선관위특검, 유착 의혹 업체 탈세 정황 발견 (연합뉴스TV)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/KGgc4ukfMDk"></iframe></div><div class="cap">연합뉴스TV 2026.10.18 — 선관위특검 "유착 의혹 업체 탈세 등 정황 발견"</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/Bg9rF0jU030" title="선관위특검, 투표용지 공개검증 29일 조율 (팩트브리핑)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/Bg9rF0jU030"></iframe></div><div class="cap">팩트브리핑 — 선관위특검, 투표용지 공개검증 29일 조율 (10.11 보도)</div></div>
     <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/REouhOkbXds" title="노태악 배우자 동반 출장 (시사팩트 오늘)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/REouhOkbXds"></iframe></div><div class="cap">시사팩트 오늘 — 해외 출장마다 배우자 동행한 노태악…비즈니스석 (출장비 의혹)</div></div>
   </div>
-  <div class="note">10.15 이후 강제수사(허위 입력 30곳·창고계약 특혜·국세청 요청) 관련 영상은 <b>원자료에 링크가 없어 이 파일에 싣지 않았습니다</b>. 각 방송사 공식 채널에서 확인하세요.</div>
+  <div class="note"><b>추가 자료(10.18)</b> — 10.15 이후 강제수사(투표자 수 허위 입력 30곳 · 선거물품 창고계약 독점 특혜 10곳 · 국세청 세무조사 요청)와 <b>10.29 공개 검증</b> 관련 원영상을 위에 보강했습니다. 영상은 각 방송사·채널에 저작권이 있으며, 공개 검증 진행 상황은 <a href="verify.html" style="color:var(--neon);font-weight:800">검증 게시판 →</a> 에서 계속 갱신됩니다.</div>
 </section>
 
 <section id="sources">
@@ -628,10 +651,31 @@ footer a{color:var(--neon)}
   <p><b style="color:var(--neon)">선관위 특검 수사 파일</b> · 사건기록 SW-2606 · 기준일 2026.10.18 (일)</p>
   <p style="margin-top:6px">원자료: 「선관위 특검 수사 종합 정리」 10.18 2차 수정판 — 본 파일은 출처 대조로 교정·보강한 판본입니다. <b style="color:var(--red)">10.18 업데이트</b>: 투표자 수 허위 입력 30곳·중앙선관위 등 7곳 압수수색 · 선거물품 창고계약 독점 특혜 10곳 압수수색 · 국세청 세무조사 요청(탈세·허위 세금계산서) · 활동비 영장 기각 후 재청구 방침 · 10.29 공개 검증.</p>
   <p style="margin-top:6px">혐의·의혹은 수사 대상이지 확정된 범죄가 아닙니다. 새 사실이 나오면 태그(확정/보도/진행/미확인)를 갱신해 업데이트하세요.</p>
-  <p style="margin-top:14px"><a href="index.html#/salriki">🚩 대한민국 살리기 페이지로 돌아가기 →</a></p>
+  <p style="margin-top:14px"><a href="verify.html" style="color:var(--neon);font-weight:800">🔴 10.29 투표용지 공개 검증 게시판 →</a></p>
+  <p style="margin-top:8px"><a href="index.html#/salriki">🚩 대한민국 살리기 페이지로 돌아가기 →</a></p>
 </footer>
 
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+<style id="site-dock-css">
+#site-dock{position:fixed;top:auto;right:auto;left:50%;bottom:14px;height:auto;width:max-content;transform:translateX(-50%);z-index:2147483000;display:flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:rgba(10,14,26,.97);border:1px solid rgba(60,240,197,.35);box-shadow:0 10px 30px rgba(0,0,0,.45);font-family:'Pretendard','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;max-width:calc(100vw - 20px);overflow-x:auto;scrollbar-width:none}
+#site-dock::-webkit-scrollbar{display:none}
+#site-dock a{flex:0 0 auto;padding:7px 13px;border-radius:999px;color:#cfd8e3;text-decoration:none;font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:-.01em}
+#site-dock a:hover{background:rgba(255,255,255,.09);color:#fff}
+#site-dock a.cur{background:#3cf0c5;color:#06121a}
+#site-dock a.vf{color:#ffd9d4;border:1px solid rgba(255,71,87,.55)}
+#site-dock a.vf.cur{background:#ff4757;color:#fff;border-color:#ff4757}
+#site-dock .sd-dot{width:1px;height:16px;background:rgba(255,255,255,.16);margin:0 3px;flex:0 0 auto}
+@media(max-width:640px){#site-dock{bottom:10px;gap:2px;padding:5px}#site-dock a{padding:6px 10px;font-size:11.5px}}
+</style>
+<div id="site-dock" role="navigation" aria-label="사이트 바로가기">
+  <a href="index.html">토지와 자유</a>
+  <a href="policy.html">정책</a>
+  <a href="salriki.html">대한민국 살리기</a>
+  <span class="sd-dot"></span>
+  <a class="cur" href="teukgeom.html">특검 수사 파일</a>
+  <a class="vf" href="verify.html">10.29 검증 게시판</a>
+</div>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
