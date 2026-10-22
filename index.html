@@ -927,6 +927,15 @@ body.sal-mode #site-header{display:none !important;}
 /* ===== 모바일 안전망 (390px 기준 점검 반영) ===== */
 html{word-break:keep-all;overflow-wrap:anywhere}
 img,svg,table{max-width:100%}
+/* ── 표 가독성(PC): 한국어가 단어 중간에서 두 줄로 갈라지는 문제 수정 ── */
+table { border-collapse: collapse; }
+table th, table td { word-break: keep-all; }
+table th { white-space: nowrap; }
+.tlq-table th:first-child, .tlq-table td:first-child { white-space: nowrap; }
+#toolkit table th, #toolkit table td, #sentences table th, #sentences table td { padding: 11px 14px; vertical-align: top; border-bottom: 1px solid var(--line); text-align: left; }
+#toolkit table th, #sentences table th { background: var(--teal-soft); color: var(--teal); font-weight: 800; }
+.lnl-sal table th, .lnl-sal table td { word-break: keep-all; }
+
 .ink-black{color:#0B0B0B !important}
 .tlq-table-wrap{overflow-x:auto !important;-webkit-overflow-scrolling:touch}
 .tlq-table-wrap::-webkit-scrollbar{height:6px}
@@ -2045,10 +2054,28 @@ img,svg,table{max-width:100%}
 <p>수색로 개척 중 폭발로 간부 3명이 다쳤습니다(2명 중상 보도). 합참은 ‘북한군 지뢰’로 공식 규정하고 사과를 요구했습니다. 현장에서 북한 <b>수지반보병지뢰</b>가 추가 발견됐다는 보도도 있습니다. 다음 날 같은 사단 대위가 숨진 채 발견됐으며 사고와의 관련성은 미확인입니다. ※ 폭발물이 북한 신규 매설분인지 우리 측 잔여 지뢰인지는 초기 보도에서 확인되지 않았습니다 — “북한이 심은 지뢰에 정부가 장병을 밀어 넣었다”는 아직 확정이 아닙니다.</p>
 <div class="act"><b>할 일 →</b> 사고조사 결과의 비밀·신원 제외 요약본 공개 요구, 부상 장병 치료·재활·보상 입법 지지, 군인권보호관(국가인권위) 조사 요청 — 가족·지인도 진정 가능</div></div>
 
-<div class="card" data-p="sec"><span class="tag debate">논쟁</span> <span class="pillar">안보·재정</span>
-<h3>대북 지원 예산</h3>
-<p>2025년 인도지원 집행 실적 0원, 2026년 예산 90% 넘게 증액, 2027년 남북협력기금 1조 115억 원 — 정부는 ‘관계 개선 대비 예비금’이라고 설명합니다. ※ 편성된 돈과 전달된 돈은 다릅니다: 정부안 → 국회 확정액 → 승인액 → 집행액 → 수혜자 전달·평가, 5단계로 확인해야 합니다(통일부 월별 통계 공개). “작년 0원, 예산 90% 증액”은 출처가 한쪽으로 기울어 있어 <b>홈에 숫자로 박기 전 통일부 결산·열린재정 재검증</b>이 필요합니다.</p>
+<div class="card" data-p="sec"><span class="tag fact">확정</span> <span class="tag press">보도</span> <span class="tag debate">10.22 갱신</span> <span class="pillar">안보·재정</span>
+<h3>대북 지원 예산 — 편성은 1조, 집행은 1%대</h3>
+<p>2027년 통일부 예산안은 총지출 <b>1조 2,549억 원</b>(2026년 1조 2,447억 대비 +102억)이고, <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">남북협력기금 1조 115억 원</mark>(전년 1조 23억 대비 +92억·0.91% 증액)입니다. 사업비는 구호지원 등 인도적 문제해결 <b>5,809억(57.6%)</b>·남북관계 기반구축 4,108억(40.7%)·사회문화교류 123억(1.2%) — 무상·구호지원은 불용 패널티로 <b>15% 일괄 삭감</b>되고 경협기반융자(591억→1,994억)를 <b>230% 증액</b>해 1조 원대를 유지한 구조입니다. 반대로 실적은 이렇습니다. <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">2019년 하노이 노딜 이후 남북협력기금 연간 집행률은 최근 몇 년간 10% 미만</mark>(통일부 9.14 정례브리핑), 2026년 '기타 경제협력사업' 본예산 1,789억 원 중 8월 말까지 집행은 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">0.09%(1억 6,000만 원)</mark>에 그쳤는데도 2027년 같은 항목에 1,515억 8,400만 원을 편성했습니다(김대식 의원실·통일부 제출자료, 9.13). 정동영 장관은 "수십 년째 예산 편성만 하고 전혀 집행을 못 하는 상황"이라고 인정했고, 김 의원은 사용처 비공개 항목이 필요할 때 마음대로 빼 쓰는 <b>'쌈짓돈'</b>이 될 수 있다고 지적했습니다. ※ 편성된 돈과 전달된 돈은 다릅니다 — 정부안 → 국회 확정액 → 승인액 → 집행액 → 수혜자 전달·평가, 5단계로 확인해야 합니다(통일부 월별 통계 공개).</p>
 <div class="act"><b>할 일 →</b> 사업별 승인·집행·정산·평가 문서 정보공개, 외교통일위 집행률·모니터링 질의, 예결위에 조건부 편성·사후 공개 의견(12.2 기한 전). 시민이 묻는 3가지 질문: <b>누가 받았나 · 전용을 막는 모니터링이 있나 · 예산 대비 실제 전달은 얼마인가</b></div></div>
+
+<div class="card new" data-p="sec"><span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="tag debate">10.22 갱신</span> <span class="pillar">안보·인도협력</span>
+<h3>대북 인도적 지원 — 강동군병원 의료장비 166종</h3>
+<p>정부가 김정은의 '지방병원 건설' 첫 사례인 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">평양시 강동군 병원에 진단·수술·치료용 필수의료장비 166종(약 93억 원 규모)</mark>을 지원하는 방안을 준비해 왔습니다(통일부 국회 보고, 9.14). 전달 창구는 한국국제보건의료재단이고, <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">유엔 안보리 대북제재 면제는 2026년 5월 승인</mark>을 받았습니다. 통일부는 "대북 인도적 사업은 정치적·군사적 상황과 무관하게 일관되게 추진한다"는 원칙을 재확인했습니다. 다만 <b>북한은 '적대적 두 국가' 선언 이후 대화 제의를 거부하고 있고, 지원 수용 의사도 밝히지 않았습니다</b> — '추진 중'이지 '전달 완료'가 아닙니다. 국민의힘 김대식 의원은 대남 적대 기조를 앞세우고 핵을 개발하는 북한에 의료장비를 지원하는 것은 "굴종적 대북정책"이라고 비판했고(9.14), 같은 달 12일 북한 미사일 도발 직후에 목록이 공개돼 '때맞춤' 논쟁도 있었습니다. 미국은 올해 2월 대북 인도적 지원사업 <b>17건의 제재 면제</b>를 안보리 이사국 만장일치로 승인했습니다(2.6).</p>
+<div class="act"><b>할 일 →</b> 강동군병원 지원의 진행 단계(제재면제 → 전달협의 → 실제 반출) 문서 공개 요구, 통일부 인도협력 월별 통계·집행률 추적, 외교통일위·예결위 질의. 묻는 것은 정치 공방이 아니라 <b>‘전달 창구가 있는가 · 실제 전달은 얼마인가’</b>입니다</div></div>
+
+<div class="card new" data-p="sec future fis"><span class="tag fact">확정</span> <span class="tag debate">논쟁</span> <span class="tag probe">진행</span> <span class="pillar">농지·식량안보</span>
+<h3>이재명 정부 농지 전수조사 — 처분에서 ‘양성화’로 후퇴</h3>
+<p>2026년 2월 24일 국무회의에서 이재명 대통령이 경자유전(헌법 제121조)을 근거로 '농사짓지 않는 땅의 강제 매각' 검토를 지시하며 시작됐습니다. 근거는 지시가 아니라 법률(농지법 제31조의3·제49조·제54조·제54조의4, 시행령 제58조)입니다. 5월 7일 농지법 개정안이 본회의를 통과(재석 166·찬성 164·반대 1)하고 5월 18일 조사에 착수했으며, 핵심은 ① 농지조사원 출입권 명문화 ② 처분명령을 재량에서 <b>의무</b>로 전환 ③ 장관·시도지사 직접 처분명령 ④ 미이행 시 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">농지 가액의 연 25% 이행강제금</mark>(4년이면 가액을 넘길 수 있음) ⑤ 특수관계인 매각 금지 ⑥ 불법 임대차 신고포상금입니다. 1단계(2026)는 농지법 시행(1996.1.1) 이후 취득분 약 <b>136만 ha·1,013만 필지</b>가 대상이고, 7월 말까지 97%(132만 ha)의 기본조사를 마쳤습니다. <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">기본조사 중간집계에서 위반 의심 284만 필지(30.2만 ha), 전체의 27.0%</mark> — 불법 임대차 21.1%·무단 휴경 11.6%·불법 전용 9.0%·소유제한 위반 1.4%(한 필지가 중복 해당 가능)입니다. ※ 이는 <b>불법 확정도 투기 확정도 아닙니다</b> — 자료 누락·불일치, 정당한 휴경, 적법 임대차를 현장에서 확인해야 합니다.</p>
+<p style="margin-top:8px">정책은 넉 달 만에 후퇴했습니다. 9.17 청와대가 "설명·홍보 부족"을 인정했고, 9.21 당정이 특별조치법 제정을 예고(특별정비기간 11.15까지 연장)했으며, 9.24 대통령은 X에 "저항과 반발 때문에 모든 정부가 회피했지만 저는 회피하지 않겠다"고 했습니다. 그러다 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">10.8 농식품부가 ‘투기 목적이 아니면 처분하지 않는다’는 후속조치</mark>를 발표했습니다 — 상속 농지·고령농 등 관행적 임대차·영농 곤란 농지는 처분·이행강제금 대상에서 제외하고, <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">2~3년 특례기간에 서면 임대차 계약만 맺으면 적법 임대차로 인정</mark>합니다. 투기로 처분할 3유형은 ① 토지거래허가구역에서 영농계획서를 내고 취득한 농지(상속 제외)를 방치·임대 ② 경매 등 지분 매수 시 허위 영농계획서 ③ 농업법인 농지를 쪼개 팔거나 임대해 부동산 수익. 특조법은 이달 발의, <b>12월까지 국회 처리 목표</b>입니다. <b>법을 통과시킨 지 넉 달 만에 같은 법을 완화하는 특별법을 만드는 구조</b>라는 지적이 나옵니다.</p>
+<p style="margin-top:8px">시장은 얼어붙었습니다 — 전국 농지 1㎡당 평균 거래가 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">2023년 6만 1,612원 → 2026년 1~7월 5만 85원</mark>(3년 만에 1만 원 이상 하락, 한국농어촌공사), 농지담보대출 신규 월평균은 2026년 1~8월 827억 원으로 전년 동기(1,049억) 대비 <b>-26%</b>(송옥주 의원실·농협은행)입니다. 농지은행은 2027년 예산을 25% 늘리고 매입 대상을 비진흥지역까지 확대합니다. ※ 연구소 진단(첨부 정리본): 27%는 투기꾼의 숫자가 아니라 <b>법이 현실을 불법으로 규정해 둔 면적</b>입니다 — 임차농지 비율이 47%(2024)인데 소작 금지를 문자 그대로 적용하면 위반 의심이 대량으로 나올 수밖에 없습니다. 논은 태양광 전용보다 <b>식량 자산</b>으로 잠그고, 공직자·개발정보 접근자를 A트랙으로 분리해 심층조사해야 합니다.</p>
+<div class="act"><b>할 일 →</b> 10.8 후속조치·특조법 조문 확인, 정보공개청구(27% 산정 기준·심층조사 결과), A트랙(공직자·법인 농지) 별도 공개 요구, 농지은행 위탁 시 임차농 계약 지속·보복성 퇴거 방지 조항 확인. 평가 기준은 적발 건수가 아니라 <b>경작자 권리의 안정</b>입니다</div></div>
+
+<div class="card new" data-p="sec con"><span class="tag fact">확정</span> <span class="tag press">보도</span> <span class="tag debate">10.22 갱신</span> <span class="pillar">안보·외교</span>
+<h3>우크라이나 北 포로 송환 공개 갈등 — 대사 소환·공관원 절반 철수</h3>
+<p>우크라이나군에 생포된 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">북한군 포로 2명이 제3국을 경유해 한국으로 송환</mark>됐습니다(생포 1년 8개월 만). 정부는 안보·포로 가족 안전을 이유로 비공개를 추진했지만, <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">9.23(현지시간) 젤렌스키 대통령이 유엔총회 연설에서 송환 사실을 직접 공개</mark>하며 갈등이 촉발됐습니다. 정부는 "우크라이나가 먼저 요청한 비공개 합의를 일방 파기했다"고 주장하고, 우크라이나는 "비공개 합의는 없었다"고 맞서며 대통령의 '거짓말 논란'으로 번졌습니다 — 9.24 대통령 X "많이 아쉽다", 9.28 주한 우크라이나 대사대리 초치, 10.2 대통령 "합의 인정하고 사과하라".</p>
+<p style="margin-top:8px">10.6 국정감사에서 조현 장관은 우크라이나로부터 '사과의 말도 있는 메시지'를 받았으나 "우리가 생각하는 수준과는 차이"라며 단호한 조치를 예고했고, 같은 날 우크라이나 대통령실 제재 담당 보좌관은 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">"한국의 러시아 석유제품 수입이 러시아를 도왔다"</mark>고 비판했습니다. <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">10.8 정부가 박기창 주우크라이나 대사 본국 소환을 결정</mark>(10.10 귀국)했고, 10.12 시비하 우크라이나 외무장관은 "종결된 사안·우리는 모든 의무를 이행했다"며 사실상 사과를 거부했습니다. 10.18 윤지완 대사대리는 국감에서 "비공개 합의가 있었다는 사실을 우크라이나 측이 부인하지 못하는 상황"이라고 했습니다. <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">10.20 외교부는 우크라이나 전역 공습 위협·안전 우려를 이유로 주우크라이나 대사관 공관원 절반 철수</mark>를 결정했습니다(교민엔 10.16 폴란드 철수 권고, 전원 거부). ※ 우크라이나는 6월 방공무기 지원을 요청했고 한국은 '살상무기 미지원' 원칙 — '공개 배경'에 무기 지원 불만이 작용했다는 해석이 있습니다. ※ <b>확인된 것</b>(송환 사실·공개·대사 소환·공관원 철수)과 <b>해석</b>(대러·대북 관계 복원 의도)을 구분해야 합니다.</p>
+<div class="act"><b>할 일 →</b> 외교부·대통령실 공식 발표(문서명 특정) 정보공개청구, 국회 외교통일위 질의 요청, '비공개 합의' 공식 확인 요구. ※ 공관원 철수는 안전 문제이므로 정치 쟁점과 분리해 봅니다</div></div>
 
 <div class="card" data-p="sec me"><span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="pillar">안보·내 정보</span>
 <h3>금융권 동시다발 해킹</h3>
@@ -3097,6 +3124,7 @@ body.admin-mode{background:#F5F7FA}
   <a href="teukgeom.html" data-f="teukgeom.html">특검 수사 파일</a>
   <a class="vf" href="verify.html" data-f="verify.html">투표용지 검증 게시판</a>
 </div>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 </body></html>
