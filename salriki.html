@@ -875,6 +875,17 @@ body.sal-mode{background:#0a0e1a;}
 .lnl-sal td,.lnl-sal th,.lnl-sal .act,.lnl-sal .card p,.lnl-sal .note{overflow-wrap:anywhere}
 @media(max-width:640px){.lnl-sal table{font-size:.8rem}.lnl-sal th,.lnl-sal td{padding:9px 7px}}
 
+
+/* 상세 보기 · 큰 글씨 (2026.10.26) */
+.lnl-sal #issueGrid .card h3{font-size:21px;line-height:1.4;letter-spacing:-.01em}
+.lnl-sal #issueGrid .card p{font-size:16.5px;line-height:1.78}
+.lnl-sal .card-more{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:11px 20px;border:1.5px solid var(--neon);border-radius:999px;color:var(--neon);font-weight:800;font-size:15px;text-decoration:none;background:rgba(60,240,197,.07)}
+.lnl-sal .card-more:hover{background:rgba(60,240,197,.18)}
+.lnl-sal .dd-date{margin-top:4px;font-size:15px}
+.lnl-sal .cd .card h3{font-size:19px}
+.lnl-sal .axes7-wrap{overflow-x:auto}
+.lnl-sal .axes7 tr.onel td{white-space:nowrap}
+@media (max-width:640px){.lnl-sal .axes7 tr.onel td{font-size:12.5px;padding:10px 8px}}
 </style>
 <script>
   tailwind.config = {
@@ -1849,7 +1860,7 @@ table th { white-space: nowrap; }
   <div class="max-w-6xl mx-auto px-5">
     <p class="font-mono text-teal text-sm font-bold mb-3 reveal">04 · 2027.4~7 법안 캠페인</p>
     <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 reveal">9대 법안</h2>
-    <p class="text-ink/65 max-w-2xl mb-10 reveal">기존 7대 법안에 바젤Ⅲ·IFRS 18 대응에서 도출된 신규 2개(<span class="inline-block rounded-full bg-gold/20 px-2 text-xs font-bold text-[#8a6d12]">NEW</span>)를 더했습니다.</p>
+    <p class="text-ink/65 max-w-2xl mb-10 reveal">기존 7대 법안에 바젤Ⅲ·IFRS 18 대응에서 도출된 신규 2개()를 더했습니다.</p>
     <div class="grid md:grid-cols-2 gap-4">
       <article class="law-card reveal"><span class="law-num">01</span><div><h3 class="font-extrabold">국회의원 총비용 공개법</h3><p class="text-ink/60 text-sm mt-1">1인당 연 7~8억 원 비용의 전면 공개·외부 독립위원회 재산정.</p></div></article>
       <article class="law-card reveal"><span class="law-num">02</span><div><h3 class="font-extrabold">당일투표·수개표법</h3><p class="text-ink/60 text-sm mt-1">당일투표 원칙, 수개표 의무화(전자개표기 보조), 시민 참관 확대, 투표용지 110% 인쇄.</p></div></article>
@@ -1858,8 +1869,8 @@ table th { white-space: nowrap; }
       <article class="law-card reveal"><span class="law-num">05</span><div><h3 class="font-extrabold">광역시도별 토지배당기금법</h3><p class="text-ink/60 text-sm mt-1">17개 광역 기금 설치, 배당 40·인프라 30·안정화 20·청년 10 배분.</p></div></article>
       <article class="law-card reveal"><span class="law-num">06</span><div><h3 class="font-extrabold">소매 CBDC 프로그래밍·강제수납 제한법</h3><p class="text-ink/60 text-sm mt-1">감시형·통제형 CBDC만 금지하는 조건부 금지. 도매 CBDC·프라이버시형 파일럿은 허용.</p></div></article>
       <article class="law-card reveal"><span class="law-num">07</span><div><h3 class="font-extrabold">원화 스테이블 코인 지급결제법</h3><p class="text-ink/60 text-sm mt-1">준비자산·액면 상환·일별 공시·외부감사 적격요건. 디지털자산기본법 2단계 입법과 연동.</p></div></article>
-      <article class="law-card is-new reveal"><span class="law-num">08</span><div><h3 class="font-extrabold">금융회사 토지·부동산 익스포저 공시 및 편중위험 보고법 <span class="inline-block rounded-full bg-gold/20 px-2 text-[10px] font-bold text-[#8a6d12] align-middle">NEW</span></h3><p class="text-ink/60 text-sm mt-1">바젤 공시 정신의 국내 시민형 버전. 업무용/투자용 토지 구분, PF 우발채무, 유휴토지 공시.</p></div></article>
-      <article class="law-card is-new reveal"><span class="law-num">09</span><div><h3 class="font-extrabold">공공·준공공 기금 IFRS형 성과·MPM 공시법 <span class="inline-block rounded-full bg-gold/20 px-2 text-[10px] font-bold text-[#8a6d12] align-middle">NEW</span></h3><p class="text-ink/60 text-sm mt-1">토지배당기금에 선적용. 적립/배당/운용수익/비용 중간합계 + 고정 MPM 3~5개.</p></div></article>
+      <article class="law-card reveal"><span class="law-num">08</span><div><h3 class="font-extrabold">금융회사 토지·부동산 익스포저 공시 및 편중위험 보고법 </h3><p class="text-ink/60 text-sm mt-1">바젤 공시 정신의 국내 시민형 버전. 업무용/투자용 토지 구분, PF 우발채무, 유휴토지 공시.</p></div></article>
+      <article class="law-card reveal"><span class="law-num">09</span><div><h3 class="font-extrabold">공공·준공공 기금 IFRS형 성과·MPM 공시법 </h3><p class="text-ink/60 text-sm mt-1">토지배당기금에 선적용. 적립/배당/운용수익/비용 중간합계 + 고정 MPM 3~5개.</p></div></article>
     </div>
     <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
       <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-ink/10 bg-white p-5 hover:border-teal hover:-translate-y-0.5 transition block"><p class="font-mono text-xs font-bold text-teal mb-1"><i class="fa-solid fa-scale-balanced mr-1"></i>국가법령정보센터</p><p class="text-ink/60 text-sm leading-snug">법령·조문 원문 — 법안 비교의 기준점</p><span class="font-mono text-xs text-ink/40">www.law.go.kr</span></a>
@@ -1986,15 +1997,17 @@ table th { white-space: nowrap; }
 <li><b>정책 평가·제안</b> — 사실이 아니라 캠페인의 판단·요구</li>
 </ul></div>
 <div class="card"><span class="tag fact">원칙</span><h3>⚖ 국가가 망가지는지 판단하는 7축</h3>
-<table>
-<tr><td><b>국가안보</b></td><td>국민과 장병을 보호하는 능력이 실제로 약화됐는가?</td></tr>
-<tr><td><b>재정 책임</b></td><td>지출의 근거·성과·재원·미래 부담이 설명되는가?</td></tr>
-<tr><td><b>권력분립</b></td><td>권한이 집중될 때 독립적 견제 수단도 강화되는가?</td></tr>
-<tr><td><b>적법절차</b></td><td>수사·재판·선거·행정이 정해진 절차를 지키는가?</td></tr>
+<div class="axes7-wrap">
+<table class="axes7">
+<tr class="onel"><td><b>국가안보</b></td><td>국민과 장병을 보호하는 능력이 실제로 약화됐는가?</td></tr>
+<tr class="onel"><td><b>재정 책임</b></td><td>지출의 근거·성과·재원·미래 부담이 설명되는가?</td></tr>
+<tr class="onel"><td><b>권력분립</b></td><td>권한이 집중될 때 독립적 견제 수단도 강화되는가?</td></tr>
+<tr class="onel"><td><b>적법절차</b></td><td>수사·재판·선거·행정이 정해진 절차를 지키는가?</td></tr>
 <tr><td><b>투명성</b></td><td>오류·변경·사고의 기록을 국민이 확인할 수 있는가?</td></tr>
 <tr><td><b>책임성</b></td><td>문제 발생 뒤 조사·시정·구제가 실제 이루어지는가?</td></tr>
 <tr><td><b>기본권</b></td><td>안보·개혁·효율의 명분으로 권리가 과도히 제한되는가?</td></tr>
-</table></div>
+</table>
+</div></div>
 </div>
 </section>
 
@@ -2002,12 +2015,12 @@ table th { white-space: nowrap; }
 <h2>🧠 우리의 프레임</h2>
 <p class="sub">사실을 나열하는 것과, 사실을 꿰는 관점은 다릅니다. 캠페인이 어떤 눈으로 세상을 읽는지 먼저 밝힙니다.</p>
 <div class="grid">
-<div class="card new"><span class="tag frame">프레임</span><h3>정권은 앱, 헌법은 OS</h3>
+<div class="card"><span class="tag frame">프레임</span><h3>정권은 앱, 헌법은 OS</h3>
 <p>정권은 5년마다 갈아 끼우는 <b>앱</b>이고, 헌법은 그 앱들이 돌아가는 <b>OS</b>입니다. 문제는 앱이 자기 권한을 넘어 OS 권한을 흡수할 때 생깁니다. 어느 앱이 깔려도 OS는 같아야 합니다.</p>
 <p style="margin-top:10px">업데이트는 환영, 권한 요청은 심사.</p>
 <div class="act"><b>할 일 →</b> 모든 개혁을 “이게 OS를 고치는가, 앱 권한을 키우는가”로 분류</div></div>
 
-<div class="card new"><span class="tag frame">프레임</span><h3>카드마다 4칸을 반드시</h3>
+<div class="card"><span class="tag frame">프레임</span><h3>카드마다 4칸을 반드시</h3>
 <p>상태 · 출처·날짜 · 다음 확인일 · 청구할 문서. 이 네 칸이 비어 있는 문장은 홈에 올리지 않습니다. 빈 칸은 약점이 아니라 <b>신뢰의 표시</b>입니다.</p>
 <table style="margin-top:8px">
 <tr><th>칸</th><th>의미</th><th>사이트에서 하는 일</th></tr>
@@ -2017,11 +2030,11 @@ table th { white-space: nowrap; }
 <tr><td>확인 문서</td><td>시민이 직접 청구할 문서명</td><td>버튼 하나</td></tr>
 </table></div>
 
-<div class="card new"><span class="tag frame">프레임</span><h3>저항권은 메뉴에 넣지 않습니다</h3>
+<div class="card"><span class="tag frame">프레임</span><h3>저항권은 메뉴에 넣지 않습니다</h3>
 <p>청원·집회·소송·선거·정보공개가 열려 있는 한, 저항권의 <b>보충성 요건</b>을 못 채웁니다(헌재 97헌가4 취지). 도구가 남아 있는 동안 우리는 도구를 씁니다. 저항권은 최후의 비상구이지, 첫 번째 버튼이 아닙니다.</p>
 <div class="act"><b>할 일 →</b> 도구함 5종을 먼저 소진하고, 그 기록을 남기기</div></div>
 
-<div class="card new"><span class="tag frame">프레임</span><h3>다음 정권 테스트용 3가지 질문</h3>
+<div class="card"><span class="tag frame">프레임</span><h3>다음 정권 테스트용 3가지 질문</h3>
 <p>오늘의 개혁이 내일의 무기가 되지 않는지, 세 질문으로 검사합니다.</p>
 <ul>
 <li><b>① 특정인, 특정 사건 겨냥인가</b> — 이름·사건을 겨눈 조항인가?</li>
@@ -2043,127 +2056,51 @@ table th { white-space: nowrap; }
 </div>
 <div class="grid" id="issueGrid">
 
-<div class="card" data-p="sec"><span class="tag press">보도</span> <span class="pillar">안보</span>
-<h3>전방 전 군단 ‘빈총 경계’</h3>
-<p>국방부 자체 감사에서 육군 1·2·3·5군단과 해병2사단(수도군단 지시)에서 <b>비삽탄(빈총) 운용</b>이 확인됐다는 보도가 나왔습니다(조선일보·강선영 의원실 자료 기반). 원칙은 삽탄인데 지침 개정·근거 공문 없이 일부 부대·일부 화기를 휴대 운용했고, 합참·지작사는 몰랐다고 감사는 판단했습니다. 지작사·1·2·3군단 예하 22사단에 기관 경고, 합참엔 개선 처분이 예정됐고 개인 징계는 0명입니다(시기·지시자 특정 곤란). ※ “대통령이 전방 무장해제를 지시했다”는 확대 해석은 확인된 근거가 없습니다. 국방부 표현은 “일부 부대, 일부 화기”입니다.</p>
-<div class="act"><b>할 일 →</b> 비밀 제외 감사 요약본·기관 경고 공문·개인 징계를 하지 않은 이유서·삽탄 원칙 지침 개정 여부 정보공개청구, 국방위·지역구 의원 질의 요청, 군인권보호관 진정(안전·인권 침해 시)</div>
-<div class="note">감시 목표는 취약점 공개가 아니라 <b>시정</b>입니다. 배치·작전계획·교전 수칙 등 기밀은 묻지 않습니다. 핵심은 “최전방 실탄 원칙이 문서로 안 지켜졌고, 책임은 묻지 않았다”입니다.</div></div>
+<div class="card" data-p="sec"><span class="pillar">안보</span> <span class="tag press">보도</span> <h3>전방 전 군단 ‘빈총 경계’</h3><a class="card-more" href="issue-01.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="sec"><span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="pillar">안보</span>
-<h3>DMZ 지뢰 폭발 (9.21, 25사단)</h3>
-<p>수색로 개척 중 폭발로 간부 3명이 다쳤습니다(2명 중상 보도). 합참은 ‘북한군 지뢰’로 공식 규정하고 사과를 요구했습니다. 현장에서 북한 <b>수지반보병지뢰</b>가 추가 발견됐다는 보도도 있습니다. 다음 날 같은 사단 대위가 숨진 채 발견됐으며 사고와의 관련성은 미확인입니다. ※ 폭발물이 북한 신규 매설분인지 우리 측 잔여 지뢰인지는 초기 보도에서 확인되지 않았습니다 — “북한이 심은 지뢰에 정부가 장병을 밀어 넣었다”는 아직 확정이 아닙니다.</p>
-<div class="act"><b>할 일 →</b> 사고조사 결과의 비밀·신원 제외 요약본 공개 요구, 부상 장병 치료·재활·보상 입법 지지, 군인권보호관(국가인권위) 조사 요청 — 가족·지인도 진정 가능</div></div>
+<div class="card" data-p="sec"><span class="pillar">안보</span> <span class="tag fact">확정</span> <span class="tag probe">진행</span> <h3>DMZ 지뢰 폭발 (9.21, 25사단)</h3><a class="card-more" href="issue-02.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="sec"><span class="tag fact">확정</span> <span class="tag press">보도</span> <span class="tag debate">10.22 갱신</span> <span class="pillar">안보·재정</span>
-<h3>대북 지원 예산 — 편성은 1조, 집행은 1%대</h3>
-<p>2027년 통일부 예산안은 총지출 <b>1조 2,549억 원</b>(2026년 1조 2,447억 대비 +102억)이고, <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">남북협력기금 1조 115억 원</mark>(전년 1조 23억 대비 +92억·0.91% 증액)입니다. 사업비는 구호지원 등 인도적 문제해결 <b>5,809억(57.6%)</b>·남북관계 기반구축 4,108억(40.7%)·사회문화교류 123억(1.2%) — 무상·구호지원은 불용 패널티로 <b>15% 일괄 삭감</b>되고 경협기반융자(591억→1,994억)를 <b>230% 증액</b>해 1조 원대를 유지한 구조입니다. 반대로 실적은 이렇습니다. <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">2019년 하노이 노딜 이후 남북협력기금 연간 집행률은 최근 몇 년간 10% 미만</mark>(통일부 9.14 정례브리핑), 2026년 '기타 경제협력사업' 본예산 1,789억 원 중 8월 말까지 집행은 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">0.09%(1억 6,000만 원)</mark>에 그쳤는데도 2027년 같은 항목에 1,515억 8,400만 원을 편성했습니다(김대식 의원실·통일부 제출자료, 9.13). 정동영 장관은 "수십 년째 예산 편성만 하고 전혀 집행을 못 하는 상황"이라고 인정했고, 김 의원은 사용처 비공개 항목이 필요할 때 마음대로 빼 쓰는 <b>'쌈짓돈'</b>이 될 수 있다고 지적했습니다. ※ 편성된 돈과 전달된 돈은 다릅니다 — 정부안 → 국회 확정액 → 승인액 → 집행액 → 수혜자 전달·평가, 5단계로 확인해야 합니다(통일부 월별 통계 공개).</p>
-<div class="act"><b>할 일 →</b> 사업별 승인·집행·정산·평가 문서 정보공개, 외교통일위 집행률·모니터링 질의, 예결위에 조건부 편성·사후 공개 의견(12.2 기한 전). 시민이 묻는 3가지 질문: <b>누가 받았나 · 전용을 막는 모니터링이 있나 · 예산 대비 실제 전달은 얼마인가</b></div></div>
+<div class="card" data-p="sec"><span class="pillar">안보·재정</span> <span class="tag fact">확정</span> <span class="tag press">보도</span> <span class="tag debate">10.22 갱신</span> <h3>대북 지원 예산 — 편성은 1조, 집행은 1%대</h3><a class="card-more" href="issue-03.html">자세히 보기 ▸</a></div>
 
-<div class="card new" data-p="sec"><span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="tag debate">10.22 갱신</span> <span class="pillar">안보·인도협력</span>
-<h3>대북 인도적 지원 — 강동군병원 의료장비 166종</h3>
-<p>정부가 김정은의 '지방병원 건설' 첫 사례인 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">평양시 강동군 병원에 진단·수술·치료용 필수의료장비 166종(약 93억 원 규모)</mark>을 지원하는 방안을 준비해 왔습니다(통일부 국회 보고, 9.14). 전달 창구는 한국국제보건의료재단이고, <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">유엔 안보리 대북제재 면제는 2026년 5월 승인</mark>을 받았습니다. 통일부는 "대북 인도적 사업은 정치적·군사적 상황과 무관하게 일관되게 추진한다"는 원칙을 재확인했습니다. 다만 <b>북한은 '적대적 두 국가' 선언 이후 대화 제의를 거부하고 있고, 지원 수용 의사도 밝히지 않았습니다</b> — '추진 중'이지 '전달 완료'가 아닙니다. 국민의힘 김대식 의원은 대남 적대 기조를 앞세우고 핵을 개발하는 북한에 의료장비를 지원하는 것은 "굴종적 대북정책"이라고 비판했고(9.14), 같은 달 12일 북한 미사일 도발 직후에 목록이 공개돼 '때맞춤' 논쟁도 있었습니다. 미국은 올해 2월 대북 인도적 지원사업 <b>17건의 제재 면제</b>를 안보리 이사국 만장일치로 승인했습니다(2.6).</p>
-<div class="act"><b>할 일 →</b> 강동군병원 지원의 진행 단계(제재면제 → 전달협의 → 실제 반출) 문서 공개 요구, 통일부 인도협력 월별 통계·집행률 추적, 외교통일위·예결위 질의. 묻는 것은 정치 공방이 아니라 <b>‘전달 창구가 있는가 · 실제 전달은 얼마인가’</b>입니다</div></div>
+<div class="card" data-p="sec"><span class="pillar">안보·인도협력</span> <span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="tag debate">10.22 갱신</span> <h3>대북 인도적 지원 — 강동군병원 의료장비 166종</h3><a class="card-more" href="issue-04.html">자세히 보기 ▸</a></div>
 
-<div class="card new" data-p="sec future fis"><span class="tag fact">확정</span> <span class="tag debate">논쟁</span> <span class="tag probe">진행</span> <span class="pillar">농지·식량안보</span>
-<h3>이재명 정부 농지 전수조사 — 처분에서 ‘양성화’로 후퇴</h3>
-<p>2026년 2월 24일 국무회의에서 이재명 대통령이 경자유전(헌법 제121조)을 근거로 '농사짓지 않는 땅의 강제 매각' 검토를 지시하며 시작됐습니다. 근거는 지시가 아니라 법률(농지법 제31조의3·제49조·제54조·제54조의4, 시행령 제58조)입니다. 5월 7일 농지법 개정안이 본회의를 통과(재석 166·찬성 164·반대 1)하고 5월 18일 조사에 착수했으며, 핵심은 ① 농지조사원 출입권 명문화 ② 처분명령을 재량에서 <b>의무</b>로 전환 ③ 장관·시도지사 직접 처분명령 ④ 미이행 시 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">농지 가액의 연 25% 이행강제금</mark>(4년이면 가액을 넘길 수 있음) ⑤ 특수관계인 매각 금지 ⑥ 불법 임대차 신고포상금입니다. 1단계(2026)는 농지법 시행(1996.1.1) 이후 취득분 약 <b>136만 ha·1,013만 필지</b>가 대상이고, 7월 말까지 97%(132만 ha)의 기본조사를 마쳤습니다. <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">기본조사 중간집계에서 위반 의심 284만 필지(30.2만 ha), 전체의 27.0%</mark> — 불법 임대차 21.1%·무단 휴경 11.6%·불법 전용 9.0%·소유제한 위반 1.4%(한 필지가 중복 해당 가능)입니다. ※ 이는 <b>불법 확정도 투기 확정도 아닙니다</b> — 자료 누락·불일치, 정당한 휴경, 적법 임대차를 현장에서 확인해야 합니다.</p>
-<p style="margin-top:8px">정책은 넉 달 만에 후퇴했습니다. 9.17 청와대가 "설명·홍보 부족"을 인정했고, 9.21 당정이 특별조치법 제정을 예고(특별정비기간 11.15까지 연장)했으며, 9.24 대통령은 X에 "저항과 반발 때문에 모든 정부가 회피했지만 저는 회피하지 않겠다"고 했습니다. 그러다 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">10.8 농식품부가 ‘투기 목적이 아니면 처분하지 않는다’는 후속조치</mark>를 발표했습니다 — 상속 농지·고령농 등 관행적 임대차·영농 곤란 농지는 처분·이행강제금 대상에서 제외하고, <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">2~3년 특례기간에 서면 임대차 계약만 맺으면 적법 임대차로 인정</mark>합니다. 투기로 처분할 3유형은 ① 토지거래허가구역에서 영농계획서를 내고 취득한 농지(상속 제외)를 방치·임대 ② 경매 등 지분 매수 시 허위 영농계획서 ③ 농업법인 농지를 쪼개 팔거나 임대해 부동산 수익. 특조법은 이달 발의, <b>12월까지 국회 처리 목표</b>입니다. <b>법을 통과시킨 지 넉 달 만에 같은 법을 완화하는 특별법을 만드는 구조</b>라는 지적이 나옵니다.</p>
-<p style="margin-top:8px">시장은 얼어붙었습니다 — 전국 농지 1㎡당 평균 거래가 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">2023년 6만 1,612원 → 2026년 1~7월 5만 85원</mark>(3년 만에 1만 원 이상 하락, 한국농어촌공사), 농지담보대출 신규 월평균은 2026년 1~8월 827억 원으로 전년 동기(1,049억) 대비 <b>-26%</b>(송옥주 의원실·농협은행)입니다. 농지은행은 2027년 예산을 25% 늘리고 매입 대상을 비진흥지역까지 확대합니다. ※ 연구소 진단(첨부 정리본): 27%는 투기꾼의 숫자가 아니라 <b>법이 현실을 불법으로 규정해 둔 면적</b>입니다 — 임차농지 비율이 47%(2024)인데 소작 금지를 문자 그대로 적용하면 위반 의심이 대량으로 나올 수밖에 없습니다. 논은 태양광 전용보다 <b>식량 자산</b>으로 잠그고, 공직자·개발정보 접근자를 A트랙으로 분리해 심층조사해야 합니다.</p>
-<div class="act"><b>할 일 →</b> 10.8 후속조치·특조법 조문 확인, 정보공개청구(27% 산정 기준·심층조사 결과), A트랙(공직자·법인 농지) 별도 공개 요구, 농지은행 위탁 시 임차농 계약 지속·보복성 퇴거 방지 조항 확인. 평가 기준은 적발 건수가 아니라 <b>경작자 권리의 안정</b>입니다</div></div>
+<div class="card" data-p="sec future fis"><span class="pillar">농지·식량안보</span> <span class="tag fact">확정</span> <span class="tag debate">논쟁</span> <span class="tag probe">진행</span> <h3>이재명 정부 농지 전수조사 — 처분에서 ‘양성화’로 후퇴</h3><a class="card-more" href="issue-05.html">자세히 보기 ▸</a></div>
 
-<div class="card new" data-p="sec con"><span class="tag fact">확정</span> <span class="tag press">보도</span> <span class="tag debate">10.22 갱신</span> <span class="pillar">안보·외교</span>
-<h3>우크라이나 北 포로 송환 공개 갈등 — 대사 소환·공관원 절반 철수</h3>
-<p>우크라이나군에 생포된 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">북한군 포로 2명이 제3국을 경유해 한국으로 송환</mark>됐습니다(생포 1년 8개월 만). 정부는 안보·포로 가족 안전을 이유로 비공개를 추진했지만, <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">9.23(현지시간) 젤렌스키 대통령이 유엔총회 연설에서 송환 사실을 직접 공개</mark>하며 갈등이 촉발됐습니다. 정부는 "우크라이나가 먼저 요청한 비공개 합의를 일방 파기했다"고 주장하고, 우크라이나는 "비공개 합의는 없었다"고 맞서며 대통령의 '거짓말 논란'으로 번졌습니다 — 9.24 대통령 X "많이 아쉽다", 9.28 주한 우크라이나 대사대리 초치, 10.2 대통령 "합의 인정하고 사과하라".</p>
-<p style="margin-top:8px">10.6 국정감사에서 조현 장관은 우크라이나로부터 '사과의 말도 있는 메시지'를 받았으나 "우리가 생각하는 수준과는 차이"라며 단호한 조치를 예고했고, 같은 날 우크라이나 대통령실 제재 담당 보좌관은 <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">"한국의 러시아 석유제품 수입이 러시아를 도왔다"</mark>고 비판했습니다. <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">10.8 정부가 박기창 주우크라이나 대사 본국 소환을 결정</mark>(10.10 귀국)했고, 10.12 시비하 우크라이나 외무장관은 "종결된 사안·우리는 모든 의무를 이행했다"며 사실상 사과를 거부했습니다. 10.18 윤지완 대사대리는 국감에서 "비공개 합의가 있었다는 사실을 우크라이나 측이 부인하지 못하는 상황"이라고 했습니다. <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">10.20 외교부는 우크라이나 전역 공습 위협·안전 우려를 이유로 주우크라이나 대사관 공관원 절반 철수</mark>를 결정했습니다(교민엔 10.16 폴란드 철수 권고, 전원 거부). ※ 우크라이나는 6월 방공무기 지원을 요청했고 한국은 '살상무기 미지원' 원칙 — '공개 배경'에 무기 지원 불만이 작용했다는 해석이 있습니다. ※ <b>확인된 것</b>(송환 사실·공개·대사 소환·공관원 철수)과 <b>해석</b>(대러·대북 관계 복원 의도)을 구분해야 합니다.</p>
-<div class="act"><b>할 일 →</b> 외교부·대통령실 공식 발표(문서명 특정) 정보공개청구, 국회 외교통일위 질의 요청, '비공개 합의' 공식 확인 요구. ※ 공관원 철수는 안전 문제이므로 정치 쟁점과 분리해 봅니다</div></div>
+<div class="card" data-p="sec con"><span class="pillar">안보·외교</span> <span class="tag fact">확정</span> <span class="tag press">보도</span> <span class="tag debate">10.22 갱신</span> <h3>우크라이나 北 포로 송환 공개 갈등 — 대사 소환·공관원 절반 철수</h3><a class="card-more" href="issue-06.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="sec me"><span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="pillar">안보·내 정보</span>
-<h3>금융권 동시다발 해킹</h3>
-<p>신한(2만 5,729명)·KB국민·하나·BNK부산은행 유출이 확인됐고, 예가람저축은행은 약 4만 명 추정(접근 9.18 시작, 은행 인지 9.30), 현대캐피탈 등으로 확산됐습니다. 공격은 9.18 시작 — 검찰청 폐지(10.2, 이후 공소청·중대범죄수사청 체제 전환) <b>이전</b>입니다. KB국민은 주민등록번호 66건·개인식별정보(CI) 97건을 포함한 119명분 유출이 공식 확인됐고(10.3 보도), 피해 은행들은 금전 피해 '전액 보상'을 내걸었습니다 — 보상 기준·절차의 구체화가 다음 확인 대상입니다. ※ 은행 보안 실패 원인과 수사체계 전환 문제는 별개로 검증합니다: ① 사고 예방·피해 구제 트랙 ② 접수·배당·인계 등 수사체계 트랙. “폐지한 그날 터졌다 = 폐지 때문에 뚫렸다”는 시간 근접을 범인으로 둔갑시키는 문장입니다.</p>
-<div class="act"><b>할 일 →</b> 아래 ‘내 정보 지키기’ 툴킷 즉시 실행, 은행별 유출 범위·피해구제 절차 확인, 개인정보 집단분쟁조정 참여. 수법·취약점·공격 재현은 올리지 않습니다 — 피해자 권리와 기관 책임만.</div></div>
+<div class="card" data-p="sec me"><span class="pillar">안보·내 정보</span> <span class="tag fact">확정</span> <span class="tag probe">진행</span> <h3>금융권 동시다발 해킹</h3><a class="card-more" href="issue-07.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="fis"><span class="tag fact">확정</span> <span class="pillar">재정</span>
-<h3>2027 예산 820.9조 (+12.8%)</h3>
-<p>증가율로 역대 최고(2009년 10.6% 상회)이고 국가채무는 약 1,519.8조 원으로 전망됩니다. 총수입 880.8조(+30.4%)로 반도체 호황 세수가 배경입니다 — “세금이 없어 뿌린다”는 거짓입니다. ※ 아직 <b>정부안</b>입니다 — 국회 확정예산도 집행 결과도 아닙니다. 물을 질문은 “왜 늘렸나”가 아니라 “어떤 사업에, 왜 기존 사업으로는 해결이 안 되고, 효과가 없으면 언제 줄이거나 끝내나”입니다.</p>
-<div class="act"><b>할 일 →</b> 열린재정에서 사업별 증액분 확인, 국회예산정책처 분석 공유, 감액 대상 특정</div></div>
+<div class="card" data-p="fis"><span class="pillar">재정</span> <span class="tag fact">확정</span> <h3>2027 예산 820.9조 (+12.8%)</h3><a class="card-more" href="issue-08.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="fis"><span class="tag fact">확정</span> <span class="pillar">재정</span>
-<h3>국고채: 총발행 ≠ 새 빚</h3>
-<p>2027년 정부안 기준 국고채 총발행 222.8조, <b>순증 96.3조</b>, 이자상환 35조 원 전망입니다. 총발행에는 기존 빚을 갚는 차환발행이 포함되므로 전부를 새 부채라 말하면 안 됩니다. 채무비율 하락(비율)과 채무액 감소(액수)도 별개 — GDP가 더 빨리 자라면 액수가 늘어도 비율은 내려갑니다.</p>
-<div class="act"><b>할 일 →</b> 이자비용·만기 구조·세수오차 대시보드화, 예결위에 중기재정계획 대비 실적 매년 공개 요구</div></div>
+<div class="card" data-p="fis"><span class="pillar">재정</span> <span class="tag fact">확정</span> <h3>국고채: 총발행 ≠ 새 빚</h3><a class="card-more" href="issue-09.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="fis"><span class="tag debate">논쟁</span> <span class="pillar">재정·헌정</span>
-<h3>미래대응기금 162.3조</h3>
-<p>내년 사업비 45.4조 원(4대 분야), 주요 지출의 30%(약 13.6조 원)를 국회 의결 없이 변경 가능(일반 기금은 20%). 국채 신규 발행 축소에 12.5조, 여유 104.4조 규모로 거론됩니다. 국회 의정회 검토보고서(10.4 보도)는 NEXT 선정 원칙의 법안 미반영, 기존 회계·기금과 중복, 공공자금관리기금 기능 중복, 정책·재정심사 분리 위험을 지적했습니다. 제정안 입법예고가 통상 40일 아닌 단 5일 만에 끝나 '졸속' 논쟁도 있습니다(보도 기준). 콩스탕 언어로 번역하면 — “미래”라는 이름으로 중립적 재정 통제를 앱 권한으로 흡수하려는 설계인가.</p>
-<div class="act"><b>할 일 →</b> ⚠ 정부 입법예고는 8.28 종료 — 지금은 <b>국회 법안 심사 단계</b>입니다. 소관 상임위·지역구 의원에게 ‘선정 기준 명문화 · 중복 검토 공개 · 변경 재량 20% 이하 · 분기별 성과 보고’ 의견 전달</div></div>
+<div class="card" data-p="fis"><span class="pillar">재정·헌정</span> <span class="tag debate">논쟁</span> <h3>미래대응기금 162.3조</h3><a class="card-more" href="issue-10.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="fis"><span class="tag press">보도</span> <span class="pillar">재정</span>
-<h3>특검 예산: 배정·집행·불용</h3>
-<p>2025년 출범한 4개 특검 기준(법무부 의원실 제출 자료, 법률신문 보도): 배정 523.3억, 2026년 7월 기준 집행 342.3억, 불용 181억 원. ※ 불용액은 이미 낭비한 돈이 아니라 과다 편성·수요예측 오류의 검토 대상입니다. 집행액이 크다고 부패가 입증되는 것도 아니고, 성과를 기소 건수만으로 평가해서도 안 됩니다. <b>출처 없는 숫자는 만들지 않습니다.</b></p>
-<div class="act"><b>할 일 →</b> 인건비·임차료·특수활동비 등 항목별 집행액 공개 요구, 기소·유죄 성과 대비 비용 대시보드화, ‘특검 비용 공시 의무화’ 청원</div></div>
+<div class="card" data-p="fis"><span class="pillar">재정</span> <span class="tag press">보도</span> <h3>특검 예산: 배정·집행·불용</h3><a class="card-more" href="issue-11.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="fis con"><span class="tag press">보도</span> <span class="tag probe">진행</span> <span class="tag debate">10.25 갱신</span> <span class="pillar">헌정·재정</span>
-<h3>특검 인력 — 파견 충원 지연</h3>
-<p>특검은 10.13 중수청에 <b>4급 이상 검찰 출신을 포함한 수사관 10명 추가 파견</b>을 요청했습니다(10.7 지방중수청 2명 별도). 파견검사는 <b>17명</b>(법정 상한 20명)이며, 특검 관계자는 <b>“파견 인력 충원이 늦어져 매우 난처”</b>라고 밝혔습니다. 중수청은 10.2 개청 후 기관장 공석이었으나 <b>김지용 신임 중수청장</b>이 자리에 앉았고, 특검은 10.23 중수청 본청을 예방해(김지용 중수청장과 30여분 면담) <b>인력 10명가량 파견을 재요청</b>했고, 김 청장은 <b>"일시적 수사 지원은 적극적으로 검토하겠다"</b>고 답했습니다 — 특검은 <b>선거관리 시스템 서버 포렌식을 한 달 이상 계속 중, DB 분석 포렌식 인원이 상당히 부족하다</b>고 설명했습니다(10.23 연합뉴스). ※ 인력 규모는 수사 속도와 직결되지만 <b>인력 부족이 곧 수사 실패를 뜻하지는 않습니다</b> — 예산·인력은 성과가 아니라 절차의 관찰 지표로 봅니다.</p>
-<div class="act"><b>할 일 →</b> 파견 인력 규모·기간 공개 요구, 중수청 기관장 임명 동향 추적, 특검 예산 집행 내역 정보공개청구</div><a class="sw-file-link" href="teukgeom.html" style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:12px;padding:13px 18px;border:1.5px solid rgba(60,240,197,.65);border-radius:12px;background:rgba(60,240,197,.12);box-shadow:0 0 18px rgba(60,240,197,.22);color:#3cf0c5;font-size:18px;font-weight:800;letter-spacing:.01em;text-decoration:none"><span>선관위 특검 수사 파일</span><span style="flex:0 0 auto;font-size:12.5px;font-weight:700;opacity:.85;white-space:nowrap">기준일 2026.10.25 · 전체 보기 →</span></a></div>
+<div class="card" data-p="fis con"><span class="pillar">헌정·재정</span> <span class="tag press">보도</span> <span class="tag probe">진행</span> <span class="tag debate">10.25 갱신</span> <h3>특검 인력 — 파견 충원 지연</h3><a class="card-more" href="issue-12.html">자세히 보기 ▸</a><a class="sw-file-link" href="teukgeom.html" style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:12px;padding:13px 18px;border:1.5px solid rgba(60,240,197,.65);border-radius:12px;background:rgba(60,240,197,.12);box-shadow:0 0 18px rgba(60,240,197,.22);color:#3cf0c5;font-size:18px;font-weight:800;letter-spacing:.01em;text-decoration:none"><span>선관위 특검 수사 파일</span><span style="flex:0 0 auto;font-size:12.5px;font-weight:700;opacity:.85;white-space:nowrap">기준일 2026.10.25 · 전체 보기 →</span></a></div>
 
-<div class="card" data-p="fis con"><span class="tag debate">논쟁</span> <span class="pillar">재정·헌정</span>
-<h3>국회 자기 예산 · 세비</h3>
-<p>세비 ‘셀프 인상’ 논란이 반복되고 있습니다. 감시 대상은 의원 수당·특수활동비·업무추진비·해외출장·연구용역·수의계약 등 구체 항목입니다. ※ 예산정책처·입법조사처 같은 행정부 견제 분석기능까지 일괄 축소하면 역효과입니다. 국회 예산 삭감은 국민이 직접 못 합니다 — 헌법 57조는 오히려 국회가 정부 동의 없이 지출을 늘리지 못하게 막습니다. “국회 예산 삭감 버튼”을 만들면 없는 권능을 파는 겁니다.</p>
-<div class="act"><b>할 일 →</b> 국회사무처 정보공개청구(경비 집행 내역·증빙·불용), 낭비 항목 겨냥 감액 의견, 독립 세비심의기구 신설 청원</div></div>
+<div class="card" data-p="fis con"><span class="pillar">재정·헌정</span> <span class="tag debate">논쟁</span> <h3>국회 자기 예산 · 세비</h3><a class="card-more" href="issue-13.html">자세히 보기 ▸</a></div>
 
-<div class="card new" data-p="fis future"><span class="tag press">보도</span> <span class="pillar">재정·미래세대</span>
-<h3>지방교육재정교부금, 55년 만의 손질</h3>
-<p>교부금의 <b>내국세 연동 방식</b>을 55년 만에 손대는 개편이 추진되고 있습니다. 정부는 지출 구조조정(107.6조 주장)의 큰 축으로 설명하지만 성과는 미검증입니다. ※ 미래세대 재정에서 이보다 큰 항목이 드뭅니다 — 개편의 목적·대체 재원·교육 현장 영향까지 한 묶음으로 봐야 합니다. “지금 뿌린 돈의 OS 권한은 누가 갖는가.”</p>
-<div class="act"><b>할 일 →</b> 개편안 조문·시뮬레이션 공개 요구, 교육청·학교 현장 의견 청취, 성과지표 사전 설정</div></div>
+<div class="card" data-p="fis future"><span class="pillar">재정·미래세대</span> <span class="tag press">보도</span> <h3>지방교육재정교부금, 55년 만의 손질</h3><a class="card-more" href="issue-14.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="fis future"><span class="tag press">보도</span> <span class="pillar">재정·미래세대</span>
-<h3>2030년 총지출 1,005조 전망</h3>
-<p>정부 전망 기준 2030년 총지출은 약 1,005조 원 규모로 거론됩니다(전망치, 실현 미확정). 오늘의 지출이 만든 재량이 다음 정권·다음 세대에 그대로 <b>승계</b>되는지가 본게임입니다. 관리재정수지(GDP 대비 -3.9% → -0.1%)와 채무비율(51.6% → 48.3%)도 정부 전망이므로 결산으로 검증합니다 — 파탄 단정도, 낙관 확정도 아닙니다.</p>
-<div class="act"><b>할 일 →</b> 중기재정계획 대비 실적 매년 공개, 세대 간 부담 추계 공개, 기금·재량의 승계 조항 점검</div></div>
+<div class="card" data-p="fis future"><span class="pillar">재정·미래세대</span> <span class="tag press">보도</span> <h3>2030년 총지출 1,005조 전망</h3><a class="card-more" href="issue-15.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="con"><span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="pillar">헌정</span>
-<h3>사법개혁 3법</h3>
-<p>재판소원, 법 왜곡죄(10년 이하), 대법관 26명 증원이 2026.3.12 시행됐고 위헌 제청·헌법소원이 진행 중입니다. 재판소원은 마음에 드는 대로 다시 다투는 4심이 아니라 <b>확정재판 + 요건 제한(헌재 결정 반하는 재판 · 적법절차 미준수 · 기본권 침해 명백)</b>이며 확정일부터 30일입니다. 법왜곡죄는 요건 명확성과 보복성 고소 방지가 관건입니다.</p>
-<div class="act"><b>할 일 →</b> 재판부 배당·구성 모니터링, 전문가가 설계한 소수 정밀 헌법소원 지원. 조직 설계와 재판 개입은 구분하고, 특정 사건 겨냥인지는 배당 데이터로만 검증</div></div>
+<div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag fact">확정</span> <span class="tag probe">진행</span> <h3>사법개혁 3법</h3><a class="card-more" href="issue-16.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="con me"><span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="pillar">헌정</span>
-<h3>검찰청 폐지 · 중수청 출범 (10.2)</h3>
-<p>검찰청은 10.2 폐지되고 공소청(법무부)과 중수청(행안부, 정원 2,874명)이 출범했습니다. 수사권이 경찰·중수청 등으로 모이는 구조입니다. 대통령 스스로 “경찰이 가장 큰 권력”이라고 말했고, 진보 시민단체도 민주적 통제를 요구합니다. 출범 시점 중수청장 인선 미확정·지휘부 공석·시행령·형사소송법 후속 미완은 보도가 지적합니다. 추적 지표: 접수·배당·이첩 기간, 장기 미처리 사건, 금융·사이버 전문 역량, KICS 전환 안정성.</p>
-<div class="act"><b>할 일 →</b> 시행령 의견 제출, 이첩·처리기간 통계 공개 요구, 경찰·중수청 통제기구 신설 청원(진영 공통 의제)</div>
-<div class="note">불송치·불기소 불복 절차는 처분 종류와 당사자 지위별로 다릅니다 — “누구나 이의신청 가능”으로 단순화하지 않습니다.</div></div>
+<div class="card" data-p="con me"><span class="pillar">헌정</span> <span class="tag fact">확정</span> <span class="tag probe">진행</span> <h3>검찰청 폐지 · 중수청 출범 (10.2)</h3><a class="card-more" href="issue-17.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="con me"><span class="tag press">보도</span> <span class="pillar">헌정·수사공백</span>
-<h3>공석의 권력 — 권한은 커졌는데 이름이 없다</h3>
-<p>중수청장 인선·지휘부 구성·시행령 후속이 미완인 상태에서 경찰청장 직무대행 장기화까지 겹칩니다. 권한은 커졌는데 책임자 이름이 없는 상태가 콩스탕식 위험입니다. 대시보드 첫 줄 질문: <b>“오늘, 이 권한의 이름은 누구인가?”</b></p>
-<div class="act"><b>할 일 →</b> 지휘부 공석 일수·직무대행 현황 공개 요구, 시행령 의견 제출, 인선·권한 이관 일정 공개 청구</div></div>
+<div class="card" data-p="con me"><span class="pillar">헌정·수사공백</span> <span class="tag press">보도</span> <h3>공석의 권력 — 권한은 커졌는데 이름이 없다</h3><a class="card-more" href="issue-18.html">자세히 보기 ▸</a></div>
 
-<div class="card new" data-p="con"><span class="tag press">보도</span> <span class="tag debate">논쟁</span> <span class="pillar">헌정·수사체계</span>
-<h3>공수처 개편안 — 대통령·국회의원 수사는 중수청으로</h3>
-<p>민주당 법사위 의원들이 10.7 ‘공수처 기능 전면 개편’ 토론회를 열고 국감 종료 후 법안 발의를 준비 중입니다(11월 초 발의 거론 — 조선일보 10.6 보도). <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">대통령·국무총리 등 행정부 고위직, 국회의장·국회의원 등 입법부 고위직을 공수처 수사 대상에서 제외하고 이들 수사는 중수청(행안부 소속)으로</mark> 이관하고, 공수처는 판·검사·경찰·중수청 수사관 등 ‘사법 공직자’ 수사에 집중하되 수사 범위를 모든 범죄로 넓히는 골자입니다. ※ <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">공수처는 10.6 브리핑에서 “견제 구조의 퇴보”라며 공개 반대했습니다</mark> — 행안부 장관은 대통령이 임명하는 만큼 대통령 수사를 그 지휘 계통에 맡기는 구조라는 것입니다. 법조계와 당내에도 이견이 있고, <b>아직 법안 발의 전</b>이라 조문은 미확정입니다.</p>
-<div class="act"><b>할 일 →</b> 발의 시 조문 원문 확인(특히 수사 대상 조항)·공유, 법사위 의결 동향 추적, ‘다음 정권에도 같은가’ 체크리스트로 평가, 중수청 독립성·중수청법 보완 논의에 대한 지역구 의원 의견 전달</div>
-<div class="note">감시 기준은 진영이 아니라 <b>절차</b>입니다. 쟁점은 “누가 수사하느냐”가 아니라 <b>“수사 대상(대통령)의 지휘 계통에서 수사 기관이 독립되어 있느냐”</b>입니다. 개정 자체를 찬성·반대로 팔지 않습니다 — 이관되는 수사권의 독립성 장치가 함께 설계되는지를 봅니다.</div></div>
+<div class="card" data-p="con"><span class="pillar">헌정·수사체계</span> <span class="tag press">보도</span> <span class="tag debate">논쟁</span> <h3>공수처 개편안 — 대통령·국회의원 수사는 중수청으로</h3><a class="card-more" href="issue-19.html">자세히 보기 ▸</a></div>
 
-<div class="card new" data-p="con"><span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="tag debate">10.18 갱신</span> <span class="pillar">헌정</span>
-<h3>선관위: 부실의 누적에서 부정으로 더 가까이</h3>
-<p>6·3 지방선거: 전국 1만 4,288개 투표소 중 140곳 추가 송부, 91곳 실사용, 26곳 일시 중단. 통계 수정 약 72건, 투표함 봉인 훼손·조기 폐기, 전 사무총장(김세환) 채용비리 1심 징역 2년(항소) — 이태한 특검은 2026.9.7 출범해 수사 중입니다 — 1차 수사기간은 <b>12월 초 만료</b>(본수사 90일, 준비 20일 별도 · 연장 시 본수사 최장 150일). <b>10.15 특검은 전국 30개 시군구 선관위의 시간대별 투표자 수 허위 입력을 확인</b>하고 중앙선관위 등 <b>7곳을 압수수색</b>했으며, 같은 날 <b>선거물품 보관계약 독점 특혜 의혹으로 부산·경남·경북선관위 등 10곳을 압수수색</b>했습니다. <b>10.16</b>에는 유착 의혹 업체들의 탈세·허위 세금계산서 정황을 확인해 <b>국세청에 세무조사</b>를 요청했고(12.15까지 회신 · <b>10.18</b> 공개), 앞서 <b>10.14</b> 고위법관 <b>'공명선거 추진활동비'</b>(위원장 월 290만 원·비상임위원 월 215만 원, 2014년부터) 압수수색 영장은 법원이 <b>기각</b>해 특검이 재청구 방침을 밝혔습니다. <b>압수수색·영장 기각은 기소가 아닙니다.</b> <b>10.20</b> 중앙선관위는 올림픽공원 투표용지 공개 검증 협조 의결을 특검에 전달했고(검증일 <b>28일 무게</b>·공식 확정 아님), <b>10.21</b> 특검은 노태악 전 중앙선관위원장 자택과 선관위 사무실을 <b>횡령·허위공문서작성</b> 혐의로 압수수색해 휴대전화 등을 확보했습니다. 같은 날 특검 피의자 조사(사전투표함 약 16억 원 구매 업무 담당·입찰방해·업무상 배임)를 받던 중앙선관위 5급 직원이 <b>조사 다음 날 숨진 채 발견</b>됐고, <b>강압수사 여부 공방</b>이 벌어졌습니다(변호인 '강압' 주장 · 특검 '사실 아님' · 선관위 '인권 보호 요청'). ‘조직적 조작’은 미확정이며 <b>신뢰 훼손과 조작 여부는 구분</b>해야 합니다. ※ 헌재 2023헌라5: 감사원의 직무감찰은 선관위 독립성 침해 — 단, 회계검사·국회 통제·수사·정보공개는 별개로 작동 가능합니다.</p>
-<div class="act"><b>할 일 →</b> 개표 참관인 신청(자격 제한·추첨 선정 — 신청한다고 자동 선정은 아님), 통계 수정 이력·사고 기록 정보공개, 회계검사 후속조치·기록 관리 강화 청원</div><a class="sw-file-link" href="teukgeom.html" style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:12px;padding:13px 18px;border:1.5px solid rgba(60,240,197,.65);border-radius:12px;background:rgba(60,240,197,.12);box-shadow:0 0 18px rgba(60,240,197,.22);color:#3cf0c5;font-size:18px;font-weight:800;letter-spacing:.01em;text-decoration:none"><span>선관위 특검 수사 파일</span><span style="flex:0 0 auto;font-size:12.5px;font-weight:700;opacity:.85;white-space:nowrap">기준일 2026.10.25 · 전체 보기 →</span></a></div>
+<div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="tag debate">10.18 갱신</span> <h3>선관위: 부실의 누적에서 부정으로 더 가까이</h3><a class="card-more" href="issue-20.html">자세히 보기 ▸</a><a class="sw-file-link" href="teukgeom.html" style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:12px;padding:13px 18px;border:1.5px solid rgba(60,240,197,.65);border-radius:12px;background:rgba(60,240,197,.12);box-shadow:0 0 18px rgba(60,240,197,.22);color:#3cf0c5;font-size:18px;font-weight:800;letter-spacing:.01em;text-decoration:none"><span>선관위 특검 수사 파일</span><span style="flex:0 0 auto;font-size:12.5px;font-weight:700;opacity:.85;white-space:nowrap">기준일 2026.10.25 · 전체 보기 →</span></a></div>
 
-<div class="card new" data-p="fis con"><span class="tag press">보도</span> <span class="tag debate">논쟁</span> <span class="pillar">헌정·재정</span>
-<h3>선관위 청사 방호 예산 — 담장 2.7m·무기고</h3>
-<p>중앙선관위가 2027년 예산(요구 4,783억 7,700만 원)에 <b>청사 방호 강화 시설 약 14억 6,300만 원</b>을 넣었습니다(7.28 보도 — 국민의힘 김은혜 의원실 제출 자료 기반). 내역: 월담 방지 <b>2.7m 철제 울타리</b>(현 1.7m) 1억 5,000만 원, 경계 초소 2,400만 원(‘2곳’/‘12개’로 보도 간 갈림), 정문 교체·돌파 장애물 4억 6천여만 원, 방호관제실 2억 4,100만 원·통합상황실 2억 6,500만 원, 대공방어 <b>안티드론건</b> 8,000만 원, 그리고 직장예비군 신규 편성에 따른 <b>총기 보관함(무기고)·전투장구류·통신장비</b> 1,800만~2,900만 원(보도 간 표기 차이). 사유는 12.3 비상계엄 당시 일부 군 관계자의 청사 진입 뒤 국가중요시설 ‘가’급 지정 — 선관위는 “통합방위법 시행령 등 법령에 따른 요청, 과하지 않다”고 설명합니다. ※ 같은 ‘가’급 독립기관인 대법원·헌법재판소엔 이런 시설이 없다는 지적, 투표용지 부족·개표 사고로 신뢰가 떨어진 시점의 ‘요새화’라는 비판이 대비됩니다. 선거가 없는 해임에도 선거관리행정지원 13%·인건비 7% 증액도 확인 대상입니다. ※ 방호 근거 법령·타 기관 비교는 원자료 미확보 — <b>예결위 심의에서 품목별 승인액을 봐야 확정</b>입니다.</p>
-<div class="act"><b>할 일 →</b> ‘2027년도 예산요구 사업설명자료’ 원문 확보(정보공개청구·의원실), 예결위 품목별 승인액 추적, 대법원·헌재 방호시설 비교 자료 확보 · 영상: <a href="https://www.youtube.com/watch?v=ZffbltpMjp8" target="_blank" rel="noopener">'선관위' 국민 분노 터졌는데.."14억 투입" 청사 요새화 나선다 / SBS 8뉴스 (SBS 뉴스, 유튜브)</a></div>
-<div class="note">청사 방호 예산과 선거 신뢰 회복 예산은 다른 항목입니다 — “요새화 = 선거 무결성 강화”로 묶지 않고, 근거 법령·기준이 유효한지 기준표로 검증합니다.</div></div>
+<div class="card" data-p="fis con"><span class="pillar">헌정·재정</span> <span class="tag press">보도</span> <span class="tag debate">논쟁</span> <h3>선관위 청사 방호 예산 — 담장 2.7m·무기고</h3><a class="card-more" href="issue-21.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="con"><span class="tag debate">논쟁</span> <span class="pillar">헌정</span>
-<h3>중립권력의 설계 · 개헌</h3>
-<p>구조적 사실은 이겁니다 — 선관위원장 대법관 겸직(63년), 헌법 114조의 독립, 그런데 2025년 2월 헌재가 감사원의 선관위 직무감찰을 위헌으로 본 뒤 외부 감사 공백. 독립이 무책임의 면제가 되면 콩스탕의 중립권력은 이름을 남기고 기능을 잃습니다. 여야가 이미 개헌 의제로 올려 둔 지점입니다. 페이지 제목은 “연합”이 아니라 <b>“중립권력의 설계”</b>입니다.</p>
-<div class="act"><b>할 일 →</b> 개헌안 조문 독해 모임, 겸직 관행 개선·선거쟁송 기록 공개 의제 지지, ‘다음 정권에도 똑같이 적용되나?’ 체크리스트로 평가</div></div>
+<div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag debate">논쟁</span> <h3>중립권력의 설계 · 개헌</h3><a class="card-more" href="issue-22.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="con exp"><span class="tag fact">확정</span> <span class="pillar">헌정·표현</span>
-<h3>대북전단 금지 — 안보와 표현의 자유는 다른 트랙</h3>
-<p>2025년 12월 「경찰관직무집행법」「항공안전법」 개정으로 접경지역 대북전단 살포가 제도적으로 막혔습니다. 이는 안보 정책인 동시에 <b>헌법 제21조 표현의 자유 쟁점</b>입니다. ※ ‘지원 결산을 묻는 일’과 ‘금지 조항의 과잉금지를 다투는 일’은 서로 다른 페이지입니다. 한 카드에 섞으면 둘 다 약해집니다.</p>
-<div class="act"><b>할 일 →</b> 금지 조항의 일몰·재검토 조항 확인, 과잉금지 심사 포인트(목적·수단·최소침해·법익균형) 정리, 위헌 여부는 헌재·법원 판단으로</div></div>
+<div class="card" data-p="con exp"><span class="pillar">헌정·표현</span> <span class="tag fact">확정</span> <h3>대북전단 금지 — 안보와 표현의 자유는 다른 트랙</h3><a class="card-more" href="issue-23.html">자세히 보기 ▸</a></div>
 
 </div>
 <div class="note" style="margin-top:22px">🔭 <b>확장 의제(로드맵)</b> — 공공기관·지방공기업 부채 · 조달·보조금·채용 · 연금·건강보험 재정 · 에너지·핵심 공급망 · 재난·산업·생활 안전 · 표현의 자유·개인정보 · <b>주거·토지·지역개발(연구소 특화)</b> · 인구·교육·R&D · <b>미래세대 재정(교부금·기금 승계)</b> · <b>공익신고 통로</b> · <b>지방 훈련장(조례·감사·투표·소환)</b></div>
@@ -2287,10 +2224,10 @@ table th { white-space: nowrap; }
 <p class="sub">타이밍을 놓치면 도구가 무뎌집니다.</p>
 <p class="sub" style="margin-top:-8px">오늘 <b data-date="today" data-date-format="fulltime">오늘</b> 기준 · 날짜·시각은 1분마다 자동으로 갱신됩니다.</p>
 <div class="cd">
-<div class="card"><div class="num" id="d1" data-dday="2026-12-02">-</div><h3>2027 예산안 법정 처리기한</h3><p><b data-date="2026-12-02" data-date-format="full">2026년 12월 2일</b> — 국회법 제85조, 회계연도 개시 30일 전. 이날까지 못 의결하면 정부는 헌법 제54조 ③에 따라 다음 해 2월 28일까지 전년 기준으로 지출합니다(준예산) — 신규 사업은 공백. 정부는 <b data-date="2026-09-03" data-date-format="md">9월 3일</b> 총지출 <b>820조 9,000억 원</b>(2026년 본예산 727조 9,000억 대비 +93조, +12.8% — 역대 최대 증가율)을 제출했습니다. 국회는 깎을 수만 있습니다(제57조) — 감시 포인트는 총액이 아니라 세부 과목.</p></div>
-<div class="card"><div class="num" id="d4" data-dday="2026-12-05">-</div><h3>선관위 특검 1차 수사기한</h3><p><b data-date="2026-12-05" data-date-format="full">2026년 12월 5일</b>. 이태한 특검이 <b data-date="2026-09-07" data-date-format="md">9월 7일</b> 본수사 착수(8월 18일 임명, 준비 20일) 후 90일간 수사 — 연장이 없으면 이날 만료. 연장은 30일씩 최대 2회(본수사 최장 150일, 준비기간 포함 170일). 검경 합동수사본부의 기록과 인력을 인계받아 출범 10일 만인 <b data-date="2026-09-17" data-date-format="md">9월 17일</b> 중앙·지역선관위 등 <b>10곳 동시 압수수색</b>에 나섰습니다. 수사 대상은 투표용지 부족·투표 통계 조작·외유성 출장·입찰 비리 등 <b>12개 의혹</b>, 수사팀은 특검보 5명 포함 최대 <b>165명</b>. <b>10.18 업데이트</b> — 투표자 수 <b>허위 입력 30곳</b> 확인·중앙선관위 등 7곳 압수수색, 선거물품 <b>창고계약 독점 특혜</b> 10곳 압수수색, 유착 업체 <b>탈세·허위 세금계산서</b> 정황으로 국세청 세무조사 요청(12.15 회신), 고위법관 '공명선거 추진활동비' 영장 기각 후 <b>재청구 방침</b>, <b>10월 말</b> 올림픽공원 보관 투표용지 공개 검증 추진(10.20 협조 의결 전달·28일 무게·공식 확정 아님). <b>10.25 갱신</b> — 노태악 전 위원장 자택·선관위 사무실 압수수색, 특검 조사받던 선관위 5급 직원 사망(강압수사 공방), 특검 10.23 중수청 예방 — 인력 10명 재요청(김지용 청장 "적극 검토")·특검 입장문 "강압 조사 없었다·유서는 선관위 조직의 문제점 지적"·"구속자 수 목표 지양".</p></div>
-<div class="card"><div class="num" id="d2" data-dday="2027-06-30">-</div><h3>개헌 국민투표 목표</h3><p><b data-date="2027-06-30" data-date-format="half">2027년 상반기</b>(여당 목표, 미확정). 절차는 헌법이 고정합니다: 재적의원 <b>3분의 2(200명)</b> 찬성으로 의결(제129조) → 20일 이내 국민투표 회부 → 투표권자 <b>과반 참여·과반 찬성</b>(제130조). 1987년 제9차 개헌 이후 <b>39년째</b> 성사된 개헌이 없습니다 — 거대여당도 실패한 관문입니다. 조문 독해는 지금부터.</p></div>
-<div class="card"><div class="num" id="d3" data-dday="2028-04-12">-</div><h3>제23대 총선</h3><p><b data-date="2028-04-12" data-date-format="full">2028년 4월 12일 (수)</b> — 사전투표는 <b data-date="2028-04-07" data-date-format="md">4월 7일</b>~8일, 22대 국회 임기는 <b data-date="2028-05-29" data-date-format="md">5월 29일</b>에 끝나고 다음 날 새 국회가 시작됩니다. 참관인 네트워크 완성 목표 — 공직선거법 제181조의 <b>선거권자 개표참관인</b>(만 18세 이상, 선관위 홈페이지 또는 주소지 관할 구·시·군선관위 신청)은 개표참관인석에서 <b>1~2미터</b> 거리에서 개표를 직접 참관합니다. 다중 신청 시 취소될 수 있으니 한 곳에만.</p></div>
+<div class="card"><div class="num" id="d1" data-dday="2026-12-02">-</div><h3>2027 예산안 법정 처리기한</h3><p class="dd-date"><b data-date="2026-12-02" data-date-format="full">2026년 12월 2일</b></p><a class="card-more" href="dday-budget.html">자세히 보기 ▸</a></div>
+<div class="card"><div class="num" id="d4" data-dday="2026-12-05">-</div><h3>선관위 특검 1차 수사기한</h3><p class="dd-date"><b data-date="2026-12-05" data-date-format="full">2026년 12월 5일</b></p><a class="card-more" href="dday-teukgeom.html">자세히 보기 ▸</a></div>
+<div class="card"><div class="num" id="d2" data-dday="2027-06-30">-</div><h3>개헌 국민투표 목표</h3><p class="dd-date"><b data-date="2027-06-30" data-date-format="half">2027년 상반기</b></p><a class="card-more" href="dday-referendum.html">자세히 보기 ▸</a></div>
+<div class="card"><div class="num" id="d3" data-dday="2028-04-12">-</div><h3>제23대 총선</h3><p class="dd-date"><b data-date="2028-04-12" data-date-format="full">2028년 4월 12일 (수)</b></p><a class="card-more" href="dday-election.html">자세히 보기 ▸</a></div>
 </div>
 </section>
 
@@ -3180,15 +3117,15 @@ body.admin-mode{background:#F5F7FA}
     +'<span class="vc-item">오늘<b id="vc-today">-</b></span>'
     +'<span class="vc-item">총<b id="vc-total">-</b></span>'
     +'<span class="vc-caret">▼</span>';
-  var header=document.getElementById('site-header');
-  if(header){
-    header.appendChild(pill);
-    pill.style.cssText='position:absolute;top:calc(100% + 6px);right:16px;cursor:pointer;';
+  var inn=document.querySelector('#page-salriki nav .in');
+  if(inn){
+    inn.appendChild(pill);
+    pill.style.cssText='flex:0 0 auto;margin-left:12px;display:inline-flex;cursor:pointer;';
   }else{
-    var inn=document.querySelector('nav .in')||document.querySelector('nav');
-    if(inn){
-      inn.appendChild(pill);
-      pill.style.cssText='flex:0 0 auto;margin-left:12px;display:inline-flex;cursor:pointer;';
+    var header=document.getElementById('site-header');
+    if(header&&window.getComputedStyle(header).display!=='none'){
+      header.appendChild(pill);
+      pill.style.cssText='position:absolute;top:calc(100% + 6px);right:16px;cursor:pointer;';
     }else{
       document.body.appendChild(pill);
       pill.style.cssText='position:fixed;top:10px;right:12px;z-index:9999;cursor:pointer;';

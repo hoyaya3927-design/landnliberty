@@ -119,15 +119,15 @@ h3.mini{font-size:15px;color:var(--neon);margin:26px 0 8px;font-family:var(--mon
 footer{border-top:1px solid var(--line);color:var(--mut);font-size:13px;text-align:center;padding:44px 20px 60px;margin-top:56px}
 footer a{color:var(--neon)}
 .tl .row.n::before{border-color:var(--red)}
-.card.nw{border-color:rgba(255,77,109,.55)}
+.card
 .card.nw h3{color:#ff8fa3}
-.card.nw2{border-color:rgba(60,240,197,.55)}
+.card
 .card.nw2 h3{color:#7ef0d5}
-.nbadge{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:800;letter-spacing:1px;color:#04110d;background:var(--current,var(--red));padding:2px 7px;border-radius:999px;vertical-align:2px;margin-left:6px}
+
 .metachips span.metanew{border-color:rgba(255,77,109,.55);color:#ff8fa3}
-.nw-t{color:var(--red);font-weight:800;font-family:var(--mono);font-size:12.5px;letter-spacing:1px}
-.sum .s.nw{border-color:rgba(255,77,109,.55)}
-.sum .s.nw2{border-color:rgba(60,240,197,.55)}
+
+.sum .s
+.sum .s
 :focus-visible{outline:2px solid var(--neon);outline-offset:2px}
 @media (max-width:640px){
   .dossier .main{padding:26px 20px}
@@ -148,6 +148,18 @@ footer a{color:var(--neon)}
   .vbanner .vb-txt b{display:block;font-size:17px;color:#fff;letter-spacing:-.01em}
   .vbanner .vb-txt small{display:block;color:var(--mut);font-size:12.5px;margin-top:4px}
   .vbanner .vb-go{flex:0 0 auto;color:var(--neon);font-weight:800;font-size:13.5px;white-space:nowrap}
+
+/* 상세 보기 · 큰 글씨 (2026.10.26) */
+#summary .s .n{font-size:16.5px;font-weight:800}
+#scope .card h3,#court .card h3,#summary .s .n{letter-spacing:-.01em}
+#scope .card h3,#court .card h3{font-size:20px;line-height:1.4}
+#scope .card p,#court .card p{font-size:15.5px;line-height:1.78}
+.card-more{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:10px 18px;border:1.5px solid var(--neon);border-radius:999px;color:var(--neon);font-weight:800;font-size:14px;text-decoration:none;background:rgba(60,240,197,.07)}
+.card-more:hover{background:rgba(60,240,197,.18)}
+.row-more{display:inline-block;margin-top:10px;color:var(--neon);font-weight:800;font-size:13.5px;text-decoration:none;border:1px solid var(--neon);border-radius:999px;padding:6px 16px}
+.row-more:hover{background:rgba(60,240,197,.12)}
+.row.hasmore .body{font-size:16px}
+.row.hasmore .body b{font-size:16.5px}
 </style>
 </head>
 <body>
@@ -186,17 +198,17 @@ footer a{color:var(--neon)}
     <div class="main">
       <div class="eyebrow">Dossier · Special Prosecution — NEC</div>
       <h1>선관위 <span class="hl">특검 수사 파일</span></h1>
-      <p class="desc">2026년 6·3 지방선거 <b>투표용지 부족 사태</b>와 이태한 선거관리위원회 특별검사팀 수사 · 쟁송 · 제도 논점을, 원자료(「선관위 특검 수사 종합 정리」 <b>10.18 2차 수정판</b>)를 <b>60개 출처</b>와 대조해 팩트체크했으며 <b>10.25까지 최신 수사 동향</b>을 반영했습니다. <b>New</b> 표시는 직전 갱신(10.22) 이후 새로 확인된 사항입니다.</p>
+      <p class="desc">2026년 6·3 지방선거 <b>투표용지 부족 사태</b>와 이태한 선거관리위원회 특별검사팀 수사 · 쟁송 · 제도 논점을, 원자료(「선관위 특검 수사 종합 정리」 <b>10.18 2차 수정판</b>)를 <b>60개 출처</b>와 대조해 팩트체크했으며 <b>10.25까지 최신 수사 동향</b>을 반영했습니다.</p>
       <div class="metachips">
         <span>수사 대상 <b>12개</b> (특검법)</span>
         <span>특검 출범 <b>2026.9.7</b> · <b data-elap="2026-09-07">D+48</b></span>
         <span>사태 발생 <b>2026.6.3</b> · <b data-elap="2026-06-03">D+144</b></span>
         <span>기소 <b>0건</b> (10.25 기준 공개 보도)</span>
         <span>수사 기한 <b>최장 170일</b> (준비 20일 포함)</span>
-        <span class="metanew">New 10.15 · 허위 입력 <b>30곳</b></span>
-        <span class="metanew">New 10.15 · 압수수색 <b>7곳 + 10곳</b></span>
-        <span class="metanew">New 10.18 · 국세청 세무조사 요청</span> <span class="metanew">New 10.20 · 검증 협조 의결 전달 · 28일 무게</span> <span class="metanew">New 10.21 · 노태악 압수수색</span>
-        <span class="metanew">10.14 영장 <b>기각 1건 → 재청구</b></span> <span class="metanew">New 10.23 · 중수청 인력 10명 재요청</span>
+        <span class="metanew">10.15 · 허위 입력 <b>30곳</b></span>
+        <span class="metanew">10.15 · 압수수색 <b>7곳 + 10곳</b></span>
+        <span class="metanew">10.18 · 국세청 세무조사 요청</span> <span class="metanew">10.20 · 검증 협조 의결 전달 · 28일 무게</span> <span class="metanew">10.21 · 노태악 압수수색</span>
+        <span class="metanew">10.14 영장 <b>기각 1건 → 재청구</b></span> <span class="metanew">10.23 · 중수청 인력 10명 재요청</span>
       </div>
 
       <a class="vbanner" href="verify.html">
@@ -216,11 +228,11 @@ footer a{color:var(--neon)}
     <div class="s"><div class="n">01 · 무엇이 확정인가</div><p>특검이 다루는 것은 특검법이 정한 <b>12개 수사 대상</b>입니다. 사실로 상당 부분 확인된 것은 <b>투표용지 부족과 선거관리 절차 위반</b>입니다. <small>— 연합뉴스 [1]</small></p></div>
     <div class="s"><div class="n">02 · 특검의 과제</div><p>특검은 이것이 <b>누구의 고의·은폐·예산 및 계약 비리</b>로 이어지는지 검증하는 단계입니다. 합수본 기록을 "그대로 결론으로 삼지 않겠다"고 밝혔습니다. <small>— YTN [4]</small></p></div>
     <div class="s"><div class="n">03 · 선거무효는 별개</div><p>선거무효 여부는 형사수사와 별개로, 법원 소송에서 <b>"선거 결과에 영향을 미쳤는가"</b>를 기준으로 판단합니다(공직선거법 §224). 현재까지 무효 판결은 없습니다. <small>— 연합뉴스 [9]</small></p></div>
-    <div class="s nw2"><div class="n">04 · New 10.15~10.18 · 수사 지형의 확장</div><p>이번 판본의 중심은 <b>수사 지형의 확장</b>입니다. <b>10.15 하루에 두 갈래 강제수사</b>가 동시에 진행됐습니다 — ① 투표자 수 허위 입력 <b>30곳</b> 확인에 따른 중앙선관위 등 <b>7곳</b> 압수수색, ② 선거물품 보관계약 독점 특혜 의혹에 따른 부산·경남·경북선관위 등 <b>10곳</b> 압수수색. 여기에 <b>10.16 국세청 세무조사 요청(10.18 공개)</b>이 더해졌습니다. <b>10.20</b>에는 중앙선관위가 올공 검증 협조 의결을 특검에 전달했고(검증일 <b>28일 무게</b>), <b>10.21</b>에는 노태악 전 위원장 자택·선관위 사무실 압수수색이 진행됐습니다. <small>— 연합뉴스 [42][44] · KBS [45]</small></p></div>
-    <div class="s nw"><div class="n">05 · New 제동과 반발</div><p>10.14 전·현직 고위법관 '공명선거 추진활동비' 의혹 관련 압수수색 영장이 <b>기각</b>됐고, 특검이 이를 <b>공개 반발하며 영장 재청구 방침</b>을 밝혔습니다. 10.16 국회 법제사법위 국정감사에서는 여야가 법원의 잇단 영장 기각을 <b>'제 식구 감싸기'</b>라며 질타했습니다. <b>10.21–22</b>에는 특검 피의자 조사를 받던 중앙선관위 5급 직원이 조사 다음 날 숨진 채 발견됐고, 강압수사 여부를 둘러싼 공방이 벌어졌습니다 — 수사 방식 자체가 국면 쟁점으로 떠올랐습니다. <b>10.23</b>에는 특검 입장문(강압 없었다·유서는 오히려 선관위 조직의 문제점 지적)과 "구속자 수를 목표로 하는 수사는 지양한다"는 반박이 이어졌습니다. <small>— 연합뉴스 [20][49] · 쿠키뉴스 [48] · 연합뉴스 [61]</small></p></div>
+    <div class="s"><div class="n">04 · 10.15~10.18 · 수사 지형의 확장</div><p>이번 판본의 중심은 <b>수사 지형의 확장</b>입니다.</p><a class="card-more" href="tj-04.html">자세히 보기 ▸</a></div>
+    <div class="s"><div class="n">05 · 제동과 반발</div><p>10.14 전·현직 고위법관 '공명선거 추진활동비' 의혹 관련 압수수색 영장이 <b>기각</b>됐고, 특검이 이를 <b>공개 반발하며 영장 재청구 방침</b>을 밝혔습니다.</p><a class="card-more" href="tj-05.html">자세히 보기 ▸</a></div>
     <div class="s"><div class="n">06 · 남은 변수 5개</div><p>① 특검 수사기간(<b>12월 초 1차 만료</b>, 최장 2027년 2월 초) ② 인력 충원(파견검사 17명 · 10.23 중수청 예방에서 10명 재요청) ③ <b>10월 말(28일 무게)</b> 올공 공개 검증 ④ 국세청 세무조사 회신(12.15) ⑤ 고위법관 의혹 영장 재청구 결과. 이 다섯이 <b>기소 여부</b>를 좌우할 가능성이 큽니다. <small>— KBS [23] · 연합뉴스 [25][42]</small></p></div>
   </div>
-  <div class="note r"><b>New 10.15~10.22</b> — 수사 대상의 무게중심이 '용지 부족'에서 <b>'돈과 계약'</b>으로 이동하는 조짐이 뚜렷해졌습니다. 허위 입력 30곳 확인은 <b>전산·통계 축</b>을, 물품·창고계약 특혜는 <b>계약 축</b>을 전국 규모로 넓힌 사건입니다. 다만 고위법관 관련 의혹은 법원이 영장을 기각해 수사 동력이 제한될 수 있습니다. <b>영장 기각은 무혐의 판단이 아닙니다</b> — 법원 스스로 "법률적 평가를 달리하는 것으로 보인다"고 밝혔습니다. <a href="https://www.yna.co.kr/view/AKR20261014157951004">[20]</a> <a href="https://www.khan.co.kr/article/202610141743011">[47]</a></div>
+  <div class="note r"><b>10.15~10.22 업데이트</b> — 수사 대상의 무게중심이 '용지 부족'에서 <b>'돈과 계약'</b>으로 이동하는 조짐이 뚜렷해졌습니다. 허위 입력 30곳 확인은 <b>전산·통계 축</b>을, 물품·창고계약 특혜는 <b>계약 축</b>을 전국 규모로 넓힌 사건입니다. 다만 고위법관 관련 의혹은 법원이 영장을 기각해 수사 동력이 제한될 수 있습니다. <b>영장 기각은 무혐의 판단이 아닙니다</b> — 법원 스스로 "법률적 평가를 달리하는 것으로 보인다"고 밝혔습니다. <a href="https://www.yna.co.kr/view/AKR20261014157951004">[20]</a> <a href="https://www.khan.co.kr/article/202610141743011">[47]</a></div>
 </section>
 
 <section id="timeline">
@@ -255,112 +267,40 @@ footer a{color:var(--neon)}
     <div class="row p"><div class="date">10.7</div><div class="body"><b>국정감사(행안위) 중앙선관위 출석</b> — 강동완 사무총장 직무대행, 올공 보관 투표용지 검증과 관련해 <b>"특검과 협의해 최대한 빠른 시간 내 검증"</b> 입장. 직원격려금 예산도 쟁점.</div><div class="src"><a href="https://www.yna.co.kr/view/AKR20261007087700001">연합뉴스 [27]</a></div></div>
     <div class="row"><div class="date">10.10</div><div class="body">국민의힘 "아직 기소가 없다"며 <b>수사 속도 비판 논평</b>(야당 논평으로 구분해 읽어야 함). 올림픽공원 보관 투표용지 <b>공개 검증 조율</b> 보도 시작 — 29일 유력.</div><div class="src"><a href="https://www.ksw-news.com/news/articleView.html?idxno=3045008">경기매일 [8]</a> · <a href="https://www.yna.co.kr/view/AKR20261010033000004">연합뉴스 [25]</a></div></div>
     <div class="row p"><div class="date">10.13</div><div class="body">특검, <b>전문수사자문위원 3명과 중앙선관위 현장 점검</b> — 선거관리시스템 관리 실태·포렌식 진행 상황 확인(기술 자문). 같은 날 <b>중수청에 검사 출신 포함 수사관 10명 추가 파견 요청</b>.</div><div class="src"><a href="https://www.yna.co.kr/amp/view/MYH20261013004300038">연합뉴스TV [24]</a> · <a href="https://news.kbs.co.kr/news/pc/view/view.do?ncd=8685540">KBS [23]</a></div></div>
-    <div class="row p"><div class="date">10.14</div><div class="body"><b>특검, 중앙선관위·경기 김포·대구 선거물품 업체 등 5곳 압수수색</b> — 21대 대선·6·3 지선 <b>투표소 물품세트 제작 사업(합계 50억 원)</b> 특정 업체 유착 의혹. 업무상 배임·입찰방해, 31명 투입(특검 포렌식 6·경찰청 포렌식 3 포함).</div><div class="src"><a href="https://www.yonhapnewstv.co.kr/news/MYH20261014180459bsj">연합뉴스TV [21]</a> · <a href="https://www.khan.co.kr/article/202610141136001">경향신문 [22]</a></div></div>
-    <div class="row n"><div class="date">10.14<span class="nbadge">New</span></div><div class="body"><b>서울중앙지법, 전·현직 고위법관 '공명선거 추진활동비' 의혹 압수수색 영장 기각</b> — 특검이 10.12 청구. 위원장 <b>월 290만 원</b>·비상임위원 <b>월 215만 원</b>이 2014년부터 지급된 정황. 법원: "사실관계가 기본적으로 파악됐고, 법률적 평가를 달리하는 것으로 보인다" + "정상 업무 지장 우려". <b>특검은 곧바로 영장 재청구 방침</b>을 밝히며 이례적으로 법원을 공개 비판했습니다.</div><div class="src"><a href="https://www.yna.co.kr/view/AKR20261014157951004">연합뉴스 [20]</a> · <a href="https://www.khan.co.kr/article/202610141743011">경향신문 [47]</a></div></div>
-    <div class="row n"><div class="date">10.15<span class="nbadge">New</span></div><div class="body"><b>특검, 전국 30개 시군구 선관위의 시간대별 투표자 수 허위 입력 확인 → 중앙선관위·시도 선관위 4곳·시군구 선관위 2곳 등 7곳 압수수색.</b> 혐의는 공전자기록위작·위계에 의한 공무집행방해 등, 검사 3·수사관 20·포렌식 8 등 31명 투입. 기존 합수본 파악 5곳(서울 서초·강남, 경기 김포·의왕, 충북 진천)에 <b>25곳이 추가</b>된 것으로, 사실상 전국 단위입니다. 특검은 <b>"선거제도 자체에 대한 불신을 초래해 민주주의 존립 기반을 위협하는 중대범죄"</b>로 규정했습니다.</div><div class="src"><a href="https://www.yna.co.kr/view/AKR20261015080451004">연합뉴스 [42]</a> · <a href="https://www.donga.com/news/Society/article/all/20261015/134848156/1">동아일보 [43]</a></div></div>
-    <div class="row n"><div class="date">10.15<span class="nbadge">New</span></div><div class="body"><b>특검, 선거물품 보관계약 독점 특혜 의혹으로 부산·경남·경북선관위 등 10곳 압수수색.</b> 부산·경남·경북선관위가 <b>2022년부터 특정 업체와 독점 특혜성 창고계약</b>을 체결해 온 정황 — 시군구 선관위 5곳(경북 칠곡군·포항시 남구, 경남 사천시, 부산 동래구, 울산 울주군), 경기 수원시 선거연수원, 선관위 공무원 주거지 포함. 업무상 배임·입찰방해 등 혐의, 포렌식 수사관 10명 포함 30여 명 투입. 특검은 <b>"각급 선관위의 방만 운영 전반에 대한 구조적 비리를 밝히겠다"</b>고 밝혔습니다.</div><div class="src"><a href="https://www.yna.co.kr/view/AKR20261015115200004">연합뉴스 [44]</a></div></div>
-    <div class="row n"><div class="date">10.16<span class="nbadge">New</span></div><div class="body"><b>특검, 유착 의혹 업체들의 조세범처벌법 위반 정황을 확인하고 국세청에 세무조사 요청(12.15까지 회신).</b> 요청 대상은 5곳 이상. 같은 날 <b>국회 법제사법위 국정감사</b>에서 여야가 법원의 잇단 선관위 관련 영장 기각을 질타 — 김민전 의원 "한통속 의심", 박은정 의원 "제 식구 감싸기가 돼서는 안 된다". 6·3 당시 서울시선관위원장이었던 오민석 서울중앙지법원장은 "영장전담판사들이 사실관계와 법리를 신중하게 검토해 결정하고 있다"고 답했습니다.</div><div class="src"><a href="https://news.kbs.co.kr/news/view.do?ncd=8688416">KBS [45]</a> · <a href="https://www.kukinews.com/article/view/kuk202610160075">쿠키뉴스 [48]</a> · <a href="https://www.yna.co.kr/amp/view/AKR20261016067152004">연합뉴스 [49]</a></div></div>
-    <div class="row n"><div class="date">10.18<span class="nbadge">New</span></div><div class="body"><b>특검, 유착 의혹 업체들의 탈세·허위 세금계산서 발급·수취 정황을 언론 공지를 통해 공개.</b> 들러리 업체와 수익을 나누거나 탈세 목적으로 실제 거래가 없는 <b>허위·가공거래</b>를 한 정황입니다. 조세범처벌법 위반죄는 <b>국세청이 전속고발권</b>을 가져 국세청장 등의 고발이 있어야 공소를 제기할 수 있습니다.</div><div class="src"><a href="https://news.kbs.co.kr/news/view.do?ncd=8688416">KBS [45]</a> · <a href="https://www.hani.co.kr/arti/society/society_general/1282912.html">한겨레 [46]</a></div></div>
-    <div class="row p"><div class="date">10.28 (무게)</div><div class="body"><b>올림픽공원 핸드볼경기장 보관 투표용지 약 247만 장 공개 검증 추진</b> — 참관인·언론·시민이 지켜보는 가운데 한 장씩 확인하는 방식. 10.20 중앙선관위가 특검에 협조 의결을 전달했고, JTBC 보도 기준 <b>28일로 진행하는 데 무게</b> — 공식 확정 아님, 변경 가능. 투표인 명부·투표 관련 서류도 함께 확인 예정. <b>확정 일정이 아닙니다.</b></div><div class="src"><a href="https://www.yna.co.kr/view/AKR20261010033000004">연합뉴스 [25]</a> · <a href="https://www.yonhapnewstv.co.kr/news/MYH20261011112421OIZ">연합뉴스TV [26]</a></div></div>
-    <div class="row p"><div class="date">10.18</div><div class="body">10.5 이후 <b>소환·구속영장·기소 속보는 공개 보도에서 확인되지 않음</b>. 1차 수사기간 12월 초 만료(최장 150일), 파견 인력 충원 지연 지적.</div><div class="src">기준일 정리</div></div>
-    <div class="row n"><div class="date">10.20<span class="nbadge">New</span></div><div class="body"><b>중앙선관위, 올공 투표용지 공개 검증 협조 의결을 특검에 전달</b>. JTBC 단독 — 특검은 검증을 <b>10.28로 진행하는 데 무게</b>를 두고 관계 기관과 협의 중. <b>공식 확정은 아님</b> (기존 '29일 유력' 보도에서 앞당겨지는 방향).</div><div class="src"><a href="https://news.jtbc.co.kr/article/NB12323921">JTBC</a></div></div>
-    <div class="row n"><div class="date">10.21<span class="nbadge">New</span></div><div class="body"><b>특검, 노태악 전 중앙선관위원장 자택·선관위 사무실 압수수색</b> — 오전 8시10분께, 파견검사 2명 포함 12명 투입, <b>횡령·허위공문서작성</b> 혐의로 <b>휴대전화 등 확보</b>. 출장보고서 <b>허위 기재 정황</b> 보도. 중수청 예방은 <b>이날 예정</b>이었으나(연합뉴스 10.20 보도) <b>실제 예방은 10.23</b>에 진행 — 아래 10.23 항목.</div><div class="src"><a href="https://www.khan.co.kr/article/202610211228001">경향신문</a> · <a href="https://www.yonhapnewstv.co.kr/news/MYH20261021180856Mx7">연합뉴스TV</a> · <a href="https://www.yna.co.kr/view/AKR20261020114500004">연합뉴스</a></div></div>
-    <div class="row n"><div class="date">10.21–22<span class="nbadge">New</span></div><div class="body"><b>특검 피의자 조사받던 중앙선관위 5급(사무관급) 40대 직원 A씨가 화성 자택에서 숨진 채 발견</b> — A씨는 10.20 입찰방해·업무상 배임 혐의로 조사받았고(사전투표함 약 16억 원 구매 업무 담당), 현장에서 유서. <b>강압수사 공방</b>: 변호인 "3명이 에워싸듯 조사·호통·'중국산' 질문" vs 특검 "강압적 분위기 전혀 없었다"(실제 조사 7시간 35분·휴식 3시간 20분·조서 40여 곳 자필 수정), 선관위 입장문 "수사로 극심한 심리적 부담… 직원 인권 보호 요청". <b>사망 경위는 경찰 조사 중</b>.</div><div class="src"><a href="https://www.yna.co.kr/view/AKR20261021107752001">연합뉴스(종합)</a> · <a href="https://www.hani.co.kr/arti/society/society_general/1283551.html">한겨레</a> · <a href="https://imnews.imbc.com/news/2026/society/article/6859924_36919.html">MBC</a></div></div>
+    <div class="row p hasmore"><div class="date">10.14</div><div class="body"><b>특검, 중앙선관위·경기 김포·대구 선거물품 업체 등 5곳 압수수색</b> <a class="row-more" href="tl-1014.html">자세히 보기 ▸</a></div></div>
+    
+    <div class="row p hasmore"><div class="date">10.15</div><div class="body"><b>특검, 전국 30개 시군구 선관위의 시간대별 투표자 수 허위 입력 확인 → 중앙선관위·시도 선관위 4곳·시군구 선관위 2곳 등 7곳 압수수색.</b> <a class="row-more" href="tl-1015.html">자세히 보기 ▸</a></div></div>
+    
+    <div class="row p hasmore"><div class="date">10.16</div><div class="body"><b>특검, 유착 의혹 업체들의 조세범처벌법 위반 정황을 확인하고 국세청에 세무조사 요청(12.15까지 회신).</b> <a class="row-more" href="tl-1016.html">자세히 보기 ▸</a></div></div>
+    <div class="row p hasmore"><div class="date">10.18</div><div class="body"><b>특검, 유착 의혹 업체들의 탈세·허위 세금계산서 발급·수취 정황을 언론 공지를 통해 공개.</b> <a class="row-more" href="tl-1018.html">자세히 보기 ▸</a></div></div>
+    <div class="row p hasmore"><div class="date">10.28 (무게)</div><div class="body"><b>올림픽공원 핸드볼경기장 보관 투표용지 약 247만 장 공개 검증 추진</b> <a class="row-more" href="tl-1028.html">자세히 보기 ▸</a></div></div>
+    
+    <div class="row p hasmore"><div class="date">10.20</div><div class="body"><b>중앙선관위, 올공 투표용지 공개 검증 협조 의결을 특검에 전달</b> <a class="row-more" href="tl-1020.html">자세히 보기 ▸</a></div></div>
+    <div class="row p hasmore"><div class="date">10.21</div><div class="body"><b>특검, 노태악 전 중앙선관위원장 자택·선관위 사무실 압수수색</b> <a class="row-more" href="tl-1021.html">자세히 보기 ▸</a></div></div>
+    <div class="row p hasmore"><div class="date">10.21–22</div><div class="body"><b>특검 피의자 조사받던 중앙선관위 5급(사무관급) 40대 직원 A씨가 화성 자택에서 숨진 채 발견</b> <a class="row-more" href="tl-1021-22.html">자세히 보기 ▸</a></div></div>
     <div class="row p"><div class="date">10.22</div><div class="body">10.22 기준 — 소환·구속영장·기소 속보는 공개 보도에서 확인되지 않음. 1차 수사기간 12월 초 만료(최장 150일).</div><div class="src">기준일 정리</div></div>
-    <div class="row n"><div class="date">10.23<span class="nbadge">New</span></div><div class="body"><b>특검, 중수청 본청 예방(오후 2시 50분께) — 김지용 중수청장과 30여분 면담, 인력 10명가량 파견 재요청</b> — 주요 압수수색엔 일시적 수사 지원, 디지털 포렌식엔 수시 투입 요청 예정. 김 청장 "일시적 수사 지원은 적극적으로 검토"하면서도 "중수청도 인력이 부족해 지원자 파악 등 전체적 상황을 고려해 알려주겠다". 특검은 "선거관리 시스템 서버 포렌식을 한 달 이상 계속 중", "DB 분석 포렌식 인원이 상당히 부족"하다고 설명했고, 신병 확보 등 성과 미진 지적엔 <b>"구속자 수를 목표로 하는 수사는 지양한다"</b>고 반박. 이날 오전 입장문 — 사망 피의자에 강압적 조사는 없었고 <b>"유서에는 오히려 선관위 특검을 원망하지 않는다는 내용과 선관위 조직의 문제점을 지적하는 내용 등이 있었다"</b>. 입회한 법무법인 도담 박현정 변호사는 <b>압박·강요와 신문조서 작성 과정 미비점</b>을 주장.</div><div class="src"><a href="https://www.yna.co.kr/view/AKR20261023124951004">연합뉴스</a> · <a href="https://www.kmib.co.kr/article/20261023500452">국민일보</a></div></div>
+    <div class="row p hasmore"><div class="date">10.23</div><div class="body"><b>특검, 중수청 본청 예방(오후 2시 50분께) — 김지용 중수청장과 30여분 면담, 인력 10명가량 파견 재요청</b> <a class="row-more" href="tl-1023.html">자세히 보기 ▸</a></div></div>
   </div>
 </section>
 <section id="scope">
   <div class="eyebrow">§ 2 · Scope of Investigation</div>
   <h2 class="sec-t">특검은 무엇을 수사하나 — 수사 대상 12개, 세 갈래</h2>
-  <p class="sub">특검법이 수사 대상을 <b>12개</b>로 정했고 [1], 언론·법조 보도를 묶으면 아래 세 갈래입니다. 각 항목의 검증 상태를 태그로 표시했습니다. <b>New</b>는 10.14 판본 이후 새로 확인된 항목입니다.</p>
+  <p class="sub">특검법이 수사 대상을 <b>12개</b>로 정했고 [1], 언론·법조 보도를 묶으면 아래 세 갈래입니다. 각 항목의 검증 상태를 태그로 표시했습니다.</p>
   <div class="grid">
-    <div class="card">
-      <div class="pillar">A · 투표용지·개표 관리</div>
-      <h3>인쇄 기준 하향 (60% → 50%)</h3>
-      <p>본투표용 인쇄 기준을 선거인 수의 <b>60%에서 50%로 낮춘</b> 결정 과정이 핵심 조사점입니다 [3]. 2025.12.10 「제9회 지방선거 종합관리지침」을 <b>사무총장 전결</b>로, 같은 달 24일 「공직선거절차사무편람」을 <b>선거정책실장 전결</b>로 개정한 것으로 확인됐고 <b>위원회 의결은 거치지 않았습니다</b>. 규칙으로 둘 것과 지침·편람으로 둘 것의 <b>구분 기준 자체가 없다</b>고 선관위가 답한 회의록도 확인됐습니다 [55]. 시민단체는 <b>노태악 전 위원장 등 6명을 직권남용·직무유기 혐의로 고발</b>했습니다 [56]. 내부의 부족 우려가 묵살됐는지도 쟁점입니다.</p>
-      <p style="margin-top:8px"><span class="tag fact">확정 — 개정 경위</span> <span class="tag probe">진행</span></p>
-    </div>
-    <div class="card">
-      <div class="pillar">A · 투표용지·개표 관리</div>
-      <h3>참정권 침해 (투표 중단)</h3>
-      <p>선관위 보도자료(6.8): 전국 <b>1만 4,288개</b> 투표소 중 용지 부족 예상으로 <b>추가 송부한 곳 140곳</b>, 이 중 <b>26곳에서 투표 일시중단 후 재개</b> — 선관위 자체 발표로 확인. 용지 부족으로 투표가 중단된 경위·추가 용지 요청·공급 지연 이유·<b>투표하지 못하고 돌아간 유권자</b>가 있었는지가 쟁점입니다 [1].</p>
-      <p style="margin-top:8px"><span class="tag fact">확정 — 규모</span> <span class="tag probe">진행</span></p>
-    </div>
-    <div class="card">
-      <div class="pillar">A · 투표용지·개표 관리</div>
-      <h3>개표 강행·선거물품 사고 처리</h3>
-      <p>일부 투표소의 투표가 끝나지 않은 상황, 투표함 보전 요구에도 개표를 진행한 경위와 적법성 [1]. 투표용지 보관상자 등의 방치·유출·폐기와 사고 처리 과정의 <b>은폐 여부</b>도 조사 대상입니다 — 증거보전 현장검증에서 "인쇄매수 1,900매" 상자가 사라진 실제 사례가 있었습니다 [13].</p>
-      <p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag probe">진행</span></p>
-    </div>
-    <div class="card">
-      <div class="pillar">B · 전산·통계·시스템</div>
-      <h3>투표자 수 보정 지침</h3>
-      <p>중앙선관위가 시·도 선관위에 「오류가 나도 원칙적으로 수정하지 않되 부득이하면 반드시 보고·승인 후 처리」, 「<b>큰 오류가 아니면 다음 시각 보고 때 가감하라</b>」는 취지의 지침을 내렸다는 정황이 확인됐습니다 [54]. 지역 선관위가 중앙선관위에 투표자 수를 잘못 보고했다가 사후 수정한 사례는 <b>2025년 대선 81건·2024년 총선 65건</b>으로 국회에 제출된 전산 수정 이력에서 확인됐습니다 [53]. 합수본은 지침을 하달한 관계자와 윗선 관여 여부, 과거 선거에서도 유사 방식이 있었는지를 집중 조사했습니다 [54].</p>
-      <p style="margin-top:8px"><span class="tag fact">확정 — 지침 정황·과거 이력</span> <span class="tag probe">진행</span></p>
-    </div>
-    <div class="card nw">
-      <div class="pillar">B · 전산·통계·시스템 <span class="nbadge">New 10.15</span></div>
-      <h3>허위 입력 <b>30곳</b> 확인 — 사실상 전국 단위</h3>
-      <p>특검이 <b>전국 30개 시군구 선관위</b>에서 시간대별 투표자 수를 허위로 입력한 사실을 확인했습니다. 합수본이 파악한 5곳(서울 <b>서초·강남</b>, 경기 <b>김포·의왕</b>, 충북 <b>진천</b>)에 <b>25곳이 추가</b>된 것입니다 [42][43].</p>
-      <p><b>추가 확인 25곳</b> — 서울 구로·마포·성북, 경기 구리·평택·수원·용인·성남·남양주·여주·동두천, 충북 청주, 충남 천안 서북구·동남구·금산군, 부산 남구, 경남 창원, 광주 북구, 전남 목포·광양·화순, 강원 춘천·정선·화천, 제주 서귀포.</p>
-      <p><b>입력 방식</b> — 사후에 시간대별 수치를 수정하거나, 허위 입력한 투표자 수를 토대로 <b>같은 값을 반복 입력</b>하는 방식이 쓰였습니다. 특검은 선거관리시스템 전국 투표소 로그 분석과 읍면동·시군구 공무원 70여 명 조사로 이를 확인했고, <b>"선거제도 자체에 대한 불신을 초래해 민주주의 존립 기반을 위협하는 중대범죄"</b>로 규정했습니다 [42][43].</p>
-      <p style="margin-top:8px"><span class="tag fact">확정 — 입력 사실</span> <span class="tag probe">진행</span> <span class="tag warn">득표 조작 확정 아님</span></p>
-    </div>
-    <div class="card">
-      <div class="pillar">B · 전산·통계·시스템</div>
-      <h3>시스템 관리·포렌식 검증</h3>
-      <p>선거관리시스템의 관리·보안·운영 부실과 관련 자료의 존재·변경·은닉 여부 [1][5]. 10.13 특검이 <b>포렌식·정보보안 자문위원과 함께 중앙선관위 현장을 점검</b>하고 선거관리시스템 포렌식 검증을 이어가고 있습니다 [24]. 시스템 부실·자료 은닉 여부가 수사의 <b>실질 쟁점</b>으로 부상했습니다. 실제 개표 오류 사례로는 경기도교육감 선거에서 성남·경기 광주 투표소 두 곳의 <b>후보 득표수가 뒤바뀐 입력</b>이 뒤늦게 확인됐습니다.</p>
-      <p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag probe">진행</span></p>
-    </div>
-    <div class="card red">
-      <div class="pillar">B · 경계선</div>
-      <h3>이것은 "조작 확정"이 아닙니다</h3>
-      <p>이 갈래는 <b>통계 입력의 위법 여부를 조사하는 단계</b>입니다. 최종 득표수나 <b>당락 조작이 확인됐다는 뜻이 아닙니다</b> [3]. 허위 입력이 30곳에서 확인된 것도 <b>입력 행위</b>의 확인이지 득표수 조작의 확인이 아닙니다. "조직적 조작"은 미확정이며, <b>신뢰 훼손과 조작 여부는 구분</b>해야 합니다.</p>
-      <p style="margin-top:8px"><span class="tag warn">주의</span></p>
-    </div>
-    <div class="card">
-      <div class="pillar">C · 기관 운영 비위</div>
-      <h3>외유성 출장 (노태악)</h3>
-      <p>재임 중 해외출장 <b>3번 모두 배우자 동반</b>(호주·뉴질랜드, 독일·에스토니아, 덴마크·스웨덴) — 항공료·체재비 등 총 <b>7,194만 원</b> 선관위 예산 소요, 배우자 몫 비용의 최종 결재자는 본인이었습니다 [2]. 선관위는 배우자 출장비 <b>4,743만 8,900원을 반납</b>했습니다. 합수본은 2026.7.20 중앙선관위 등에 압수수색을 하면서 <b>영장에 노 전 위원장과 성명불상 선관위 직원을 피의자로 적시하고 혐의를 업무상 횡령으로 기재</b>했습니다 [59][60]. 노 전 위원장은 공직선거법 위반·직무유기 혐의로 입건된 피의자 14명 가운데 한 명이며, 특검이 9.28 출국금지를 연장했습니다 [6].</p>
-      <p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag probe">진행</span></p>
-    </div>
-    <div class="card">
-      <div class="pillar">C · 기관 운영 비위</div>
-      <h3>채용·승진 특혜</h3>
-      <p>자녀 채용 의혹의 상징적 사건 — <b>김세환 전 사무총장 1심 징역 2년</b>(인천지법, 7.16). 직권남용권리행사방해·국가공무원법 위반, 항소 중. 감사원이 2013~2023년 채용 규정 위반 <b>878건</b>을 확인했다는 원자료 ※ 기술은 별도 검증이 필요하고, <b>헌재 2023헌라5</b>가 감사원의 직무감찰을 선관위 독립성 침해로 판단해 감찰 경로가 막혀 있습니다.</p>
-      <p style="margin-top:8px"><span class="tag fact">확정 — 1심</span> <span class="tag warn">878건 ※ 미검증</span></p>
-    </div>
-    <div class="card">
-      <div class="pillar">C · 기관 운영 비위</div>
-      <h3>수의계약·입찰 유착 의혹</h3>
-      <p>중앙선관위 전직 간부 가족 관련 업체의 계약 <b>103건·175억 원</b>, 그중 <b>수의계약 90건</b>이 합수본 수사 대상으로 보도됐습니다 [3]. <b>의혹 대상 계약의 규모</b>이지 부정 계약으로 확정된 규모가 아닙니다. 사전투표함 제작 용역에서 들러리 업체를 끼워 전관 업체를 밀어줬다는 의혹으로 합수본이 8.14 압수수색했고 특검이 이어받았다는 보도도 ※ 표시로 원 보도 확인이 필요합니다.</p>
-      <p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag probe">진행</span></p>
-    </div>
-    <div class="card nw">
-      <div class="pillar">C · 기관 운영 비위 <span class="nbadge">New 10.14</span></div>
-      <h3>투표소 물품세트 50억 사업 유착</h3>
-      <p>중앙선관위가 <b>21대 대선·6·3 지선의 투표소 물품세트 제작 사업(합계 50억 원 상당)</b>에서 특정 업체와 유착된 의혹 — 특검이 10.14 <b>중앙선관위와 김포·대구 선거물품 업체 등 5곳을 압수수색</b>했습니다. 업무상 배임·입찰방해 혐의, 31명 투입 [21][22]. <b>의혹 단계</b>이며 부정 계약으로 확정된 것이 아닙니다.</p>
-      <p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag probe">진행</span></p>
-    </div>
-    <div class="card nw">
-      <div class="pillar">C · 기관 운영 비위 <span class="nbadge">New 10.15</span></div>
-      <h3>선거물품 보관계약 독점 특혜</h3>
-      <p>특검은 <b>부산·경남·경북선관위가 2022년부터 특정 업체와 독점 특혜성 창고계약</b>을 체결해 온 정황을 확인하고, 부산·경남·경북선관위와 시군구 선관위 5곳(<b>경북 칠곡군·포항시 남구, 경남 사천시, 부산 동래구, 울산 울주군</b>), 경기 수원시 선거연수원, 선관위 공무원 주거지 등 <b>총 10곳을 업무상 배임·입찰방해 등 혐의로 압수수색</b>했습니다 [44]. 특검은 "각급 선관위의 <b>방만 운영 전반에 대한 구조적 비리</b>를 밝히겠다"고 밝혔습니다. 특혜 여부·손해·의무 위반이 관건입니다.</p>
-      <p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag probe">진행</span></p>
-    </div>
-    <div class="card nw">
-      <div class="pillar">C · 기관 운영 비위 <span class="nbadge">New 10.18</span></div>
-      <h3>유착 업체 탈세·허위 세금계산서</h3>
-      <p>특검은 유착 의혹 업체들이 <b>들러리 업체와 수익을 나누거나 탈세 목적으로 실제 거래가 없는 허위·가공거래</b>를 하고, <b>허위 세금계산서를 발급·수취</b>한 조세범처벌법 위반 정황을 확인했습니다. 10.16 <b>국세청에 조사 요청</b>(12.15까지 회신), 요청 대상은 5곳 이상입니다 [45][46]. 입찰방해·업무상 배임이 <b>계약 구조</b>를 겨냥한다면, 조세범 위반은 그 계약의 <b>자금 흐름</b>을 겨냥한다는 점에서 성격이 다릅니다. 조세범처벌법 위반죄는 <b>국세청이 전속고발권</b>을 가져 국세청장 등의 고발이 있어야 공소를 제기할 수 있습니다.</p>
-      <p style="margin-top:8px"><span class="tag press">보도 — 정황</span> <span class="tag probe">진행</span> <span class="tag warn">탈세 확정 아님</span></p>
-    </div>
-    <div class="card nw">
-      <div class="pillar">C · 기관 운영 비위 <span class="nbadge">New</span></div>
-      <h3>'공명선거 추진활동비' — 영장 기각 → 재청구</h3>
-      <p>특검은 <b>2014년부터 중앙선관위 위원장에게 월 290만 원, 비상임위원들에게 월 215만 원</b>씩 회의 참석 수당·안건 검토 수당과는 <b>별개로</b> '공명선거 추진활동비' 명목의 돈이 지급된 것을 파악하고 범죄 혐의 여부를 수사해 왔습니다. 중앙선관위원장은 대법관, 비상임위원 일부와 지방선관위원장은 고위법관이 맡습니다. 합수본이 다루지 않았던 <b>특검 직접 인지 사건</b>입니다 [20]. 특검이 10.12 청구한 압수수색 영장은 <b>10.14 서울중앙지법에서 기각</b>됐고, 특검은 기각 사유를 공개하며 <b>재청구 방침</b>을 밝혔습니다 [47]. 법원은 "법률적 평가를 달리하는 것으로 보인다"고 했습니다 — <b>지급의 법적 성격은 다툼이 있는 사안</b>입니다.</p>
-      <p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag warn">영장 기각 — 재청구 방침</span></p>
-    </div>
+    <div class="card"><div class="pillar">A · 투표용지·개표 관리</div><h3>인쇄 기준 하향 (60% → 50%)</h3><p style="margin-top:8px"><span class="tag fact">확정 — 개정 경위</span> <span class="tag probe">진행</span></p><a class="card-more" href="scope-01.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">A · 투표용지·개표 관리</div><h3>참정권 침해 (투표 중단)</h3><p style="margin-top:8px"><span class="tag fact">확정 — 규모</span> <span class="tag probe">진행</span></p><a class="card-more" href="scope-02.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">A · 투표용지·개표 관리</div><h3>개표 강행·선거물품 사고 처리</h3><p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag probe">진행</span></p><a class="card-more" href="scope-03.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">B · 전산·통계·시스템</div><h3>투표자 수 보정 지침</h3><p style="margin-top:8px"><span class="tag fact">확정 — 지침 정황·과거 이력</span> <span class="tag probe">진행</span></p><a class="card-more" href="scope-04.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">B · 전산·통계·시스템 </div><h3>허위 입력 <b>30곳</b> 확인 — 사실상 전국 단위</h3><p style="margin-top:8px"><span class="tag fact">확정 — 입력 사실</span> <span class="tag probe">진행</span> <span class="tag warn">득표 조작 확정 아님</span></p><a class="card-more" href="scope-05.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">B · 전산·통계·시스템</div><h3>시스템 관리·포렌식 검증</h3><p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag probe">진행</span></p><a class="card-more" href="scope-06.html">자세히 보기 ▸</a></div>
+    <div class="card red"><div class="pillar">B · 경계선</div><h3>이것은 "조작 확정"이 아닙니다</h3><p style="margin-top:8px"><span class="tag warn">주의</span></p><a class="card-more" href="scope-07.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">C · 기관 운영 비위</div><h3>외유성 출장 (노태악)</h3><p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag probe">진행</span></p><a class="card-more" href="scope-08.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">C · 기관 운영 비위</div><h3>채용·승진 특혜</h3><p style="margin-top:8px"><span class="tag fact">확정 — 1심</span> <span class="tag warn">878건 ※ 미검증</span></p><a class="card-more" href="scope-09.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">C · 기관 운영 비위</div><h3>수의계약·입찰 유착 의혹</h3><p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag probe">진행</span></p><a class="card-more" href="scope-10.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">C · 기관 운영 비위 </div><h3>투표소 물품세트 50억 사업 유착</h3><p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag probe">진행</span></p><a class="card-more" href="scope-11.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">C · 기관 운영 비위 </div><h3>선거물품 보관계약 독점 특혜</h3><p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag probe">진행</span></p><a class="card-more" href="scope-12.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">C · 기관 운영 비위 </div><h3>유착 업체 탈세·허위 세금계산서</h3><p style="margin-top:8px"><span class="tag press">보도 — 정황</span> <span class="tag probe">진행</span> <span class="tag warn">탈세 확정 아님</span></p><a class="card-more" href="scope-13.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">C · 기관 운영 비위 </div><h3>'공명선거 추진활동비' — 영장 기각 → 재청구</h3><p style="margin-top:8px"><span class="tag press">보도</span> <span class="tag warn">영장 기각 — 재청구 방침</span></p><a class="card-more" href="scope-14.html">자세히 보기 ▸</a></div>
   </div>
   <div class="note"><b>읽는 규칙</b> — 「확정」은 공식 발표·판결·본지가 확인한 문장, 「보도」는 언론 보도 기반(원문 확보 전), 「진행」은 수사·심사 계속 중, 「미확인」은 원자료에 출처 없이 기술된 ※ 항목입니다.</div>
 </section>
@@ -368,7 +308,7 @@ footer a{color:var(--neon)}
 <section id="status">
   <div class="eyebrow">§ 3 · Investigation Status</div>
   <h2 class="sec-t">수사 현황 — 합수본에서 특검으로, 그리고 확대</h2>
-  <p class="sub">원자료의 항목을 보도 대조로 업데이트했습니다. 펼쳐서 읽으세요. <b class="nw-t">New</b> 표시는 10.15~10.25 새로 확인된 사항입니다.</p>
+  <p class="sub">원자료의 항목을 보도 대조로 업데이트했습니다. 펼쳐서 읽으세요.</p>
   <details open><summary>① 합수본 단계 (6~8월, 본부장 김태훈 서울중앙지검 3차장)</summary><div class="body">
     지선 8일 뒤인 <b>6.11 중앙선관위 등 7곳 전격 압수수색</b> — 영장에 피의자 10여 명이 적시됐고 <b>노태악 전 위원장·허철훈 전 사무총장도 포함</b>됐습니다 [4]. 서버·인쇄계획서·회의록·예산서 등을 확보했고, 용지 부족 관련 <b>송파구선관위 선거담당관·선거1계장(직무유기 입건)</b>, <b>강남구선관위 선거담당관(피의자 조사)</b>, <b>중앙선관위 관계자(공전자기록위작 등 입건)</b>을 조사했습니다 [3]. 7.20에는 노태악 전 위원장의 <b>외유성 출장 의혹</b>으로 중앙선관위 등을 압수수색하며 영장에 <b>업무상 횡령</b> 혐의를 적시했습니다 [59][60].</div></details>
   <details><summary>② 특검 출범 후 (9.7 ~ )</summary><div class="body">
@@ -383,21 +323,21 @@ footer a{color:var(--neon)}
     특검이 10.12 중앙선관위 등을 상대로 압수수색 영장을 청구했고 <b>서울중앙지법이 10.14 기각</b>했습니다. 법원 사유: <b>"사실관계가 기본적으로 파악됐고, 피의자들이 법률적 평가를 달리하는 것으로 보인다"</b>, <b>"중앙선관위 정상 업무에 상당한 지장 우려"</b>. 쟁점은 위원장 월 290만 원·비상임위원 월 215만 원의 '공명선거 추진활동비'가 적법한 수당·활동비인지 다른 성격의 대가인지입니다. 특검은 <b>개별 영장의 기각 사유를 공개</b>하고 "최근 법원이 납득하기 어려운 이유로 일부 압수수색 영장을 기각한 사례들이 있다"며 <b>영장 재청구 방침</b>을 밝혔습니다 — 특검이 법원을 공개 비판한 것은 <b>이례적</b>으로 평가됩니다 [20][47]. <b>영장 기각은 무혐의 판단이 아닙니다.</b></div></details>
   <details><summary>④-4 인력 — 파견 충원 지연</summary><div class="body">
     특검은 10.13 중수청에 <b>4급 이상 검찰 출신을 포함한 수사관 10명 추가 파견</b>을 요청했습니다(10.7 지방중수청 2명 파견 별도). 파견검사는 <b>17명</b>(법정 상한 20명). 특검 관계자는 "파견 인력 충원이 늦어져 매우 난처"라고 밝혔습니다. 중수청은 10.2 개청, 기관장은 공석 [23].</div></details>
-  <details><summary><span class="nbadge">New</span>④-5 투표자 수 허위 입력 30곳 — 중앙선관위 등 7곳 압수수색 (10.15)</summary><div class="body">
+  <details><summary>④-5 투표자 수 허위 입력 30곳 — 중앙선관위 등 7곳 압수수색 (10.15)</summary><div class="body">
     특검이 <b>전국 30개 시군구 선관위에서 시간대별 투표자 수를 허위로 입력</b>한 사실을 확인하고, <b>중앙선관위와 시도 선관위 4곳(충남·전남광주·경남·강원), 시군구 선관위 2곳(부산 남구·제주 서귀포시) 등 7곳</b>을 압수수색했습니다. 혐의는 <b>공전자기록위작·위계에 의한 공무집행방해 등</b>, 검사 3명·수사관 20명·포렌식 8명 등 31명 투입. 서버·통계 자료와 입력 권한·지시 관계를 확보하는 것이 목적입니다 [42][43].</div></details>
-  <details><summary><span class="nbadge">New</span>④-6 선거물품 보관계약 독점 특혜 — 10곳 압수수색 (10.15)</summary><div class="body">
+  <details><summary>④-6 선거물품 보관계약 독점 특혜 — 10곳 압수수색 (10.15)</summary><div class="body">
     부산·경남·경북선관위가 <b>2022년부터 특정 업체와 독점 특혜성 창고계약</b>을 체결한 정황을 확인하고, 부산·경남·경북선관위와 시군구 선관위 5곳, <b>경기 수원시 선거연수원</b>, <b>선관위 공무원 주거지</b> 등 총 <b>10곳</b>을 업무상 배임·입찰방해 등 혐의로 압수수색했습니다. 포렌식 수사관 10명 포함 <b>30여 명</b> 투입. 계약서·정산 자료와 <b>특혜의 대가성</b>이 관건입니다 [44].</div></details>
-  <details><summary><span class="nbadge">New</span>④-7 국세청 세무조사 요청 (10.16 · 10.18 공개)</summary><div class="body">
+  <details><summary>④-7 국세청 세무조사 요청 (10.16 · 10.18 공개)</summary><div class="body">
     유착 의혹 업체들의 <b>허위·가공거래, 허위 세금계산서 발급·수취</b> 등 조세범처벌법 위반 정황을 확인하고 국세청에 조사를 요청했습니다. <b>12.15까지 결과·근거자료 회신</b>을 요구했고, 요청 대상은 <b>5곳 이상</b>입니다. 조세범처벌법 위반죄는 <b>국세청 전속고발 사안</b>으로 국세청장 등의 고발이 있어야 공소를 제기할 수 있어, <b>세무조사 결과가 관건</b>입니다. 특검은 요청 배경으로 "12월 중으로 1차 수사 기한이 마무리되는 상황"을 들었습니다 [45][46].</div></details>
   <details><summary>⑤ 재검표 · 공개 검증 · 국정조사·국감</summary><div class="body">
-    재검표: 국조특위(윤상현 위원장)가 올림픽공원 핸드볼경기장의 <b>투표지 247만 장 보존을 직접 확인</b>(7.3)했고, 여야가 공개 재검표를 추진 — 중앙선관위는 재검표 수용과 비용 약 5천만 원 부담을 제안(440명 인력 시 약 9시간). 국정조사특위는 재검표를 끝내지 못하고 8월 말 종료됐습니다. 특검은 <b>올림픽공원 보관 투표용지 약 247만 장의 공개 검증</b>을 추진 중이며, 10.20 중앙선관위의 협조 의결 전달 이후 <b>28일로 진행하는 데 무게</b>(JTBC 보도 · 공식 확정 아님, 변경 가능). 참관인·언론·시민이 지켜보는 가운데 한 장씩 확인하는 방식이고 투표인 명부·투표 관련 서류도 함께 확인 예정입니다. 이는 법원의 <b>증거보전 신청과는 다른 특검의 강제수사·검증 절차</b>입니다 [25][26]. 국감: 10.7 행정안전위에 이어 <b class="nw-t">New</b> 10.16 법제사법위 국감에서 여야가 법원의 잇단 영장 기각을 질타하고, <b>법관의 선관위원장 겸직 관행</b>이 영장 심사 공정성 의혹을 키운다고 지적했습니다 [48][49].</div></details>
+    재검표: 국조특위(윤상현 위원장)가 올림픽공원 핸드볼경기장의 <b>투표지 247만 장 보존을 직접 확인</b>(7.3)했고, 여야가 공개 재검표를 추진 — 중앙선관위는 재검표 수용과 비용 약 5천만 원 부담을 제안(440명 인력 시 약 9시간). 국정조사특위는 재검표를 끝내지 못하고 8월 말 종료됐습니다. 특검은 <b>올림픽공원 보관 투표용지 약 247만 장의 공개 검증</b>을 추진 중이며, 10.20 중앙선관위의 협조 의결 전달 이후 <b>28일로 진행하는 데 무게</b>(JTBC 보도 · 공식 확정 아님, 변경 가능). 참관인·언론·시민이 지켜보는 가운데 한 장씩 확인하는 방식이고 투표인 명부·투표 관련 서류도 함께 확인 예정입니다. 이는 법원의 <b>증거보전 신청과는 다른 특검의 강제수사·검증 절차</b>입니다 [25][26]. 국감: 10.7 행정안전위에 이어 10.16 법제사법위 국감에서 여야가 법원의 잇단 영장 기각을 질타하고, <b>법관의 선관위원장 겸직 관행</b>이 영장 심사 공정성 의혹을 키운다고 지적했습니다 [48][49].</div></details>
   <details><summary>⑥ 수사의 한계와 정치권 반응</summary><div class="body">
-    선관위는 감사원 감찰 대상이 아니라(헌재 2023헌라5) 내부 비리 인지 경로가 좁고, <b>직무유기의 고의 입증 문턱이 높다</b>는 지적이 법조계 전반입니다 [9]. 정치권: 10.10 국민의힘이 "아직 기소가 없다"며 속도 비판 [8] — 야당 논평으로 구분해 읽어야 합니다. <b class="nw-t">New</b> 10.16 법사위 국감에서는 여야가 각각 <b>영장 기각</b>(국민의힘·조국혁신당)과 <b>대법관 공백</b>(민주당)을 두고 공방했습니다 [48][49]. 여기에 10.14 영장 기각과 파견 인력 충원 지연이 겹치며 <b>수사 동력 관리</b>가 과제로 떠올랐습니다 [20][23].</div></details>
+    선관위는 감사원 감찰 대상이 아니라(헌재 2023헌라5) 내부 비리 인지 경로가 좁고, <b>직무유기의 고의 입증 문턱이 높다</b>는 지적이 법조계 전반입니다 [9]. 정치권: 10.10 국민의힘이 "아직 기소가 없다"며 속도 비판 [8] — 야당 논평으로 구분해 읽어야 합니다. 10.16 법사위 국감에서는 여야가 각각 <b>영장 기각</b>(국민의힘·조국혁신당)과 <b>대법관 공백</b>(민주당)을 두고 공방했습니다 [48][49]. 여기에 10.14 영장 기각과 파견 인력 충원 지연이 겹치며 <b>수사 동력 관리</b>가 과제로 떠올랐습니다 [20][23].</div></details>
 </section>
 <section id="crimes">
   <div class="eyebrow">§ 4 · Alleged Offences</div>
   <h2 class="sec-t">거론되는 죄목 — 특검법 12개 ≠ 기소 죄목</h2>
-  <p class="sub">특검법의 수사 대상 12개와 실제 기소 죄목은 다릅니다. 아래는 고발·영장·입건·법리 검토에서 이름이 오른 것들입니다. <b>실무상 가장 무거운 줄기는 직무유기 · 직권남용 · 투표방해 · 업무상 횡령</b>이나, 용지가 부족했다는 사실만으로 담당자 전원이 처벌되는 구조는 아닙니다 [9]. <b class="nw-t">New</b> 이번 판본에서 새로 이름이 오른 축은 <b>조세범처벌법 위반(허위 세금계산서)</b>입니다 — 입찰방해·업무상 배임이 계약 구조를 겨냥한다면, 조세범 위반은 그 계약의 자금 흐름을 겨냥합니다 [45][46].</p>
+  <p class="sub">특검법의 수사 대상 12개와 실제 기소 죄목은 다릅니다. 아래는 고발·영장·입건·법리 검토에서 이름이 오른 것들입니다. <b>실무상 가장 무거운 줄기는 직무유기 · 직권남용 · 투표방해 · 업무상 횡령</b>이나, 용지가 부족했다는 사실만으로 담당자 전원이 처벌되는 구조는 아닙니다 [9]. 이번 판본에서 새로 이름이 오른 축은 <b>조세범처벌법 위반(허위 세금계산서)</b>입니다 — 입찰방해·업무상 배임이 계약 구조를 겨냥한다면, 조세범 위반은 그 계약의 자금 흐름을 겨냥합니다 [45][46].</p>
   <div class="tbox"><table>
     <thead><tr><th>조사 대상 행위</th><th>죄목</th><th>성립의 관건</th><th>출처</th></tr></thead>
     <tbody>
@@ -406,12 +346,12 @@ footer a{color:var(--neon)}
       <tr><td>용지 없어 투표 포기·장시간 대기</td><td><b>투표방해</b>(공직선거법 §242②, 3년 이하 징역)</td><td>관리 실패가 "정당한 사유 없음"에 해당하는지</td><td>※</td></tr>
       <tr><td>당일 추가 인쇄·이송</td><td>공직선거법 §151</td><td>전날까지 송부·보관 규정 위반 주장</td><td>※</td></tr>
       <tr><td>연장된 투표 시간의 출구조사 노출</td><td>공직선거법 §108</td><td>직접 적용은 법리상 어렵다는 평가</td><td>※</td></tr>
-      <tr><td><b>투표자 수 가감·허위 입력</b> <span class="nbadge">New 10.15</span></td><td><b>공전자기록위작 · 위계에 의한 공무집행방해 · 허위공문서작성</b></td><td>원자료·변경 이력, 입력 권한, 지시·승인 관계. 지침이 보정인지 조작인지. <b>10.15 전국 30곳 확인으로 적용 범위 확대</b> — 과거 대선 81건·총선 65건 이력도 [42][53]</td><td><a href="https://www.yna.co.kr/view/AKR20260815048000004">[3]</a> <a href="https://www.yna.co.kr/view/AKR20261015080451004">[42]</a> <a href="https://www.newdaily.co.kr/site/data/html/2026/08/01/2026080100025.html">[53]</a></td></tr>
+      <tr><td><b>투표자 수 가감·허위 입력</b> </td><td><b>공전자기록위작 · 위계에 의한 공무집행방해 · 허위공문서작성</b></td><td>원자료·변경 이력, 입력 권한, 지시·승인 관계. 지침이 보정인지 조작인지. <b>10.15 전국 30곳 확인으로 적용 범위 확대</b> — 과거 대선 81건·총선 65건 이력도 [42][53]</td><td><a href="https://www.yna.co.kr/view/AKR20260815048000004">[3]</a> <a href="https://www.yna.co.kr/view/AKR20261015080451004">[42]</a> <a href="https://www.newdaily.co.kr/site/data/html/2026/08/01/2026080100025.html">[53]</a></td></tr>
       <tr><td>배우자 동반 출장·직원 외유</td><td><b>업무상 횡령</b></td><td>공무상 필요성, 결재 및 비용 부담 근거. 합수본 7.20 영장에 노태악 전 위원장과 성명불상 직원을 피의자로 적시하고 <b>혐의를 업무상 횡령으로 기재</b> [59][60]</td><td><a href="https://www.joongang.co.kr/article/25454212">[2]</a> <a href="https://www.yonhapnewstv.co.kr/news/AKR20260720093255149">[59]</a></td></tr>
       <tr><td>전관 업체 몰아주기·들러리 입찰</td><td><b>입찰방해 · 업무상 배임</b></td><td>유착·들러리 증거, 의무 위반과 손해 — 103건·175억 원(수의 90건)은 의혹 규모 [3]</td><td><a href="https://www.yna.co.kr/view/AKR20260815048000004">[3]</a></td></tr>
       <tr><td><b>투표소 물품세트 50억 사업 유착</b></td><td><b>업무상 배임 · 입찰방해</b></td><td>특정 업체 밀어주기·수의계약 특혜의 대가성·부당성. '유착 확인'은 <b>의혹 단계</b>이지 범죄 확정이 아님 [21][22]</td><td><a href="https://www.yonhapnewstv.co.kr/news/MYH20261014180459bsj">[21]</a> <a href="https://www.khan.co.kr/article/202610141136001">[22]</a></td></tr>
-      <tr><td><b>선거물품 보관계약 독점 특혜</b> <span class="nbadge">New</span></td><td><b>업무상 배임 · 입찰방해</b></td><td>2022년부터 특정 업체와의 독점 창고계약이 특혜인지, 손해·의무 위반이 있었는지. 10.15 부산·경남·경북선관위 등 10곳 압수수색 [44]</td><td><a href="https://www.yna.co.kr/view/AKR20261015115200004">[44]</a></td></tr>
-      <tr><td><b>유착 업체 허위 세금계산서·탈세</b> <span class="nbadge">New</span></td><td><b>조세범처벌법 위반</b>(허위·가공거래, 세금계산서 발급·수취)</td><td><b>국세청 전속고발 사안</b>으로 국세청장 등의 고발이 있어야 공소 제기 가능. 세무조사 결과(12.15 회신)가 관건 [45][46]</td><td><a href="https://news.kbs.co.kr/news/view.do?ncd=8688416">[45]</a> <a href="https://www.hani.co.kr/arti/society/society_general/1282912.html">[46]</a></td></tr>
+      <tr><td><b>선거물품 보관계약 독점 특혜</b> </td><td><b>업무상 배임 · 입찰방해</b></td><td>2022년부터 특정 업체와의 독점 창고계약이 특혜인지, 손해·의무 위반이 있었는지. 10.15 부산·경남·경북선관위 등 10곳 압수수색 [44]</td><td><a href="https://www.yna.co.kr/view/AKR20261015115200004">[44]</a></td></tr>
+      <tr><td><b>유착 업체 허위 세금계산서·탈세</b> </td><td><b>조세범처벌법 위반</b>(허위·가공거래, 세금계산서 발급·수취)</td><td><b>국세청 전속고발 사안</b>으로 국세청장 등의 고발이 있어야 공소 제기 가능. 세무조사 결과(12.15 회신)가 관건 [45][46]</td><td><a href="https://news.kbs.co.kr/news/view.do?ncd=8688416">[45]</a> <a href="https://www.hani.co.kr/arti/society/society_general/1282912.html">[46]</a></td></tr>
       <tr><td>위원장·위원 '공명선거 추진활동비'</td><td>업무상 횡령·배임 등 검토</td><td>지급 근거·명목의 적법성. 월 290만/215만 원, 2014년부터. <b>법원이 영장을 기각</b>해 법률 평가가 다툼 상태 — 특검은 재청구 방침 [20][47]</td><td><a href="https://www.yna.co.kr/view/AKR20261014157951004">[20]</a> <a href="https://www.khan.co.kr/article/202610141743011">[47]</a></td></tr>
       <tr><td>사전투표함 용역 관련 금품</td><td>뇌물 · 알선</td><td>유착이 확인돼야 성립. 현재는 의혹 단계</td><td>※</td></tr>
       <tr><td>채용·승진 특혜</td><td>행위별 개별 범죄·징계</td><td>지시·청탁·심사 조작 등 실제 행위 확인 — 김세환 전 사무총장 1심 유죄(징역 2년)는 전례</td><td>※</td></tr>
@@ -424,43 +364,10 @@ footer a{color:var(--neon)}
   <h2 class="sec-t">법정 밖의 기로 — 쟁송 지도</h2>
   <p class="sub">선거무효소송 · 증거보전 · 헌법소원·가처분을 <b>"행정소송"이라는 한 단어로 묶는 것은 부정확</b>합니다. 각 절차의 상태는 다릅니다.</p>
   <div class="grid">
-    <div class="card">
-      <div class="pillar">① 선거소청 → 선거무효소송</div>
-      <h3>소청 기각 → 8.27 소송 10건 제기</h3>
-      <p>중앙선관위는 <b>"규정 위반은 맞지만 선거 결과에 영향을 미쳤다고 볼 수 없다"</b>며 국민의힘 소청을 기각했습니다. 8.7·8.12 시·도지사·교육감·비례대표 광역의원 선거 소청 <b>261건을 기각 112건 · 각하 149건</b>으로 결정했고, 국민의힘 제기분 <b>122건은 전부 기각</b>됐습니다 [50]. 전국 접수 규모는 <b>130건 → 350건 → 685~690건</b>으로 늘었고 <b>4년 전 지방선거(46건)의 약 15배</b>입니다 [51]. 국민의힘 법률자문위는 8.27 <b>서울시장·서울시의회 비례대표 등 6건의 소장을 대법원</b>에 접수하고, <b>송파구 관련 4개 선거는 제소기간인 8.28까지 관할 고등법원</b>에 순차 접수했습니다(합계 10건) [52]. 6·3 국회의원 재·보궐선거 무효 사건은 <b>절차가 다른 별개 사건</b>으로 대법원 재판부에 배정됐습니다 [12].</p>
-      <p style="margin-top:8px"><span class="tag fact">확정 — 접수</span></p>
-      <div class="note"><b>판단 기준</b> — 공직선거법 §224: 규정 위반이 있어도 <b>선거 결과에 영향을 미쳤다고 인정될 때만</b> 전부·일부 무효. 절차 위반 자체만으로는 무효가 되지 않습니다. 원칙 처리 기한은 소 제기일부터 180일이나, 20~22대 총선 평균은 406일·943일·133일, 최장 1,217일이었고 20년 넘게 선거무효 인용은 사실상 없었습니다(162건 중 기각 59.9% · 각하 13.6%) ※. <b>현재 법원의 무효 판결은 나오지 않았습니다</b> [9][50].</div>
-    </div>
-    <div class="card">
-      <div class="pillar">② 증거보전</div>
-      <h3>김정철 신청 — 상자 확보 불발</h3>
-      <p>서울동부지법은 김정철 전 서울시장 후보 신청 중 <b>투표용지 보관상자·포장재, 송파구 10개 투표소 CCTV, 선관위 직원 단체대화방·메신저·문자 기록</b>의 보전을 결정했습니다 [13]. 6.10 현장검증에서 <b>"인쇄매수 1,900매" 상자를 찾지 못해 확보 불발</b>. 투표함·투표지 보전 신청은 보관 의무 등을 고려해 받아들이지 않았습니다 [13][14]. <b>증거보전 인용은 선거무효 인정이 아닙니다.</b></p>
-      <p>10월 들어 형사 절차의 현장 검증이 별도로 추진됩니다. 특검이 <b>올림픽공원 보관 투표용지 공개 검증(10월 말 · 28일 무게)</b>을 추진 중이며, 이는 증거보전 신청과는 다른 <b>특검의 강제수사·검증 절차</b>입니다 [25][26].</p>
-      <p style="margin-top:8px"><span class="tag fact">확정</span></p>
-    </div>
-    <div class="card">
-      <div class="pillar">③ 헌법소원 · 가처분</div>
-      <h3>4건 모두 본안 판단 없이 각하</h3>
-      <p>도태우 변호사가 시민 <b>35,216명</b>을 대리한 사건과 가처분은 9.1 각하 — 대다수가 <b>본인의 투표권 행사에 지장이 있었다는 주장·자료가 부족</b>하고, 번호표를 받아 투표를 마친 청구인은 선거권 제한으로 보기 어렵다고 판단했습니다 [19].</p>
-      <div class="tbox" style="margin-top:10px;border-radius:10px">
-        <table style="min-width:0">
-          <thead><tr><th>사건</th><th>결과·사유</th></tr></thead>
-          <tbody>
-            <tr><td>일반 시민의 투표용지 부족 위헌확인 청구</td><td>6.16 지정재판부 각하 — 부족 발생 지역 선거인이 아니어서 자기관련성 없음(헌재법 §72③5호) ※</td></tr>
-            <tr><td>6월 접수 2건</td><td>6월 중 각하 ※</td></tr>
-            <tr><td>도태우 변호사 대리(시민 35,216명)·가처분</td><td>9.1 각하 — 자기관련성·자료 부족, 가처분도 각하 [19]</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p style="margin-top:10px">각하 사유는 크게 <b>자기관련성 · 보충성 · 권리보호이익</b>(종료된 선거의 일회성 침해)입니다. <b>각하는 "선관위 운영에 문제가 없었다"는 본안 판결이 아닙니다.</b></p>
-      <p style="margin-top:8px"><span class="tag fact">확정 — 각하</span></p>
-    </div>
-    <div class="card">
-      <div class="pillar">④ 행정소송 · 국가배상</div>
-      <h3>특정 사건 미확인</h3>
-      <p>국가배상 가능성 등이 법조계에서 논의됐지만, 접수나 판결까지 확인되는 특정 행정소송·국가배상 사건은 찾지 못했습니다 [9]. 주요 불복 절차는 위의 <b>소청 → 선거무효소송 → 증거보전 → 헌법소원</b>입니다.</p>
-      <p style="margin-top:8px"><span class="tag warn">미확인</span></p>
-    </div>
+    <div class="card"><div class="pillar">① 선거소청 → 선거무효소송</div><h3>소청 기각 → 8.27 소송 10건 제기</h3><p style="margin-top:8px"><span class="tag fact">확정 — 접수</span></p><a class="card-more" href="court-1.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">② 증거보전</div><h3>김정철 신청 — 상자 확보 불발</h3><p style="margin-top:8px"><span class="tag fact">확정</span></p><a class="card-more" href="court-2.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">③ 헌법소원 · 가처분</div><h3>4건 모두 본안 판단 없이 각하</h3><p style="margin-top:8px"><span class="tag fact">확정 — 각하</span></p><a class="card-more" href="court-3.html">자세히 보기 ▸</a></div>
+    <div class="card"><div class="pillar">④ 행정소송 · 국가배상</div><h3>특정 사건 미확인</h3><p style="margin-top:8px"><span class="tag warn">미확인</span></p><a class="card-more" href="court-4.html">자세히 보기 ▸</a></div>
   </div>
 </section>
 
@@ -475,7 +382,7 @@ footer a{color:var(--neon)}
       <li>그럼에도 중앙선관위원장은 관례적으로 <b>대법관</b>이, 시·도 선관위원장은 <b>지방법원장</b> 등이 본업과 겸해 맡아 왔고, 구·시·군 단계에도 법관 겸직 관행이 있습니다 [15][16].</li>
       <li>1963년 창설 이후 <b>63년간</b> 현직 대법관이 중앙선관위원장을 맡았고, 17개 시·도 선관위원장도 전부 현직 법관입니다. 선관위법 §5·6조가 위원장을 비상임 명예직으로 두며, 상근화는 헌법 개정 없이 <b>법 개정으로 가능</b>하다는 것이 헌법학계 중론입니다 ※.</li>
       <li><b>'공명선거 추진활동비'</b> 의혹이 제기되면서 겸직·비상임 구조가 형사 사안과 맞물려 논의되고 있습니다. 위원장 월 290만 원·비상임위원 월 215만 원의 지급이 적법한 수당·활동비인지, 다른 성격의 대가인지가 쟁점입니다. 다만 법원은 "법률적 평가를 달리하는 것으로 보인다"며 압수수색을 불허했습니다 [20].</li>
-      <li><span class="nbadge">New 10.16</span> <b>국회 법제사법위 국정감사에서 겸직 논란이 다시 점화</b>했습니다. 김민전 의원은 "송파선거구 수석부장판사가 선관위원장을 맡는 등 법관들이 선관위원장을 겸직하다 보니 영장이 잘 발부되지 않는다는 '한통속' 의심이 든다"고 지적했고, 김태규 의원도 "법관이 위원장이기 때문에 영장이 발부되지 않으면 오해하기 쉽다"고 했습니다. 박은정 조국혁신당 의원도 <b>"제 식구 감싸기가 돼서는 안 된다"</b>고 했습니다. 6·3 당시 서울시선관위원장을 맡았던 <b>오민석 서울중앙지법원장</b>은 "영장전담판사들이 사실관계와 법리를 신중하게 검토해 결정하고 있다"고 답했습니다 [48][49].</li>
+      <li> <b>국회 법제사법위 국정감사에서 겸직 논란이 다시 점화</b>했습니다. 김민전 의원은 "송파선거구 수석부장판사가 선관위원장을 맡는 등 법관들이 선관위원장을 겸직하다 보니 영장이 잘 발부되지 않는다는 '한통속' 의심이 든다"고 지적했고, 김태규 의원도 "법관이 위원장이기 때문에 영장이 발부되지 않으면 오해하기 쉽다"고 했습니다. 박은정 조국혁신당 의원도 <b>"제 식구 감싸기가 돼서는 안 된다"</b>고 했습니다. 6·3 당시 서울시선관위원장을 맡았던 <b>오민석 서울중앙지법원장</b>은 "영장전담판사들이 사실관계와 법리를 신중하게 검토해 결정하고 있다"고 답했습니다 [48][49].</li>
     </ul>
   </div>
   <div class="tbox"><table>
@@ -496,7 +403,7 @@ footer a{color:var(--neon)}
     <thead><tr><th>청원</th><th>내용</th><th>확인 상태</th></tr></thead>
     <tbody>
       <tr><td><b>선관위원 탄핵소추 촉구</b></td><td>노태악 전 위원장 등 <b>각급 선관위 위원 65명</b>(중앙선관위 위원 9명·서울선관위 위원 8명 포함) 대상. 청원 기간 6.11~7.11 [57]</td><td><b>추진자가 안내한 내용만 확인</b> — 원문·최종 동의 수·상임위 처리 결과는 미확인. 탄핵이 성립·의결됐다고 단정할 수 없음</td></tr>
-      <tr><td><b>선거제도 개정 국민동의청원</b><br>(임태희 전 경기도교육감 등, 9월 발표)</td><td>▲투표용지 관리 강화 ▲현직 법관의 선관위원장 겸직 제한 ▲선거소청·소송 제도 개선 ▲사전투표 폐지·현장 수개표 [18]</td><td><span class="nbadge">New</span> <b>10월 중 5만 명 동의를 넘어 국회 소관 상임위 회부 요건을 충족</b>한 것으로 보도됨 — 임태희 전 교육감 "청원 성립" [58]. <b>제도개정 제안이지 특검 결과나 부정선거 증거가 아님</b></td></tr>
+      <tr><td><b>선거제도 개정 국민동의청원</b><br>(임태희 전 경기도교육감 등, 9월 발표)</td><td>▲투표용지 관리 강화 ▲현직 법관의 선관위원장 겸직 제한 ▲선거소청·소송 제도 개선 ▲사전투표 폐지·현장 수개표 [18]</td><td> <b>10월 중 5만 명 동의를 넘어 국회 소관 상임위 회부 요건을 충족</b>한 것으로 보도됨 — 임태희 전 교육감 "청원 성립" [58]. <b>제도개정 제안이지 특검 결과나 부정선거 증거가 아님</b></td></tr>
       <tr><td><b>그 외 여러 건</b></td><td>선관위 투명성 강화, 공직선거법·선관위법 개정, 사전투표 폐지 등 ※</td><td>국회 회부 여부는 <b>10.25 기준 확정 자료 없음</b></td></tr>
     </tbody>
   </table></div>
@@ -530,8 +437,8 @@ footer a{color:var(--neon)}
       <tr><td>선관위 보도자료 수치(투표소 규모)</td><td><b>확인</b> — 전국 1만 4,288개 투표소 중 추가 송부 <b>140곳</b>, 이 중 <b>26곳 일시중단 후 재개</b>(선관위 6.8 보도자료)</td></tr>
       <tr><td>헌재 직무감찰 판단</td><td><b>정리</b> — 사건 번호는 <b>2023헌라5</b>. 요지: 감사원의 직무감찰 = 선관위 독립성 침해</td></tr>
       <tr><td>김세환 전 사무총장 판결 — 원자료 누락</td><td><b>추가</b> — 아들 특혜 채용으로 <b>1심 징역 2년</b>(인천지법 7.16, 항소). 이번 사태의 유일한 1심 유죄 전례</td></tr>
-      <tr><td><span class="nbadge">New</span> 특검 인지·강제수사 확대</td><td><b>추가</b> — '공명선거 추진활동비'(특검 직접 인지), 투표소 물품세트 50억 유착, <b>허위 입력 30곳</b>, <b>창고계약 독점 특혜 10곳</b>, <b>국세청 세무조사 요청</b>을 이번 판본에서 반영 [20][42][44][45]</td></tr>
-      <tr><td><span class="nbadge">New</span> 소환·구속영장·기소 <b>여부</b></td><td><b>확인 — 10.25 기준 여전히 없음</b>. 10.5 이후 공개 보도에서 속보 없음. 압수수색·영장 청구·영장 기각은 기소가 아님</td></tr>
+      <tr><td> 특검 인지·강제수사 확대</td><td><b>추가</b> — '공명선거 추진활동비'(특검 직접 인지), 투표소 물품세트 50억 유착, <b>허위 입력 30곳</b>, <b>창고계약 독점 특혜 10곳</b>, <b>국세청 세무조사 요청</b>을 이번 판본에서 반영 [20][42][44][45]</td></tr>
+      <tr><td> 소환·구속영장·기소 <b>여부</b></td><td><b>확인 — 10.25 기준 여전히 없음</b>. 10.5 이후 공개 보도에서 속보 없음. 압수수색·영장 청구·영장 기각은 기소가 아님</td></tr>
     </tbody>
   </table></div>
   <h3 class="mini" style="margin-top:30px">피해야 할 비약 — 9가지</h3>
@@ -570,7 +477,61 @@ footer a{color:var(--neon)}
     <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/Bg9rF0jU030" title="선관위특검, 투표용지 공개검증 29일 조율 (팩트브리핑)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/Bg9rF0jU030"></iframe></div><div class="cap">팩트브리핑 — 선관위특검, 투표용지 공개검증 29일 조율 (10.11 보도)</div></div>
     <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/REouhOkbXds" title="노태악 배우자 동반 출장 (시사팩트 오늘)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/REouhOkbXds"></iframe></div><div class="cap">시사팩트 오늘 — 해외 출장마다 배우자 동행한 노태악…비즈니스석 (출장비 의혹)</div></div>
   </div>
-  <div class="note"><b>추가 자료(10.18)</b> — 10.15 이후 강제수사(투표자 수 허위 입력 30곳 · 선거물품 창고계약 독점 특혜 10곳 · 국세청 세무조사 요청)와 <b>10.28 무게로 추진 중인 공개 검증</b> 관련 원영상을 위에 보강했습니다. 영상은 각 방송사·채널에 저작권이 있으며, 공개 검증 진행 상황은 <a href="verify.html" style="color:var(--neon);font-weight:800">검증 게시판 →</a> 에서 계속 갱신됩니다.</div>
+  
+    <h3 class="mini" style="margin-top:28px">📺 공중파 원영상 — KBS·MBC·SBS (추가분)</h3>
+    <div class="vgrid">
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/bZNOFE9Sry8" title="KBS 2026.9.17 — 선관위특검, 선관위 9곳 압수수색…출범 열흘 만" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/bZNOFE9Sry8"></iframe></div><div class="cap">KBS 2026.9.17 — 선관위특검, 선관위 9곳 압수수색…출범 열흘 만</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/AXfh9gmKv7o" title="SBS — 노태악 전 선관위원장 자택 압수수색·선관위 직원 사망 관련 보도 (10.21~22)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/AXfh9gmKv7o"></iframe></div><div class="cap">SBS — 노태악 전 선관위원장 자택 압수수색·선관위 직원 사망 관련 보도 (10.21~22)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/eyFnnfNb7bA" title="MBC 2026.10.22 뉴스25 — 직원 외유 출장 의혹 노태악 자택 압수수색" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/eyFnnfNb7bA"></iframe></div><div class="cap">MBC 2026.10.22 뉴스25 — 직원 외유 출장 의혹 노태악 자택 압수수색</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/viiMfyyjMsw" title="MBC — 이태한 선관위 특검, 법무부에 검사 파견 요청 (인력 충원)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/viiMfyyjMsw"></iframe></div><div class="cap">MBC — 이태한 선관위 특검, 법무부에 검사 파견 요청 (인력 충원)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/VyFhlMVd63A" title="SBS — 투표용지 부족 사전 신고에도 무대응…부족 투표소 91곳 확대 (6월 사태 초기)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/VyFhlMVd63A"></iframe></div><div class="cap">SBS — 투표용지 부족 사전 신고에도 무대응…부족 투표소 91곳 확대 (6월 사태 초기)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/84hMdYSqaUA" title="춘천MBC — 지선 투표용지 사태 질문에 이 대통령 “대한민국 망신” 강력 질타" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/84hMdYSqaUA"></iframe></div><div class="cap">춘천MBC — 지선 투표용지 사태 질문에 이 대통령 “대한민국 망신” 강력 질타</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/bTrf_Ph87Ho" title="부산MBC — 투표용지 부족 외신기자 질문에 대통령 “청년들 문제 제기에 감사”" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/bTrf_Ph87Ho"></iframe></div><div class="cap">부산MBC — 투표용지 부족 외신기자 질문에 대통령 “청년들 문제 제기에 감사”</div></div>
+    </div>
+    <h3 class="mini" style="margin-top:28px">📡 통신사·뉴스 채널 원영상 — 연합뉴스TV·YTN 등 (추가분)</h3>
+    <div class="vgrid">
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/tk7GDZKnSYA" title="연합뉴스TV [PICK] — 대법관 수사하려는데 법원이 제동?…선관위특검 “납득 어렵다” 반발 (영장 기각)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/tk7GDZKnSYA"></iframe></div><div class="cap">연합뉴스TV [PICK] — 대법관 수사하려는데 법원이 제동?…선관위특검 “납득 어렵다” 반발 (영장 기각)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/rn2GqgLiUqE" title="연합뉴스TV — 선관위 특검, 물품세트 유착 압수수색…활동비 의혹 영장은 기각 (10.14)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/rn2GqgLiUqE"></iframe></div><div class="cap">연합뉴스TV — 선관위 특검, 물품세트 유착 압수수색…활동비 의혹 영장은 기각 (10.14)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/h4_ZBvvjhpQ" title="채널A — 특검, 중앙선관위 등 5곳 압수수색…투표소 물품세트 유착 의혹 (10.14)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/h4_ZBvvjhpQ"></iframe></div><div class="cap">채널A — 특검, 중앙선관위 등 5곳 압수수색…투표소 물품세트 유착 의혹 (10.14)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/qbRlWIc-iLc" title="YTN — 선관위 특검, 투표자 수 허위입력 압수수색…&quot;전국 30곳 확인&quot; (10.15)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/qbRlWIc-iLc"></iframe></div><div class="cap">YTN — 선관위 특검, 투표자 수 허위입력 압수수색…"전국 30곳 확인" (10.15)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/GC5jZLN5fL0" title="연합뉴스TV [속보] — 선관위특검, 노태악 전 선관위원장 자택 압수수색 (10.21)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/GC5jZLN5fL0"></iframe></div><div class="cap">연합뉴스TV [속보] — 선관위특검, 노태악 전 선관위원장 자택 압수수색 (10.21)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/JrxfsNFA2zo" title="YTN — 선관위 특검, 외유성 출장 의혹 노태악 자택 압수수색…휴대전화 확보" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/JrxfsNFA2zo"></iframe></div><div class="cap">YTN — 선관위 특검, 외유성 출장 의혹 노태악 자택 압수수색…휴대전화 확보</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/PMcpnC4JD-M" title="연합뉴스TV [이슈ZIP] — 특검 조사받던 선관위 직원 숨진 채 발견…노태악 자택까지 압수수색" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/PMcpnC4JD-M"></iframe></div><div class="cap">연합뉴스TV [이슈ZIP] — 특검 조사받던 선관위 직원 숨진 채 발견…노태악 자택까지 압수수색</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/uIq_AxTYDcw" title="JTBC — 노태악 자택 수색…특검 조사 받던 선관위 직원 사망" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/uIq_AxTYDcw"></iframe></div><div class="cap">JTBC — 노태악 자택 수색…특검 조사 받던 선관위 직원 사망</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/OmYDGZNjoDE" title="연합뉴스TV — 선관위특검, 파견검사 늘려…투표용지 공개검증 추진" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/OmYDGZNjoDE"></iframe></div><div class="cap">연합뉴스TV — 선관위특검, 파견검사 늘려…투표용지 공개검증 추진</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/zUimln8HWGk" title="YTN — 선관위 특검, 출범 후 첫 강제수사…10곳 동시 압수수색 (9.17)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/zUimln8HWGk"></iframe></div><div class="cap">YTN — 선관위 특검, 출범 후 첫 강제수사…10곳 동시 압수수색 (9.17)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/SmD5jOTPgDk" title="채널A — 이태한 선관위특검 첫 브리핑 “정치적 고려 없이 진실 규명”" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/SmD5jOTPgDk"></iframe></div><div class="cap">채널A — 이태한 선관위특검 첫 브리핑 “정치적 고려 없이 진실 규명”</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/8E3n3XyH5lA" title="JTBC — 선관위 수사 특검 임명 “정치적 편견 없이 진실 규명”" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/8E3n3XyH5lA"></iframe></div><div class="cap">JTBC — 선관위 수사 특검 임명 “정치적 편견 없이 진실 규명”</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/CQgAfNMmglM" title="연합뉴스TV — 이태한 선관위 특검, 합수본 예방…수사 준비 속도" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/CQgAfNMmglM"></iframe></div><div class="cap">연합뉴스TV — 이태한 선관위 특검, 합수본 예방…수사 준비 속도</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/JkRSYu4YP2s" title="뉴스TVCHOSUN 뉴스9 — 선관위 특검 공식 출범…투표용지 부족 사태 등 전방위 수사" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/JkRSYu4YP2s"></iframe></div><div class="cap">뉴스TVCHOSUN 뉴스9 — 선관위 특검 공식 출범…투표용지 부족 사태 등 전방위 수사</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/AzDiAe4XEVo" title="MBN — 오늘 선관위 특검 공식 출범…투표용지 부족 등 12개 의혹 수사" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/AzDiAe4XEVo"></iframe></div><div class="cap">MBN — 오늘 선관위 특검 공식 출범…투표용지 부족 등 12개 의혹 수사</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/UPYHwjfcERo" title="엠바고 — 투표용지 부족 사태 “거의 고의 아니었나” 대통령 직언" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/UPYHwjfcERo"></iframe></div><div class="cap">엠바고 — 투표용지 부족 사태 “거의 고의 아니었나” 대통령 직언</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/0M7__4jaWhc" title="연합뉴스TV [속보] — 靑, 투표 용지 부족 사태에 “선관위가 대응할 문제”" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/0M7__4jaWhc"></iframe></div><div class="cap">연합뉴스TV [속보] — 靑, 투표 용지 부족 사태에 “선관위가 대응할 문제”</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/jJqouoJtztA" title="JTBC [이슈현장 다시보기] — 민주당 “투표용지 부족 사태 국정조사 추진…특검도 검토”" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/jJqouoJtztA"></iframe></div><div class="cap">JTBC [이슈현장 다시보기] — 민주당 “투표용지 부족 사태 국정조사 추진…특검도 검토”</div></div>
+    </div>
+    <h3 class="mini" style="margin-top:28px">🎤 폭로·기자회견 원영상 — 주진우 의원 등</h3>
+    <div class="vgrid">
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/FophtuRa8Z0" title="채널A — 주진우 국민의힘 의원 긴급 기자회견 생중계 (국회)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/FophtuRa8Z0"></iframe></div><div class="cap">채널A — 주진우 국민의힘 의원 긴급 기자회견 생중계 (국회)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/2yVEufvWr24" title="KBS — [LIVE] 주진우 의원 기자회견 (선거 조작 의혹 관련)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/2yVEufvWr24"></iframe></div><div class="cap">KBS — [LIVE] 주진우 의원 기자회견 (선거 조작 의혹 관련)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/j5AnQLb9tfw" title="MBC 끝까지LIVE — 주진우 의원 “투표수보다 득표수가 많다…유령 투표소 적발” 기자회견 (8.26)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/j5AnQLb9tfw"></iframe></div><div class="cap">MBC 끝까지LIVE — 주진우 의원 “투표수보다 득표수가 많다…유령 투표소 적발” 기자회견 (8.26)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/xgU8fmnfd5g" title="아시아투데이 — 선관위 득표 조작 의혹 관련 주진우 의원 기자회견 (2026.8.26)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/xgU8fmnfd5g"></iframe></div><div class="cap">아시아투데이 — 선관위 득표 조작 의혹 관련 주진우 의원 기자회견 (2026.8.26)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/_a3swLrBMpc" title="채널A — 주진우 의원 긴급 기자회견 “선관위 투표자 수 조작 폭로”" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/_a3swLrBMpc"></iframe></div><div class="cap">채널A — 주진우 의원 긴급 기자회견 “선관위 투표자 수 조작 폭로”</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/_Yeijj7JoSM" title="중앙일보 — 주진우 “22대 총선 41곳 허위 입력 적발…참정권 도둑질한 것”" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/_Yeijj7JoSM"></iframe></div><div class="cap">중앙일보 — 주진우 “22대 총선 41곳 허위 입력 적발…참정권 도둑질한 것”</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/DNZ-LBngoPs" title="채널A — 주진우 “22대 총선 41곳 허위 입력 적발” (뉴스 플레이리스트)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/DNZ-LBngoPs"></iframe></div><div class="cap">채널A — 주진우 “22대 총선 41곳 허위 입력 적발” (뉴스 플레이리스트)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/uN5CZw65NEs" title="채널A — 주진우 “22대 총선 41개 투표소 허위 입력” 현장 팩트체크" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/uN5CZw65NEs"></iframe></div><div class="cap">채널A — 주진우 “22대 총선 41개 투표소 허위 입력” 현장 팩트체크</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/zn7pGYqIHok" title="연합뉴스TV — 주진우 “4시 투표율을 2시에 입력? 선관위, 타임머신 탔나”…117개 투표구 사전입력 정황" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/zn7pGYqIHok"></iframe></div><div class="cap">연합뉴스TV — 주진우 “4시 투표율을 2시에 입력? 선관위, 타임머신 탔나”…117개 투표구 사전입력 정황</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/gZwIjhst9O8" title="채널A — 주진우 “총선 109개 투표소 가짜 투표율 입력” 의혹 제기" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/gZwIjhst9O8"></iframe></div><div class="cap">채널A — 주진우 “총선 109개 투표소 가짜 투표율 입력” 의혹 제기</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/2R0EgKybINA" title="채널A — “또 조작…국민 조롱하나!” 주진우 긴급 기자회견" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/2R0EgKybINA"></iframe></div><div class="cap">채널A — “또 조작…국민 조롱하나!” 주진우 긴급 기자회견</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/xJyBCjpUVN8" title="SBS — 주진우 의원 “총선 쌍둥이 투표소 동원” 폭로" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/xJyBCjpUVN8"></iframe></div><div class="cap">SBS — 주진우 의원 “총선 쌍둥이 투표소 동원” 폭로</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/9CAqhbl9frY" title="서울신문 — “총선도 조작했다” 주진우, 선관위 쌍둥이 투표구 폭로" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/9CAqhbl9frY"></iframe></div><div class="cap">서울신문 — “총선도 조작했다” 주진우, 선관위 쌍둥이 투표구 폭로</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/faL5gic69j4" title="KNN — “22대 총선 허위 입력 추가” 주진우 의원 충격 폭로" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/faL5gic69j4"></iframe></div><div class="cap">KNN — “22대 총선 허위 입력 추가” 주진우 의원 충격 폭로</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/BXxQg5gGblM" title="뉴스1TV — 김은혜 의원 투표용지 부족 사태 긴급 기자회견 (생중계)" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/BXxQg5gGblM"></iframe></div><div class="cap">뉴스1TV — 김은혜 의원 투표용지 부족 사태 긴급 기자회견 (생중계)</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/nv1gLMxjJtM" title="채널A — 이준석, 투표용지 부족 긴급 기자회견 [현장 영상]" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/nv1gLMxjJtM"></iframe></div><div class="cap">채널A — 이준석, 투표용지 부족 긴급 기자회견 [현장 영상]</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/XkathH3FCAY" title="주진우의 이슈해설 — “선관위 부정 또 찾았다, 나태한 특검 뭐하나?”" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/XkathH3FCAY"></iframe></div><div class="cap">주진우의 이슈해설 — “선관위 부정 또 찾았다, 나태한 특검 뭐하나?”</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/f3951Os4DME" title="주진우의 5후 LIVE — “선관위 허위 입력 41곳 적발, 이태한 특검에 대한 마지막 경고”" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/f3951Os4DME"></iframe></div><div class="cap">주진우의 5후 LIVE — “선관위 허위 입력 41곳 적발, 이태한 특검에 대한 마지막 경고”</div></div>
+    <div class="vcard"><div class="ratio"><iframe data-src="https://www.youtube-nocookie.com/embed/eDOfZJmsc7o" title="B:RIGHT 부산 — 주진우 “도대체 뭐 하는 겁니까? 출범 50일째 구속 0명” 이태한 특검 질타" loading="lazy" allowfullscreen src="https://www.youtube-nocookie.com/embed/eDOfZJmsc7o"></iframe></div><div class="cap">B:RIGHT 부산 — 주진우 “도대체 뭐 하는 겁니까? 출범 50일째 구속 0명” 이태한 특검 질타</div></div>
+    </div>
+  <div class="note"><b>영상 업데이트</b> — 공중파·통신사 원영상 최신분(10.14~10.23 강제수사·출범·청문회)과 <b>폭로·기자회견 원영상(주진우 의원 등)</b>을 모두 함께 정리했습니다. <b>10.28 확정</b>된 올림픽공원 투표용지 공개 검증 진행 상황은 <a href="verify.html" style="color:var(--neon);font-weight:800">검증 게시판 →</a> 에서 계속 갱신됩니다. 영상은 각 방송사·채널에 저작권이 있습니다.</div>
 </section>
 
 <section id="sources">
