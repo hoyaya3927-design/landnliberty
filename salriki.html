@@ -3122,4 +3122,194 @@ body.admin-mode{background:#F5F7FA}
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+
+
+<!-- ===== 조회수 탭 (파일별 일일/누적 카운터 + 대시보드) ===== -->
+<style>
+#vc-tab{display:inline-flex;align-items:center;gap:9px;font:600 12px/1 'Pretendard','Apple SD Gothic Neo',sans-serif;padding:7px 12px;border-radius:9px;background:rgba(255,255,255,.94);color:#14213D;border:1px solid rgba(15,118,110,.35);box-shadow:0 2px 12px rgba(20,33,61,.14);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap;z-index:9999;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;user-select:none;-webkit-user-select:none}
+#vc-tab:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(20,33,61,.2)}
+#vc-tab:active{transform:none}
+#vc-tab .vc-name{font-weight:800;color:#0F766E;letter-spacing:.02em;display:inline-flex;align-items:center;gap:5px}
+#vc-tab .vc-name::before{content:'';width:7px;height:7px;border-radius:2px;background:#C9A227;display:inline-block}
+#vc-tab .vc-sep{width:1px;height:12px;background:rgba(20,33,61,.18)}
+#vc-tab .vc-item{color:#5a6478}
+#vc-tab .vc-caret{opacity:.5;font-size:9px;margin-left:-2px}
+#vc-tab b{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700;font-variant-numeric:tabular-nums;color:#0F766E;margin-left:3px}
+
+#vc-dash{position:fixed;right:16px;z-index:100000;width:302px;max-width:calc(100vw - 24px);background:rgba(13,17,28,.96);color:#e6ecff;border:1px solid rgba(60,240,197,.35);border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font:500 13px/1.5 'Pretendard','Apple SD Gothic Neo',sans-serif;display:none;overflow:hidden}
+#vc-dash.on{display:block;animation:vcIn .18s ease-out}
+@keyframes vcIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+#vc-dash .vc-head{display:flex;justify-content:space-between;align-items:baseline;padding:12px 14px 8px;font-weight:800;color:#3cf0c5;font-size:13.5px}
+#vc-dash .vc-date{font-size:10.5px;font-weight:600;color:#8b949e}
+#vc-dash .vc-rows{transition:opacity .2s ease}
+#vc-dash .vc-row{display:grid;grid-template-columns:52px 1fr auto auto;gap:8px;align-items:center;padding:7px 14px;text-decoration:none;color:inherit;border-top:1px solid rgba(230,236,255,.07)}
+#vc-dash .vc-row:hover{background:rgba(60,240,197,.08)}
+#vc-dash .vc-lab{font-weight:700;color:#e6ecff}
+#vc-dash .vc-bar{height:4px;border-radius:2px;background:rgba(230,236,255,.12);overflow:hidden}
+#vc-dash .vc-bar i{display:block;height:100%;width:0;border-radius:2px;background:linear-gradient(90deg,#3cf0c5,#ffc94d);transition:width .4s ease}
+#vc-dash .vc-num{color:#8b949e;font-size:11.5px;white-space:nowrap}
+#vc-dash b{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700;font-variant-numeric:tabular-nums;color:#fff;margin-left:2px}
+#vc-dash .vc-sum{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-top:1px solid rgba(230,236,255,.15);background:rgba(60,240,197,.08);font-weight:800;color:#3cf0c5}
+#vc-dash .vc-sum .vc-num{color:#aeb7c6}
+#vc-dash .vc-sum b{color:#3cf0c5}
+#vc-dash .vc-note{padding:6px 14px 10px;font-size:10px;color:#68727f;line-height:1.5}
+</style>
+<script>
+(function(){
+  var CFG={page:'salriki',label:'살리기',ns:'tjlganza'};
+  var PAGES=[
+    ['index','메인','index.html'],
+    ['policy','정책','policy.html'],
+    ['salriki','살리기','salriki.html'],
+    ['teukgeom','특검','teukgeom.html'],
+    ['verify','검증','verify.html']
+  ];
+  var d=new Date();
+  function pad(n){return (n<10?'0':'')+n;}
+  var ymd=d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate());
+  var ymdDot=d.getFullYear()+'.'+pad(d.getMonth()+1)+'.'+pad(d.getDate());
+  var dayKey='v-'+CFG.page+'-'+ymd;
+  var totKey='v-'+CFG.page+'-total';
+  var api='https://abacus.jasoncameron.dev/';
+
+  /* --- tab DOM (click to open dashboard) --- */
+  var pill=document.createElement('div');
+  pill.id='vc-tab';
+  pill.title='클릭 → 5개 파일 조회수 대시보드 · 기준 '+ymdDot;
+  pill.innerHTML='<span class="vc-name">'+CFG.label+'</span><span class="vc-sep"></span>'
+    +'<span class="vc-item">오늘<b id="vc-today">-</b></span>'
+    +'<span class="vc-item">총<b id="vc-total">-</b></span>'
+    +'<span class="vc-caret">▼</span>';
+  var header=document.getElementById('site-header');
+  if(header){
+    header.appendChild(pill);
+    pill.style.cssText='position:absolute;top:calc(100% + 6px);right:16px;cursor:pointer;';
+  }else{
+    var inn=document.querySelector('nav .in')||document.querySelector('nav');
+    if(inn){
+      inn.appendChild(pill);
+      pill.style.cssText='flex:0 0 auto;margin-left:12px;display:inline-flex;cursor:pointer;';
+    }else{
+      document.body.appendChild(pill);
+      pill.style.cssText='position:fixed;top:10px;right:12px;z-index:9999;cursor:pointer;';
+    }
+  }
+
+  /* --- dashboard panel --- */
+  var panel=null, isOpen=false;
+  function fmt(n){try{return n.toLocaleString('ko-KR');}catch(e){return String(n);}}
+  function buildPanel(){
+    panel=document.createElement('div');
+    panel.id='vc-dash';
+    var rows='';
+    PAGES.forEach(function(p){
+      rows+='<a class="vc-row" href="'+p[2]+'">'
+        +'<span class="vc-lab">'+p[1]+'</span>'
+        +'<span class="vc-bar"><i data-b="'+p[0]+'"></i></span>'
+        +'<span class="vc-num">오늘<b data-t="'+p[0]+'">-</b></span>'
+        +'<span class="vc-num">총<b data-c="'+p[0]+'">-</b></span>'
+        +'</a>';
+    });
+    panel.innerHTML='<div class="vc-head"><span>📊 조회수 대시보드</span><span class="vc-date">'+ymdDot+' 기준</span></div>'
+      +'<div class="vc-rows" id="vc-rows">'+rows+'</div>'
+      +'<div class="vc-sum"><span>합계</span><span class="vc-num">오늘<b id="vc-sum-t">-</b></span><span class="vc-num">총<b id="vc-sum-c">-</b></span></div>'
+      +'<div class="vc-note">5개 파일 실시간 집계 · 행을 클릭하면 해당 파일로 이동</div>';
+    document.body.appendChild(panel);
+  }
+  function load(){
+    if(!panel)return;
+    var el=panel.querySelector('.vc-rows');
+    el.style.opacity='.45';
+    var st=0,sc=0,vals={};
+    Promise.all(PAGES.map(function(p){
+      return Promise.all([
+        fetch(api+'get/'+CFG.ns+'/v-'+p[0]+'-total').then(function(r){return r.json();}).catch(function(){return null;}),
+        fetch(api+'get/'+CFG.ns+'/v-'+p[0]+'-'+ymd).then(function(r){return r.json();}).catch(function(){return null;})
+      ]).then(function(rs){
+        var c=(rs[0]&&typeof rs[0].value==='number')?rs[0].value:0;
+        var t=(rs[1]&&typeof rs[1].value==='number')?rs[1].value:0;
+        vals[p[0]]=[t,c]; st+=t; sc+=c;
+      });
+    })).then(function(){
+      if(!panel||!isOpen)return;
+      PAGES.forEach(function(p){
+        panel.querySelector('[data-t="'+p[0]+'"]').textContent=fmt(vals[p[0]][0]);
+        panel.querySelector('[data-c="'+p[0]+'"]').textContent=fmt(vals[p[0]][1]);
+      });
+      var max=1;PAGES.forEach(function(p){max=Math.max(max,vals[p[0]][1]);});
+      PAGES.forEach(function(p){
+        panel.querySelector('[data-b="'+p[0]+'"]').style.width=Math.round(vals[p[0]][1]/max*100)+'%';
+      });
+      document.getElementById('vc-sum-t').textContent=fmt(st);
+      document.getElementById('vc-sum-c').textContent=fmt(sc);
+      el.style.opacity='1';
+    }).catch(function(){ if(el)el.style.opacity='1'; });
+  }
+  function place(){
+    var r=pill.getBoundingClientRect();
+    var top=r.bottom+8;
+    var maxTop=window.innerHeight-320;
+    if(maxTop<10)maxTop=10;
+    if(top>maxTop)top=maxTop;
+    panel.style.top=top+'px';
+    var right=window.innerWidth-r.right;
+    panel.style.right=(right<10?10:right)+'px';
+  }
+  function outside(e){
+    if(panel&&isOpen&&!panel.contains(e.target)&&!pill.contains(e.target))toggle();
+  }
+  function toggle(){
+    if(!panel)buildPanel();
+    isOpen=!isOpen;
+    if(isOpen){
+      place();
+      panel.classList.add('on');
+      load();
+      setTimeout(function(){document.addEventListener('click',outside,false);},0);
+    }else{
+      panel.classList.remove('on');
+      document.removeEventListener('click',outside,false);
+    }
+  }
+  pill.addEventListener('click',function(e){e.stopPropagation();toggle();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&isOpen)toggle();});
+  window.addEventListener('resize',function(){if(isOpen)place();});
+
+  /* --- local mirror (fallback + instant paint) --- */
+  var L=window.localStorage,S=window.sessionStorage;
+  function sget(s,k){try{return s.getItem(k);}catch(e){return null;}}
+  function sset(s,k,v){try{s.setItem(k,v);}catch(e){}}
+  var lt=parseInt(sget(L,'vc-'+CFG.page+'-total'),10)||0;
+  var ld=0;
+  if(sget(L,'vc-'+CFG.page+'-day')===ymd){ld=parseInt(sget(L,'vc-'+CFG.page+'-today'),10)||0;}
+  var te=document.getElementById('vc-total'), de=document.getElementById('vc-today');
+  function paint(t,tod){if(te)te.textContent=fmt(t);if(de)de.textContent=fmt(tod);}
+  paint(lt,ld);
+
+  /* --- server counters (count once per browser session) --- */
+  var already=(sget(S,'vc-counted-'+CFG.page)==='1');
+  function req(path){
+    return fetch(api+path,{mode:'cors'}).then(function(r){return r.json();});
+  }
+  var p1=req((already?'get/':'hit/')+CFG.ns+'/'+totKey);
+  var p2=req((already?'get/':'hit/')+CFG.ns+'/'+dayKey);
+  Promise.all([p1,p2]).then(function(rs){
+    var t=(rs[0]&&typeof rs[0].value==='number')?rs[0].value:null;
+    var dd=(rs[1]&&typeof rs[1].value==='number')?rs[1].value:null;
+    if(t!==null){sset(L,'vc-'+CFG.page+'-total',String(t));paint(t,(dd!==null?dd:ld));}
+    if(dd!==null){sset(L,'vc-'+CFG.page+'-today',String(dd));sset(L,'vc-'+CFG.page+'-day',ymd);paint((t!==null?t:lt),dd);}
+  }).catch(function(){
+    if(!already){lt+=1;ld+=1;}
+    sset(L,'vc-'+CFG.page+'-total',String(lt));
+    sset(L,'vc-'+CFG.page+'-today',String(ld));
+    sset(L,'vc-'+CFG.page+'-day',ymd);
+    paint(lt,ld);
+  });
+  if(!already){sset(S,'vc-counted-'+CFG.page,'1');}
+
+  /* debug/preview hook: open dashboard with #vc-dash */
+  if(window.location.hash==='#vc-dash'){setTimeout(toggle,700);}
+})();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 </body></html>
