@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대장동·백현동 개발 특혜 의혹 팩트시트 — 디지털 대동법 연구소</title>
+<meta name="description" content="대장동·백현동 개발 특혜 의혹의 경위, 1심 판결, 항소 포기 논란, 관련자별 재판 현황을 보도 기반으로 정리한 심층 팩트시트. 2026-10-27 기준. 《요직 인사 팩트시트》 후속편.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --paper:#F2F4F3;
+  --card:#FFFFFF;
+  --ink:#181D22;
+  --ink2:#4C565E;
+  --line:#DCE2E0;
+  --red:#B3271E;
+  --red-soft:#FBEFED;
+  --blue:#1E4B8F;
+  --blue-soft:#EBF0F7;
+  --amber:#8A5B00;
+  --amber-soft:#F9F1DE;
+  --gray-soft:#EEF1F0;
+  --display:'Black Han Sans',sans-serif;
+  --body:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.65;font-size:16px;
+  background-image:repeating-linear-gradient(0deg,transparent 0 31px,rgba(24,29,34,.028) 31px 32px)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+
+header.mast{padding:54px 0 30px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--ink2);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.eyebrow .tag{background:var(--ink);color:#fff;padding:2px 9px}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,5.4vw,52px);line-height:1.22;margin:16px 0 10px;letter-spacing:-.5px}
+h1 em{font-style:normal;color:var(--red)}
+.sub{font-size:16.5px;color:var(--ink2);max-width:760px}
+.stamprow{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;align-items:center}
+.stamp{font-family:var(--mono);font-size:12px;border:1.6px solid var(--red);color:var(--red);padding:4px 10px;transform:rotate(-1.2deg);font-weight:600}
+.stamp.blue{border-color:var(--blue);color:var(--blue);transform:rotate(1deg)}
+
+/* 연결 배너 */
+.banner{background:var(--ink);color:#fff;padding:14px 18px;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-top:28px;border-left:6px solid var(--red)}
+.banner .b-tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#9aa4ab}
+.banner a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.banner .b-sub{font-size:12.5px;color:#c8cfd4;width:100%}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:30px 0 8px}
+.stat{background:var(--card);padding:16px 16px 14px}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:34px;line-height:1;color:var(--ink)}
+.stat span{font-size:12.5px;color:var(--ink2);display:block;margin-top:6px}
+
+section{padding:44px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:22px}
+.sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.2vw,30px)}
+.sec-head .no{font-family:var(--mono);font-size:13px;color:var(--red);font-weight:600}
+.sec-head .desc{font-size:13.5px;color:var(--ink2)}
+
+.lead{font-size:15.5px;max-width:860px;margin-bottom:18px}
+.lead b{color:var(--ink)}
+.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--ink);padding:22px 24px;margin-bottom:18px}
+.card.hot{border-top-color:var(--red)}
+.card.blue{border-top-color:var(--blue)}
+.card .c-tag{font-family:var(--mono);font-size:11.5px;color:var(--ink2);letter-spacing:.1em}
+.card h3{font-family:var(--display);font-weight:400;font-size:22px;margin:4px 0 8px}
+.card h3 .badge{font-family:var(--mono);font-size:11px;font-weight:600;vertical-align:middle;margin-left:8px;padding:2px 8px;border-radius:99px}
+.badge.prog{background:var(--red-soft);color:var(--red)}
+.badge.done{background:var(--blue-soft);color:var(--blue)}
+.badge.wait{background:var(--gray-soft);color:var(--ink2)}
+.badge.cand{background:var(--amber-soft);color:var(--amber)}
+.card p{font-size:15px;margin-bottom:8px}
+.card .detail{font-size:13.8px;color:var(--ink2);border-left:3px solid var(--line);padding-left:12px;margin:10px 0}
+.card .detail b{color:var(--ink)}
+.card blockquote{font-size:14px;color:var(--ink2);border-left:3px solid var(--red);padding:6px 0 6px 14px;margin:10px 0;font-style:italic}
+.card blockquote b{color:var(--ink)}
+.src{font-size:12px;color:var(--ink2);margin-top:12px}
+.src a{margin-right:10px;white-space:nowrap}
+
+.vtable{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);margin:10px 0 4px}
+.vtable th{background:var(--ink);color:#fff;font-size:12px;padding:9px 10px;text-align:left;font-weight:600}
+.vtable td{border:1px solid var(--line);padding:9px 10px;vertical-align:top}
+.vtable tr:nth-child(even) td{background:var(--paper)}
+.vtable td b{color:var(--ink)}
+
+.tl{border-left:2px solid var(--ink);margin-left:8px;padding-left:22px;display:grid;gap:14px}
+.tl .ev{position:relative}
+.tl .ev::before{content:"";position:absolute;left:-28.5px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2.5px solid var(--red)}
+.tl .ev.blue::before{border-color:var(--blue)}
+.tl time{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--red);display:block}
+.tl .ev.blue time{color:var(--blue)}
+.tl p{font-size:14px}
+
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.person{background:var(--card);border:1px solid var(--line);padding:18px 18px 16px}
+.p-top{display:flex;gap:14px;align-items:center;margin-bottom:10px}
+.avatar{flex:0 0 52px;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:19px;color:#fff;background:var(--blue)}
+.avatar.red{background:var(--red)}
+.avatar.ink{background:var(--ink)}
+.avatar.amber{background:var(--amber)}
+.p-name{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.2}
+.p-role{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:99px;margin-top:5px}
+.r-live{background:var(--blue-soft);color:var(--blue)}
+.r-congress{background:var(--gray-soft);color:var(--ink)}
+.r-former{background:var(--red-soft);color:var(--red)}
+.p-meta{font-family:var(--mono);font-size:11px;color:var(--ink2);line-height:1.7;margin-bottom:8px}
+.p-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.p-tags span{font-size:11.5px;background:var(--red-soft);color:var(--red);padding:2px 8px;border-radius:3px}
+.p-body{font-size:13.4px;color:var(--ink2);margin-bottom:9px}
+.p-body b{color:var(--ink)}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.duo{grid-template-columns:1fr}}
+.duo .col{background:var(--card);border:1px solid var(--line);padding:20px}
+.duo h3{font-family:var(--display);font-weight:400;font-size:18px;margin-bottom:10px}
+.duo .crit h3{color:var(--red)}
+.duo .def h3{color:var(--blue)}
+.duo ul{list-style:none}
+.duo li{font-size:13.8px;padding:8px 0 8px 18px;border-top:1px dashed var(--line);position:relative}
+.duo li::before{content:"—";position:absolute;left:0;color:var(--ink2)}
+
+.note{background:var(--card);border:1.6px solid var(--amber);padding:22px 24px;margin-top:18px}
+.note h3{font-family:var(--display);font-weight:400;font-size:18px;color:var(--amber);margin-bottom:10px}
+.note ol{margin-left:18px}
+.note li{font-size:13.8px;margin-bottom:9px}
+.note li b{color:var(--ink)}
+
+.cross{background:var(--card);border:1.6px solid var(--blue);padding:22px 24px;margin-bottom:18px}
+.cross h3{font-family:var(--display);font-weight:400;font-size:18px;color:var(--blue);margin-bottom:10px}
+.cross p{font-size:14px;margin-bottom:8px}
+
+footer{margin-top:50px;border-top:3px solid var(--ink);padding:26px 0 60px;font-size:12.5px;color:var(--ink2)}
+footer .srcs{columns:2;column-gap:30px;margin-top:12px}
+footer .srcs a{display:block;break-inside:avoid;padding:2px 0;font-size:12px;word-break:break-all}
+@media(max-width:640px){footer .srcs{columns:1}}
+.disclaimer{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--ink);padding:16px 18px;font-size:13px;color:var(--ink2);margin:22px 0 0}
+.nav-tabs{display:flex;flex-wrap:wrap;gap:8px;position:sticky;top:0;background:var(--paper);z-index:9;padding:12px 0;border-bottom:1px solid var(--line)}
+.nav-tabs a{font-family:var(--mono);font-size:11.5px;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--card);padding:4px 10px}
+.nav-tabs a:hover{border-color:var(--red);color:var(--red)}
+.nav-tabs a.ext{border-color:var(--red);color:var(--red);font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- ═══ 마스트헤드 ═══ -->
+<header class="mast">
+  <div class="eyebrow">
+    <span class="tag">디지털 대동법 연구소 · 자료실</span>
+    <span>DOC 2026-002</span><span>공개 배포용</span>
+  </div>
+  <h1>대장동·백현동 <em>개발 특혜 의혹</em><br>심층 팩트시트</h1>
+  <p class="sub">이재명 대통령이 ‘검찰 수사의 정점’이라 지목했던 성남 대장동·백현동 개발 의혹 — 사업 경위부터 2025.10.31 민간업자 일당 1심 판결, 전례 없는 <b>검찰 항소 포기</b>, 관련자별 재판 현황까지 언론 보도를 교차 검증해 정리한 후속편입니다.</p>
+  <div class="stamprow">
+    <span class="stamp">기준일 2026-10-27</span>
+    <span class="stamp blue">대장동 · 백현동 · 위례</span>
+    <span class="stamp blue">출처 링크 수록</span>
+  </div>
+  <div class="banner">
+    <span class="b-tag">시리즈 연결</span>
+    <a href="이재명_변호라인_요직인사_팩트시트.html">≪ 선행편 《이재명 재판 ‘변호 라인’ × 정부 요직 인사 팩트시트》(DOC 2026-001) 열기</a>
+    <span class="b-sub">이 문서의 사건이 만든 ‘변호 라인’의 사람들이 어느 요직에 앉았는지는 선행편 인물 프로필에서 확인할 수 있습니다. 두 파일을 같은 폴더에 함께 두면 링크가 이동합니다. (아래 §7 연결 단에서도 인물별로 상호 링크)</span>
+  </div>
+</header>
+
+<!-- ═══ 통계 ═══ -->
+<div class="stats" role="list">
+  <div class="stat"><b>7,886억</b><span>기소된 부당 이득액 (성남의뜰 컨소 이익)</span></div>
+  <div class="stat"><b>4,895억</b><span>성남도시개발공사에 끼친 손해액 (배임)</span></div>
+  <div class="stat"><b>473억</b><span>1심이 인정한 추징금 (검찰 구형 7,814억)</span></div>
+  <div class="stat"><b>190</b><span>1심 공판 차수 — 기록 25만 쪽, 3년 10개월</span></div>
+  <div class="stat"><b>4~8년</b><span>1심 실형 (민간업자 5인 전원 유죄·법정구속)</span></div>
+  <div class="stat"><b>0</b><span>검찰 항소 — 1심 직후 포기 (전례 없는 결정)</span></div>
+</div>
+
+<nav class="nav-tabs" aria-label="바로가기">
+  <a href="#outline">개요</a>
+  <a href="#timeline">연표 2015→2026</a>
+  <a href="#verdict">1심 판결</a>
+  <a href="#appeal">항소 포기 논란</a>
+  <a href="#baekhyeon">백현동</a>
+  <a href="#players">관련자 현황</a>
+  <a href="#future">검찰미래위·공소취소</a>
+  <a href="#link">요직 인사와의 연결</a>
+  <a class="ext" href="이재명_변호라인_요직인사_팩트시트.html">≪ 요직 인사 팩트시트</a>
+  <a href="#sources">출처</a>
+</nav>
+
+<!-- ═══ 01 개요 ═══ -->
+<section id="outline">
+  <div class="sec-head">
+    <span class="no">§1</span>
+    <h2>무슨 사건인가 — 세 줄</h2>
+    <span class="desc">성남시 분당구 대장지구와 수정구 백현지구, 두 개의 개발사업</span>
+  </div>
+
+  <p class="lead"><b>대장동</b>은 이재명 성남시장 재임 시절(2014~2015) 진행된 택지개발사업이다. 민간사업자 선정 과정에서 화천대유자산관리가 참여한 하나은행 컨소시엄이 1%도 안 되는 지분으로 컨소에 끼어 ‘잭팟’을 터뜨린 것이 의혹의 출발점이다. 검찰은 “초과이익 환수 조항을 고의로 삭제하는 등 성남시와 유착해 <b>총 7,886억 원의 부당 이득</b>을 얻고 <b>성남도시개발공사에 4,895억 원의 손해</b>를 끼쳤다”며 민간업자 일당과 공사 간부, 이후 이재명·정진상을 기소했다. <b>백현동</b>은 한국식품연구원 부지(11만2,860㎡)를 자연녹지에서 <b>준주거지역으로 4단계 상향</b>해 용도변경하고, 임대가 아닌 1,110세대 일반분양으로 전환해 민간에 수천억 분양수익이 돌아갔다는 의혹의 사건이다. 두 사건 모두 “도시개발의 최종 결정권자가 누구였는가”가 쟁점이고, 그 정점에 이재명이 서 있다.</p>
+
+  <div class="card hot">
+    <span class="c-tag">핵심 구도</span>
+    <h3>누가 누구인가 — 6개 그룹</h3>
+    <div style="overflow-x:auto">
+    <table class="vtable">
+      <tr><th style="width:22%">그룹</th><th>주요 인물과 역할</th></tr>
+      <tr><td><b>민간 일당</b></td><td>김만배(화천대유 대주주) · 남욱(천화동인 4호, 변호사) · 정영학(천화동인 5호, 회계사) · 유동규·정민용(전 성남도시개발공사 간부, 변호사) — 1심 전원 유죄</td></tr>
+      <tr><td><b>이재명(대통령)</b></td><td>성남시장 재임 중 개발 의혹의 ‘정점’ — 대장동(배임·뇌물 등)·백현동(배임)·성남FC 기소(2023.3.22·10.12), 현재 재판은 헌법 84조 불소추 특권으로 중지</td></tr>
+      <tr><td><b>측근</b></td><td>김용(전 민주연구원 부원장 — 대장동 개발업자로부터 정치자금 6억 수수, 1·2심 징역 5년) · 정진상(전 대표실 정무조정실장 — 성남FC 뇌물 등 4개 사건 병합 재판 진행 중)</td></tr>
+      <tr><td><b>백현동 관계자</b></td><td>김인섭(전 한국하우징기술 대표, ‘대관 로비스트’) · 정바울(아시아디벨로퍼 회장) — 각각 구속기소(2023.5·6)</td></tr>
+      <tr><td><b>검찰 측</b></td><td>서울중앙지검 반부패3부(수사) · 박영수 대장동 특별검사(2023, 이후 자신이 ‘50억 클럽’ 수수로 기소 — 2026.10 2심 징역 6년)</td></tr>
+      <tr><td><b>변호 라인</b></td><td>이태형 · 조원철 · 조상호 · 박균택 · 이건태 · 김동아 · 양부남 · 김기표 · 이승엽 등 — 정부 출범 후 요직 배치(선행편 참조)</td></tr>
+    </table>
+    </div>
+    <p class="src">출처: <a href="https://www.yna.co.kr/view/AKR20251031074600004">연합뉴스 일지</a><a href="https://www.khan.co.kr/article/202603131744001">경향신문</a><a href="https://www.joongang.co.kr/article/25379655">중앙일보</a></p>
+  </div>
+</section>
+
+<!-- ═══ 02 연표 ═══ -->
+<section id="timeline">
+  <div class="sec-head">
+    <span class="no">§2</span>
+    <h2>연표 — 화천대유 설립부터 항소심까지</h2>
+    <span class="desc">연합뉴스 일지·보도 종합</span>
+  </div>
+  <div class="tl">
+    <div class="ev"><time>2014~2015</time><p>이재명 성남시장 재임 중 대장동 택지개발사업 추진</p></div>
+    <div class="ev"><time>2015.2.6</time><p>화천대유자산관리 설립 (설립 7일 만에 공모 참여) — 2.13 성남도시개발공사, 민간사업자 공모 공고</p></div>
+    <div class="ev"><time>2015.3.27</time><p>공사, 화천대유가 자산관리사로 참여한 하나은행 컨소시엄을 대장동 사업 민간사업자로 선정 — 7.27 특수목적법인 ‘성남의뜰’ 설립</p></div>
+    <div class="ev"><time>2021.8~9</time><p>언론·국민의힘, 대장동 개발 비리 의혹 제기 — “지분 1% 화천대유가 5,776억 원” 등 ‘잭팟’ 공방</p></div>
+    <div class="ev"><time>2021.9.27</time><p>천화동인 5호 정영학 회계사, 김만배 등의 음성이 담긴 녹취파일 검찰에 제출 — 9.29 전방위 압수수색·전담수사팀 구성</p></div>
+    <div class="ev"><time>2021.10</time><p>유동규 체포(10.1)·구속영장(10.3) / 김만배 1차 구속영장 기각(10.14) / 남욱, 미국서 귀국 즉시 체포(10.18) / 유동규 구속기소(10.21)·성남시장실 압수수색</p></div>
+    <div class="ev"><time>2021.11~12</time><p>김만배·남욱 구속기소(11.22), 정영학 불구속기소, 정민용 불구속기소(12.21) — 서울중앙지법 형사합의22부(조형우 부장판사) 배당, 첫 공판준비기일(12.6). 사건 도중 유한기·김문기 전 공사 간부들이 극단적 선택</p></div>
+    <div class="ev blue"><time>2021.12~2022.7</time><p>감사원, 백현동 사업 실지감사(2021.12.1) → “백현동 개발, 민간업체에 특혜” 감사 결과 보고서 공개(2022.7.22)</p></div>
+    <div class="ev blue"><time>2022.11~12</time><p>김용 전 민주연구원 부원장, ‘8억 원대 불법 선거자금 수수’ 구속기소(11.8) / 정진상 전 정무조정실장, 2억 4천만 원 뇌물수수 구속기소(12.9)</p></div>
+    <div class="ev"><time>2023.2~3</time><p>이재명 구속영장 청구(2.16, 4,895억 배임·133억 뇌물 — 기각) → 체포동의안 부결(2.27, 찬성 139·반대 138) → 3.22 대장동 개발비리·성남FC 후원금 혐의로 불구속기소</p></div>
+    <div class="ev blue"><time>2023.5~6</time><p>백현동 관계자 기소 — 김인섭 전 한국하우징기술 대표(‘대관 로비스트’, 5.2)·정바울 아시아디벨로퍼 회장(6.27) 구속기소</p></div>
+    <div class="ev blue"><time>2023.10.12</time><p>검찰, 이재명을 백현동 배임 혐의로 불구속기소 — “대장동과 같이 재판” 하겠다며 병합 신청(대장동·위례 첫 재판은 10.6에 이미 열림)</p></div>
+    <div class="ev"><time>2023.11</time><p>김용 사건 1심 — 대장동 관련 재판 중 첫 결론: 징역 5년·벌금 7천만 원·추징 6억 7천만 원, 법정구속. 법원, “경선 준비 과정에서 투명하게 정치자금을 마련·지출해야 함에도 부정한 자금을 수수” 지적</p></div>
+    <div class="ev"><time>2024.2.13</time><p>‘백현동 로비스트’ 김인섭 1심 징역 5년·법정구속 — 백현동 의혹 첫 선고·유죄. 검찰, 백현동·대장동 관련 첫 유죄 판결에 “대단히 의미 크다”</p></div>
+    <div class="ev blue"><time>2024.11.15</time><p>이재명 공직선거법(故김문기·백현동 허위 발언) 2심 — 법원, 백현동 용도변경에 관한 ‘국토부 압박’ 발언을 허위로 보지 않고, 부지 종상향은 “이 대표 스스로 결정한 것”이라 평가</p></div>
+    <div class="ev"><time>2024.11.28</time><p>김인섭 대법원 확정 — 징역 5년·추징금 63억 원(대법원 2부), 백현동 의혹 첫 유죄 확정</p></div>
+    <div class="ev"><time>2025.4.4</time><p>백현동 개발업자 정바울 1심 — 징역 2년·집행유예 4년(서울중앙지법 형사합의27부, 검찰 구형 5년보다 낮은 형)</p></div>
+    <div class="ev"><time>2025.10.31</time><p><b>대장동 민간업자 일당 1심 선고</b> — 유동규·김만배 징역 8년 등 전원 중형·법정구속, 추징금 473억 원. 공판 190차례·기록 25만 쪽 끝에 나온 판결</p></div>
+    <div class="ev"><time>2025.11.7</time><p>검찰, 1심 판결에 <b>항소 포기</b> — 전례 없는 결정. 검찰 내부 반발(검사장 18명 입장문, 로앤타임스 보도), 야당 “이재명 한 사람을 위한 것”(한동훈) 탄핵·특검 촉구</p></div>
+    <div class="ev"><time>2025.11.28</time><p>정바울 2심 — 감형돼 징역형 집행유예 선고(서울고법 형사1부)</p></div>
+    <div class="ev"><time>2025.12.12</time><p>서울고법, 대장동 항소심 사건 재배당 — 형사6-3부(재판장 민달기)</p></div>
+    <div class="ev blue"><time>2026.1.28</time><p>대장동 ‘판박이’인 위례 신도시 재건축 사건, 민간업자들 <b>1심 전원 무죄</b> → 2.4 검찰 항소 포기로 무죄 확정</p></div>
+    <div class="ev"><time>2026.2</time><p>김용 사건 2심 — 징역 5년 유지. 구글 타임라인 알리바이 배척, 판결문에 이재명 100여 회 언급·“최종 결정권은 이 대통령에게 있었다” 시사. 김만배 1차 기소 사건 병합심리 결정(4.21)</p></div>
+    <div class="ev"><time>2026.3.13</time><p>대장동 항소심 첫 공판 — 민간업자 5인, 대형 로펌 변호인 대열로 출석해 혐의 대부분 부인. 검사는 1명. 피고인 측 “1심이 이재명 공범 여부를 설시하지 않은 건 방어권 침해” 주장</p></div>
+    <div class="ev"><time>2026.4.30</time><p>항소심 재판 절차 지연 속 유동규·김만배·남욱 등 구속에서 풀려나(YTN)</p></div>
+    <div class="ev blue"><time>2026.6~8</time><p>법무부 검찰인권존중미래위원회(‘검찰미래위’) 출범 — 1차 조사 대상 7건 중 3건이 이재명 재판 사건, 8월 백현동·성남FC·경기도 법카 등 12건 추가 선정(“기소된 8건 중 6건”)</p></div>
+    <div class="ev"><time>2026.8.20</time><p>김용, 화성직업훈련교도소에서 보석 석방 — 대법원에서 ‘구글 타임라인 알리바이’ 법리 심리 중</p></div>
+    <div class="ev blue"><time>2026.10.16</time><p>검찰미래위, 이재명 위례 사건에 대해 “검찰 수사의 위법성을 단정하기 어렵다” — 일각에서는 ‘공소취소 사전작업’ 논란</p></div>
+    <div class="ev"><time>2026.10.21</time><p>대장동 특별검사를 지냈던 박영수, ‘50억 클럽’ 항소심에서 징역 6년로 감형(1심 7년) — 변협 회장 선거자금 2억 원만 유죄, ‘50억 약정’은 무죄</p></div>
+  </div>
+  <p class="src">출처: <a href="https://www.yna.co.kr/view/AKR20251031074600004">연합뉴스 일지(2025.10.31)</a><a href="https://www.yna.co.kr/view/AKR20231012091900004">연합뉴스 일지(2023.10.12)</a><a href="https://www.khan.co.kr/article/202603131744001">경향신문</a><a href="https://www.joongang.co.kr/article/25379655">중앙일보</a><a href="https://www.ytn.co.kr/_ln/0103_202604300705020939">YTN</a><a href="https://www.khan.co.kr/article/202610151740001">경향신문(김지용 임명)</a></p>
+</section>
+
+<!-- ═══ 03 1심 ═══ -->
+<section id="verdict">
+  <div class="sec-head">
+    <span class="no">§3</span>
+    <h2>1심 판결 — 무엇이 유죄, 무엇이 무죄</h2>
+    <span class="desc">서울중앙지법 형사합의22부(조형우 부장판사) · 2025.10.31</span>
+  </div>
+
+  <div class="card hot">
+    <span class="c-tag">피고인별 양형</span>
+    <h3>‘대장동 일당’ 5인, 전원 실형·법정구속</h3>
+    <div style="overflow-x:auto">
+    <table class="vtable">
+      <tr><th>피고인</th><th>역할</th><th>1심 형량</th></tr>
+      <tr><td><b>유동규</b></td><td>전 성남도시개발공사 기획본부장</td><td>징역 8년 + 벌금 4억 원 + 추징금 8억 1천만 원</td></tr>
+      <tr><td><b>김만배</b></td><td>화천대유자산관리 대주주</td><td>징역 8년 + 추징금 428억 원</td></tr>
+      <tr><td><b>정민용</b></td><td>전 공사 전략사업실 투자사업팀장(변호사)</td><td>징역 6년 + 벌금 38억 원 + 추징금 37억 2,200만 원</td></tr>
+      <tr><td><b>정영학</b></td><td>천화동인 5호 소유주(회계사)</td><td>징역 5년</td></tr>
+      <tr><td><b>남욱</b></td><td>천화동인 4호 소유주(변호사)</td><td>징역 4년</td></tr>
+    </table>
+    </div>
+    <div class="detail"><b>적용 법리가 핵심</b> — 법원은 특경가법상 배임 대신 <b>형법상 업무상 배임</b>을 적용해 형량 상한을 낮췄고(무기징역→10년 이하), 특경가법상 배임과 이해충돌방지법 위반은 <b>무죄</b>로 판단했다. 유죄는 업무상 배임·범죄수익 은닉·일부 뇌물. 추징금은 검찰 구형 7,814억 원에서 <b>473억 원</b>으로 크게 줄었다. 법원은 “피고인들이 장기간에 걸쳐 금품 제공 등을 매개로 형성한 유착관계에 따라 벌인 부패범죄”라고 규정했다.</div>
+    <p class="src">출처: <a href="https://www.yna.co.kr/view/AKR20251031074600004">연합뉴스</a><a href="https://www.yonhapnewstv.co.kr/news/MYH20251031211543QYf">연합뉴스TV</a><a href="https://www.khan.co.kr/article/202603131744001">경향신문</a></p>
+  </div>
+
+  <div class="card">
+    <span class="c-tag">판결문 속 이재명</span>
+    <h3>“공범” 판단은 유보 — 그러나</h3>
+    <p>재판부는 이재명 대통령의 혐의에 대해서는 판단을 열어뒀다 — “별도 재판이 진행 중”이라는 이유다. 그러나 판결문은 다음과 같이도 썼다.</p>
+    <blockquote>“이재명·정진상 등은 민간업자들이 시장 재선을 도와준 사례 등을 모두 보고받아 알고 있었던 것으로 보인다” / “(민간업자들은) 이재명 재선 기여 등으로 말미암아 <b>사실상 사업 시행자로 내정되는 특혜를 받게 된 것</b>으로 판단된다”</blockquote>
+    <blockquote>“설령 유동규가 남욱으로부터 받은 돈을 <b>김용, 정진상 등에게 주었다 하더라도</b> 이는 유동규 자신이 취득한 뇌물을 소비하는 방법에 지나지 않는다” — 김용에 대한 판단을 회피하면서.</blockquote>
+    <p>이 대통령의 사건은 대통령의 불소추 특권을 명시한 <b>헌법 84조에 따라 중지된 상태</b>다. 함께 기소된 정진상에 대해서만 재판이 진행 중이며, 이 재판은 대장동·백현동·위례·성남FC 4개 사건이 병합된 것으로 위례 부분 심리가 끝나고 대장동 부분이 진행 중이다.</p>
+    <p class="src">출처: <a href="https://www.joongang.co.kr/article/25379655">중앙일보</a><a href="https://www.khan.co.kr/article/202603131744001">경향신문</a></p>
+  </div>
+</section>
+
+<!-- ═══ 04 항소 포기 ═══ -->
+<section id="appeal">
+  <div class="sec-head">
+    <span class="no">§4</span>
+    <h2>항소 포기 — 전례 없는 결정, 그 의미</h2>
+    <span class="desc">2025.11.7 검찰 결정 → 2026.3.13 항소심 개시</span>
+  </div>
+
+  <div class="card hot">
+    <span class="c-tag">불이익변경 금지 원칙</span>
+    <h3>검찰이 항소를 접으면 무엇이 굳어지나</h3>
+    <p>피고인들은 전원 항소했지만 검찰은 항소를 포기했다. 형사소송법상 <b>불이익변경 금지</b> 원칙에 따라 항소심은 1심 판결을 항소인에게 더 불리하게 바꿀 수 없다. 그 결과 —</p>
+    <div class="detail">
+      <b>뒤집을 수 없는 것</b>: 특경가법상 배임 무죄, 이해충돌방지법 위반 무죄, 1심 형량(더 무거운 형 불가), 추징금 상한 473억 원.<br>
+      <b>항소심에서 다투는 것</b>: 업무상 배임, 범죄수익 은닉, 일부 뇌물 혐의의 유죄 판단 자체.
+    </div>
+    <div class="detail"><b>논란의 두 축</b> — 한편에서는 “유죄를 인정받은 민간업자 일당에 대해 검찰이 항소하지 않은 것은 이재명 대통령 관련 판단을 잠그는 효과”라는 야당 비판(한동훈: “이재명 한 사람을 위한 것”)이 나왔다. 반면 당시 법무부·검찰은 신중 검토 결과라고 해명했다. 검찰 내부에서는 항소 방침이 확정·결재까지 마쳤다가 뒤집혔다는 주장과 함께 <b>검사장 18명이 입장문</b>을 내는 등 반발이 일었다(로앤타임스: “윗선 부당 지시로 항소 좌절”).</div>
+    <p class="src">출처: <a href="https://www.bbc.com/korean/articles/crmx0j8ky1vo">BBC 뉴스코리아</a><a href="https://www.chosun.com/national/court_law/2025/11/07/MXB6GSSM25EWVPDQPSH2JHTN3Q/">조선일보</a><a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=212981">로앤타임스</a></p>
+  </div>
+
+  <div class="card">
+    <span class="c-tag">항소심 현재</span>
+    <h3>서울고법 6-3부(민달기 재판장) — 2026.3.13 개정</h3>
+    <p>1심에서 전원 실형을 받은 5인은 대형 로펌(태평양·광장·화우·LKB평산) 변호인 대열로 수의를 입고 출석했고, 검사 측은 1명뿐이었다. 피고인 측은 혐의를 대부분 부인하며 “1심 법원이 이재명 공범 여부를 설시하지 않고 사실관계 판단 자체를 누락한 건 방어권을 부당하게 침해한 것”이라고 주장했다.</p>
+    <div class="detail">김만배는 2026.2.12 자신의 1심 판결에 불복해(별도) 항소했고, 검찰도 이에 항소했다. 2026.4.21 김만배의 1차 기소 사건(뇌물공여·횡령 등)과 병합심리하겠다는 결정이 나왔다. 항소심 절차 지연 속에 유동규·김만배·남욱 등은 4월 말 구속에서 풀려났다.</div>
+    <p class="src">출처: <a href="https://www.khan.co.kr/article/202603131744001">경향신문</a><a href="https://namu.wiki/w/%EB%8C%80%EC%9E%A5%EB%8F%99%20%EB%8F%84%EC%8B%9C%EA%B0%9C%EB%B0%9C%EC%82%AC%EC%97%85%20%ED%8A%B9%ED%98%9C%20%EC%9D%98%ED%98%B9">나무위키(병합 경과)</a><a href="https://m.ytn.co.kr/news_view.php?key=202604300705020939&amp;s_mcd=0103">YTN</a></p>
+  </div>
+</section>
+
+<!-- ═══ 05 백현동 ═══ -->
+<section id="baekhyeon">
+  <div class="sec-head">
+    <span class="no">§5</span>
+    <h2>백현동 — 대장동의 ‘판박이’인가, 다른 그림인가</h2>
+    <span class="desc">한국식품연구원 부지 용도변경 · 임대→분양 전환 의혹</span>
+  </div>
+
+  <p class="lead">대장동과 자주 묶이지만 구조는 다르다. 백현동은 <b>공공 부지(한식연) 매각과 용도변경</b>이 중심이고, 재판은 이재명의 공직선거법 발언 사건과 맞물려 정치적 쟁점이 됐다. 무엇이 보도·재판에서 확인됐는지 정리하면 —</p>
+
+  <div class="card blue">
+    <span class="c-tag">경위 — 보도·재판 기록 기준</span>
+    <h3>녹지에서 준주거로, 임대에서 분양으로</h3>
+    <div class="detail"><b>① 용도변경 4단계 상향</b> — 성남시가 이재명 시장 재임 중 백현동 한식연 부지를 자연·보전녹지에서 <b>준주거지역으로 한 번에 4단계 상향</b>했다. 검찰은 민간 사업자가 매입·분양하며 과도한 이익을 얻도록 이 대표가 개입했다고 본다 — ‘국토부 압박문건’ 3건이 확보된 바 있다(서울신문 2023.3.27).</div>
+    <div class="detail"><b>② 임대 → 일반분양 전환</b> — 원래 임대(대여)가 검토되던 사업이 <b>1,110세대 일반분양</b>으로 전환되면서 민간에 수천억 원 분양수익이 돌아갔고, 이 과정의 특혜가 의혹이 됐다(한겨레 2022.9.1). 이 대표가 용도변경 서류에 직접 서명했다는 의혹은 2021.10 국회에서 제기됐다.</div>
+    <div class="detail"><b>③ 정부 지시 주장 vs 반박</b> — 이 대표는 “박근혜 대통령이 용도변경 추진을 지시했다”며 2023.8.16 ‘증거’를 공개했다. 검찰 재판에서는 2024.11.15 공직선거법 2심에서 법원이 부지 종상향을 “이 대표 스스로 결정한 것”이라 평가하며 균열이 갔다.</div>
+    <div class="detail"><b>④ 수사·기소</b> — 감사원 실지감사(2021.12)와 “민간업체에 특혜” 감사 보고서(2022.7.22)를 거쳐 성남시청·공사 등 40여 곳 압수수색(2023.2.7), 김인섭(2023.5.2)·정바울(2023.6.27) 구속기소, 그리고 이재명 배임 불구속기소(2023.10.12)로 이어졌다.</div>
+    <p class="src">출처: <a href="https://www.hani.co.kr/arti/area/capital/1057184.html">한겨레</a><a href="https://www.chosun.com/economy/real_estate/2021/10/25/WDDXI6XIJRCVLFWGSUOEZR3S4A/">조선일보</a><a href="https://www.seoul.co.kr/news/politics/congress/2023/03/27/20230327500200">서울신문</a><a href="https://www.c1news.kr/news/articleView.html?idxno=63812">씨원뉴스</a><a href="https://www.yna.co.kr/view/AKR20241115148900004">연합뉴스</a><a href="https://www.yna.co.kr/view/AKR20231012091900004">연합뉴스 일지</a></p>
+  </div>
+
+  <div class="card">
+    <span class="c-tag">백현동 관련 재판 현황</span>
+    <h3>이재명은 대장동과 병합 — 별개 관계자는 각자</h3>
+    <p>이재명의 백현동 배임 사건은 <b>대장동·위례·성남FC와 병합</b>돼 재판이 진행되다가(정진상 사건은 지금도 병합 진행), 취임 후 헌법 84조로 중지됐다. 별개 관계자의 재판은 각자 진행됐다 — ‘대관 로비스트’ <b>김인섭</b>은 1심 징역 5년(2024.2.13)·2심 징역 5년 유지(2024.8.23)를 거쳐 <b>대법원에서 징역 5년이 확정</b>됐다(2024.11.28, 대법원 2부 — 백현동 의혹의 첫 유죄 확정 판결). <b>정바울</b>은 1심 징역 2년·집행유예 4년(2025.4.4)에 이어 2심에서 감형돼 징역형 집행유예가 선고됐다(2025.11.28, 서울고법 형사1부).</p>
+    <div class="detail">참고 — 위례 신도시 재건축 사건(대장동 ‘판박이’로 불린 별개 사건)은 2026.1.28 민간업자들 1심 <b>전원 무죄</b>, 2.4 검찰 항소 포기로 무죄가 확정됐다. 대장동(전원 유죄)과 위례(전원 무죄)의 결이 정반대인 점이 항소심 공방에서도 쟁점이 되고 있다.</div>
+    <p class="src">출처: <a href="https://www.chosun.com/national/court_law/2024/02/15/5JGPISOTV5G6RIRG4XWMLOOVOY/">조선일보</a><a href="https://www.khan.co.kr/article/202602042227005">경향신문</a><a href="https://www.hani.co.kr/arti/society/society_general/1169637.html">한겨레(김인섭 대법 확정)</a><a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=206933">로앤타임스(정바울 1심)</a></p>
+  </div>
+</section>
+
+<!-- ═══ 06 관련자 현황 ═══ -->
+<section id="players">
+  <div class="sec-head">
+    <span class="no">§6</span>
+    <h2>관련자별 재판 현황 — 2026.10.27 기준</h2>
+    <span class="desc">기소부터 현재까지, 사람별로 한 장에</span>
+  </div>
+
+  <div class="pgrid">
+    <article class="person">
+      <div class="p-top"><div class="avatar red">김</div>
+        <div><div class="p-name">김만배</div><span class="p-role r-former">1심 징역 8년 · 추징 428억</span></div></div>
+      <div class="p-meta">화천대유자산관리 대주주</div>
+      <div class="p-body">‘잭팟’의 실소유자로 지목된 인물. 1차 구속영장은 기각됐으나 11월 구속기소됐고, 수익 은닉 혐의로 추가 기소(2023.3). 1심 징역 8년·법정구속 → 항소 후 2026.4 병합심리 결정, 4월 말 구속 해제.</div>
+    </article>
+    <article class="person">
+      <div class="p-top"><div class="avatar red">유</div>
+        <div><div class="p-name">유동규</div><span class="p-role r-former">1심 징역 8년 · 벌금 4억</span></div></div>
+      <div class="p-meta">전 성남도시개발공사 기획본부장</div>
+      <div class="p-body">의혹 제기 최일선이었던 ‘블로거’ 출신 공사 간부. 증거인멸교사 혐의 추가 기소(2022.4). 항소심에서 “형사 책임은 인정한다”며 감형만 탄원 — 유일하게 책임을 인정한 피고인.</div>
+    </article>
+    <article class="person">
+      <div class="p-top"><div class="avatar red">남</div>
+        <div><div class="p-name">남욱</div><span class="p-role r-former">1심 징역 4년</span></div></div>
+      <div class="p-meta">천화동인 4호 소유주 · 변호사</div>
+      <div class="p-body">미국 체류 중 귀국 즉시 체포(2021.10.18). 대장동 로비의 실무자로 지목됐고, <b>박영수 전 특검에게 변협 회장 선거자금을 준 상대</b>이기도 하다. 재판 중 진술이 계속 바뀐 점이 재판부·변론 양쪽의 변수로 지목됐다.</div>
+    </article>
+    <article class="person">
+      <div class="p-top"><div class="avatar red">정</div>
+        <div><div class="p-name">정영학 · 정민용</div><span class="p-role r-former">1심 각각 징역 5년 · 6년</span></div></div>
+      <div class="p-meta">천화동인 5호 회계사 · 전 공사 팀장(변호사)</div>
+      <div class="p-body">정영학은 김만배 음성 녹취를 검찰에 제출한 ‘블로워’. 정민용은 대장동 공모지침서 작성 혐의로 불구속기소됐다가 1심에서 벌금 38억 원·추징 37억 원을 곁들인 징역 6년을 받았다.</div>
+    </article>
+    <article class="person">
+      <div class="p-top"><div class="avatar ink">김</div>
+        <div><div class="p-name">김용</div><span class="p-role r-former">1·2심 징역 5년 — 대법원 계류</span></div></div>
+      <div class="p-meta">전 더불어민주연구원 부원장 · 이재명 대선 경선캠프 총괄본부장(2021)</div>
+      <div class="p-body">대장동 개발업자들로부터 <b>불법 정치자금 6억 원</b>을 수수한 혐의(기소는 8억 원대)로 1심(2023.11)·2심(2026.2) 모두 징역 5년. 구글 타임라인 알리바이가 배척됐고, 2심 판결문에는 이재명 대통령이 100여 회 언급됐다 — “김용이 사업 전반을 결정할 권한은 없었고, <b>최종 결정권은 이 대통령에게 있었다</b>”는 시사. 2026.8.20 보석 석방, 현재 대법원 심리 중.</div>
+      <div class="p-tags"><span>주의: 중대범죄수사청장 김지용(검사 출신)과는 전혀 다른 사람</span></div>
+      <p class="src"><a href="https://www.joongang.co.kr/article/25379655">중앙일보</a></p>
+    </article>
+    <article class="person">
+      <div class="p-top"><div class="avatar ink">정</div>
+        <div><div class="p-name">정진상</div><span class="p-role r-live">병합 재판 진행 중(1심)</span></div></div>
+      <div class="p-meta">전 더불어민주당 대표실 정무조정실장</div>
+      <div class="p-body">2022.12 2억 4천만 원 뇌물수수(성남FC)로 구속기소된 뒤, <b>대장동·백현동·위례·성남FC 4개 사건이 병합</b>된 재판을 받고 있다. 위례 부분 심리는 끝났고 대장동 부분이 진행 중이라 1심 선고까지 상당 기간이 걸릴 전망이다(중앙일보). 변호인은 이건태·김동아 의원 등(선행편 참조).</div>
+    </article>
+    <article class="person">
+      <div class="p-top"><div class="avatar blue">이</div>
+        <div><div class="p-name">이재명</div><span class="p-role r-live">재판 중지(헌법 84조)</span></div></div>
+      <div class="p-meta">대통령 · 성남시장 재임 2010~2018</div>
+      <div class="p-body">대장동(특경가법 배임·이해충돌방지법 위반 등)·성남FC로 2023.3.22, 백현동 배임으로 2023.10.12 불구속기소됐고 사건들이 병합됐다. 취임 후 재판은 <b>헌법 84조 불소추 특권으로 중지</b>됐다. 1심 판결문은 그의 공모 가담 여부 판단을 유보하는 동시에 “알고 있었던 것으로 보인다”고 남겼다.</div>
+    </article>
+    <article class="person">
+      <div class="p-top"><div class="avatar amber">박</div>
+        <div><div class="p-name">박영수</div><span class="p-role r-former">2심 징역 6년(2026.10)</span></div></div>
+      <div class="p-meta">대장동 특별검사(2023) · 전 대한변호사협회장</div>
+      <div class="p-body">대장동 수사 특검이었던 인물이 스스로 <b>대장동 민간업자 남욱으로부터 변협 회장 선거자금을 받은 혐의</b>로 기소됐다(이른바 ‘50억 클럽’). 1심 징역 7년 → 2심 징역 6년·벌금 2억 원(선거자금 2억 원만 유죄, ‘50억 약정’ 무죄). 2026.10.21 선고.</div>
+      <p class="src"><a href="https://www.pressian.com/pages/articles/2026102111280966642">프레시안</a><a href="https://www.dkilbo.com/news/articleView.html?idxno=557963">대구일보</a><a href="https://www.donga.com/news/Society/article/all/20261021/134885971/2">동아일보</a></p>
+    </article>
+    <article class="person">
+      <div class="p-top"><div class="avatar red">김</div>
+        <div><div class="p-name">김인섭</div><span class="p-role r-former">대법원 징역 5년 확정(2024.11.28)</span></div></div>
+      <div class="p-meta">전 한국하우징기술 대표 · ‘대관 로비스트’</div>
+      <div class="p-body">백현동 개발 과정에서 특혜의 대가로 금품을 받은 혐의(특가법상 알선수재 — 정진상을 향한 로비가 재판 쟁점, 조선일보). 1심 징역 5년·법정구속(2024.2.13, 서울중앙지법 — 백현동 의혹 첫 선고·유죄) → 2심 징역 5년 유지(2024.8.23, 서울고법 형사1-1부) → <b>대법원 2부가 징역 5년·추징금 63억 원을 확정</b>(2024.11.28). 백현동 개발 의혹 전체에서 <b>첫 유죄 확정 판결</b>이다.</div>
+      <p class="src"><a href="https://www.donga.com/news/Society/article/all/20240213/123497534/1">동아일보(1심)</a><a href="https://www.hani.co.kr/arti/society/society_general/1155029.html">한겨레(2심)</a><a href="https://www.hani.co.kr/arti/society/society_general/1169637.html">한겨레(대법 확정)</a><a href="https://www.chosun.com/national/court_law/2024/11/28/O56T26NCEFCY5E4M2XCHMYX7RA/">조선일보</a></p>
+    </article>
+    <article class="person">
+      <div class="p-top"><div class="avatar red">정</div>
+        <div><div class="p-name">정바울</div><span class="p-role r-former">2심 징역형 집행유예(2025.11.28)</span></div></div>
+      <div class="p-meta">아시아디벨로퍼 회장 · 백현동 사업 관여 개발업자</div>
+      <div class="p-body">허위 자문용역 계약으로 수수료 명목 4억 원을 취득한 업무상 배임과 아시아디벨로퍼 수백억 원대 횡령 혐의(특경가법)로 재판에 넘겨졌다. 1심 징역 2년·집행유예 4년(2025.4.4, 서울중앙지법 형사합의27부 — 검찰 구형은 징역 5년·추징 2억 원) → 양측 모두 항소해 2심 결심 공판(2025.10.31, 검찰이 다시 징역 5년 구형)을 거쳐 <b>감형된 징역형에 집행유예 선고</b>(2025.11.28, 서울고법 형사1부).</div>
+      <p class="src"><a href="https://www.hani.co.kr/arti/society/society_general/1190770.html">한겨레(1심)</a><a href="https://www.yna.co.kr/view/AKR20251031082000004">연합뉴스(2심 구형)</a><a href="https://news.kbs.co.kr/news/view.do?ncd=8420250">KBS(2심 선고)</a><a href="https://www.joongang.co.kr/article/25386020">중앙일보</a></p>
+    </article>
+  </div>
+</section>
+
+<!-- ═══ 07 검찰미래위 · 공소취소 ═══ -->
+<section id="future">
+  <div class="sec-head">
+    <span class="no">§7</span>
+    <h2>2026년의 새 변수 — 검찰미래위와 ‘공소취소’</h2>
+    <span class="desc">재판 중지 상태에서 벌어지는 재조사 공방</span>
+  </div>
+
+  <div class="card hot">
+    <span class="c-tag">법무부 검찰인권존중미래위원회</span>
+    <h3>이재명 사건 8건 중 6건을 ‘재조사’</h3>
+    <p>검찰권 행사 과정의 인권침해·권한남용 의혹 진상규명을 목적으로 2026.6 출범한 법무부 산하 ‘검찰미래위’가 — 1차로 7건(중 3건이 이재명 재판 사건)을, 8월에는 <b>백현동·성남FC·경기도 법카 등 12건을 추가</b> 선정했다. 기존 대상과 합치면 이 대통령이 기소된 8건 중 6건이 된다(조선일보). 참여 위원 대부분이 친여권 인사라는 지적으로 공정성 논란이 일었다(경향신문).</p>
+    <div class="detail"><b>2026.10 진행</b> — 검찰 감찰부장은 미래위 진상조사단 활동이 “감찰 업무와 충돌”한다고 이견을 냈고(연합뉴스), 미래위는 위례 사건에 대해 “검찰 수사의 위법성을 단정하기 어렵다”는 결론을 냈다(한겨레 2026.10.16). 야당·일부 언론은 이 일련의 흐름을 ‘공소취소 사전작업’이라고 비판했다.</div>
+    <div class="detail"><b>공취모와의 연결</b> — 민주당 의원 105명이 참여한 ‘이재명 대통령 사건 공소취소’ 의원 모임(공취모, 2026.2 출범, 공동대표 윤건영·김승원 — 이후 당 특위 전환)은 대장동·위례 검찰 항소 포기(2025.11·2026.2)와 맞물려 공소취소를 추진 중이다. 야당은 “공소취소 실행을 노린 인사”라고 비판한다(선행편 CASE 07 참조).</div>
+    <p class="src">출처: <a href="https://www.chosun.com/national/court_law/2026/08/15/NMPQJ5KP45EZBNOHB3LG3MXUSA/">조선일보</a><a href="https://news.kbs.co.kr/news/view.do?ncd=8637391">KBS</a><a href="https://www.khan.co.kr/article/202606121710001">경향신문</a><a href="https://www.yna.co.kr/view/AKR20261003045300004">연합뉴스</a><a href="https://www.hani.co.kr/arti/society/society_general/1282646.html">한겨레</a></p>
+  </div>
+</section>
+
+<!-- ═══ 08 요직인사와의 연결 ═══ -->
+<section id="link">
+  <div class="sec-head">
+    <span class="no">§8</span>
+    <h2>《요직 인사 팩트시트》와의 연결</h2>
+    <span class="desc">이 사건이 만든 ‘변호 라인’이 지금 어디에 앉아 있는가 — 선행편(DOC 2026-001)과 상호 링크</span>
+  </div>
+
+  <div class="cross">
+    <h3>두 문서는 같은 이야기의 두 면이다</h3>
+    <p>이 팩트시트는 <b>사건</b>이고, 선행편은 그 사건을 수행한 <b>사람들</b>이다. 대장동 재판을 맡았던 법조인들이 정부 출범 후 청와대·차관급·공공기관 요직에 배치됐고, 1심 판결의 ‘공범 판단 유보’와 항소 포기, 검찰미래위 재조사·공소취소 추진이 맞물리면서 “사법 리스크 해소를 위한 인사”라는 이해충돌 논쟁이 계속되고 있다. 아래 표의 인물 이름을 누르면 선행편의 해당 인물 프로필로 이동한다.</p>
+  </div>
+
+  <div style="overflow-x:auto">
+  <table class="vtable">
+    <tr><th style="width:14%">인물</th><th>대장동·백현동에서 한 일</th><th>지금의 요직</th></tr>
+    <tr><td><a href="이재명_변호라인_요직인사_팩트시트.html#p-이태형"><b>이태형</b></a></td><td>이재명의 대장동 등 주요 사건 수석 변호인</td><td>대통령실 공직기강비서관(민정비서관 역임)</td></tr>
+    <tr><td><a href="이재명_변호라인_요직인사_팩트시트.html#p-조원철"><b>조원철</b></a></td><td>대장동·위례·백현·성남FC 재판 변호(2023~)</td><td>법제처장(차관급)</td></tr>
+    <tr><td><a href="이재명_변호라인_요직인사_팩트시트.html#p-조상호"><b>조상호</b></a></td><td>이재명·정진상 대장동 재판 변호</td><td>법무부장관 정책보좌관</td></tr>
+    <tr><td><a href="이재명_변호라인_요직인사_팩트시트.html#p-박균택"><b>박균택</b></a></td><td>2023.9 이재명 구속영장 방어 주력, ‘대장동 변호사 5인방’</td><td>국회의원(법사위) · 2026.10 법무부장관 후보 검토(보도)</td></tr>
+    <tr><td><a href="이재명_변호라인_요직인사_팩트시트.html#p-이건태"><b>이건태</b></a></td><td>정진상(대장동 뇌물) 사건 변호, 저서 ‘대장동의 진실’</td><td>국회의원 · 법무부장관 후보군 거론</td></tr>
+    <tr><td><a href="이재명_변호라인_요직인사_팩트시트.html#p-김동아"><b>김동아</b></a></td><td>정진상 사건 변호(이건태와 함께), ‘대장동 변호사 5인방’</td><td>국회의원(법사위)</td></tr>
+    <tr><td><a href="이재명_변호라인_요직인사_팩트시트.html#p-양부남"><b>양부남</b></a></td><td>이재명 대선 법률지원단장(2021) · 당 법률위원회 공동위원장</td><td>국회의원 · 2026.10 법무부장관 후보 유력 검토(보도)</td></tr>
+    <tr><td><a href="이재명_변호라인_요직인사_팩트시트.html#p-김기표"><b>김기표</b></a></td><td>김용(이재명 최측근) 정치자금 사건 1심 변호인</td><td>국회의원(법사위)</td></tr>
+    <tr><td><a href="이재명_변호라인_요직인사_팩트시트.html#p-김승원"><b>김승원</b></a></td><td>공취모(공소취소 의원 모임) 공동대표 — 대장동 항소 포기 이후 공소취소 주력(변호인은 아님)</td><td>법무부장관 지명(2026.8.30) 후 자진 사퇴(9.19)</td></tr>
+    <tr><td><a href="이재명_변호라인_요직인사_팩트시트.html#p-이승엽"><b>이승엽</b></a></td><td>대장동 등 이재명 주요 사건 변호인</td><td>본인 요직 없음 — 매형 임광현이 대통령비서실장(2026.10.14), 누나 이경은은 주휴스턴 총영사</td></tr>
+  </table>
+  </div>
+
+  <div class="duo">
+    <div class="col crit">
+      <h3>비판 — “사법 리스크 해소를 위한 인사”</h3>
+      <ul>
+        <li>대장동·백현동 재판을 변호한 법조인들이 그 판단을 관장하는 기관(법제처·법무부·권익위)과 재판 관련 기관(국정원 기조실장 — 대북송금 조사 기관)의 수장으로 배치됐다.</li>
+        <li>1심 ‘공범 판단 유보’를 남긴 판결에 검찰이 항소하지 않았고, 그 직후 공취모·검찰미래위가 공소취소 방향으로 움직인다.</li>
+        <li>법무부장관 후보군(박균택·양부남·이건태 등)은 전원 ‘대장동 변호 라인’ 출신이라는 지적(국민의힘: “죄 지우기 인선”).</li>
+      </ul>
+    </div>
+    <div class="col def">
+      <h3>옹호 · 반론 — “검증된 인력, 정상 인사”</h3>
+      <ul>
+        <li>변호는 형사절차상 누구나 받을 권리이며, 변호 경력 자체가 결격 사유가 될 수는 없다.</li>
+        <li>김용은 이재명 사건의 변호인이 아니라 별개 피고사당한 인물이고, 김승원 역시 변호인이 아니다(선행편 팩트체크 참조).</li>
+        <li>위례 사건 1심 전원 무죄 확정(2026.1~2)처럼 법원의 독립적 판단이 나온 사례도 있고, 항소 포기는 법무부의 신중 검토 결과라는 해명이 있다.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 팩트체크 노트 ═══ -->
+<section id="note">
+  <div class="sec-head"><span class="no">NOTE</span><h2>⚑ 팩트체크 노트 — 읽을 때 주의할 점</h2></div>
+  <div class="note">
+    <ol>
+      <li><b>이 문서는 보도 기반 2차 자료다.</b> 판결문 원문이 아니므로, 법률 판단의 정확한 문구는 각 판결문·원문 기사로 대조해야 한다.</li>
+      <li><b>‘김용’과 ‘김지용’은 다른 사람이다.</b> 대장동 정치자금 사건의 김용(전 민주연구원 부원장)과 초대 중대범죄수사청장으로 임명된 김지용(검사 출신, 2026.10.15 임명)은 전혀 다른 사람이다 — 두 이름이 섞인 보도·소셜 게시물이 많아 주의.</li>
+      <li><b>백현동 관계자 판결(2026.10.29 갱신)</b> — 김인섭은 대법원 유죄 확정(2024.11.28), 정바울은 2심 징역형 집행유예(2025.11.28)까지 확인했다. 정바울의 상고 여부는 이번 조사에서 확인하지 못했다.</li>
+      <li><b>수치의 성격</b> — 7,886억(부당이득)·4,895억(손해)은 기소·보도 기준 수치이고, 법원이 확정한 추징금은 473억 원이다. 같은 ‘돈’이 문맥마다 다르게 쓰인다.</li>
+      <li><b>시계열</b> — 기준일 2026-10-27. 항소심(서울고법 6-3부)과 김용 대법원 심리, 정진상 병합 1심은 계속 진행 중이다.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ footer ═══ -->
+<footer id="sources">
+  <div><b>출처 목록</b> — 본문 각주와 중복 수록</div>
+  <div class="srcs">
+    <a href="https://www.yna.co.kr/view/AKR20251031074600004">연합뉴스 — [일지] 대장동 의혹, 설립부터 1심 선고까지 (2025.10.31)</a>
+    <a href="https://www.yna.co.kr/view/AKR20231012091900004">연합뉴스 — [일지] 대장동 수사부터 백현동 기소까지 (2023.10.12)</a>
+    <a href="https://www.yonhapnewstv.co.kr/news/MYH20251031211543QYf">연합뉴스TV — 대장동 김만배·유동규 징역 8년, 428억 추징</a>
+    <a href="https://www.khan.co.kr/article/202603131744001">경향신문 — '검찰 항소포기' 대장동 항소심 시작 (2026.3.13)</a>
+    <a href="https://www.joongang.co.kr/article/25379655">중앙일보 — 김용, 1·2심 징역 5년 법정구속…대법서 심리 중</a>
+    <a href="https://www.bbc.com/korean/articles/crmx0j8ky1vo">BBC 뉴스코리아 — 검찰·정치권을 뒤집어놓은 '대장동 항소 포기' 논란</a>
+    <a href="https://www.chosun.com/national/court_law/2025/11/07/MXB6GSSM25EWVPDQPSH2JHTN3Q/">조선일보 — 검찰, 대장동 1심 항소 포기 (2025.11.7)</a>
+    <a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=212981">로앤타임스 — "윗선 부당 지시로 항소 좌절" 검찰 내부 반발</a>
+    <a href="https://m.ytn.co.kr/news_view.php?key=202604300705020939&amp;s_mcd=0103">YTN — 대장동 항소심 절차 지연…유동규·김만배·남욱 출소 (2026.4.30)</a>
+    <a href="https://www.hani.co.kr/arti/society/society_general/1111805.html">한겨레 — 이재명 '백현동 의혹' 불구속 기소 (2023.10.12)</a>
+    <a href="https://www.hani.co.kr/arti/area/capital/1057184.html">한겨레 — 옛 식품연구원 땅 '일반분양'…백현동 용도변경 누가 결정했나</a>
+    <a href="https://www.chosun.com/economy/real_estate/2021/10/25/WDDXI6XIJRCVLFWGSUOEZR3S4A/">조선일보 — 용도변경 4단계 뛴 백현동, 정부는 2단계 상향 원했다</a>
+    <a href="https://www.seoul.co.kr/news/politics/congress/2023/03/27/20230327500200">서울신문 — 백현동 식품연 부지 용도변경 정황, 이재명 '압박문건'</a>
+    <a href="https://www.c1news.kr/news/articleView.html?idxno=63812">씨원뉴스 — 박근혜 대통령이 백현동 용도변경 추진을 지시한 증거 (2023.8)</a>
+    <a href="https://www.yna.co.kr/view/AKR20241115148900004">연합뉴스 — 법원 "이재명이 용도변경" (2024.11.15)</a>
+    <a href="https://www.chosun.com/national/court_law/2024/02/15/5JGPISOTV5G6RIRG4XWMLOOVOY/">조선일보 — 검찰, 백현동·대장동 첫 유죄 판결에 "의미 크다" (2024.2.15)</a>
+    <a href="https://www.chosun.com/national/court_law/2026/08/15/NMPQJ5KP45EZBNOHB3LG3MXUSA/">조선일보 — 1심 중단된 李 사건, 모두 재조사한다 (2026.8.15)</a>
+    <a href="https://news.kbs.co.kr/news/view.do?ncd=8637391">KBS — 검찰미래위, '백현동·성남FC·경기도 법카' 추가 조사 대상 선정 (2026.8.14)</a>
+    <a href="https://www.khan.co.kr/article/202606121710001">경향신문 — '검찰미래위' 친여권 편성 논란 (2026.6.12)</a>
+    <a href="https://www.yna.co.kr/view/AKR20261003045300004">연합뉴스 — 李대통령 사건 재조사, 감찰부장 "검사 독립성" 이견 (2026.10.3)</a>
+    <a href="https://www.hani.co.kr/arti/society/society_general/1282646.html">한겨레 — 위례 사건 '검찰 수사 위법성 단정 어렵다' (2026.10.16)</a>
+    <a href="https://www.pressian.com/pages/articles/2026102111280966642">프레시안 — '50억 클럽' 박영수 전 특검, 2심 징역 6년·벌금 2억 (2026.10.21)</a>
+    <a href="https://www.dkilbo.com/news/articleView.html?idxno=557963">대구일보 — 박영수 전 특검 2심, 변협 선거자금 2억 원만 유죄</a>
+    <a href="https://www.khan.co.kr/article/202610151740001">경향신문 — 이 대통령, 김지용 중수청장 임명안 재가 (2026.10.15)</a>
+    <a href="https://www.khan.co.kr/article/202602042227005">경향신문 — 위례 사건 1심 무죄 확정 (2026.2.4)</a>
+  </div>
+  <div class="disclaimer">
+    이 문서는 공개 언론 보도를 교차 검증해 만든 자료입니다. 특정 인물의 유·무죄는 각 재판의 확정 판결로만 확정되며, 아직 확정되지 않은 혐의에 대해서는 무죄 추정 원칙이 적용됩니다. 사실관계 정정 요청은 언제든 환영합니다. <b>시리즈: DOC 2026-001 《이재명 재판 ‘변호 라인’ × 정부 요직 인사 팩트시트》 → DOC 2026-002 (본 문서)</b> — <a href="이재명_변호라인_요직인사_팩트시트.html">선행편 열기</a>
+  </div>
+</footer>
+
+</div>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

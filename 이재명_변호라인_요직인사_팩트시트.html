@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이재명 재판 변호 라인 × 정부 요직 인사 팩트시트 — 디지털 대동법 연구소</title>
+<meta name="description" content="이재명 대통령 재판 변호와 연관된 법조인 18명과 가족 인연의 정부 요직 임명 현황을 사건별로 정리한 팩트시트. 2026-10-27 기준.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --paper:#F2F4F3;
+  --card:#FFFFFF;
+  --ink:#181D22;
+  --ink2:#4C565E;
+  --line:#DCE2E0;
+  --red:#B3271E;
+  --red-soft:#FBEFED;
+  --blue:#1E4B8F;
+  --blue-soft:#EBF0F7;
+  --amber:#8A5B00;
+  --amber-soft:#F9F1DE;
+  --gray-soft:#EEF1F0;
+  --display:'Black Han Sans',sans-serif;
+  --body:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.65;font-size:16px;
+  background-image:repeating-linear-gradient(0deg,transparent 0 31px,rgba(24,29,34,.028) 31px 32px)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+
+/* ── 마스트헤드 ─────────────────────────── */
+header.mast{padding:54px 0 30px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--ink2);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.eyebrow .tag{background:var(--ink);color:#fff;padding:2px 9px}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(30px,5.4vw,52px);line-height:1.22;margin:16px 0 10px;letter-spacing:-.5px}
+h1 em{font-style:normal;color:var(--red)}
+.sub{font-size:16.5px;color:var(--ink2);max-width:760px}
+.stamprow{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;align-items:center}
+.stamp{font-family:var(--mono);font-size:12px;border:1.6px solid var(--red);color:var(--red);padding:4px 10px;transform:rotate(-1.2deg);font-weight:600}
+.stamp.blue{border-color:var(--blue);color:var(--blue);transform:rotate(1deg)}
+
+/* ── 통계 스트립 ────────────────────────── */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:30px 0 8px}
+.stat{background:var(--card);padding:16px 16px 14px}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:34px;line-height:1;color:var(--ink)}
+.stat span{font-size:12.5px;color:var(--ink2);display:block;margin-top:6px}
+
+/* ── 섹션 공통 ─────────────────────────── */
+section{padding:44px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:22px}
+.sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.2vw,30px)}
+.sec-head .no{font-family:var(--mono);font-size:13px;color:var(--red);font-weight:600}
+.sec-head .desc{font-size:13.5px;color:var(--ink2)}
+
+/* ── 사건 카드 ─────────────────────────── */
+.case{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--ink);padding:22px 24px;margin-bottom:18px;position:relative}
+.case.hot{border-top-color:var(--red)}
+.case .c-tag{font-family:var(--mono);font-size:11.5px;color:var(--ink2);letter-spacing:.1em}
+.case h3{font-family:var(--display);font-weight:400;font-size:22px;margin:4px 0 8px}
+.case h3 .badge{font-family:var(--mono);font-size:11px;font-weight:600;vertical-align:middle;margin-left:8px;padding:2px 8px;border-radius:99px}
+.badge.prog{background:var(--red-soft);color:var(--red)}
+.badge.done{background:var(--blue-soft);color:var(--blue)}
+.badge.wait{background:var(--gray-soft);color:var(--ink2)}
+.badge.cand{background:var(--amber-soft);color:var(--amber)}
+.case p{font-size:15px;color:var(--ink);margin-bottom:8px}
+.case .detail{font-size:13.8px;color:var(--ink2);border-left:3px solid var(--line);padding-left:12px;margin:10px 0}
+.case .detail b{color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.chips a{font-size:12.5px;text-decoration:none;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:3px 10px;border-radius:99px}
+.chips a:hover{border-color:var(--red);color:var(--red)}
+.chips .lbl{font-family:var(--mono);font-size:11px;color:var(--ink2);align-self:center;margin-right:2px}
+.src{font-size:12px;color:var(--ink2);margin-top:12px}
+.src a{margin-right:10px;white-space:nowrap}
+
+/* ── 인물 카드 ─────────────────────────── */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.person{background:var(--card);border:1px solid var(--line);padding:18px 18px 16px;scroll-margin-top:20px}
+.person:target{border-color:var(--red);box-shadow:0 0 0 2px var(--red)}
+.p-top{display:flex;gap:14px;align-items:center;margin-bottom:10px}
+.avatar{flex:0 0 52px;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:19px;color:#fff;background:var(--blue)}
+.avatar.red{background:var(--red)}
+.avatar.ink{background:var(--ink)}
+.avatar.amber{background:var(--amber)}
+.p-name{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.2}
+.p-role{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:99px;margin-top:5px}
+.r-live{background:var(--blue-soft);color:var(--blue)}
+.r-congress{background:var(--gray-soft);color:var(--ink)}
+.r-former{background:var(--red-soft);color:var(--red)}
+.r-counsel{background:var(--amber-soft);color:var(--amber)}
+.p-meta{font-family:var(--mono);font-size:11px;color:var(--ink2);line-height:1.7;margin-bottom:8px}
+.p-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.p-tags span{font-size:11.5px;background:var(--red-soft);color:var(--red);padding:2px 8px;border-radius:3px}
+.p-tags span.fam{background:var(--gray-soft);color:var(--ink2)}
+.p-path{font-size:13px;background:var(--paper);border:1px dashed var(--line);padding:8px 10px;margin-bottom:9px}
+.p-path b{color:var(--blue)}
+.p-path .arr{color:var(--red);font-weight:700}
+.p-body{font-size:13.4px;color:var(--ink2);margin-bottom:9px}
+.p-body b{color:var(--ink)}
+
+/* ── 타임라인 ──────────────────────────── */
+.tl{border-left:2px solid var(--ink);margin-left:8px;padding-left:22px;display:grid;gap:14px}
+.tl .ev{position:relative}
+.tl .ev::before{content:"";position:absolute;left:-28.5px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2.5px solid var(--red)}
+.tl .ev.blue::before{border-color:var(--blue)}
+.tl time{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--red);display:block}
+.tl .ev.blue time{color:var(--blue)}
+.tl p{font-size:14px}
+
+/* ── 쟁점 / 노트 ───────────────────────── */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.duo{grid-template-columns:1fr}}
+.duo .col{background:var(--card);border:1px solid var(--line);padding:20px}
+.duo h3{font-family:var(--display);font-weight:400;font-size:18px;margin-bottom:10px}
+.duo .crit h3{color:var(--red)}
+.duo .def h3{color:var(--blue)}
+.duo ul{list-style:none}
+.duo li{font-size:13.8px;padding:8px 0 8px 18px;border-top:1px dashed var(--line);position:relative}
+.duo li::before{content:"—";position:absolute;left:0;color:var(--ink2)}
+.note{background:var(--card);border:1.6px solid var(--amber);padding:22px 24px;margin-top:18px}
+.note h3{font-family:var(--display);font-weight:400;font-size:18px;color:var(--amber);margin-bottom:10px}
+.note ol{margin-left:18px}
+.note li{font-size:13.8px;margin-bottom:9px}
+.note li b{color:var(--ink)}
+
+footer{margin-top:50px;border-top:3px solid var(--ink);padding:26px 0 60px;font-size:12.5px;color:var(--ink2)}
+footer .srcs{columns:2;column-gap:30px;margin-top:12px}
+footer .srcs a{display:block;break-inside:avoid;padding:2px 0;font-size:12px;word-break:break-all}
+@media(max-width:640px){footer .srcs{columns:1}}
+.disclaimer{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--ink);padding:16px 18px;font-size:13px;color:var(--ink2);margin:22px 0 0}
+.nav-tabs{display:flex;flex-wrap:wrap;gap:8px;position:sticky;top:0;background:var(--paper);z-index:9;padding:12px 0;border-bottom:1px solid var(--line)}
+.nav-tabs a{font-family:var(--mono);font-size:11.5px;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--card);padding:4px 10px}
+.nav-tabs a:hover{border-color:var(--red);color:var(--red)}
+
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- ═══ 마스트헤드 ═══ -->
+<header class="mast">
+  <div class="eyebrow">
+    <span class="tag">디지털 대동법 연구소 · 자료실</span>
+    <span>DOC 2026-001</span><span>공개 배포용</span>
+  </div>
+  <h1>이재명 재판 <em>‘변호 라인’</em><br>× 정부 요직 인사 팩트시트</h1>
+  <p class="sub">이재명 대통령의 형사 재판을 변호한 법조인과 그 가족 인연 <b>18명</b>의 프로필을, 배경 사건 7건별로 재정리한 자료입니다. 원본 인포그래픽(@gahn3x7)의 명단을 바탕으로 언론 보도를 교차 검증했고, 원본과 다른 부분은 <a href="#note">팩트체크 노트</a>에 별도 표기했습니다.</p>
+  <div class="stamprow">
+    <span class="stamp">기준일 2026-10-27</span>
+    <span class="stamp blue">인물 18명 · 사건 7건</span>
+    <span class="stamp blue">출처 링크 수록</span>
+  </div>
+</header>
+
+<!-- ═══ 통계 ═══ -->
+<div class="stats" role="list">
+  <div class="stat"><b>3</b><span>청와대 비서관 (민정·공직기강·법무)</span></div>
+  <div class="stat"><b>5</b><span>차관급 이상 공직 (법제처장·금감원장·국정원 기조실장·권익위원장·주UN대사)</span></div>
+  <div class="stat"><b>5</b><span>국회의원 ('대장동 변호사 5인방', 22대)</span></div>
+  <div class="stat"><b>2</b><span>총리실·공공기관 (총리실 민정실장·예금보험공사 사장)</span></div>
+  <div class="stat"><b>2</b><span>가족 인연 요직 (대통령비서실장·주휴스턴 총영사)</span></div>
+  <div class="stat"><b>1</b><span>법무부장관 지명 후 사퇴</span></div>
+</div>
+
+<nav class="nav-tabs" aria-label="바로가기">
+  <a href="#cases">사건별 정리</a>
+  <a href="#people">인물 프로필 18</a>
+  <a href="#timeline">연표</a>
+  <a href="#debate">쟁점</a>
+  <a href="#note">팩트체크 노트</a>
+  <a href="#sources">출처</a>
+  <a class="ext" href="대장동_백현동_팩트시트.html" style="border-color:var(--red);color:var(--red);font-weight:600">대장동·백현동 심층 팩트시트 →</a>
+</nav>
+
+<!-- ═══ 사건별 정리 ═══ -->
+<section id="cases">
+  <div class="sec-head">
+    <span class="no">FILE 01–07</span>
+    <h2>사건별 정리</h2>
+    <span class="desc">각 사건의 경과와, 그 사건을 맡았던(또는 연관된) 인물</span>
+  </div>
+
+  <!-- CASE 1 대장동 -->
+  <article class="case hot">
+    <span class="c-tag">CASE 01 · 특정경제범죄가중처벌법상 배임 등 · 수원지방법원</span>
+    <h3>대장동 개발사업 특혜 의혹 <span class="badge prog">이재명 재판 계류 중</span></h3>
+    <p>성남시장 시절 대장동 개발사업에서 민간업자(김만배·남욱·유동규 등)와 유착해 성남도시개발공사에 약 4,895억 원의 손해를 끼치고 특혜를 준 혐의로, 이재명 대통령은 2023.3.22 기소됐다(적용 혐의: 특경가법상 배임·이해충돌방지법 위반).</p>
+    <div class="detail">
+      <b>민간업자 일당 1심(2025.10.31)</b> — 법원이 특경가법 대신 <b>형법상 업무상 배임</b>을 적용(최대 형량 무기징역→10년 이하로 하향), 전원 실형·법정구속. 추징금은 구형 7,800억 원 중 473억 원. 이재명에게 적용된 두 혐의의 전제가 흔들린 판결로, 민주당은 "사실상 무죄"라 주장했다. <b>검찰은 2025.11.7 항소를 포기</b>했고(전례 없는 결정), 검사장 18명이 입장문을 내는 등 내부 반발과 야당의 탄핵·특검 촉구가 이어졌다. 이재명 대통령 본인의 재판은 취임 후 헌법 84조(불소추 특권) 적용 여부를 둘러싼 논란 속에 계류 중이다.
+    </div>
+    <div class="chips"><span class="lbl">연관 인물</span>
+      <a href="#p-이태형">이태형</a><a href="#p-조원철">조원철</a><a href="#p-조상호">조상호</a><a href="#p-박균택">박균택</a><a href="#p-이건태">이건태(정진상 측)</a><a href="#p-김동아">김동아(정진상 측)</a><a href="#p-이승엽">이승엽</a><a href="대장동_백현동_팩트시트.html">▸ 대장동 심층 팩트시트(NEW) →</a>
+    </div>
+    <p class="src">출처: <a href="https://www.bbc.com/korean/articles/crmx0j8ky1vo">BBC 뉴스코리아</a><a href="https://www.joongang.co.kr/article/25380765">중앙일보</a><a href="https://www.yna.co.kr/view/AKR20260503032700004">연합뉴스</a></p>
+  </article>
+
+  <!-- CASE 2 위례·백현·성남FC -->
+  <article class="case">
+    <span class="c-tag">CASE 02 · 부패방지법 위반 등 · 수원지방법원</span>
+    <h3>위례·백현동 재건축 및 성남FC 후원금 의혹 <span class="badge done">민간업자 1심 무죄 확정</span></h3>
+    <p>대장동 '판박이'로 불린 위례신도시 재건축 사건은 2026.1.28 민간업자들에 대해 <b>1심 전원 무죄</b>가 선고됐고, 검찰이 2026.2.4 항소를 포기해 무죄가 확정됐다. 이재명 대통령은 위례 관련 별도 기소 상태로 "무죄 가능성이 커졌다"는 분석이 나왔다(중앙일보·MBC). 백현지구 용도변경 의혹과 성남FC 후원금(제3자 뇌물) 혐의도 함께 기소돼 재판 절차가 이어지고 있다.</p>
+    <div class="chips"><span class="lbl">연관 인물</span>
+      <a href="#p-조원철">조원철</a><a href="#p-박균택">박균택</a><a href="#p-양부남">양부남(백현·대북송금 관여)</a><a href="대장동_백현동_팩트시트.html">▸ 백현동 심층 팩트시트(NEW) →</a>
+    </div>
+    <p class="src">출처: <a href="https://www.khan.co.kr/article/202602042227005">경향신문</a><a href="https://www.joongang.co.kr/article/25402674">중앙일보</a><a href="https://www.yna.co.kr/view/AKR20230322150500061">연합뉴스</a></p>
+  </article>
+
+  <!-- CASE 3 쌍방울 -->
+  <article class="case hot">
+    <span class="c-tag">CASE 03 · 특경가법상 제3자 뇌물수수 등 · 2024.6.12 기소</span>
+    <h3>쌍방울 불법 대북송금 사건 <span class="badge prog">1심 계속 중</span></h3>
+    <p>쌍방울그룹의 800만 달러 대북송금 과정에서 김성태 전 회장에게 이재명 대통령의 방북비 300만 달러와 스마트팜 사업비 500만 달러를 대납하게 한 혐의(제3자 뇌물 등)로 2024.6.12 기소됐다. 2026.10 현재 <b>1심 계속 중</b>이다(연합뉴스). 관련자로는 이화영 전 경기도 평화부지사(대법원 징역 7년 8개월 확정, 2025)와 김성태 전 회장(1심 공소기각 → 2026.7 항소심에서 파기, 재판 재개)이 있다.</p>
+    <div class="detail">대북송금을 조사한 국가정보원의 인사·예산을 쥔 기획조정실장에 이 사건 변호인(김희수)이 임명된 점, 국민권익위(이해충돌 방지 기관) 수장에 이화영의 변호인(정일연)이 임명된 점이 각각 이해충돌 논란이 됐다.</div>
+    <div class="chips"><span class="lbl">연관 인물</span>
+      <a href="#p-이장형">이장형</a><a href="#p-이찬진">이찬진</a><a href="#p-김희수">김희수</a><a href="#p-정일연">정일연(이화영 측)</a><a href="#p-이태형">이태형</a><a href="#p-이승엽">이승엽</a>
+    </div>
+    <p class="src">출처: <a href="https://www.khan.co.kr/article/202406122041015">경향신문</a><a href="https://www.yna.co.kr/view/AKR20261005043800004">연합뉴스</a><a href="https://www.chosun.com/national/national_general/2026/07/10/Y65II2IEPBHMXLI4UQ2L33VAJ4/">조선일보</a></p>
+  </article>
+
+  <!-- CASE 4 공직선거법 -->
+  <article class="case">
+    <span class="c-tag">CASE 04 · 공직선거법위반(허위사실공표) · 친형 강제입원 발언</span>
+    <h3>공직선거법 위반 재판 <span class="badge wait">환송심 연기 중</span></h3>
+    <p>'친형 강제입원' 관련 발언을 둘러싼 공직선거법 위반 재판은 두 갈래다. <b>① 2018년 발언 건</b> — 1심 무죄(2019.5.16) → 2심 벌금 300만 원 유죄 → 대법원 전원합의체가 무죄 취지로 파기환송(2020.7.16) → 환송심 무죄(2020.10.16)로 마무리됐다. <b>② 2021년 발언 건</b> — 1심 유죄(벌금형) → 2심 무죄 → <b>대법원이 2025.5.1(대선행보 직전) 유죄 취지로 전합 파기환송</b>하며 정국을 흔들었다. 환송심은 이재명 대통령 취임 후 헌법 84조 적용으로 첫 공판기일이 연기된 상태다.</p>
+    <div class="chips"><span class="lbl">연관 인물</span>
+      <a href="#p-이태형">이태형</a><a href="#p-전치영">전치영</a><a href="#p-나승철">나승철(상고심)</a><a href="#p-차지훈">차지훈(2020 변호인단)</a><a href="#p-이승엽">이승엽</a><a href="#p-김성식">김성식(① 직권남용 병합 건)</a>
+    </div>
+    <p class="src">출처: <a href="https://www.yna.co.kr/view/AKR20250501116700004">연합뉴스</a><a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=208654">로앤타임스</a><a href="https://www.yna.co.kr/view/AKR20201016069352061">연합뉴스(2020 환송심)</a></p>
+  </article>
+
+  <!-- CASE 5 위증교사 -->
+  <article class="case">
+    <span class="c-tag">CASE 05 · 사문서위조? — 위증교사 등 · 서울중앙지법</span>
+    <h3>위증교사 혐의 재판 <span class="badge done">1심 무죄</span></h3>
+    <p>대장동 재판 증인의 위증을 교사한 혐의(구속영장은 2023.9 기각 후 기소)에 대해 서울중앙지법 형사33부는 2024.11.25 <b>"고의성이 인정되지 않는다"며 무죄</b>를 선고했다. 이후 2심 절차가 이어졌다.</p>
+    <div class="chips"><span class="lbl">연관 인물</span>
+      <a href="#p-이태형">이태형</a><a href="#p-이승엽">이승엽</a>
+    </div>
+    <p class="src">출처: <a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=203218">로앤타임스</a></p>
+  </article>
+
+  <!-- CASE 6 버닝썬 -->
+  <article class="case">
+    <span class="c-tag">CASE 06 · 2019년 버닝썬 게이트 성범죄 사건</span>
+    <h3>버닝썬 사건 변호 <span class="badge wait">과거 변호 이력</span></h3>
+    <p>민정비서관 전치영이 변호사 시절인 2019년, 버닝썬 사건 피의자(집단 성폭행·불법촬영 관련 공범)의 <b>1심부터 3심까지의 변호인</b>이었던 사실이 임명 후 보도됐다. 공직자 검증을 담당하는 공직기강비서관(당시)의 선발에 대한 비판이 제기됐다.</p>
+    <div class="chips"><span class="lbl">연관 인물</span>
+      <a href="#p-전치영">전치영</a>
+    </div>
+    <p class="src">출처: <a href="https://www.hani.co.kr/arti/politics/bluehouse/1211388.html">한겨레</a><a href="https://www.munhwa.com/article/11523543">문화일보</a></p>
+  </article>
+
+  <!-- CASE 7 공소취소 모임 -->
+  <article class="case hot">
+    <span class="c-tag">CASE 07 · 국회 의원 모임 · 2026.2 출범</span>
+    <h3>'이재명 대통령 사건 공소취소' 의원 모임(공취모) <span class="badge cand">당 특위로 전환</span></h3>
+    <p>더불어민주당 의원 105명이 참여한 '이재명 대통령 사건 공소취소와 국정조사 추진을 위한 의원 모임'이 2026.2 출범했다(공동대표 윤건영·김승원). "검찰의 조작 기소 규명"과 대통령 사건 <b>공소취소</b>를 목표로 하며, 이후 당 특별위원회로 전환됐다. 검찰의 대장동·위례 <b>항소 포기(2025.11·2026.2)</b>와 맞물려, 야당은 "공소취소 실행을 노린 인사"라고 비판하고 있다. 원본 인포그래픽에서 '공소취소모임'으로 태그된 인물은 이 맥락의 인물들이다.</p>
+    <div class="chips"><span class="lbl">연관 인물</span>
+      <a href="#p-김승원">김승원(공동대표)</a><a href="#p-박균택">박균택</a><a href="#p-김기표">김기표</a><a href="#p-김동아">김동아</a><a href="#p-양부남">양부남</a>
+    </div>
+    <p class="src">출처: <a href="https://www.yonhapnewstv.co.kr/news/AKR20260223134016leF">연합뉴스TV</a><a href="https://www.yna.co.kr/view/AKR20260903054400004">연합뉴스</a></p>
+  </article>
+</section>
+<!-- ═══ 인물 프로필 ═══ -->
+<section id="people">
+  <div class="sec-head">
+    <span class="no">인물 18</span>
+    <h2>인물 프로필</h2>
+    <span class="desc">변호 사건 태그 · 요직 임명 경로 · 보도 기반 프로필. 이름을 누르면 사건 카드의 해당 인물로 이동합니다.</span>
+  </div>
+
+  <div class="pgrid">
+
+  <!-- ── 청와대 3 + 행정관 ── -->
+  <article class="person" id="p-이태형">
+    <div class="p-top"><div class="avatar red">이</div>
+      <div><div class="p-name">이태형</div><span class="p-role r-live">대통령실 공직기강비서관</span></div></div>
+    <div class="p-meta">1967년생(경남 산청) · 고려대 법대 · 사법 34회 / 연수원 24기 · 검사 출신 변호사(수원지검 공안부장 등)</div>
+    <div class="p-tags"><span>대장동</span><span>대북송금</span><span>위증교사</span><span>공직선거법</span><span class="fam">'변호사비 대납' 의혹 관련 변호인</span></div>
+    <div class="p-path">2025.6 <b>민정비서관</b> <span class="arr">→</span> 2026.4 <b>공직기강비서관</b>(전치영과 보직 교체)</div>
+    <p class="p-body">이재명 대통령의 사법 리스크를 "가장 오래 가까이서 관리한 최측근 법률 참모"로 보도된 인물. 대장동·대북송금·위증교사·공직선거법 사건 등을 맡았고, 정부 출범과 함께 비서관으로 발탁됐다.</p>
+    <p class="src"><a href="https://monthly.chosun.com/news/articleView.html?idxno=23107">월간조선</a><a href="https://www.chosun.com/politics/blue_house/2025/07/15/BVM5GRAVQFCAPHNJ2IAQTGV7RQ/">조선일보</a><a href="https://www.newdaily.co.kr/site/data/html/2026/10/14/2026101400338.html">뉴데일리</a></p>
+  </article>
+
+  <article class="person" id="p-전치영">
+    <div class="p-top"><div class="avatar red">전</div>
+      <div><div class="p-name">전치영</div><span class="p-role r-live">대통령실 민정비서관</span></div></div>
+    <div class="p-meta">1983년생 · 변호사</div>
+    <div class="p-tags"><span>공직선거법(이재명)</span><span class="fam">버닝썬 사건 피의자 변호(2019, 1~3심)</span></div>
+    <div class="p-path">2025.8 <b>공직기강비서관</b> <span class="arr">→</span> 2026.4 <b>민정비서관</b>(이태형과 보직 교체)</div>
+    <p class="p-body">이재명 대통령의 공직선거법 위반 사건을 변호했고, 버닝썬 사건 관련 가해자(피의자) 변호 전력이 보도돼 "공직 검증 기관의 검증 담당이 부적절하다"는 비판과 승진 논란이 일었다. 부친 관련 '낙하산' 의혹 보도도 있었다.</p>
+    <p class="src"><a href="https://www.hani.co.kr/arti/politics/bluehouse/1211388.html">한겨레</a><a href="https://www.munhwa.com/article/11523543">문화일보</a><a href="https://www.pressian.com/pages/articles/2025081419122034563">프레시안</a></p>
+  </article>
+
+  <article class="person" id="p-이장형">
+    <div class="p-top"><div class="avatar red">이</div>
+      <div><div class="p-name">이장형</div><span class="p-role r-live">대통령실 법무비서관</span></div></div>
+    <div class="p-meta">1975년생(경북 경주) · 고려대 법대 · 사법 45회 / 연수원 35기 · 부장판사 출신 변호사(인천지법·서울중앙지법·의정부지법·서울북부지법)</div>
+    <div class="p-tags"><span>쌍방울 대북송금(이재명 측)</span></div>
+    <div class="p-path">2025.6 <b>법무비서관</b>(신설 보직)</div>
+    <p class="p-body">쌍방울 대북송금 사건에서 이재명 측 변호인으로 출석(2024.8 첫 공판준비기일, 김종보·이찬진과 함께)한 인물. 2024.12 수원지법이 그가 낸 법관 기피신청을 받아들이기도 했다. 검찰 보고를 받는 법무 라인을 맡는다.</p>
+    <p class="src"><a href="https://shindonga.donga.com/politics/article/all/13/5674090/1">신동아</a><a href="https://www.news1.kr/local/gyeonggi/5523134">뉴스1</a><a href="https://www.ohmynews.com/NWS_Web/Series/series_premium_pg.aspx?CNTN_CD=A0003139007">오마이뉴스</a></p>
+  </article>
+
+  <article class="person" id="p-조상호">
+    <div class="p-top"><div class="avatar red">조</div>
+      <div><div class="p-name">조상호</div><span class="p-role r-live">법무부장관 정책보좌관</span></div></div>
+    <div class="p-meta">1976년생 · 사법 48회 / 연수원 38기 · 법률사무소 온 대표변호사 · 충북대 법전원 겸임교수</div>
+    <div class="p-tags"><span>대장동(이재명·정진상 변호)</span></div>
+    <div class="p-path">2025.6 <b>민정수석실 사법제도비서관실 선임행정관</b> <span class="arr">→</span> 2025.7 <b>법무부장관 정책보좌관</b></div>
+    <p class="p-body">이재명·정진상의 대장동 재판을 변호한 변호사. 대장동 1심 항소 포기(2025.11)를 둘러싼 논란에서 "설령 수사지휘 했다쳐도 뭐가 문제냐"는 취지의 발언으로 이해충돌 논란이 일었다. <b>※ 원본 인포그래픽의 '전 법무부장관' 표기는 부정확 — 장관에 임명된 적 없음(→팩트체크 노트).</b></p>
+    <p class="src"><a href="https://www.chosun.com/national/court_law/2025/07/22/OKL6SYJ2YJH3NAHFZPMIRLSXTE/">조선일보</a><a href="https://www.joongang.co.kr/article/25381564">중앙일보</a><a href="https://www.hankookilbo.com/news/article/A2025072217350000258">한국일보</a></p>
+  </article>
+
+  <!-- ── 차관급 이상 ── -->
+  <article class="person" id="p-조원철">
+    <div class="p-top"><div class="avatar blue">조</div>
+      <div><div class="p-name">조원철</div><span class="p-role r-live">법제처장(차관급)</span></div></div>
+    <div class="p-meta">63세 · 사법연수원 18기(이재명과 동기) · 판사 26년 후 2015년 변호사 개업</div>
+    <div class="p-tags"><span>대장동</span><span>위례동</span><span>백현동</span><span>성남FC</span></div>
+    <div class="p-path">2025.7.13 <b>법제처장</b> 지명·임명</div>
+    <p class="p-body">2023년부터 이재명의 대장동·위례·백현·성남FC 재판 변호를 맡았다. 정부의 법령 심사·해석을 관장하는 법제처 수장이 됐다. 2025.10.24 국정감사에서 이 대통령의 "5개 재판 12개 혐의가 모두 무죄라고 생각한다"고 말해 사퇴 압박을 받았고, 11.6 법사위에서 사과했다.</p>
+    <p class="src"><a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=209680">로앤타임스</a><a href="https://www.yna.co.kr/view/AKR20250713034800004">연합뉴스</a><a href="https://www.chosun.com/politics/assembly/2025/10/24/JBLNVWFFQRAONKXGNDLUKP2FQE/">조선일보</a></p>
+  </article>
+
+  <article class="person" id="p-이찬진">
+    <div class="p-top"><div class="avatar blue">이</div>
+      <div><div class="p-name">이찬진</div><span class="p-role r-live">금융감독원장(제16대)</span></div></div>
+    <div class="p-meta">1964년생(서울) · 홍익대사대부고·서울대 법대 · 사법 28회 / 연수원 18기(이재명과 동기) · 민변 부회장 · 노동·사회 분야 변호사</div>
+    <div class="p-tags"><span>쌍방울 대북송금(이재명 측)</span></div>
+    <div class="p-path">2025.8.13 <b>금융감독원장</b> 내정·임명(금융위 제청)</div>
+    <p class="p-body">이재명과 사법시험·연수원 동기로, 쌍방울 대북송금 사건 변호에 참여했다. 금융 분야 경력이 뚜렷하지 않다는 전문성 논란과 함께, <b>대통령 개인에게 주택담보 5억 원을 빌려준</b> 금전 대여 관계가 재산공개 과정에서 보도됐다.</p>
+    <p class="src"><a href="https://www.yna.co.kr/view/AKR20250813150200004">연합뉴스</a><a href="https://www.joongang.co.kr/article/25358952">중앙일보</a><a href="https://www.investchosun.com/site/data/html_dir/2025/09/01/2025090180175.html">이베스트조선</a></p>
+  </article>
+
+  <article class="person" id="p-김희수">
+    <div class="p-top"><div class="avatar blue">김</div>
+      <div><div class="p-name">김희수</div><span class="p-role r-live">국가정보원 기획조정실장(제16대)</span></div></div>
+    <div class="p-meta">65세(전북 순창) · 전북대 법대 · 사법 29회 / 연수원 19기 · 검사 출신 변호사(1990 수원지검 임관)</div>
+    <div class="p-tags"><span>쌍방울 대북송금 — 이재명 제3자 뇌물 재판 변호</span></div>
+    <div class="p-path">2025.6.29 <b>국정원 기획조정실장</b> 임명(원내 인사·조직·예산 관장)</div>
+    <p class="p-body">이재명의 '쌍방울 대북송금' 관련 제3자 뇌물죄 재판을 변호했던 인물이, 그 사건을 조사한 국가정보원의 요직에 앉으면서 "대북송금 조사 기관에 대북송금 변호인"이라는 이해충돌 지적이 나왔다.</p>
+    <p class="src"><a href="https://www.yna.co.kr/view/AKR20250629038500004">연합뉴스</a><a href="https://www.chosun.com/politics/politics_general/2025/06/29/VVULYEX3KZHVJGO2SCJMZLEX7U/">조선일보</a><a href="https://www.imaeil.com/page/view/2025070113545397629">매일일보</a></p>
+  </article>
+
+  <article class="person" id="p-정일연">
+    <div class="p-top"><div class="avatar blue">정</div>
+      <div><div class="p-name">정일연</div><span class="p-role r-live">국민권익위원회 위원장(장관급)</span></div></div>
+    <div class="p-meta">사법연수원 20기 · 서울중앙지법 부장판사·수원지법 안산지원장 · 법무법인 베이시스 변호사</div>
+    <div class="p-tags"><span>이화영 변호(쌍방울 대북송금 사건)</span></div>
+    <div class="p-path">2026.3.2 <b>국민권익위원장</b> 임명</div>
+    <p class="p-body">쌍방울 대북송금 사건에서 유죄(대법원 징역 7년 8개월 확정)를 받은 이화영 전 경기도 부지사의 변호인이었다. 이해충돌 방지를 관장하는 기관의 수장에 임명되자 국민의힘은 "상식의 선을 넘은 보은 인사"라고 비판했다.</p>
+    <p class="src"><a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=217073">로앤타임스</a><a href="https://www.chosun.com/opinion/editorial/2026/03/03/QMLEHW5AOFETNERQOY2J745OKA/">조선일보 사설</a><a href="https://view.asiae.co.kr/article/2026030311153685720">아시아경제</a></p>
+  </article>
+
+  <article class="person" id="p-차지훈">
+    <div class="p-top"><div class="avatar blue">차</div>
+      <div><div class="p-name">차지훈</div><span class="p-role r-live">주유엔 대한민국 대사</span></div></div>
+    <div class="p-meta">사법연수원 18기(이재명과 동기) · 2009~2017 성남시 고문 변호사</div>
+    <div class="p-tags"><span>공직선거법위반(2020 변호인단)</span></div>
+    <div class="p-path">2025.9 <b>주유엔 대사</b> 내정·임명(외교 경력 없는 비외교관 — 1990년 현홍주 이후 35년 만)</div>
+    <p class="p-body">2020년 이재명 경기지사의 공직선거법 위반 사건 변호인단에 합류해 대법원 무죄 판결을 이끈 인물. 외교 경력이 없는데 다자외교 최전선인 유엔 대사에 임명되자 "국익 훼손·보은 인사" 비판이 나왔다. 2026년에는 딸의 관저 거주 관련 논란도 보도됐다.</p>
+    <p class="src"><a href="https://www.chosun.com/politics/blue_house/2025/09/12/J5OBSAW725DMDITK4JWGERW6TY/">조선일보</a><a href="https://www.joongang.co.kr/article/25366355">중앙일보</a><a href="https://www.khan.co.kr/article/202509141757001">경향신문</a></p>
+  </article>
+
+  <!-- ── 총리실 · 공공기관 ── -->
+  <article class="person" id="p-나승철">
+    <div class="p-top"><div class="avatar blue">나</div>
+      <div><div class="p-name">나승철</div><span class="p-role r-live">국무총리비서실 민정실장</span></div></div>
+    <div class="p-meta">49세 · 고려대 법대 · 사법연수원 35기 · 변호사 · 전 서울지방변호사회장(2013~2015)</div>
+    <div class="p-tags"><span>공직선거법위반 상고심(이재명)</span><span class="fam">김혜경 여사 '혜경궁 김씨' 사건 변호</span></div>
+    <div class="p-path">2026.4.30 지명 <span class="arr">→</span> 2026.5.4 <b>국무총리비서실 민정실장</b> 취임</div>
+    <p class="p-body">2018년 지선 때 이재명 캠프 법률지원단장을 맡았고, 경기도·경기주택도시공사 고문변호사를 지냈다. 이재명의 공직선거법 위반 사건 상고심 변호인이자 김혜경 여사 사건 변호인으로, 총리를 보좌하는 민정 업무의 수장이 됐다.</p>
+    <p class="src"><a href="https://www.chosun.com/politics/goverment/2026/05/03/XTTTYIDOHREGVFTBHUI4DMKGXA/">조선일보</a><a href="https://www.yonhapnewstv.co.kr/news/AKR20260430195200zTY">연합뉴스TV</a><a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=220343">로앤타임스</a></p>
+  </article>
+
+  <article class="person" id="p-김성식">
+    <div class="p-top"><div class="avatar blue">김</div>
+      <div><div class="p-name">김성식</div><span class="p-role r-live">예금보험공사 사장</span></div></div>
+    <div class="p-meta">60세 · 서울대 법대(1988) · 사법 28회 / 연수원 18기(이재명 사법 동기) · 판사 후 1999년 변호사 · 공정거래 전문(법무법인 원)</div>
+    <div class="p-tags"><span>경기지사 시절 직권남용 사건 변호인단</span></div>
+    <div class="p-path">2025.12.30 <b>예금보험공사 사장</b> 임명 제청(금융위)</div>
+    <p class="p-body">2020년 이재명의 직권남용(친형 강제입원) 사건 상고심에서 <b>대법원 무죄 취지 파기환송</b>을 이끈 변호인으로 보도됐다(이후 환송심 무죄로 마무리). 연봉 약 3억 원의 공공기관 수장 자리에 오르며 '요직 인사' 논란 대상이 됐다.</p>
+    <p class="src"><a href="https://news.einfomax.co.kr/news/articleView.html?idxno=4391246">연합인포맥스</a><a href="https://www.chosun.com/economy/economy_general/2025/12/30/Y5WNAZXIW5FIHALWIO5ZMEXSDI/">조선일보</a><a href="https://www.thepublic.kr/news/articleView.html?idxno=286565">더퍼블릭</a></p>
+  </article>
+
+  <!-- ── 국회의원 5 ── -->
+  <article class="person" id="p-박균택">
+    <div class="p-top"><div class="avatar ink">박</div>
+      <div><div class="p-name">박균택</div><span class="p-role r-congress">국회의원(광주 광산갑, 법사위)</span></div></div>
+    <div class="p-meta">1966년생(광주) · 서울대 법대 · 사법연수원 21기 · 검사 출신(법무부 검찰국장·대검 형사부장·광주고검장)</div>
+    <div class="p-tags"><span>대장동·위례·성남FC(이재명 변호)</span></div>
+    <div class="p-path">2024.4 <b>22대 국회의원</b> 당선 <span class="arr">→</span> 2025.6 국정기획위 정치행정분과 위원 <span class="arr">→</span> 2026.10 <b>법무부장관 후보 검토</b>(보도)</div>
+    <p class="p-body">2023.9 이재명의 구속영장 기각을 이끈 변호인단의 주력으로, '이재명의 변호사'로 불렸다. 2024년 총선에서 '대장동 변호사 5인방'으로 묶여 당선됐다. 법무부장관 공석(2026.8~) 상황에서 후보로 유력 검토 중이라는 보도가 나오자 국민의힘은 "죄 지우기 인선"이라고 비판했다.</p>
+    <p class="src"><a href="https://www.khan.co.kr/article/202610252201005">경향신문</a><a href="https://www.hankyung.com/article/2024041024861">한국경제</a><a href="https://www.chosun.com/politics/election2024/2024/04/11/BU2G7KJZRFAK7DI7UWLMZF2MIQ/">조선일보</a></p>
+  </article>
+
+  <article class="person" id="p-김기표">
+    <div class="p-top"><div class="avatar ink">김</div>
+      <div><div class="p-name">김기표</div><span class="p-role r-congress">국회의원(경기 부천시을, 법사위)</span></div></div>
+    <div class="p-meta">1972년생(전남 보성, 부천 학창) · 서울대 법대 · 검사 출신(대검 검찰연구관·서울중앙지검 특수부)</div>
+    <div class="p-tags"><span>김용(김혜경 측근) 대장동 사건 1심 변호</span></div>
+    <div class="p-path">2021.3 <b>청와대 반부패비서관</b>(문재인 정부) <span class="arr">→</span> 2024.4 <b>22대 국회의원</b> 당선 · 법사위</div>
+    <p class="p-body">이재명의 최측근 김용 전 민주연구원 부원장의 1심 변호인이었던 인물. 2026년 법무부장관 후보군으로도 거론됐다. "검찰의 일방적 주장으로 기소됐다"며 김용 사건 대법원 판결을 비판하는 활동도 했다.</p>
+    <p class="src"><a href="https://ko.wikipedia.org/wiki/%EA%B9%80%EA%B8%B0%ED%91%9C_(1972%EB%85%84)">위키백과</a><a href="https://www.khan.co.kr/article/202604061543001">경향신문</a><a href="https://www.imaeil.com/page/view/2026091919490034877">매일일보</a></p>
+  </article>
+
+  <article class="person" id="p-김동아">
+    <div class="p-top"><div class="avatar ink">김</div>
+      <div><div class="p-name">김동아</div><span class="p-role r-congress">국회의원(서울 서대문갑, 법사위)</span></div></div>
+    <div class="p-meta">사법 53회 / 연수원 43기 · 법무법인 태평양 → 법률사무소 온길 대표변호사 · 민변</div>
+    <div class="p-tags"><span>정진상 사건 변호(이건태와 함께)</span></div>
+    <div class="p-path">2024.4 <b>22대 국회의원</b> 당선(현역 불출마 지역구) · 법사위 소속</div>
+    <p class="p-body">이재명의 최측근 정진상 전 정무조정실장의 사건(대장동 관련)을 이건태와 함께 변호했던 변호사. 2026년 법무부장관 후보군으로 거론됐다.</p>
+    <p class="src"><a href="https://ko.wikipedia.org/wiki/%EA%B9%80%EB%8F%99%EC%95%84">위키백과</a><a href="https://www.newsis.com/view/NISX20240410_0002694936">뉴시스</a><a href="https://www.imaeil.com/page/view/2026091919490034877">매일일보</a></p>
+  </article>
+
+  <article class="person" id="p-이건태">
+    <div class="p-top"><div class="avatar ink">이</div>
+      <div><div class="p-name">이건태</div><span class="p-role r-congress">국회의원(더불어민주당)</span></div></div>
+    <div class="p-meta">1966.12.21(전남 영암) · 고려대 법대 · 사법 29회 / 연수원 19기 · 검사 출신 변호사 · 저서 '대장동의 진실'</div>
+    <div class="p-tags"><span>정진상 뇌물수수 사건(대장동 관련) 변호</span></div>
+    <div class="p-path">2024.4 <b>22대 국회의원</b> 당선 <span class="arr">→</span> 2026 <b>법무부장관 후보군 거론</b>·민주당 최고위원 출마</div>
+    <p class="p-body">정진상 전 실장의 변호인으로 보석을 이끌고 유동규에 대한 증인신문을 주도하는 등 대장동 사건 변호에서 활약했다. 재판중지법 등 사법 리스크 관련 입법에 앞장섰으며, 2026년 김승원 후보자 낙마 이후 법무부장관 후보군으로 반복 거론됐다.</p>
+    <p class="src"><a href="https://ko.wikipedia.org/wiki/%EC%9D%B4%EA%B1%B4%ED%83%9C">위키백과</a><a href="https://www.joongang.co.kr/article/25161695">중앙일보</a><a href="https://www.newdaily.co.kr/site/data/html/2026/08/27/2026082700216.html">뉴데일리</a></p>
+  </article>
+
+  <article class="person" id="p-양부남">
+    <div class="p-top"><div class="avatar ink">양</div>
+      <div><div class="p-name">양부남</div><span class="p-role r-congress">국회의원(광주 서구을)</span></div></div>
+    <div class="p-meta">1961년생(전남 담양) · 담양공고·전남대 법대 · 검사 30년(대검 형사부장, 광주지검장·의정부지검 검사장, 부산고검장 — 2020 퇴임)</div>
+    <div class="p-tags"><span>이재명 대선 법률지원단장(2021)</span><span>민주당 법률위원회 공동위원장(2022)</span></div>
+    <div class="p-path">2024.4 <b>22대 국회의원</b> 당선 <span class="arr">→</span> 2026.10 <b>법무부장관 후보 유력 검토</b>(보도)</div>
+    <p class="p-body">직접 변호인이라기보다 이재명 진영의 사법 리스크 대응을 당 차원에서 총괄한 '호위무사'로 묶인 인물(매일일보: "민주당 법률위원장으로 사법 대응 관여"). 2026.10.25 기준 박균택 의원과 함께 차기 법무부장관 후보로 유력 검토 중이라는 보도가 나왔다. 지존파 사건·대구 지하철 방화 사건 수사 등 검찰 시절 경력으로도 알려져 있다.</p>
+    <p class="src"><a href="https://www.khan.co.kr/article/202610252201005">경향신문</a><a href="https://www.imaeil.com/page/view/2026091919490034877">매일일보</a><a href="https://ko.wikipedia.org/wiki/%EC%96%91%EB%B6%80%EB%82%A8">위키백과</a></p>
+  </article>
+
+  <!-- ── 공소취소 모임 · 가족 인연 ── -->
+  <article class="person" id="p-김승원">
+    <div class="p-top"><div class="avatar amber">김</div>
+      <div><div class="p-name">김승원</div><span class="p-role r-former">법무부장관 후보 지명 후 자진 사퇴</span></div></div>
+    <div class="p-meta">57세 · 판사 출신 · 더불어민주당 국회의원 · 당시 법사위 민주당 간사</div>
+    <div class="p-tags"><span class="fam">'공취모'(공소취소 의원 모임) 공동대표</span><span class="fam">조작기소특검법 공동 발의</span></div>
+    <div class="p-path">2026.2 공취모 공동대표 <span class="arr">→</span> 2026.8.30 <b>법무부장관 지명</b> <span class="arr">→</span> 2026.9.19 <b>자진 사퇴</b>(지명 20일 만)</div>
+    <p class="p-body">이재명 대통령 사건의 공소취소를 주장해온 모임의 공동대표(윤건영과 함께)였다가 법무부장관에 지명됐다. 청문회 과정에서 2008년 음주운전 벌금형 전력과 '신약 로비 의혹'(본인은 민원 전달이라 주장)이 불거졌고, 대통령 기자회견 다음날 "국민 눈높이에 미치지 못했다"며 사퇴했다. ※변호인은 아니다.</p>
+    <p class="src"><a href="https://www.joongang.co.kr/article/25457351">중앙일보</a><a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=226640">로앤타임스</a><a href="https://www.yna.co.kr/view/AKR20260903054400004">연합뉴스</a></p>
+  </article>
+
+  <article class="person" id="p-이승엽">
+    <div class="p-top"><div class="avatar amber">이</div>
+      <div><div class="p-name">이승엽</div><span class="p-role r-counsel">변호사 (본인 요직 없음 — 가족 인연의 중심)</span></div></div>
+    <div class="p-meta">1972년생 · 사법 37회 / 연수원 27기 · 판사 출신 변호사(2010 헌법재판소 파견)</div>
+    <div class="p-tags"><span>공직선거법</span><span>대장동</span><span>대북송금</span><span>위증교사</span></div>
+    <div class="p-path"><b>누나 이경은 = 임광현 대통령비서실장의 배우자·주휴스턴 총영사</b></div>
+    <p class="p-body">임광현 대통령비서실장의 처남(아내 이경은의 동생)으로, 이재명 대통령의 공직선거법·대장동·대북송금·위증교사 사건 등을 변호했다. 2025~2026년 대통령 몫 헌법재판관 후보로 거론된 바 있고(일부 보도는 검토 후 고사로 보도), 가족 인연 요직 논란의 중심에 섰다.</p>
+    <p class="src"><a href="https://www.newdaily.co.kr/site/data/html/2026/10/14/2026101400338.html">뉴데일리</a><a href="https://www.joongang.co.kr/article/25342059">중앙일보</a><a href="https://namu.wiki/w/%EC%9D%B4%EC%8A%B9%EC%97%BD(1972)">나무위키</a></p>
+  </article>
+
+  <article class="person" id="p-임광현">
+    <div class="p-top"><div class="avatar amber">임</div>
+      <div><div class="p-name">임광현</div><span class="p-role r-live">대통령비서실장(제2기)</span></div></div>
+    <div class="p-meta">1969년생(충남 홍성) · 연세대 경제학과 · 행정고시 38회 · 청와대 행정관·국세청 차장 · 제22대 국회의원(비례, 민주당 영입)</div>
+    <div class="p-tags"><span class="fam">처남 = 이승엽 변호사(이재명 변호인)</span><span class="fam">배우자 = 이경은 주휴스턴 총영사</span></div>
+    <div class="p-path">2025.7.23 <b>국세청장</b> <span class="arr">→</span> 2026.10.14 <b>대통령비서실장</b>(강훈식 후임)</div>
+    <p class="p-body">이재명의 변호인 이승엽 변호사의 매형이자 '대장동 패밀리' 논란의 결정판으로 평가받는 발탁. 국민의힘 안철수 의원은 "대장동 패밀리가 사법·외교·국세 영역에 이어 청와대까지 접수했다"고 맹폭했고, 국민의힘은 "보은 인사의 결정판"이라는 논평을 냈다.</p>
+    <p class="src"><a href="https://www.khan.co.kr/article/202610141335001">경향신문</a><a href="https://www.donga.com/news/Politics/article/all/20261014/134841204/1">동아일보</a><a href="https://www.news1.kr/politics/president/6319737">뉴스1</a></p>
+  </article>
+
+  <article class="person" id="p-이경은">
+    <div class="p-top"><div class="avatar amber">이</div>
+      <div><div class="p-name">이경은</div><span class="p-role r-live">주휴스턴 총영사(휴스턴 첫 여성 총영사)</span></div></div>
+    <div class="p-meta">1968년생 · 이화여고·서울대(불어불문) · 행정고시 38회 · 공보처·보건복지부·노무현 정부 청와대 · 시민단체 '국경너머인권' 대표</div>
+    <div class="p-tags"><span class="fam">동생 = 이승엽 변호사</span><span class="fam">배우자 = 임광현 대통령비서실장</span></div>
+    <div class="p-path">2026.3 <b>주휴스턴 총영사</b> 임명(3.23 부임)</div>
+    <p class="p-body">외교 경력이 없는 비외교관인데 1급 지역(미국) 총영사로 발탁돼 논란이 됐다. 남편의 비서실장 발탁(2026.10.14) 이후 "대장동 변호인의 누나 + 비서실장 부인"이라는 삼중 인연으로 '가족 인사' 논란이 커졌다.</p>
+    <p class="src"><a href="https://v.daum.net/v/20260407004926715">뉴시스</a><a href="http://weekly.chosun.com/news/articleView.html?idxno=56189">주간조선</a><a href="https://www.newdaily.co.kr/site/data/html/2026/10/14/2026101400338.html">뉴데일리</a></p>
+  </article>
+
+  </div>
+</section>
+
+<!-- ═══ 연표 ═══ -->
+<section id="timeline">
+  <div class="sec-head"><span class="no">TIMELINE</span><h2>연표 — 기소부터 요직 배치까지</h2></div>
+  <div class="tl">
+    <div class="ev"><time>2023.3.22</time><p>검찰, 이재명을 대장동(배임·뇌물 등 5개 혐의)·성남FC 의혹으로 기소</p></div>
+    <div class="ev"><time>2023.9</time><p>이재명 구속영장 기각(박균택 등 변호인단 주력) → 위증교사 혐의 기소</p></div>
+    <div class="ev"><time>2024.4.10</time><p>'대장동 변호사 5인방'(박균택·양부남·김기표·이건태·김동아) 22대 총선 전원 당선</p></div>
+    <div class="ev"><time>2024.6.12</time><p>쌍방울 대북송금 관련 제3자 뇌물 혐의 추가 기소(이장형·이찬진 등 변호인단 참여)</p></div>
+    <div class="ev"><time>2024.11.25</time><p>위증교사 1심 무죄(서울중앙지법)</p></div>
+    <div class="ev blue"><time>2025.5.1</time><p>대법원 전원합의체, 공직선거법 위반 사건 유죄 취지 파기환송</p></div>
+    <div class="ev blue"><time>2025.6~8</time><p>이재명 정부 출범 — 이태형(민정비서관)·이장형(법무비서관)·전치영(공직기강비서관)·김희수(국정원 기조실장)·조원철(법제처장)·조상호(법무부 정책보좌관)·임광현(국세청장)·이찬진(금감원장)·차지훈(주유엔대사) 임명</p></div>
+    <div class="ev"><time>2025.10.31</time><p>대장동 민간업자 일당 1심 — 업무상 배임 적용·전원 실형, 추징금 473억 → 11.7 검찰 항소 포기(검찰 내부 반발·야당 탄핵 공세)</p></div>
+    <div class="ev"><time>2025.12.30</time><p>김성식 예금보험공사 사장 제청</p></div>
+    <div class="ev"><time>2026.2~3</time><p>민주당 '공소취소 모임' 출범(105명) → 위례 사건 1심 무죄 확정(검찰 항소 포기) · 정일연 국민권익위원장·이경은 휴스턴 총영사 임명</p></div>
+    <div class="ev"><time>2026.4~5</time><p>이태형↔전치영 비서관 보직 교체 · 나승철 국무총리비서실 민정실장 취임</p></div>
+    <div class="ev"><time>2026.8~9</time><p>정성호 법무부장관 사퇴(8.18) → 김승원 지명(8.30) → 논란 끝 자진 사퇴(9.19), 법무부장관 공석 지속</p></div>
+    <div class="ev"><time>2026.10</time><p>임광현 대통령비서실장 발탁(10.14) — '대장동 패밀리' 논란 · 법무부장관 후보로 박균택·양부남 검토 보도(10.25) · 공소청 출범(10.2)</p></div>
+  </div>
+</section>
+
+<!-- ═══ 쟁점 ═══ -->
+<section id="debate">
+  <div class="sec-head"><span class="no">ISSUES</span><h2>쟁점 — 두 갈래 평가</h2><span class="desc">본 자료는 사실관계만 정리하며, 아래 평가는 각 진영의 주장입니다.</span></div>
+  <div class="duo">
+    <div class="col crit">
+      <h3>비판 — “보은 인사 · 이해충돌”</h3>
+      <ul>
+        <li>대통령 사건의 변호인이 그 사건을 다루는 기관(법제처·금감원·국정원·권익위·법무부 라인)의 수장으로 임명됐다 — <b>이해충돌</b> 구조라는 지적.</li>
+        <li>대북송금을 조사한 국정원에 '대북송금 변호인', 이해충돌 방지 기관인 권익위에 '이화영 변호인'이 앉혔다.</li>
+        <li>금감원장(금융 경력 부재)·주유엔대사(외교 경력 부재) 등 <b>전문성 논란</b>.</li>
+        <li>조선일보: 이 대통령 변호인 7명이 "청문회 없는 요직"에 앉혔다.</li>
+        <li>변호인의 가족까지 요직(비서실장·총영사) — 안철수: "대장동 패밀리가 청와대까지 접수".</li>
+        <li>대장동·위례 항소 포기와 공소취소 모임 — "공소 취소용 장관 인선" 비판.</li>
+      </ul>
+    </div>
+    <div class="col def">
+      <h3>옹호 · 반론 — “검증 절차 · 관행”</h3>
+      <ul>
+        <li>대통령실: 해당 인사들은 청와대 인사검증을 거쳤다며 구체 <b>검증 항목은 공개하지 않았다</b>(프레시안 보도).</li>
+        <li>검찰 출신 인사 중심의 법조 인사 풀에서 법조인 기용 자체는 행정의 관행이라는 반론.</li>
+        <li>김성식(공정거래 전문가) 등 전문성으로 공천된 사례도 있다는 해석.</li>
+        <li>"변호사 출신이라고 금융감독을 못 맡을 이유는 없다"는 언론 논평(스포츠경향 계열 신문 기자수첩)도 존재.</li>
+        <li>김승원 후보자: "공소취소를 지휘할 생각이 없다" — 임명 후 공석이 2개월 가까이 이어진 점은 여론 검증이 작동했다는 해석의 근거.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 팩트체크 노트 ═══ -->
+<section id="note">
+  <div class="note">
+    <h3>⚑ 팩트체크 노트 — 원본 인포그래픽과 다른 점</h3>
+    <ol>
+      <li><b>조상호 '전 법무부장관' → 정정.</b> 조상호는 법무부장관에 임명된 적이 없다. 초대 장관은 정성호(2025.7~2026.8 사퇴), 이후 김승원 후보자가 지명됐다가 사퇴하며 현재(2026.10) 공석. 조상호는 민정수석실 선임행정관을 거쳐 <b>법무부장관 정책보좌관</b>이다.</li>
+      <li><b>양부남 '법무부장관후보설' → 2026.10.25 기준 '검토 중'.</b> 지명은 아니며 박균택 의원과 함께 유력 후보로 보도됐다.</li>
+      <li><b>이건태 '법무부장관후보' → '후보군 거론' 수준.</b> 실제 지명자는 아니며, 현재 국회의원으로 재직 중이다(2026년 민주당 최고위원 보궐선거에도 출마).</li>
+      <li><b>이승엽의 '요직' 란에는 가족 표기.</b> 이승엽 본인은 요직에 임명된 적이 없고, 매형 임광현(비서실장)·누나 이경은(총영사)이 요직에 오른 가족 인연이다. 본인은 헌법재판관 후보로 <b>거론</b>된 바 있다(중앙일보 보도: 후보군 압축 · 뉴데일리 보도: 검토 후 고사).</li>
+      <li><b>'공소취소모임' 태그.</b> 김승원은 2026년 의원 모임('공취모')의 공동대표가 맞다. 박균택·김기표·김동아·양부남은 같은 해 총선에서 '대장동 변호사 5인방'으로 묶이고 법사위 소속 의원이라는 점이 원본 자료의 태그 근거로 보이나, 이들 전원의 공취모 참여 여부는 본 자료에서 개별 확인하지 못했다.</li>
+      <li><b>김희수 '국정원기조실장'.</b> 정식 직함은 '국가정보원 기획조정실장'이다.</li>
+    </ol>
+  </div>
+  <div class="disclaimer">
+    <b>자료 성격 안내.</b> 이 팩트시트는 공개 언론 보도(조선일보·중앙일보·경향신문·연합뉴스·한겨레·BBC 코리아 등)를 교차 검증해 작성한 사실 정리 문서입니다. '이재명 재판 변호 → 요직 임명'의 연결은 확인된 사실이지만, 이를 '보은 인사'로 평가하는 것은 해석이 개입되는 영역으로 여야의 주장이 갈립니다(→쟁점 섹션). 재판 관련 기술은 2026-10-27 기준이며 이후 판결·인사로 변동될 수 있습니다. 각 문단의 출처 링크로 원문을 직접 확인하세요.
+  </div>
+</section>
+
+<!-- ═══ 출처 ═══ -->
+<footer id="sources">
+  <div style="font-family:var(--display);font-size:18px">주요 출처</div>
+  <div class="srcs">
+    <a href="https://www.newdaily.co.kr/site/data/html/2026/10/14/2026101400338.html">뉴데일리 · '이재명 변호인' 9명에 '처남·매형'까지 요직 (2026.10.14)</a>
+    <a href="https://www.bbc.com/korean/articles/crmx0j8ky1vo">BBC 뉴스코리아 · 검찰·정치권을 뒤집어놓은 '대장동 항소 포기' 논란이란? (2025.11.11)</a>
+    <a href="https://www.imaeil.com/page/view/2026091919490034877">매일일보 · 김승원 다음은…'대장동 변호인' 후보군 분석 (2026.9.19)</a>
+    <a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=209680">로앤타임스 · 조원철 신임 법제처장 (2025.7)</a>
+    <a href="https://www.yna.co.kr/view/AKR20250629038500004">연합뉴스 · 김희수 국정원 기조실장 프로필 (2025.6.29)</a>
+    <a href="https://www.yna.co.kr/view/AKR20250813150200004">연합뉴스 · 이찬진 금감원장 프로필 (2025.8.13)</a>
+    <a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=217073">로앤타임스 · 정일연 국민권익위원장 임명 (2026.3)</a>
+    <a href="https://www.chosun.com/politics/blue_house/2025/09/12/J5OBSAW725DMDITK4JWGERW6TY/">조선일보 · 주유엔 대사에 '李 선거법 변호인' 차지훈 (2025.9.12)</a>
+    <a href="https://www.chosun.com/politics/goverment/2026/05/03/XTTTYIDOHREGVFTBHUI4DMKGXA/">조선일보 · 총리 민정실장에 나승철 변호사 (2026.5.3)</a>
+    <a href="https://www.chosun.com/economy/economy_general/2025/12/30/Y5WNAZXIW5FIHALWIO5ZMEXSDI/">조선일보 · 연봉 3억 예보 사장에 '李 변호인' (2025.12.30)</a>
+    <a href="https://www.khan.co.kr/article/202610252201005">경향신문 · 새 법무장관 후보에 박균택·양부남 의원 유력 (2026.10.25)</a>
+    <a href="https://www.lawtimes.co.kr/news/articleView.html?idxno=226640">로앤타임스 · 김승원 법무장관 후보자 자진 사퇴 (2026.9.19)</a>
+    <a href="https://www.khan.co.kr/article/202610141335001">경향신문 · 신임 비서실장에 임광현 국세청장 (2026.10.14)</a>
+    <a href="https://www.yna.co.kr/view/AKR20250501116700004">연합뉴스 · 대법원, 이재명 선거법 사건 파기환송 (2025.5.1)</a>
+    <a href="https://www.khan.co.kr/article/202406122041015">경향신문 · 쌍방울 대북송금 관련 이재명 기소 (2024.6.12)</a>
+    <a href="https://www.yna.co.kr/view/AKR20261005043800004">연합뉴스 · 쌍방울 실형 확정 이화영, 1심 진행 중인 이재명 제3자뇌물 재판 (2026.10.5)</a>
+    <a href="https://www.yna.co.kr/view/AKR20260818109251004">연합뉴스 · 정성호 법무부장관 사직서 제출 (2026.8.18)</a>
+    <a href="https://www.yonhapnewstv.co.kr/news/AKR20260223134016leF">연합뉴스TV · '이 대통령 공소취소 모임' 공식 출범 (2026.2.23)</a>
+    <a href="https://www.hani.co.kr/arti/politics/bluehouse/1211388.html">한겨레 · 전치영 공직기강비서관 버닝썬 변호 논란 (2025)</a>
+    <a href="https://www.chosun.com/politics/politics_general/2025/08/15/RYG4XFFT7JFR3NINM4ZODCS3XY/">조선일보 · 李 변호인 7명 '청문회 없는 요직' (2025.8.15)</a>
+  </div>
+  <p style="margin-top:18px">디지털 대동법 연구소 자료실 · DOC 2026-001 · 작성 기준일 2026-10-27 · 원본 인포그래픽 명단: @gahn3x7 (X) · 본 문서는 보도 기반 팩트 정리이며 각 기사 링크로 검증할 수 있습니다.</p>
+</footer>
+
+</div>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
+</div>
+</body>
+</html>
