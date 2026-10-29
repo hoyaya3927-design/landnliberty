@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>국과수 감정 추적표 — 13개 상자 · 700여 장 | 자유 Liberty</title>
+<meta name="description" content="10·28 올림픽공원 투표지 공개검증에서 분리된 13개 상자, 이의제기 투표지의 국과수·공소청 본청 정밀 감정 진행 상황을 항목별로 추적하는 표. forensic-data.json 하나만 고치면 표 전체가 갱신됩니다.">
+<meta property="og:title" content="국과수 감정 추적표 — 13개 상자, 700여 장">
+<meta property="og:description" content="무엇을, 어떤 기법으로, 어디까지 감정했는가. 18개 항목 · 자동 갱신">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAFAF7; --paper2:#F2F1EA; --ink:#14213D; --ink-2:rgba(20,33,61,.66);
+  --teal:#0F766E; --teal-soft:rgba(15,118,110,.09);
+  --clay:#E0553F; --clay-soft:rgba(224,85,63,.10);
+  --gold:#C9A227; --gold-soft:rgba(201,162,39,.14);
+  --steel:#5C6B85; --steel-soft:rgba(92,107,133,.10);
+  --mint:#1B9E77; --mint-soft:rgba(27,158,119,.11);
+  --line:rgba(20,33,61,.13); --line2:rgba(20,33,61,.26);
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:'Noto Sans KR','Pretendard','Apple SD Gothic Neo',system-ui,sans-serif;
+  --display:'Black Han Sans','Noto Sans KR',sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.72;-webkit-font-smoothing:antialiased;
+     background-image:linear-gradient(0deg,rgba(20,33,61,.028) 1px,transparent 1px);background-size:100% 28px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+a{color:inherit}
+/* ── 사이트 공통 스트립 ───────────────────────── */
+.lnl{position:sticky;top:0;z-index:60;background:#0F172A;border-bottom:1px solid rgba(201,162,39,.30)}
+.lnl .wrap{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:9px 22px;font-size:12px}
+.lnl-home{color:var(--gold);font-weight:700;text-decoration:none}
+.lnl-home span{display:inline-flex;width:19px;height:19px;align-items:center;justify-content:center;border-radius:5px;background:var(--teal);color:#fff;font-size:10px;margin-right:6px;vertical-align:-4px}
+.lnl .sl{color:rgba(250,250,247,.24)}
+.lnl-cur{color:#8FA0B8;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.lnl-nav{margin-left:auto;display:flex;gap:15px;flex-wrap:wrap}
+.lnl-nav a{color:#93A2B8;text-decoration:none;font-weight:600;font-size:11.5px;letter-spacing:.01em}
+.lnl-nav a:hover{color:#fff}
+.lnl-nav a.on{color:#fff;border-bottom:1px solid var(--gold);padding-bottom:1px}
+/* ── 마스트헤드 ───────────────────────────────── */
+.mast{padding:52px 0 30px;border-bottom:1px solid var(--line)}
+.krow{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:700}
+.ref{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--ink-2);text-transform:uppercase}
+.mast h1{font-family:var(--display);font-size:clamp(30px,5.4vw,54px);line-height:1.1;margin:18px 0 0;letter-spacing:-.5px;font-weight:400}
+.mast h1 em{font-style:normal;color:var(--clay)}
+.deck{margin:18px 0 0;max-width:70ch;font-size:15.5px;color:var(--ink-2);line-height:1.85}
+.deck b{color:var(--ink);font-weight:700;box-shadow:inset 0 -.5em 0 var(--gold-soft)}
+/* ── 라이브 패널 ──────────────────────────────── */
+.live{background:var(--paper2);border-bottom:1px solid var(--line)}
+.livegrid{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;padding:26px 0 20px;align-items:center}
+.clock .cap{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+.clock b{display:block;font-family:var(--mono);font-size:clamp(26px,4.6vw,40px);font-weight:700;letter-spacing:-1px;margin:6px 0 4px;color:var(--ink)}
+.clock .sub{font-size:11.5px;color:var(--ink-2)}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.nums div{background:var(--paper);padding:13px 10px;text-align:center}
+.nums b{display:block;font-family:var(--mono);font-size:23px;font-weight:700;line-height:1.1}
+.nums span{display:block;font-size:10.5px;color:var(--ink-2);margin-top:4px;letter-spacing:.02em}
+.nums div:nth-child(3) b{color:var(--steel)}
+.nums div:nth-child(4) b{color:var(--mint)}
+.stamp{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:0 0 18px;font-family:var(--mono);font-size:10.5px;color:var(--ink-2);letter-spacing:.03em}
+.stamp .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(27,158,119,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(27,158,119,.45)}70%{box-shadow:0 0 0 7px rgba(27,158,119,0)}100%{box-shadow:0 0 0 0 rgba(27,158,119,0)}}
+.stamp .sep{opacity:.35}
+.flash{animation:flash 1.6s ease}
+@keyframes flash{0%{background:var(--gold-soft)}100%{background:transparent}}
+/* ── 섹션 ─────────────────────────────────────── */
+section{padding:46px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:22px}
+.sec-head h2{font-family:var(--display);font-size:clamp(21px,3vw,28px);margin:0;font-weight:400;letter-spacing:-.3px}
+.sec-head .no{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--clay);font-weight:700;text-transform:uppercase}
+.lead{font-size:14.5px;color:var(--ink-2);max-width:74ch;margin:0 0 20px}
+.lead b{color:var(--ink)}
+/* ── 범례 ─────────────────────────────────────── */
+.legend{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.04em;
+      padding:4px 9px;border-radius:2px;border:1px solid transparent;white-space:nowrap}
+.pill::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor}
+.pill.req{color:#8A6A05;background:var(--gold-soft);border-color:rgba(201,162,39,.34)}
+.pill.lab{color:#0B5A54;background:var(--teal-soft);border-color:rgba(15,118,110,.30)}
+.pill.run{color:#3F4C63;background:var(--steel-soft);border-color:rgba(92,107,133,.30)}
+.pill.count{color:#7A2E22;background:var(--clay-soft);border-color:rgba(224,85,63,.28)}
+.pill.done{color:#0F6B50;background:var(--mint-soft);border-color:rgba(27,158,119,.32)}
+.pill.na{color:#6B7280;background:rgba(107,114,128,.10);border-color:rgba(107,114,128,.26)}
+.legend .k{font-size:11.5px;color:var(--ink-2);margin-right:14px}
+/* ── 필터 ─────────────────────────────────────── */
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+.filters button{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.03em;padding:6px 11px;border:1px solid var(--line2);
+  background:transparent;color:var(--ink-2);cursor:pointer;border-radius:2px;transition:.18s}
+.filters button:hover{border-color:var(--teal);color:var(--teal)}
+.filters button.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.filters button i{font-style:normal;opacity:.55;margin-left:5px;font-weight:400}
+/* ── 표 ───────────────────────────────────────── */
+.tablewrap{border:1px solid var(--line2);background:var(--paper);overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:9.8px;letter-spacing:.14em;text-transform:uppercase;
+  padding:10px 11px;text-align:left;font-weight:600;white-space:nowrap}
+tbody tr{border-bottom:1px solid var(--line);transition:background .15s}
+tbody tr:last-child{border-bottom:0}
+tbody tr:hover{background:rgba(15,118,110,.045)}
+td{padding:12px 11px;vertical-align:top;line-height:1.6}
+td.id{font-family:var(--mono);font-size:11px;color:var(--ink-2);white-space:nowrap;letter-spacing:.02em}
+td.item{font-weight:700;min-width:132px}
+td.item small{display:block;font-family:var(--mono);font-size:9.5px;font-weight:400;color:var(--ink-2);letter-spacing:.08em;margin-top:2px;text-transform:uppercase}
+td.look{color:var(--ink-2);font-size:12.8px;min-width:220px}
+td.tech{font-family:var(--mono);font-size:10.5px;color:var(--teal);letter-spacing:.01em;min-width:150px}
+td.stat{white-space:nowrap}
+td.src{font-size:11px;color:var(--ink-2);min-width:96px;font-family:var(--mono);letter-spacing:.01em}
+.tfoot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 12px;background:var(--paper2);border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink-2);text-transform:uppercase}
+/* ── 타임라인 ─────────────────────────────────── */
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:1px solid var(--line2);position:relative}
+.tl li{position:relative;padding:0 0 22px 20px}
+.tl li::before{content:'';position:absolute;left:-27px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--ink)}
+.tl li.now::before{background:var(--clay);border-color:var(--clay);box-shadow:0 0 0 4px var(--clay-soft)}
+.tl li.fut::before{border-style:dashed;border-color:var(--line2)}
+.tl .d{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--teal)}
+.tl li.fut .d{color:var(--ink-2)}
+.tl h4{margin:3px 0 4px;font-size:14.5px;font-weight:700}
+.tl p{margin:0;font-size:12.8px;color:var(--ink-2)}
+.tl .src{font-family:var(--mono);font-size:10px;color:var(--ink-2);opacity:.75;margin-top:4px;display:block;letter-spacing:.03em}
+/* ── 시나리오 ─────────────────────────────────── */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{border:1px solid var(--line2);background:var(--paper);padding:18px 16px;position:relative}
+.card::before{content:attr(data-k);position:absolute;top:-1px;right:-1px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;
+  background:var(--ink);color:var(--paper);padding:3px 7px}
+.card h4{margin:0 0 8px;font-size:14.5px;font-weight:900;line-height:1.45}
+.card p{margin:0;font-size:12.6px;color:var(--ink-2);line-height:1.72}
+.card b{color:var(--ink)}
+.card.warn{border-color:var(--clay);background:linear-gradient(180deg,var(--clay-soft),transparent 62%)}
+.card.warn::before{background:var(--clay)}
+/* ── 자동 갱신 안내 ───────────────────────────── */
+.auto{border:1px solid var(--line2);background:linear-gradient(180deg,rgba(15,118,110,.055),transparent 55%)}
+.auto .in{padding:24px 22px}
+.auto h3{margin:0 0 10px;font-family:var(--display);font-size:19px;font-weight:400}
+.auto ol{margin:0;padding-left:20px;font-size:13.4px;color:var(--ink-2)}
+.auto ol li{margin-bottom:7px}
+.auto ol b{color:var(--ink)}
+pre{margin:14px 0 0;padding:14px 15px;background:#0F172A;color:#D7E2F0;overflow-x:auto;font-family:var(--mono);font-size:11px;line-height:1.85;border-left:3px solid var(--gold)}
+pre .k{color:#8FD6C8}
+pre .s{color:#E8C46A}
+pre .c{color:#7A8AA3}
+/* ── 출처 ─────────────────────────────────────── */
+.srcs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.srcs li{border-bottom:1px solid var(--line);padding:10px 0;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.srcs .dt{font-family:var(--mono);font-size:10.5px;color:var(--clay);font-weight:700;letter-spacing:.04em;min-width:64px}
+.srcs a{font-size:13px;text-decoration:none;border-bottom:1px solid var(--line2);font-weight:600}
+.srcs a:hover{color:var(--teal);border-color:var(--teal)}
+.srcs .host{font-family:var(--mono);font-size:10px;color:var(--ink-2);letter-spacing:.05em}
+/* ── 푸터 ─────────────────────────────────────── */
+footer{border-top:2px solid var(--ink);margin-top:40px;padding:26px 0 46px}
+.fgrid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:11.5px;color:var(--ink-2);font-family:var(--mono);letter-spacing:.02em}
+.series{display:flex;gap:16px;flex-wrap:wrap;margin:0 0 16px;font-family:var(--sans);font-size:12.5px;font-weight:700}
+.series a{text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:2px}
+.series a:hover{color:var(--teal);border-color:var(--teal)}
+.disclaim{font-family:var(--sans);font-size:11.5px;line-height:1.8;color:var(--ink-2);max-width:80ch;margin:0 0 18px;padding:12px 14px;border-left:3px solid var(--gold);background:var(--gold-soft)}
+/* ── 반응형 ───────────────────────────────────── */
+@media(max-width:860px){
+  .livegrid{grid-template-columns:1fr;gap:18px}
+  .cards{grid-template-columns:1fr}
+  .nums{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px){
+  .tablewrap{border:0;background:transparent}
+  thead{display:none}
+  table,tbody,tr,td{display:block;width:100%}
+  tbody tr{border:1px solid var(--line2);margin-bottom:10px;background:var(--paper);padding:4px 0}
+  td{border:0;padding:7px 14px;display:grid;grid-template-columns:84px 1fr;gap:10px;font-size:12.6px}
+  td::before{content:attr(data-l);font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);padding-top:2px}
+  td.item{padding-top:12px}
+  td.item small{display:none}
+}
+@media print{
+  .lnl,.filters,.stamp .dot{display:none}
+  body{background:#fff}
+  section{padding:22px 0}
+  tbody tr:hover{background:transparent}
+}
+
+.newbadge{display:inline-flex;align-items:center;gap:7px;margin-left:auto;font-family:var(--mono);font-size:10.5px;font-weight:700;
+  letter-spacing:.03em;color:#0B5A54;background:var(--mint-soft);border:1px solid rgba(27,158,119,.42);border-radius:999px;
+  padding:5px 11px;cursor:pointer;animation:badgePulse 2.4s ease-in-out infinite}
+.newbadge:hover{background:rgba(27,158,119,.18)}
+.newbadge i{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 3px rgba(27,158,119,.18)}
+.newbadge b{font-weight:700}
+@keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(27,158,119,.22)}50%{box-shadow:0 0 0 5px rgba(27,158,119,0)}}
+@media(max-width:640px){.newbadge{margin-left:0}}
+pre,code,.code,.jsonbox{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+</style>
+</head>
+<body>
+
+<div class="lnl">
+  <div class="wrap">
+    <a class="lnl-home" href="index.html"><span>土</span>토지와 자유</a>
+    <span class="sl">/</span>
+    <span class="lnl-cur">자유 · Liberty</span>
+    <nav class="lnl-nav">
+      <a href="forensic.html" class="on">국과수 감정 추적</a>
+      <a href="liberty-archive.html">증거 아카이브</a>
+      <a href="liberty-report.html">10·28 리포트</a>
+      <a href="verify.html">검증 게시판</a>
+      <a href="teukgeom.html">특검 수사 파일</a>
+    </nav>
+  </div>
+</div>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="krow">
+      <span class="eyebrow">Forensic track · NFS &amp; 공소청 본청</span>
+      <span class="ref">Liberty / case 2026-10</span>
+    </div>
+    <h1>13개 상자, <em>700여 장</em><br>감정은 어디까지 왔나</h1>
+    <p class="deck">
+      10월 28일 11시 49분, 올림픽공원 핸드볼경기장에서 시작된 검증은 다음 날 0시 35분에 끝났습니다.
+      247만 장 가운데 <b>이의가 제기되거나 이상이 보인 투표지는 13개 상자로 분리</b>돼 특검이 가져갔고,
+      일부는 <b>국립과학수사연구원(국과수)과 공소청 본청</b>으로 넘어갔습니다.
+      이 표는 그 뒤를 항목별로 따라갑니다. <b>판정이 아니라 진행 상태</b>입니다 — 결과가 나오면 같은 표에서 바뀝니다.
+    </p>
+  </div>
+</header>
+
+<section class="live" style="padding:0">
+  <div class="wrap">
+    <div class="livegrid">
+      <div class="clock">
+        <span class="cap">검증 종료 이후 경과</span>
+        <b id="elapsed">D+0 00:00:00</b>
+        <span class="sub">2026. 10. 29. 00:35 KST 기점 · 1초마다 갱신 (보도에 따라 00:35~00:38)</span>
+      </div>
+      <div class="nums">
+        <div><b>13</b><span>감정 대상 상자</span></div>
+        <div><b id="c-total">18</b><span>추적 항목</span></div>
+        <div><b id="c-wait">–</b><span>회신 대기</span></div>
+        <div><b id="c-done">–</b><span>결과 회신</span></div>
+      </div>
+    </div>
+    <div class="stamp" id="stampBox">
+      <span class="dot"></span>
+      <span id="upd">데이터 확인 중…</span>
+      <span class="sep">·</span>
+      <span id="src">—</span>
+      <span class="sep">·</span>
+      <span>60초마다 자동 확인</span>
+      <button id="newbadge" class="newbadge" hidden><i></i>새 결과 <b>0</b>건 확인 →</button>
+    </div>
+  </div>
+</section>
+
+<section id="board">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>감정 추적판</h2>
+      <span class="no">§ 1 · 18 items / 13 boxes</span>
+    </div>
+    <p class="lead">
+      왼쪽부터 <b>무엇을 보는지</b>, <b>어떤 기법으로 보는지</b>, <b>지금 어디까지 갔는지</b>입니다.
+      ‘1차 분석’은 경기장 안 감정부에서 디지털 현미경·적외선 분광기로 선별한 단계, ‘의뢰’는 국과수·공소청 본청으로 넘긴 단계입니다.
+      <b>회신 열은 비어 있는 것이 정상</b>입니다 — 10월 29일 현재 공개된 감정 결과는 아직 없습니다.
+    </p>
+
+    <div class="legend">
+      <span class="k">상태 정의</span>
+      <span class="pill req">의뢰</span>
+      <span class="pill lab">1차 분석</span>
+      <span class="pill run">분석 중</span>
+      <span class="pill count">계수·대조</span>
+      <span class="pill done">결과 회신</span>
+      <span class="pill na">판정 불가</span>
+    </div>
+
+    <div class="filters" id="filters">
+      <button data-f="all" class="on">전체 <i id="n-all">0</i></button>
+      <button data-f="의뢰">의뢰</button>
+      <button data-f="1차 분석">1차 분석</button>
+      <button data-f="분석 중">분석 중</button>
+      <button data-f="계수·대조">계수·대조</button>
+      <button data-f="결과 회신">결과 회신</button>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th><th>감정 항목</th><th>무엇을 보는가</th><th>기법</th><th>상태</th><th>근거</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="tfoot">
+        <span id="footL">—</span>
+        <span>자유 · Liberty · forensic track</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="track" style="background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>어디까지 왔나</h2>
+      <span class="no">§ 2 · Timeline</span>
+    </div>
+    <ol class="tl" id="timeline"></ol>
+  </div>
+</section>
+
+<section id="scenario">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>무엇이 나오면 무엇이 바뀌나</h2>
+      <span class="no">§ 3 · Three outcomes</span>
+    </div>
+    <p class="lead">
+      감정 결과는 세 갈래로만 떨어집니다. 어느 쪽이 나와도 <b>이 표의 문장은 그대로 유지</b>되어야 합니다 —
+      결과에 맞춰 결론을 미리 써 두지 않는 것이 이 표의 목적입니다.
+    </p>
+    <div class="cards">
+      <div class="card" data-k="A">
+        <h4>전 항목 정상 판정</h4>
+        <p>이의제기 투표지가 모두 <b>동일 용지·정상 인쇄</b>로 나오면, 의혹의 상당 부분은 근거를 잃습니다. 다만 <b>수량 증감(101매·57매)</b>은 감정이 아니라 장부·계수 문제라 별도로 남습니다.</p>
+      </div>
+      <div class="card warn" data-k="B">
+        <h4>이질 용지·인쇄 불일치</h4>
+        <p>용지 성분이나 잉크·인쇄 방식이 <b>정품과 다르게</b> 나오면 위·변조 의심으로 넘어갑니다. 특검은 “수사 대상으로 전환할지 검토”한다고 밝힌 상태입니다.</p>
+      </div>
+      <div class="card" data-k="C">
+        <h4>판정 불가</h4>
+        <p>보관 상태·오염·훼손으로 <b>감정 자체가 성립하지 않는</b> 경우. 이때는 CCTV·계수·장부 대조로 우회하고, 그 사실을 그대로 적는 것이 맞습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="auto">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>이 표가 스스로 갱신되는 방식</h2>
+      <span class="no">§ 4 · Auto-update</span>
+    </div>
+    <div class="auto">
+      <div class="in">
+        <h3>파일 하나만 고치면, 표 전체가 따라옵니다</h3>
+        <ol>
+          <li>표의 내용은 이 페이지에 직접 쓰여 있지 않습니다. 같은 폴더의 <b>forensic-data.json</b> 하나에서 읽어옵니다.</li>
+          <li>상태 칸 한 줄만 바꿔 저장하면, 페이지는 <b>60초마다 다시 읽어</b> 표·집계·타임라인을 새로 그립니다. 방문자는 새로고침할 필요가 없습니다.</li>
+          <li>바뀐 순간 <b>‘갱신됨’ 표시</b>와 하이라이트가 뜨고, 상단의 <b>데이터 기준 시각</b>이 함께 교체됩니다.</li>
+          <li>인터넷 주소(<code>landnliberty.kr/forensic.html</code>)로 열면 위 방식대로 동작하고, <b>파일을 직접 열었을 때는 페이지에 내장된 같은 데이터</b>가 표시됩니다.</li>
+        </ol>
+<pre><span class="c">// forensic-data.json — 한 행만 추가/수정하면 됩니다</span>
+{
+  <span class="k">"updated"</span>: <span class="s">"2026-11-05T09:00:00+09:00"</span>,
+  <span class="k">"rows"</span>: [
+    { <span class="k">"id"</span>:<span class="s">"F-02"</span>, <span class="k">"item"</span>:<span class="s">"인쇄 잉크 성분"</span>,
+      <span class="k">"look"</span>:<span class="s">"정품 잉크와 성분 일치 여부"</span>,
+      <span class="k">"tech"</span>:<span class="s">"IR 분광 · GC-MS"</span>,
+      <span class="k">"status"</span>:<span class="s">"결과 회신"</span>,
+      <span class="k">"src"</span>:<span class="s">"국과수 11.04"</span>, <span class="k">"note"</span>:<span class="s">"일부 이질 확인"</span> }
+  ]
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="srcs">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>출처</h2>
+      <span class="no">§ 5 · Sources</span>
+    </div>
+    <ul class="srcs">
+      <li><span class="dt">10.29</span><a href="https://www.yna.co.kr/view/AKR20261029101800004" target="_blank" rel="noopener">이의제기 접수 투표지 국과수 이송…특검 검토 후 수사 전환 관측</a><span class="host">yna.co.kr</span></li>
+      <li><span class="dt">10.29</span><a href="https://www.chosun.com/national/court_law/2026/10/29/LTJSG5NU3ZC2NLGW74WE2NLASE/" target="_blank" rel="noopener">올공 투표지 검증 마친 특검 “상당수는 추가 분석 필요”</a><span class="host">chosun.com</span></li>
+      <li><span class="dt">10.29</span><a href="https://www.breaknews.com/1246836" target="_blank" rel="noopener">특검, 투표지 부족사태 ‘13개 박스’ 국과수 감정 의뢰</a><span class="host">breaknews.com</span></li>
+      <li><span class="dt">10.29</span><a href="https://m.segye.com/ampView/20261029517688" target="_blank" rel="noopener">올공 ‘이상 투표지’ 국과수서 정밀 감정</a><span class="host">segye.com</span></li>
+      <li><span class="dt">10.29</span><a href="https://www.dailian.co.kr/news/view/1708305/" target="_blank" rel="noopener">‘13개 상자’에 담긴 이상 투표지…‘정밀 감정’</a><span class="host">dailian.co.kr</span></li>
+      <li><span class="dt">10.28</span><a href="https://www.yna.co.kr/amp/view/MYH20261028014900038" target="_blank" rel="noopener">247만 장 투표용지 검증 돌입…예정보다 3시간 지연</a><span class="host">yna.co.kr</span></li>
+      <li><span class="dt">10.28</span><a href="https://www.news1.kr/society/court-prosecution/6334783" target="_blank" rel="noopener">투표지 247만장 검증 절차는…봉인 확인→</a><span class="host">news1.kr</span></li>
+    </ul>
+    <p class="disclaim">
+      이 표는 보도된 사실과 특검의 공개 발언만 정리합니다. 감정 결과를 예측하거나 판정하지 않으며,
+      특검·국과수의 공식 발표가 나오면 그 문장을 그대로 인용해 갱신합니다.
+      상태 칸은 ‘어디까지 진행됐는가’를 나타내는 진행 표시일 뿐, 유·무죄나 진위에 대한 평가가 아닙니다.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="series">
+      <a href="index.html">← 토지와 자유</a>
+      <a href="liberty-archive.html">증거 아카이브</a>
+      <a href="liberty-report.html">10·28 리포트</a>
+      <a href="verify.html">공개검증 게시판</a>
+      <a href="teukgeom.html">특검 수사 파일</a>
+    </div>
+    <div class="fgrid">
+      <span>자유 · Liberty — 국과수 감정 추적표</span>
+      <span id="footStamp">데이터 기준 —</span>
+      <span>토지와 자유 · www.landnliberty.kr</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── 내장 사본(fallback) : forensic-data.json 을 읽지 못할 때 사용 ── */
+const FALLBACK = {
+  updated: "2026-10-29T23:10:00+09:00",
+  rows: [
+    {id:"F-01", item:"용지 재질·평량", tag:"PAPER", look:"정품 투표용지와 동일 제조사·동일 로트인지. 두께·평량·형광증백제 차이.", tech:"섬유·충전제 분석", status:"의뢰", src:"연합 10.29"},
+    {id:"F-02", item:"인쇄 잉크 성분", tag:"INK", look:"정품 잉크와 성분·배합이 일치하는지. 이질 잉크 혼입 여부.", tech:"IR 분광 → GC-MS", status:"1차 분석", src:"브레이크 10.29"},
+    {id:"F-03", item:"인쇄 방식 판별", tag:"PRESS", look:"옵셋 인쇄인지 레이저 토너인지. 정품과 다른 공정 흔적이 있는지.", tech:"현미경 도트·에지 분석", status:"의뢰", src:"연합 10.29"},
+    {id:"F-04", item:"신권다발(붙은 투표지)", tag:"BLOCK", look:"새 지폐처럼 여러 장이 붙어 떨어지지 않는 상태. 정전기·접착·압착 흔적.", tech:"박리·정전기 측정", status:"1차 분석", src:"도태우 10.28"},
+    {id:"F-05", item:"2·4장 겹침 투표지", tag:"STACK", look:"한 장으로 계수될 수 있게 겹친 투표지. 분리면·압착 자국.", tech:"층간 분리 · 계수 대조", status:"1차 분석", src:"도태우 10.28"},
+    {id:"F-06", item:"색상이 다른 투표지", tag:"COLOR", look:"정품 대비 색차. 다른 선거·다른 인쇄분 혼입 여부.", tech:"색차계(ΔE) 측정", status:"1차 분석", src:"도태우 10.28"},
+    {id:"F-07", item:"관리관 도장 인영", tag:"SEAL", look:"네모 도장·도장 없음. 인영 형태와 잉크 전이 상태.", tech:"인영 비교 · 압력 흔적", status:"의뢰", src:"도태우 10.28"},
+    {id:"F-08", item:"번호표 미절취", tag:"STUB", look:"번호표가 떼어지지 않은 채 남은 투표지. 절취선 상태.", tech:"절취면 현미경", status:"1차 분석", src:"도태우 10.28"},
+    {id:"F-09", item:"여백 없음(재단)", tag:"TRIM", look:"규격을 벗어난 재단. 잘린 면과 규격 측정값.", tech:"규격 계측 · 재단면", status:"1차 분석", src:"도태우 10.28"},
+    {id:"F-10", item:"면도날 절단 흔적", tag:"BLADE", look:"칼로 잘린 듯한 단면. 기계 재단이 아닌 수작업 절단 여부.", tech:"단면 현미경", status:"의뢰", src:"도태우 10.28"},
+    {id:"F-11", item:"테이프·접착종이", tag:"TAPE", look:"투표지에 붙은 테이프·접착종이. 접착제 성분과 부착 시점.", tech:"접착제 성분 분석", status:"의뢰", src:"도태우 10.28"},
+    {id:"F-12", item:"훼손·이바리(구겨짐)", tag:"DAMAGE", look:"구겨지고 눌린 투표지. 계수기 투입 흔적인지 인위적 훼손인지.", tech:"형태 복원 · 압흔", status:"1차 분석", src:"도태우 10.28"},
+    {id:"F-13", item:"바코드 실선 오류", tag:"BARCODE", look:"바코드가 실선으로 인쇄된 투표지. 인쇄 결함인지 위조인지.", tech:"바코드 판독 · 결함 분석", status:"의뢰", src:"도태우 10.28"},
+    {id:"F-14", item:"함 속 혼표", tag:"MIXED", look:"시의원함에서 나온 구의원 투표지 등 분류 오류. 봉인·이송 기록과 대조.", tech:"봉인기록 · 분류 대조", status:"계수·대조", src:"도태우 10.28"},
+    {id:"F-15", item:"수량 증감(101매·57매)", tag:"COUNT", look:"교부 수 대비 장부 초과·부족. 감정 대상이 아니라 계수·장부 문제.", tech:"개표록 · 교부대장 대조", status:"계수·대조", src:"도태우 · 선거록"},
+    {id:"F-16", item:"보관장소 CCTV", tag:"CCTV", look:"146일 봉쇄 기간 외부 침입 흔적. 출입 기록과 영상 대조.", tech:"영상 분석", status:"분석 중", src:"브레이크 10.29"},
+    {id:"F-17", item:"투표지분류기 조작", tag:"MACHINE", look:"분류기 해킹·오작동 여부. 실제 증감이 있었는지.", tech:"장비 포렌식", status:"분석 중", src:"브레이크 10.29"},
+    {id:"F-18", item:"참관인 촬영물 해시값", tag:"HASH", look:"참관단 촬영 사진의 고유 식별값. 원본 위·변조 여부 확인.", tech:"해시 대조", status:"의뢰", src:"조선 10.29"}
+  ],
+  timeline: [
+    {d:"10.15", t:"투표자 수 허위 입력 30곳 확인", p:"특검, 중앙선관위 등 7곳 압수수색. 이후 36개 시·군·구로 확대.", s:"연합 10.29", st:"past"},
+    {d:"10.28 11:49", t:"공개검증 개시 — 예정보다 2시간 50분 지연", p:"촬영 제한에 참관단 항의. 계수 테이블 40개, 특검 110여 명·선관위 500여 명 투입.", s:"연합 · 조선 10.28", st:"past"},
+    {d:"10.29 00:35", t:"검증 종료 — 247만 장, 약 13시간", p:"이의·이상 투표지를 13개 상자로 분리. 특검 “추가 분석이 필요한 투표지 상당수 선별”.", s:"조선 10.29", st:"now"},
+    {d:"10.29", t:"400여 상자 선관위 창고 이송 · 13상자 특검 이송", p:"국과수·공소청 본청에 정밀 감정 의뢰. 국과수는 종이 재질과 잉크 성분을 본다.", s:"연합 · 브레이크 10.29", st:"now"},
+    {d:"미정", t:"감정 회신 → 수사 전환 검토", p:"위·변조 정황이 나오면 수사 대상으로 전환. 현재 공개된 결과 없음.", s:"—", st:"fut"},
+    {d:"미정", t:"특검 수사 종료 (최장 150일)", p:"본 수사 90일 + 30일씩 두 차례 연장. 이변 없으면 2027년 2월 초까지.", s:"연합 10.29", st:"fut"}
+  ]
+};
+
+const T0 = Date.parse("2026-10-29T00:35:00+09:00");
+const START = Date.parse("2026-10-28T11:49:00+09:00");
+let DATA = null, LASTJSON = "", filter = "all";
+
+const $ = s => document.querySelector(s);
+const pad = n => String(n).padStart(2, "0");
+const pillClass = s => ({"의뢰":"req","1차 분석":"lab","분석 중":"run","계수·대조":"count","결과 회신":"done","판정 불가":"na"})[s] || "na";
+
+function kst(iso){
+  const d = new Date(iso);
+  if (isNaN(d)) return "—";
+  const p = n => String(n).padStart(2,"0");
+  return `${d.getFullYear()}. ${p(d.getMonth()+1)}. ${p(d.getDate())}. ${p(d.getHours())}:${p(d.getMinutes())} KST`;
+}
+
+function render(d, changed){
+  DATA = d;
+  const rows = d.rows || [];
+  const tb = $("#rows");
+  tb.innerHTML = rows.filter(r => filter === "all" || r.status === filter).map(r => `
+    <tr>
+      <td class="id" data-l="No.">${r.id}</td>
+      <td class="item" data-l="항목">${r.item}${r.tag ? `<small>${r.tag}</small>` : ""}</td>
+      <td class="look" data-l="확인 대상">${r.look}</td>
+      <td class="tech" data-l="기법">${r.tech}</td>
+      <td class="stat" data-l="상태"><span class="pill ${pillClass(r.status)}">${r.status}</span></td>
+      <td class="src" data-l="근거">${r.src}${r.note ? `<br>${r.note}` : ""}</td>
+    </tr>`).join("");
+
+  const cnt = s => rows.filter(r => r.status === s).length;
+  const wait = cnt("의뢰") + cnt("1차 분석") + cnt("분석 중") + cnt("계수·대조");
+  $("#c-total").textContent = rows.length;
+  $("#c-wait").textContent = wait;
+  $("#c-done").textContent = cnt("결과 회신");
+  $("#n-all").textContent = rows.length;
+  $("#footL").textContent = `${rows.filter(r=>filter==="all"||r.status===filter).length} / ${rows.length} 항목 표시`;
+  $("#upd").textContent = "데이터 기준 " + kst(d.updated);
+  $("#footStamp").textContent = "데이터 기준 " + kst(d.updated);
+  $("#src").textContent = d.source_label || (window.__FROM_JSON ? "forensic-data.json" : "내장 사본");
+  $("#stampBox").classList.remove("flash");
+  if (changed) { void $("#stampBox").offsetWidth; $("#stampBox").classList.add("flash"); }
+
+
+const SEEN_KEY = "lnl.forensic.seen.v1";
+function readSeen(){
+  try{ const raw = localStorage.getItem(SEEN_KEY); return raw ? JSON.parse(raw) : null; }catch(e){ return null; }
+}
+function writeSeen(d){
+  const rows = d.rows || [];
+  const done = rows.filter(r => r.status === "결과 회신").length;
+  const news = (d.news || []).length;
+  try{ localStorage.setItem(SEEN_KEY, JSON.stringify({done, news, updated: d.updated})); }catch(e){}
+}
+function badgeState(d){
+  const b = $("#newbadge");
+  if(!b) return;
+  const rows = d.rows || [];
+  const done = rows.filter(r => r.status === "결과 회신").length;
+  const news = (d.news || []).length;
+  const seen = readSeen();
+  if(!seen){ writeSeen(d); b.hidden = true; return; }
+  const diff = (done - (seen.done || 0)) + (news - (seen.news || 0));
+  if(diff <= 0){ b.hidden = true; return; }
+  b.hidden = false;
+  b.innerHTML = `<i></i>새 결과 <b>${diff}</b>건 확인 →`;
+  b.onclick = () => {
+    writeSeen(d);
+    b.hidden = true;
+    filter = "결과 회신";
+    document.querySelectorAll("#filters button").forEach(x => x.classList.toggle("on", x.dataset.f === "결과 회신"));
+    if (DATA) render(DATA, false);
+    const board = document.querySelector("#board");
+    if (board) board.scrollIntoView({behavior:"smooth", block:"start"});
+  };
+}
+  badgeState(d);
+
+  const tl = d.timeline || [];
+  $("#timeline").innerHTML = tl.map(t => `
+    <li class="${t.st === "now" ? "now" : t.st === "fut" ? "fut" : ""}">
+      <span class="d">${t.d}</span>
+      <h4>${t.t}</h4>
+      <p>${t.p}</p>
+      ${t.s && t.s !== "—" ? `<span class="src">출처 · ${t.s}</span>` : ""}
+    </li>`).join("");
+}
+
+async function load(){
+  let d = FALLBACK, fromJson = false;
+  try{
+    const res = await fetch("forensic-data.json", {cache:"no-store"});
+    if(!res.ok) throw new Error("HTTP " + res.status);
+    const j = await res.json();
+    if(!j.rows || !j.rows.length) throw new Error("empty");
+    d = j; fromJson = true;
+  }catch(e){ fromJson = false; }
+  window.__FROM_JSON = fromJson;
+  const sig = JSON.stringify(d);
+  const changed = LASTJSON !== "" && sig !== LASTJSON;
+  LASTJSON = sig;
+  render(d, changed);
+}
+
+function tick(){
+  const now = Date.now();
+  const diff = Math.max(0, now - T0);
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor(diff % 86400000 / 3600000);
+  const m = Math.floor(diff % 3600000 / 60000);
+  const s = Math.floor(diff % 60000 / 1000);
+  $("#elapsed").textContent = `D+${d} ${pad(h)}:${pad(m)}:${pad(s)}`;
+}
+
+document.querySelectorAll("#filters button").forEach(b => {
+  b.addEventListener("click", () => {
+    document.querySelectorAll("#filters button").forEach(x => x.classList.remove("on"));
+    b.classList.add("on");
+    filter = b.dataset.f;
+    if (DATA) render(DATA, false);
+  });
+});
+
+load();
+tick();
+setInterval(tick, 1000);
+setInterval(load, 60000);
+</script>
+</body>
+</html>

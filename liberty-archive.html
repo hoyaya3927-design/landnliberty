@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>부정선거 증거 아카이브 | 자유 Liberty</title>
+<meta name="description" content="2024 총선·2025 대선·2026 6·3 지방선거 부정선거 의혹과 10·28 이태한 특검 공개검증 기록을 정리한 자료집.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#080A0E;--panel:#0F131A;--panel2:#141924;--line:#20262F;--ink:#E9E6DF;--dim:#8A93A0;--red:#E0413F;--gold:#C8A44E}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans KR',-apple-system,'Malgun Gothic',sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(900px 500px at 80% -10%,rgba(224,65,63,.14),transparent 60%),radial-gradient(700px 400px at 0% 100%,rgba(200,164,78,.06),transparent 60%);pointer-events:none;z-index:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:50;background:rgba(8,10,14,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em}
+.dot{width:9px;height:9px;background:var(--red);border-radius:50%;box-shadow:0 0 0 4px rgba(224,65,63,.15)}
+nav ul{display:flex;gap:26px;list-style:none;font-size:13.5px;color:var(--dim)}
+nav ul a:hover{color:var(--ink)}
+@media(max-width:860px){nav ul{display:none}}
+header{padding:92px 0 64px;border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.16em;color:var(--red);font-weight:600;text-transform:uppercase;margin-bottom:26px}
+.kicker::before{content:"";width:26px;height:1px;background:var(--red)}
+h1{font-family:'Noto Serif KR',serif;font-size:clamp(38px,6.2vw,74px);line-height:1.16;font-weight:900;letter-spacing:-.035em}
+h1 em{font-style:normal;color:var(--red)}
+.lead{margin-top:26px;font-size:clamp(15px,2vw,18.5px);color:#B6BCC6;max-width:760px;font-weight:300}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:52px;border:1px solid var(--line)}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--panel);padding:24px 20px}
+.stat b{display:block;font-family:'JetBrains Mono',monospace;font-size:clamp(26px,3.4vw,38px);font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.stat span{display:block;margin-top:8px;font-size:12px;color:var(--dim);letter-spacing:.02em}
+.stat.a b{color:var(--red)}.stat.b b{color:var(--gold)}
+section{padding:84px 0;border-bottom:1px solid var(--line)}
+.sec-h{display:flex;align-items:baseline;gap:18px;margin-bottom:14px}
+.sec-n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red);letter-spacing:.1em}
+h2{font-family:'Noto Serif KR',serif;font-size:clamp(25px,3.4vw,36px);font-weight:700;letter-spacing:-.03em;line-height:1.3}
+.sec-d{color:var(--dim);font-size:14.5px;max-width:720px;margin-bottom:44px;font-weight:300}
+.tl{display:grid;grid-template-columns:120px 1fr;gap:24px;list-style:none;padding:22px 0;border-top:1px solid var(--line);position:relative}
+.tl:last-child{border-bottom:1px solid var(--line)}
+.tl-d{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--dim);padding-top:3px}
+.tl-b h3{font-size:16.5px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+.tl-b p{font-size:14px;color:#9AA3AF;font-weight:300}
+.tl::before{content:"";position:absolute;left:104px;top:0;bottom:0;width:1px;background:var(--line)}
+.tl.claim .tl-d,.tl.probe .tl-d{color:var(--red)}
+.tl.counter .tl-d{color:#5C6675}
+@media(max-width:640px){.tl{grid-template-columns:1fr;gap:6px}.tl::before{display:none}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+.ev{background:var(--panel);padding:24px 22px;display:grid;grid-template-columns:46px 1fr;gap:14px;transition:background .2s}
+.ev:hover{background:var(--panel2)}
+.ev-n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red);padding-top:4px}
+.ev h3{font-size:15.5px;font-weight:600;margin-bottom:7px;letter-spacing:-.01em}
+.ev p{font-size:13.2px;color:#939CA8;font-weight:300;margin-bottom:12px}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.08em;color:var(--gold);border:1px solid rgba(200,164,78,.35);padding:2px 8px;border-radius:2px}
+.agg{background:var(--panel);border:1px solid var(--line);padding:30px 26px}
+.agg-num{display:block;font-family:'JetBrains Mono',monospace;font-size:clamp(28px,4vw,44px);color:var(--red);font-weight:600;letter-spacing:-.04em;line-height:1}
+.agg h3{font-size:15px;margin-top:16px;font-weight:600}
+.agg-what{font-size:12.5px;color:var(--gold);margin-top:6px;letter-spacing:.01em}
+.agg-desc{font-size:13.3px;color:#8E97A3;margin-top:12px;font-weight:300}
+ul.plain{list-style:none}
+ul.plain li{border-top:1px solid var(--line);padding:18px 0;display:grid;grid-template-columns:1fr;gap:6px}
+ul.plain li:last-child{border-bottom:1px solid var(--line)}
+ul.plain strong{font-size:15px;font-weight:600}
+ul.plain span{font-size:13.2px;color:#8E97A3;font-weight:300}
+ul.time{list-style:none}
+ul.time li{display:grid;grid-template-columns:92px 1fr;gap:20px;padding:16px 0;border-top:1px solid var(--line)}
+ul.time li:last-child{border-bottom:1px solid var(--line)}
+ul.time .t{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red);padding-top:3px}
+ul.time p{font-size:14px;color:#A8B0BB;font-weight:300}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:960px){.vids{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.vids{grid-template-columns:1fr}}
+.vid{background:var(--panel);border:1px solid var(--line);padding:22px;display:flex;flex-direction:column;gap:8px;transition:.2s}
+.vid:hover{border-color:rgba(224,65,63,.55);transform:translateY(-2px)}
+.vid-ch{font-size:10.5px;letter-spacing:.1em;color:var(--red);font-weight:600;text-transform:uppercase}
+.vid h3{font-size:14.5px;font-weight:600;line-height:1.5;letter-spacing:-.01em}
+.vid p{font-size:12.5px;color:#848D99;font-weight:300;flex:1}
+.vid-go{font-size:12px;color:var(--gold)}
+.posts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:820px){.posts{grid-template-columns:1fr}}
+.post{background:var(--panel);border:1px solid var(--line);padding:22px}
+.post:hover{border-color:rgba(200,164,78,.5)}
+.post h3{font-size:14.5px;font-weight:600;margin-bottom:8px}
+.post p{font-size:12.8px;color:#848D99;font-weight:300;margin-bottom:10px}
+.post-u{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#4E5764;word-break:break-all}
+.tt{background:var(--panel);border:1px solid var(--line);padding:28px}
+.tt h3{font-size:13px;letter-spacing:.12em;color:var(--gold);margin-bottom:14px;font-weight:600}
+.tt p{font-size:14.2px;color:#A8B0BB;font-weight:300}
+blockquote{border-left:2px solid var(--red);padding:6px 0 6px 22px;margin:26px 0;font-family:'Noto Serif KR',serif;font-size:17px;line-height:1.8;color:#D9D5CD}
+blockquote cite{display:block;margin-top:10px;font-family:'IBM Plex Sans KR',sans-serif;font-size:12.5px;color:var(--dim);font-style:normal}
+.disclaimer{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);padding:22px 24px;font-size:13px;color:#98A1AD;font-weight:300;margin-top:30px}
+footer{padding:52px 0 70px;font-size:12.5px;color:#5B6472}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.srclist{columns:2;column-gap:36px;font-size:12.5px;color:#7E8794;list-style:none}
+@media(max-width:760px){.srclist{columns:1}}
+.srclist li{margin-bottom:10px;break-inside:avoid}
+.srclist a:hover{color:var(--ink);text-decoration:underline}
+
+/* ── 자유 · Liberty 시리즈 공통 바 ───────────── */
+.lnl{position:sticky;top:0;z-index:80;background:#0F172A;border-bottom:1px solid rgba(201,162,39,.32);font-family:'IBM Plex Sans KR','Noto Sans KR',system-ui,sans-serif}
+.lnl .wrap{max-width:1120px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:12px}
+.lnl-home{color:#C9A227;font-weight:700;text-decoration:none;letter-spacing:.01em}
+.lnl-home b{display:inline-flex;width:18px;height:18px;align-items:center;justify-content:center;border-radius:4px;background:#0F766E;color:#fff;font-size:10px;margin-right:6px;vertical-align:-3px;font-weight:400}
+.lnl .sl{color:rgba(250,250,247,.22)}
+.lnl-cur{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;color:#8FA0B8;text-transform:uppercase}
+.lnl-nav{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap}
+.lnl-nav a{color:#93A2B8;text-decoration:none;font-weight:600;font-size:11.5px}
+.lnl-nav a:hover{color:#fff}
+.lnl-nav a.on{color:#fff;border-bottom:1px solid #C9A227;padding-bottom:1px}
+@media(max-width:640px){.lnl-nav{margin-left:0;gap:11px;font-size:11px}}
+.lnl + nav, .lnl + .topbar{margin-top:0}
+footer a{text-decoration:none}footer a:hover{text-decoration:underline}
+</style></head><body>
+<div class="lnl"><div class="wrap"><a class="lnl-home" href="index.html"><b>土</b>토지와 자유</a><span class="sl">/</span><span class="lnl-cur">자유 · Liberty</span><nav class="lnl-nav"><a href="forensic.html">국과수 감정 추적</a><a href="liberty-archive.html" class="on">증거 아카이브</a><a href="liberty-report.html">10·28 리포트</a><a href="verify.html">검증 게시판</a><a href="teukgeom.html">특검 수사 파일</a></nav></div></div>
+<nav><div class="wrap"><a class="brand" href="#top"><span class="dot"></span>자유 Liberty · 기록관</a><ul><li><a href="#timeline">연표</a></li><li><a href="#ledger">증거 15</a></li><li><a href="#agg">집계</a></li><li><a href="#onsite">10·28 현장</a></li><li><a href="forensic.html">감정 추적</a></li><li><a href="#archive">영상·게시물</a></li><li><a href="#counter">반대 기록</a></li></ul></div></nav>
+<header id="top"><div class="wrap">
+<div class="kicker">EVIDENCE DOSSIER / 2026.10.29 기준</div>
+<h1>투표함이 열린 날,<br><em>기록</em>이 남았다.</h1>
+<p class="lead">2024 총선, 2025 대선, 2026 6·3 지방선거. 세 번의 선거에서 제기된 부정선거 의혹과, 10월 28일 이태한 특검이 올림픽공원 핸드볼경기장에서 진행한 247만 장 공개검증의 기록을 한 곳에 모았습니다. 확인된 사실과 제기된 의혹을 구분해 정리했습니다.</p>
+<div class="stats"><div class="stat a"><b>247만</b><span>공개검증 투표지 (송파구)</span></div><div class="stat a"><b>41곳</b><span>22대 총선 개표 수치 불일치 주장</span></div><div class="stat b"><b>700여</b><span>이의 제기 → 국과수·특검 추가 분석</span></div><div class="stat b"><b>146일</b><span>올림픽공원 봉쇄 시위</span></div></div>
+</div></header>
+<section id="timeline"><div class="wrap"><div class="sec-h"><span class="sec-n">01</span><h2>세 번의 선거, 하나의 연표</h2></div><p class="sec-d">21대 총선 불복 소송부터 10·29 투표함 반출까지. 붉은 표기는 의혹 제기·수사 국면, 회색 표기는 반대 기록입니다.</p><ul><li class="tl counter"><span class="tl-d">2021.06</span><div class="tl-b"><h3>21대 총선 불복 소송, 법원 재검표</h3><p>민경욱 전 의원의 4·15 총선 부정선거 주장 검증을 위해 법원이 전자개표기 검표와 투표용지 12만 장 재검표를 실시. 2년여 심리 끝에 대법원은 &#x27;부정선거 없음&#x27;으로 판단.</p></div></li>
+<li class="tl base"><span class="tl-d">2024.04.10</span><div class="tl-b"><h3>제22대 국회의원 총선거</h3><p>이후 제기된 부정선거 관련 소송·고발의 출발점. 참관인 배제된 전산 입력 단계가 쟁점으로 부상.</p></div></li>
+<li class="tl counter"><span class="tl-d">2024.08</span><div class="tl-b"><h3>22대 총선 전산조작 고발, 무혐의 종결</h3><p>경찰이 전산 조작 의혹 고발 사건을 무혐의 종결. 이후 국민감사청구로 이어짐.</p></div></li>
+<li class="tl counter"><span class="tl-d">2025.04.10</span><div class="tl-b"><h3>선관위, 투·개표 시연회 개최</h3><p>21대 대선을 앞두고 중앙선관위가 투표·개표 전 과정을 공개 시연. &#x27;부정선거 없다&#x27;는 입장을 재확인.</p></div></li>
+<li class="tl base"><span class="tl-d">2025.06.03</span><div class="tl-b"><h3>제21대 대통령 선거</h3><p>조기대선. 선거 전후로 사전투표·개표 절차를 둘러싼 의혹 제기가 반복.</p></div></li>
+<li class="tl event"><span class="tl-d">2026.06.03</span><div class="tl-b"><h3>제9회 전국동시지방선거 — 투표용지 부족 사태</h3><p>전국 67개 투표소에서 투표용지 부족. 일부 투표소는 최대 105분 투표 중단, 개표 지연. 참정권 침해 논란.</p></div></li>
+<li class="tl event"><span class="tl-d">2026.06.05</span><div class="tl-b"><h3>올림픽공원 핸드볼경기장 봉쇄 시작</h3><p>잠실 개표소로 쓰인 핸드볼경기장이 봉쇄. 시위대는 개표 결과 불복·투표함 보존을 요구. 최대 3만 8천명 운집, 146일 지속.</p></div></li>
+<li class="tl event"><span class="tl-d">2026.07.01</span><div class="tl-b"><h3>국회 선관위 국정조사 특별위원회 가동</h3><p>투표용지 부족 사태의 원인 규명 착수. 인쇄 비율 축소가 사무총장 위임전결로 처리된 정황 등이 지적됨.</p></div></li>
+<li class="tl event"><span class="tl-d">2026.07.27</span><div class="tl-b"><h3>총선 투표율 조작 의혹 국민감사청구, 각하·기각</h3><p>시민 348명 청구(2024) → 서면심사만으로 각하. 700여명 청구(2025) → 심사위원 7인 전원일치 기각. 서버 점검·관계자 조사는 없었음.</p></div></li>
+<li class="tl counter"><span class="tl-d">2026.08.18</span><div class="tl-b"><h3>뉴스타파 &#x27;부정선거 음모론을 파헤치다&#x27; 연재 시작</h3><p>6·3 지방선거 이후 재확산한 의혹을 검증하는 취재 시리즈. 반대편 기록의 대표 사례.</p></div></li>
+<li class="tl probe"><span class="tl-d">2026.09</span><div class="tl-b"><h3>이태한 선거관리위원회 특별검사팀 출범</h3><p>6·3 지방선거 투표용지 부족 사태 수사. 수사 개시 52일째인 10월 28일, 핸드볼경기장 내부 공개검증에 착수.</p></div></li>
+<li class="tl claim"><span class="tl-d">2026.10.25</span><div class="tl-b"><h3>주진우 의원, 22대 총선 &#x27;41곳 불일치&#x27; 공개</h3><p>수기 개표상황표와 전산 입력값이 다른 투표소 41곳, &#x27;랜덤투표소&#x27; 8곳, &#x27;고무줄투표소&#x27; 33곳, 선거인 수 차이 1만 4,214명 주장. 특검에 자료 제출 요구.</p></div></li>
+<li class="tl probe"><span class="tl-d">2026.10.28</span><div class="tl-b"><h3>특검, 송파구 투표지 247만 장 공개검증</h3><p>11:49 시작 ~ 29일 00:38 종료. 12시간. 참관인 촬영 제한으로 3시간 지연. 433개 상자.</p></div></li>
+<li class="tl probe"><span class="tl-d">2026.10.29</span><div class="tl-b"><h3>투표함 반출 — 420상자 선관위 / 13상자 특검</h3><p>이의 제기 700여 장은 국과수 정밀감정 및 특검 추가 분석 대상으로. 146일 봉쇄 시위 종료 수순.</p></div></li></ul></div></section>
+<section id="ledger"><div class="wrap"><div class="sec-h"><span class="sec-n">02</span><h2>도태우 변호사가 정리한 15가지</h2></div><p class="sec-d">10·28 공개검증 참관 결과. 투표지 519장을 촬영해 해시값으로 보관 중이라고 밝혔습니다(촬영은 유출 금지 조건부 허가). 아래는 그가 제시한 항목 원문을 그대로 옮기고, 유형만 분류한 것입니다. <b>15개 전 항목 모두 현재 ‘참관인 제기’ 단계이며, 국과수 감정 결과는 나오지 않았습니다.</b></p><div class="grid2"><article class="ev"><span class="ev-n">01</span><div><h3>투표지 101매 증발</h3><p>개표 집계 대비 실물 투표지가 부족하다는 주장. 특검 선별·정밀감정 대상에 포함된 것으로 전해짐.</p><span class="tag">집계</span></div></article>
+<article class="ev"><span class="ev-n">02</span><div><h3>신권다발 · 측면 줄무늬</h3><p>낱장 분리가 안 된 채 묶음 상태로 남은 흔적. 인쇄·절취 공정 문제라는 주장.</p><span class="tag">인쇄</span></div></article>
+<article class="ev"><span class="ev-n">03</span><div><h3>4장 붙은 투표지, 2장 붙은 것 8쌍 이상</h3><p>접착된 채 발견된 투표지. 이른바 &#x27;이바리&#x27; 논쟁의 핵심 증거로 제시.</p><span class="tag">인쇄</span></div></article>
+<article class="ev"><span class="ev-n">04</span><div><h3>색깔 다른 투표지 — 특히 교육감</h3><p>용지·잉크가 다른 투표지가 혼재.</p><span class="tag">인쇄</span></div></article>
+<article class="ev"><span class="ev-n">05</span><div><h3>관리관 도장 주위 네모</h3><p>도장 둘레의 사각 테두리 자국.</p><span class="tag">날인</span></div></article>
+<article class="ev"><span class="ev-n">06</span><div><h3>관리관 도장 무(無) 다수 — 구청장·시의원</h3><p>관리관 날인이 없는 투표지가 다수 발견됐다는 주장.</p><span class="tag">날인</span></div></article>
+<article class="ev"><span class="ev-n">07</span><div><h3>번호표 미절취 20장 가까이</h3><p>절취선이 분리되지 않은 번호표.</p><span class="tag">인쇄</span></div></article>
+<article class="ev"><span class="ev-n">08</span><div><h3>여백 없는 투표지 부지기수 (100장 중 45장도 여럿)</h3><p>재단 오차로 여백이 사라진 투표지.</p><span class="tag">인쇄</span></div></article>
+<article class="ev"><span class="ev-n">09</span><div><h3>투표함 박스 면도날 절취 흔적</h3><p>보관 상자 개봉·재봉인 의혹과 직결.</p><span class="tag">봉인</span></div></article>
+<article class="ev"><span class="ev-n">10</span><div><h3>투명테이프 · 갈색 접착종이 발린 투표지</h3><p>외부 접착물이 묻은 투표지.</p><span class="tag">봉인</span></div></article>
+<article class="ev"><span class="ev-n">11</span><div><h3>구멍, 좌측 상단·측면 세모 등 훼손</h3><p>물리적 훼손 투표지.</p><span class="tag">훼손</span></div></article>
+<article class="ev"><span class="ev-n">12</span><div><h3>이바리 투표지</h3><p>인쇄소 대량 작업 중 생긴 잔여물이 섞였다는 주장.</p><span class="tag">인쇄</span></div></article>
+<article class="ev"><span class="ev-n">13</span><div><h3>바코드에 실선 표시 수십 장 이상</h3><p>바코드 판독을 방해하는 표시.</p><span class="tag">판독</span></div></article>
+<article class="ev"><span class="ev-n">14</span><div><h3>시의원 함 안에 구의원 투표지</h3><p>선거 종류가 다른 투표지의 혼입.</p><span class="tag">혼입</span></div></article>
+<article class="ev"><span class="ev-n">15</span><div><h3>혼표 존재</h3><p>다른 선거·다른 투표구 투표지가 섞였다는 주장.</p><span class="tag">혼입</span></div></article><article class="ev ev-fill"><span class="ev-n">＋</span><div><h3>표기 안내</h3><p>오른쪽 태그는 증거의 <b>유형</b>입니다 — 집계·인쇄·날인·봉인·훼손·판독·혼입. 15개 항목은 모두 도태우 변호사가 촬영·정리한 참관 기록이며, 특검의 감정 결과가 나오면 이 페이지에 그대로 추가됩니다.</p><span class="tag">참관인 제기 단계</span></div></article></div><blockquote>“추가 분석이 필요한 투표지 상당수를 선별했고 추후 정밀감정 할 예정이다. 아직 확인되지 않은 사항을 섣불리 단정하거나, 반대로 충분한 확인 없이 내용을 예측하는 일도 없게 하겠다.”<cite>— 이태한 선거관리위원회 특별검사, 10월 29일 검증 종료 직후</cite></blockquote></div></section>
+<section id="agg"><div class="wrap"><div class="sec-h"><span class="sec-n">03</span><h2>숫자가 맞지 않는 곳들</h2></div><p class="sec-d">의혹의 핵심은 ‘실물과 기록의 불일치’입니다. 네 가지가 대표적입니다.</p><div class="grid2" style="grid-template-columns:1fr 1fr"><article class="agg"><span class="agg-num">41곳</span><h3>주진우 의원 (국민의힘)</h3><p class="agg-what">22대 총선 개표상황표 ↔ 전산 입력값 불일치</p><p class="agg-desc">수기 상황표와 선관위 직원 단독 입력값이 다른 투표소. 이 중 &#x27;랜덤투표소&#x27; 8곳(서울 6·경기 1·인천 1), &#x27;고무줄투표소&#x27; 33곳. 득표 차이 최소 116표, 선거인 수 차이 1만 4,214명.</p></article>
+<article class="agg"><span class="agg-num">+100 / −1</span><h3>김태규 의원 (국민의힘)</h3><p class="agg-what">가락본동 비례대표 송파구의원 집계</p><p class="agg-desc">공개검증 테이블에서 직접 검수한 결과 민주당 +100표, 국민의힘 −1표가 확인됐다는 페이스북 게시. 6월 개표 결과와 이번 계수가 다르다는 주장.</p></article>
+<article class="agg"><span class="agg-num">+57매</span><h3>도태우 변호사</h3><p class="agg-what">송파구 비례대표 투표지 교부 수 대비 실물</p><p class="agg-desc">이봉규TV 인터뷰에서 &#x27;선거록에 교부 수보다 57매 많은 것으로 적혀 있다&#x27;고 공개. 공식 기록에 기재된 수치라는 점에서 집계 의혹의 핵심 근거로 인용됨.</p></article>
+<article class="agg"><span class="agg-num">다수</span><h3>장동혁 대표 (국민의힘)</h3><p class="agg-what">개표 집계 대비 실물 투표지 부족</p><p class="agg-desc">&quot;개표 집계보다 실물 투표용지가 적은 사례도 있었다&quot;며 재검표 요구. 특검은 선별된 투표지 외 권한이 없다며 거절.</p></article></div><blockquote>“이 많은 허위 입력을 한두 명의 실수로 치부할 수 없으며, 윗선의 지시와 개입이 있었던 조직적 부정 범죄로 볼 수밖에 없다.”<cite>— 주진우 국민의힘 의원, 10월 25일 국회 기자회견</cite></blockquote></div></section>
+<section id="seal"><div class="wrap"><div class="sec-h"><span class="sec-n">04</span><h2>봉인과 보관</h2></div><p class="sec-d">개표록에 남은 기록들. 주장이 아니라 공식 문서에 적힌 사실이라는 점에서 무게가 다릅니다.</p><ul class="plain"><li><strong>관내사전투표함에서 관외사전투표지 발견 → 기권 처리</strong><span>김민전 의원실이 확보한 송파구선관위 개표록 기재 사항.</span></li>
+<li><strong>잔여 투표용지 봉투를 열었다가 위원장 도장으로 재봉인</strong><span>같은 개표록에 남은 재봉인 기록. 봉인 절차의 예외 처리 정황.</span></li>
+<li><strong>봉인 테이프 상태에 이의 제기, 기록에 서명</strong><span>김태규 의원이 송파구청장 선거 투표지 상자의 봉인 상태를 문제 삼아 서명.</span></li>
+<li><strong>봉인지 훼손·수정·재가공 보관함, 다른 동 투표용지 혼입</strong><span>장동혁 대표가 현장 백브리핑에서 제기.</span></li></ul></div></section>
+<section id="onsite"><div class="wrap"><div class="sec-h"><span class="sec-n">05</span><h2>10·28, 12시간의 현장 기록</h2></div><p class="sec-d">11시 49분 시작, 자정을 넘겨 0시 38분 종료. 그 사이에 벌어진 일들.</p><ul class="time"><li><span class="t">11:49</span><p>공개검증 개시. 당초 예정보다 약 3시간 지연. 참관인 개별 촬영을 막았다가 방송사 카메라 2대·여야 참관인 각 1명으로 절충.</p></li>
+<li><span class="t">현장</span><p>특검은 선관위 인력 500여 명이 투표지 &#x27;개수 확인&#x27;만 보조하고 검증은 독자 진행이라고 설명. 수사 대상 기관이 직접 계수했다는 점이 도마에 오름.</p></li>
+<li><span class="t">00:38</span><p>검증 종료. 총 12시간. 이태한 특검: &quot;추가 분석이 필요한 투표지 상당수를 선별했고 추후 정밀감정 할 예정&quot;.</p></li>
+<li><span class="t">새벽</span><p>장동혁 대표·김민수 최고위원 등 참관인 10여 명, 투표지 이송 저지 농성.</p></li>
+<li><span class="t">06:15</span><p>선관위, 경찰 인간띠 속에 투표함 반출 시작. 충돌 없이 완료.</p></li>
+<li><span class="t">반출 결과</span><p>상자 433개 중 이상 없는 420개는 선관위 보안창고로, 이의 제기된 13개는 특검팀이 확보.</p></li>
+<li><span class="t">700여 장</span><p>추가 검증 필요성이 제기된 투표용지. 일부는 국과수 정밀감정, 일부는 특검 추가 분석.</p></li></ul><blockquote>“선관위는 이번 사건의 피의자다. 증거물을 피의자의 손에 맡기는 수사는 없다.”<cite>— 장동혁 국민의힘 대표, 10월 29일 현장 백브리핑</cite></blockquote></div></section>
+<section id="archive"><div class="wrap"><div class="sec-h"><span class="sec-n">06</span><h2>영상 아카이브</h2></div><p class="sec-d">현장을 담은 영상 11편. 원본 링크로 연결됩니다.</p><div class="vids"><a class="vid" href="https://www.youtube.com/watch?v=phli0dDbOBE" target="_blank" rel="noopener"><span class="vid-ch">핫라인</span><h3>[속보] 선관위 특검, 지방선거 투표지 247만 장 검증 돌입</h3><p>검증 개시부터 참관인 반발로 차질. 현장 분위기 원본.</p><span class="vid-go">영상 보기 →</span></a>
+<a class="vid" href="https://www.youtube.com/watch?v=RIaxcrKLxEs" target="_blank" rel="noopener"><span class="vid-ch">YTN</span><h3>투표지 247만 장 공개 검증 진행 중 · 국힘 지도부도 현장 방문</h3><p>장동혁 대표 등 지도부 현장 방문 장면 포함.</p><span class="vid-go">영상 보기 →</span></a>
+<a class="vid" href="https://www.youtube.com/watch?v=xsneaUQfev0" target="_blank" rel="noopener"><span class="vid-ch">연합뉴스TV</span><h3>[속보] 올림픽공원 투표함 145일 만에 열렸다</h3><p>봉쇄 해제·개봉 순간 기록.</p><span class="vid-go">영상 보기 →</span></a>
+<a class="vid" href="https://www.youtube.com/watch?v=4vkPLGcIfjA" target="_blank" rel="noopener"><span class="vid-ch">YTN</span><h3>5개월 &#x27;봉쇄 시위&#x27; 끝에 열린 투표함 — 검증 완료·이송 대치</h3><p>반출 과정과 야당 참관인 밤샘 대치.</p><span class="vid-go">영상 보기 →</span></a>
+<a class="vid" href="https://www.youtube.com/watch?v=-Lo_yMm_S0I" target="_blank" rel="noopener"><span class="vid-ch">연합뉴스TV</span><h3>여야 총출동, &#x27;철저한 검증&#x27; 촉구</h3><p>여야 모두 현장에 나온 정치적 맥락.</p><span class="vid-go">영상 보기 →</span></a>
+<a class="vid" href="https://www.youtube.com/watch?v=ThyhiSJbuqM" target="_blank" rel="noopener"><span class="vid-ch">TV조선</span><h3>도태우 발언 끝나자 박수 터졌다 — &quot;선거 전 과정에 구멍&quot;</h3><p>도태우 변호사의 문제제기 발언 원본.</p><span class="vid-go">영상 보기 →</span></a>
+<a class="vid" href="https://www.youtube.com/shorts/_Yeijj7JoSM" target="_blank" rel="noopener"><span class="vid-ch">YTN</span><h3>주진우 &quot;22대 총선 41곳 허위 입력 적발&quot;</h3><p>10·25 기자회견 요약.</p><span class="vid-go">영상 보기 →</span></a>
+<a class="vid" href="https://www.youtube.com/shorts/TMuIJGgimOI" target="_blank" rel="noopener"><span class="vid-ch">채널A</span><h3>주진우 &quot;개표 수치 불일치 41곳&quot; — 선관위 해명 요구</h3><p>기자회견 현장 숏폼.</p><span class="vid-go">영상 보기 →</span></a>
+<a class="vid" href="https://www.youtube.com/watch?v=a8wZvfTVFjQ" target="_blank" rel="noopener"><span class="vid-ch">권순표TV</span><h3>&#x27;파주을 투표지 증발&#x27; 불기소처분은 부당 — 서울고검 항고</h3><p>총선 국면의 &#x27;투표지 증발&#x27; 사건 기록.</p><span class="vid-go">영상 보기 →</span></a>
+<a class="vid" href="https://www.youtube.com/watch?v=Oa6PrfLTo6k" target="_blank" rel="noopener"><span class="vid-ch">국회방송</span><h3>국회 선관위 국정조사 특별위원회 (2026.07.01 생중계)</h3><p>투표용지 부족 사태 원인 규명 회의 전체.</p><span class="vid-go">영상 보기 →</span></a>
+<a class="vid" href="https://www.youtube.com/watch?v=9rd-Q-26U08" target="_blank" rel="noopener"><span class="vid-ch">YTN</span><h3>선관위 투·개표 시연회 — 의혹 논박 현장</h3><p>반대편 논리의 대표 영상. 함께 봐야 할 자료.</p><span class="vid-go">영상 보기 →</span></a></div><h2 style="margin:64px 0 12px;font-size:24px">게시물 원문</h2><p class="sec-d" style="margin-bottom:28px">도태우 변호사와 주진우 의원의 SNS 원문, 그리고 확산 경로.</p><div class="posts"><a class="post" href="https://www.instagram.com/p/DfD7G7oE3_V/" target="_blank" rel="noopener"><h3>도태우 변호사 인스타그램 — &#x27;특검 올공 검증 참관 결과&#x27; 15가지</h3><p>투표지 519장 촬영, 해시값 보관. 유출 금지 조건부 촬영 허가였다고 명시.</p><span class="post-u">https://www.instagram.com/p/DfD7G7oE3_V/</span></a>
+<a class="post" href="https://www.facebook.com/doetaewoo" target="_blank" rel="noopener"><h3>도태우 변호사 페이스북</h3><p>재검표 과정 촬영·채증 허용 촉구, 건국기념사 관련 강연 등 지속 게시.</p><span class="post-u">https://www.facebook.com/doetaewoo</span></a>
+<a class="post" href="https://www.facebook.com/joojjinwoo" target="_blank" rel="noopener"><h3>주진우 의원 페이스북 — 22대 총선 41곳 허위 입력</h3><p>&quot;득표 116표·선거인 수 1만 4,214명 불일치&quot; 원문 게시.</p><span class="post-u">https://www.facebook.com/joojjinwoo</span></a>
+<a class="post" href="https://gall.dcinside.com/mgallery/board/view/?id=rightpolitics&amp;no=1483545&amp;page=1" target="_blank" rel="noopener"><h3>대한민국 헌정 갤러리 — 15가지 목록 정리 게시물</h3><p>커뮤니티 확산 경로. 원문 인용·재가공 형태 확인용.</p><span class="post-u">https://gall.dcinside.com/mgallery/board/view/?id=rightpolitics&amp;no=1483545&amp;page=1</span></a>
+<a class="post" href="https://www.jayupress.com/news/articleView.html?idxno=56266" target="_blank" rel="noopener"><h3>자유프레스 — &quot;피의자가 검증&quot; &quot;계표 오류&quot; &quot;벽돌 투표지&quot; 현장 분석</h3><p>10·29 검증 종료 직후 정리 보도. 세 갈래 의혹 구분이 명확함.</p><span class="post-u">https://www.jayupress.com/news/articleView.html?idxno=56266</span></a>
+<a class="post" href="https://www.facebook.com/jtbcnews" target="_blank" rel="noopener"><h3>JTBC 뉴스 페이스북 — 10·28 현장 영상</h3><p>&#x27;투표지 247만 장 공개 검증&#x27; 당일 현장 영상.</p><span class="post-u">https://www.facebook.com/jtbcnews</span></a></div></div></section>
+<section id="counter"><div class="wrap"><div class="sec-h"><span class="sec-n">07</span><h2>반대편 기록 — 함께 놓고 봐야 할 것</h2></div><p class="sec-d">이 자료집은 한쪽 주장만 모으면 신뢰를 잃습니다. 법원·수사기관·선관위가 남긴 반대 기록을 그대로 붙입니다. 반박되지 않는 주장만 살아남습니다.</p><ul class="plain"><li><strong>21대 총선 부정선거 소송 126건</strong><span>법원이 부정선거를 인정한 판결은 0건. 투표용지 12만 장 재검표 포함 2년여 심리 끝에 대법원이 &#x27;부정선거 없음&#x27; 판단.</span></li>
+<li><strong>22대 총선 전산조작 고발</strong><span>경찰이 2024년 8월 무혐의 종결.</span></li>
+<li><strong>선관위 압수수색 불가 주장</strong><span>최근 5년간 181차례 압수수색, 이 가운데 약 90%가 윤석열 전 대통령 취임 이후 실시.</span></li>
+<li><strong>방첩사 내부 문건</strong><span>&quot;선거 시스템이 고도화된 대한민국 사회에서 부정선거는 실현되기 어렵다&quot;고 평가한 것으로 알려짐.</span></li>
+<li><strong>국정원 조사</strong><span>김용빈 중앙선관위 사무총장: &quot;(국정원이) 조사 결과에 대해서는 부정선거의 흔적을 찾을 수 없다고&quot;.</span></li>
+<li><strong>국민감사청구 2건</strong><span>시민 348명·700여 명이 청구한 투표율 전산조작 의혹 감사청구가 각각 각하·기각. 서버 점검 없이 서면심사로 종결.</span></li>
+<li><strong>선관위 공식 입장</strong><span>&#x27;주요 부정선거 의혹에 대한 설명자료&#x27;를 배포하며 전산시스템 해킹·조작 주장을 수용하기 어렵다고 반박.</span></li></ul><div class="disclaimer">이 페이지는 2026년 10월 29일까지 공개된 보도·공식 기록·당사자 게시물을 정리한 <b>자료집</b>입니다. 각 항목은 ‘누가, 어떤 근거로 제기했는가’를 기준으로 배열했으며, 특검·법원·국과수의 최종 판단을 대신하지 않습니다. 확인된 사실과 제기된 의혹을 구분해 표기했습니다.</div></div></section>
+<section id="tension"><div class="wrap"><div class="sec-h"><span class="sec-n">08</span><h2>쟁점 지도</h2></div><p class="sec-d">무엇이 확인됐고, 무엇이 다투어지고, 무엇이 아직 비어 있는가.</p><div class="grid2" style="grid-template-columns:1fr 1fr 1fr"><div class="tt"><h3>확인된 것</h3><p>6·3 지방선거에서 투표용지 부족 사태가 실제로 발생했고, 67개 투표소에서 투표가 중단됐다. 송파구 투표지 247만 장이 146일간 개표소에 보관됐고, 개표록에 관내함에서 관외 투표지가 나온 기록과 재봉인 기록이 남아 있다. 특검이 이의 제기 700여 장을 선별해 국과수 감정에 넘겼다. 검·경 합동수사본부가 선관위 직원의 수치 조정 정황을 포착했다.</p></div>
+<div class="tt"><h3>다투는 것</h3><p>그 700여 장과 41곳 불일치가 &#x27;조작&#x27;인지 &#x27;관리 부실·입력 오류&#x27;인지. 특검은 아직 어느 쪽으로도 단정하지 않았다. 도태우 변호사의 15개 항목은 촬영·진술 단계이며, 특검의 감정 결과가 나오지 않았다.</p></div>
+<div class="tt"><h3>아직 모르는 것</h3><p>선별된 투표지의 국과수 감정 결과, 41곳 불일치의 원인 규명, 투표용지 부족의 최종 책임 소재. 이 세 가지가 나오기 전까지 &#x27;부정선거&#x27;라는 결론은 검증 대기 상태다.</p></div></div></div></section>
+<section id="src"><div class="wrap"><div class="sec-h"><span class="sec-n">09</span><h2>출처</h2></div><p class="sec-d">인용한 모든 보도·공식 자료의 원문 링크.</p><ul class="srclist"><li><a href="https://www.yna.co.kr/view/AKR20261029017953004" target="_blank" rel="noopener">연합뉴스 — 433개 상자 중 420개 선관위로…13개는 특검팀이 별도 이송</a></li>
+<li><a href="https://www.yna.co.kr/amp/view/MYH20261028014900038" target="_blank" rel="noopener">연합뉴스 — 247만 장 투표용지 검증 돌입…예정보다 3시간 지연</a></li>
+<li><a href="https://www.jayupress.com/news/articleView.html?idxno=56266" target="_blank" rel="noopener">자유프레스 — &quot;피의자가 검증&quot; &quot;계표 오류&quot; &quot;벽돌 투표지&quot;…다시 불붙은 부정선거 의혹</a></li>
+<li><a href="https://www.hankookilbo.com/news/article/A2026102809220003288" target="_blank" rel="noopener">한국일보 — 투표지 247만 장 검증 시작… 이태한 특검 &quot;국민 신뢰 회복&quot;</a></li>
+<li><a href="http://weekly.chosun.com/news/articleView.html?idxno=56645" target="_blank" rel="noopener">주간조선 — 투표지 247만장 공개검증 중 고성·항의…&quot;이거 다 사기야&quot;</a></li>
+<li><a href="https://www.khan.co.kr/article/202610281832001/amp" target="_blank" rel="noopener">경향신문 — [사설] 147일 만에 투표지 검증한 선관위 특검, 선거 신뢰 회복</a></li>
+<li><a href="https://www.donga.com/news/Politics/article/all/20261029/134932191/1" target="_blank" rel="noopener">동아일보 — 與 &quot;오세훈 압승한 송파, 장동혁은 계속 부정선거 주장&quot;</a></li>
+<li><a href="https://www.donga.com/news/Politics/article/all/20261025/134902530/1" target="_blank" rel="noopener">동아일보 — 주진우 &quot;22대 총선도 허위 입력…개표상황표-결과값 다른 투표소 41곳&quot;</a></li>
+<li><a href="https://www.newdaily.co.kr/site/data/html/2026/07/27/2026072700209.html" target="_blank" rel="noopener">뉴데일리 — 22대 총선 때도 &#x27;조작 의혹&#x27;…선관위, 조사 없이 각하·기각</a></li>
+<li><a href="https://news.kbs.co.kr/news/view.do?ncd=8158574" target="_blank" rel="noopener">KBS — 법원·수사기관·선관위 모두 &quot;부정선거 없다&quot;</a></li>
+<li><a href="https://www.hani.co.kr/arti/society/society_general/1134749.html" target="_blank" rel="noopener">한겨레 — 4년 전 총선 이후 &#x27;부정선거&#x27; 소송 126건…법원 인정 1건도 없어</a></li>
+<li><a href="https://www.yna.co.kr/view/AKR20250210133300004" target="_blank" rel="noopener">연합뉴스 — 尹탄핵심판 &#x27;부정선거론&#x27; 격돌 예고…대법선 모두 기각·각하</a></li>
+<li><a href="https://www.yna.co.kr/view/AKR20241206030151061" target="_blank" rel="noopener">연합뉴스 — &#x27;4·10 부정선거 의혹&#x27; 고발사건 이미 8월 &#x27;무혐의&#x27; 종결</a></li>
+<li><a href="https://newstapa.org/article/ST-p7" target="_blank" rel="noopener">뉴스타파 — 부정선거 음모론을 파헤치다 1편 — &#x27;부정선거, 재선거&#x27; 구호</a></li>
+<li><a href="https://factcheckkorea.afp.com/doc.afp.com.B4TT8T3" target="_blank" rel="noopener">AFP 팩트체크 — 6·3 지방선거기간 중 다시 고개 든 부정선거 음모론</a></li>
+<li><a href="https://www.nec.go.kr/common/board/Download.do?bcIdx=276422&amp;cbIdx=1129&amp;streFileNm=fc500f05-a75e-4cbc-83d0-6712252b50c0.pdf" target="_blank" rel="noopener">중앙선관위 — 주요 부정선거 의혹에 대한 설명자료 (PDF)</a></li>
+<li><a href="https://ko.wikipedia.org/wiki/6%C2%B73_%EC%A7%80%EB%B0%A9%EC%84%A0%EA%B1%B0_%ED%88%AC%ED%91%9C%EC%9A%A9%EC%A7%80_%EB%B6%80%EC%A1%B1_%EC%82%AC%ED%83%9C" target="_blank" rel="noopener">위키백과 — 6·3 지방선거 투표용지 부족 사태</a></li>
+<li><a href="https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003241013" target="_blank" rel="noopener">오마이뉴스 — 투표용지 부족사태, 한국은 무엇을 바꿀 것인가</a></li>
+<li><a href="https://www.joongang.co.kr/article/25434097" target="_blank" rel="noopener">중앙일보 — [단독] 선거예산 더 받고, 용지는 덜 찍었다…정신 나간 선관위</a></li>
+<li><a href="https://www.bbc.com/korean/articles/c5y910e0gl7o" target="_blank" rel="noopener">BBC 코리아 — 지방선거 초유의 투표용지 부족 사태…과거 미국에서는 어땠나</a></li>
+<li><a href="https://www.instagram.com/p/DfD7G7oE3_V/" target="_blank" rel="noopener">도태우 인스타그램 — &#x27;특검 올공 검증 참관 결과&#x27; 15가지 부정선거 증거</a></li>
+<li><a href="https://www.facebook.com/doetaewoo" target="_blank" rel="noopener">도태우 페이스북 — 재검표 과정 촬영·채증 허용 촉구</a></li></ul></div></section>
+<footer><div class="wrap"><span>자유 Liberty 기록관 · 부정선거 증거 아카이브</span><span>기준 2026. 10. 29. 21:00 KST · 편집·구성 자체 제작</span></div><div class="wrap" style="display:flex;gap:16px;flex-wrap:wrap;padding:18px 0 4px;font-size:12px;letter-spacing:.01em"><a href="index.html">← 토지와 자유</a><a href="forensic.html">국과수 감정 추적표</a><a href="liberty-archive.html">증거 아카이브</a><a href="liberty-report.html">10·28 리포트</a><a href="verify.html">공개검증 게시판</a><a href="teukgeom.html">특검 수사 파일</a></div></footer>
+</body></html>
