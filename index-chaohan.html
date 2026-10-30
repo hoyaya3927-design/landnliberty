@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOC 2026-101 · 중국 공산당·인민해방군의 대한민국 흡수 전략 — 총론</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800;900&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10141c; --panel:#181f2b; --panel2:#1d2635; --line:rgba(233,228,216,.14);
+  --text:#e9e4d8; --muted:#9aa3ad; --zhu:#d8453a; --zhu-dim:#a03428; --brass:#c9a96a; --teal:#4fa3a5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--text);font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+ background-image:linear-gradient(rgba(233,228,216,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(233,228,216,.03) 1px,transparent 1px);background-size:64px 64px}
+main{position:relative;z-index:1}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px}
+a{color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(201,169,106,.35)}
+a:hover{color:var(--text);border-bottom-color:var(--text)}
+/* top bar */
+.topnav{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em}
+.topnav .brand{color:var(--zhu);font-weight:600;margin-right:8px}
+.topnav a{border-bottom:none;color:var(--muted);padding:3px 8px;border:1px solid transparent}
+.topnav a:hover{color:var(--text);border:1px solid var(--line)}
+.topnav a.here{color:var(--text);border:1px solid var(--line);background:var(--panel)}
+/* masthead */
+.mast{padding:56px 0 36px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
+.seal{width:96px;height:96px;background:var(--zhu);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif KR',serif;font-size:56px;font-weight:900;border-radius:6px;box-shadow:0 6px 24px rgba(216,69,58,.28);transform:rotate(-2deg)}
+.docno{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--brass);margin-bottom:10px}
+h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(28px,4.6vw,44px);line-height:1.25;letter-spacing:-.01em}
+.subtitle{color:var(--muted);margin-top:12px;font-size:15.5px}
+.meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:2px}
+.chip.red{border-color:rgba(216,69,58,.5);color:#f08a80}
+/* sections */
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;color:var(--zhu);margin-bottom:10px}
+h2{font-family:'Noto Serif KR',serif;font-weight:800;font-size:26px;margin-bottom:18px;line-height:1.35}
+h3{font-family:'Noto Serif KR',serif;font-weight:700;font-size:19px;margin:26px 0 10px;color:#f3ead9}
+p{margin-bottom:14px}
+strong{color:#fff}
+em{font-style:normal;color:var(--brass)}
+/* lead summary */
+.lead{background:linear-gradient(180deg,rgba(216,69,58,.08),transparent);border:1px solid rgba(216,69,58,.3);border-left:3px solid var(--zhu);padding:22px 24px;margin-bottom:8px}
+.lead p{margin-bottom:10px}
+/* tables */
+.tblwrap{overflow-x:auto;margin:18px 0}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:1px solid rgba(233,228,216,.3);white-space:nowrap}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(233,228,216,.03)}
+td.num{font-family:'IBM Plex Mono',monospace;color:var(--brass);white-space:nowrap}
+/* concept cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--panel);border:1px solid var(--line);padding:18px 18px 14px;border-radius:3px}
+.card .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--zhu);display:block;margin-bottom:8px}
+.card h4{font-family:'Noto Serif KR',serif;font-size:17px;font-weight:700;margin-bottom:8px}
+.card p{font-size:13.8px;color:#c8cdd4;margin-bottom:0}
+/* ladder — signature */
+.ladder{margin:26px 0;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.ladder .step{display:grid;grid-template-columns:64px 1fr;gap:0;border-bottom:1px solid var(--line)}
+.ladder .step:last-child{border-bottom:none}
+.ladder .n{background:var(--panel2);display:flex;align-items:center;justify-content:center;font-family:'Noto Serif KR',serif;font-size:26px;font-weight:900;color:var(--zhu);border-right:1px solid var(--line)}
+.ladder .c{padding:14px 18px}
+.ladder .t{font-weight:700;font-size:15.5px;margin-bottom:4px}
+.ladder .d{font-size:13.8px;color:var(--muted)}
+.ladder .d b{color:var(--text);font-weight:500}
+/* doc list */
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:14px;margin:18px 0}
+.doc{background:var(--panel);border:1px solid var(--line);padding:20px;border-radius:3px;display:block;border-bottom:2px solid var(--zhu)}
+.doc:hover{background:var(--panel2);border-bottom-color:var(--brass)}
+.doc .no{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--zhu);letter-spacing:.12em;display:block;margin-bottom:6px}
+.doc h4{font-family:'Noto Serif KR',serif;font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px}
+.doc p{font-size:13.5px;color:var(--muted);margin-bottom:0}
+/* callout */
+.note{border:1px dashed rgba(201,169,106,.45);background:rgba(201,169,106,.06);padding:16px 20px;margin:20px 0;font-size:14px;color:#ddd6c4;border-radius:3px}
+.warn{border:1px solid rgba(79,163,165,.4);background:rgba(79,163,165,.07);padding:16px 20px;margin:20px 0;font-size:14px;border-radius:3px}
+.warn b{color:var(--teal)}
+/* sources */
+.srcs{font-size:13px;color:var(--muted)}
+.srcs li{margin-bottom:7px;margin-left:18px}
+.srcs a{word-break:break-all}
+footer{padding:34px 0 60px;color:var(--muted);font-size:13px}
+@media(max-width:640px){.mast{grid-template-columns:1fr}.seal{width:72px;height:72px;font-size:42px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+</style>
+</head>
+<body>
+<main>
+<div class="wrap">
+  <nav class="topnav" aria-label="문서 시리즈">
+    <span class="brand">吸收戰略 DOC</span>
+    <a href="index.html" class="here">101 총론</a>
+    <a href="doc-01-chaohan.html">102 초한전</a>
+    <a href="doc-02-samjeon.html">103 삼전</a>
+    <a href="doc-03-hongkong.html">104 홍콩</a>
+    <a href="doc-04-korea.html">105 한국 흡수전략</a>
+  </nav>
+
+  <header class="mast">
+    <div class="seal" aria-hidden="true">限</div>
+    <div>
+      <div class="docno">DOC 2026-101 · 통합 조사 보고서 · 총론</div>
+      <h1>중국 공산당과 인민해방군의<br>대한민국 흡수 전략</h1>
+      <p class="subtitle">초한전(超限戰)·삼전(三戰)·홍콩 흡수 모델을 하나의 틀로 묶은 통합 조사 — 기존 조사(2026.5~7)와 2026년 최신 자료를 결합한 종합판</p>
+      <div class="meta">
+        <span class="chip">디지털 대동법 연구소</span>
+        <span class="chip red">기준일 2026-10-30</span>
+        <span class="chip">보안등급: 공개 자료 기반 분석</span>
+        <span class="chip">문서 5종 (101~105)</span>
+      </div>
+    </div>
+  </header>
+
+  <section id="lead">
+    <div class="eyebrow">EXECUTIVE SUMMARY</div>
+    <h2>한 줄 요약과 다섯 줄 근거</h2>
+    <div class="lead">
+      <p><strong>결론.</strong> 중국의 대한반도 접근은 단일 전술이 아니라 <em>「군사 침공 없는 통합」, 즉 흡수(absorption) 전략</em>으로 읽을 수 있으며, 그 이론적 뼈대는 1999년 <em>초한전(超限戰)</em>에서, 운용 수단은 2003년 정식 도입된 <em>삼전(三戰)</em>에서, 완성형 사례는 <em>홍콩 흡수 과정</em>에서 이미 확인된다. 2025~2026년 한국을 겨냥한 실제 활동 — 가짜 뉴스 사이트, 교민사회 통일전선 조직화, 경제 강제, 선거 관련 개입 시도 의혹 — 는 이 세 축이 실전에서 결합되고 있음을 보여준다.</p>
+    </div>
+    <p>① 이론 — <strong>초한전</strong>: 군사·초군사·비군사 3개 부문 24개 전법으로 전쟁의 경계를 없앤 인민해방군 소속 대령 두 명의 저작(<a href="https://en.wikipedia.org/wiki/Unrestricted_Warfare">출처</a>). ② 독트린 — <strong>삼전</strong>: 2003년 정치공작조례 개정으로 공식 도입된 여론전·심리전·법률전(<a href="http://komsf.or.kr/bbs/board.php?bo_table=m49&wr_id=30">출처</a>), 2019년 이후 <em>인지영역작전(CDO)</em>으로 진화(<a href="https://www.stimson.org/2026/implications-of-chinese-influence-operations-for-south-korea-and-the-us-rok-alliance/">출처</a>). ③ 완성 사례 — <strong>홍콩</strong>: 법적 권한·엘리트 포섭·경제적 지렛대·제도 개편·서사 통제의 다섯 레버로 준자치 체제를 해체(<a href="https://ipdefenseforum.com/ko/2026/06/%EA%B5%AD%EA%B0%80%EB%B3%B4%EC%95%88%EB%B2%95-%ED%99%8D%EC%BD%A9-%EC%9E%90%EC%B9%98-%EC%A2%85%EC%8B%9D-%EB%85%B8%EB%A6%B0-%EC%A4%91%EA%B5%AD%EC%9D%98-%EB%8F%99%ED%99%94-%EC%A0%84%EB%9E%B5-%EC%99%84/">출처</a>). ④ 한국 적용 — 2026.2 스팀슨센터 보고서가 인민해방군의 한국 여론 영향·선거 개입 기획을 공식 문헌화(<a href="https://www.stimson.org/2026/implications-of-chinese-influence-operations-for-south-korea-and-the-us-rok-alliance/">출처</a>), 2026.7 트럼프 행정부는 미국 유권자 데이터 2억 2,000만 건 탈취를 공개(<a href="https://thekoreasignal.com/cover-story/chinas-influence-in-south-korea-part-v-china-targets-elections-and-public-opinion/">출처</a>). ⑤ 결과 — 한국 국방연구원(KIDA)은 중국 영향력 평가 결과가 한미 정보공유와 <em>작전통제권 전환 일정</em>까지 흔들 수 있다고 분석(<a href="https://www.upi.com/Top_News/World-News/2026/10/28/kida-united-states-china-wartime-operational-control/7741793232875/">출처</a>).</p>
+    <div class="note"><strong>방법론 상 주의.</strong> 본 시리즈는 공개 출처 기반 분석이다. <strong>『확인된 사실』과 『의혹·가설』을 문서 전체에서 명시적으로 구분</strong>한다. 특히 한국 선거에 대한 중국 개입 주장 중 상당수는 아직 사법적·정보기관적 확정이 없으며, 중국 측과 주한미군은 이를 부인한 바 있다(<a href="https://thekoreasignal.com/cover-story/chinas-influence-in-south-korea-part-v-china-targets-elections-and-public-opinion/">출처</a>). 가설은 가설로 기록한다.</div>
+  </section>
+
+  <section id="past">
+    <div class="eyebrow">PRIOR WORK · 기존 조사 자산</div>
+    <h2>지금까지의 작업 — 무엇이 쌓여 있었나</h2>
+    <p>이번 통합 보고서의 뼈대는 2026년 5~7월에 진행한 다섯 차례의 전략 조사와 최근 팩트시트 계열 작업이다. 과거 프로젝트 기록(digest)에서 확인한 내용은 다음과 같다.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>시기</th><th>조사 주제</th><th>확보된 내용</th></tr></thead>
+      <tbody>
+        <tr><td class="num">2026-05-30</td><td>초한전 및 24개 비군사 수단 정리</td><td>차오량·왕샹수이 《초한전》(1999) 원작 논리 구조, 24개 전쟁 수단 분류, 금융전·네트워크전 심층 분석, 한국형 회색지대 대응 전략 설계안</td></tr>
+        <tr><td class="num">2026-05-30</td><td>초한전과 인지전 개념 정리</td><td>24개 전쟁 수단 분류·정의, 삼전 상세 분석, 인지전(Cognitive Warfare)·NATO ACT, 풀스택 전쟁 개념, 2024 국가사이버안보전략 연계</td></tr>
+        <tr><td class="num">2026-05-30</td><td>초한전 관점의 한국 선거·사법기관 분석</td><td>삼전 독트린 정의와 특성 비교, 선거 의혹을 통한 사회적 신뢰 침식·법률전 메커니즘, 위험기반 사후감사(RLA) 쟁점, 대만 사례</td></tr>
+        <tr><td class="num">2026-07-05</td><td>중국 공산당 전략·국가자본주의 분석 (4회)</td><td>초한전·삼전·통일전선(统战) 연계 분석, UFWD 보고서, 무제한전쟁과 국가자본주의의 결합, 대응책으로 지대 추구 카르텔 청산·질서자유주의·디지털 대동법 프레임 도출</td></tr>
+        <tr><td class="num">2026-10월</td><td>선거·팩트시트 계열 작업</td><td>이태한 특검(올공 재검표) 관련 조사 및 팩트시트 — 본 시리즈 105호의 선거 개입 의혹 파트의 국내 사실관계 기반</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><strong>빠진 조각 하나.</strong> 과거 대화 인덱스(2026-02-14 이후 범위)에서는 <em>홍콩 흡수 과정</em>을 단독 주제로 한 과거 작업을 확인하지 못했고, 장기 기록 저장소 검색도 권한 오류로 실패했다(`result_count: 0`, `error: Not Found`). 다만 홍콩은 이번에 외부 최신 자료(2024~2026)로 독립 문서(104호)를 새로 완성했으므로, 결과물에는 결손이 없다.</div>
+  </section>
+
+  <section id="lexicon">
+    <div class="eyebrow">LEXICON · 개념 사전</div>
+    <h2>이 시리즈가 쓰는 여섯 개 단어</h2>
+    <div class="cards">
+      <div class="card"><span class="tag">UNRESTRICTED WARFARE · 超限戰</span><h4>초한전</h4><p>1999년 인민해방군 공군 대령 차오량·왕샹수이의 저작. 군사·비군사 수단의 경계를 허물고 국가 관심사와 관련된 모든 영역(금융·무역·매체·법·문화·네트워크)을 전쟁 무대로 재정의하는 관념.</p></div>
+      <div class="card"><span class="tag">THREE WARFARES · 三戰</span><h4>삼전</h4><p>여론전·심리전·법률전. 2003년 인민해방군 정치공작조례에 공식 편입되어, 군사적·비군사적 활동에 대한 국제적 영향력·우호적 반응·정당성을 확보해 전략적 우위를 달성하는 비군사 전략.</p></div>
+      <div class="card"><span class="tag">COGNITIVE DOMAIN OPERATIONS</span><h4>인지영역작전 (CDO)</h4><p>삼전의 2019년 이후 후계 개념. 인간의 인지 자체를 전장으로 규정하고 AI·소셜봇을 동원해 상대의 의사결정 OS를 침식하는 통합적 영향력 작전.</p></div>
+      <div class="card"><span class="tag">UNITED FRONT · 统一战线</span><h4>통일전선</h4><p>중국공산당의 ‘3대 법보’ 하나. 해외 화교·교민단체·언론·학계·정치권을 장기 네트워크로 결집하는 통일전선공작부(UFWD) 체계. 베이징 해외연의회의 회장이 베이징시위 통일전선부장이라는 사실이 그 조직 성격을 보여준다.</p></div>
+      <div class="card"><span class="tag">GRAY ZONE</span><h4>회색지대 전략</h4><p>전쟁과 평화 사이. 군사적 충돌 임계선 아래에서 경제 강제·사이버 침투·여론 조작·영해 압박을 겹쳐 가는 방식. ASPI는 대상국 한국에서 하이브리드 위협이 1년 새 23% 증가했다고 집계했다.</p></div>
+      <div class="card"><span class="tag">ABSORPTION</span><h4>흡수 전략</h4><p>본 시리즈의 분석 프레임. 침공이 아니라 법제화·엘리트 포섭·경제 지렛대·제도 개편·서사 통제의 다섯 레버를 겹층적으로 쌓아, 상대 국가의 판단 체계와 자치 능력을 내부에서 무력화한 뒤 제도로 봉합하는 통합 방식. 홍콩에서 완성형으로 관찰된다.</p></div>
+    </div>
+  </section>
+
+  <section id="frame">
+    <div class="eyebrow">FRAME · 분석 프레임</div>
+    <h2>다섯 레버의 흡수 사다리 — 홍콩에서 보고, 한국에 겹쳐 보기</h2>
+    <p>홍콩 앞선 30년을 다섯 겹으로 정리하면, 같은 레버들이 한국에 이미 부분적으로 걸려 있는지 대조할 수 있다. 이 사다리가 본 시리즈 전체의 분석 뼈대다.</p>
+    <div class="ladder">
+      <div class="step"><div class="n">壹</div><div class="c"><div class="t">법적 권한 — 국안법으로 ‘허용 범위’를 다시 긋는다</div><div class="d">홍콩: 2020 국가보안법 → 2024 기본법 23조 → 2026 인증서 제도로 소급성 논란까지. <b>한국 대응물: 한반도 ‘하나의 중국’ 논리, 동북공정, EEZ·방공식별구역 주장 — 법률전의 국내법·국제법 이중 운용.</b></div></div></div>
+      <div class="step"><div class="n">貳</div><div class="c"><div class="t">엘리트 포섭 — 시장 접근권으로 인맥을 묶는다</div><div class="d">홍콩: 기업·언론·정치·교육·종교 지도자에게 본토 시장 접근권·투자 기회·자문직 제공. <b>한국 대응물: 교민단체·정치권 임원 겸직 사례(베이징 해외연의회 상무이사 위촉 인사), 귀화 정치인 발굴·육성 기조.</b></div></div></div>
+      <div class="step"><div class="n">叁</div><div class="c"><div class="t">경제적 지렛대 — 이득과 손실을 정치 방향으로 돌린다</div><div class="d">홍콩: 비판 세력에 규제 조사·상업 기회 상실·본토 시장 배제. <b>한국 대응물: THAAD 보복(2017), 관광·유통·게임 등 선택적 차별, 공급망·기술 패권 압박(2026 산업 경쟁 격화).</b></div></div></div>
+      <div class="step"><div class="n">肆</div><div class="c"><div class="t">제도 개편 — 참여 규칙을 ‘충분히 애국적인’ 사람으로 좁힌다</div><div class="d">홍콩: 후보 심사·선거 규칙 개정으로 후보군 축소, 민주당·사민연맹 해산(2025). <b>한국 대응물: 동포·다문화 정치 채널을 통한 영향력 진입 시도 — 제도 자체는 아직 중국화되지 않았으므로, 해외 개입으로 우회하는 모습.</b></div></div></div>
+      <div class="step"><div class="n">伍</div><div class="c"><div class="t">서사 통제 — 기억과 정체성을 다시 쓴다</div><div class="d">홍콩: 교육 개혁·교과 개정·애국 프로그램, 독립 언론 폐쇄·시민사회 해산. <b>한국 대응물: 동북공정, 가짜 한국어 뉴스 사이트(국정원 2023년 38개·2025년 추가 적발), AI 기반 여론 작전 확대 전망.</b></div></div></div>
+    </div>
+    <p>핵심 통찰은 이렇다. <strong>홍콩에서 다섯 레버가 순차적이 아니라 겹층적으로 작동했다는 사실</strong>이다. 법이 먼저 오고 포섭이 따라오는 선형 과정이 아니라, 시장 접근권으로 엘리트를 묶어 두는 동안 법제화를 준비하고, 제도 개편으로 반대 세력의 발판을 걷어내는 동안 서사를 다시 쓴다. 한국에 대한 접근도 이와 같은 <em>동시 다발적 겹층</em>으로 읽어야 관측되는 단편들이 하나의 그림이 된다.</p>
+  </section>
+
+  <section id="conclusions">
+    <div class="eyebrow">FINDINGS · 핵심 결론</div>
+    <h2>통합 결론 5항</h2>
+    <div class="tblwrap"><table>
+      <thead><tr><th>№</th><th>결론</th><th>근거 문서</th></tr></thead>
+      <tbody>
+        <tr><td class="num">01</td><td>중국의 대한 접근은 초한전 이론 → 삼전 독트린 → 인지영역작전으로 계보를 이루는 하나의 전쟁 관념의 실전 적용이며, 홍콩은 이 관념이 소형·완결형으로 시험된 실험장이다.</td><td>102·103·104</td></tr>
+        <tr><td class="num">02</td><td>한국은 이제 ‘2차 표적’에서 공식 표적 수순이다. 2026.2 스팀슨센터 보고서는 인민해방군의 한국 여론 영향·선거 개입 기획을 미국-한 동맹 전략 이슈로 공식화했고, AI/LLM은 소규모 표적에 대한 작전 비용을 낮춰 한국 대상 활동 확대를 구조적으로 촉진한다.</td><td>103·105</td></tr>
+        <tr><td class="num">03</td><td>통일전선의 한국 내 뿌리는 단기 개입이 아니라 수십 년 단위 네트워크다. 베이징 해외연의회(회장=베이징시위 통일전선부장) 상무이사에 한국 교민사회·정치권 인사가 위촉된 것은 미국 사례와 동형의 구조다.</td><td>105</td></tr>
+        <tr><td class="num">04</td><td>홍콩의 다섯 레버 중 한국에 이미 걸린 것은 ‘경제 지렛대’와 ‘서사 통제’가 가장 두텁고, ‘법적 권한’은 아직 국제 질서 차원의 문제(동북공정 등)로 존재한다. 제도 개편 레버는 한국의 민주 제도 자체가 목표가 되는 국면 — 가장 위험한 국면 — 으로 가는 통로다.</td><td>104·105</td></tr>
+        <tr><td class="num">05</td><td>대응의 1순위는 인지·정보 영역(가짜 매체 식별·출처 투명성)과 제도 방어(선거 기반 시설 보안·간첩죄 확대 시행)이며, 장기적 방어선은 내부 구조 개혁 — 지대 추구 카르텔 청산과 경제적 취약점 축소 — 이다. 미 의회의 중국 영향력 평가는 한국에 위기이자 측정 기회다.</td><td>105</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="docs">
+    <div class="eyebrow">SERIES · 문서 목록</div>
+    <h2>시리즈 문서 5종</h2>
+    <div class="docs">
+      <a class="doc" href="doc-01-chaohan.html"><span class="no">DOC 2026-102 · 이론</span><h4>초한전(超限戰) — 제한 없는 전쟁의 원본</h4><p>1999년 차오량·왕샹수이 저작의 탄생 배경, 군사·초군사·비군사 3부문 24전법 구조, 금융전·네트워크전·매체전, 27년 뒤 한국에 도달한 그 관념.</p></a>
+      <a class="doc" href="doc-02-samjeon.html"><span class="no">DOC 2026-103 · 독트린</span><h4>삼전(三戰)과 인지영역작전 — 한국을 겨냥한 여론전·심리전·법률전</h4><p>2003년 정치공작조례부터 CDO까지의 계보, 가짜 뉴스 사이트 200여 개, AI가 바꾼 공격 비용 구조, 2026.2 형법 개정까지의 대응.</p></a>
+      <a class="doc" href="doc-03-hongkong.html"><span class="no">DOC 2026-104 · 완성 사례</span><h4>홍콩 흡수 과정 — 일국양제의 해체 연대기</h4><p>1997 반환부터 2026 인증서 제도까지, 다섯 레버가 어떻게 겹층으로 쌓였는지, 그리고 ‘50년 약속’이 무엇을 보증하지 못했는지.</p></a>
+      <a class="doc" href="doc-04-korea.html"><span class="no">DOC 2026-105 · 적용</span><h4>대한민국 흡수 전략 — 현황·증거·대응</h4><p>일곱 차원(정치·정보·인지·선거·경제·법제·군사)별 증거 표, 미국 변수, ‘의혹 ≠ 확정’ 구분, 대응 전략과 모니터링 지표.</p></a>
+      <div class="doc"><span class="no">DOC 2026-101 · 본 문서</span><h4>총론 — 조사 경위·개념 사전·프레임·결론</h4><p>기존 조사 자산 목록, 여섯 개 개념의 정의, 흡수 사다리 프레임, 통합 결론 5항.</p></div>
+    </div>
+  </section>
+
+  <section id="sources">
+    <div class="eyebrow">SOURCES · 주요 출처</div>
+    <h2>참고 자료</h2>
+    <ul class="srcs">
+      <li>Stimson Center, <a href="https://www.stimson.org/2026/implications-of-chinese-influence-operations-for-south-korea-and-the-us-rok-alliance/">Implications of Chinese Influence Operations for South Korea and the US-ROK Alliance</a> (2026-02-25, RAND 공동 계열)</li>
+      <li>RAND, <a href="https://www.rand.org/pubs/external_publications/EP71288.html">Implications of Chinese Influence Operations for South Korea…</a> (2026-03-27)</li>
+      <li>The Korea Signal, <a href="https://thekoreasignal.com/cover-story/chinas-influence-in-south-korea-part-v-china-targets-elections-and-public-opinion/">China Targets Elections and Public Opinion</a> (2026-09)</li>
+      <li>UPI·Asia Today, <a href="https://www.upi.com/Top_News/World-News/2026/10/28/kida-united-states-china-wartime-operational-control/7741793232875/">KIDA: Chinese influence could delay US-ROK command transfer</a> (2026-10-28)</li>
+      <li>Indo-Pacific Defense FORUM, <a href="https://ipdefenseforum.com/ko/2026/06/%EA%B5%AD%EA%B0%80%EB%B3%B4%EC%95%88%EB%B2%95-%ED%99%8D%EC%BD%A9-%EC%9E%90%EC%B9%98-%EC%A2%85%EC%8B%9D-%EB%85%B8%EB%A6%B0-%EC%A4%91%EA%B5%AD%EC%9D%98-%EB%8F%99%ED%99%94-%EC%A0%84%EB%9E%B5-%EC%99%84/">국가보안법, 홍콩 자치 종식 노린 중국의 동화 전략 완성</a> (2026-06)</li>
+      <li>경향신문, <a href="https://www.khan.co.kr/article/202606101458001">홍콩, 국가안보법 적용 범위 확대…‘소급적용’ 논란</a> (2026-06-10)</li>
+      <li>일간리얼, <a href="https://www.dailian.co.kr/news/view/1667209/">트럼프, 中 선거 개입 정조준…‘中 통일전선’ 韓에도 있다</a> (2026-07-18)</li>
+      <li>중국현대해상전략포럼, <a href="http://komsf.or.kr/bbs/board.php?bo_table=m49&wr_id=30">중국의 삼전(三戰) 전략 관점에서 본 중국의 대한국 전략</a> (이진욱)</li>
+      <li>Wikipedia, <a href="https://en.wikipedia.org/wiki/Unrestricted_Warfare">Unrestricted Warfare</a> — 원서 출판 정보·수용사</li>
+      <li>Indo-Pacific Defense FORUM, <a href="https://ipdefenseforum.com/2026/08/allies-partners-push-to-strengthen-laws-to-curb-chinas-increased-spying-and-foreign-interference/">Allies, Partners push to strengthen laws to curb China’s spying…</a> (2026-08)</li>
+      <li>ASPI, <a href="https://www.aspi.org.au/">Mapping a decade’s worth of hybrid threats targeting South Korea</a> (2025-07, The Strategist)</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>디지털 대동법 연구소 · DOC 2026-101 · 2026-10-30 기준. 본 문서는 공개 출처 기반 분석이며, 의혹·가설은 확정 사실과 구분하여 표기했다. 이전 조사(2026-05~07)의 내용은 당시 프로젝트 기록(digest)에 근거해 통합했다.</p>
+  </footer>
+</div>
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

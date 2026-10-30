@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>天下為公 · 地權歸民倡議書</title>
+<meta name="description" content="根據孫中山三民主義與中華民國憲法第142、143條，呼籲中國、台灣、香港與海外華人社會全面實施地價稅、省市級土地分紅基金與公共土地租賃制度。">
+<style>
+:root{
+  --ink:#0d1411; --ink-2:#131d18; --ink-3:#1a2820; --ink-4:#223329;
+  --paper:#efe7d2; --paper-dim:#b9b09a; --paper-faint:#8f8873;
+  --gold:#c9a227; --gold-soft:#9a7d2e; --line:rgba(201,162,39,.22);
+  --cinnabar:#c23b2e; --cinnabar-deep:#8f2a20;
+  --serif:"Noto Serif TC","Noto Serif CJK TC","Noto Serif KR","Source Han Serif TC","Source Han Serif","Songti TC","SimSun",serif;
+  --sans:"Noto Sans TC","Noto Sans CJK TC","Noto Sans KR","PingFang TC","Microsoft JhengHei","Noto Sans",sans-serif;
+  --mono:ui-monospace,"SF Mono","Cascadia Mono","Noto Sans Mono CJK TC",Menlo,Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+a{color:var(--gold)}
+em{font-style:normal;color:var(--gold)}
+mark{background:rgba(201,162,39,.16);color:var(--gold);padding:0 5px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+::selection{background:var(--cinnabar);color:var(--paper)}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(13,20,17,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:58px}
+.nav .logo{display:flex;align-items:center;gap:10px;color:var(--paper);font-family:var(--serif);font-weight:700;letter-spacing:.18em;text-decoration:none;white-space:nowrap}
+.nav .logo i{width:26px;height:26px;background:var(--cinnabar);color:#f6ead8;display:grid;place-items:center;font-style:normal;font-size:11px;font-weight:700;border-radius:4px;flex:none}
+.nav-links{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+.nav-links a{color:var(--paper-dim);text-decoration:none;font-size:13.5px;padding:8px 10px;letter-spacing:.06em;white-space:nowrap}
+.nav-links a:hover{color:var(--gold)}
+.lang-toggle{border:1px solid var(--gold-soft);background:transparent;color:var(--gold);padding:6px 14px;cursor:pointer;font-family:var(--serif);font-size:14px;letter-spacing:.2em;border-radius:3px;flex:none}
+.lang-toggle:hover{background:var(--gold);color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+  background-image:repeating-linear-gradient(0deg,rgba(201,162,39,.045) 0 1px,transparent 1px 92px),
+                   repeating-linear-gradient(90deg,rgba(201,162,39,.045) 0 1px,transparent 1px 92px)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(1200px 480px at 72% 18%,rgba(201,162,39,.09),transparent 62%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:330px 1fr;gap:56px;padding:88px 0 68px;align-items:stretch}
+.stele{border:1px solid var(--line);background:linear-gradient(180deg,var(--ink-2),var(--ink-3));display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:30px 22px;box-shadow:0 0 0 1px rgba(0,0,0,.45),0 26px 60px rgba(0,0,0,.5)}
+.stele-side{writing-mode:vertical-rl;color:var(--paper-dim);font-size:14px;letter-spacing:.55em;font-family:var(--serif)}
+.stele h1{writing-mode:vertical-rl;font-family:var(--serif);font-weight:900;font-size:clamp(58px,6.4vw,88px);letter-spacing:.16em;color:var(--paper);line-height:1.15;text-shadow:0 3px 24px rgba(0,0,0,.55)}
+.seal{width:92px;height:92px;background:var(--cinnabar);color:#f6ead8;display:grid;grid-template-columns:1fr 1fr;place-items:center;font-family:var(--serif);font-weight:700;font-size:27px;line-height:1;transform:rotate(-4deg);border-radius:6px;box-shadow:0 8px 22px rgba(194,59,46,.38),inset 0 0 0 2px rgba(246,234,216,.28)}
+.hero-right{display:flex;flex-direction:column;justify-content:center}
+.eyebrow{color:var(--gold);font-size:13px;letter-spacing:.42em;margin-bottom:20px}
+.hero-right h2{font-family:var(--serif);font-weight:900;font-size:clamp(30px,3.7vw,47px);line-height:1.42;letter-spacing:.02em}
+.lede{color:var(--paper-dim);max-width:58ch;font-size:16.5px;line-height:2.05;margin-top:20px}
+.aud{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:24px}
+.aud b{color:var(--paper-faint);font-weight:400;font-size:13px;letter-spacing:.3em;margin-right:2px}
+.aud span{border:1px solid var(--line);padding:5px 15px;border-radius:999px;font-size:13.5px;color:var(--paper)}
+.cta-row{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;padding:13px 26px;font-size:15px;letter-spacing:.14em;border-radius:3px;cursor:pointer;border:1px solid transparent;font-family:var(--sans)}
+.btn-primary{background:var(--cinnabar);color:var(--paper)}
+.btn-primary:hover{background:var(--cinnabar-deep)}
+.btn-ghost{background:transparent;color:var(--gold);border-color:var(--gold-soft)}
+.btn-ghost:hover{background:rgba(201,162,39,.12)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:46px}
+.stat{background:var(--ink-2);padding:18px 22px}
+.stat b{display:block;font-family:var(--serif);font-size:26px;color:var(--gold);font-weight:700;line-height:1.3}
+.stat span{font-size:12.5px;color:var(--paper-dim);line-height:1.7;display:block;margin-top:4px}
+
+/* ---------- quote band ---------- */
+.quote-band{padding:66px 0;text-align:center;border-bottom:1px solid var(--line);position:relative}
+.quote-band .q{font-family:var(--serif);font-size:clamp(23px,3.4vw,38px);font-weight:700;letter-spacing:.14em;color:var(--paper)}
+.quote-band .q::before,.quote-band .q::after{content:"「";color:var(--cinnabar)}
+.quote-band .q::after{content:"」"}
+.quote-band .src{color:var(--gold);margin-top:16px;font-size:13.5px;letter-spacing:.3em}
+.quote-band .sub{color:var(--paper-faint);margin-top:10px;font-size:14px}
+
+/* ---------- chapters ---------- */
+.chapter{padding:88px 0;border-bottom:1px solid var(--line)}
+.ch-head{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+.chnum{width:46px;height:46px;background:var(--cinnabar);color:var(--paper);font-family:var(--serif);display:grid;place-items:center;font-size:1.5rem;font-weight:700;flex:none;border-radius:4px;box-shadow:0 6px 16px rgba(194,59,46,.3)}
+.ch-kicker{color:var(--gold);font-size:12.5px;letter-spacing:.4em;display:block;margin-bottom:4px}
+.ch-title{font-family:var(--serif);font-size:clamp(25px,3vw,35px);font-weight:900;color:var(--paper);line-height:1.3}
+.ch-lead{color:var(--paper-dim);max-width:74ch;line-height:2.1;font-size:16px;margin-bottom:34px}
+.ch-lead strong{color:var(--paper);font-weight:600}
+
+/* pillars & cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--ink-2);border:1px solid var(--line);padding:22px 22px 24px}
+.card h4{font-family:var(--serif);font-size:19px;color:var(--paper);letter-spacing:.16em;font-weight:700}
+.card .tag{color:var(--cinnabar);font-size:12px;letter-spacing:.24em;display:block;margin-bottom:9px}
+.card p{color:var(--paper-dim);font-size:14px;line-height:1.95;margin-top:10px}
+.card.hot{border-top:3px solid var(--cinnabar)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:30px}
+.pillar{background:var(--ink-2);border:1px solid var(--line);padding:18px 20px;display:flex;align-items:baseline;gap:12px}
+.pillar b{font-family:var(--serif);font-size:18px;color:var(--paper);letter-spacing:.1em;white-space:nowrap}
+.pillar span{color:var(--paper-faint);font-size:13px}
+.pillar.hot{border-color:var(--cinnabar);background:linear-gradient(180deg,rgba(194,59,46,.10),var(--ink-2))}
+.pillar.hot b{color:var(--cinnabar)}
+
+/* big quote */
+.bigquote{border-left:3px solid var(--cinnabar);padding:8px 0 8px 30px;margin:36px 0}
+.bigquote p{font-family:var(--serif);font-size:clamp(17px,1.7vw,21px);line-height:2.2;color:var(--paper)}
+.bigquote .who{margin-top:12px;color:var(--gold);font-size:13.5px;letter-spacing:.18em}
+
+/* lineage strip */
+.lineage{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:30px 0 8px}
+.lineage .node{border:1px solid var(--line);background:var(--ink-2);padding:10px 16px;font-size:13.5px;color:var(--paper)}
+.lineage .node small{display:block;color:var(--paper-faint);font-size:11.5px;letter-spacing:.08em}
+.lineage .arr{color:var(--gold-soft);font-size:16px}
+.notebox{background:var(--ink-2);border:1px dashed var(--gold-soft);padding:20px 24px;color:var(--paper-dim);font-size:14.5px;line-height:2;margin-top:26px}
+.notebox b{color:var(--gold)}
+
+/* plaques (constitutional articles) */
+.plaques{display:grid;grid-template-columns:1fr;gap:26px;margin-bottom:26px}
+.plaque{background:linear-gradient(180deg,#18241e,#141d18);border:1px solid var(--line);padding:36px 40px 30px;position:relative}
+.plaque::before{content:"";position:absolute;inset:9px;border:1px solid rgba(201,162,39,.14);pointer-events:none}
+.plaque .law-no{position:absolute;top:-15px;left:26px;background:var(--cinnabar);color:var(--paper);padding:4px 16px;font-size:13px;letter-spacing:.22em;font-family:var(--serif)}
+.plaque blockquote{font-family:var(--serif);font-size:17.5px;line-height:2.25;color:var(--paper)}
+.plaque .law-src{margin-top:16px;color:var(--gold);font-size:13px;letter-spacing:.16em;text-align:right}
+.hl-tags{display:flex;gap:12px;flex-wrap:wrap;margin:6px 0 30px}
+.hl-tags span{border:1px solid var(--gold-soft);color:var(--gold);padding:7px 18px;font-size:13.5px;letter-spacing:.14em;border-radius:2px}
+.callout{background:linear-gradient(90deg,rgba(194,59,46,.14),rgba(194,59,46,.03));border:1px solid rgba(194,59,46,.4);padding:26px 30px;font-size:15.5px;line-height:2.1;color:var(--paper)}
+.callout b{color:var(--cinnabar);font-family:var(--serif)}
+
+/* tables */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);margin:16px 0 8px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:560px}
+th{background:var(--ink-3);color:var(--gold);font-weight:600;text-align:left;padding:12px 18px;letter-spacing:.12em;font-size:13px;white-space:nowrap}
+td{padding:11px 18px;border-top:1px solid rgba(201,162,39,.12);color:var(--paper)}
+td.num{font-family:var(--mono);color:var(--gold);white-space:nowrap}
+tbody tr:hover td{background:rgba(201,162,39,.05)}
+.tbl-note{color:var(--paper-faint);font-size:13px;line-height:1.9;margin-bottom:30px}
+h5.tbl-title{font-family:var(--serif);color:var(--paper);font-size:18px;letter-spacing:.14em;margin-top:34px}
+h5.tbl-title small{color:var(--gold);font-size:12.5px;letter-spacing:.12em;margin-left:10px}
+
+/* ask cards */
+.ask{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ask-card{background:var(--ink-2);border:1px solid var(--line);padding:26px;display:flex;flex-direction:column}
+.ask-card .num{font-family:var(--serif);color:var(--cinnabar);font-size:14px;letter-spacing:.32em}
+.ask-card h4{font-family:var(--serif);font-size:22px;color:var(--paper);margin:10px 0 2px;letter-spacing:.06em}
+.ask-card .basis{font-size:12px;color:var(--gold);border:1px solid var(--line);align-self:flex-start;padding:3px 12px;margin:12px 0 14px;letter-spacing:.06em}
+.ask-card ul{list-style:none}
+.ask-card li{color:var(--paper-dim);font-size:14px;line-height:1.95;padding-left:16px;position:relative;margin-bottom:8px}
+.ask-card li::before{content:"·";position:absolute;left:0;color:var(--gold)}
+.ask-card .step{margin-top:auto;padding-top:16px;border-top:1px dashed var(--line);color:var(--paper);font-size:13.5px;line-height:1.9}
+.ask-card .step b{color:var(--gold)}
+
+/* routes */
+.routes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.route{background:var(--ink-2);border:1px solid var(--line);border-top:3px solid var(--cinnabar);padding:22px}
+.route h4{font-family:var(--serif);font-size:20px;color:var(--paper);letter-spacing:.1em}
+.route .cap{color:var(--paper-faint);font-size:12px;letter-spacing:.28em;display:block;margin:2px 0 14px}
+.route .lb{color:var(--gold);font-size:12.5px;letter-spacing:.2em;display:block;margin:12px 0 4px}
+.route p{color:var(--paper-dim);font-size:13.5px;line-height:1.95}
+.route .stat-l{font-family:var(--mono);color:var(--cinnabar);font-size:13px}
+
+/* timeline */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.timeline{border-left:1px solid var(--line);margin-left:8px;padding-left:26px;display:grid;gap:20px;align-content:start}
+.tl{position:relative}
+.tl::before{content:"";position:absolute;left:-31px;top:9px;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.tl b{font-family:var(--mono);color:var(--gold);font-size:13px;letter-spacing:.08em}
+.tl p{color:var(--paper-dim);font-size:14px;line-height:1.85;margin-top:2px}
+.tl p b{font-family:var(--sans);color:var(--paper);font-size:14px}
+.chart-box{background:var(--ink-2);border:1px solid var(--line);padding:26px;align-self:start}
+.chart-box h5{font-family:var(--serif);color:var(--paper);font-size:17px;letter-spacing:.1em;margin-bottom:4px}
+.chart-box .csrc{color:var(--paper-faint);font-size:12px;margin-bottom:18px}
+.chart{display:flex;align-items:flex-end;gap:26px;height:210px;padding:0 6px}
+.bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:8px;height:100%}
+.bar i{display:block;width:100%;max-width:70px;background:linear-gradient(180deg,var(--gold),var(--gold-soft))}
+.bar.red i{background:linear-gradient(180deg,var(--cinnabar),var(--cinnabar-deep))}
+.bar b{font-family:var(--mono);color:var(--paper);font-size:13px;font-weight:600}
+.bar span{color:var(--paper-faint);font-size:12px;font-family:var(--mono)}
+
+/* simulator */
+.sim{background:var(--ink-2);border:1px solid var(--line);padding:34px;display:grid;grid-template-columns:1.05fr .95fr;gap:38px}
+.sim-row{margin-bottom:22px}
+.sim-row label{display:flex;justify-content:space-between;align-items:baseline;color:var(--paper);font-size:14px;margin-bottom:10px;letter-spacing:.06em}
+.sim-row output{font-family:var(--mono);color:var(--gold);font-size:14px}
+input[type=range]{width:100%;accent-color:var(--cinnabar);height:22px}
+.sim-out{border-left:1px solid var(--line);padding-left:36px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.sim-out .cap{color:var(--paper-dim);font-size:13px;letter-spacing:.14em}
+.sim-out .big{font-family:var(--serif);font-size:clamp(34px,3.4vw,46px);color:var(--gold);font-weight:900;line-height:1.2}
+.sim-out .sub2{color:var(--paper);font-size:16px;font-family:var(--mono)}
+.sim-out .fine{color:var(--paper-faint);font-size:12.5px;line-height:1.8}
+
+/* faq */
+details{border:1px solid var(--line);background:var(--ink-2);margin-bottom:12px}
+summary{cursor:pointer;padding:18px 24px;font-family:var(--serif);color:var(--paper);font-size:16.5px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;letter-spacing:.04em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--cinnabar);font-size:24px;line-height:1;flex:none}
+details[open] summary::after{content:"−"}
+details .a{padding:0 24px 22px;color:var(--paper-dim);line-height:2.05;font-size:14.5px}
+details .a b{color:var(--paper)}
+
+/* manifesto */
+.manifesto{background:linear-gradient(180deg,var(--ink-2),var(--ink));border-bottom:1px solid var(--line)}
+.mani-list{list-style:none;counter-reset:mani;max-width:900px}
+.mani-list li{font-family:var(--serif);font-size:clamp(16.5px,1.6vw,20px);color:var(--paper);line-height:1.95;padding:17px 0 17px 58px;position:relative;border-bottom:1px solid rgba(201,162,39,.12)}
+.mani-list li::before{counter-increment:mani;content:counter(mani,cjk-ideographic);position:absolute;left:0;top:16px;width:38px;height:38px;border:1px solid var(--cinnabar);color:var(--cinnabar);display:grid;place-items:center;font-size:16px;border-radius:3px}
+.mani-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;align-items:center}
+.mani-cta .fine{color:var(--paper-faint);font-size:13px}
+
+/* footer */
+footer{padding:56px 0 44px;color:var(--paper-faint);font-size:13px;line-height:2.1}
+footer .fbrand{color:var(--paper);font-family:var(--serif);font-size:17px;letter-spacing:.14em;margin-bottom:6px}
+footer .fbrand small{color:var(--gold);font-size:12.5px;letter-spacing:.2em;display:block;margin-top:2px}
+footer .fgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;margin-top:26px}
+.src a{color:var(--gold);text-decoration:none;border-bottom:1px dotted var(--gold-soft)}
+.src li{list-style:none;margin-bottom:2px}
+.src ul{margin-top:8px}
+footer .legal{margin-top:30px;padding-top:18px;border-top:1px solid rgba(201,162,39,.12);color:var(--paper-faint)}
+
+.lang-switch{display:flex;flex:none;border:1px solid var(--gold-soft);border-radius:3px;overflow:hidden}
+.lang-switch button{background:transparent;color:var(--gold);border:0;border-right:1px solid var(--gold-soft);padding:6px 10px;cursor:pointer;font-family:var(--serif);font-size:12.5px;line-height:1;letter-spacing:.08em}
+.lang-switch button:last-child{border-right:0}
+.lang-switch button:hover{background:rgba(201,162,39,.14)}
+.lang-switch button.on{background:var(--gold);color:var(--ink)}
+.plaque .law-gloss{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);color:var(--paper-dim);font-size:13.5px;line-height:1.95}
+section[id]{scroll-margin-top:70px}
+
+/* reveal */
+.reveal{animation:fadeUp .55s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+@media(max-width:1020px){
+  .grid4{grid-template-columns:repeat(2,1fr)}
+  .ask{grid-template-columns:1fr}
+  .routes{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+  .sim{grid-template-columns:1fr}
+  .sim-out{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:26px}
+  .footer .fgrid{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr;gap:34px;padding:60px 0 52px}
+  .stele{flex-direction:row;justify-content:center;gap:24px;padding:24px 18px}
+  .stele h1{writing-mode:horizontal-tb;font-size:clamp(42px,11vw,60px);letter-spacing:.14em;margin:0}
+  .stele-side{writing-mode:horizontal-tb;letter-spacing:.3em;font-size:12.5px}
+  .stats{grid-template-columns:1fr}
+  .grid4,.grid3,.pillars,.routes{grid-template-columns:1fr}
+  .ch-head{flex-wrap:wrap}
+  .chapter{padding:64px 0}
+  footer .fgrid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{animation:none}
+}
+</style>
+</head>
+<body>
+<div id="root-hant" lang="zh-Hant" data-title="天下為公 · 地權歸民倡議書">
+<!--CONTENT_START-->
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="#hero"><i>公</i>地權歸民</a>
+    <nav class="nav-links">
+      <a href="#ideology">壹 理念</a>
+      <a href="#constitution">貳 憲法</a>
+      <a href="#taiwan">參 實踐</a>
+      <a href="#asks">肆 主張</a>
+      <a href="#routes">伍 路線</a>
+      <a href="#world">陸 世界</a>
+      <a href="#faq">柒 問答</a>
+      <a href="#manifesto">宣言</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="hant" class="on">繁</button><button type="button" data-lang="hans">简</button><button type="button" data-lang="ko">한</button><button type="button" data-lang="en">EN</button></div>
+  </div>
+</header>
+<main>
+<section class="hero" id="hero">
+  <div class="wrap hero-inner">
+    <div class="stele reveal">
+      <div class="stele-side">倡議書 · 二〇二六</div>
+      <h1>地權歸民</h1>
+      <div class="seal" aria-label="天下為公"><span>天</span><span>下</span><span>為</span><span>公</span></div>
+    </div>
+    <div class="hero-right">
+      <p class="eyebrow reveal">公民倡議 · 給全體華人社會</p>
+      <h2 class="reveal">讓土地的自然增值，<br>歸於全民共享。</h2>
+      <p class="lede reveal">一百二十年前，孫中山把「平均地權」寫進建國綱領；近八十年前，中華民國憲法第143條寫下「歸人民共享」。今天，我們要求把這五個字變成制度——<strong>全面實施地價稅、設立省市級土地分紅基金、推行公共土地租賃制度</strong>。</p>
+      <div class="aud reveal"><b>致</b><span>中國大陸</span><span>台灣</span><span>香港</span><span>海外華人社會</span></div>
+      <div class="cta-row reveal">
+        <a class="btn btn-primary" href="#asks">三大主張</a>
+        <a class="btn btn-ghost" href="#manifesto">連署宣言</a>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><b>第143條</b><span>中華民國憲法：土地增值稅「歸人民共享」</span></div>
+        <div class="stat"><b>$1,200</b><span>阿拉斯加2026年人均年度配息（含能源補助）</span></div>
+        <div class="stat"><b>−44%</b><span>中國土地出讓收入三年累計降幅（2021→2024）</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-band">
+  <div class="wrap">
+    <p class="q reveal">大道之行也，天下為公。</p>
+    <p class="src reveal">——《禮記 · 禮運》</p>
+    <p class="sub reveal">這是孫中山一生最常書寫的題詞，也是本倡議的第一原則。</p>
+  </div>
+</section>
+
+<section class="chapter" id="ideology">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <div class="chnum">壹</div>
+      <div><span class="ch-kicker">理念溯源</span><h3 class="ch-title">三民主義裡的土地答案</h3></div>
+    </div>
+    <p class="ch-lead reveal">1905年中國同盟會成立，<strong>「平均地權」</strong>列為四大綱領之一——兩年前，孫中山已在東京的入會誓詞中寫下這四個字。它後來成為民生主義的兩大支柱（平均地權、節制資本），並於1947年寫入中華民國憲法第142條，效力至今。平均地權不是沒收，而是：<strong>土地私有照舊，地租與自然增值歸公共享</strong>。</p>
+    <div class="pillars reveal">
+      <div class="pillar"><b>民族主義</b><span>民族平等自立</span></div>
+      <div class="pillar"><b>民權主義</b><span>主權在民</span></div>
+      <div class="pillar hot"><b>民生主義</b><span>平均地權 · 節制資本</span></div>
+    </div>
+    <div class="grid4 reveal">
+      <div class="card"><span class="tag">第一大綱領</span><h4>規定地價</h4><p>由地主自行申報地價，作為一切制度的基準——報得太低，政府得照價收買，申報自然趨於真實。</p></div>
+      <div class="card"><span class="tag">第二大綱領</span><h4>照價徵稅</h4><p>按申報地價逐年課徵地價稅：讓「占有土地」有成本，讓「改良土地」不受罰。</p></div>
+      <div class="card"><span class="tag">第三大綱領</span><h4>照價收買</h4><p>對低報地價者，政府得照價收買——這是防止投機壟斷的制衡槓桿，也是公共土地取得的工具。</p></div>
+      <div class="card hot"><span class="tag">第四大綱領</span><h4>漲價歸公</h4><p>非因個人勞力資本而生之增值，來自社會的進步，就應歸社會共享——這是土地分紅的原始構想。</p></div>
+    </div>
+    <div class="bigquote reveal">
+      <p>「文明之福祉，國民平等以享之。當改良社會經濟組織，核定天下地價，其現有之地價仍屬原主所有；革命後社會改良進步之增價，則歸於國家，為國民所共享。」</p>
+      <p class="who">——《中國同盟會軍政府宣言》（1906）</p>
+    </div>
+    <div class="lineage reveal">
+      <div class="node">周代井田<small>孫文：「平均地權，即井田之遺意」</small></div><span class="arr">→</span>
+      <div class="node">禮運大同<small>天下為公</small></div><span class="arr">→</span>
+      <div class="node">托馬斯·潘恩 1797<small>《農業正義》土地分紅</small></div><span class="arr">→</span><div class="node">亨利·喬治 1879<small>《進步與貧困》地價單一稅</small></div><span class="arr">→</span>
+      <div class="node">約翰·密爾<small>地租歸公論</small></div><span class="arr">→</span>
+      <div class="node">孫中山 1905<small>平均地權</small></div>
+    </div>
+    <div class="notebox reveal"><b>兩級所有權</b>——孫文設計的產權：國家握「上級所有權」，人民握「下級所有權」，有土地國有之實質而無其弊害。他明確反對把土地一律收歸國有：「從實均地，仍是不平。」這是一條介於放任與沒收之間的第三條路。</div>
+    <div class="grid3 reveal">
+      <div class="card"><span class="tag">1797 · 托馬斯·潘恩</span><h4>《農業正義》Agrarian Justice</h4><p>《常識》《人權論》作者、美法革命的思想奠基者潘恩，1797年發表這本小冊子，提出<b>土地分紅（Land Dividend）</b>構想——今日基本收入（UBI）討論最早的原型。</p></div>
+      <div class="card"><span class="tag">構想</span><h4>國家基金 · 兩段給付</h4><p>以<b>遺產稅與土地稅</b>籌設國家基金：<b>21歲</b>每人一次性領取<b>15鎊</b>（補償「自己那份土地」），<b>50歲起</b>每年領取<b>10鎊</b>——不問貧富、免審查、無勞動條件。</p></div>
+      <div class="card hot"><span class="tag">要義</span><h4>不是慈善，是權利</h4><p>「未經耕作的自然土地，任何人都不得獨占。」潘恩將<b>土地本身</b>與<b>土地改良</b>（勞動所生價值）二分：占有土地者，須對共同體支付地租。貧窮是結構問題，給付是自然權的實現。</p></div>
+    </div>
+    <div class="notebox reveal"><b>先驅的連鎖</b>——潘恩的構想經亨利·喬治《進步與貧困》（1879，地價單一稅）傳至孫中山的「平均地權」，也成為阿拉斯加永久基金與當代基本收入論戰的直接先例。本研究所部落格專文：<a class="src" href="https://blog.naver.com/hoyaya/224210607181" target="_blank" rel="noopener">「托馬斯·潘恩的土地分紅」</a>（DDLI, 2026.3.9）。</div>
+  </div>
+</section>
+
+<section class="chapter" id="constitution">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <div class="chnum">貳</div>
+      <div><span class="ch-kicker">憲法根基</span><h3 class="ch-title">「歸人民共享」五個字，等了八十年</h3></div>
+    </div>
+    <p class="ch-lead reveal">1947年制定、同年12月25日施行的中華民國憲法，把民生主義寫進基本國策。這部憲法今日在台灣自由地區施行，歷經七次增修、八次總統直選——是華人社會唯一持續運作近八十年的自由民主憲法，而它的土地條款，<strong>從未被刪除</strong>。</p>
+    <div class="plaques">
+      <div class="plaque reveal">
+        <span class="law-no">第 142 條</span>
+        <blockquote>國民經濟應以民生主義為基本原則，實施<mark>平均地權</mark>，節制資本，以謀國計民生之均足。</blockquote>
+        <p class="law-src">——《中華民國憲法》第十三章第三節（1947）</p>
+      </div>
+      <div class="plaque reveal">
+        <span class="law-no">第 143 條</span>
+        <blockquote>中華民國領土內之土地<mark>屬於國民全體</mark>。人民依法取得之土地所有權，應受法律之保障與限制。私有土地應<mark>照價納稅</mark>，政府並得照價收買。<br>附著於土地之礦，及經濟上可供公眾利用之天然力，屬於國家所有，不因人民取得土地所有權而受影響。<br>土地價值非因施以勞力資本而增加者，應由國家徵收土地增值稅，<mark>歸人民共享之</mark>。<br>國家對於土地之分配與整理，應以扶植自耕農及自行使用土地人為原則，並規定其適當經營之面積。</blockquote>
+        <p class="law-src">——《中華民國憲法》第143條（1947）</p>
+      </div>
+    </div>
+    <div class="hl-tags reveal">
+      <span>土地屬於國民全體</span><span>私有土地照價納稅</span><span>增值稅歸人民共享</span>
+    </div>
+    <div class="callout reveal">憲法第143條第3項說：土地因社會進步而自然上漲的價值，國家徵收增值稅之後，要<b>「歸人民共享」</b>。八十年來，增值稅年年徵收，卻極少以「共享」的形式回到每一位國民手中——稅進了預算，沒有進帳戶。本倡議要做的，就是把這五個字變成制度：<b>省市級土地分紅基金，年度配息，人人有份</b>。</div>
+  </div>
+</section>
+<section class="chapter" id="taiwan">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">參</div><div><span class="ch-kicker">台灣實踐</span><h3 class="ch-title">平均地權，已經運轉了七十年</h3></div></div>
+    <p class="ch-lead reveal">1956年起，台灣全面實施平均地權，以「規定地價、照價徵稅、照價收買、漲價歸公」追求「地盡其利、地利共享」。以下就是寫進《土地稅法》的現行制度——它證明：地價稅與增值稅，<strong>可以在華人社會長期、穩定、合法地運作</strong>。</p>
+    <h5 class="tbl-title">地價稅<small>《土地稅法》第16–19條</small></h5>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>適用土地</th><th>稅率</th></tr></thead>
+      <tbody>
+        <tr><td>自用住宅用地（都市土地3公畝、非都市土地7公畝以內）</td><td class="num">2‰</td></tr>
+        <tr><td>都市計畫公共設施保留地</td><td class="num">6‰</td></tr>
+        <tr><td>基本稅率（地價總額未超過累進起點地價）</td><td class="num">10‰</td></tr>
+        <tr><td>超過累進起點地價未達5倍部分</td><td class="num">15‰</td></tr>
+        <tr><td>超過5倍至10倍部分</td><td class="num">25‰</td></tr>
+        <tr><td>超過10倍至15倍部分</td><td class="num">35‰</td></tr>
+        <tr><td>超過15倍至20倍部分</td><td class="num">45‰</td></tr>
+        <tr><td>超過20倍以上部分</td><td class="num">55‰</td></tr>
+        <tr><td>核定空地（空地稅）</td><td class="num">按基本稅額加徵2–5倍</td></tr>
+      </tbody>
+    </table></div>
+    <p class="tbl-note">累進起點地價＝各直轄市、縣（市）土地每7公畝之平均地價（不含工業、礦業、農業及免稅土地）。工業、礦業等直接供事業使用之土地按10‰計徵。</p>
+    <h5 class="tbl-title">土地增值稅<small>《土地稅法》第33–34條</small></h5>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>漲價總數額（相對前次移轉現值）</th><th>稅率</th></tr></thead>
+      <tbody>
+        <tr><td>未達前次現值1倍之部分</td><td class="num">20%</td></tr>
+        <tr><td>1倍至2倍之部分</td><td class="num">30%</td></tr>
+        <tr><td>2倍以上之部分</td><td class="num">40%</td></tr>
+        <tr><td>自用住宅用地（都市3公畝、非都市7公畝以內）</td><td class="num">10%</td></tr>
+        <tr><td>長期持有逾20／30／40年</td><td class="num">減徵20%／30%／40%</td></tr>
+      </tbody>
+    </table></div>
+    <p class="tbl-note">原地價按政府發布之物價指數調整後計算——只對「真實增值」課稅，不對通貨膨脹課稅。</p>
+    <div class="notebox reveal"><b>土地稅天生是地方稅</b>——《財政收支劃分法》第12條明定：地價稅、田賦、土地增值稅均為<strong>直轄市及縣（市）稅</strong>。土地稅收本來就屬於「地方全民」，這正是省市級土地分紅基金在財政制度上的落點。</div>
+    <div class="callout reveal" style="margin-top:26px"><b>未竟之功</b>——台灣證明了「可以收」，還沒有完成「共享」：土地稅收進了預算，沒有進到每一位國民的帳戶。「歸人民共享」至今是財政上的歸公，不是分配上的共享。差這一步，就是本倡議要補的一步。</div>
+  </div>
+</section>
+
+<section class="chapter" id="asks">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">肆</div><div><span class="ch-kicker">三大主張</span><h3 class="ch-title">收錢、分錢、管地——三位一體</h3></div></div>
+    <p class="ch-lead reveal">三大主張互為一體：<strong>地價稅</strong>把地租收回來，<strong>土地分紅基金</strong>把它分出去，<strong>公共土地租賃</strong>讓土地不再被一次性賣斷。三者都有現行法源與國際先例，缺的只是政治決心。</p>
+    <div class="ask">
+      <div class="ask-card reveal">
+        <span class="num">主張 一</span>
+        <h4>全面實施地價稅</h4>
+        <span class="basis">憲法依據：第143條「私有土地應照價納稅」</span>
+        <ul>
+          <li>以「地價」為唯一稅基：房屋改良物輕稅、免稅——懲罰囤地，不懲罰蓋房。</li>
+          <li>定期重新規定地價，使稅基貼近市價；農地以田賦保護，市地照價納稅。</li>
+          <li>空地稅（加徵2–5倍）與照價收買，作為反投機的制衡工具。</li>
+        </ul>
+        <p class="step"><b>第一步</b>：已實施地區（台灣）讓公告地價逐年貼近市價；未實施地區（中國大陸、香港）從「年地租」起步，取代一次性賣地。</p>
+      </div>
+      <div class="ask-card reveal">
+        <span class="num">主張 二</span>
+        <h4>省市級土地分紅基金</h4>
+        <span class="basis">憲法依據：第143條「歸人民共享」</span>
+        <ul>
+          <li>每一直轄市、省、縣（市）設立「土地分紅基金」，法定注入一定比例之土地稅收與公有土地收益。</li>
+          <li>基金只做兩件事：保值營運、年度按人配息給全體居民。</li>
+          <li>數位帳本：每一筆土地收入、每一元配息，公開可查——這是「數位大同」的含義。</li>
+        </ul>
+        <p class="step"><b>先例</b>：阿拉斯加永久基金自1982年起向每位居民年度配息，2026年為1,200美元——土地收益全民配息，運轉了四十餘年。</p>
+      </div>
+      <div class="ask-card reveal">
+        <span class="num">主張 三</span>
+        <h4>公共土地租賃制度</h4>
+        <span class="basis">憲法依據：第143條「照價收買」＋香港批租實踐</span>
+        <ul>
+          <li>公有土地以50–99年批租＋年租制提供使用，政府保留上級所有權。</li>
+          <li>「只租不賣」：地價上漲歸公，續期地租注入土地分紅基金。</li>
+          <li>香港全港批租、每年繳納相當於應課差餉租值3%的地租——公共土地租賃在華人社會已有完整實踐。</li>
+        </ul>
+        <p class="step"><b>第一步</b>：各級政府新增儲備土地一律只租不賣；既有批租到期續約時，地租全額入基金。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="routes">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">伍</div><div><span class="ch-kicker">四地路線圖</span><h3 class="ch-title">同一部憲法精神，四種起步方式</h3></div></div>
+    <div class="routes">
+      <div class="route reveal">
+        <h4>中國大陸</h4><span class="cap">從「賣地財政」到「地租財政」</span>
+        <span class="lb">現況</span>
+        <p>城市土地國有、農地集體所有；土地出讓收入2021年達約<span class="stat-l">8.7萬億元</span>峰值，2024年降至<span class="stat-l">4.87萬億元</span>，三年累計下降逾44%——一次性賣地模式難以為繼。</p>
+        <span class="lb">主張</span>
+        <p>出讓金轉向年地租／地價稅；省市級土地分紅基金讓國有土地收益「全民共享」；以孫中山平均地權為共同語言，超越左右對立。</p>
+      </div>
+      <div class="route reveal">
+        <h4>台灣</h4><span class="cap">從「歸公」到「共享」</span>
+        <span class="lb">現況</span>
+        <p>地價稅與土地增值稅施行七十年，且依法屬直轄市及縣（市）地方稅——制度完備，只差分配。</p>
+        <span class="lb">主張</span>
+        <p>直轄市、縣（市）設立土地分紅基金；公告地價制度化調整貼近市價；公有土地只租不賣，讓第143條兌現。</p>
+      </div>
+      <div class="route reveal">
+        <h4>香港</h4><span class="cap">從「批租收入」到「市民配息」</span>
+        <span class="lb">現況</span>
+        <p>全港土地幾乎全部由政府批租；新批契約50年，每年繳納相當於應課差餉租值3%的地租——政府本來就是全港的「大地主」。</p>
+        <span class="lb">主張</span>
+        <p>設立香港土地分紅基金：地租與地價收入按法定比例注入，年度向全體市民配息，讓「政府租地」的收益回到市民。</p>
+      </div>
+      <div class="route reveal">
+        <h4>海外華人</h4><span class="cap">從「鄉愁」到「政策」</span>
+        <span class="lb">現況</span>
+        <p>全球華人社群缺少共同的公共政策議程；「天下為公」多見於題詞，少見於制度。</p>
+        <span class="lb">主張</span>
+        <p>連署、研究、在地倡議：在僑居地推動以地價稅替代財產稅的討論，讓「天下為公」成為華人社會的共同政策語言。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="world">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">陸</div><div><span class="ch-kicker">世界在做的</span><h3 class="ch-title">這不是空想，是正在運轉的制度</h3></div></div>
+    <div class="split">
+      <div class="timeline reveal">
+        <div class="tl"><b>周代</b><p><b>井田制</b>——孫文：「平均地權者，即井田之遺意也。」</p></div>
+        <div class="tl"><b>漢代</b><p><b>《禮記·禮運》</b>——「大道之行也，天下為公。」</p></div>
+        <div class="tl"><b>1879</b><p><b>亨利·喬治《進步與貧困》</b>——地價單一稅風靡全球，廖仲愷摘譯介紹入中國。</p></div>
+        <div class="tl"><b>1905</b><p><b>中國同盟會</b>——「平均地權」列入四大綱領。</p></div>
+        <div class="tl"><b>1947</b><p><b>中華民國憲法</b>——第142、143條：平均地權入憲，「歸人民共享」。</p></div>
+        <div class="tl"><b>1956</b><p><b>台灣全面實施平均地權</b>——規定地價、照價徵稅、照價收買、漲價歸公。</p></div>
+        <div class="tl"><b>1976→1982</b><p><b>阿拉斯加永久基金</b>——設立基金，1982年起向每位居民年度配息。</p></div>
+        <div class="tl"><b>1997</b><p><b>香港特區成立</b>——全港批租制延續，新契約50年＋3%地租。</p></div>
+        <div class="tl"><b>2021→2024</b><p><b>中國土地出讓收入腰斬</b>——「土地財政」轉型成為國家級議題。</p></div>
+      </div>
+      <div>
+        <div class="grid4 reveal" style="margin-bottom:14px">
+          <div class="card"><span class="tag">美國 · 阿拉斯加</span><h4>永久基金配息</h4><p>2026年人均配息<b>1,200美元</b>（含200美元能源補助）；歷史平均約1,600美元/年。</p></div>
+          <div class="card"><span class="tag">愛沙尼亞</span><h4>地價稅全面運作</h4><p>以地價稅為地方支柱之一，自有住宅率約90%——土地稅與高自有率並存。</p></div>
+          <div class="card"><span class="tag">丹麥</span><h4>市政土地稅</h4><p>各市政府對評定地價課徵<b>16‰–34‰</b>土地稅，稅率因地制宜。</p></div>
+          <div class="card"><span class="tag">澳洲 · 昆士蘭</span><h4>地價稅運轉中</h4><p>學術調查：地價稅目前在昆士蘭、丹麥、納米比亞、愛沙尼亞<b>全面運作</b>。</p></div>
+        </div>
+        <div class="chart-box reveal">
+          <h5>中國土地出讓收入（萬億元）</h5>
+          <p class="csrc">2021年峰值後連續下滑——一次性賣地模式走到盡頭（財新 · 粵開證券）</p>
+          <div class="chart">
+            <div class="bar"><b>8.7</b><i style="height:100%"></i><span>2021</span></div>
+            <div class="bar"><b>5.8</b><i style="height:67%"></i><span>2023</span></div>
+            <div class="bar red"><b>4.87</b><i style="height:56%"></i><span>2024</span></div>
+            <div class="bar red"><b>≈4.2</b><i style="height:48%"></i><span>2025</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="simulator">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">算</div><div><span class="ch-kicker">土地分紅試算</span><h3 class="ch-title">你的城市，每年能配多少？</h3></div></div>
+    <div class="sim reveal">
+      <div>
+        <div class="sim-row">
+          <label>本地區年度土地稅收（地價稅＋增值稅＋公有地租）<output class="ov-rev"></output></label>
+          <input type="range" class="sim-rev" min="0" max="5000" step="10" value="800">
+        </div>
+        <div class="sim-row">
+          <label>法定注入土地分紅基金的比例<output class="ov-pct"></output></label>
+          <input type="range" class="sim-pct" min="0" max="100" step="5" value="50">
+        </div>
+        <div class="sim-row">
+          <label>本地區人口<output class="ov-pop"></output></label>
+          <input type="range" class="sim-pop" min="1" max="4000" step="1" value="500">
+        </div>
+        <p class="tbl-note" style="margin:0">公式：每人年度配息＝年度土地稅收 × 注入比例 ÷ 總人口。阿拉斯加模式：基金保值營運，配息來自收益而非本金。</p>
+      </div>
+      <div class="sim-out">
+        <div><p class="cap">基金年度規模</p><p class="sub2 sim-fund"></p></div>
+        <div><p class="cap">每人每年可配</p><p class="big sim-year"></p></div>
+        <div><p class="cap">每人每月約</p><p class="sub2 sim-month"></p></div>
+        <p class="fine">示意試算，非官方數據；實際制度應由各地方議會立法確定注入比例與發放規則。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="faq">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">柒</div><div><span class="ch-kicker">常見質疑</span><h3 class="ch-title">五個最常見的問題</h3></div></div>
+    <div class="reveal">
+      <details open>
+        <summary>這會打擊房價、傷害有房的人嗎？</summary>
+        <div class="a">地價稅只對「土地占有」課稅，房屋改良物輕稅或免稅——努力蓋房、自住的人不受罰，囤地待漲的人不能再免費占用社會的空間。台灣對自用住宅早已設有<b>2‰</b>的優惠稅率；轉型可以分年過渡，讓制度先保護家園，再對準投機。</div>
+      </details>
+      <details>
+        <summary>這是共產主義嗎？</summary>
+        <div class="a">恰恰相反。憲法第143條一方面宣布土地「屬於國民全體」，另一方面明文<b>保障</b>人民依法取得的土地所有權——「私有」與「共享」並存。孫中山反對把土地一律收歸國有：「從實均地，仍是不平。」地價稅是自由憲政下的共享，不是沒收；它讓市場繼續配置土地，只是把地租的歸屬還給全民。</div>
+      </details>
+      <details>
+        <summary>政府會不會藉「照價收買」濫權？</summary>
+        <div class="a">照價收買以「自報地價」為槓桿：報得太低，政府可照價收買——它是防止低報的制衡工具，必須依法定程序與補償。台灣施行近七十年，並未因此出現大規模收買；制衡存在本身，就讓申報趨於誠實。</div>
+      </details>
+      <details>
+        <summary>農地、農民怎麼辦？</summary>
+        <div class="a">台灣的設計早已區分：農業用地徵收<b>田賦</b>，且法律授權行政院視農業發展需要停徵——保護農地、課徵市地，兩軌並行。任何土地分紅基金也應涵蓋農村居民：農民同樣是「國民全體」的一員。</div>
+      </details>
+      <details>
+        <summary>全民配息會養懶人嗎？</summary>
+        <div class="a">阿拉斯加發放配息四十餘年，並未瓦解其勞動市場；配息來自土地地租的再分配，不是印鈔。地租是社會創造的價值——把它平均還給每一個人，是「產權的清算」，不是救濟。勤勞的人本來就該多得一點：<b>努力之果歸於個人，土地之利歸於全民</b>。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="chapter manifesto" id="manifesto">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">宣</div><div><span class="ch-kicker">倡議宣言</span><h3 class="ch-title">七條</h3></div></div>
+    <ol class="mani-list reveal">
+      <li>土地是全民的生產基底，不是無限的私有對象。</li>
+      <li>土地的自然增值來自社會，而非個人努力——應以地價稅回收。</li>
+      <li>努力之果歸於個人，土地之利歸於全民。</li>
+      <li>每一省市設立土地分紅基金，年度配息，到每一位居民。</li>
+      <li>公有土地只租不賣；地租進基金，不進暗帳。</li>
+      <li>以數位帳本公開每一筆土地收益與每一元配息。</li>
+      <li>呼籲中國大陸、台灣、香港與海外華人社會，把「歸人民共享」從憲法文字變成生活制度。</li>
+    </ol>
+    <div class="mani-cta reveal">
+      <button class="btn btn-primary copy-pledge" type="button" data-pledge="我連署《地權歸民倡議書》：根據三民主義與中華民國憲法第143條，呼籲全面實施地價稅、設立省市級土地分紅基金、推行公共土地租賃制度，讓土地的自然增值歸於全民共享。——姓名：____　地區：____">複製連署文</button>
+      <button class="btn btn-ghost copy-link" type="button">複製倡議連結</button>
+      <span class="fine">本頁不收集任何資料——連署以你自己的名字，發在你自己的地方。</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <p class="fbrand">數位大同法研究所<small>DIGITAL DAEDONG INSTITUTE · 디지털 대동법 연구소 · 토지와 자유 LandnLiberty.kr</small></p>
+        <p>一個「1人＋AI」的政策研究室，把「天下為公」從題詞變成制度設計。本頁為其中文倡議版，2026年。</p>
+      </div>
+      <div class="src">
+        <p style="color:var(--gold);letter-spacing:.2em;font-size:12.5px">資料來源</p>
+        <ul>
+          <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340096">《土地稅法》· 全國法規資料庫</a></li>
+          <li><a href="https://web.law.ntpc.gov.tw/Scripts/FLAWDOC01.aspx?fcode=B0000001&amp;flno=143">《中華民國憲法》第142、143條</a></li>
+          <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0320015">《財政收支劃分法》</a></li>
+          <li><a href="https://zh.wikipedia.org/zh-hant/%E5%B9%B3%E5%9D%87%E5%9C%B0%E6%AC%8A">維基百科：平均地權</a></li>
+          <li><a href="https://www.landsd.gov.hk/tc/service/landpolicy.htm">香港地政總署：土地租用制度</a></li>
+          <li><a href="https://pfd.alaska.gov/">阿拉斯加永久基金紅利（PFD）</a></li>
+          <li><a href="https://opinion.caixin.com/2025-03-25/102301956.html">財新：土地財政何去何從</a></li>
+          <li><a href="https://centaur.reading.ac.uk/88754/">Hughes (2020): Implementing a Land Value Tax</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">本頁為公民倡議性質；法條文字以官方公布為準，數據以各來源最新公布為準。© 2026 數位大同法研究所（DDLI）</p>
+  </div>
+</footer>
+
+</main>
+</div>
+<div id="root-hans" lang="zh-Hans" data-title="天下为公 · 地权归民倡议书" hidden>
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="#h-hero"><i>公</i>地权归民</a>
+    <nav class="nav-links">
+      <a href="#h-ideology">壹 理念</a>
+      <a href="#h-constitution">贰 宪法</a>
+      <a href="#h-taiwan">参 实践</a>
+      <a href="#h-asks">肆 主张</a>
+      <a href="#h-routes">伍 路线</a>
+      <a href="#h-world">陆 世界</a>
+      <a href="#h-faq">柒 问答</a>
+      <a href="#h-manifesto">宣言</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="hant">繁</button><button type="button" data-lang="hans" class="on">简</button><button type="button" data-lang="ko">한</button><button type="button" data-lang="en">EN</button></div>
+  </div>
+</header>
+<main>
+<section class="hero" id="h-hero">
+  <div class="wrap hero-inner">
+    <div class="stele reveal">
+      <div class="stele-side">倡议书 · 二〇二六</div>
+      <h1>地权归民</h1>
+      <div class="seal" aria-label="天下为公"><span>天</span><span>下</span><span>为</span><span>公</span></div>
+    </div>
+    <div class="hero-right">
+      <p class="eyebrow reveal">公民倡议 · 给全体华人社会</p>
+      <h2 class="reveal">让土地的自然增值，<br>归于全民共享。</h2>
+      <p class="lede reveal">一百二十年前，孙中山把“平均地权”写进建国纲领；近八十年前，中华民国宪法第143条写下“归人民共享”。今天，我们要求把这五个字变成制度——<strong>全面实施地价税、设立省市级土地分红基金、推行公共土地租赁制度</strong>。</p>
+      <div class="aud reveal"><b>致</b><span>中国大陆</span><span>台湾</span><span>香港</span><span>海外华人社会</span></div>
+      <div class="cta-row reveal">
+        <a class="btn btn-primary" href="#h-asks">三大主张</a>
+        <a class="btn btn-ghost" href="#h-manifesto">连署宣言</a>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><b>第143条</b><span>中华民国宪法：土地增值税“归人民共享”</span></div>
+        <div class="stat"><b>$1,200</b><span>阿拉斯加2026年人均年度配息（含能源补助）</span></div>
+        <div class="stat"><b>−44%</b><span>中国土地出让收入三年累计降幅（2021→2024）</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-band">
+  <div class="wrap">
+    <p class="q reveal">大道之行也，天下为公。</p>
+    <p class="src reveal">——《礼记 · 礼运》</p>
+    <p class="sub reveal">这是孙中山一生最常书写的题词，也是本倡议的第一原则。</p>
+  </div>
+</section>
+
+<section class="chapter" id="h-ideology">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <div class="chnum">壹</div>
+      <div><span class="ch-kicker">理念溯源</span><h3 class="ch-title">三民主义里的土地答案</h3></div>
+    </div>
+    <p class="ch-lead reveal">1905年中国同盟会成立，<strong>“平均地权”</strong>列为四大纲领之一——两年前，孙中山已在东京的入会誓词中写下这四个字。它后来成为民生主义的两大支柱（平均地权、节制资本），并于1947年写入中华民国宪法第142条，效力至今。平均地权不是没收，而是：<strong>土地私有照旧，地租与自然增值归公共享</strong>。</p>
+    <div class="pillars reveal">
+      <div class="pillar"><b>民族主义</b><span>民族平等自立</span></div>
+      <div class="pillar"><b>民权主义</b><span>主权在民</span></div>
+      <div class="pillar hot"><b>民生主义</b><span>平均地权 · 节制资本</span></div>
+    </div>
+    <div class="grid4 reveal">
+      <div class="card"><span class="tag">第一大纲领</span><h4>规定地价</h4><p>由地主自行申报地价，作为一切制度的基准——报得太低，政府得照价收买，申报自然趋于真实。</p></div>
+      <div class="card"><span class="tag">第二大纲领</span><h4>照价征税</h4><p>按申报地价逐年课征地价税：让“占有土地”有成本，让“改良土地”不受罚。</p></div>
+      <div class="card"><span class="tag">第三大纲领</span><h4>照价收买</h4><p>对低报地价者，政府得照价收买——这是防止投机垄断的制衡杠杆，也是公共土地取得的工具。</p></div>
+      <div class="card hot"><span class="tag">第四大纲领</span><h4>涨价归公</h4><p>非因个人劳力资本而生之增值，来自社会的进步，就应归社会共享——这是土地分红的原始构想。</p></div>
+    </div>
+    <div class="bigquote reveal">
+      <p>“文明之福祉，国民平等以享之。当改良社会经济组织，核定天下地价，其现有之地价仍属原主所有；革命后社会改良进步之增价，则归于国家，为国民所共享。”</p>
+      <p class="who">——《中国同盟会军政府宣言》（1906）</p>
+    </div>
+    <div class="lineage reveal">
+      <div class="node">周代井田<small>孙文：“平均地权，即井田之遗意”</small></div><span class="arr">→</span>
+      <div class="node">礼运大同<small>天下为公</small></div><span class="arr">→</span>
+      <div class="node">托马斯·潘恩 1797<small>《农业正义》土地分红</small></div><span class="arr">→</span><div class="node">亨利·乔治 1879<small>《进步与贫困》地价单一税</small></div><span class="arr">→</span>
+      <div class="node">约翰·密尔<small>地租归公论</small></div><span class="arr">→</span>
+      <div class="node">孙中山 1905<small>平均地权</small></div>
+    </div>
+    <div class="notebox reveal"><b>两级所有权</b>——孙文设计的产权：国家握“上级所有权”，人民握“下级所有权”，有土地国有之实质而无其弊害。他明确反对把土地一律收归国有：“从实均地，仍是不平。”这是一条介于放任与没收之间的第三条路。</div>
+    <div class="grid3 reveal">
+      <div class="card"><span class="tag">1797 · 托马斯·潘恩</span><h4>《农业正义》Agrarian Justice</h4><p>《常识》《人权论》作者、美法革命的思想奠基者潘恩，1797年发表这本小册子，提出<b>土地分红（Land Dividend）</b>构想——今天基本收入（UBI）讨论最早的原型。</p></div>
+      <div class="card"><span class="tag">构想</span><h4>国家基金 · 两段给付</h4><p>以<b>遗产税与土地税</b>筹设国家基金：<b>21岁</b>每人一次性领取<b>15镑</b>（补偿“自己那份土地”），<b>50岁起</b>每年领取<b>10镑</b>——不问贫富、免审查、无劳动条件。</p></div>
+      <div class="card hot"><span class="tag">要义</span><h4>不是慈善，是权利</h4><p>“未经耕作的自然土地，任何个人都不得独占。”潘恩把<b>土地本身</b>与<b>土地改良</b>（劳动所生价值）二分：占有土地者须对共同体支付地租。贫穷是结构问题，给付是自然权的实现。</p></div>
+    </div>
+    <div class="notebox reveal"><b>先驱的链条</b>——潘恩的构想经亨利·乔治《进步与贫困》（1879，地价单一税）传至孙中山的“平均地权”，也成为阿拉斯加永久基金与当代基本收入论战的直接先例。本研究所博客专文：<a class="src" href="https://blog.naver.com/hoyaya/224210607181" target="_blank" rel="noopener">「托马斯·潘恩的土地分红」</a>（DDLI, 2026.3.9）。</div>
+  </div>
+</section>
+
+<section class="chapter" id="h-constitution">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <div class="chnum">贰</div>
+      <div><span class="ch-kicker">宪法根基</span><h3 class="ch-title">“归人民共享”五个字，等了八十年</h3></div>
+    </div>
+    <p class="ch-lead reveal">1947年制定、同年12月25日施行的中华民国宪法，把民生主义写进基本国策。这部宪法今日在台湾自由地区施行，历经七次增修、八次总统直选——是华人社会唯一持续运作近八十年的自由民主宪法，而它的土地条款，<strong>从未被删除</strong>。</p>
+    <div class="plaques">
+      <div class="plaque reveal">
+        <span class="law-no">第 142 条</span>
+        <blockquote>国民经济应以民生主义为基本原则，实施<mark>平均地权</mark>，节制资本，以谋国计民生之均足。</blockquote>
+        <p class="law-src">——《中华民国宪法》第十三章第三节（1947）</p>
+      </div>
+      <div class="plaque reveal">
+        <span class="law-no">第 143 条</span>
+        <blockquote>中华民国领土内之土地<mark>属于国民全体</mark>。人民依法取得之土地所有权，应受法律之保障与限制。私有土地应<mark>照价纳税</mark>，政府并得照价收买。<br>附著于土地之矿，及经济上可供公众利用之天然力，属于国家所有，不因人民取得土地所有权而受影响。<br>土地价值非因施以劳力资本而增加者，应由国家征收土地增值税，<mark>归人民共享之</mark>。<br>国家对于土地之分配与整理，应以扶植自耕农及自行使用土地人为原则，并规定其适当经营之面积。</blockquote>
+        <p class="law-src">——《中华民国宪法》第143条（1947）</p>
+      </div>
+    </div>
+    <div class="hl-tags reveal">
+      <span>土地属于国民全体</span><span>私有土地照价纳税</span><span>增值税归人民共享</span>
+    </div>
+    <div class="callout reveal">宪法第143条第3项说：土地因社会进步而自然上涨的价值，国家征收增值税之后，要<b>“归人民共享”</b>。八十年来，增值税年年征收，却极少以“共享”的形式回到每一位国民手中——税进了预算，没有进帐户。本倡议要做的，就是把这五个字变成制度：<b>省市级土地分红基金，年度配息，人人有份</b>。</div>
+  </div>
+</section>
+<section class="chapter" id="h-taiwan">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">参</div><div><span class="ch-kicker">台湾实践</span><h3 class="ch-title">平均地权，已经运转了七十年</h3></div></div>
+    <p class="ch-lead reveal">1956年起，台湾全面实施平均地权，以“规定地价、照价征税、照价收买、涨价归公”追求“地尽其利、地利共享”。以下就是写进《土地税法》的现行制度——它证明：地价税与增值税，<strong>可以在华人社会长期、稳定、合法地运作</strong>。</p>
+    <h5 class="tbl-title">地价税<small>《土地税法》第16–19条</small></h5>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>适用土地</th><th>税率</th></tr></thead>
+      <tbody>
+        <tr><td>自用住宅用地（都市土地3公亩、非都市土地7公亩以内）</td><td class="num">2‰</td></tr>
+        <tr><td>都市计画公共设施保留地</td><td class="num">6‰</td></tr>
+        <tr><td>基本税率（地价总额未超过累进起点地价）</td><td class="num">10‰</td></tr>
+        <tr><td>超过累进起点地价未达5倍部分</td><td class="num">15‰</td></tr>
+        <tr><td>超过5倍至10倍部分</td><td class="num">25‰</td></tr>
+        <tr><td>超过10倍至15倍部分</td><td class="num">35‰</td></tr>
+        <tr><td>超过15倍至20倍部分</td><td class="num">45‰</td></tr>
+        <tr><td>超过20倍以上部分</td><td class="num">55‰</td></tr>
+        <tr><td>核定空地（空地税）</td><td class="num">按基本税额加征2–5倍</td></tr>
+      </tbody>
+    </table></div>
+    <p class="tbl-note">累进起点地价＝各直辖市、县（市）土地每7公亩之平均地价（不含工业、矿业、农业及免税土地）。工业、矿业等直接供事业使用之土地按10‰计征。</p>
+    <h5 class="tbl-title">土地增值税<small>《土地税法》第33–34条</small></h5>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>涨价总数额（相对前次移转现值）</th><th>税率</th></tr></thead>
+      <tbody>
+        <tr><td>未达前次现值1倍之部分</td><td class="num">20%</td></tr>
+        <tr><td>1倍至2倍之部分</td><td class="num">30%</td></tr>
+        <tr><td>2倍以上之部分</td><td class="num">40%</td></tr>
+        <tr><td>自用住宅用地（都市3公亩、非都市7公亩以内）</td><td class="num">10%</td></tr>
+        <tr><td>长期持有逾20／30／40年</td><td class="num">减征20%／30%／40%</td></tr>
+      </tbody>
+    </table></div>
+    <p class="tbl-note">原地价按政府发布之物价指数调整后计算——只对“真实增值”课税，不对通货膨胀课税。</p>
+    <div class="notebox reveal"><b>土地税天生是地方税</b>——《财政收支划分法》第12条明定：地价税、田赋、土地增值税均为<strong>直辖市及县（市）税</strong>。土地税收本来就属于“地方全民”，这正是省市级土地分红基金在财政制度上的落点。</div>
+    <div class="callout reveal" style="margin-top:26px"><b>未竟之功</b>——台湾证明了“可以收”，还没有完成“共享”：土地税收进了预算，没有进到每一位国民的帐户。“归人民共享”至今是财政上的归公，不是分配上的共享。差这一步，就是本倡议要补的一步。</div>
+  </div>
+</section>
+
+<section class="chapter" id="h-asks">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">肆</div><div><span class="ch-kicker">三大主张</span><h3 class="ch-title">收钱、分钱、管地——三位一体</h3></div></div>
+    <p class="ch-lead reveal">三大主张互为一体：<strong>地价税</strong>把地租收回来，<strong>土地分红基金</strong>把它分出去，<strong>公共土地租赁</strong>让土地不再被一次性卖断。三者都有现行法源与国际先例，缺的只是政治决心。</p>
+    <div class="ask">
+      <div class="ask-card reveal">
+        <span class="num">主张 一</span>
+        <h4>全面实施地价税</h4>
+        <span class="basis">宪法依据：第143条“私有土地应照价纳税”</span>
+        <ul>
+          <li>以“地价”为唯一税基：房屋改良物轻税、免税——惩罚囤地，不惩罚盖房。</li>
+          <li>定期重新规定地价，使税基贴近市价；农地以田赋保护，市地照价纳税。</li>
+          <li>空地税（加征2–5倍）与照价收买，作为反投机的制衡工具。</li>
+        </ul>
+        <p class="step"><b>第一步</b>：已实施地区（台湾）让公告地价逐年贴近市价；未实施地区（中国大陆、香港）从“年地租”起步，取代一次性卖地。</p>
+      </div>
+      <div class="ask-card reveal">
+        <span class="num">主张 二</span>
+        <h4>省市级土地分红基金</h4>
+        <span class="basis">宪法依据：第143条“归人民共享”</span>
+        <ul>
+          <li>每一直辖市、省、县（市）设立“土地分红基金”，法定注入一定比例之土地税收与公有土地收益。</li>
+          <li>基金只做两件事：保值营运、年度按人配息给全体居民。</li>
+          <li>数位帐本：每一笔土地收入、每一元配息，公开可查——这是“数位大同”的含义。</li>
+        </ul>
+        <p class="step"><b>先例</b>：阿拉斯加永久基金自1982年起向每位居民年度配息，2026年为1,200美元——土地收益全民配息，运转了四十余年。</p>
+      </div>
+      <div class="ask-card reveal">
+        <span class="num">主张 三</span>
+        <h4>公共土地租赁制度</h4>
+        <span class="basis">宪法依据：第143条“照价收买”＋香港批租实践</span>
+        <ul>
+          <li>公有土地以50–99年批租＋年租制提供使用，政府保留上级所有权。</li>
+          <li>“只租不卖”：地价上涨归公，续期地租注入土地分红基金。</li>
+          <li>香港全港批租、每年缴纳相当于应课差饷租值3%的地租——公共土地租赁在华人社会已有完整实践。</li>
+        </ul>
+        <p class="step"><b>第一步</b>：各级政府新增储备土地一律只租不卖；既有批租到期续约时，地租全额入基金。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="h-routes">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">伍</div><div><span class="ch-kicker">四地路线图</span><h3 class="ch-title">同一部宪法精神，四种起步方式</h3></div></div>
+    <div class="routes">
+      <div class="route reveal">
+        <h4>中国大陆</h4><span class="cap">从“卖地财政”到“地租财政”</span>
+        <span class="lb">现况</span>
+        <p>城市土地国有、农地集体所有；土地出让收入2021年达约<span class="stat-l">8.7万亿元</span>峰值，2024年降至<span class="stat-l">4.87万亿元</span>，三年累计下降逾44%——一次性卖地模式难以为继。</p>
+        <span class="lb">主张</span>
+        <p>出让金转向年地租／地价税；省市级土地分红基金让国有土地收益“全民共享”；以孙中山平均地权为共同语言，超越左右对立。</p>
+      </div>
+      <div class="route reveal">
+        <h4>台湾</h4><span class="cap">从“归公”到“共享”</span>
+        <span class="lb">现况</span>
+        <p>地价税与土地增值税施行七十年，且依法属直辖市及县（市）地方税——制度完备，只差分配。</p>
+        <span class="lb">主张</span>
+        <p>直辖市、县（市）设立土地分红基金；公告地价制度化调整贴近市价；公有土地只租不卖，让第143条兑现。</p>
+      </div>
+      <div class="route reveal">
+        <h4>香港</h4><span class="cap">从“批租收入”到“市民配息”</span>
+        <span class="lb">现况</span>
+        <p>全港土地几乎全部由政府批租；新批契约50年，每年缴纳相当于应课差饷租值3%的地租——政府本来就是全港的“大地主”。</p>
+        <span class="lb">主张</span>
+        <p>设立香港土地分红基金：地租与地价收入按法定比例注入，年度向全体市民配息，让“政府租地”的收益回到市民。</p>
+      </div>
+      <div class="route reveal">
+        <h4>海外华人</h4><span class="cap">从“乡愁”到“政策”</span>
+        <span class="lb">现况</span>
+        <p>全球华人社群缺少共同的公共政策议程；“天下为公”多见于题词，少见于制度。</p>
+        <span class="lb">主张</span>
+        <p>连署、研究、在地倡议：在侨居地推动以地价税替代财产税的讨论，让“天下为公”成为华人社会的共同政策语言。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="h-world">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">陆</div><div><span class="ch-kicker">世界在做的</span><h3 class="ch-title">这不是空想，是正在运转的制度</h3></div></div>
+    <div class="split">
+      <div class="timeline reveal">
+        <div class="tl"><b>周代</b><p><b>井田制</b>——孙文：“平均地权者，即井田之遗意也。”</p></div>
+        <div class="tl"><b>汉代</b><p><b>《礼记·礼运》</b>——“大道之行也，天下为公。”</p></div>
+        <div class="tl"><b>1879</b><p><b>亨利·乔治《进步与贫困》</b>——地价单一税风靡全球，廖仲恺摘译介绍入中国。</p></div>
+        <div class="tl"><b>1905</b><p><b>中国同盟会</b>——“平均地权”列入四大纲领。</p></div>
+        <div class="tl"><b>1947</b><p><b>中华民国宪法</b>——第142、143条：平均地权入宪，“归人民共享”。</p></div>
+        <div class="tl"><b>1956</b><p><b>台湾全面实施平均地权</b>——规定地价、照价征税、照价收买、涨价归公。</p></div>
+        <div class="tl"><b>1976→1982</b><p><b>阿拉斯加永久基金</b>——设立基金，1982年起向每位居民年度配息。</p></div>
+        <div class="tl"><b>1997</b><p><b>香港特区成立</b>——全港批租制延续，新契约50年＋3%地租。</p></div>
+        <div class="tl"><b>2021→2024</b><p><b>中国土地出让收入腰斩</b>——“土地财政”转型成为国家级议题。</p></div>
+      </div>
+      <div>
+        <div class="grid4 reveal" style="margin-bottom:14px">
+          <div class="card"><span class="tag">美国 · 阿拉斯加</span><h4>永久基金配息</h4><p>2026年人均配息<b>1,200美元</b>（含200美元能源补助）；历史平均约1,600美元/年。</p></div>
+          <div class="card"><span class="tag">爱沙尼亚</span><h4>地价税全面运作</h4><p>以地价税为地方支柱之一，自有住宅率约90%——土地税与高自有率并存。</p></div>
+          <div class="card"><span class="tag">丹麦</span><h4>市政土地税</h4><p>各市政府对评定地价课征<b>16‰–34‰</b>土地税，税率因地制宜。</p></div>
+          <div class="card"><span class="tag">澳洲 · 昆士兰</span><h4>地价税运转中</h4><p>学术调查：地价税目前在昆士兰、丹麦、纳米比亚、爱沙尼亚<b>全面运作</b>。</p></div>
+        </div>
+        <div class="chart-box reveal">
+          <h5>中国土地出让收入（万亿元）</h5>
+          <p class="csrc">2021年峰值后连续下滑——一次性卖地模式走到尽头（财新 · 粤开证券）</p>
+          <div class="chart">
+            <div class="bar"><b>8.7</b><i style="height:100%"></i><span>2021</span></div>
+            <div class="bar"><b>5.8</b><i style="height:67%"></i><span>2023</span></div>
+            <div class="bar red"><b>4.87</b><i style="height:56%"></i><span>2024</span></div>
+            <div class="bar red"><b>≈4.2</b><i style="height:48%"></i><span>2025</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="h-simulator">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">算</div><div><span class="ch-kicker">土地分红试算</span><h3 class="ch-title">你的城市，每年能配多少？</h3></div></div>
+    <div class="sim reveal">
+      <div>
+        <div class="sim-row">
+          <label>本地区年度土地税收（地价税＋增值税＋公有地租）<output class="ov-rev"></output></label>
+          <input type="range" class="sim-rev" min="0" max="5000" step="10" value="800">
+        </div>
+        <div class="sim-row">
+          <label>法定注入土地分红基金的比例<output class="ov-pct"></output></label>
+          <input type="range" class="sim-pct" min="0" max="100" step="5" value="50">
+        </div>
+        <div class="sim-row">
+          <label>本地区人口<output class="ov-pop"></output></label>
+          <input type="range" class="sim-pop" min="1" max="4000" step="1" value="500">
+        </div>
+        <p class="tbl-note" style="margin:0">公式：每人年度配息＝年度土地税收 × 注入比例 ÷ 总人口。阿拉斯加模式：基金保值营运，配息来自收益而非本金。</p>
+      </div>
+      <div class="sim-out">
+        <div><p class="cap">基金年度规模</p><p class="sub2 sim-fund"></p></div>
+        <div><p class="cap">每人每年可配</p><p class="big sim-year"></p></div>
+        <div><p class="cap">每人每月约</p><p class="sub2 sim-month"></p></div>
+        <p class="fine">示意试算，非官方数据；实际制度应由各地方议会立法确定注入比例与发放规则。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="h-faq">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">柒</div><div><span class="ch-kicker">常见质疑</span><h3 class="ch-title">五个最常见的问题</h3></div></div>
+    <div class="reveal">
+      <details open>
+        <summary>这会打击房价、伤害有房的人吗？</summary>
+        <div class="a">地价税只对“土地占有”课税，房屋改良物轻税或免税——努力盖房、自住的人不受罚，囤地待涨的人不能再免费占用社会的空间。台湾对自用住宅早已设有<b>2‰</b>的优惠税率；转型可以分年过渡，让制度先保护家园，再对准投机。</div>
+      </details>
+      <details>
+        <summary>这是共产主义吗？</summary>
+        <div class="a">恰恰相反。宪法第143条一方面宣布土地“属于国民全体”，另一方面明文<b>保障</b>人民依法取得的土地所有权——“私有”与“共享”并存。孙中山反对把土地一律收归国有：“从实均地，仍是不平。”地价税是自由宪政下的共享，不是没收；它让市场继续配置土地，只是把地租的归属还给全民。</div>
+      </details>
+      <details>
+        <summary>政府会不会藉“照价收买”滥权？</summary>
+        <div class="a">照价收买以“自报地价”为杠杆：报得太低，政府可照价收买——它是防止低报的制衡工具，必须依法定程序与补偿。台湾施行近七十年，并未因此出现大规模收买；制衡存在本身，就让申报趋于诚实。</div>
+      </details>
+      <details>
+        <summary>农地、农民怎么办？</summary>
+        <div class="a">台湾的设计早已区分：农业用地征收<b>田赋</b>，且法律授权行政院视农业发展需要停征——保护农地、课征市地，两轨并行。任何土地分红基金也应涵盖农村居民：农民同样是“国民全体”的一员。</div>
+      </details>
+      <details>
+        <summary>全民配息会养懒人吗？</summary>
+        <div class="a">阿拉斯加发放配息四十余年，并未瓦解其劳动市场；配息来自土地地租的再分配，不是印钞。地租是社会创造的价值——把它平均还给每一个人，是“产权的清算”，不是救济。勤劳的人本来就该多得一点：<b>努力之果归于个人，土地之利归于全民</b>。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="chapter manifesto" id="h-manifesto">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">宣</div><div><span class="ch-kicker">倡议宣言</span><h3 class="ch-title">七条</h3></div></div>
+    <ol class="mani-list reveal">
+      <li>土地是全民的生产基底，不是无限的私有对象。</li>
+      <li>土地的自然增值来自社会，而非个人努力——应以地价税回收。</li>
+      <li>努力之果归于个人，土地之利归于全民。</li>
+      <li>每一省市设立土地分红基金，年度配息，到每一位居民。</li>
+      <li>公有土地只租不卖；地租进基金，不进暗帐。</li>
+      <li>以数位帐本公开每一笔土地收益与每一元配息。</li>
+      <li>呼吁中国大陆、台湾、香港与海外华人社会，把“归人民共享”从宪法文字变成生活制度。</li>
+    </ol>
+    <div class="mani-cta reveal">
+      <button class="btn btn-primary copy-pledge" type="button" data-pledge="我连署《地权归民倡议书》：根据三民主义与中华民国宪法第143条，呼吁全面实施地价税、设立省市级土地分红基金、推行公共土地租赁制度，让土地的自然增值归于全民共享。——姓名：____　地区：____">复制连署文</button>
+      <button class="btn btn-ghost copy-link" type="button">复制倡议连结</button>
+      <span class="fine">本页不收集任何资料——连署以你自己的名字，发在你自己的地方。</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <p class="fbrand">数位大同法研究所<small>DIGITAL DAEDONG INSTITUTE · 디지털 대동법 연구소 · 토지와 자유 LandnLiberty.kr</small></p>
+        <p>一个“1人＋AI”的政策研究室，把“天下为公”从题词变成制度设计。本页为其中文倡议版，2026年。</p>
+      </div>
+      <div class="src">
+        <p style="color:var(--gold);letter-spacing:.2em;font-size:12.5px">资料来源</p>
+        <ul>
+          <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340096">《土地税法》· 全国法规资料库</a></li>
+          <li><a href="https://web.law.ntpc.gov.tw/Scripts/FLAWDOC01.aspx?fcode=B0000001&amp;flno=143">《中华民国宪法》第142、143条</a></li>
+          <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0320015">《财政收支划分法》</a></li>
+          <li><a href="https://zh.wikipedia.org/zh-hant/%E5%B9%B3%E5%9D%87%E5%9C%B0%E6%AC%8A">维基百科：平均地权</a></li>
+          <li><a href="https://www.landsd.gov.hk/tc/service/landpolicy.htm">香港地政总署：土地租用制度</a></li>
+          <li><a href="https://pfd.alaska.gov/">阿拉斯加永久基金红利（PFD）</a></li>
+          <li><a href="https://opinion.caixin.com/2025-03-25/102301956.html">财新：土地财政何去何从</a></li>
+          <li><a href="https://centaur.reading.ac.uk/88754/">Hughes (2020): Implementing a Land Value Tax</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">本页为公民倡议性质；法条文字以官方公布为准，数据以各来源最新公布为准。© 2026 数位大同法研究所（DDLI）</p>
+  </div>
+</footer>
+
+</div>
+<div id="root-ko" lang="ko" data-title="天下為公 · 地權歸民 촉구서" hidden>
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="#k-hero"><i>公</i>地權歸民</a>
+    <nav class="nav-links">
+      <a href="#k-ideology">이념</a>
+      <a href="#k-constitution">헌법</a>
+      <a href="#k-taiwan">실천</a>
+      <a href="#k-asks">주장</a>
+      <a href="#k-routes">로드맵</a>
+      <a href="#k-world">세계</a>
+      <a href="#k-faq">문답</a>
+      <a href="#k-manifesto">선언</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="언어">
+      <button type="button" data-lang="hant">繁</button>
+      <button type="button" data-lang="hans">简</button>
+      <button type="button" data-lang="ko" class="on">한</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="hero" id="k-hero">
+  <div class="wrap hero-inner">
+    <div class="stele reveal">
+      <div class="stele-side">촉구서 · 2026</div>
+      <h1>地權歸民</h1>
+      <div class="seal" aria-label="천하위공"><span>天</span><span>下</span><span>為</span><span>公</span></div>
+    </div>
+    <div class="hero-right">
+      <p class="eyebrow reveal">시민 촉구 · 중화권 사회 전체에 보내는 글</p>
+      <h2 class="reveal">토지의 자연 증가분은,<br>모든 국민이 함께 나눕니다.</h2>
+      <p class="lede reveal">120년 전 쑨원(孫中山)은 「평균지권(平均地權)」을 건국 강령에 넣었고, 약 80년 전 중화민국 헌법 제143조는 「인민이 함께 나눈다(歸人民共享)」고 썼습니다. 오늘 우리는 이 다섯 글자를 제도로 만들 것을 요구합니다 — <strong>지가세 전면 시행, 광역(省市)급 토지배당기금 설립, 공공토지임대제 도입</strong>.</p>
+      <div class="aud reveal"><b>수신</b><span>중국 대륙</span><span>대만</span><span>홍콩</span><span>해외 화교 사회</span></div>
+      <div class="cta-row reveal">
+        <a class="btn btn-primary" href="#k-asks">3대 주장</a>
+        <a class="btn btn-ghost" href="#k-manifesto">선언 연서</a>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><b>제143조</b><span>중화민국 헌법: 토지증치세 「인민이 함께 나눈다」</span></div>
+        <div class="stat"><b>$1,200</b><span>알래스카 2026년 1인당 연간 배당(에너지 보조 포함)</span></div>
+        <div class="stat"><b>−44%</b><span>중국 토지양도 수입 3년 누적 감소(2021→2024)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-band">
+  <div class="wrap">
+    <p class="q reveal">大道之行也，天下為公。</p>
+    <p class="src reveal">——《禮記 · 禮運》</p>
+    <p class="sub reveal">쑨원이 평생 가장 많이 썼던 글귀이자, 이 촉구의 첫 번째 원칙입니다.</p>
+  </div>
+</section>
+
+<section class="chapter" id="k-ideology">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <div class="chnum">壹</div>
+      <div><span class="ch-kicker">이념의 뿌리</span><h3 class="ch-title">삼민주의가 내놓은 토지 해답</h3></div>
+    </div>
+    <p class="ch-lead reveal">1905년 중국동맹회(中國同盟會)가 결성되며 <strong>「평균지권」</strong>이 4대 강령의 하나로 올랐습니다 — 그로부터 2년 전, 쑨원은 이미 도쿄의 입회 맹세문에 이 네 글자를 써 두었습니다. 이후 민생주의의 두 축(평균지권·절제자본)이 되었고, 1947년 중화민국 헌법 제142조에 들어가 지금까지 유효합니다. 평균지권은 몰수가 아닙니다: <strong>토지 사유는 그대로, 지대와 자연 증가분만 공공이 나눕니다</strong>.</p>
+    <div class="pillars reveal">
+      <div class="pillar"><b>민족주의</b><span>민족 평등·자립</span></div>
+      <div class="pillar"><b>민권주의</b><span>주권재민</span></div>
+      <div class="pillar hot"><b>민생주의</b><span>평균지권 · 절제자본</span></div>
+    </div>
+    <div class="grid4 reveal">
+      <div class="card"><span class="tag">첫째 강령 · 規定地價</span><h4>지가 확정</h4><p>토지주가 스스로 지가를 신고해 모든 제도의 기준으로 삼습니다 — 낮게 신고하면 정부가 신고가 그대로 매입할 수 있으니, 신고는 자연히 실제에 가까워집니다.</p></div>
+      <div class="card"><span class="tag">둘째 강령 · 照價徵稅</span><h4>가액대로 과세</h4><p>신고된 지가를 기준으로 매년 지가세를 부과합니다 — 「토지 점유」에는 비용을, 「토지 개량」에는 벌을 주지 않습니다.</p></div>
+      <div class="card"><span class="tag">셋째 강령 · 照價收買</span><h4>신고가 매입</h4><p>지가를 낮게 신고한 자에게는 정부가 그 가액으로 매입할 수 있습니다 — 투기와 독점을 막는 견제 장치이자 공공 토지 확보 수단입니다.</p></div>
+      <div class="card hot"><span class="tag">넷째 강령 · 漲價歸公</span><h4>증가분 귀공</h4><p>개인의 노력과 자본이 아닌 증가분은 사회의 진보에서 나온 것이므로 사회가 함께 누려야 합니다 — 토지배당의 원형입니다.</p></div>
+    </div>
+    <div class="bigquote reveal">
+      <p>「문명의 복지는 국민이 평등하게 누려야 한다. 사회경제 조직을 개량하고 천하의 지가를 확정하되, 현존하는 지가는 그대로 원주주에게 속하게 하고, 혁명 후 사회가 개량·진보하여 생긴 증가치는 국가에 귀속시켜 국민이 함께 나누게 한다.」</p>
+      <p class="who">—— 중국동맹회 군정부 선언(1906)</p>
+    </div>
+    <div class="lineage reveal">
+      <div class="node">주대 정전제<small>쑨원: 「평균지권은 곧 정전의 유의」</small></div><span class="arr">→</span>
+      <div class="node">예운 대동<small>天下為公</small></div><span class="arr">→</span>
+      <div class="node">토머스 페인 1797<small>『농업 정의』 토지 배당</small></div><span class="arr">→</span><div class="node">헨리 조지 1879<small>『진보와 빈곤』 지가 단일세</small></div><span class="arr">→</span>
+      <div class="node">존 스튜어트 밀<small>지대귀공론</small></div><span class="arr">→</span>
+      <div class="node">쑨원 1905<small>평균지권</small></div>
+    </div>
+    <div class="notebox reveal"><b>2층적 소유권</b> — 쑨원이 설계한 재산권: 국가가 「상급 소유권」을, 국민이 「하급 소유권」을 쥐는 구조로, 토지 국유의 실질을 이루면서도 그 폐해는 없습니다. 그는 토지를 일괄 국유화하는 데 명확히 반대했습니다: 「실지로 균지하면 여전히 평등하지 않다(從實均地，仍是不平).」 이것은 방임과 몰수 사이의 제3의 길입니다.</div>
+    <div class="grid3 reveal">
+      <div class="card"><span class="tag">1797 · 토머스 페인</span><h4>『농업 정의』 Agrarian Justice</h4><p>『상식』『인간의 권리』로 미국·프랑스 혁명의 사상적 기반을 닦은 페인이 1797년 낸 소책자. <b>토지 배당(Land Dividend)</b> 구상을 담고 있으며, 오늘날 기본소득(UBI) 논의의 가장 이른 원형으로 평가받습니다.</p></div>
+      <div class="card"><span class="tag">구상</span><h4>국가 기금 · 두 단계 지급</h4><p><b>상속세와 토지세</b>로 국가 기금을 조성해 <b>21세</b>에 일회성 <b>15파운드</b>(자기 몫의 토지 보상), <b>50세부터</b> 매년 <b>10파운드</b> 지급 — 빈부를 막론하고, 심사도 노동 의무도 없이.</p></div>
+      <div class="card hot"><span class="tag">핵심 논거</span><h4>자선이 아니라 권리</h4><p>“경작되지 않은 자연 상태의 토지는 어떤 개인도 독점적으로 소유할 수 없다.” 페인은 <b>토지 자체</b>와 <b>토지 개량</b>(노동의 산물)을 구분하고, 점유자는 공동체에 지대를 지불해야 한다고 봤습니다. 빈곤은 나태가 아니라 구조의 문제, 배당은 자연권의 실현.</p></div>
+    </div>
+    <div class="notebox reveal"><b>선구의 사슬</b> — 페인의 구상은 헨리 조지 『진보와 빈곤』(1879, 토지단일세)으로 이어져 쑨원의 ‘평균지권’에 닿았고, 알래스카 영구기금과 오늘날 기본소득 논의의 직접적 선례가 되었습니다. 연구소 블로그 전문: <a class="src" href="https://blog.naver.com/hoyaya/224210607181" target="_blank" rel="noopener">「토마스 페인의 토지 배당」</a>(디지털 대동법 연구소, 2026.3.9).</div>
+  </div>
+</section>
+
+<section class="chapter" id="k-constitution">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <div class="chnum">貳</div>
+      <div><span class="ch-kicker">헌법적 뿌리</span><h3 class="ch-title">「인민이 함께 나눈다」는 다섯 글자, 80년을 기다리다</h3></div>
+    </div>
+    <p class="ch-lead reveal">1947년 제정, 같은 해 12월 25일 시행된 중화민국 헌법은 민생주의를 기본 국책으로 넣었습니다. 이 헌법은 오늘 대만의 자유지역에서 시행되며 일곱 차례 증수(增修)와 여덟 차례 직접 선거를 거쳤습니다 — 화인 사회에서 근 80년간 계속 작동해 온 유일한 자유민주 헌법이고, 그 토지 조항은 <strong>한 번도 삭제된 적이 없습니다</strong>.</p>
+    <div class="plaques">
+      <div class="plaque reveal">
+        <span class="law-no">第 142 條</span>
+        <blockquote>國民經濟應以民生主義為基本原則，實施<mark>平均地權</mark>，節制資本，以謀國計民生之均足。</blockquote>
+        <p class="law-gloss">국민경제는 민생주의를 기본원칙으로 삼아 평균지권을 실시하고 자본을 절제하여, 국가 경제와 국민 생활이 함께 균형을 이루도록 한다.</p>
+        <p class="law-src">—— 중화민국 헌법 제13장 제3절(1947)</p>
+      </div>
+      <div class="plaque reveal">
+        <span class="law-no">第 143 條</span>
+        <blockquote>中華民國領土內之土地<mark>屬於國民全體</mark>。人民依法取得之土地所有權，應受法律之保障與限制。私有土地應<mark>照價納稅</mark>，政府並得照價收買。<br>附著於土地之礦，及經濟上可供公眾利用之天然力，屬於國家所有，不因人民取得土地所有權而受影響。<br>土地價值非因施以勞力資本而增加者，應由國家徵收土地增值稅，<mark>歸人民共享之</mark>。<br>國家對於土地之分配與整理，應以扶植自耕農及自行使用土地人為原則，並規定其適當經營之面積。</blockquote>
+        <p class="law-gloss">중화민국 영토 내의 토지는 <strong>국민 전체의 것</strong>이다. 인민이 적법하게 취득한 토지 소유권은 법률의 보호와 제한을 받는다. 사유 토지는 가액대로 납세해야 하며, 정부는 그 가액으로 매입할 수 있다. 토지에 붙는 광물과 경제적으로 공중이 이용할 수 있는 자연력은 국가에 속하며, 인민이 토지 소유권을 취득했다고 해서 영향을 받지 않는다. 노력과 자본을 들이지 않고 늘어난 토지가치는 국가가 토지증치세로 걷어 <strong>인민이 함께 나누게 한다</strong>. 국가의 토지 분배와 정리는 자경농과 자가 사용자를 키우는 것을 원칙으로 하며, 적절한 경영 면적을 정한다.</p>
+        <p class="law-src">—— 중화민국 헌법 제143조(1947)</p>
+      </div>
+    </div>
+    <div class="hl-tags reveal">
+      <span>토지는 국민 전체의 것</span><span>사유 토지는 가액대로 납세</span><span>증치세는 인민이 함께 나눔</span>
+    </div>
+    <div class="callout reveal">헌법 제143조 제3항은 말합니다: 사회의 진보로 자연히 오른 토지가치는 국가가 증치세로 거둔 뒤 <b>「인민이 함께 나눈다」</b>. 80년 동안 증치세는 매년 걷혔지만, 「나눔」의 형태로 국민 한 사람 한 사람에게 돌아간 적은 드뭅니다 — 세금은 예산으로 들어갔을 뿐, 계좌로는 들어가지 않았습니다. 이 촉구가 하려는 일은 바로 이 다섯 글자를 제도로 만드는 것: <b>광역(省市)급 토지배당기금, 연간 배당, 모두에게 몫을</b>.</div>
+  </div>
+</section>
+<section class="chapter" id="k-taiwan">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">參</div><div><span class="ch-kicker">대만의 실천</span><h3 class="ch-title">평균지권, 이미 70년을 굴러왔다</h3></div></div>
+    <p class="ch-lead reveal">1956년부터 대만은 평균지권을 전면 실시하며 「지가 확정·가액 과세·신고가 매입·증가분 귀공」으로 「지진기리(地盡其利)·지리공유(地利共享)」를 추구했습니다. 아래는 『토지세법』에 쓰인 현행 제도입니다 — 이것이 증명합니다: 지가세와 증치세는 <strong>화인 사회에서 오랜 기간 안정적·합법적으로 작동할 수 있다</strong>.</p>
+    <h5 class="tbl-title">지가세<small>『토지세법』 제16–19조</small></h5>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>적용 토지</th><th>세율</th></tr></thead>
+      <tbody>
+        <tr><td>자가주거용지(도시 3공액·비도시 7공액 이내)</td><td class="num">2‰</td></tr>
+        <tr><td>도시계획 공공시설 보류지</td><td class="num">6‰</td></tr>
+        <tr><td>기본세율(지가총액이 누진기점지가 이하)</td><td class="num">10‰</td></tr>
+        <tr><td>누진기점 초과 5배 미달 부분</td><td class="num">15‰</td></tr>
+        <tr><td>5배 초과 10배 이하 부분</td><td class="num">25‰</td></tr>
+        <tr><td>10배 초과 15배 이하 부분</td><td class="num">35‰</td></tr>
+        <tr><td>15배 초과 20배 이하 부분</td><td class="num">45‰</td></tr>
+        <tr><td>20배 초과 부분</td><td class="num">55‰</td></tr>
+        <tr><td>공지 지정(공지세)</td><td class="num">기본세액의 2–5배 추가 부과</td></tr>
+      </tbody>
+    </table></div>
+    <p class="tbl-note">누진기점지가 = 각 직할시·현(시) 토지 7공액당 평균 지가(공업·광업·농업 및 면세 토지 제외). 공업·광업 등 사업에 직접 쓰이는 토지는 10‰로 과세합니다.</p>
+    <h5 class="tbl-title">토지증치세<small>『토지세법』 제33–34조</small></h5>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>전회 이전가 대비 상승분</th><th>세율</th></tr></thead>
+      <tbody>
+        <tr><td>전회 현가 1배 미달 부분</td><td class="num">20%</td></tr>
+        <tr><td>1배 초과 2배 이하 부분</td><td class="num">30%</td></tr>
+        <tr><td>2배 초과 부분</td><td class="num">40%</td></tr>
+        <tr><td>자가주거용지(도시 3공액·비도시 7공액 이내)</td><td class="num">10%</td></tr>
+        <tr><td>20／30／40년 초과 장기 보유</td><td class="num">20%／30%／40% 감면</td></tr>
+      </tbody>
+    </table></div>
+    <p class="tbl-note">원지가는 정부 발표 물가지수로 조정해 계산합니다 — 인플레이션이 아니라 「실질 증가분」에만 과세합니다.</p>
+    <div class="notebox reveal"><b>토지세는 본디 지방세</b> — 『재정수지분할법』 제12조는 지가세·전부(田賦)·토지증치세를 모두 <strong>직할시 및 현(시)세</strong>로 규정합니다. 토지세수는 원래 「지방 국민」의 것이고, 이것이 광역급 토지배당기금의 재정 제도적 착지점입니다.</div>
+    <div class="callout reveal" style="margin-top:26px"><b>끝내지 못한 일</b> — 대만은 「걸을 수 있다」는 것을 증명했지만 「나눈다」까지는 완성하지 못했습니다: 토지세수는 예산으로 들어갔을 뿐 국민 각자의 계좌로는 가지 않았습니다. 「인민이 함께 나눈다」는 오늘까지 재정상의 귀공이지 분배상의 나눔이 아닙니다. 이 한 걸음이 바로 이 촉구가 메워야 할 한 걸음입니다.</div>
+  </div>
+</section>
+
+<section class="chapter" id="k-asks">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">肆</div><div><span class="ch-kicker">3대 주장</span><h3 class="ch-title">거두고, 나누고, 지키는 — 삼위일체</h3></div></div>
+    <p class="ch-lead reveal">세 주장은 하나로 묶입니다: <strong>지가세</strong>가 지대를 거두어 오고, <strong>토지배당기금</strong>이 그것을 나누고, <strong>공공토지임대</strong>가 토지가 일괄 매각되지 않게 합니다. 셋 모두 현행 법원(法源)과 국제 선례가 있는데, 없는 것은 정치적 결단뿐입니다.</p>
+    <div class="ask">
+      <div class="ask-card reveal">
+        <span class="num">주장 一</span>
+        <h4>지가세 전면 시행</h4>
+        <span class="basis">헌법 근거: 제143조 「사유 토지는 가액대로 납세」</span>
+        <ul>
+          <li>「지가」를 유일한 과세 기준으로: 건물 등 개량물은 경세·면세 — 토지 매점에는 벌을, 집 짓기에는 벌을 주지 않습니다.</li>
+          <li>정기적으로 지가를 재확정해 세 기준을 시세에 맞춥니다; 농지는 전부(田賦)로 보호하고 도시 토지는 가액대로 과세합니다.</li>
+          <li>공지세(2–5배 추가 부과)와 신고가 매입을 반투기 견제 도구로 씁니다.</li>
+        </ul>
+        <p class="step"><b>첫걸음</b>: 이미 시행 중인 지역(대만)은 공고지가를 매년 시세에 가깝게; 미시행 지역(중국 대륙·홍콩)은 일괄 매각을 대체하는 「연간 지대」부터 시작합니다.</p>
+      </div>
+      <div class="ask-card reveal">
+        <span class="num">주장 二</span>
+        <h4>광역급 토지배당기금</h4>
+        <span class="basis">헌법 근거: 제143조 「인민이 함께 나눈다」</span>
+        <ul>
+          <li>모든 직할시·성·현(시)에 「토지배당기금」을 설립하고, 일정 비율의 토지세수와 공유지 수익을 법정 주입합니다.</li>
+          <li>기금은 두 가지만 합니다: 원금 보전 운용, 연간 인구당 배당.</li>
+          <li>디지털 장부: 토지 수입 한 건 한 건, 배당 한 푼 한 푼이 공개·열람 가능 — 이것이 「디지털 대동」의 의미입니다.</li>
+        </ul>
+        <p class="step"><b>선례</b>: 알래스카 영구기금은 1982년부터 주민 전원에게 연간 배당을 지급, 2026년에는 1,200달러 — 토지 수익 전민 배당이 40여 년 굴러갔습니다.</p>
+      </div>
+      <div class="ask-card reveal">
+        <span class="num">주장 三</span>
+        <h4>공공토지임대제</h4>
+        <span class="basis">헌법 근거: 제143조 「신고가 매입」＋홍콩批租 관행</span>
+        <ul>
+          <li>공유지는 50–99년 임대차＋연간 지대제로 제공하고, 정부는 상급 소유권을 유지합니다.</li>
+          <li>「팔지 않고 임대만」: 지가 상승분은 공공으로, 갱신 지대는 토지배당기금으로 들어갑니다.</li>
+          <li>홍콩은 전섬을 임대하고 매년 응과차여(差餉) 임차값의 3%에 해당하는 지대를 납부 — 공공토지임대는 이미 화인 사회의 완성된 관행입니다.</li>
+        </ul>
+        <p class="step"><b>첫걸음</b>: 각급 정부가 새로 확보하는 토지는 예외 없이 임대만; 기존批租의 만기 갱신 시 지대는 전액 기금으로.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="k-routes">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">伍</div><div><span class="ch-kicker">네 지역의 로드맵</span><h3 class="ch-title">같은 헌법 정신, 네 가지 출발점</h3></div></div>
+    <div class="routes">
+      <div class="route reveal">
+        <h4>중국 대륙</h4><span class="cap">「토지 매각 재정」에서 「토지 지대 재정」으로</span>
+        <span class="lb">현황</span>
+        <p>도시 토지는 국유, 농지는 집단 소유; 토지양도 수입은 2021년 약 <span class="stat-l">8.7조 위안</span> 정점, 2024년 <span class="stat-l">4.87조 위안</span>으로, 3년 누적 44% 이상 하락 — 일괄 매각 모델은 지속되기 어렵습니다.</p>
+        <span class="lb">주장</span>
+        <p>양도금을 연간 지대·지가세로 전환; 광역급 토지배당기금으로 국유지 수익을 「전민이 함께 나누게」; 쑨원의 평균지권을 공동 언어로 삼아 좌우 대립을 넘습니다.</p>
+      </div>
+      <div class="route reveal">
+        <h4>대만</h4><span class="cap">「귀공」에서 「공유」로</span>
+        <span class="lb">현황</span>
+        <p>지가세와 토지증치세 70년 시행, 법률상 직할시·현(시) 지방세 — 제도는 완비, 남은 것은 분배뿐입니다.</p>
+        <span class="lb">주장</span>
+        <p>직할시·현(시)에 토지배당기금 설립; 공고지가를 제도적으로 조정해 시세에 접근; 공유지는 팔지 않고 임대해 제143조를 현금으로 만듭니다.</p>
+      </div>
+      <div class="route reveal">
+        <h4>홍콩</h4><span class="cap">「批租 수입」에서 「시민 배당」으로</span>
+        <span class="lb">현황</span>
+        <p>전섬 토지의 사실상 전부가 정부 임대; 신규 계약은 50년, 매년 응과차여 임차값의 3% 지대 — 정부는 본디 전 섬의 「대지주」입니다.</p>
+        <span class="lb">주장</span>
+        <p>홍콩 토지배당기금 설립: 지대와 지가 수입을 법정 비율로 주입, 연간 전 시민 배당으로 「정부 임대」의 수익을 시민에게 돌려줍니다.</p>
+      </div>
+      <div class="route reveal">
+        <h4>해외 화교</h4><span class="cap">「향수」에서 「정책」으로</span>
+        <span class="lb">현황</span>
+        <p>세계 화인 커뮤니티에는 공동의 공공정책 의제가 없습니다; 「천하위공」은 제사(題辭)에는 흔하지만 제도에는 드뭅니다.</p>
+        <span class="lb">주장</span>
+        <p>연서·연구·현지 촉구: 거주지에서 재산세를 지가세로 대체하는 논의를 추진해, 「천하위공」을 화인 사회의 공동 정책 언어로 만듭니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="k-world">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">陸</div><div><span class="ch-kicker">세계가 하는 일</span><h3 class="ch-title">공상이 아니라, 이미 굴러가는 제도</h3></div></div>
+    <div class="split">
+      <div class="timeline reveal">
+        <div class="tl"><b>주대</b><p><b>정전제</b> — 쑨원: 「평균지권자 곧 정전의 유의야.」</p></div>
+        <div class="tl"><b>한대</b><p><b>『예기·예운』</b> — 「대도지행야, 천하위공.」</p></div>
+        <div class="tl"><b>1879</b><p><b>헨리 조지 『진보와 빈곤』</b> — 지가 단일세가 세계를 휩쓸었고, 랴오중카이가 발췌 번역해 중국에 소개했습니다.</p></div>
+        <div class="tl"><b>1905</b><p><b>중국동맹회</b> — 「평균지권」이 4대 강령에 올랐습니다.</p></div>
+        <div class="tl"><b>1947</b><p><b>중화민국 헌법</b> — 제142·143조: 평균지권 입헌, 「인민이 함께 나눈다」.</p></div>
+        <div class="tl"><b>1956</b><p><b>대만 전면 실시</b> — 지가 확정·가액 과세·신고가 매입·증가분 귀공.</p></div>
+        <div class="tl"><b>1976→1982</b><p><b>알래스카 영구기금</b> — 기금 설립, 1982년부터 주민 전원 연간 배당.</p></div>
+        <div class="tl"><b>1997</b><p><b>홍콩특구 출범</b> — 전섬 임대제 계속, 신규 계약 50년＋3% 지대.</p></div>
+        <div class="tl"><b>2021→2024</b><p><b>중국 토지양도 수입 절반</b> — 「토지 재정」 전환이 국가급 의제로.</p></div>
+      </div>
+      <div>
+        <div class="grid4 reveal" style="margin-bottom:14px">
+          <div class="card"><span class="tag">미국 · 알래스카</span><h4>영구기금 배당</h4><p>2026년 1인당 배당 <b>1,200달러</b>(에너지 보조 200달러 포함); 역사 평균 연 약 1,600달러.</p></div>
+          <div class="card"><span class="tag">에스토니아</span><h4>지가세 전면 운용</h4><p>지가세가 지방 재정의 축으로, 자가소유율 약 90% — 토지세와 높은 자가율이 공존합니다.</p></div>
+          <div class="card"><span class="tag">덴마크</span><h4>시정 토지세</h4><p>각 시가 감정 지가에 <b>16‰–34‰</b> 토지세를 부과, 세율은 지역별로 다릅니다.</p></div>
+          <div class="card"><span class="tag">호주 · 퀸즐랜드</span><h4>지가세 운용 중</h4><p>학술 조사에 따르면 지가세는 현재 퀸즐랜드·덴마크·나미비아·에스토니아에서 <b>전면 운용</b>됩니다.</p></div>
+        </div>
+        <div class="chart-box reveal">
+          <h5>중국 토지양도 수입(조 위안)</h5>
+          <p class="csrc">2021년 정점 이후 연속 하락 — 일괄 매각 모델의 끝(차이신 · 월개증권)</p>
+          <div class="chart">
+            <div class="bar"><b>8.7</b><i style="height:100%"></i><span>2021</span></div>
+            <div class="bar"><b>5.8</b><i style="height:67%"></i><span>2023</span></div>
+            <div class="bar red"><b>4.87</b><i style="height:56%"></i><span>2024</span></div>
+            <div class="bar red"><b>≈4.2</b><i style="height:48%"></i><span>2025</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="k-simulator">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">算</div><div><span class="ch-kicker">토지배당 시산</span><h3 class="ch-title">당신의 도시는 매년 얼마를 받을까?</h3></div></div>
+    <div class="sim reveal">
+      <div>
+        <div class="sim-row">
+          <label>지역 연간 토지세수(지가세＋증치세＋공유지 지대)<output class="ov-rev"></output></label>
+          <input type="range" class="sim-rev" min="0" max="5000" step="10" value="800">
+        </div>
+        <div class="sim-row">
+          <label>법정 기금 주입 비율<output class="ov-pct"></output></label>
+          <input type="range" class="sim-pct" min="0" max="100" step="5" value="50">
+        </div>
+        <div class="sim-row">
+          <label>지역 인구<output class="ov-pop"></output></label>
+          <input type="range" class="sim-pop" min="1" max="4000" step="1" value="500">
+        </div>
+        <p class="tbl-note" style="margin:0">공식: 1인당 연간 배당 = 연간 토지세수 × 주입 비율 ÷ 총인구. 알래스카 모델: 기금은 원금 보전 운용, 배당은 수익에서 지급합니다.</p>
+      </div>
+      <div class="sim-out">
+        <div><p class="cap">기금 연간 규모</p><p class="sub2 sim-fund"></p></div>
+        <div><p class="cap">1인당 연간 배당</p><p class="big sim-year"></p></div>
+        <div><p class="cap">1인당 월 약</p><p class="sub2 sim-month"></p></div>
+        <p class="fine">시산용 시뮬레이션이며 공식 데이터가 아닙니다; 실제 제도는 각 지방의회가 주입 비율과 지급 규칙을 입법해야 합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="k-faq">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">柒</div><div><span class="ch-kicker">반론 문답</span><h3 class="ch-title">가장 흔한 다섯 가지 질문</h3></div></div>
+    <div class="reveal">
+      <details open>
+        <summary>집값에 타격이 되고, 집 가진 사람이 다치지 않나요?</summary>
+        <div class="a">지가세는 「토지 점유」에만 과세하고 건물 등 개량물은 경세·면세입니다 — 열심히 집을 짓고 사는 사람은 벌받지 않고, 땅을 사두고 오르기만 기다리는 사람은 더 이상 사회의 공간을 공짜로 점유할 수 없습니다. 대만은 자가주거용지에 이미 <b>2‰</b>의 우대세율을 두고 있습니다; 전환은 여러 해에 걸쳐 점진적으로, 제도가 먼저 가장(家園)을 지키고 나서 투기를 겨냥하도록 할 수 있습니다.</div>
+      </details>
+      <details>
+        <summary>이것은 공산주의 아닌가요?</summary>
+        <div class="a">정반대입니다. 헌법 제143조는 한편으로 토지가 「국민 전체의 것」이라고 선언하면서, 다른 한편으로 적법하게 취득한 토지 소유권을 명문으로 <b>보장</b>합니다 — 「사유」와 「공유」가 공존합니다. 쑨원은 토지를 일괄 국유화하는 데 반대했습니다: 「실지로 균지하면 여전히 평등하지 않다.」 지가세는 몰수가 아니라 자유 헌정 아래의 공유입니다; 시장이 계속 토지를 배분하게 두되, 지대의 귀속만 전민에게 돌려줍니다.</div>
+      </details>
+      <details>
+        <summary>정부가 「신고가 매입」으로 남용하지 않을까요?</summary>
+        <div class="a">신고가 매입은 「자기 신고 지가」를 지렛대로 씁니다: 낮게 신고하면 정부가 그 가액으로 매입할 수 있습니다 — 저신고를 막는 견제 장치이며, 반드시 법정 절차와 보상을 거쳐야 합니다. 대만에서 거의 70년 시행되었지만 대규모 매입이 일어나지 않았습니다; 견제 장치가 존재한다는 사실 자체가 신고를 정직하게 만듭니다.</div>
+      </details>
+      <details>
+        <summary>농지와 농민은 어떻게 되나요?</summary>
+        <div class="a">대만의 설계는 이미 구분해 두었습니다: 농업용지에는 <b>전부(田賦)</b>를 부과하고, 행정원이 농업 발전 필요에 따라 부과를 정지할 수 있도록 법이 위임했습니다 — 농지는 보호하고 도시 토지는 과세하는 두 궤도입니다. 어떤 토지배당기금이라도 농촌 주민을 함께 포함해야 합니다: 농민 역시 「국민 전체」의 일원입니다.</div>
+      </details>
+      <details>
+        <summary>전민 배당은 게으름을 키우지 않나요?</summary>
+        <div class="a">알래스카는 40여 년간 배당을 지급하면서도 노동시장이 무너지지 않았습니다; 배당은 인쇄된 돈이 아니라 토지 지대의 재분배입니다. 지대는 사회가 만든 가치입니다 — 그것을 모든 사람에게 평등하게 돌려주는 것은 구제가 아니라 「재산권의 정산」입니다. 부지런한 사람은 본디 더 받아야 합니다: <b>노력의 열매는 개인에게, 토지의 이익은 전민에게</b>.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="chapter manifesto" id="k-manifesto">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">宣</div><div><span class="ch-kicker">촉구 선언</span><h3 class="ch-title">일곱 조항</h3></div></div>
+    <ol class="mani-list reveal">
+      <li>토지는 전민의 생산 기반이지, 무한한 사유의 대상이 아닙니다.</li>
+      <li>토지의 자연 증가분은 개인의 노력이 아니라 사회에서 나옵니다 — 지가세로 회수해야 합니다.</li>
+      <li>노력의 열매는 개인에게, 토지의 이익은 전민에게.</li>
+      <li>모든 광역·성·시에 토지배당기금을 설립하고, 연간 배당으로 주민 한 사람 한 사람에게 전달합니다.</li>
+      <li>공유지는 팔지 않고 임대합니다; 지대는 기금으로 들어가고, 어둠 속 장부로는 들어가지 않습니다.</li>
+      <li>디지털 장부로 모든 토지 수익과 모든 배당을 공개합니다.</li>
+      <li>중국 대륙·대만·홍콩·해외 화교 사회에 호소합니다 — 「인민이 함께 나눈다」를 헌법의 글자에서 삶의 제도로.</li>
+    </ol>
+    <div class="mani-cta reveal">
+      <button class="btn btn-primary copy-pledge" type="button" data-pledge="저는 《지권귀민 촉구서(地權歸民倡議書)》에 연서합니다: 삼민주의와 중화민국 헌법 제143조에 따라, 지가세 전면 시행, 광역(省市)급 토지배당기금 설립, 공공토지임대제 도입을 촉구하며, 토지의 자연 증가분이 전체 국민이 함께 나누도록 합니다. — 이름: ____ 지역: ____">복사 연서문</button>
+      <button class="btn btn-ghost copy-link" type="button">촉구 링크 복사</button>
+      <span class="fine">이 페이지는 어떤 정보도 수집하지 않습니다 — 연서는 당신 자신의 이름으로, 당신 자신의 곳에.</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <p class="fbrand">디지털 대동법 연구소<small>DIGITAL DAEDONG INSTITUTE · 數位大同法研究所 · 토지와 자유 LandnLiberty.kr</small></p>
+        <p>「1인＋AI」 정책 연구실이 「천하위공」을 제사(題辭)에서 제도 설계로 바꾸는 일을 합니다. 이 페이지는 그 한국어판입니다, 2026년.</p>
+      </div>
+      <div class="src">
+        <p style="color:var(--gold);letter-spacing:.2em;font-size:12.5px">자료 출처</p>
+        <ul>
+          <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340096">『토지세법』 · 전국법규데이터베이스(대만)</a></li>
+          <li><a href="https://web.law.ntpc.gov.tw/Scripts/FLAWDOC01.aspx?fcode=B0000001&amp;flno=143">『중화민국 헌법』 제142·143조</a></li>
+          <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0320015">『재정수지분할법』</a></li>
+          <li><a href="https://zh.wikipedia.org/zh-hant/%E5%B9%B3%E5%9D%87%E5%9C%B0%E6%AC%8A">위키백과: 평균지권</a></li>
+          <li><a href="https://www.landsd.gov.hk/tc/service/landpolicy.htm">홍콩 지정총서: 토지 임대 제도</a></li>
+          <li><a href="https://pfd.alaska.gov/">알래스카 영구기금 배당(PFD)</a></li>
+          <li><a href="https://opinion.caixin.com/2025-03-25/102301956.html">차이신: 토지 재정은 어디로 가나</a></li>
+          <li><a href="https://centaur.reading.ac.uk/88754/">Hughes (2020): Implementing a Land Value Tax</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">이 페이지는 시민 촉구 성격입니다; 법조문은 공식 공포본을, 수치는 각 출처의 최신 공표본을 따릅니다. © 2026 디지털 대동법 연구소(DDLI)</p>
+  </div>
+</footer>
+
+</main>
+</div>
+<div id="root-en" lang="en" data-title="天下為公 · Land to the People — A Public Manifesto" hidden>
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="#e-hero"><i>公</i>地權歸民</a>
+    <nav class="nav-links">
+      <a href="#e-ideology">Ideals</a>
+      <a href="#e-constitution">Constitution</a>
+      <a href="#e-taiwan">Practice</a>
+      <a href="#e-asks">Proposals</a>
+      <a href="#e-routes">Roadmap</a>
+      <a href="#e-world">World</a>
+      <a href="#e-faq">FAQ</a>
+      <a href="#e-manifesto">Manifesto</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="hant">繁</button>
+      <button type="button" data-lang="hans">简</button>
+      <button type="button" data-lang="ko">한</button>
+      <button type="button" data-lang="en" class="on">EN</button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="hero" id="e-hero">
+  <div class="wrap hero-inner">
+    <div class="stele reveal">
+      <div class="stele-side">MANIFESTO · 2026</div>
+      <h1>地權歸民</h1>
+      <div class="seal" aria-label="All under Heaven belongs to the public"><span>天</span><span>下</span><span>為</span><span>公</span></div>
+    </div>
+    <div class="hero-right">
+      <p class="eyebrow reveal">A CITIZEN'S INITIATIVE · TO THE CHINESE-SPEAKING WORLD</p>
+      <h2 class="reveal">Let the land's unearned increment<br>be shared by all the people.</h2>
+      <p class="lede reveal">One hundred and twenty years ago, Sun Yat-sen wrote 「equalizing land rights」 into his founding program; nearly eighty years ago, Article 143 of the ROC Constitution added the words 「to be shared by all the people.」 Today we demand that those five characters become institutions — <strong>full implementation of the land value tax, provincial land dividend funds, and a public land lease system</strong>.</p>
+      <div class="aud reveal"><b>To</b><span>Mainland China</span><span>Taiwan</span><span>Hong Kong</span><span>Overseas Chinese</span></div>
+      <div class="cta-row reveal">
+        <a class="btn btn-primary" href="#e-asks">The Three Proposals</a>
+        <a class="btn btn-ghost" href="#e-manifesto">Endorse the Manifesto</a>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><b>Art. 143</b><span>ROC Constitution: the land value increment is 「shared by the people」</span></div>
+        <div class="stat"><b>$1,200</b><span>Alaska's 2026 per-person annual dividend (incl. energy bonus)</span></div>
+        <div class="stat"><b>−44%</b><span>China's land conveyance revenue, 3-year cumulative decline (2021→2024)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-band">
+  <div class="wrap">
+    <p class="q reveal">大道之行也，天下為公。</p>
+    <p class="src reveal">——《禮記 · 禮運》 THE BOOK OF RITES · LIYUN</p>
+    <p class="sub reveal">"When the Great Way prevails, all under Heaven belongs to the people." — the inscription Sun Yat-sen wrote most often in his life, and the first principle of this manifesto.</p>
+  </div>
+</section>
+
+<section class="chapter" id="e-ideology">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <div class="chnum">壹</div>
+      <div><span class="ch-kicker">THE IDEA</span><h3 class="ch-title">The land answer inside the Three Principles</h3></div>
+    </div>
+    <p class="ch-lead reveal">When the Tongmenghui (Chinese Revolutionary Alliance) was founded in 1905, <strong>「equalizing land rights」</strong> stood among its four founding principles — Sun Yat-sen had already written the phrase into his Tokyo oath of membership two years earlier. It became one of the two pillars of the Principle of People's Livelihood (alongside regulating capital), entered the ROC Constitution as Article 142 in 1947, and remains in force today. Equalizing land rights is not confiscation: <strong>private ownership of land continues, while ground rent and unearned increment are shared by the public</strong>.</p>
+    <div class="pillars reveal">
+      <div class="pillar"><b>Nationalism</b><span>equal, self-standing nations</span></div>
+      <div class="pillar"><b>Democracy</b><span>sovereignty in the people</span></div>
+      <div class="pillar hot"><b>Livelihood</b><span>equalize land rights · regulate capital</span></div>
+    </div>
+    <div class="grid4 reveal">
+      <div class="card"><span class="tag">FIRST PRINCIPLE</span><h4>Fix the land value</h4><p>Landowners declare their land's value themselves, as the basis for every institution — declare too low and the state may buy at the declared price, so declarations tend toward the truth.</p></div>
+      <div class="card"><span class="tag">SECOND PRINCIPLE</span><h4>Tax by declared value</h4><p>Levy an annual land value tax on the declared value: make 「holding land」 cost something, and leave 「improving land」 unpunished.</p></div>
+      <div class="card"><span class="tag">THIRD PRINCIPLE</span><h4>Buy at declared value</h4><p>Where value is under-declared, the state may buy at exactly that price — the check against speculative monopoly, and a tool for assembling public land.</p></div>
+      <div class="card hot"><span class="tag">FOURTH PRINCIPLE</span><h4>Increment to the public</h4><p>Value arising not from one's own labor or capital but from society's progress should return to society — the original idea of the land dividend.</p></div>
+    </div>
+    <div class="bigquote reveal">
+      <p>"The welfare of civilization is to be enjoyed equally by all the people. Improve the organization of the social economy: assess the value of all land under Heaven. Land's existing value remains its owners'; the increment created after the revolution by social improvement and progress belongs to the state and is to be shared by all the people."</p>
+      <p class="who">—— Manifesto of the Military Government of the Tongmenghui (1906)</p>
+    </div>
+    <div class="lineage reveal">
+      <div class="node">Zhou well-field system<small>Sun Yat-sen: 「equalizing land rights carries the intent of the well-field」</small></div><span class="arr">→</span>
+      <div class="node">Liyun Datong<small>天下為公</small></div><span class="arr">→</span>
+      <div class="node">Thomas Paine 1797<small>Agrarian Justice · Land Dividend</small></div><span class="arr">→</span><div class="node">Henry George, 1879<small>Progress and Poverty — the single tax on land</small></div><span class="arr">→</span>
+      <div class="node">John Stuart Mill<small>the nationalization of ground rent</small></div><span class="arr">→</span>
+      <div class="node">Sun Yat-sen, 1905<small>equalize land rights</small></div>
+    </div>
+    <div class="notebox reveal"><b>Tiered ownership</b> — Sun's design of property: the state holds the 「superior ownership right」, the people the 「inferior ownership right」 — the substance of public land without its abuses. He explicitly opposed sweeping nationalization: 「To equalize land by force would itself be unjust.」 This is a third road between laissez-faire and confiscation.</div>
+    <div class="grid3 reveal">
+      <div class="card"><span class="tag">1797 · Thomas Paine</span><h4>Agrarian Justice</h4><p>Paine — author of <i>Common Sense</i> and <i>Rights of Man</i> — published this 1797 pamphlet with his <b>Land Dividend</b> scheme, the earliest known prototype of today's Universal Basic Income debate.</p></div>
+      <div class="card"><span class="tag">The scheme</span><h4>National Fund · two payments</h4><p>Funded by <b>inheritance and land taxes</b>: a one-time <b>£15</b> at age <b>21</b> — each citizen's compensation for their share of the land — plus <b>£10 a year</b> from age <b>50</b>. Universal: no means test, no work condition.</p></div>
+      <div class="card hot"><span class="tag">Core claim</span><h4>A right, not charity</h4><p>“Uncultivated land belongs to humankind in common; no individual may monopolize it.” Paine separates <b>the land itself</b> from <b>improvements made by labor</b>: whoever holds land owes the community a ground rent. Poverty is structural; the dividend realizes a natural right.</p></div>
+    </div>
+    <div class="notebox reveal"><b>The chain of precursors</b> — Paine's scheme flows into Henry George's <i>Progress and Poverty</i> (1879, land value tax) and on to Sun Yat-sen's “equalization of land rights,” and stands as the direct precedent for the Alaska Permanent Fund and the modern basic-income debate. Full essay at the institute's blog: <a class="src" href="https://blog.naver.com/hoyaya/224210607181" target="_blank" rel="noopener">“Thomas Paine's Land Dividend”</a> (DDLI, 2026.3.9).</div>
+  </div>
+</section>
+
+<section class="chapter" id="e-constitution">
+  <div class="wrap">
+    <div class="ch-head reveal">
+      <div class="chnum">貳</div>
+      <div><span class="ch-kicker">THE CONSTITUTION</span><h3 class="ch-title">Five characters, eighty years in the waiting</h3></div>
+    </div>
+    <p class="ch-lead reveal">The ROC Constitution, drafted in 1947 and effective that December 25, wrote the Principle of People's Livelihood into fundamental national policy. It operates today in the free area of Taiwan, through seven amendments and eight direct presidential elections — the only liberal-democratic constitution in a Chinese-speaking society to have run continuously for nearly eighty years, and its land clauses were <strong>never deleted</strong>.</p>
+    <div class="plaques">
+      <div class="plaque reveal">
+        <span class="law-no">第 142 條 · ARTICLE 142</span>
+        <blockquote>國民經濟應以民生主義為基本原則，實施<mark>平均地權</mark>，節制資本，以謀國計民生之均足。</blockquote>
+        <p class="law-gloss">The national economy shall take the Principle of People's Livelihood as its guiding principle: implement equalized land rights and regulate capital, so that both the state's economy and the people's livelihood are secure.</p>
+        <p class="law-src">—— Constitution of the Republic of China, Chapter XIII, Section 3 (1947)</p>
+      </div>
+      <div class="plaque reveal">
+        <span class="law-no">第 143 條 · ARTICLE 143</span>
+        <blockquote>中華民國領土內之土地<mark>屬於國民全體</mark>。人民依法取得之土地所有權，應受法律之保障與限制。私有土地應<mark>照價納稅</mark>，政府並得照價收買。<br>附著於土地之礦，及經濟上可供公眾利用之天然力，屬於國家所有，不因人民取得土地所有權而受影響。<br>土地價值非因施以勞力資本而增加者，應由國家徵收土地增值稅，<mark>歸人民共享之</mark>。<br>國家對於土地之分配與整理，應以扶植自耕農及自行使用土地人為原則，並規定其適當經營之面積。</blockquote>
+        <p class="law-gloss">All land within the territory of the Republic of China <strong>belongs to the whole body of the people</strong>. Land rights acquired by the people under law shall be protected and limited by law. Private land shall be taxed at its declared value, and the government may buy it at that value. Minerals in the land and natural forces usable by the public belong to the state, unaffected by private land ownership. Land value increased not by the owner's labor or capital shall be levied by the state as a land value increment tax, <strong>to be shared by all the people</strong>. In allocating and managing land, the state shall support owner-farmers and owner-occupiers and set proper limits of operation.</p>
+        <p class="law-src">—— Constitution of the Republic of China, Article 143 (1947)</p>
+      </div>
+    </div>
+    <div class="hl-tags reveal">
+      <span>Land belongs to the whole people</span><span>Private land taxed at declared value</span><span>The increment tax shared by all</span>
+    </div>
+    <div class="callout reveal">Article 143, paragraph 3 says: when land rises in value through social progress, the state levies the increment tax — and the proceeds are to be <b>shared by all the people</b>. For eighty years the tax has been collected every year, yet it has almost never returned to each citizen as a 「share」 — the tax enters the budget, not an account. This initiative exists to turn those five characters into an institution: <b>provincial land dividend funds, an annual dividend, a share for everyone</b>.</div>
+  </div>
+</section>
+<section class="chapter" id="e-taiwan">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">參</div><div><span class="ch-kicker">PRACTICE IN TAIWAN</span><h3 class="ch-title">Equalized land rights has run for seventy years</h3></div></div>
+    <p class="ch-lead reveal">Since 1956 Taiwan has fully implemented equalized land rights — fixing land values, taxing by value, buying at declared value, returning the increment to the public — in pursuit of 「full use of land, shared benefit of land.」 Below is the system as written in the Land Tax Act: proof that land value taxation and the increment tax <strong>can run long, stable and lawful in a Chinese-speaking society</strong>.</p>
+    <h5 class="tbl-title">Land Value Tax<small>Land Tax Act, Articles 16–19</small></h5>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Land type</th><th>Rate</th></tr></thead>
+      <tbody>
+        <tr><td>Owner-occupied residential land (urban ≤3 ares, non-urban ≤7 ares)</td><td class="num">2‰</td></tr>
+        <tr><td>Public facility reserve land under urban plans</td><td class="num">6‰</td></tr>
+        <tr><td>Basic rate (total land value below the progressive threshold)</td><td class="num">10‰</td></tr>
+        <tr><td>Portion beyond the threshold, up to 5×</td><td class="num">15‰</td></tr>
+        <tr><td>Beyond 5× up to 10×</td><td class="num">25‰</td></tr>
+        <tr><td>Beyond 10× up to 15×</td><td class="num">35‰</td></tr>
+        <tr><td>Beyond 15× up to 20×</td><td class="num">45‰</td></tr>
+        <tr><td>Beyond 20×</td><td class="num">55‰</td></tr>
+        <tr><td>Designated vacant land (vacant land tax)</td><td class="num">2–5× surcharge on basic tax</td></tr>
+      </tbody>
+    </table></div>
+    <p class="tbl-note">The progressive threshold = the average land value per 7 ares in each municipality or county/city (excluding industrial, mining, agricultural and exempt land). Land used directly for industrial or mining operations is taxed at 10‰.</p>
+    <h5 class="tbl-title">Land Value Increment Tax<small>Land Tax Act, Articles 33–34</small></h5>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Appreciation over the prior transfer price</th><th>Rate</th></tr></thead>
+      <tbody>
+        <tr><td>Portion up to 1× the prior value</td><td class="num">20%</td></tr>
+        <tr><td>1× to 2×</td><td class="num">30%</td></tr>
+        <tr><td>Above 2×</td><td class="num">40%</td></tr>
+        <tr><td>Owner-occupied residential land (urban ≤3 ares, non-urban ≤7 ares)</td><td class="num">10%</td></tr>
+        <tr><td>Held over 20／30／40 years</td><td class="num">reduced by 20%／30%／40%</td></tr>
+      </tbody>
+    </table></div>
+    <p class="tbl-note">The original value is adjusted by the government-published price index — the tax falls on real appreciation, not inflation.</p>
+    <div class="notebox reveal"><b>Land tax is a local tax by nature</b> — Article 12 of the Act for Allocating Government Revenues and Expenditures designates the land value tax, the agricultural land tax and the land value increment tax as <strong>municipal and county/city taxes</strong>. Land revenue already belongs to 「the local public」 — exactly the fiscal anchor for provincial land dividend funds.</div>
+    <div class="callout reveal" style="margin-top:26px"><b>The unfinished work</b> — Taiwan proved the state can collect; it has not finished sharing. Land revenue enters the budget, not each citizen's account. 「Shared by all the people」 has so far meant a transfer to the public treasury, not a dividend to the people. That one missing step is the step this initiative exists to take.</div>
+  </div>
+</section>
+
+<section class="chapter" id="e-asks">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">肆</div><div><span class="ch-kicker">THE THREE PROPOSALS</span><h3 class="ch-title">Collect it, share it, hold the land — one body</h3></div></div>
+    <p class="ch-lead reveal">The three proposals form one body: the <strong>land value tax</strong> collects the ground rent, the <strong>land dividend fund</strong> distributes it, and the <strong>public land lease</strong> stops land being sold off in one-shot conveyances. All three have current legal sources and international precedents; what is missing is political will.</p>
+    <div class="ask">
+      <div class="ask-card reveal">
+        <span class="num">PROPOSAL 一</span>
+        <h4>Full implementation of the land value tax</h4>
+        <span class="basis">Constitutional basis: Art. 143 — 「private land shall be taxed at its declared value」</span>
+        <ul>
+          <li>The land value as the sole tax base: improvements lightly taxed or exempt — penalize land hoarding, not homebuilding.</li>
+          <li>Re-fix land values periodically so the base tracks the market; farmland stays protected under the agricultural land tax, urban land taxed at value.</li>
+          <li>The vacant land tax (a 2–5× surcharge) and buying at declared value as the anti-speculation checks.</li>
+        </ul>
+        <p class="step"><b>First step</b>: where already implemented (Taiwan), bring official land values toward market prices year by year; where not (mainland China, Hong Kong), start from an annual rent replacing one-shot land sales.</p>
+      </div>
+      <div class="ask-card reveal">
+        <span class="num">PROPOSAL 二</span>
+        <h4>Provincial land dividend funds</h4>
+        <span class="basis">Constitutional basis: Art. 143 — 「to be shared by all the people」</span>
+        <ul>
+          <li>Each province, municipality and county/city establishes a land dividend fund, with a fixed share of land revenue and public land income injected by law.</li>
+          <li>The fund does two things only: preserve and grow the principal, and pay every resident an annual dividend.</li>
+          <li>A digital ledger: every parcel of land revenue, every dollar of dividend, open to public inspection — that is what 「digital Great Unity」 means.</li>
+        </ul>
+        <p class="step"><b>Precedent</b>: the Alaska Permanent Fund has paid every resident an annual dividend since 1982 — $1,200 in 2026. Land-income dividends have run for over forty years.</p>
+      </div>
+      <div class="ask-card reveal">
+        <span class="num">PROPOSAL 三</span>
+        <h4>The public land lease system</h4>
+        <span class="basis">Constitutional basis: Art. 143 「buy at declared value」 + Hong Kong's leasehold practice</span>
+        <ul>
+          <li>Public land is offered on 50–99 year leases plus an annual rent, with the state retaining the superior ownership right.</li>
+          <li>「Lease, never sell」: the rising land value stays public; renewal rents flow into the land dividend fund.</li>
+          <li>Hong Kong leases nearly all its territory, charging an annual rent of 3% of rateable value — public land leasing already has a complete Chinese-speaking precedent.</li>
+        </ul>
+        <p class="step"><b>First step</b>: all newly acquired public land is leased, never sold; as existing leases renew, rents flow in full into the fund.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="e-routes">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">伍</div><div><span class="ch-kicker">FOUR ROADMAPS</span><h3 class="ch-title">One constitutional spirit, four starting points</h3></div></div>
+    <div class="routes">
+      <div class="route reveal">
+        <h4>Mainland China</h4><span class="cap">From land-sale finance to land-rent finance</span>
+        <span class="lb">Status</span>
+        <p>Urban land is state-owned, rural land collective; conveyance revenue peaked at about <span class="stat-l">¥8.7 trillion</span> in 2021 and fell to <span class="stat-l">¥4.87 trillion</span> by 2024 — a cumulative drop of more than 44% in three years. The one-shot land-sale model cannot continue.</p>
+        <span class="lb">Proposal</span>
+        <p>Shift conveyance fees to annual rent or land value tax; provincial land dividend funds let state land income be 「shared by all」; use Sun Yat-sen's equalized land rights as the common language that bridges left and right.</p>
+      </div>
+      <div class="route reveal">
+        <h4>Taiwan</h4><span class="cap">From the treasury to the people</span>
+        <span class="lb">Status</span>
+        <p>Land value and increment taxes have run for seventy years and belong by law to municipalities and counties — the system is complete; only distribution is missing.</p>
+        <span class="lb">Proposal</span>
+        <p>Establish land dividend funds in every municipality and county; adjust official land values toward market prices by rule; lease public land, never sell — let Article 143 be cashed in.</p>
+      </div>
+      <div class="route reveal">
+        <h4>Hong Kong</h4><span class="cap">From leasehold revenue to citizen dividends</span>
+        <span class="lb">Status</span>
+        <p>Almost all of Hong Kong's land is government-leased; new grants run 50 years with an annual rent of 3% of rateable value — the government is already the territory's great landlord.</p>
+        <span class="lb">Proposal</span>
+        <p>A Hong Kong land dividend fund: rents and land premiums injected by law, an annual dividend to every resident — the returns of 「government land」 returned to the people.</p>
+      </div>
+      <div class="route reveal">
+        <h4>Overseas Chinese</h4><span class="cap">From nostalgia to policy</span>
+        <span class="lb">Status</span>
+        <p>The global Chinese diaspora lacks a shared public-policy agenda; 「all under Heaven belongs to the public」 appears in calligraphy far more than in institutions.</p>
+        <span class="lb">Proposal</span>
+        <p>Endorse, research, advocate locally: advance land value tax in place of property tax in adopted countries, and make 「the public」 the common policy language of Chinese-speaking communities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="e-world">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">陸</div><div><span class="ch-kicker">WHAT THE WORLD IS DOING</span><h3 class="ch-title">Not a utopia — institutions already running</h3></div></div>
+    <div class="split">
+      <div class="timeline reveal">
+        <div class="tl"><b>Zhou</b><p><b>The well-field system</b> — Sun Yat-sen: 「equalizing land rights carries the intent of the well-field.」</p></div>
+        <div class="tl"><b>Han</b><p><b>The Book of Rites, Liyun</b> — 「When the Great Way prevails, all under Heaven belongs to the people.」</p></div>
+        <div class="tl"><b>1879</b><p><b>Henry George, Progress and Poverty</b> — the single tax on land values sweeps the world; Liao Zhongkai translates excerpts into Chinese.</p></div>
+        <div class="tl"><b>1905</b><p><b>The Tongmenghui</b> — 「equalize land rights」 enters the four founding principles.</p></div>
+        <div class="tl"><b>1947</b><p><b>The ROC Constitution</b> — Articles 142–143: equalized land rights constitutionalized; 「shared by all the people.」</p></div>
+        <div class="tl"><b>1956</b><p><b>Taiwan fully implements equalized land rights</b> — fix values, tax by value, buy at declared value, increment to the public.</p></div>
+        <div class="tl"><b>1976→1982</b><p><b>The Alaska Permanent Fund</b> — created in 1976; from 1982, an annual dividend to every resident.</p></div>
+        <div class="tl"><b>1997</b><p><b>The Hong Kong SAR</b> — leasehold continues; new grants 50 years + 3% rent.</p></div>
+        <div class="tl"><b>2021→2024</b><p><b>China's land conveyance revenue halves</b> — the 「land finance」 transition becomes a national issue.</p></div>
+      </div>
+      <div>
+        <div class="grid4 reveal" style="margin-bottom:14px">
+          <div class="card"><span class="tag">USA · ALASKA</span><h4>Permanent Fund dividend</h4><p>2026 per-person dividend of <b>$1,200</b> (incl. a $200 energy bonus); historical average ≈$1,600/yr.</p></div>
+          <div class="card"><span class="tag">ESTONIA</span><h4>Land value tax in full operation</h4><p>A pillar of local finance with ~90% home ownership — land tax and high ownership coexist.</p></div>
+          <div class="card"><span class="tag">DENMARK</span><h4>Municipal land tax</h4><p>Municipalities levy <b>16‰–34‰</b> on assessed land value, with rates set locally.</p></div>
+          <div class="card"><span class="tag">AUSTRALIA · QUEENSLAND</span><h4>Land value tax running</h4><p>Academic surveys find land value taxation currently in <b>full operation</b> in Queensland, Denmark, Namibia and Estonia.</p></div>
+        </div>
+        <div class="chart-box reveal">
+          <h5>China's land conveyance revenue (trillion CNY)</h5>
+          <p class="csrc">Falling every year since the 2021 peak — the one-shot land-sale model has run its course (Caixin · Yuekai Securities)</p>
+          <div class="chart">
+            <div class="bar"><b>8.7</b><i style="height:100%"></i><span>2021</span></div>
+            <div class="bar"><b>5.8</b><i style="height:67%"></i><span>2023</span></div>
+            <div class="bar red"><b>4.87</b><i style="height:56%"></i><span>2024</span></div>
+            <div class="bar red"><b>≈4.2</b><i style="height:48%"></i><span>2025</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="e-simulator">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">算</div><div><span class="ch-kicker">LAND DIVIDEND CALCULATOR</span><h3 class="ch-title">Your city — how much per year?</h3></div></div>
+    <div class="sim reveal">
+      <div>
+        <div class="sim-row">
+          <label>Annual land tax revenue of the jurisdiction (LV tax + increment tax + public land rents)<output class="ov-rev"></output></label>
+          <input type="range" class="sim-rev" min="0" max="5000" step="10" value="800">
+        </div>
+        <div class="sim-row">
+          <label>Share injected into the land dividend fund by law<output class="ov-pct"></output></label>
+          <input type="range" class="sim-pct" min="0" max="100" step="5" value="50">
+        </div>
+        <div class="sim-row">
+          <label>Population of the jurisdiction<output class="ov-pop"></output></label>
+          <input type="range" class="sim-pop" min="1" max="4000" step="1" value="500">
+        </div>
+        <p class="tbl-note" style="margin:0">Formula: per-person annual dividend = annual land tax revenue × injection share ÷ population. The Alaska model: preserve the principal, pay the dividend from returns.</p>
+      </div>
+      <div class="sim-out">
+        <div><p class="cap">Annual size of the fund</p><p class="sub2 sim-fund"></p></div>
+        <div><p class="cap">Per person, per year</p><p class="big sim-year"></p></div>
+        <div><p class="cap">Per person, per month</p><p class="sub2 sim-month"></p></div>
+        <p class="fine">Illustrative only, not official data; each local council should legislate its own injection share and payout rules.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="chapter" id="e-faq">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">柒</div><div><span class="ch-kicker">COUNTER-ARGUMENTS</span><h3 class="ch-title">The five most common questions</h3></div></div>
+    <div class="reveal">
+      <details open>
+        <summary>Will this crash house prices and hurt homeowners?</summary>
+        <div class="a">The land value tax taxes only the holding of land; improvements are lightly taxed or exempt — those who build and live in their homes are not punished, while those hoarding land to wait for appreciation can no longer occupy society's space for free. Taiwan already gives owner-occupied housing a <b>2‰</b> preferential rate; the transition can phase in over years — let the system protect homes first, then aim at speculation.</div>
+      </details>
+      <details>
+        <summary>Is this communism?</summary>
+        <div class="a">Quite the opposite. Article 143 declares land 「belongs to the whole body of the people」 and at the same time expressly <b>protects</b> land ownership acquired under law — private ownership and shared benefit coexist. Sun Yat-sen opposed sweeping nationalization: 「To equalize land by force would itself be unjust.」 The land value tax is sharing under a liberal constitution, not confiscation: the market keeps allocating land; only the ownership of the ground rent returns to the whole people.</div>
+      </details>
+      <details>
+        <summary>Won't the government abuse 「buy at declared value」?</summary>
+        <div class="a">Buying at declared value works through the self-declared price: declare too low and the state may buy at exactly that price — a check against under-declaration that must follow legal procedure and compensation. Taiwan has run it for nearly seventy years without mass purchases; the existence of the check itself keeps declarations honest.</div>
+      </details>
+      <details>
+        <summary>What about farmland and farmers?</summary>
+        <div class="a">Taiwan's design already separates the two: agricultural land pays the <b>agricultural land tax (田賦)</b>, which the law lets the Executive Yuan suspend for agricultural policy reasons — farmland is protected, urban land is taxed, two tracks in parallel. Any land dividend fund should also cover rural residents: farmers are part of 「the whole body of the people」 too.</div>
+      </details>
+      <details>
+        <summary>Will a universal dividend breed idleness?</summary>
+        <div class="a">Alaska has paid dividends for over forty years without wrecking its labor market; the dividend is not printed money but a redistribution of ground rent. Ground rent is value created by society — returning it equally to everyone is the 「settlement of property rights」, not charity. The diligent should earn more: <b>the fruits of effort belong to the individual; the benefit of land belongs to all</b>.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="chapter manifesto" id="e-manifesto">
+  <div class="wrap">
+    <div class="ch-head reveal"><div class="chnum">宣</div><div><span class="ch-kicker">THE MANIFESTO</span><h3 class="ch-title">Seven articles</h3></div></div>
+    <ol class="mani-list reveal">
+      <li>Land is the productive base of all the people, not an object of unlimited private holding.</li>
+      <li>Land's unearned increment comes from society, not individual effort — recover it through the land value tax.</li>
+      <li>The fruits of effort belong to the individual; the benefit of land belongs to all.</li>
+      <li>Every province and city establishes a land dividend fund, paying an annual dividend to every resident.</li>
+      <li>Public land is leased, never sold; rents enter the fund, never a dark ledger.</li>
+      <li>A digital ledger opens every parcel of land revenue and every dollar of dividend to public view.</li>
+      <li>We call on mainland China, Taiwan, Hong Kong and overseas Chinese communities to turn 「shared by all the people」 from constitutional text into a living institution.</li>
+    </ol>
+    <div class="mani-cta reveal">
+      <button class="btn btn-primary copy-pledge" type="button" data-pledge="I endorse the 'Land to the People Manifesto' (地權歸民倡議書): pursuant to the Three Principles of the People and Article 143 of the ROC Constitution, I call for full implementation of the land value tax, the establishment of provincial and municipal land dividend funds, and a public land lease system, so that land's unearned increment is shared by all the people. — Name: ____ Region: ____">Copy endorsement text</button>
+      <button class="btn btn-ghost copy-link" type="button">Copy campaign link</button>
+      <span class="fine">This page collects no data — endorse under your own name, in your own place.</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <p class="fbrand">Digital Daetong Institute<small>DIGITAL DAEDONG INSTITUTE · 數位大同法研究所 · 디지털 대동법 연구소 · 토지와 자유 LandnLiberty.kr</small></p>
+        <p>A 「1 person + AI」 policy research studio, turning 「all under Heaven belongs to the public」 from an inscription into institutional design. This page is the English edition, 2026.</p>
+      </div>
+      <div class="src">
+        <p style="color:var(--gold);letter-spacing:.2em;font-size:12.5px">SOURCES</p>
+        <ul>
+          <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0340096">Land Tax Act · National Laws Database (Taiwan)</a></li>
+          <li><a href="https://web.law.ntpc.gov.tw/Scripts/FLAWDOC01.aspx?fcode=B0000001&amp;flno=143">ROC Constitution, Articles 142 &amp; 143</a></li>
+          <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=G0320015">Act for Allocating Government Revenues and Expenditures</a></li>
+          <li><a href="https://zh.wikipedia.org/zh-hant/%E5%B9%B3%E5%9D%87%E5%9C%B0%E6%AC%8A">Wikipedia: Equalizing land rights (平均地權)</a></li>
+          <li><a href="https://www.landsd.gov.hk/tc/service/landpolicy.htm">Hong Kong Lands Department: land lease system</a></li>
+          <li><a href="https://pfd.alaska.gov/">Alaska Permanent Fund Dividend (PFD)</a></li>
+          <li><a href="https://opinion.caixin.com/2025-03-25/102301956.html">Caixin: The future of land finance</a></li>
+          <li><a href="https://centaur.reading.ac.uk/88754/">Hughes (2020): Implementing a Land Value Tax</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">This page is a citizen initiative; statutory texts are as officially promulgated, figures as most recently published by each source. © 2026 Digital Daetong Institute (DDLI)</p>
+  </div>
+</footer>
+
+</main>
+</div>
+<script>
+(function(){
+  var roots={hant:document.getElementById('root-hant'),hans:document.getElementById('root-hans'),ko:document.getElementById('root-ko'),en:document.getElementById('root-en')};
+  var LANG_ATTR={hant:'zh-Hant',hans:'zh-Hans',ko:'ko',en:'en'};
+  function setLang(k){
+    Object.keys(roots).forEach(function(x){if(roots[x]){roots[x].hidden=(x!==k);}});
+    document.documentElement.lang=LANG_ATTR[k];
+    var r=roots[k];
+    if(r&&r.getAttribute('data-title')){document.title=r.getAttribute('data-title');}
+    document.querySelectorAll('.lang-switch button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-lang')===k);});
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.lang-switch button');
+    if(b){setLang(b.getAttribute('data-lang'));}
+  });
+
+  function fmt(n){return Math.round(n).toLocaleString('en-US');}
+  var UNITS={
+    hant:{rev:function(v){return fmt(v)+' 億元';},pop:function(v){return fmt(v)+' 萬人';},div:function(v){return fmt(v)+' 元';},fund:function(v){return fmt(v)+' 億元';},copied:'已複製 ✓'},
+    hans:{rev:function(v){return fmt(v)+' 亿元';},pop:function(v){return fmt(v)+' 万人';},div:function(v){return fmt(v)+' 元';},fund:function(v){return fmt(v)+' 亿元';},copied:'已复制 ✓'},
+    ko:{rev:function(v){return fmt(v)+'억 위안';},pop:function(v){return fmt(v)+'만 명';},div:function(v){return fmt(v)+'위안';},fund:function(v){return fmt(v)+'억 위안';},copied:'복사됨 ✓'},
+    en:{rev:function(v){return fmt(v/10)+'bn CNY';},pop:function(v){return (v/100).toFixed(1)+' million';},div:function(v){return 'CNY '+fmt(v);},fund:function(v){return fmt(v/10)+'bn CNY';},copied:'Copied ✓'}
+  };
+  function rootOf(el){
+    var n=el;
+    while(n&&n!==document.body){
+      if(n.id&&String(n.id).indexOf('root-')===0){return String(n.id).slice(5);}
+      n=n.parentNode;
+    }
+    return 'hant';
+  }
+  document.querySelectorAll('.sim').forEach(function(sim){
+    var U=UNITS[rootOf(sim)]||UNITS.hant;
+    var r=sim.querySelector('.sim-rev'),p=sim.querySelector('.sim-pct'),pop=sim.querySelector('.sim-pop');
+    var oRev=sim.querySelector('.ov-rev'),oPct=sim.querySelector('.ov-pct'),oPop=sim.querySelector('.ov-pop');
+    var oFund=sim.querySelector('.sim-fund'),oYear=sim.querySelector('.sim-year'),oMonth=sim.querySelector('.sim-month');
+    function calc(){
+      var fund=(+r.value)*1e8*((+p.value)/100);
+      var people=(+pop.value)*1e4;
+      var y=people>0?fund/people:0;
+      oRev.textContent=U.rev(+r.value);
+      oPct.textContent=p.value+'%';
+      oPop.textContent=U.pop(+pop.value);
+      oFund.textContent=U.fund(fund/1e8);
+      oYear.textContent=U.div(y);
+      oMonth.textContent=U.div(y/12);
+    }
+    [r,p,pop].forEach(function(el){if(el){el.addEventListener('input',calc);}});
+    calc();
+  });
+
+  function copyText(text,btn){
+    var U=UNITS[rootOf(btn)]||UNITS.hant;
+    function ok(){
+      var old=btn.getAttribute('data-label')||btn.textContent;
+      btn.setAttribute('data-label',old);
+      btn.textContent=U.copied;
+      setTimeout(function(){btn.textContent=old;},1800);
+    }
+    function fallback(){
+      var ta=document.createElement('textarea');
+      ta.value=text;document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');ok();}catch(e){}
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok,fallback);
+    }else{fallback();}
+  }
+  document.addEventListener('click',function(e){
+    var p=e.target.closest('.copy-pledge');
+    if(p){copyText(p.getAttribute('data-pledge')||'',p);return;}
+    var l=e.target.closest('.copy-link');
+    if(l){copyText(location.href.split('#')[0],l);}
+  });
+})();
+</script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

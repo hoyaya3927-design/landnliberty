@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOC 2026-102 · 초한전(超限戰) — 제한 없는 전쟁의 원본</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;800;900&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#10141c;--panel:#181f2b;--panel2:#1d2635;--line:rgba(233,228,216,.14);--text:#e9e4d8;--muted:#9aa3ad;--zhu:#d8453a;--brass:#c9a96a;--teal:#4fa3a5}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--text);font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:16px;line-height:1.75}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(rgba(233,228,216,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(233,228,216,.03) 1px,transparent 1px);background-size:64px 64px}
+main{position:relative;z-index:1}.mono{font-family:'IBM Plex Mono',monospace}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px}
+a{color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(201,169,106,.35)}
+a:hover{color:var(--text);border-bottom-color:var(--text)}
+.topnav{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:12px}
+.topnav .brand{color:var(--zhu);font-weight:600;margin-right:8px}
+.topnav a{border:none;color:var(--muted);padding:3px 8px;border:1px solid transparent}
+.topnav a:hover{color:var(--text);border:1px solid var(--line)}
+.topnav a.here{color:var(--text);border:1px solid var(--line);background:var(--panel)}
+.mast{padding:56px 0 36px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
+.seal{width:96px;height:96px;background:var(--zhu);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif KR',serif;font-size:52px;font-weight:900;border-radius:6px;box-shadow:0 6px 24px rgba(216,69,58,.28);transform:rotate(-2deg)}
+.docno{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--brass);margin-bottom:10px}
+h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(28px,4.6vw,42px);line-height:1.25}
+.subtitle{color:var(--muted);margin-top:12px;font-size:15.5px}
+.chips{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;border:1px solid var(--line);color:var(--muted);padding:4px 10px}
+.chip.red{border-color:rgba(216,69,58,.5);color:#f08a80}
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;color:var(--zhu);margin-bottom:10px}
+h2{font-family:'Noto Serif KR',serif;font-weight:800;font-size:26px;margin-bottom:18px}
+h3{font-family:'Noto Serif KR',serif;font-weight:700;font-size:19px;margin:26px 0 10px}
+p{margin-bottom:14px}strong{color:#fff}em{font-style:normal;color:var(--brass)}
+.lead{background:rgba(216,69,58,.07);border:1px solid rgba(216,69,58,.3);border-left:3px solid var(--zhu);padding:22px 24px;margin-bottom:8px}
+.tblwrap{overflow-x:auto;margin:18px 0}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:1px solid rgba(233,228,216,.3)}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:hover td{background:rgba(233,228,216,.03)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:18px 0}
+.tier{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--zhu);padding:18px}
+.tier h4{font-family:'Noto Serif KR',serif;font-size:17px;margin-bottom:4px}
+.tier .n{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brass);display:block;margin-bottom:8px}
+.tier ul{margin:8px 0 0 18px;font-size:13.8px;color:#c8cdd4}
+.tier li{margin-bottom:5px}
+.note{border:1px dashed rgba(201,169,106,.45);background:rgba(201,169,106,.06);padding:16px 20px;margin:20px 0;font-size:14px}
+.warn{border:1px solid rgba(79,163,165,.4);background:rgba(79,163,165,.07);padding:16px 20px;margin:20px 0;font-size:14px}
+.warn b{color:var(--teal)}
+.quote{border-left:3px solid var(--brass);background:var(--panel);padding:18px 22px;margin:20px 0;font-size:15px}
+.quote .who{display:block;margin-top:8px;font-size:12.5px;color:var(--muted);font-family:'IBM Plex Mono',monospace}
+.srcs{font-size:13px;color:var(--muted)}.srcs li{margin-bottom:7px;margin-left:18px}
+.srcs a{word-break:break-all}
+footer{padding:34px 0 60px;color:var(--muted);font-size:13px}
+@media(max-width:640px){.mast{grid-template-columns:1fr}.seal{width:72px;height:72px;font-size:40px}}
+:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+</style>
+</head>
+<body>
+<main>
+<div class="wrap">
+  <nav class="topnav"><span class="brand">吸收戰略 DOC</span>
+    <a href="index.html">101 총론</a><a href="doc-01-chaohan.html" class="here">102 초한전</a><a href="doc-02-samjeon.html">103 삼전</a><a href="doc-03-hongkong.html">104 홍콩</a><a href="doc-04-korea.html">105 한국 흡수전략</a>
+  </nav>
+  <header class="mast">
+    <div class="seal" aria-hidden="true">超</div>
+    <div>
+      <div class="docno">DOC 2026-102 · 이론 편</div>
+      <h1>초한전(超限戰) —<br>제한 없는 전쟁의 원본</h1>
+      <p class="subtitle">1999년 차오량(喬良)·왕샹수이(王湘穗) — 걸프전의 충격에서 출발해, 전쟁의 경계 자체를 없앤 인민해방군 대령 두 명의 저작</p>
+      <div class="chips"><span class="chip">1999-02 · 인민해방군문예출판사</span><span class="chip red">24 전법</span><span class="chip">이전 조사(2026-05) + 원서·후속 연구 보완</span></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="eyebrow">THE THESIS</div>
+    <h2>저서의 핵심 주장</h2>
+    <div class="lead"><p><strong>요지.</strong> 기술적으로 우월한 상대(미국)는 전쟁의 혁신을 ‘기술’로만 읽기 때문에 법·경제·정보·생물·문화 차원의 비대칭 공격에 취약하다. 따라서 중국은 직접적 군사 대결을 피하고, <em>국가 이익과 관련된 모든 차원의 복합적 힘(composite force)</em>을 전쟁 수단으로 조직해야 한다(<a href="https://en.wikipedia.org/wiki/Unrestricted_Warfare">출처</a>).</p></div>
+    <p>1999년 2월, 《초한전》은 인민해방군문예출판사에서 간행됐다. 저자 두 명은 모두 공군 대령이었고, 걸프전을 겪은 세대였다 — 압도적 기술 격차 앞에서 대칭적 대결은 승리할 수 없다는 인식이 책의 출발점이다. 발표 장소와 공식 매체의 호평은 이 책이 인민해방군 지도부 일각의 지지를 받았음을 시사했다는 것이 2000년 미 국방기술정보센터(DTIC) 보고서의 평가다(<a href="https://en.wikipedia.org/wiki/Unrestricted_Warfare">출처</a>).</p>
+    <div class="quote">“군사 행동만을 공격 행위로 보는 구식 관념은 불충분하다. 군사적·비군사적 두 대영역의 모든 차원과 방법을 결합한 ‘대전전법(大戰戰法)’이 필요하다.” — 《초한전》 요지 (영문 번역 기반 재구성)
+      <span class="who">출처: Unrestricted Warfare, 1999 · Wikipedia 정리</span></div>
+    <p>주목할 점은 저자들이 제시한 ‘대안적 공격 방법들’이 군사전에 필적하거나 그 이상의 파괴력을 갖는다고 명시한 것이다. 이것이 초한전이 전술 매뉴얼이 아니라 <em>국가 전체를 무기화하는 사고체계</em>라는 평가를 받는 이유다.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">24 METHODS</div>
+    <h2>3부문 × 8 — 24개 전법의 구조</h2>
+    <p>초한전은 전쟁 수단을 <strong>군사(軍事)·초군사(超軍事)·비군사(非軍事)</strong> 세 부문, 각 8개씩 총 24개 전법으로 세분한다. 저자들 자신이 “이는 예에 불과하다”고 밝혔듯, 24는 닫힌 목록이 아니라 ‘전쟁이 가능한 영역은 무한하다’는 주장의 예시다. 국내 보도에서 확인되는 구조와 대표 전법은 다음과 같다(<a href="https://m.smnews.co.kr/view.php?idx=253644">출처</a>, <a href="https://www.freecolumn.co.kr/news/articleView.html?idxno=5398">출처</a>, <a href="https://en.wikipedia.org/wiki/Unrestricted_Warfare">출처</a>).</p>
+    <div class="grid3">
+      <div class="tier"><span class="n">軍事戰 · 군사전 8</span><h4>직접 충돌의 현대화</h4><ul>
+        <li>재래전(傳來戰) — 재래식 전쟁</li><li>원자전(原子戰) — 핵</li><li>생화학전(生化戰)</li><li>생태전(生態戰)</li><li>우주전(宇宙戰)</li><li>전자전(電子戰)</li><li>유격전(游擊戰)</li><li>테러전(恐怖戰)</li></ul>
+        <p style="font-size:13px;color:var(--muted);margin-top:10px">부록: 재래전·생태전이 한국 맥락에서 조합됐을 가능성이 지목된 바 있다(<a href="https://www.hankookilbo.com/news/article/A2025120116220003717">출처</a>).</p></div>
+      <div class="tier"><span class="n">超軍事戰 · 초군사전 8</span><h4>군사와 사회의 경계선</h4><ul>
+        <li>외교전(外交戰)</li><li>인터넷전·네트워크전(網絡戰)</li><li>심리전(心理戰)</li><li>매체전(媒體戰)</li><li>마약전(毒品戰)</li><li>기술전(技術戰)</li><li>조작전·위조전(僞造戰)</li><li>밀수전(走私戰)</li></ul>
+        <p style="font-size:13px;color:var(--muted);margin-top:10px">부록: 마약전·심리전·외교전·인터넷전의 조합 가능성이 한국 맥락에서 지목됐다(<a href="https://www.hankookilbo.com/news/article/A2025120116220003717">출처</a>).</p></div>
+      <div class="tier"><span class="n">非軍事戰 · 비군사전 8</span><h4>평시 국가 기능 자체</h4><ul>
+        <li>재정전·금융전(金融戰)</li><li>무역전(貿易戰)</li><li>자원전(資源戰)</li><li>원조전(援助戰)</li><li>법률전(法規戰)</li><li>문화전(文化戰)</li><li>경제원조전(經援戰)</li><li>투자전(投資戰)</li></ul>
+        <p style="font-size:13px;color:var(--muted);margin-top:10px">부록: 자원전·법률전의 조합 가능성이 지목됐다(<a href="https://www.hankookilbo.com/news/article/A2025120116220003717">출처</a>).</p></div>
+    </div>
+    <div class="note"><strong>이전 조사와의 연결.</strong> 2026년 5월 조사에서 24개 전쟁 수단을 개별 분류·정의했고, 그중 <em>금융전(환율·주가·채권시장 교란)</em>과 <em>네트워크전</em>을 한국 안보 관점에서 심층 분석했으며, 삼전·인지전과의 연계 구조를 ‘풀스택 전쟁’ 개념으로 정리한 바 있다. 본 문서는 그 자산의 요약판이며, 개별 전법의 한글 명칭 표기는 번역 관행에 따라 다를 수 있다.</div>
+  </section>
+
+  <section>
+    <div class="eyebrow">RECEPTION</div>
+    <h2>27년 뒤 — 원본이 실전이 된 과정</h2>
+    <p>《초한전》은 발표 후 미국 군사계에서 광범위하게 연구됐다(국방대학교·육군대학 출판물 등). 스티브 배넌 전 백악관 수석 전략관은 “중국의 전략은 기동전쟁을 피하고 정보·경제 전쟁에 집중하는 것”이라며 이 책을 트럼프 행정부의 대중 강경정책의 사상적 배경으로 지목했다(<a href="https://en.wikipedia.org/wiki/Unrestricted_Warfare">출처</a>). 로버트 스팔딩 공군 준장의 《War Without Rules》 등 후속 저작도 이 책에서 출발했다.</p>
+    <p>한편 미 공군대학 중국우주전연구소(CASI)는 2022년 “초한전은 중국의 마스터 플랜이 아니다”라는 반론도 제기했다 — 책의 지위를 실제 국가전략 문서와 혼동하면 안 된다는 주장이다(<a href="https://en.wikipedia.org/wiki/Unrestricted_Warfare">출처</a>). 이 균형 시각은 중요하다. <strong>초한전의 가치는 ‘중국이 책대로 하고 있다’는 단정이 아니라, 중국의 실제 행동을 분류·해석하는 데 유용한 렌즈를 제공한다는 점</strong>에 있다.</p>
+    <h3>렌즈로 본 한국 — 검증 가능한 세 가지</h3>
+    <div class="tblwrap"><table>
+      <thead><tr><th>관측</th><th>연도</th><th>대응 전법</th></tr></thead>
+      <tbody>
+        <tr><td>THAAD 배치에 대한 경제 강제·외교 압박·사이버 공격·여론 캠페인 총동원 — 미-한 간 비공식 합의(2017)까지 이어진 압박의 강도</td><td class="num">2016~17</td><td>무역전·원조전·매체전·심리전의 결합</td></tr>
+        <tr><td>국정원 적발: 중국 PR 회사가 운영한 가짜 한국어 뉴스 사이트 — 첫 적발 38개(하이마이·하이쉰), 이후 반복 적발, 누적 200여 개</td><td class="num">2023~25</td><td>매체전·조작전·인터넷전</td></tr>
+        <tr><td>하이브리드 위협 1년 새 23% 증가, 경제 강제와 서사·정보 캠페인이 주력 (ASPI)</td><td class="num">2025</td><td>비군사전 계열 전법의 확대</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn"><b>균형 지적.</strong> 위 세 관측은 ‘초한전이 실행되고 있다’의 직접 증명이 아니라, 초한전이 예견한 유형의 행동이 실제 관측된다는 것을 보여준다. 저자 개인의 의도와 국가의 조직적 실행은 별개 사실이며, 후자는 삼전(103호)·통일전선(105호) 문서의 문서화된 독트린·조직을 통해 더 강하게 입증된다.</div>
+  </section>
+
+  <section>
+    <div class="eyebrow">CONTINUUM</div>
+    <h2>계보 — 초한전에서 한국 문제까지</h2>
+    <div class="tblwrap"><table>
+      <thead><tr><th>연도</th><th>단계</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1999</td><td>이론</td><td>《초한전》 출간 — 전쟁의 경계 해체 선언</td></tr>
+        <tr><td class="num">2003</td><td>독트린화</td><td>인민해방군 정치공작조례 개정 — 삼전(여론·심리·법률전) 공식 편입 → 103호</td></tr>
+        <tr><td class="num">2013</td><td>교리 통합</td><td>《군사전략학》 제3판 — 영향력 작전의 5대 목표 체계화(적 지도부 의사결정 저하·전투의지 약화·전쟁 지지 약화·정부 내부 약화·억지 지원)</td></tr>
+        <tr><td class="num">2019</td><td>개념 진화</td><td>인지영역작전(CDO) 등장 — 인간 인지를 전장으로 규정 → 103호</td></tr>
+        <tr><td class="num">2023~26</td><td>한국 적용</td><td>가짜 매체·교민사회 조직화·선거 관련 의혹 — 인공지능으로 작전 비용 급락, ‘2차 표적’인 한국이 실전 표적으로 → 105호</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="sources">
+    <div class="eyebrow">SOURCES</div>
+    <h2>참고 자료</h2>
+    <ul class="srcs">
+      <li>Wikipedia, <a href="https://en.wikipedia.org/wiki/Unrestricted_Warfare">Unrestricted Warfare</a> — 원서 정보·DTIC 평가·수용사·CASI 반론</li>
+      <li>스마트미디어, <a href="https://m.smnews.co.kr/view.php?idx=253644">초한전 24 전법 (군사 8·초군사 8·비군사 8)</a> (2024-12-16)</li>
+      <li>프리컬럼, <a href="https://www.freecolumn.co.kr/news/articleView.html?idxno=5398">황화가 몰려온다···중국 초한전</a> (2024-03-13)</li>
+      <li>한국일보, <a href="https://www.hankookilbo.com/news/article/A2025120116220003717">초한전의 그림자와 한국 [무기로 읽는 세상]</a> (2025-12-01)</li>
+      <li>스티슨센터, <a href="https://www.stimson.org/2026/implications-of-chinese-influence-operations-for-south-korea-and-the-us-rok-alliance/">Implications of Chinese Influence Operations for South Korea…</a> (2026-02-25)</li>
+    </ul>
+  </section>
+
+  <footer>디지털 대동법 연구소 · DOC 2026-102 · 2026-10-30 기준. 다음 문서: <a href="doc-02-samjeon.html">DOC 2026-103 삼전(三戰)과 인지영역작전</a></footer>
+</div>
+</main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
