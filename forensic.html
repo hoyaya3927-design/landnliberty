@@ -198,13 +198,7 @@ pre,code,.code,.jsonbox{overflow-x:auto;max-width:100%;-webkit-overflow-scrollin
     <a class="lnl-home" href="index.html"><span>土</span>토지와 자유</a>
     <span class="sl">/</span>
     <span class="lnl-cur">자유 · Liberty</span>
-    <nav class="lnl-nav">
-      <a href="forensic.html" class="on">국과수 감정 추적</a>
-      <a href="liberty-archive.html">증거 아카이브</a>
-      <a href="liberty-report.html">10·28 리포트</a>
-      <a href="verify.html">검증 게시판</a>
-      <a href="teukgeom.html">특검 수사 파일</a>
-    </nav>
+    <nav class="lnl-nav"><a href="teukgeom.html">특검 수사 파일</a><a href="liberty-report.html">10.28 리포트</a><a href="liberty-archive.html">증거 아카이브</a><a href="forensic.html" class="on">국과수 감정 추적</a></nav>
   </div>
 </div>
 
@@ -318,7 +312,7 @@ pre,code,.code,.jsonbox{overflow-x:auto;max-width:100%;-webkit-overflow-scrollin
 <h2>어디까지 왔나</h2>
       <span class="no">§ 2 · Timeline</span>
     </div>
-    <div class="note" style="margin:0 0 20px;padding:14px 16px;border-left:4px solid #DC2626;background:rgba(220,38,38,.05);border-radius:8px;font-size:14px;line-height:1.7"><b>11.2 갱신</b> — 특검은 이의제기 <b>700여 장</b>을 자체 분석 중이며, 이르면 이번 주 <b>국과수 또는 공소청 본청 법과학기획관</b>에 정밀감정을 의뢰합니다. 감정 대상에는 투표지뿐 아니라 <b>관련 선거 장비</b>도 포함됩니다. 공개된 감정 결과는 아직 없습니다. <span style="color:#DC2626;font-weight:700">NEW</span> <span style="color:#6b7280;font-size:12.5px">— 연합뉴스 11.1 · 뉴스핌 11.2</span></div>
+    <div class="note" style="margin:0 0 20px;padding:14px 16px;border-left:4px solid #DC2626;background:rgba(220,38,38,.05);border-radius:8px;font-size:14px;line-height:1.7"><b>11.6 갱신</b> — 특검은 이의제기 <b>700여 장</b>을 자체 분석 중이며, 이르면 이번 주 <b>국과수 또는 공소청 본청 법과학기획관</b>에 정밀감정을 의뢰합니다. 감정 대상에는 투표지뿐 아니라 <b>관련 선거 장비</b>도 포함됩니다. 공개된 감정 결과는 아직 없습니다. <span style="color:#DC2626;font-weight:700">NEW</span> <span style="color:#6b7280;font-size:12.5px">— 연합뉴스 11.1 · 뉴스핌 11.2</span></div>
 <ol class="tl" id="timeline"></ol>
   </div>
 </section>
@@ -345,37 +339,6 @@ pre,code,.code,.jsonbox{overflow-x:auto;max-width:100%;-webkit-overflow-scrollin
       <div class="card" data-k="C">
         <h4>판정 불가</h4>
         <p>보관 상태·오염·훼손으로 <b>감정 자체가 성립하지 않는</b> 경우. 이때는 CCTV·계수·장부 대조로 우회하고, 그 사실을 그대로 적는 것이 맞습니다.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="auto">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>이 표가 스스로 갱신되는 방식</h2>
-      <span class="no">§ 4 · Auto-update</span>
-    </div>
-    <div class="auto">
-      <div class="in">
-        <h3>파일 하나만 고치면, 표 전체가 따라옵니다</h3>
-        <ol>
-          <li>표의 내용은 이 페이지에 직접 쓰여 있지 않습니다. 같은 폴더의 <b>forensic-data.json</b> 하나에서 읽어옵니다.</li>
-          <li>상태 칸 한 줄만 바꿔 저장하면, 페이지는 <b>60초마다 다시 읽어</b> 표·집계·타임라인을 새로 그립니다. 방문자는 새로고침할 필요가 없습니다.</li>
-          <li>바뀐 순간 <b>‘갱신됨’ 표시</b>와 하이라이트가 뜨고, 상단의 <b>데이터 기준 시각</b>이 함께 교체됩니다.</li>
-          <li>인터넷 주소(<code>landnliberty.kr/forensic.html</code>)로 열면 위 방식대로 동작하고, <b>파일을 직접 열었을 때는 페이지에 내장된 같은 데이터</b>가 표시됩니다.</li>
-        </ol>
-<pre><span class="c">// forensic-data.json — 한 행만 추가/수정하면 됩니다</span>
-{
-  <span class="k">"updated"</span>: <span class="s">"2026-11-05T09:00:00+09:00"</span>,
-  <span class="k">"rows"</span>: [
-    { <span class="k">"id"</span>:<span class="s">"F-02"</span>, <span class="k">"item"</span>:<span class="s">"인쇄 잉크 성분"</span>,
-      <span class="k">"look"</span>:<span class="s">"정품 잉크와 성분 일치 여부"</span>,
-      <span class="k">"tech"</span>:<span class="s">"IR 분광 · GC-MS"</span>,
-      <span class="k">"status"</span>:<span class="s">"결과 회신"</span>,
-      <span class="k">"src"</span>:<span class="s">"국과수 11.04"</span>, <span class="k">"note"</span>:<span class="s">"일부 이질 확인"</span> }
-  ]
-}</pre>
       </div>
     </div>
   </div>
@@ -410,7 +373,7 @@ pre,code,.code,.jsonbox{overflow-x:auto;max-width:100%;-webkit-overflow-scrollin
       <a href="index.html">← 토지와 자유</a>
       <a href="liberty-archive.html">증거 아카이브</a>
       <a href="liberty-report.html">10·28 리포트</a>
-      <a href="verify.html">공개검증 게시판</a>
+     
       <a href="teukgeom.html">특검 수사 파일</a>
     </div>
     <div class="fgrid">

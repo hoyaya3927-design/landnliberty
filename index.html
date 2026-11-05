@@ -969,37 +969,97 @@ table th { white-space: nowrap; }
 
 <!-- ===== 네비게이션 ===== -->
 <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
-  <nav class="max-w-6xl mx-auto flex items-center justify-between px-5 py-4">
-    <a href="#/" data-page="home" data-anchor="hero" class="flex items-center gap-2 font-mono font-bold text-lg tracking-tight">
-      <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-teal text-white">土</span>
-      <span><b>토지와 자유</b></span>
-    </a>
-    <ul class="hidden md:flex items-center gap-3 lg:gap-6 text-sm font-semibold text-ink/70">
-      <li><a href="#/home#problem" data-page="home" data-anchor="problem" class="nav-sec hover:text-teal transition">왜 지금</a></li>
-      <li><a href="#/home#privilege" data-page="home" data-anchor="privilege" class="nav-sec hover:text-teal transition">3대 특권 해체</a></li>
-      <li><a href="#/home#dividend" data-page="home" data-anchor="dividend" class="nav-sec hover:text-teal transition">토지배당</a></li>
-      <li><a href="#/home#finance" data-page="home" data-anchor="finance" class="nav-sec hover:text-teal transition">금융·회계</a></li><li><a href="#/#global" data-page="home" data-anchor="global" class="nav-sec hover:text-teal transition">지금 세계는</a></li><li><a href="land-dividend-manifesto.html" class="nav-sec hover:text-teal transition" title="4개 언어 촉구서 · 天下為公 地權歸民">중국 토지배당</a></li>
-      <li><a href="liberty-archive.html" class="hover:text-teal transition">자유 · Liberty</a></li><li><a href="#/policy" data-page="policy" class="hover:text-teal transition">정책</a></li>
-      <li><a href="#/salriki" data-page="salriki" class="cta inline-flex items-center gap-1.5 rounded-full bg-clay px-4 py-1.5 text-white font-extrabold shadow-sm hover:shadow-md hover:scale-105 transition"><i class="fa-solid fa-flag"></i>대한민국 살리기</a></li>
-      <li><a href="#/home#join" data-page="home" data-anchor="join" class="nav-join cta inline-flex items-center gap-1.5 rounded-full bg-teal px-4 py-1.5 text-white font-extrabold shadow-sm hover:shadow-md hover:scale-105 transition"><i class="fa-solid fa-hand-holding-heart"></i>함께하기</a></li>
-    </ul>
-    <div class="flex items-center gap-2">
-      <a href="#/home#join" data-page="home" data-anchor="join" class="cta md:hidden inline-flex rounded-full bg-teal px-4 py-2 text-xs font-extrabold text-white hover:bg-tealdark hover:scale-105 transition">
-        함께하기 <i class="fa-solid fa-arrow-right ml-1"></i>
+  <div class="gt-shell">
+    <div class="gt-top">
+      <a href="#/" data-page="home" data-anchor="hero" class="gt-brand">
+        <span class="gt-logo">土</span>
+        <span class="gt-name"><b>토지와 자유</b></span>
       </a>
-      <button id="menu-toggle" class="md:hidden h-10 w-10 rounded-full border border-ink/10 bg-white text-ink/70" aria-label="메뉴" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      <div class="gt-actions">
+        <a href="#/home#join" data-page="home" data-anchor="join" class="gt-cta">함께하기 <i class="fa-solid fa-arrow-right"></i></a>
+        <button id="menu-toggle" class="gt-burger" aria-label="메뉴" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      </div>
     </div>
-  </nav>
-  <div id="mobile-menu" class="md:hidden border-t border-ink/10 bg-white/95 backdrop-blur">
-    <ul class="max-w-6xl mx-auto px-5 py-4 grid grid-cols-2 gap-2 text-sm font-semibold text-ink/80">
-      <li><a class="nav-sec block rounded-lg px-3 py-2 hover:bg-mist" href="#/home#problem" data-page="home" data-anchor="problem">왜 지금</a></li>
-      <li><a class="nav-sec block rounded-lg px-3 py-2 hover:bg-mist" href="#/home#privilege" data-page="home" data-anchor="privilege">3대 특권 해체</a></li>
-      <li><a class="nav-sec block rounded-lg px-3 py-2 hover:bg-mist" href="#/home#dividend" data-page="home" data-anchor="dividend">토지배당</a></li>
-      <li><a class="nav-sec block rounded-lg px-3 py-2 hover:bg-mist" href="#/home#finance" data-page="home" data-anchor="finance">금융·회계</a></li><li><a class="nav-sec block rounded-lg px-3 py-2 hover:bg-mist" href="#/#global" data-page="home" data-anchor="global">지금 세계는</a></li><li><a class="nav-sec block rounded-lg px-3 py-2 hover:bg-mist" href="land-dividend-manifesto.html">중국 토지배당 · 4개 언어 촉구서</a></li>
-      <li><a class="block rounded-lg px-3 py-2 hover:bg-mist" href="liberty-archive.html">자유 · Liberty</a></li><li><a class="block rounded-lg px-3 py-2 hover:bg-mist" href="forensic.html">감정 추적</a></li><li><a class="block rounded-lg px-3 py-2 hover:bg-mist" href="#/policy" data-page="policy">정책</a></li>
-      <li><a class="block rounded-lg px-3 py-2 bg-clay text-white font-extrabold" href="#/salriki" data-page="salriki"><i class="fa-solid fa-flag mr-1"></i>대한민국 살리기</a></li>
-      <li><a class="block rounded-lg px-3 py-2 text-teal font-extrabold" href="#/home#join" data-page="home" data-anchor="join">함께하기</a></li>
-    </ul>
+    <nav class="gt-wrap" aria-label="주요 메뉴">
+      <div class="gt-row" role="tablist" aria-label="대분류">
+        <a class="gt is-on" data-g="land" role="tab" aria-selected="true" href="#/home#problem" data-page="home" data-anchor="problem">토지 Land</a>
+        <a class="gt" data-g="liberty" role="tab" aria-selected="false" href="liberty.html">자유 Liberty</a>
+        <a class="gt" data-g="salriki" role="tab" aria-selected="false" href="#/salriki" data-page="salriki">대한민국 살리기</a>
+        <a class="gt" data-g="join" role="tab" aria-selected="false" href="#/home#join" data-page="home" data-anchor="join">함께하기</a>
+      </div>
+      <div class="st-wrap">
+        <div class="st-row" data-g="land">
+          <a class="st is-on" href="#/home#problem" data-page="home" data-anchor="problem">왜 지금</a>
+          <a class="st" href="#/home#privilege" data-page="home" data-anchor="privilege">3대 특권 해체</a>
+          <a class="st" href="#/home#dividend" data-page="home" data-anchor="dividend">토지배당</a>
+          <a class="st" href="#/home#finance" data-page="home" data-anchor="finance">금융 회계</a>
+          <a class="st" href="#/home#global" data-page="home" data-anchor="global">지금 세계는</a>
+          <a class="st" href="#/policy" data-page="policy">정책</a>
+          <a class="st" href="land-dividend-manifesto.html">중국 토지배당 촉구서</a>
+        </div>
+        <div class="st-row" data-g="liberty" hidden>
+          <a class="st" href="teukgeom.html">특검 수사 파일</a>
+          <a class="st" href="liberty-report.html">10.28 리포트</a>
+          <a class="st" href="liberty-archive.html">증거 아카이브</a>
+          <a class="st" href="forensic.html">국과수 감정 추적</a>
+        </div>
+        <div class="st-row" data-g="salriki" hidden>
+          <a class="st" href="#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a>
+          <a class="st" href="#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a>
+          <a class="st" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a>
+          <a class="st" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a>
+          <a class="st" href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a>
+          <a class="st" href="#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
+          <a class="st" href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a>
+          <a class="st" href="index-chaohan.html">중국의 한국 흡수 전략</a>
+        </div>
+        <div class="st-row" data-g="join" hidden></div>
+      </div>
+    </nav>
+  </div>
+  <div id="mobile-menu">
+    <div class="mm-in">
+      <div class="mm-g">
+        <b>토지 Land</b>
+        <div class="mm-l">
+          <a href="#/home#problem" data-page="home" data-anchor="problem">왜 지금</a>
+          <a href="#/home#privilege" data-page="home" data-anchor="privilege">3대 특권 해체</a>
+          <a href="#/home#dividend" data-page="home" data-anchor="dividend">토지배당</a>
+          <a href="#/home#finance" data-page="home" data-anchor="finance">금융 회계</a>
+          <a href="#/home#global" data-page="home" data-anchor="global">지금 세계는</a>
+          <a href="#/policy" data-page="policy">정책</a>
+          <a href="land-dividend-manifesto.html">중국 토지배당 촉구서</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>자유 Liberty</b>
+        <div class="mm-l">
+          <a href="teukgeom.html">특검 수사 파일</a>
+          <a href="liberty-report.html">10.28 리포트</a>
+          <a href="liberty-archive.html">증거 아카이브</a>
+          <a href="forensic.html">국과수 감정 추적</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>대한민국 살리기</b>
+        <div class="mm-l">
+          <a href="#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a>
+          <a href="#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a>
+          <a href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a>
+          <a href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a>
+          <a href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a>
+          <a href="#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
+          <a href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a>
+          <a href="index-chaohan.html">중국의 한국 흡수 전략</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>함께하기</b>
+        <div class="mm-l">
+          <a href="#/home#join" data-page="home" data-anchor="join">함께하기 · 뉴스레터</a>
+        </div>
+      </div>
+    </div>
   </div>
 </header><div class="lnl-page" id="page-home">
 
@@ -1035,7 +1095,7 @@ table th { white-space: nowrap; }
     <p class="mt-14 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full bg-teal px-5 py-2.5 font-mono text-xs sm:text-sm font-bold text-white tracking-wide shadow-lg shadow-teal/25 reveal">
       노력의 열매는 개인에게 <span class="text-gold">·</span> 땅의 이익은 국민에게 <span class="text-gold">·</span> 금융의 위험은 숨김없이
     </p>
-    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm reveal">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 10월 27일 (화)</b> · 시각은 1분마다 자동 갱신</p>
+    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm reveal">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 11월 6일 (금)</b> · 시각은 1분마다 자동 갱신</p>
   </div>
   <a href="#/home#problem" data-page="home" data-anchor="problem" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-ink/60 animate-bounce" aria-label="아래로 스크롤">
     <i class="fa-solid fa-chevron-down text-xl"></i>
@@ -1112,10 +1172,12 @@ table th { white-space: nowrap; }
           <p class="text-ink/65 leading-relaxed">정치는 <b class="text-ink">반값으로</b>. 세비·보좌진·연금·교통 특혜를 외부 독립위원회 감독 하에 절반으로 감축하고 전면 공개. 재임 중 주식·부동산 신탁 의무화, 로비 등록제. "국민에게 긴축을 요구하기 전에 특권 정치부터 끝내야 한다."</p>
           <div class="mt-4 flex flex-wrap items-center gap-2">
             <span class="text-xs font-mono font-bold text-ink/50">관련 팩트시트</span>
-            <a href="대장동_백현동_팩트시트.html" class="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-white px-4 py-2 text-sm font-bold text-teal hover:bg-teal hover:text-white transition">대장동·백현동 팩트시트 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
-            <a href="이재명_변호라인_요직인사_팩트시트.html" class="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-white px-4 py-2 text-sm font-bold text-teal hover:bg-teal hover:text-white transition">이재명 변호라인·요직인사 팩트시트 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
-            <a href="대장동_50억클럽_곽상도_팩트시트.html" class="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white px-4 py-2 text-sm font-bold text-ink hover:bg-ink hover:text-white transition" title="대장동 50억 클럽 × 검찰 연결말 팩트시트 (2026.10.30 기준)">50억 클럽 팩트시트 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
-            <a href="권순일_전대법관_화천대유_팩트시트.html" class="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white px-4 py-2 text-sm font-bold text-ink hover:bg-ink hover:text-white transition" title="권순일 전 대법관 × 화천대유 × 재판거래 의혹 팩트시트 (2026.10.31 기준)">전 대법관 화천대유 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+            <a href="daejangdong_factsheet.html"" class="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-white px-4 py-2 text-sm font-bold text-teal hover:bg-teal hover:text-white transition">대장동·백현동 팩트시트 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+            <a href="lawyerline_factsheet.html"" class="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-white px-4 py-2 text-sm font-bold text-teal hover:bg-teal hover:text-white transition">이재명 변호라인·요직인사 팩트시트 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+            <a href="fivebillion_factsheet.html"" class="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-white px-4 py-2 text-sm font-bold text-teal hover:bg-teal hover:text-white transition" title="대장동 50억 클럽 × 검찰 연결말 팩트시트 (2026.10.30 기준)">50억 클럽 팩트시트 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+            <a href="hwachon_factsheet.html"" class="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-white px-4 py-2 text-sm font-bold text-teal hover:bg-teal hover:text-white transition" title="권순일 전 대법관 × 화천대유 × 재판거래 의혹 팩트시트 (2026.10.31 기준)">전 대법관 화천대유 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+
+            <a href="jojakkiso_teukgeom_factsheet.html" class="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-white px-4 py-2 text-sm font-bold text-teal hover:bg-teal hover:text-white transition" title="'조작기소 특검법' 팩트시트">조작기소 특검 팩트시트 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
           </div>
         </div>
         <i class="fa-solid fa-landmark-dome privilege-icon"></i>
@@ -1754,7 +1816,7 @@ table th { white-space: nowrap; }
       <a href="#/policy#hundred" data-page="policy" data-anchor="hundred" class="rounded-full bg-white border border-ink/15 px-4 py-2 font-bold text-ink hover:border-teal hover:text-teal transition">100일 입법</a>
       <a href="#/policy#messages" data-page="policy" data-anchor="messages" class="rounded-full bg-white border border-ink/15 px-4 py-2 font-bold text-ink hover:border-teal hover:text-teal transition">대상별 메시지</a>
     </div>
-    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 10월 27일 (화)</b> · 시각은 1분마다 자동 갱신</p>
+    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 11월 6일 (금)</b> · 시각은 1분마다 자동 갱신</p>
   </div>
 </section>
 
@@ -1969,10 +2031,9 @@ table th { white-space: nowrap; }
   <a class="tab" href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a>
   <a class="tab" href="#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
   <a class="tab" href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a>
-  <a class="tab" href="teukgeom.html" title="선관위 특검 수사 파일 (별도 페이지 · 기준일 2026.10.30)">선관위 특검</a>
+  <a class="tab" href="teukgeom.html" title="선관위 특검 수사 파일 (별도 페이지 · 기준일 2026.11.06)">선관위 특검</a>
   <a class="tab" href="index-chaohan.html" title="중국의 한국 흡수 전략 — 총론 + 관련 4개 문서">중국의 한국 흡수 전략</a>
   <div class="cn-docs" style="flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:8px 0 2px;border-top:1px solid rgba(20,33,61,.10);margin-top:6px">
-    <span style="font-family:IBM Plex Mono,monospace;font-size:11px;font-weight:700;letter-spacing:.06em;color:#0F766E;margin-right:4px">중국의 한국 흡수 전략 · 관련 5개 파일</span>
     <a class="tab" style="font-size:12px" href="index-chaohan.html">총론</a>
     <a class="tab" style="font-size:12px" href="doc-01-chaohan.html">① 초한전</a>
     <a class="tab" style="font-size:12px" href="doc-02-samjeon.html">② 삼전</a>
@@ -1988,7 +2049,7 @@ table th { white-space: nowrap; }
 <p>단정 말고 <b style="color:#fff">검증</b>. 분노 말고 <b style="color:#fff">절차</b>.<br>헌법이 이미 우리 손에 쥐여 준 도구로 권력을 감시합니다.</p>
 <p class="slogan">안보는 빈틈없이. <b>재정</b>을 <b>책임</b> 있게. 권력은 헌법 안에.</p>
 <p class="os">정권은 <b>앱</b>, 헌법은 <b>OS</b>. 앱이 OS 권한을 흡수하는 순간을 시민이 문서로 감시합니다.</p>
-<p class="clockline">현재 기준 <b data-date="today" data-date-format="fulltime">2026년 10월 27일 (화)</b> · 시각은 1분마다 자동 갱신됩니다</p>
+<p class="clockline">현재 기준 <b data-date="today" data-date-format="fulltime">2026년 11월 6일 (금)</b> · 시각은 1분마다 자동 갱신됩니다</p>
 <a class="btn p" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">지금 할 수 있는 일 보기</a>
 <a class="btn g" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈 팩트 체크</a>
 <a class="btn g" href="#/salriki#demands" data-page="salriki" data-anchor="demands">16대 요구안 보기</a>
@@ -2063,7 +2124,7 @@ table th { white-space: nowrap; }
 
 <section id="issues">
 <h2>📡 이슈 트래커</h2>
-<p class="sub"><b data-date="today" data-date-format="fulltime">2026년 10월 27일 (화)</b> 기준 · 시각은 1분마다 자동 갱신. 새로운 사실이 나오면 업데이트합니다.</p>
+<p class="sub"><b data-date="today" data-date-format="fulltime">2026년 11월 6일 (금)</b> 기준 · 시각은 1분마다 자동 갱신. 새로운 사실이 나오면 업데이트합니다.</p>
 <div class="legend"><span><span class="tag fact">확정</span> 공식 확인</span><span><span class="tag press">보도</span> 언론 확인(원문 확보 전)</span><span><span class="tag probe">진행</span> 수사·심사 중</span><span><span class="tag debate">논쟁</span> 해석 대립</span></div>
 <div class="filters">
 <button class="on" data-f="all">전체</button><button data-f="sec">🛡 안보</button>
@@ -2094,7 +2155,7 @@ table th { white-space: nowrap; }
 
 <div class="card" data-p="fis"><span class="pillar">재정</span> <span class="tag press">보도</span> <h3>특검 예산: 배정·집행·불용</h3><p>2025년 출범한 4개 특검 기준(법무부 의원실 제출 자료, 법률신문 보도): 배정 523.3억, 2026년 7월 기준 집행 342.3억, 불용 181억 원. ※ 불용액은 이미 낭비한 돈이 아니라 과다 편성·수요예측 오류의 검토 대상입니다. 집행액이 크다고 부패가 입증되는 것도 아니고, 성과를 기소 건수만으로 평가해서도 안 됩니다. <b>출처 없는 숫자는 만들지 않습니다.</b></p><a class="card-more" href="issue-11.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="fis con"><span class="pillar">헌정·재정</span> <span class="tag press">보도</span> <span class="tag probe">진행</span> <span class="tag debate">10.25 갱신</span> <h3>특검 인력 — 파견 충원 지연</h3><p>특검은 10.13 중수청에 <b>4급 이상 검찰 출신을 포함한 수사관 10명 추가 파견</b>을 요청했습니다(10.7 지방중수청 2명 별도). 파견검사는 <b>17명</b>(법정 상한 20명)이며, 특검 관계자는 <b>“파견 인력 충원이 늦어져 매우 난처”</b>라고 밝혔습니다. 중수청은 10.2 개청 후 기관장 공석이었으나 <b>김지용 신임 중수청장</b>이 자리에 앉았고, 특검은 10.23 중수청 본청을 예방해(김지용 중수청장과 30여분 면담) <b>인력 10명가량 파견을 재요청</b>했고, 김 청장은 <b>"일시적 수사 지원은 적극적으로 검토하겠다"</b>고 답했습니다 — 특검은 <b>선거관리 시스템 서버 포렌식을 한 달 이상 계속 중, DB 분석 포렌식 인원이 상당히 부족하다</b>고 설명했습니다(10.23 연합뉴스). ※ 인력 규모는 수사 속도와 직결되지만 <b>인력 부족이 곧 수사 실패를 뜻하지는 않습니다</b> — 예산·인력은 성과가 아니라 절차의 관찰 지표로 봅니다.</p><a class="card-more" href="issue-12.html">자세히 보기 ▸</a><a class="sw-file-link" href="teukgeom.html" style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:12px;padding:13px 18px;border:1.5px solid rgba(60,240,197,.65);border-radius:12px;background:rgba(60,240,197,.12);box-shadow:0 0 18px rgba(60,240,197,.22);color:#3cf0c5;font-size:18px;font-weight:800;letter-spacing:.01em;text-decoration:none"><span>선관위 특검 수사 파일</span><span style="flex:0 0 auto;font-size:12.5px;font-weight:700;opacity:.85;white-space:nowrap">기준일 2026.10.27 · 전체 보기 →</span></a></div>
+<div class="card" data-p="fis con"><span class="pillar">헌정·재정</span> <span class="tag press">보도</span> <span class="tag probe">진행</span> <span class="tag debate">10.25 갱신</span> <h3>특검 인력 — 파견 충원 지연</h3><p>특검은 10.13 중수청에 <b>4급 이상 검찰 출신을 포함한 수사관 10명 추가 파견</b>을 요청했습니다(10.7 지방중수청 2명 별도). 파견검사는 <b>17명</b>(법정 상한 20명)이며, 특검 관계자는 <b>“파견 인력 충원이 늦어져 매우 난처”</b>라고 밝혔습니다. 중수청은 10.2 개청 후 기관장 공석이었으나 <b>김지용 신임 중수청장</b>이 자리에 앉았고, 특검은 10.23 중수청 본청을 예방해(김지용 중수청장과 30여분 면담) <b>인력 10명가량 파견을 재요청</b>했고, 김 청장은 <b>"일시적 수사 지원은 적극적으로 검토하겠다"</b>고 답했습니다 — 특검은 <b>선거관리 시스템 서버 포렌식을 한 달 이상 계속 중, DB 분석 포렌식 인원이 상당히 부족하다</b>고 설명했습니다(10.23 연합뉴스). ※ 인력 규모는 수사 속도와 직결되지만 <b>인력 부족이 곧 수사 실패를 뜻하지는 않습니다</b> — 예산·인력은 성과가 아니라 절차의 관찰 지표로 봅니다.</p><a class="card-more" href="issue-12.html">자세히 보기 ▸</a><a class="sw-file-link" href="teukgeom.html" style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:12px;padding:13px 18px;border:1.5px solid rgba(60,240,197,.65);border-radius:12px;background:rgba(60,240,197,.12);box-shadow:0 0 18px rgba(60,240,197,.22);color:#3cf0c5;font-size:18px;font-weight:800;letter-spacing:.01em;text-decoration:none"><span>선관위 특검 수사 파일</span><span style="flex:0 0 auto;font-size:12.5px;font-weight:700;opacity:.85;white-space:nowrap">기준일 2026.11.06 · 전체 보기 →</span></a></div>
 
 <div class="card" data-p="fis con"><span class="pillar">재정·헌정</span> <span class="tag debate">논쟁</span> <h3>국회 자기 예산 · 세비</h3><p>세비 ‘셀프 인상’ 논란이 반복되고 있습니다. 감시 대상은 의원 수당·특수활동비·업무추진비·해외출장·연구용역·수의계약 등 구체 항목입니다. ※ 예산정책처·입법조사처 같은 행정부 견제 분석기능까지 일괄 축소하면 역효과입니다. 국회 예산 삭감은 국민이 직접 못 합니다 — 헌법 57조는 오히려 국회가 정부 동의 없이 지출을 늘리지 못하게 막습니다. “국회 예산 삭감 버튼”을 만들면 없는 권능을 파는 겁니다.</p><a class="card-more" href="issue-13.html">자세히 보기 ▸</a></div>
 
@@ -2110,7 +2171,7 @@ table th { white-space: nowrap; }
 
 <div class="card" data-p="con"><span class="pillar">헌정·수사체계</span> <span class="tag press">보도</span> <span class="tag debate">논쟁</span> <h3>공수처 개편안 — 대통령·국회의원 수사는 중수청으로</h3><p>민주당 법사위 의원들이 10.7 ‘공수처 기능 전면 개편’ 토론회를 열고 국감 종료 후 법안 발의를 준비 중입니다(11월 초 발의 거론 — 조선일보 10.6 보도). <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">대통령·국무총리 등 행정부 고위직, 국회의장·국회의원 등 입법부 고위직을 공수처 수사 대상에서 제외하고 이들 수사는 중수청(행안부 소속)으로</mark> 이관하고, 공수처는 판·검사·경찰·중수청 수사관 등 ‘사법 공직자’ 수사에 집중하되 수사 범위를 모든 범죄로 넓히는 골자입니다. ※ <mark style="background:#ffec8b;color:#1a1500;padding:0 3px;border-radius:3px">공수처는 10.6 브리핑에서 “견제 구조의 퇴보”라며 공개 반대했습니다</mark> — 행안부 장관은 대통령이 임명하는 만큼 대통령 수사를 그 지휘 계통에 맡기는 구조라는 것입니다. 법조계와 당내에도 이견이 있고, <b>아직 법안 발의 전</b>이라 조문은 미확정입니다.</p><a class="card-more" href="issue-19.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="tag debate">10.18 갱신</span> <h3>선관위: 부실의 누적에서 부정으로 더 가까이</h3><p>6·3 지방선거: 전국 1만 4,288개 투표소 중 140곳 추가 송부, 91곳 실사용, 26곳 일시 중단. 통계 수정 약 72건, 투표함 봉인 훼손·조기 폐기, 전 사무총장(김세환) 채용비리 1심 징역 2년(항소) — 이태한 특검은 2026.9.7 출범해 수사 중입니다 — 1차 수사기간은 <b>12월 초 만료</b>(본수사 90일, 준비 20일 별도 · 연장 시 본수사 최장 150일). <b>10.15 특검은 전국 30개 시군구 선관위의 시간대별 투표자 수 허위 입력을 확인</b>하고 중앙선관위 등 <b>7곳을 압수수색</b>했으며, 같은 날 <b>선거물품 보관계약 독점 특혜 의혹으로 부산·경남·경북선관위 등 10곳을 압수수색</b>했습니다. <b>10.16</b>에는 유착 의혹 업체들의 탈세·허위 세금계산서 정황을 확인해 <b>국세청에 세무조사</b>를 요청했고(12.15까지 회신 · <b>10.18</b> 공개), 앞서 <b>10.14</b> 고위법관 <b>'공명선거 추진활동비'</b>(위원장 월 290만 원·비상임위원 월 215만 원, 2014년부터) 압수수색 영장은 법원이 <b>기각</b>해 특검이 재청구 방침을 밝혔습니다. <b>압수수색·영장 기각은 기소가 아닙니다.</b> <b>10.20</b> 중앙선관위는 올림픽공원 투표용지 공개 검증 협조 의결을 특검에 전달했고(검증일은 <b>10.26</b> 관계기관 협의로 <b>10.28 오전 9시 확정</b> — 임의검증), <b>10.21</b> 특검은 노태악 전 중앙선관위원장 자택과 선관위 사무실을 <b>횡령·허위공문서작성</b> 혐의로 압수수색해 휴대전화 등을 확보했습니다. 같은 날 특검 피의자 조사(사전투표함 약 16억 원 구매 업무 담당·입찰방해·업무상 배임)를 받던 중앙선관위 5급 직원이 <b>조사 다음 날 숨진 채 발견</b>됐고, <b>강압수사 여부 공방</b>이 벌어졌습니다(변호인 '강압' 주장 · 특검 '사실 아님' · 선관위 '인권 보호 요청'). ‘조직적 조작’은 미확정이며 <b>신뢰 훼손과 조작 여부는 구분</b>해야 합니다. ※ 헌재 2023헌라5: 감사원의 직무감찰은 선관위 독립성 침해 — 단, 회계검사·국회 통제·수사·정보공개는 별개로 작동 가능합니다.</p><a class="card-more" href="issue-20.html">자세히 보기 ▸</a><a class="sw-file-link" href="teukgeom.html" style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:12px;padding:13px 18px;border:1.5px solid rgba(60,240,197,.65);border-radius:12px;background:rgba(60,240,197,.12);box-shadow:0 0 18px rgba(60,240,197,.22);color:#3cf0c5;font-size:18px;font-weight:800;letter-spacing:.01em;text-decoration:none"><span>선관위 특검 수사 파일</span><span style="flex:0 0 auto;font-size:12.5px;font-weight:700;opacity:.85;white-space:nowrap">기준일 2026.10.27 · 전체 보기 →</span></a></div>
+<div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="tag debate">10.18 갱신</span> <h3>선관위: 부실의 누적에서 부정으로 더 가까이</h3><p>6·3 지방선거: 전국 1만 4,288개 투표소 중 140곳 추가 송부, 91곳 실사용, 26곳 일시 중단. 통계 수정 약 72건, 투표함 봉인 훼손·조기 폐기, 전 사무총장(김세환) 채용비리 1심 징역 2년(항소) — 이태한 특검은 2026.9.7 출범해 수사 중입니다 — 1차 수사기간은 <b>12월 초 만료</b>(본수사 90일, 준비 20일 별도 · 연장 시 본수사 최장 150일). <b>10.15 특검은 전국 30개 시군구 선관위의 시간대별 투표자 수 허위 입력을 확인</b>하고 중앙선관위 등 <b>7곳을 압수수색</b>했으며, 같은 날 <b>선거물품 보관계약 독점 특혜 의혹으로 부산·경남·경북선관위 등 10곳을 압수수색</b>했습니다. <b>10.16</b>에는 유착 의혹 업체들의 탈세·허위 세금계산서 정황을 확인해 <b>국세청에 세무조사</b>를 요청했고(12.15까지 회신 · <b>10.18</b> 공개), 앞서 <b>10.14</b> 고위법관 <b>'공명선거 추진활동비'</b>(위원장 월 290만 원·비상임위원 월 215만 원, 2014년부터) 압수수색 영장은 법원이 <b>기각</b>해 특검이 재청구 방침을 밝혔습니다. <b>압수수색·영장 기각은 기소가 아닙니다.</b> <b>10.20</b> 중앙선관위는 올림픽공원 투표용지 공개 검증 협조 의결을 특검에 전달했고(검증일은 <b>10.26</b> 관계기관 협의로 <b>10.28 오전 9시 확정</b> — 임의검증), <b>10.21</b> 특검은 노태악 전 중앙선관위원장 자택과 선관위 사무실을 <b>횡령·허위공문서작성</b> 혐의로 압수수색해 휴대전화 등을 확보했습니다. 같은 날 특검 피의자 조사(사전투표함 약 16억 원 구매 업무 담당·입찰방해·업무상 배임)를 받던 중앙선관위 5급 직원이 <b>조사 다음 날 숨진 채 발견</b>됐고, <b>강압수사 여부 공방</b>이 벌어졌습니다(변호인 '강압' 주장 · 특검 '사실 아님' · 선관위 '인권 보호 요청'). ‘조직적 조작’은 미확정이며 <b>신뢰 훼손과 조작 여부는 구분</b>해야 합니다. ※ 헌재 2023헌라5: 감사원의 직무감찰은 선관위 독립성 침해 — 단, 회계검사·국회 통제·수사·정보공개는 별개로 작동 가능합니다.</p><a class="card-more" href="issue-20.html">자세히 보기 ▸</a><a class="sw-file-link" href="teukgeom.html" style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:12px;padding:13px 18px;border:1.5px solid rgba(60,240,197,.65);border-radius:12px;background:rgba(60,240,197,.12);box-shadow:0 0 18px rgba(60,240,197,.22);color:#3cf0c5;font-size:18px;font-weight:800;letter-spacing:.01em;text-decoration:none"><span>선관위 특검 수사 파일</span><span style="flex:0 0 auto;font-size:12.5px;font-weight:700;opacity:.85;white-space:nowrap">기준일 2026.11.06 · 전체 보기 →</span></a></div>
 
 <div class="card" data-p="fis con"><span class="pillar">헌정·재정</span> <span class="tag press">보도</span> <span class="tag debate">논쟁</span> <h3>선관위 청사 방호 예산 — 담장 2.7m·무기고</h3><p>중앙선관위가 2027년 예산(요구 4,783억 7,700만 원)에 <b>청사 방호 강화 시설 약 14억 6,300만 원</b>을 넣었습니다(7.28 보도 — 국민의힘 김은혜 의원실 제출 자료 기반). 내역: 월담 방지 <b>2.7m 철제 울타리</b>(현 1.7m) 1억 5,000만 원, 경계 초소 2,400만 원(‘2곳’/‘12개’로 보도 간 갈림), 정문 교체·돌파 장애물 4억 6천여만 원, 방호관제실 2억 4,100만 원·통합상황실 2억 6,500만 원, 대공방어 <b>안티드론건</b> 8,000만 원, 그리고 직장예비군 신규 편성에 따른 <b>총기 보관함(무기고)·전투장구류·통신장비</b> 1,800만~2,900만 원(보도 간 표기 차이). 사유는 12.3 비상계엄 당시 일부 군 관계자의 청사 진입 뒤 국가중요시설 ‘가’급 지정 — 선관위는 “통합방위법 시행령 등 법령에 따른 요청, 과하지 않다”고 설명합니다. ※ 같은 ‘가’급 독립기관인 대법원·헌법재판소엔 이런 시설이 없다는 지적, 투표용지 부족·개표 사고로 신뢰가 떨어진 시점의 ‘요새화’라는 비판이 대비됩니다. 선거가 없는 해임에도 선거관리행정지원 13%·인건비 7% 증액도 확인 대상입니다. ※ 방호 근거 법령·타 기관 비교는 원자료 미확보 — <b>예결위 심의에서 품목별 승인액을 봐야 확정</b>입니다.</p><a class="card-more" href="issue-21.html">자세히 보기 ▸</a></div>
 
@@ -2294,7 +2355,7 @@ table th { white-space: nowrap; }
 
 <footer>
 「콩스탕의 경고와 2026년 대한민국」(2026.10.3)<br>
-본 사이트의 사실관계는 <b data-date="today" data-date-format="fulltime">2026년 10월 27일 (화)</b> 기준 언론 보도·공식 발표에 근거하며, 수사·재판 결과에 따라 달라질 수 있습니다.<br>
+본 사이트의 사실관계는 <b data-date="today" data-date-format="fulltime">2026년 11월 6일 (금)</b> 기준 언론 보도·공식 발표에 근거하며, 수사·재판 결과에 따라 달라질 수 있습니다.<br>
 의심은 증거를 요구하고, 맹목적인 믿음을 요구하지 않습니다 — 이 사이트의 경쟁력은 더 뜨겁지 않은 대신, 다음 정권에도 같은 기준으로 남는다는 점입니다.<br>
 법률 정보는 일반 안내이며, 개별 사안은 변호사와 상담하십시오.
 <div style="text-align:center;color:#8a97b5;font-size:13px;padding:0 20px 40px">이 페이지는 <a href="#/" data-page="home">토지와 자유</a> · 대한민국 살리기 캠페인 페이지입니다. 정책은 <a href="#/policy" data-page="policy">정책</a> 페이지에서 확인하세요.</div>
@@ -3070,12 +3131,10 @@ body.admin-mode{background:#F5F7FA}
 @media(max-width:640px){#site-dock{bottom:10px;gap:2px;padding:5px}#site-dock a{padding:6px 10px;font-size:11.5px}}
 </style>
 <div id="site-dock" role="navigation" aria-label="사이트 바로가기">
-  <a href="index.html" class="cur" data-f="index.html">토지와 자유</a>
-  <a href="policy.html" data-f="policy.html">정책</a>
-  <a href="salriki.html" data-f="salriki.html">대한민국 살리기</a>
-  <span class="sd-dot"></span>
-  <a href="teukgeom.html" data-f="teukgeom.html">특검 수사 파일</a>
-  <a class="vf" href="verify.html" data-f="verify.html">투표용지 검증 게시판</a>
+  <a href="#/" class="cur">토지 Land</a>
+  <a href="liberty.html" class="">자유 Liberty</a>
+  <a href="#/salriki" class="">대한민국 살리기</a>
+  <a href="#/home#join">함께하기</a>
 </div>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
@@ -3120,8 +3179,7 @@ body.admin-mode{background:#F5F7FA}
     ['index','메인','index.html'],
     ['policy','정책','policy.html'],
     ['salriki','살리기','salriki.html'],
-    ['teukgeom','특검','teukgeom.html'],
-    ['verify','검증','verify.html']
+    ['teukgeom','특검','teukgeom.html']
   ];
   var d=new Date();
   function pad(n){return (n<10?'0':'')+n;}
@@ -3134,7 +3192,7 @@ body.admin-mode{background:#F5F7FA}
   /* --- tab DOM (click to open dashboard) --- */
   var pill=document.createElement('div');
   pill.id='vc-tab';
-  pill.title='클릭 → 5개 파일 조회수 대시보드 · 기준 '+ymdDot;
+  pill.title='클릭 → 4개 파일 조회수 대시보드 · 기준 '+ymdDot;
   pill.innerHTML='<span class="vc-name">'+CFG.label+'</span><span class="vc-sep"></span>'
     +'<span class="vc-item">오늘<b id="vc-today">-</b></span>'
     +'<span class="vc-item">총<b id="vc-total">-</b></span>'
@@ -3172,7 +3230,7 @@ body.admin-mode{background:#F5F7FA}
     panel.innerHTML='<div class="vc-head"><span>📊 조회수 대시보드</span><span class="vc-date">'+ymdDot+' 기준</span></div>'
       +'<div class="vc-rows" id="vc-rows">'+rows+'</div>'
       +'<div class="vc-sum"><span>합계</span><span class="vc-num">오늘<b id="vc-sum-t">-</b></span><span class="vc-num">총<b id="vc-sum-c">-</b></span></div>'
-      +'<div class="vc-note">5개 파일 실시간 집계 · 행을 클릭하면 해당 파일로 이동</div>';
+      +'<div class="vc-note">4개 파일 실시간 집계 · 행을 클릭하면 해당 파일로 이동</div>';
     document.body.appendChild(panel);
   }
   function load(){
@@ -3272,17 +3330,97 @@ body.admin-mode{background:#F5F7FA}
 </script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
-<aside class="upd1030" style="max-width:1080px;margin:40px auto;padding:22px 24px;border:1px solid rgba(20,33,61,.14);border-left:5px solid #0F766E;border-radius:14px;background:#fff;color:#14213D;font-size:14.5px;line-height:1.75;box-shadow:0 6px 24px rgba(20,33,61,.06)">
-  <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;color:#0F766E;font-weight:700;margin-bottom:8px">UPDATE 2026.10.30 (금) · 선관위 특검 D+54 · 국과수 감정 결과 대기</div>
-  <div style="font-size:19px;font-weight:800;margin-bottom:10px">투표지 247만 장 검증은 끝났다 — 남은 것은 13개 상자와 감정 회신</div>
-  <ul style="margin:0 0 10px 18px;padding:0">
-    <li><b>공개검증 종료</b> — 10.28 11:50 ~ 10.29 00:38(약 13시간), 송파 투표용지 247만여 장. 전체 433개 상자 중 420개는 수도권 창고로 이송, 실제 반출은 10.29 06:20 마무리(6·3 이후 148일 만).</li>
-    <li><b>국과수 감정</b> — 이의제기 투표지 <b>13개 상자</b>는 특검팀이 별도 보관·이송, 일부를 국립과학수사연구원에 정밀 감정 의뢰 예정. 위·변조 등 위법 정황이 나오면 수사 대상으로 전환 검토. <b>10.30 현재 공개된 감정 결과는 없습니다.</b></li>
-    <li><b>확인된 사실</b> — 전국 시군구 선관위 <b>36곳</b>에서 투표자 수 허위 입력 확인, 중앙·시도·시군구 선관위 등 <b>7곳</b> 압수수색.</li>
-    <li><b>윗선 수사</b> — 노태악 전 중앙선관위원장 자택 압수수색(휴대전화 등 확보). 대면 조사는 아직 없음. 공명선거추진활동비 불법 전용 정황, 선거물품 입찰 비리 관련 5곳 압수수색.</li>
-    <li><b>수사 기간</b> — 10.29 기준 수사 개시 53일째. 본수사 90일 + 30일씩 2회 연장 = 최장 150일(준비 20일 포함 170일), 이변 없으면 2027년 2월 초까지.</li>
-    <li><b>쟁점</b> — 국민의힘은 "부정선거 증거"를, 더불어민주당은 "문제 투표지 700여 장·당락 영향 없음"을 주장. 판정은 감정·수사 결과 이후에 남겨둡니다.</li>
-  </ul>
-  <div style="font-size:12px;color:#6b7280;border-top:1px dashed rgba(20,33,61,.15);padding-top:10px">출처: 연합뉴스 2026.10.29 「이의제기 접수 투표지 국과수 이송…특검 검토 후 수사 전환 관측」 · 세계일보 2026.10.29 「올공 '이상 투표지' 국과수서 정밀 감정」 · 브레이크뉴스 2026.10.29. 감정 결과는 공개 즉시 갱신합니다.</div>
-</aside>
+
+<style id="gtabs-css">
+.gt-shell{max-width:1152px;margin:0 auto;padding:6px 20px 0}
+.gt-top{display:flex;align-items:center;justify-content:space-between;gap:12px;height:44px}
+.gt-brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink,#14213D);font-weight:800;font-size:17px;letter-spacing:-.02em}
+.gt-logo{width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;background:var(--teal,#0F766E);color:#fff;font-size:15px;font-weight:700}
+.gt-actions{display:flex;align-items:center;gap:8px}
+.gt-cta{display:inline-flex;align-items:center;gap:6px;background:var(--teal,#0F766E);color:#fff;font-weight:800;font-size:12.5px;padding:7px 15px;border-radius:999px;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(15,118,110,.22)}
+.gt-burger{width:34px;height:34px;border-radius:999px;border:1px solid rgba(20,33,61,.14);background:#fff;color:rgba(20,33,61,.7);cursor:pointer}
+.gt-wrap{display:block}
+@media(min-width:768px){
+  .gt-wrap{display:block;margin-top:2px}
+  .gt-burger{display:none}
+  body:not(.sal-mode){padding-top:14px}
+  body:not(.sal-mode){scroll-padding-top:158px}
+}
+.gt-row{display:flex;align-items:center;gap:2px;border-top:1px solid rgba(20,33,61,.06);overflow-x:auto;scrollbar-width:none}
+.gt-row::-webkit-scrollbar{display:none}
+.gt{position:relative;flex:0 0 auto;padding:9px 14px;font-size:14px;font-weight:800;color:rgba(20,33,61,.62);text-decoration:none;letter-spacing:-.01em;white-space:nowrap;border-radius:10px 10px 0 0;transition:color .15s,background .15s}
+.gt:hover{color:var(--teal,#0F766E);background:rgba(15,118,110,.05)}
+.gt.is-on{color:#fff;background:var(--teal,#0F766E)}
+.gt.is-on::after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,#0F766E,#2feaa8)}
+.st-wrap{border-top:1px solid rgba(20,33,61,.10);padding:3px 0 0}
+.st-row{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;padding:0 0 5px}
+.st-row::-webkit-scrollbar{display:none}
+.st-row[hidden]{display:none}
+.st{flex:0 0 auto;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:700;color:rgba(20,33,61,.58);text-decoration:none;white-space:nowrap;letter-spacing:-.01em;transition:color .15s,background .15s}
+.st:hover{color:var(--teal,#0F766E);background:rgba(15,118,110,.07)}
+.st.is-on{color:#fff;background:var(--teal,#0F766E);box-shadow:0 2px 8px rgba(15,118,110,.25)}
+#site-header .gt-cta.is-current,#mobile-menu a.gt-cta.is-current{color:#fff!important}
+#site-header .gt.is-current{color:#fff!important;background:var(--teal,#0F766E)!important;font-weight:800}
+#site-header .gt.is-on.is-current{color:#fff!important}
+#site-header .st.is-on.is-current{color:#fff!important}
+#site-header .st.is-current{color:rgba(20,33,61,.58)}
+#site-header .st.is-on.is-current{color:#fff!important}
+
+/* ===== 타 선택/호버 색 반전 귝c칙 ===== */
+
+#site-header .gt:hover{color:#fff!important;background:var(--teal,#0F766E)!important}
+
+#site-header .gt.is-on{color:#fff!important;background:var(--teal,#0F766E)!important}
+#site-header .gt.is-on:hover,#site-header .gt.is-on.is-current:hover,#site-header .gt.is-current:hover{color:var(--teal,#0F766E)!important;background:#fff!important}
+
+#site-header .gt.is-on::after{display:none}
+
+#site-header .st.is-on{color:#fff!important;background:var(--teal,#0F766E)!important}
+
+.st-row[data-g="land"] .st[data-page="policy"],.st-row[data-g="land"] .st[href="land-dividend-manifesto.html"]{color:var(--teal,#0F766E)!important;font-weight:800}
+
+#site-header .st-row[data-g="land"] .st[data-page="policy"].is-on,#site-header .st-row[data-g="land"] .st[href="land-dividend-manifesto.html"].is-on{color:#fff!important;background:var(--teal,#0F766E)!important}
+#mobile-menu{display:none}
+#mobile-menu.open{display:block;max-height:calc(100vh - 56px);overflow-y:auto;border-top:1px solid rgba(20,33,61,.10);background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.mm-in{max-width:1152px;margin:0 auto;padding:12px 20px 18px}
+.mm-g{margin-bottom:12px}
+.mm-g>b{display:block;font-size:10.5px;letter-spacing:.14em;color:var(--teal,#0F766E);font-weight:800;margin-bottom:5px}
+.mm-l{display:flex;flex-wrap:wrap;gap:4px}
+.mm-l a{font-size:13px;font-weight:700;color:rgba(20,33,61,.74);text-decoration:none;padding:6px 10px;border-radius:9px;background:rgba(20,33,61,.035)}
+.mm-l a:active{background:rgba(15,118,110,.12);color:var(--teal,#0F766E)}
+@media(min-width:768px){#mobile-menu{display:none !important}}
+</style>
+<script id="gtabs-js">
+(function(){
+  var wrap=document.querySelector('.gt-wrap'); if(!wrap) return;
+  var tabs=[].slice.call(wrap.querySelectorAll('.gt'));
+  var rows=[].slice.call(wrap.querySelectorAll('.st-row'));
+  var curGroup=null;function markGroup(g){
+    var ok=false;
+    tabs.forEach(function(a){ var on=a.getAttribute('data-g')===g; if(on) ok=true; a.classList.toggle('is-on',on); a.setAttribute('aria-selected',on?'true':'false'); });
+    if(!ok) return;
+    curGroup=g;rows.forEach(function(r){ r.hidden = r.getAttribute('data-g')!==g; });
+  }
+  tabs.forEach(function(a){ a.addEventListener('mouseenter',function(){ showRows(a.getAttribute('data-g')); }); a.addEventListener('click',function(){ markGroup(a.getAttribute('data-g')); }); });
+
+  wrap.addEventListener('mouseleave',function(){ if(curGroup)showRows(curGroup); });
+
+  function showRows(g){ rows.forEach(function(r){ r.hidden = r.getAttribute('data-g')!==g; }); }
+  rows.forEach(function(r){
+    var items=[].slice.call(r.querySelectorAll('.st'));
+    items.forEach(function(a){ a.addEventListener('click',function(){ items.forEach(function(b){ b.classList.toggle('is-on',b===a); }); }); });
+  });
+  function fromHash(){
+    var h=location.hash||'';
+    if(h.indexOf('salriki')>-1) return 'salriki';
+    if(h.indexOf('policy')>-1) return 'land';
+    if(h.indexOf('join')>-1) return 'join';
+    if(h.indexOf('liberty')>-1) return 'liberty';
+    return 'land';
+  }
+  window.addEventListener('hashchange',function(){ markGroup(fromHash()); });
+  markGroup(fromHash());
+})();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 </body></html>
