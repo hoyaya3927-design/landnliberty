@@ -1,0 +1,541 @@
+<!doctype html><html lang="ko"><head><script id="theme-init">
+(function(){try{var s=localStorage.getItem('theme');var q=new URLSearchParams(location.search).get('theme');
+var t=s||q||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<style>:root{--bg:#f4f9fd;--panel:#ffffff;--panel2:#eef6fc;--ink:#0c1b2a;--ink2:#2e4658;--muted:#5a7183;--faint:#8ba1b3;--line:#d4e4f1;--line2:#e7f1f9;--red:#d23b2c;--amber:#a3630b;--green:#0e7d66;--blue:#24689f;--gray:#6f8497;--yellow:#8c6d0a;--serif:'Noto Serif KR','Nanum Myeongjo',serif;--sans:'Noto Sans KR','Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#e8f4fe,#f8fbff)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin:0 0 10px}
+h1{font-family:var(--serif);font-weight:900;font-size:clamp(26px,4.6vw,40px);line-height:1.25;margin:8px 0 6px;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:13.5px;margin:0 0 4px}
+.stamp{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;border:1px solid;border-radius:3px;padding:3px 9px;vertical-align:middle}
+.s-live{color:var(--green);border-color:var(--green)} .s-lost{color:var(--red);border-color:var(--red)} .s-out{color:var(--amber);border-color:var(--amber)}
+.s-trial{color:var(--amber);border-color:var(--amber)} .s-fin{color:var(--yellow);border-color:var(--yellow)} .s-probe{color:var(--blue);border-color:var(--blue)} .s-closed{color:var(--gray);border-color:var(--gray)} .s-unk{color:var(--muted);border-color:var(--muted)} .s-crim{color:var(--red);border-color:var(--red)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:10px;margin:26px 0 8px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.stat b{display:block;font-family:var(--mono);font-size:26px;font-weight:700;color:var(--ink)}
+.stat span{font-size:12.5px;color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 10px;align-items:center}
+.filters input,.filters select{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:8px 10px;font-size:13.5px;font-family:var(--sans)}
+.filters input{flex:1;min-width:200px}
+.filters input:focus,.filters select:focus{outline:2px solid var(--amber);outline-offset:1px}
+.cnt{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+table.ledger{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0 30px}
+.ledger th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--muted);text-align:left;border-bottom:1px solid var(--line);padding:8px 10px;position:sticky;top:0;background:var(--bg);cursor:pointer;white-space:nowrap}
+.ledger td{padding:9px 10px;border-bottom:1px solid var(--line2);vertical-align:top}
+.ledger tr{background:transparent}
+.ledger tbody tr:hover{background:var(--panel)}
+.ledger a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--faint)}
+.ledger a:hover{border-color:var(--red)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.partydot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;vertical-align:1px}
+.chip{display:inline-block;font-size:11px;font-family:var(--mono);border:1px solid var(--line);border-radius:3px;padding:1px 6px;color:var(--ink2);white-space:nowrap}
+h2.sec{font-family:var(--serif);font-size:21px;font-weight:700;margin:44px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+h2.sec small{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.1em;display:block;font-weight:400;margin-bottom:2px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.strip{display:flex;height:14px;border-radius:4px;overflow:hidden;border:1px solid var(--line);margin:12px 0 6px}
+.strip i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);margin:0 0 18px}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+table.data{width:100%;border-collapse:collapse;font-size:13px}
+.data th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;border-bottom:1px solid var(--line);padding:7px 9px;white-space:nowrap}
+.data td{padding:7px 9px;border-bottom:1px solid var(--line2);vertical-align:top}
+.data a{color:var(--ink2);text-decoration:none;border-bottom:1px dotted var(--faint)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:12px 0}
+.panel h3{margin:0 0 8px;font-size:15px;font-family:var(--serif)}
+.panel .tag{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}.hide-m{display:none}.ledger thead{display:none}.ledger tbody tr{display:block;border:1px solid var(--line);border-radius:8px;margin-bottom:8px;background:var(--panel2)}.ledger td{display:block;border:0;padding:4px 12px}.ledger td:before{content:attr(data-l);font-family:var(--mono);font-size:10px;color:var(--faint);display:block}}
+.notice{border-left:3px solid var(--amber);background:var(--panel2);padding:12px 16px;font-size:13px;color:var(--ink2);border-radius:0 6px 6px 0;margin:14px 0}
+.srcs{font-size:12.5px;color:var(--muted)} .srcs a{color:var(--blue);text-decoration:none;border-bottom:1px dotted var(--faint)}
+.srcs li{margin-bottom:5px}
+footer{border-top:1px solid var(--line);margin-top:50px;padding:22px 0 40px;color:var(--muted);font-size:12.5px}
+footer .brand{font-family:var(--serif);color:var(--ink2)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 6px}
+.tabs a{font-size:13px;text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:6px 14px;color:var(--ink2)}
+.tabs a:hover{border-color:var(--red);color:var(--ink)}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:2px 18px;font-size:13.5px;margin:12px 0}
+.meta dt{color:var(--faint);font-family:var(--mono);font-size:11px;letter-spacing:.08em;margin-top:8px}
+.meta dd{margin:1px 0 0;color:var(--ink2)}
+.pcard{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:12px 0}
+.pcard .st{float:right}
+.pcard b.t{font-size:15px}
+.pcard .m{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:6px}
+.linklist{font-size:13px;line-height:2}
+.linklist a{color:var(--blue);text-decoration:none;border-bottom:1px dotted var(--faint)}
+.empty{color:var(--muted);font-size:13.5px;background:var(--panel2);border:1px dashed var(--line);border-radius:8px;padding:14px 16px;margin:12px 0}</style><style id="theme-refresh">
+body{background:linear-gradient(180deg,#e7f4fe 0,#f5fafe 560px,#f5fafe 100%)}header.top{background:linear-gradient(180deg,#e3f1fd 0,#f0f9ff 100%);border-bottom:1px solid #cfe3f3}
+.eyebrow{color:#2f7fc1}
+.stat{background:linear-gradient(180deg,#ffffff,#f7fbfe);border-color:#dbe9f5;box-shadow:0 1px 2px rgba(20,60,95,.05),0 12px 28px -24px rgba(20,60,95,.6)}
+.stat b{color:#123c5e}
+.panel{background:linear-gradient(180deg,#ffffff,#fbfdff);border-color:#dbe9f5;box-shadow:0 1px 2px rgba(20,60,95,.05),0 14px 32px -26px rgba(20,60,95,.5)}
+h2.sec{border-top-color:#dbe9f5}
+.ledger th{background:#edf6fd;color:#4a6275;border-bottom-color:#cfe3f3}
+.ledger tbody tr:hover{background:#eff8ff}
+.ledger a{border-bottom-color:#b3cde0}
+.ledger a:hover{border-color:#24689f;color:#123c5e}
+table.data th{background:#f2f9fe;color:#4a6275}
+table.data tbody tr:hover{background:#f6fbff}
+table.data a{border-bottom-color:#b3cde0}
+.chip{color:#3b5568;border-color:#d8e7f3;background:#f6fbff}
+.notice{border-left-color:#3f9ad6;background:linear-gradient(90deg,#eaf6ff,#f8fcff)}
+::selection{background:#c6e6fb;color:#0c1b2a}
+.filters input,.filters select{background:#ffffff;border-color:#d8e7f3}
+.filters input:focus,.filters select:focus{outline-color:#3f9ad6}
+.stamp{background:rgba(255,255,255,.72);white-space:nowrap}
+</style><title>제22대 국회의원 305명 전원 공개 추적 명부 — 토지와 자유</title>
+<meta name="description" content="22대 국회의원 전원의 의안 단계별 추적, 수사·재판·형량, 재산·병역·세금, 이해충돌·정치자금·로비 기록을 한 사람당 한 페이지로 공개합니다.">
+<style id="mobile-refine">
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{-webkit-tap-highlight-color:transparent;word-break:keep-all;overflow-wrap:break-word}
+img,svg,canvas{max-width:100%;height:auto}
+
+@media (max-width:760px){
+  .wrap{padding:0 15px}
+  header.top{padding:20px 0 16px}
+  h1{font-size:clamp(21px,6.6vw,30px);line-height:1.28;letter-spacing:-.02em;word-break:keep-all}
+  h1 small{font-size:14px!important}
+  .sub{font-size:13px;line-height:1.55}
+  .eyebrow{font-size:10px;letter-spacing:.1em;line-height:1.5}
+  h2.sec{font-size:18px;margin:30px 0 10px;padding-top:6px}
+  h2.sec small{font-size:10px;letter-spacing:.08em}
+
+  /* 요약 수치 */
+  .stats{grid-template-columns:1fr 1fr;gap:8px;margin:16px 0 4px}
+  .stat{padding:11px 12px;border-radius:10px}
+  .stat b{font-size:21px;line-height:1.22}
+  .stat span{display:block;margin-top:2px;font-size:11.5px;line-height:1.4}
+  .cards{grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+  .cards .stat:last-child:nth-child(odd){grid-column:1/-1}
+
+  /* 필터 */
+  .filters{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:14px 0 8px}
+  .filters input{grid-column:1/-1;min-width:0;width:100%;font-size:16px;padding:11px 12px}
+  .filters select{width:100%;min-width:0;font-size:16px;padding:11px 10px}
+  .filters .cnt{grid-column:1/-1;text-align:right;padding:2px 2px 0}
+
+  /* 탭 가로 스크롤 */
+  .tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding-bottom:3px;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs a{flex:0 0 auto;white-space:nowrap;padding:8px 13px;font-size:12.5px}
+
+  /* ── 명부: 카드형 ── */
+  .ledger{display:block;width:100%;border-collapse:separate;margin:6px 0 26px;font-size:14px}
+  .ledger thead{display:none}
+  .ledger tbody{display:block}
+  .ledger tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;position:relative;
+    padding:11px 13px 11px 14px;margin:0 0 9px;background:var(--panel);
+    border:1px solid var(--line);border-left:3px solid var(--pc,var(--line));border-radius:12px;
+    box-shadow:0 1px 2px rgba(12,27,42,.05)}
+  .ledger tbody tr:hover{background:var(--panel)}
+  .ledger tbody tr:active{background:var(--panel2)}
+  .ledger td{display:block;padding:0;border:0;min-width:0}
+  .ledger td.hide-m{display:none}
+  .ledger td:first-child{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;
+    padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .ledger td:first-child::before{content:none;display:none}
+  .ledger td:first-child .partydot{width:7px;height:7px;margin-right:0}
+  .ledger td:first-child a{font-size:17px;font-weight:700;letter-spacing:-.01em;border-bottom:0;padding:2px 0}
+  .ledger td:first-child .chip{font-size:10.5px;padding:1px 5px}
+  .ledger td:not(:first-child)::before{content:attr(data-l);display:block;font-family:var(--mono);
+    font-size:9.5px;letter-spacing:.08em;color:var(--faint);margin-bottom:1px;white-space:nowrap}
+  .ledger td.mono{font-size:15.5px;font-weight:600;font-variant-numeric:tabular-nums}
+  .ledger td .stamp{font-size:10px;padding:2px 7px;letter-spacing:.04em}
+
+  /* ── 공통 표·패널 ── */
+  .panel,.pcard{padding:14px;border-radius:10px}
+  .pcard .st{float:none;display:inline-block;margin-left:6px;vertical-align:middle}
+  .pcard b.t{font-size:14px}
+  .pcard .m{font-size:11px;line-height:1.65;word-break:break-word}
+  .meta{grid-template-columns:auto minmax(0,1fr);column-gap:10px;align-items:baseline}
+  .meta dt{margin-top:10px;font-size:10px;letter-spacing:.06em;white-space:nowrap}
+  .meta dd{margin-top:10px;font-size:12.5px;line-height:1.5;word-break:break-word}
+  .meta dd a{word-break:break-all}
+  .linklist{line-height:1.45}
+  .linklist a{display:inline-block;padding:4px 0;word-break:break-all}
+  .strip{height:12px}
+  .legend{gap:5px 12px;font-size:11px;margin-bottom:14px}
+  .notice{font-size:12.5px;padding:11px 13px;line-height:1.65;border-radius:0 8px 8px 0}
+  .empty{padding:12px 13px;font-size:12.5px}
+  .grid2{gap:10px}
+  .srcs{font-size:11.5px;line-height:1.65}
+  footer{margin-top:34px;padding:18px 0 calc(30px + env(safe-area-inset-bottom))}
+  footer .brand{font-size:12px}
+
+  /* ── 의원 페이지: 발의법안 목록을 2줄 행으로 ── */
+  .page-member .data{display:block;width:100%;font-size:13px}
+  .page-member .data thead{display:none}
+  .page-member .data tbody{display:block}
+  .page-member .data tr{display:block;padding:9px 0;border-bottom:1px solid var(--line2)}
+  .page-member .data td{display:inline-block;padding:0;border:0;vertical-align:baseline}
+  .page-member .data td.hide-m{display:none}
+  .page-member .data td:nth-child(3){display:block;font-size:13.5px;font-weight:600;line-height:1.5;margin-bottom:3px}
+  .page-member .data td:nth-child(4){font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-right:8px}
+  .page-member .data td:nth-child(5){font-size:11.5px;color:var(--ink2)}
+  .page-member .data td:nth-child(5) .stamp{font-size:9.5px;padding:1px 5px}
+
+  /* ── 법안 순위표: 2줄 카드 행 ── */
+  .page-bills .data{display:block;width:100%;border-collapse:separate}
+  .page-bills .data thead{display:none}
+  .page-bills .data tbody{display:block}
+  .page-bills .data tr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:baseline;gap:3px 6px;
+    padding:11px 12px;margin:0 0 8px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+  .page-bills .data td{display:block;padding:0;border:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .page-bills .data td:nth-child(1){grid-column:1/4;font-weight:700;font-size:15px;color:var(--ink)}
+  .page-bills .data td:nth-child(2){grid-column:4;justify-self:end;font-size:10.5px;color:var(--muted)}
+  .page-bills .data td:nth-child(3){grid-column:1;font-size:12px}
+  .page-bills .data td:nth-child(4){grid-column:2;font-size:12px}
+  .page-bills .data td:nth-child(5){grid-column:3;font-size:12px}
+  .page-bills .data td:nth-child(6){grid-column:4;justify-self:end;font-size:13px;font-weight:700;color:var(--ink)}
+  .page-bills .data td:nth-child(3)::before,
+  .page-bills .data td:nth-child(4)::before,
+  .page-bills .data td:nth-child(5)::before{font-family:var(--mono);font-size:9.5px;color:var(--faint);letter-spacing:.04em}
+  .page-bills .data td:nth-child(3)::before{content:"대표 "}
+  .page-bills .data td:nth-child(4)::before{content:"관여 "}
+  .page-bills .data td:nth-child(5)::before{content:"가결 "}
+
+  /* ── 사법 리스크: 항목별 스택 ── */
+  .page-cases .data{display:block;width:100%}
+  .page-cases .data thead{display:none}
+  .page-cases .data tr{display:block;padding:10px 0;border-bottom:1px solid var(--line2)}
+  .page-cases .data td{display:block;padding:0;border:0}
+  .page-cases .data td:nth-child(1){font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.06em}
+  .page-cases .data td:nth-child(2){font-size:15px;font-weight:600;margin:1px 0 2px}
+  .page-cases .data td:nth-child(3){font-size:12.5px;color:var(--ink2);line-height:1.6}
+}
+
+@media (max-width:400px){
+  .wrap{padding:0 13px}
+  .stat b{font-size:19px}
+  .ledger td:first-child a{font-size:16px}
+  .meta dt{font-size:9.5px}
+  .meta dd{font-size:12px}
+}
+</style>
+<style id="dark-refresh">
+html[data-theme=dark]{--bg:#0b1219;--panel:#121c25;--panel2:#18242f;--ink:#e9f2f9;--ink2:#c2d4e2;--muted:#93a8ba;--faint:#6d8598;--line:#26343f;--line2:#1d2833;--red:#ff7a68;--amber:#e2a95a;--green:#45cfae;--blue:#77b6e6;--gray:#94a5b3;--yellow:#e4c96f;color-scheme:dark}
+html[data-theme=dark],html[data-theme=dark] body{background:var(--bg);color:var(--ink)}
+html[data-theme=dark] header.top{background:linear-gradient(180deg,#101c27,#0b1219);border-bottom-color:var(--line)}
+html[data-theme=dark] .stat,html[data-theme=dark] .notice,html[data-theme=dark] .box,html[data-theme=dark] .card,html[data-theme=dark] .kv,html[data-theme=dark] .note,html[data-theme=dark] .callout,html[data-theme=dark] .panel,html[data-theme=dark] .method,html[data-theme=dark] .srcbox{background:var(--panel);border-color:var(--line)}
+html[data-theme=dark] .ledger th{background:var(--bg);border-bottom-color:var(--line)}
+html[data-theme=dark] .ledger td{border-bottom-color:var(--line2)}
+html[data-theme=dark] .ledger tbody tr:hover{background:var(--panel2)}
+html[data-theme=dark] .filters input,html[data-theme=dark] .filters select{background:var(--panel2);border-color:var(--line);color:var(--ink)}
+html[data-theme=dark] .stamp{background:rgba(18,28,37,.86)}
+html[data-theme=dark] .chip{background:var(--panel2);border-color:var(--line);color:var(--ink2)}
+html[data-theme=dark] .tabs a{background:var(--panel);border-color:var(--line);color:var(--ink2)}
+html[data-theme=dark] .tabs a.on,html[data-theme=dark] .tabs a[aria-current]{background:var(--panel2);color:var(--ink);border-color:var(--blue)}
+html[data-theme=dark] .strip{border-color:var(--line)}
+html[data-theme=dark] footer{border-top-color:var(--line);color:var(--muted)}
+html[data-theme=dark] ::selection{background:#1d3b52;color:#eaf4fb}
+html[data-theme=dark] [style*="background:#fff"],html[data-theme=dark] [style*="background: #fff"],html[data-theme=dark] [style*="background:#ffffff"],html[data-theme=dark] [style*="background:white"],html[data-theme=dark] [style*="background:#f8fbff"],html[data-theme=dark] [style*="background:#eef6fc"],html[data-theme=dark] [style*="background:#f4f9fd"],html[data-theme=dark] [style*="background:#e8f4fe"]{background:var(--panel)!important}
+html[data-theme=dark] [style*="color:#0c1b2a"],html[data-theme=dark] [style*="color:#2e4658"]{color:var(--ink)!important}
+body,header.top,.stat,.notice,.ledger td:hover{transition:background-color .22s ease,color .22s ease,border-color .22s ease}
+
+/* 라이트/다크 전환 버튼 */
+#themeBtn{position:fixed;right:18px;bottom:18px;z-index:80;width:44px;height:44px;border-radius:999px;
+ border:1px solid var(--line);background:var(--panel);color:var(--ink2);cursor:pointer;font-size:17px;line-height:1;
+ display:grid;place-items:center;box-shadow:0 6px 18px rgba(12,27,42,.16);backdrop-filter:blur(6px);
+ transition:transform .18s ease,background-color .2s ease,color .2s ease}
+#themeBtn:hover{transform:translateY(-2px)}
+#themeBtn:active{transform:scale(.94)}
+#themeBtn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+@media (max-width:760px){#themeBtn{width:42px;height:42px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));font-size:16px;box-shadow:0 4px 14px rgba(12,27,42,.2)}}
+@media print{#themeBtn{display:none}}
+</style><style id="dark-party">html[data-theme=dark] [style*="--pc:#2f7cd6"]{--pc:#70a7e6}
+html[data-theme=dark] [style*="--pc:#d2453a"]{--pc:#e4827a}
+html[data-theme=dark] [style*="--pc:#a3630b"]{--pc:#f6a332}
+html[data-theme=dark] [style*="--pc:#bf6111"]{--pc:#f28c36}
+html[data-theme=dark] [style*="--pc:#b04083"]{--pc:#dc65ac}
+html[data-theme=dark] [style*="--pc:#94720c"]{--pc:#f3c434}
+html[data-theme=dark] [style*="--pc:#cc5b3b"]{--pc:#e08f78}
+html[data-theme=dark] [style*="--pc:#8ba1b3"]{--pc:#9fadba}
+html[data-theme=dark] [style*="background:#2f7cd6"]{background:#70a7e6!important}
+html[data-theme=dark] [style*="background:#d2453a"]{background:#e4827a!important}
+html[data-theme=dark] [style*="background:#a3630b"]{background:#f6a332!important}
+html[data-theme=dark] [style*="background:#bf6111"]{background:#f28c36!important}
+html[data-theme=dark] [style*="background:#b04083"]{background:#dc65ac!important}
+html[data-theme=dark] [style*="background:#94720c"]{background:#f3c434!important}
+html[data-theme=dark] [style*="background:#cc5b3b"]{background:#e08f78!important}
+html[data-theme=dark] [style*="background:#8ba1b3"]{background:#9fadba!important}
+html[data-theme=dark] .partydot{box-shadow:0 0 0 2px rgba(11,18,25,.85)}
+html[data-theme=dark] .ledger tbody tr:hover{border-left-color:var(--pc,var(--line))}</style><style id="sen-css">
+.sen{display:inline-block;font-size:10.5px;font-weight:800;line-height:1;padding:2px 4px;border-radius:4px;background:var(--panel2);border:1px solid var(--line);color:var(--ink2);vertical-align:2px;letter-spacing:-.2px}
+table.ledger td .sen{margin-left:1px}
+</style></head><body class="page-index">
+<header class="top"><div class="wrap">
+<p class="eyebrow">토지와 자유 × 디지털 대동법 연구소 · 공적 기록 명부</p>
+<h1>제22대 국회의원 전원 공개 추적</h1>
+<p class="sub">의안 단계별 추적 · 수사·재판·형량 · 재산·병역·세금 · 이해충돌·정치자금·로비 — 한 사람당 한 페이지. 기준일 2026-11-07.</p>
+<div class="tabs">
+<a href="bills.html">법안 추적</a><a href="cases.html">사법 리스크</a><a href="assets.html">재산·병역·세금</a><a href="integrity.html">이해충돌·정치자금·로비</a>
+</div>
+</div></header>
+<main class="wrap">
+<div class="stats">
+<div class="stat"><b class="mono">305</b><span>수록 의원(재직 299 · 의원직 상실 5 · 사퇴 1)</span></div>
+<div class="stat"><b class="mono">19,997</b><span>대표발의 법률안 총합</span></div>
+<div class="stat"><b class="mono">735</b><span>가결(공포 포함)</span></div>
+<div class="stat"><b class="mono">50</b><span>수사·재판 이력 확인(추적표 기준 48명+2)</span></div>
+<div class="stat"><b class="mono">86명 / 28.7%</b><span>전과 기록 보유 당선인(선관위 집계)</span></div><div class="stat" id="stat-nbl"><b class="mono">23</b><span>민주화·노동·통일운동·국가보안법 전과</span></div>
+</div>
+<div class="notice">숫자를 읽을 때 층을 구분하세요 — "전과 28.7%"는 과거 확정 기록(민주화·노동운동 전과 포함)이고, 현재 재판 중은 이 중 일부입니다. 무죄추정 원칙과 확정 여부 표기 규칙은 각 페이지 하단의 방법론을 따릅니다. 민주화·노동·통일운동 및 국가보안법 전과 23명은 <a href="cases.html#records" style="color:var(--blue);border-bottom:1px dotted var(--faint)">사법 리스크 페이지 08번 섹션</a>과 각 의원 페이지에서 확인할 수 있습니다.</div>
+<div class="filters">
+<input id="q" type="search" placeholder="이름 · 정당 · 선거구 · 상임위 · 혐의 검색…" aria-label="의원 검색">
+<select id="fParty" aria-label="정당"><option value="">정당 전체</option></select>
+<select id="fTerm" aria-label="선수"><option value="">선수 전체</option><option>초선</option><option>재선</option><option>3선</option><option>4선</option><option>5선</option><option>6선</option></select>
+<select id="fComm" aria-label="소속 상임위"><option value="">상임위 전체</option></select>
+<select id="fDual" aria-label="장관·차관·단체장"><option value="">겸임·경력 전체</option><option value="any">겸임·경력 있음(전체)</option><option value="now">장관급 · 현직</option><option value="min">장관급 · 전직</option><option value="dep">차관급</option><option value="gov">광역단체장</option></select>
+<select id="fSt" aria-label="의석 상태"><option value="">의석 상태 전체</option><option>재직</option><option>의원직 상실</option><option>사퇴(대구시장)</option></select>
+<select id="fC" aria-label="사법 상태"><option value="">사법 상태 전체</option><option>사건 있음</option><option>운동권 전과 있음</option></select>
+<select id="sort" aria-label="정렬"><option value="0">정렬: 이름</option><option value="7">대표발의 많은 순</option><option value="8">발의 관여 많은 순</option><option value="9">가결 많은 순</option></select>
+<span class="cnt" id="cnt"></span>
+</div>
+<style id="xsec-css">
+.xfsub{margin:18px 18px 2px;font-size:13px;font-weight:800;color:var(--ink)}
+.xfnote{margin:0 18px 8px;font-size:11.5px;color:var(--muted)}
+table.xf-t tr th[scope=row]{text-align:left;font-weight:700;white-space:nowrap}
+table.xf-t td.tot{font-weight:800}
+.db{display:inline-block;font-size:10px;font-weight:800;line-height:1.35;padding:1px 5px;border-radius:5px;margin:1px 3px 1px 0;border:1px solid var(--line);background:var(--panel2);color:var(--muted);white-space:nowrap}
+.db-now{background:rgba(226,72,58,.13);border-color:rgba(226,72,58,.4);color:var(--red)}
+.db-dep{color:var(--ink)}
+.db-gov{color:var(--ink);border-style:dashed}
+
+details.xf{margin:0 0 18px;border:1px solid var(--line);border-radius:14px;background:var(--panel);overflow:hidden}
+details.xf summary{cursor:pointer;padding:14px 18px;font-weight:700;font-size:14px;color:var(--ink);list-style:none}
+details.xf summary::-webkit-details-marker{display:none}
+details.xf summary .hint{font-weight:400;color:var(--muted);font-size:12.5px;margin-left:8px}
+.xfwrap{overflow:auto;max-height:72vh;padding:0 6px 14px}
+table.xf-t{width:100%;border-collapse:collapse;font-size:12.5px}
+table.xf-t th,table.xf-t td{padding:7px 9px;border-bottom:1px solid var(--line2);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+table.xf-t th:first-child,table.xf-t td:first-child{text-align:left;position:sticky;left:0;background:var(--panel);font-weight:600;color:var(--ink)}
+table.xf-t thead th{color:var(--muted);font-weight:600;font-size:11.5px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel);z-index:2}
+table.xf-t td.b{color:var(--ink2)} table.xf-t td.z{color:var(--faint)}
+table.xf-t tbody tr:hover td{background:var(--panel2)}
+@media(max-width:640px){table.xf-t{font-size:11.5px}table.xf-t th,table.xf-t td{padding:6px 7px}}
+</style><details class="xf" id="xsec"><summary>상임위 × 정당 교차 요약 <span class="hint">17개 상임위 · 특별위 제외 · 펼쳐서 확인</span></summary>
+<div class="xfwrap"><table class="xf-t"><thead><tr><th>상임위</th><th style="color:#2f7cd6">더불어민주당</th><th style="color:#d2453a">국민의힘</th><th style="color:#a3630b">조국혁신당</th><th style="color:#8ba1b3">무소속</th><th style="color:#b04083">진보당</th><th style="color:#bf6111">개혁신당</th><th style="color:#94720c">기본소득당</th><th style="color:#cc5b3b">사회민주당</th><th>합계</th></tr></thead><tbody>
+<tr><td>국회운영위원회</td><td class="">15</td><td class="">10</td><td class="">1</td><td class="z">·</td><td class="">1</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="b"><b>28</b></td></tr><tr><td>법제사법위원회</td><td class="">10</td><td class="">6</td><td class="">1</td><td class="z">·</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="b"><b>18</b></td></tr><tr><td>정무위원회</td><td class="">13</td><td class="">9</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="">1</td><td class="b"><b>24</b></td></tr><tr><td>재정경제기획위원회</td><td class="">12</td><td class="">8</td><td class="z">·</td><td class="">1</td><td class="z">·</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="b"><b>22</b></td></tr><tr><td>교육위원회</td><td class="">8</td><td class="">6</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="b"><b>16</b></td></tr><tr><td>과학기술정보방송통신위원회</td><td class="">11</td><td class="">6</td><td class="">1</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="b"><b>19</b></td></tr><tr><td>외교통일위원회</td><td class="">11</td><td class="">8</td><td class="">1</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="b"><b>21</b></td></tr><tr><td>국방위원회</td><td class="">9</td><td class="">6</td><td class="z">·</td><td class="">1</td><td class="z">·</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="b"><b>17</b></td></tr><tr><td>행정안전위원회</td><td class="">12</td><td class="">8</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="">1</td><td class="z">·</td><td class="b"><b>22</b></td></tr><tr><td>문화체육관광위원회</td><td class="">9</td><td class="">6</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="b"><b>16</b></td></tr><tr><td>농림축산식품해양수산위원회</td><td class="">10</td><td class="">7</td><td class="">1</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="b"><b>19</b></td></tr><tr><td>산업통상자원중소벤처기업위원회</td><td class="">13</td><td class="">9</td><td class="">1</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="b"><b>24</b></td></tr><tr><td>보건복지위원회</td><td class="">13</td><td class="">9</td><td class="">1</td><td class="z">·</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="b"><b>24</b></td></tr><tr><td>기후에너지환경노동위원회</td><td class="">14</td><td class="">10</td><td class="">1</td><td class="z">·</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="b"><b>26</b></td></tr><tr><td>국토교통위원회</td><td class="">16</td><td class="">11</td><td class="">1</td><td class="">1</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="b"><b>30</b></td></tr><tr><td>정보위원회</td><td class="">7</td><td class="">5</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="b"><b>12</b></td></tr><tr><td>성평등가족위원회</td><td class="">9</td><td class="">6</td><td class="">1</td><td class="z">·</td><td class="">1</td><td class="z">·</td><td class="z">·</td><td class="z">·</td><td class="b"><b>17</b></td></tr><tr><td>전체</td><td class="b">164</td><td class="b">111</td><td class="b">13</td><td class="b">8</td><td class="b">4</td><td class="b">3</td><td class="b">1</td><td class="b">1</td><td class="b"><b>305</b></td></tr>
+</tbody></table><h3 class="xfsub">겸임·경력 × 정당</h3><p class="xfnote">한 의원이 장관급과 차관급 경력을 모두 가진 경우 각 행에 중복 집계됩니다. 마지막 행은 중복 없는 인원.</p><table class="xf-t" id="xfdual"><thead><tr><th>겸임·경력</th><th>더불어민주당</th><th>국민의힘</th><th>조국혁신당</th><th>무소속</th><th>진보당</th><th>개혁신당</th><th>기본소득당</th><th>사회민주당</th><th>합계</th></tr></thead><tbody><tr><th scope="row">장관급 · 현직</th><td class="mono">5</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono tot">5</td></tr><tr><th scope="row">장관급 · 전직</th><td class="mono">13</td><td class="mono">4</td><td class="mono">1</td><td class="mono">1</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono tot">19</td></tr><tr><th scope="row">차관급</th><td class="mono">8</td><td class="mono">11</td><td class="mono">1</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono tot">20</td></tr><tr><th scope="row">광역단체장</th><td class="mono">2</td><td class="mono">3</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono tot">5</td></tr><tr><th scope="row">겸임 경력 있음(중복 제외)</th><td class="mono">27</td><td class="mono">18</td><td class="mono">2</td><td class="mono">1</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono">0</td><td class="mono tot">48</td></tr></tbody></table>
+<div id="tl">
+<style>
+#tl{margin-top:20px}
+#tl h3{font-size:14px;margin:0 0 4px}
+#tl .tl-sub{font-size:12.5px;color:var(--ink2,#5b6572);margin:0 0 16px}
+#tl .tl-item{position:relative;padding:0 0 18px 100px;border-left:2px solid var(--line,#dfe3e8);margin-left:78px}
+#tl .tl-item:last-child{border-left:2px solid transparent;padding-bottom:0}
+#tl .tl-dot{position:absolute;left:-7px;top:3px;width:12px;height:12px;border-radius:50%;background:#2f7cd6;box-shadow:0 0 0 3px #fff}
+#tl .tl-item.neg .tl-dot{background:#c0453b}
+#tl .tl-item.end .tl-dot{background:#1f7a55;box-shadow:0 0 0 3px #fff,0 0 0 6px #dcefe6}
+#tl .tl-date{position:absolute;left:-100px;top:-2px;width:78px;text-align:right;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:#3a4652;line-height:1.35}
+#tl .tl-cap{font-weight:650;font-size:13.5px;margin:0 0 8px}
+#tl ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+#tl li{display:grid;grid-template-columns:46px 1fr;gap:10px;align-items:baseline;font-size:13px;line-height:1.55}
+#tl .b{font-size:10.5px;font-weight:700;letter-spacing:.03em;text-align:center;border-radius:4px;padding:2px 0}
+#tl .in .b{background:#e6f1fc;color:#16528f;border:1px solid #cfe3f8}
+#tl .out .b{background:#fdecea;color:#9c2f26;border:1px solid #f7d5d1}
+#tl .mv .b{background:#f2eee4;color:#6b5a2c;border:1px solid #e6dfcd}
+#tl .now .b{background:#e2f3ea;color:#1c6647;border:1px solid #c9e8d8}
+#tl .mono{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#5b6572}
+#tl a.tl-a{color:inherit;text-decoration:none;border-bottom:1px dashed #c2ccd8}
+#tl a.tl-a:hover{color:#16528f;border-bottom-color:#2f7cd6}
+#tl a.tl-a:focus-visible{outline:2px solid #2f7cd6;outline-offset:2px;border-radius:3px}
+#tl .src{display:inline-block;font-size:11px;color:#7b8794;border:1px solid var(--line,#e0e4ea);border-radius:4px;padding:0 5px;margin-left:5px;white-space:nowrap}
+#tl .tl-note{font-size:12px;color:var(--ink2,#5b6572);margin:14px 0 0;padding:10px 12px;background:#f7f8fa;border:1px solid var(--line,#e4e7ec);border-radius:8px}
+html[data-theme=dark] #tl .tl-dot{box-shadow:0 0 0 3px #14181d}
+html[data-theme=dark] #tl .tl-item.end .tl-dot{box-shadow:0 0 0 3px #14181d,0 0 0 6px #1d3b2e}
+html[data-theme=dark] #tl .tl-note{background:#1a1f26;border-color:#2b323b}
+html[data-theme=dark] #tl .in .b{background:#12293f;color:#8fc2f5;border-color:#1d3d5c}
+html[data-theme=dark] #tl .out .b{background:#3a1a17;color:#f0a49c;border-color:#552723}
+html[data-theme=dark] #tl .mv .b{background:#2b2519;color:#dcc48c;border-color:#413823}
+html[data-theme=dark] #tl .now .b{background:#132c22;color:#8fd7b4;border-color:#1f4433}
+html[data-theme=dark] #tl .mono{color:#9aa6b3}
+html[data-theme=dark] #tl a.tl-a{border-bottom-color:#3c4652}
+html[data-theme=dark] #tl a.tl-a:hover{color:#8fc2f5;border-bottom-color:#8fc2f5}
+html[data-theme=dark] #tl .src{color:#94a0ad;border-color:#313944}
+</style>
+<h3>개각 타임라인 — 2025.7부터 2026.11까지 한 줄로</h3>
+<p class="tl-sub">22대 국회의원 가운데 국무위원·총리를 지낸 인물의 입·퇴장을 시간순으로만 쌓았습니다. <b>IN</b> 입장, <b>OUT</b> 퇴장·사퇴, <b>이동</b> 부처 개편, <b>재임</b> 현재 재직 중. <span class="src">이름 클릭 → 의원 카드</span></p>
+
+<div class="tl-item"><span class="tl-dot"></span><span class="tl-date">2025.7.3<br>7.7</span>
+<div class="tl-cap">① 총리부터 — 내각의 맨 위가 먼저 채워짐</div>
+<ul>
+<li class="in"><span class="b">IN</span><span><a class="tl-a" href="members/034-김민석.html">김민석</a> <b>국무총리</b>(제49대) — 7.3 임명 재가, 7.7 취임식(세종청사)</span></li>
+</ul></div>
+
+<div class="tl-item"><span class="tl-dot"></span><span class="tl-date">2025.7.20<br>~7.25</span>
+<div class="tl-cap">② 초대 내각 — 의원 6명이 닷새 사이에 입장</div>
+<ul>
+<li class="in"><span class="b">IN</span><span><a class="tl-a" href="members/189-윤호중.html">윤호중</a> <b>행정안전부</b> — 7.20 임명, 7.25 취임식(정부세종청사)</span></li>
+<li class="in"><span class="b">IN</span><span><a class="tl-a" href="members/249-정성호.html">정성호</a> <b>법무부</b>(제71대) — 7.21 취임식(정부과천청사)</span></li>
+<li class="in"><span class="b">IN</span><span><a class="tl-a" href="members/044-김성환.html">김성환</a> <b>환경부</b>(제22대) — 7.21 취임</span></li>
+<li class="in"><span class="b">IN</span><span>전재수 <b>해양수산부</b>(제24대) — 7.24 취임식(정부세종청사) <span class="src">해수부 사진뉴스</span></span></li>
+<li class="in"><span class="b">IN</span><span><a class="tl-a" href="members/247-정동영.html">정동영</a> <b>통일부</b>(제44대) — 7.25 취임</span></li>
+<li class="in"><span class="b">IN</span><span><a class="tl-a" href="members/159-안규백.html">안규백</a> <b>국방부</b>(제51대) — 7.25 취임식(용산 국방부) <span class="src">국방부 취임사</span></span></li>
+</ul></div>
+
+<div class="tl-item"><span class="tl-dot"></span><span class="tl-date">2025.7.31</span>
+<div class="tl-cap">③ 초대 내각 마지막 한 자리</div>
+<ul>
+<li class="in"><span class="b">IN</span><span><a class="tl-a" href="members/061-김윤덕.html">김윤덕</a> <b>국토교통부</b>(제9대) — 7.31 취임식(정부세종청사) <span class="src">국토부 취임사</span></span></li>
+</ul></div>
+
+<div class="tl-item"><span class="tl-dot"></span><span class="tl-date">2025.10.1</span>
+<div class="tl-cap">④ 사람이 아니라 조직이 움직인 날</div>
+<ul>
+<li class="mv"><span class="b">이동</span><span><a class="tl-a" href="members/044-김성환.html">김성환</a>, 환경부 장관 → <b>초대 기후에너지환경부 장관</b> (재임은 끊기지 않음)</span></li>
+</ul></div>
+
+<div class="tl-item neg"><span class="tl-dot"></span><span class="tl-date">2025.12.11</span>
+<div class="tl-cap">⑤ 첫 이탈 — 5개월 만에</div>
+<ul>
+<li class="out"><span class="b">OUT</span><span>전재수 <b>해양수산부</b> — 2025.12.11 사의 표명·당일 재가(재임 4개월 18일), 김성범 차관 직무대행. 2026.4.30 의원직도 사퇴 <span class="src">해수부·연합뉴스</span></span></li>
+</ul></div>
+
+<div class="tl-item"><span class="tl-dot"></span><span class="tl-date">2026.3.25</span>
+<div class="tl-cap">⑥ 새 부처, 새 얼굴</div>
+<ul>
+<li class="in"><span class="b">IN</span><span><a class="tl-a" href="members/123-박홍근.html">박홍근</a> <b>기획예산처 초대 장관</b> — 부처 신설과 함께 취임</span></li>
+</ul></div>
+
+<div class="tl-item neg"><span class="tl-dot"></span><span class="tl-date">2026.6.30</span>
+<div class="tl-cap">⑦ 총리 교체 — 363일</div>
+<ul>
+<li class="out"><span class="b">OUT</span><span><a class="tl-a" href="members/034-김민석.html">김민석</a> <b>국무총리</b> — 당대표 출마 위해 퇴임, 후임 한성숙</span></li>
+</ul></div>
+
+<div class="tl-item neg"><span class="tl-dot"></span><span class="tl-date">2026.8.26</span>
+<div class="tl-cap">⑧ 법무부 교체 — 사직서 8.18, 이임식 8.26</div>
+<ul>
+<li class="out"><span class="b">OUT</span><span><a class="tl-a" href="members/249-정성호.html">정성호</a> <b>법무부</b> — 8.26 오후 4시 정부과천청사 이임식(법무부 보도자료 '제71대 정성호 법무부장관 이임사'), 후임 김승원은 8.30 지명</span></li>
+</ul></div>
+
+<div class="tl-item neg"><span class="tl-dot"></span><span class="tl-date">2026.9.22</span>
+<div class="tl-cap">⑨ 2차 개각 — 같은 날 두 명이 동시에</div>
+<ul>
+<li class="out"><span class="b">OUT</span><span><a class="tl-a" href="members/159-안규백.html">안규백</a> <b>국방부</b> — 9.22 용산 국방부 이·취임식, 후임 강신철(제52대) 취임, 의원직 복귀 <span class="src">국방부 이·취임식</span></span></li>
+<li class="out"><span class="b">OUT</span><span><a class="tl-a" href="members/061-김윤덕.html">김윤덕</a> <b>국토교통부</b> — 9.22 임명 재가로 퇴임, 후임 홍지선은 <b>9.23 취임식</b>(부처 일정 차이), 의원직 복귀 <span class="src">국토부 취임사·임명 재가</span></span></li>
+</ul></div>
+
+<div class="tl-item"><span class="tl-dot"></span><span class="tl-date">2026.9.28</span>
+<div class="tl-cap">⑩ 엿새 뒤, 가장 젊은 얼굴이 입장</div>
+<ul>
+<li class="in"><span class="b">IN</span><span><a class="tl-a" href="members/204-이소영.html">이소영</a> <b>중소벤처기업부</b>(제7대) — 9.28 취임식, 85년생 최연소 장관</span></li>
+</ul></div>
+
+<div class="tl-item end"><span class="tl-dot"></span><span class="tl-date">2026.11.8<br>현재</span>
+<div class="tl-cap">⑪ 지금 이 자리에 남아 있는 5명</div>
+<ul>
+<li class="now"><span class="b">재임</span><span><a class="tl-a" href="members/247-정동영.html">정동영</a> <b>통일부</b> — 2025.7.25 취임, <span class="mono">471일째</span></span></li>
+<li class="now"><span class="b">재임</span><span><a class="tl-a" href="members/189-윤호중.html">윤호중</a> <b>행정안전부</b> — 2025.7.25 취임, <span class="mono">471일째</span></span></li>
+<li class="now"><span class="b">재임</span><span><a class="tl-a" href="members/044-김성환.html">김성환</a> <b>기후에너지환경부</b> — 2025.7.21 취임, <span class="mono">475일째</span></span></li>
+<li class="now"><span class="b">재임</span><span><a class="tl-a" href="members/123-박홍근.html">박홍근</a> <b>기획예산처</b> — 2026.3.25 취임, <span class="mono">228일째</span></span></li>
+<li class="now"><span class="b">재임</span><span><a class="tl-a" href="members/204-이소영.html">이소영</a> <b>중소벤처기업부</b> — 2026.9.28 취임, <span class="mono">41일째</span></span></li>
+</ul></div>
+
+<p class="tl-note">IN 8명 · OUT 5명 · 이동 1건. 들어온 8명 가운데 5명이 아직 재임 중이고(정동영·윤호중·김성환·박홍근·이소영), 나간 5명(전재수·김민석·정성호·안규백·김윤덕)은 모두 의원직으로 돌아왔거나 국회로 복귀했습니다. 전임 3명(안규백·김윤덕·전재수)의 취임·퇴임 날짜는 국방부·국토교통부·해양수산부 1차 자료(취임사·이·취임식 공지)와 사퇴 보도로 재확인했습니다. 2026년 11월 8일 기준. 이름을 누르면 해당 의원 카드로 이동합니다(전재수는 명부 305명에 없어 카드 없음).</p>
+</div></div></details>
+<table class="ledger" id="tbl"><thead><tr>
+<th data-s="1">이름/정당</th><th data-s="2" class="hide-m">선거구</th><th data-s="3" class="hide-m">소속 위원회</th>
+<th class="hide-m">겸임</th>
+<th data-s="7">대표발의</th><th data-s="8">발의 관여</th><th data-s="9">가결</th><th>사법 상태</th><th data-s="4" class="hide-m">의석</th>
+</tr></thead><tbody id="tb"></tbody></table>
+
+<h2 class="sec"><small>TABS</small>트랙별 목록</h2>
+<div class="grid2">
+<div class="panel"><h3><a href="bills.html" style="color:inherit">법안 추적 →</a></h3><p class="srcs">의원별 대표발의·가결 현황 총계, 처리상태(단계) 분포, 13단계 심사 경로 정의.</p></div>
+<div class="panel"><h3><a href="cases.html" style="color:inherit">사법 리스크 →</a></h3><p class="srcs">형사절차가 확인된 50명 전수표, 의원직 상실 5명, 선거법 기소 15명, 사건번호 확인분.</p></div>
+<div class="panel"><h3><a href="assets.html" style="color:inherit">재산·병역·세금 →</a></h3><p class="srcs">재산공개 구조(토지·건물·주식·가상자산), 병무청 열람, 체납 명단 표기 규칙과 공식 원문 링크.</p></div>
+<div class="panel"><h3><a href="integrity.html" style="color:inherit">이해충돌·정치자금·로비 →</a></h3><p class="srcs">이해충돌방지법 10개 행위기준, 선관위 회계보고서, 로비 공개 제도 부재 기록.</p></div>
+</div>
+<div class="panel"><h3>데이터 파일</h3><p class="srcs">전체 데이터셋(JSON): <a href="data/22대-국회의원-전체-데이터.json" download>data/22대-국회의원-전체-데이터.json</a> — 의원·발의법안·사법·전과 통합. 재사용 시 출처 표기 부탁드립니다.</p></div>
+</main><script>
+const D=[["강경숙", "조국혁신당", "비례대표", "교육위원회, 예산결산특별위원회", "재직", 1, "2024.5~ 제22대", 97, 99, 6, 82, 11, 0, "", 0, "001-강경숙"], ["강대식", "국민의힘", "대구 동구군위군을", "국토교통위원회, 예산결산특별위원회", "재직", 1, "", 90, 90, 3, 68, 19, 0, "", 0, "002-강대식"], ["강득구", "더불어민주당", "경기 안양시만안구", "기후위기 특별위원회, 국토교통위원회", "재직", 1, "", 66, 66, 2, 49, 15, 0, "", 0, "003-강득구"], ["강명구", "국민의힘", "경북 구미시을", "행정안전위원회", "재직", 1, "", 81, 81, 0, 67, 14, 0, "2심", 0, "004-강명구"], ["강민국", "국민의힘", "경남 진주시을", "재정경제기획위원회", "재직", 1, "", 23, 23, 2, 10, 11, 0, "", 0, "005-강민국"], ["강선영", "국민의힘", "비례대표", "국방위원회, 성평등가족위원회", "재직", 1, "", 56, 56, 1, 45, 10, 0, "", 0, "006-강선영"], ["강선우", "무소속", "서울 강서구갑", "농림축산식품해양수산위원회", "재직", 1, "", 51, 51, 4, 21, 26, 0, "2심", 0, "007-강선우"], ["강승규", "국민의힘", "충남 홍성군예산군", "농림축산식품해양수산위원회", "재직", 1, "", 32, 32, 1, 23, 8, 0, "", 0, "008-강승규"], ["강준현", "더불어민주당", "세종특별자치시을", "정무위원회", "재직", 1, "", 71, 73, 7, 48, 18, 0, "", 0, "009-강준현"], ["고동진", "국민의힘", "서울 강남구병", "외교통일위원회", "재직", 1, "", 82, 82, 0, 66, 16, 0, "", 0, "010-고동진"], ["고민정", "더불어민주당", "서울 광진구을", "교육위원회", "재직", 1, "", 59, 59, 2, 43, 14, 0, "", 0, "011-고민정"], ["곽규택", "국민의힘", "부산 서구동구", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 법제사법위원회", "재직", 1, "", 77, 77, 0, 61, 16, 0, "", 0, "012-곽규택"], ["곽상언", "더불어민주당", "서울 종로구", "기후에너지환경노동위원회, 성평등가족위원회", "재직", 1, "", 38, 38, 0, 35, 3, 0, "", 0, "013-곽상언"], ["구자근", "국민의힘", "경북 구미시갑", "산업통상자원중소벤처기업위원회", "재직", 1, "", 96, 98, 3, 85, 10, 0, "확정", 0, "014-구자근"], ["권성동", "국민의힘", "강원 강릉시", "", "의원직 상실", 1, "", 19, 20, 0, 17, 3, 0, "의원직 상실", 0, "015-권성동"], ["권영세", "국민의힘", "서울 용산구", "외교통일위원회", "재직", 1, "", 32, 32, 2, 27, 3, 0, "", 0, "016-권영세"], ["권영진", "국민의힘", "대구 달서구병", "행정안전위원회", "재직", 1, "", 55, 63, 10, 29, 24, 0, "", 0, "017-권영진"], ["권칠승", "더불어민주당", "경기 화성시병", "보건복지위원회", "재직", 1, "", 86, 87, 0, 61, 26, 0, "", 0, "018-권칠승"], ["권향엽", "더불어민주당", "전남광주통합특별시 순천시광양시곡성군구례군을", "산업통상자원중소벤처기업위원회, 예산결산특별위원회", "재직", 1, "", 95, 95, 1, 76, 18, 0, "", 0, "019-권향엽"], ["김건", "국민의힘", "비례대표", "외교통일위원회, 성평등가족위원회", "재직", 1, "", 47, 48, 2, 36, 10, 0, "", 0, "020-김건"], ["김교흥", "더불어민주당", "인천 서구갑", "보건복지위원회, 예산결산특별위원회", "재직", 1, "", 51, 51, 1, 40, 10, 0, "", 0, "021-김교흥"], ["김기웅", "국민의힘", "대구 중구남구", "국회운영위원회, 보건복지위원회", "재직", 1, "", 42, 42, 3, 39, 0, 0, "", 0, "022-김기웅"], ["김기표", "더불어민주당", "경기 부천시을", "법제사법위원회", "재직", 1, "", 61, 61, 4, 45, 12, 0, "", 0, "023-김기표"], ["김기현", "국민의힘", "울산 남구을", "기후에너지환경노동위원회", "재직", 1, "", 54, 54, 1, 45, 8, 0, "1심", 0, "024-김기현"], ["김남국", "더불어민주당", "경기 안산시갑", "과학기술정보방송통신위원회, 예산결산특별위원회", "재직", 1, "", 2, 2, 0, 2, 0, 0, "", 0, "025-김남국"], ["김남근", "더불어민주당", "서울 성북구을", "국토교통위원회, 성평등가족위원회, 예산결산특별위원회", "재직", 1, "", 85, 85, 0, 72, 13, 0, "", 1, "026-김남근"], ["김남준", "더불어민주당", "인천 계양구을", "예산결산특별위원회, 재정경제기획위원회", "재직", 1, "", 16, 16, 0, 16, 0, 0, "", 0, "027-김남준"], ["김남희", "더불어민주당", "경기 광명시을", "연금개혁 특별위원회, 제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 법제사법위원회", "재직", 1, "", 73, 73, 4, 37, 32, 0, "", 0, "028-김남희"], ["김대식", "국민의힘", "부산 사상구", "외교통일위원회", "재직", 1, "", 44, 46, 3, 36, 7, 0, "", 0, "029-김대식"], ["김도읍", "국민의힘", "부산 강서구", "산업통상자원중소벤처기업위원회", "재직", 1, "2024.05~ 제22대", 121, 121, 9, 88, 24, 0, "", 0, "030-김도읍"], ["김동아", "더불어민주당", "서울 서대문구갑", "법제사법위원회", "재직", 1, "", 93, 95, 4, 75, 16, 0, "", 0, "031-김동아"], ["김문수", "더불어민주당", "전남광주통합특별시 순천시광양시곡성군구례군갑", "교육위원회", "재직", 1, "", 114, 114, 3, 94, 17, 0, "확정", 0, "032-김문수"], ["김미애", "국민의힘", "부산 해운대구을", "국토교통위원회, 국회운영위원회", "재직", 1, "", 144, 144, 8, 110, 26, 0, "", 0, "033-김미애"], ["김민석", "더불어민주당", "서울 영등포구을", "국방위원회", "재직", 1, "", 11, 11, 1, 7, 3, 0, "", 1, "034-김민석"], ["김민전", "국민의힘", "비례대표", "국회운영위원회, 법제사법위원회", "재직", 1, "", 68, 68, 3, 51, 14, 0, "", 0, "035-김민전"], ["김병기", "무소속", "서울 동작구갑", "국방위원회", "재직", 1, "", 45, 46, 1, 34, 11, 0, "수사", 0, "036-김병기"], ["김병주", "더불어민주당", "경기 남양주시을", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 국방위원회", "재직", 1, "", 45, 45, 2, 37, 6, 0, "", 0, "037-김병주"], ["김상훈", "국민의힘", "대구 서구", "재정경제기획위원회", "재직", 1, "", 117, 117, 1, 86, 30, 0, "", 0, "038-김상훈"], ["김석기", "국민의힘", "경북 경주시", "문화체육관광위원회", "재직", 1, "", 27, 27, 1, 20, 6, 0, "", 0, "039-김석기"], ["김선교", "국민의힘", "경기 여주시양평군", "농림축산식품해양수산위원회, 예산결산특별위원회", "재직", 1, "", 176, 176, 14, 108, 54, 0, "", 0, "040-김선교"], ["김선민", "조국혁신당", "비례대표", "과학기술정보방송통신위원회", "재직", 1, "", 66, 70, 0, 52, 18, 0, "", 0, "041-김선민"], ["김성범", "더불어민주당", "제주 서귀포시", "농림축산식품해양수산위원회", "재직", 1, "", 8, 8, 0, 8, 0, 0, "", 0, "042-김성범"], ["김성원", "국민의힘", "경기 동두천시양주시연천군을", "산업통상자원중소벤처기업위원회", "재직", 1, "", 157, 159, 4, 129, 26, 0, "", 0, "043-김성원"], ["김성환", "더불어민주당", "서울 노원구을", "재정경제기획위원회", "재직", 1, "", 14, 14, 2, 7, 5, 0, "", 0, "044-김성환"], ["김성회", "더불어민주당", "경기 고양시갑", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 기후위기 특별위원회, 국방위원회, 예산결산특별위원회, 제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 국회운영위원회", "재직", 1, "", 25, 25, 0, 16, 9, 0, "", 1, "045-김성회"], ["김소희", "국민의힘", "비례대표", "기후위기 특별위원회, 기후에너지환경노동위원회, 성평등가족위원회", "재직", 1, "", 118, 118, 3, 89, 26, 0, "", 0, "046-김소희"], ["김승수", "국민의힘", "대구 북구을", "국회운영위원회, 문화체육관광위원회", "재직", 1, "", 76, 77, 5, 52, 20, 0, "", 0, "047-김승수"], ["김승원", "더불어민주당", "경기 수원시갑", "산업통상자원중소벤처기업위원회", "재직", 1, "", 87, 87, 1, 72, 14, 0, "", 0, "048-김승원"], ["김영배", "더불어민주당", "서울 성북구갑", "제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 행정안전위원회", "재직", 1, "", 51, 52, 0, 44, 8, 0, "", 0, "049-김영배"], ["김영진", "더불어민주당", "경기 수원시병", "행정안전위원회", "재직", 1, "", 68, 68, 3, 46, 19, 0, "", 0, "050-김영진"], ["김영호", "더불어민주당", "서울 서대문구을", "외교통일위원회", "재직", 1, "", 40, 40, 1, 34, 5, 0, "", 0, "051-김영호"], ["김영환", "더불어민주당", "경기 고양시정", "재정경제기획위원회", "재직", 1, "", 45, 46, 1, 40, 5, 0, "", 0, "052-김영환"], ["김예지", "국민의힘", "비례대표", "행정안전위원회", "재직", 1, "", 151, 153, 4, 125, 24, 0, "", 0, "053-김예지"], ["김용만", "더불어민주당", "경기 하남시을", "제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 정무위원회", "재직", 1, "", 68, 68, 0, 62, 6, 0, "", 0, "054-김용만"], ["김용민", "더불어민주당", "경기 남양주시병", "법제사법위원회", "재직", 1, "", 63, 63, 9, 33, 21, 0, "", 0, "055-김용민"], ["김용태", "국민의힘", "경기 포천시가평군", "연금개혁 특별위원회, 기후위기 특별위원회, 농림축산식품해양수산위원회", "재직", 1, "", 95, 95, 6, 77, 12, 0, "", 0, "056-김용태"], ["김우영", "더불어민주당", "서울 은평구을", "과학기술정보방송통신위원회", "재직", 1, "", 32, 34, 0, 26, 8, 0, "", 0, "057-김우영"], ["김원이", "더불어민주당", "전남광주통합특별시 목포시", "기후위기 특별위원회, 산업통상자원중소벤처기업위원회", "재직", 1, "", 79, 79, 6, 51, 22, 0, "", 0, "058-김원이"], ["김위상", "국민의힘", "비례대표", "기후에너지환경노동위원회", "재직", 1, "", 125, 125, 5, 99, 21, 0, "", 0, "059-김위상"], ["김윤", "더불어민주당", "비례대표", "국회운영위원회, 보건복지위원회", "재직", 1, "", 91, 91, 5, 50, 36, 0, "", 0, "060-김윤"], ["김윤덕", "더불어민주당", "전북 전주시갑", "문화체육관광위원회", "재직", 1, "", 23, 23, 3, 7, 13, 0, "", 0, "061-김윤덕"], ["김은혜", "국민의힘", "경기 성남시분당구을", "제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 국토교통위원회", "재직", 1, "", 47, 48, 1, 38, 9, 0, "종결", 0, "062-김은혜"], ["김의겸", "더불어민주당", "전북 군산시김제시부안군갑", "법제사법위원회", "재직", 1, "", 15, 15, 4, 11, 0, 0, "", 0, "063-김의겸"], ["김장겸", "국민의힘", "비례대표", "과학기술정보방송통신위원회", "재직", 1, "", 39, 39, 0, 31, 8, 0, "", 0, "064-김장겸"], ["김재섭", "국민의힘", "서울 도봉구갑", "연금개혁 특별위원회, 정무위원회", "재직", 1, "2024.5~  제22대", 43, 43, 0, 38, 5, 0, "", 0, "065-김재섭"], ["김재원", "조국혁신당", "비례대표", "문화체육관광위원회", "재직", 1, "2024.5~ 제22대", 84, 84, 4, 68, 12, 0, "", 0, "066-김재원"], ["김정재", "국민의힘", "경북 포항시북구", "국토교통위원회, 성평등가족위원회", "재직", 1, "", 83, 83, 1, 66, 16, 0, "확정", 0, "067-김정재"], ["김정호", "더불어민주당", "경남 김해시을", "기후위기 특별위원회, 기후에너지환경노동위원회", "재직", 1, "", 111, 111, 3, 91, 17, 0, "", 0, "068-김정호"], ["김종민", "무소속", "세종특별자치시갑", "산업통상자원중소벤처기업위원회", "재직", 1, "", 60, 64, 1, 57, 6, 0, "종결", 1, "069-김종민"], ["김종양", "국민의힘", "경남 창원시의창구", "국토교통위원회", "재직", 1, "", 54, 55, 1, 45, 9, 0, "", 0, "070-김종양"], ["김주영", "더불어민주당", "경기 김포시갑", "기후에너지환경노동위원회", "재직", 1, "", 107, 107, 3, 60, 44, 0, "", 0, "071-김주영"], ["김준혁", "더불어민주당", "경기 수원시정", "교육위원회", "재직", 1, "", 54, 56, 3, 45, 8, 0, "", 0, "072-김준혁"], ["김준형", "조국혁신당", "비례대표", "국회운영위원회, 외교통일위원회", "재직", 1, "", 26, 27, 0, 26, 1, 0, "", 0, "073-김준형"], ["김준환", "더불어민주당", "비례대표", "외교통일위원회", "재직", 1, "", 4, 4, 0, 4, 0, 0, "", 0, "074-김준환"], ["김태규", "국민의힘", "울산 남구갑", "국회운영위원회, 법제사법위원회, 예산결산특별위원회", "재직", 1, "", 7, 7, 0, 7, 0, 0, "", 0, "075-김태규"], ["김태년", "더불어민주당", "경기 성남시수정구", "재정경제기획위원회", "재직", 1, "", 77, 78, 0, 65, 13, 0, "", 1, "076-김태년"], ["김태선", "더불어민주당", "울산 동구", "기후에너지환경노동위원회", "재직", 1, "", 151, 152, 8, 109, 35, 0, "", 0, "077-김태선"], ["김태호", "국민의힘", "경남 양산시을", "보건복지위원회", "재직", 1, "", 54, 54, 0, 48, 6, 0, "", 0, "078-김태호"], ["김한규", "더불어민주당", "제주 제주시을", "국회운영위원회, 법제사법위원회", "재직", 1, "", 75, 76, 3, 43, 30, 0, "", 0, "079-김한규"], ["김현", "더불어민주당", "경기 안산시을", "과학기술정보방송통신위원회, 예산결산특별위원회", "재직", 1, "", 162, 163, 10, 117, 36, 0, "", 0, "080-김현"], ["김현정", "더불어민주당", "경기 평택시병 ", "정무위원회", "재직", 1, "", 122, 123, 5, 95, 23, 0, "종결", 0, "081-김현정"], ["김형동", "국민의힘", "경북 안동시예천군", "기후에너지환경노동위원회", "재직", 1, "", 55, 55, 4, 25, 26, 0, "확인 필요", 0, "082-김형동"], ["김형연", "조국혁신당", "비례대표", "정무위원회", "재직", 1, "", 8, 8, 0, 8, 0, 0, "", 0, "083-김형연"], ["김희정", "국민의힘", "부산 연제구", "교육위원회", "재직", 1, "", 55, 55, 1, 45, 9, 0, "", 0, "084-김희정"], ["나경원", "국민의힘", "서울 동작구을", "기후에너지환경노동위원회, 예산결산특별위원회", "재직", 1, "", 31, 31, 0, 30, 1, 0, "2심", 0, "085-나경원"], ["남인순", "더불어민주당", "서울 송파구병", "연금개혁 특별위원회, 보건복지위원회", "재직", 1, "", 93, 93, 3, 66, 24, 0, "", 0, "086-남인순"], ["노종면", "더불어민주당", "인천 부평구갑", "문화체육관광위원회", "재직", 1, "", 40, 40, 0, 31, 9, 0, "", 0, "087-노종면"], ["맹성규", "더불어민주당", "인천 남동구갑", "외교통일위원회", "재직", 1, "", 28, 28, 4, 18, 6, 0, "", 0, "088-맹성규"], ["모경종", "더불어민주당", "인천 서구병", "연금개혁 특별위원회, 국토교통위원회", "재직", 1, "", 42, 43, 2, 30, 11, 0, "", 0, "089-모경종"], ["문금주", "더불어민주당", "전남광주통합특별시 고흥군보성군장흥군강진군", "국회운영위원회, 농림축산식품해양수산위원회", "재직", 1, "", 83, 84, 0, 63, 21, 0, "", 0, "090-문금주"], ["문대림", "더불어민주당", "제주 제주시갑", "농림축산식품해양수산위원회, 예산결산특별위원회", "재직", 1, "", 71, 71, 6, 44, 21, 0, "", 0, "091-문대림"], ["문정복", "더불어민주당", "경기 시흥시갑", "국토교통위원회", "재직", 1, "", 29, 29, 1, 17, 11, 0, "", 0, "092-문정복"], ["문진석", "더불어민주당", "충남 천안시갑", "재정경제기획위원회", "재직", 1, "", 176, 176, 2, 150, 24, 0, "", 0, "093-문진석"], ["민병덕", "더불어민주당", "경기 안양시동안구갑", "정무위원회", "재직", 1, "", 86, 90, 2, 66, 22, 0, "", 0, "094-민병덕"], ["민홍철", "더불어민주당", "경남 김해시갑", "국방위원회", "재직", 1, "", 59, 62, 1, 53, 8, 0, "", 0, "095-민홍철"], ["박균택", "더불어민주당", "전남광주통합특별시 광산구갑", "국회운영위원회, 법제사법위원회", "재직", 1, "", 85, 85, 4, 72, 9, 0, "종결", 0, "096-박균택"], ["박대출", "국민의힘", "경남 진주시갑", "정무위원회", "재직", 1, "", 45, 45, 4, 29, 12, 0, "", 0, "097-박대출"], ["박덕흠", "국민의힘", "충북 보은군옥천군영동군괴산군", "행정안전위원회", "재직", 1, "", 92, 92, 0, 67, 25, 0, "", 0, "098-박덕흠"], ["박민규", "더불어민주당", "서울 관악구갑", "정무위원회", "재직", 1, "", 49, 49, 3, 37, 9, 0, "", 0, "099-박민규"], ["박범계", "더불어민주당", "대전 서구을", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 교육위원회", "재직", 1, "", 29, 29, 0, 26, 3, 0, "2심", 0, "100-박범계"], ["박상웅", "국민의힘", "경남 밀양시의령군함안군창녕군", "예산결산특별위원회, 행정안전위원회", "재직", 1, "", 51, 51, 2, 39, 10, 0, "", 0, "101-박상웅"], ["박상혁", "더불어민주당", "경기 김포시을", "정무위원회", "재직", 1, "", 115, 115, 4, 87, 24, 0, "", 1, "102-박상혁"], ["박선원", "더불어민주당", "인천 부평구을", "국방위원회, 정보위원회", "재직", 1, "", 24, 25, 1, 20, 4, 0, "", 1, "103-박선원"], ["박성민", "국민의힘", "울산 중구", "산업통상자원중소벤처기업위원회", "재직", 1, "", 55, 57, 8, 34, 15, 0, "", 0, "104-박성민"], ["박성준", "더불어민주당", "서울 중구성동구을", "외교통일위원회", "재직", 1, "", 34, 36, 2, 23, 11, 0, "", 0, "105-박성준"], ["박성훈", "국민의힘", "부산 북구을", "정무위원회", "재직", 1, "", 145, 145, 7, 107, 31, 0, "", 0, "106-박성훈"], ["박수민", "국민의힘", "서울 강남구을", "연금개혁 특별위원회, 제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 기후에너지환경노동위원회", "재직", 1, "", 34, 34, 0, 26, 8, 0, "", 0, "107-박수민"], ["박수영", "국민의힘", "부산 남구", "재정경제기획위원회, 예산결산특별위원회", "재직", 1, "", 60, 62, 1, 40, 21, 0, "", 0, "108-박수영"], ["박용갑", "더불어민주당", "대전 중구", "보건복지위원회, 예산결산특별위원회", "재직", 1, "", 114, 114, 0, 84, 30, 0, "종결", 0, "109-박용갑"], ["박은정", "조국혁신당", "비례대표", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 법제사법위원회", "재직", 1, "", 47, 48, 0, 44, 4, 0, "종결", 0, "110-박은정"], ["박정", "더불어민주당", "경기 파주시을", "기후에너지환경노동위원회", "재직", 1, "", 233, 234, 6, 168, 60, 0, "", 0, "111-박정"], ["박정하", "국민의힘", "강원 원주시갑", "과학기술정보방송통신위원회, 예산결산특별위원회", "재직", 1, "", 58, 59, 2, 37, 20, 0, "", 0, "112-박정하"], ["박정현", "더불어민주당", "대전 대덕구", "기후위기 특별위원회, 국회운영위원회, 행정안전위원회", "재직", 1, "", 65, 65, 1, 52, 12, 0, "", 0, "113-박정현"], ["박정훈", "국민의힘", "서울 송파구갑", "교육위원회", "재직", 1, "", 22, 22, 0, 18, 4, 0, "", 0, "114-박정훈"], ["박주민", "더불어민주당", "서울 은평구갑", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 행정안전위원회", "재직", 1, "", 54, 54, 3, 43, 8, 0, "2심", 0, "115-박주민"], ["박준태", "국민의힘", "비례대표", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 정무위원회", "재직", 1, "", 21, 21, 0, 18, 3, 0, "", 0, "116-박준태"], ["박지원", "더불어민주당", "전북 군산시김제시부안군을", "보건복지위원회, 예산결산특별위원회", "재직", 1, 11, 11, 0, 11, 37, 4, 0, "", 0, "117-박지원"], ["박지원", "더불어민주당", "전남광주통합특별시 해남군완도군진도군", "법제사법위원회, 정보위원회", "재직", 1, 32, 32, 2, 26, 37, 4, 0, "", 0, "118-박지원"], ["박지혜", "더불어민주당", "경기 의정부시갑", "기후위기 특별위원회, 기후에너지환경노동위원회, 성평등가족위원회", "재직", 1, "", 91, 91, 2, 69, 20, 0, "", 0, "119-박지혜"], ["박충권", "국민의힘", "비례대표", "외교통일위원회", "재직", 1, "", 61, 61, 5, 36, 20, 0, "", 0, "120-박충권"], ["박해철", "더불어민주당", "경기 안산시병", "기후에너지환경노동위원회", "재직", 1, "", 134, 139, 2, 102, 35, 0, "", 0, "121-박해철"], ["박형수", "국민의힘", "경북 의성군청송군영덕군울진군", "법제사법위원회", "재직", 1, "", 44, 44, 1, 40, 3, 0, "", 0, "122-박형수"], ["박홍근", "더불어민주당", "서울 중랑구을", "행정안전위원회", "재직", 1, "", 33, 33, 0, 21, 12, 0, "", 1, "123-박홍근"], ["박홍배", "더불어민주당", "비례대표", "연금개혁 특별위원회, 정무위원회, 예산결산특별위원회", "재직", 1, "", 162, 162, 3, 116, 43, 0, "", 0, "124-박홍배"], ["박희승", "더불어민주당", "전북 남원시장수군임실군순창군", "산업통상자원중소벤처기업위원회", "재직", 1, "", 82, 82, 2, 62, 18, 0, "", 0, "125-박희승"], ["배준영", "국민의힘", "인천 중구강화군옹진군", "예산결산특별위원회, 재정경제기획위원회", "재직", 1, "", 79, 80, 1, 49, 30, 0, "", 0, "126-배준영"], ["배현진", "국민의힘", "서울 송파구을", "문화체육관광위원회", "재직", 1, "", 17, 17, 1, 15, 1, 0, "", 0, "127-배현진"], ["백선희", "조국혁신당", "비례대표", "보건복지위원회, 예산결산특별위원회", "재직", 1, "", 64, 64, 0, 56, 8, 0, "", 0, "128-백선희"], ["백승아", "더불어민주당", "비례대표", "교육위원회", "재직", 1, "", 53, 53, 3, 33, 17, 0, "", 0, "129-백승아"], ["백종헌", "국민의힘", "부산 금정구", "보건복지위원회", "재직", 1, "", 24, 24, 7, 8, 9, 0, "", 0, "130-백종헌"], ["백혜련", "더불어민주당", "경기 수원시을", "산업통상자원중소벤처기업위원회, 성평등가족위원회, 정보위원회", "재직", 1, "", 122, 122, 4, 105, 13, 0, "", 0, "131-백혜련"], ["복기왕", "더불어민주당", "충남 아산시갑", "국토교통위원회", "재직", 1, "", 123, 134, 2, 99, 33, 0, "", 0, "132-복기왕"], ["부승찬", "더불어민주당", "경기 용인시병", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 국토교통위원회", "재직", 1, "", 32, 33, 3, 25, 5, 0, "", 0, "133-부승찬"], ["서명옥", "국민의힘", "서울 강남구갑", "행정안전위원회", "재직", 1, "", 50, 50, 5, 32, 13, 0, "", 0, "134-서명옥"], ["서미화", "더불어민주당", "비례대표", "보건복지위원회, 국회운영위원회", "재직", 1, "", 108, 120, 4, 100, 16, 0, "", 0, "135-서미화"], ["서범수", "국민의힘", "울산 울주군", "기후위기 특별위원회, 제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 교육위원회", "재직", 1, "", 51, 52, 3, 34, 15, 0, "", 0, "136-서범수"], ["서삼석", "더불어민주당", "전남광주통합특별시 영암군무안군신안군", "농림축산식품해양수산위원회", "재직", 1, "", 116, 116, 4, 87, 25, 0, "", 0, "137-서삼석"], ["서영교", "더불어민주당", "서울 중랑구갑", "법제사법위원회", "재직", 1, "", 154, 155, 9, 81, 65, 0, "", 1, "138-서영교"], ["서영석", "더불어민주당", "경기 부천시갑", "보건복지위원회, 연금개혁 특별위원회", "재직", 1, "", 83, 83, 3, 52, 28, 0, "", 0, "139-서영석"], ["서왕진", "조국혁신당", "비례대표", "기후위기 특별위원회, 기후에너지환경노동위원회", "재직", 1, "", 52, 54, 1, 40, 13, 0, "", 0, "140-서왕진"], ["서일준", "국민의힘", "경남 거제시", "정무위원회", "재직", 1, "", 34, 34, 5, 24, 5, 0, "종결", 0, "141-서일준"], ["서지영", "국민의힘", "부산 동래구", "산업통상자원중소벤처기업위원회, 예산결산특별위원회", "재직", 1, "", 61, 61, 0, 47, 14, 0, "", 0, "142-서지영"], ["서천호", "국민의힘", "경남 사천시남해군하동군", "과학기술정보방송통신위원회, 정보위원회", "재직", 1, "", 71, 71, 5, 48, 18, 0, "", 0, "143-서천호"], ["성일종", "국민의힘", "충남 서산시태안군", "국방위원회", "재직", 1, "", 56, 56, 2, 39, 15, 0, "", 0, "144-성일종"], ["소병훈", "더불어민주당", "경기 광주시갑", "보건복지위원회", "재직", 1, "", 91, 91, 5, 69, 17, 0, "", 0, "145-소병훈"], ["손명수", "더불어민주당", "경기 용인시을", "정무위원회", "재직", 1, "", 43, 45, 3, 30, 12, 0, "", 0, "146-손명수"], ["손솔", "진보당", "비례대표", "법제사법위원회, 성평등가족위원회", "재직", 1, "", 38, 38, 0, 36, 2, 0, "", 0, "147-손솔"], ["송기헌", "더불어민주당", "강원 원주시을", "과학기술정보방송통신위원회", "재직", 1, "", 37, 42, 1, 31, 10, 0, "", 0, "148-송기헌"], ["송석준", "국민의힘", "경기 이천시", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 외교통일위원회", "재직", 1, "", 48, 48, 2, 39, 7, 0, "", 0, "149-송석준"], ["송언석", "국민의힘", "경북 김천시", "예산결산특별위원회, 정무위원회", "재직", 1, "", 58, 58, 1, 45, 12, 0, "확정", 0, "150-송언석"], ["송영길", "더불어민주당", "인천 연수구갑", "국방위원회", "재직", 1, "", 8, 8, 0, 7, 1, 0, "", 0, "151-송영길"], ["송옥주", "더불어민주당", "경기 화성시갑", "농림축산식품해양수산위원회", "재직", 1, "", 138, 138, 5, 97, 36, 0, "2심", 0, "152-송옥주"], ["송재봉", "더불어민주당", "충북 청주시청원구", "기후위기 특별위원회, 산업통상자원중소벤처기업위원회, 예산결산특별위원회", "재직", 1, "", 103, 105, 5, 81, 19, 0, "", 1, "153-송재봉"], ["신동욱", "국민의힘", "서울 서초구을", "제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 정무위원회", "재직", 1, "", 29, 29, 0, 24, 5, 0, "", 0, "154-신동욱"], ["신성범", "국민의힘", "경남 산청군함양군거창군합천군", "국토교통위원회", "재직", 1, "", 49, 49, 1, 34, 14, 0, "확인 필요", 0, "155-신성범"], ["신영대", "더불어민주당", "전북 군산시김제시부안군갑", "", "의원직 상실", 1, "", 51, 53, 1, 37, 15, 0, "의원직 상실", 0, "156-신영대"], ["신장식", "조국혁신당", "비례대표", "농림축산식품해양수산위원회", "재직", 1, "", 91, 104, 0, 90, 14, 0, "", 0, "157-신장식"], ["신정훈", "더불어민주당", "전남광주통합특별시 나주시화순군", "기후에너지환경노동위원회", "재직", 1, "", 59, 60, 1, 40, 19, 0, "2심", 0, "158-신정훈"], ["안규백", "더불어민주당", "서울 동대문구갑", "교육위원회", "재직", 1, "", 25, 25, 1, 17, 7, 0, "", 0, "159-안규백"], ["안도걸", "더불어민주당", "전남광주통합특별시 동구남구을", "예산결산특별위원회, 재정경제기획위원회", "재직", 1, "", 76, 76, 1, 52, 23, 0, "1심", 0, "160-안도걸"], ["안상훈", "국민의힘", "비례대표", "연금개혁 특별위원회, 재정경제기획위원회", "재직", 1, "", 74, 74, 5, 53, 16, 0, "", 0, "161-안상훈"], ["안철수", "국민의힘", "경기 성남시분당구갑", "외교통일위원회", "재직", 1, "", 44, 44, 0, 39, 5, 0, "", 0, "162-안철수"], ["안태준", "더불어민주당", "경기 광주시을", "국토교통위원회", "재직", 1, "", 57, 57, 0, 51, 6, 0, "", 0, "163-안태준"], ["안호영", "더불어민주당", "전북 완주군진안군무주군", "기후에너지환경노동위원회", "재직", 1, "", 65, 66, 2, 44, 20, 0, "종결", 0, "164-안호영"], ["양문석", "더불어민주당", "대전 중구", "", "의원직 상실", 1, "", 28, 28, 2, 23, 3, 0, "의원직 상실", 0, "165-양문석"], ["양부남", "더불어민주당", "전남광주통합특별시 서구을", "제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 행정안전위원회", "재직", 1, "", 105, 105, 3, 76, 26, 0, "", 0, "166-양부남"], ["어기구", "더불어민주당", "충남 당진시", "예산결산특별위원회, 기후에너지환경노동위원회", "재직", 1, "", 65, 65, 8, 33, 24, 0, "종결", 0, "167-어기구"], ["엄태영", "국민의힘", "충북 제천시단양군", "국토교통위원회, 예산결산특별위원회", "재직", 1, "", 131, 135, 0, 97, 38, 0, "", 0, "168-엄태영"], ["염태영", "더불어민주당", "경기 수원시무", "기후위기 특별위원회, 국토교통위원회", "재직", 1, "", 65, 65, 4, 46, 15, 0, "", 0, "169-염태영"], ["오기형", "더불어민주당", "서울 도봉구을", "연금개혁 특별위원회, 재정경제기획위원회", "재직", 1, "", 28, 28, 3, 18, 7, 0, "", 1, "170-오기형"], ["오세희", "더불어민주당", "비례대표", "산업통상자원중소벤처기업위원회", "재직", 1, "", 90, 90, 4, 57, 29, 0, "확인 필요", 0, "171-오세희"], ["용혜인", "기본소득당", "비례대표", "행정안전위원회", "재직", 1, "", 63, 68, 1, 57, 10, 0, "", 0, "172-용혜인"], ["우원식", "더불어민주당", "서울 노원구갑", "외교통일위원회", "재직", 1, "", 0, 0, 0, 0, 0, 0, "", 0, "173-우원식"], ["우재준", "국민의힘", "대구 북구갑", "연금개혁 특별위원회, 산업통상자원중소벤처기업위원회", "재직", 1, "", 50, 50, 0, 39, 11, 0, "", 0, "174-우재준"], ["유동수", "더불어민주당", "인천 계양구갑", "정무위원회", "재직", 1, "", 31, 31, 0, 23, 8, 0, "", 0, "175-유동수"], ["유상범", "국민의힘", "강원 홍천군횡성군영월군평창군", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 국토교통위원회, 예산결산특별위원회", "재직", 1, "", 47, 47, 1, 37, 9, 0, "", 0, "176-유상범"], ["유영하", "국민의힘", "대구 달서구갑", "국방위원회, 정보위원회", "재직", 1, "", 18, 18, 1, 11, 6, 0, "", 0, "177-유영하"], ["유용원", "국민의힘", "비례대표", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 국방위원회", "재직", 1, "", 49, 56, 4, 47, 5, 0, "", 0, "178-유용원"], ["유의동", "국민의힘", "경기 평택시을", "국토교통위원회", "재직", 1, "", 4, 4, 0, 3, 1, 0, "", 0, "179-유의동"], ["윤건영", "더불어민주당", "서울 구로구을", "제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 정보위원회, 행정안전위원회", "재직", 1, "", 73, 73, 16, 50, 7, 0, "", 1, "180-윤건영"], ["윤상현", "국민의힘", "인천 동구미추홀구을", "제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 법제사법위원회", "재직", 1, "", 33, 33, 0, 27, 6, 0, "", 0, "181-윤상현"], ["윤영석", "국민의힘", "경남 양산시갑", "연금개혁 특별위원회, 재정경제기획위원회", "재직", 1, "", 75, 76, 1, 55, 20, 0, "", 0, "182-윤영석"], ["윤용근", "국민의힘", "충남 공주시부여군청양군", "국회운영위원회, 문화체육관광위원회, 예산결산특별위원회", "재직", 1, "", 4, 4, 0, 4, 0, 0, "", 0, "183-윤용근"], ["윤재옥", "국민의힘", "대구 달서구을", "기후에너지환경노동위원회, 예산결산특별위원회", "재직", 1, "", 56, 57, 3, 34, 20, 0, "", 0, "184-윤재옥"], ["윤종군", "더불어민주당", "경기 안성시", "국토교통위원회", "재직", 1, "", 39, 41, 2, 37, 2, 0, "", 0, "185-윤종군"], ["윤종오", "진보당", "울산 북구", "국토교통위원회, 국회운영위원회", "재직", 1, "", 66, 72, 2, 59, 11, 0, "", 0, "186-윤종오"], ["윤준병", "더불어민주당", "전북 정읍시고창군", "농림축산식품해양수산위원회", "재직", 1, "", 300, 360, 5, 216, 79, 0, "종결", 0, "187-윤준병"], ["윤한홍", "국민의힘", "경남 창원시마산회원구", "산업통상자원중소벤처기업위원회", "재직", 1, "", 40, 41, 1, 32, 8, 0, "2심", 0, "188-윤한홍"], ["윤호중", "더불어민주당", "경기 구리시", "교육위원회", "재직", 1, "", 27, 27, 0, 22, 5, 0, "", 0, "189-윤호중"], ["윤후덕", "더불어민주당", "경기 파주시갑", "재정경제기획위원회", "재직", 1, "", 55, 55, 1, 51, 3, 0, "", 1, "190-윤후덕"], ["이강일", "더불어민주당", "충북 청주시상당구", "정무위원회", "재직", 1, "", 95, 95, 0, 82, 13, 0, "", 0, "191-이강일"], ["이개호", "더불어민주당", "전남광주통합특별시 담양군함평군영광군장성군", "농림축산식품해양수산위원회", "재직", 1, "", 52, 52, 0, 43, 8, 1, "", 0, "192-이개호"], ["이건태", "더불어민주당", "경기 부천시병", "기후에너지환경노동위원회, 예산결산특별위원회", "재직", 1, "", 70, 70, 2, 60, 8, 0, "", 0, "193-이건태"], ["이광재", "더불어민주당", "경기 하남시갑", "예산결산특별위원회, 재정경제기획위원회", "재직", 1, "", 8, 8, 0, 8, 0, 0, "", 0, "194-이광재"], ["이광희", "더불어민주당", "충북 청주시서원구", "성평등가족위원회, 행정안전위원회", "재직", 1, "", 91, 91, 2, 79, 10, 0, "", 0, "195-이광희"], ["이기헌", "더불어민주당", "경기 고양시병", "제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 예산결산특별위원회, 외교통일위원회, 정보위원회", "재직", 1, "", 52, 52, 7, 39, 6, 0, "", 0, "196-이기헌"], ["이달희", "국민의힘", "비례대표", "보건복지위원회", "재직", 1, "", 69, 69, 3, 51, 15, 0, "", 0, "197-이달희"], ["이만희", "국민의힘", "경북 영천시청도군", "보건복지위원회", "재직", 1, "", 142, 142, 6, 87, 49, 0, "확정", 0, "198-이만희"], ["이병진", "더불어민주당", "서울 도봉구갑", "", "의원직 상실", 1, "", 89, 89, 8, 59, 22, 0, "의원직 상실", 0, "199-이병진"], ["이상식", "더불어민주당", "경기 용인시갑", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 행정안전위원회", "재직", 1, "", 55, 55, 2, 38, 15, 0, "3심", 0, "200-이상식"], ["이상휘", "국민의힘", "경북 포항시남구울릉군", "농림축산식품해양수산위원회, 국회운영위원회, 예산결산특별위원회", "재직", 1, "", 52, 54, 3, 42, 9, 0, "", 0, "201-이상휘"], ["이성권", "국민의힘", "부산 사하구갑", "농림축산식품해양수산위원회", "재직", 1, "", 52, 53, 3, 37, 13, 0, "", 0, "202-이성권"], ["이성윤", "더불어민주당", "전북 전주시을", "법제사법위원회", "재직", 1, "", 64, 64, 3, 52, 9, 0, "", 0, "203-이성윤"], ["이소영", "더불어민주당", "경기 의왕시과천시", "기후위기 특별위원회, 정무위원회", "재직", 1, "", 34, 34, 0, 23, 11, 0, "종결", 0, "204-이소영"], ["이소희", "국민의힘", "비례대표", "보건복지위원회", "재직", 1, "", 4, 4, 0, 4, 0, 0, "", 0, "205-이소희"], ["이수진", "더불어민주당", "경기 성남시중원구", "보건복지위원회, 성평등가족위원회", "재직", 1, "", 245, 246, 13, 167, 66, 0, "", 0, "206-이수진"], ["이양수", "국민의힘", "강원 속초시인제군고성군양양군", "농림축산식품해양수산위원회, 정보위원회", "재직", 1, "", 45, 46, 5, 22, 19, 0, "", 0, "207-이양수"], ["이언주", "더불어민주당", "경기 용인시정", "산업통상자원중소벤처기업위원회", "재직", 1, "", 60, 60, 1, 51, 8, 0, "종결", 0, "208-이언주"], ["이연희", "더불어민주당", "충북 청주시흥덕구", "과학기술정보방송통신위원회, 성평등가족위원회, 예산결산특별위원회", "재직", 1, "", 101, 101, 7, 69, 25, 0, "", 1, "209-이연희"], ["이용선", "더불어민주당", "서울 양천구을", "국토교통위원회", "재직", 1, "", 35, 36, 0, 31, 5, 0, "", 1, "210-이용선"], ["이용우", "더불어민주당", "인천 서구을", "기후에너지환경노동위원회", "재직", 1, "", 173, 174, 0, 116, 58, 0, "종결", 0, "211-이용우"], ["이인선", "국민의힘", "대구 수성구을", "교육위원회, 예산결산특별위원회", "재직", 1, "", 78, 80, 3, 45, 32, 0, "", 0, "212-이인선"], ["이인영", "더불어민주당", "서울 구로구갑", "보건복지위원회, 정보위원회", "재직", 1, "", 50, 50, 0, 38, 12, 0, "", 1, "213-이인영"], ["이재강", "더불어민주당", "경기 의정부시을", "외교통일위원회", "재직", 1, "", 35, 35, 0, 32, 3, 0, "", 0, "214-이재강"], ["이재관", "더불어민주당", "충남 천안시을", "농림축산식품해양수산위원회", "재직", 1, "", 59, 59, 3, 39, 17, 0, "", 0, "215-이재관"], ["이재정", "더불어민주당", "경기 안양시동안구을", "문화체육관광위원회", "재직", 1, "", 38, 38, 3, 33, 2, 0, "", 0, "216-이재정"], ["이정문", "더불어민주당", "충남 천안시병", "문화체육관광위원회", "재직", 1, "", 95, 96, 1, 82, 13, 0, "", 0, "217-이정문"], ["이정헌", "더불어민주당", "서울 광진구갑", "과학기술정보방송통신위원회, 국회운영위원회", "재직", 1, "", 61, 61, 3, 46, 12, 0, "종결", 0, "218-이정헌"], ["이종배", "국민의힘", "충북 충주시", "기후위기 특별위원회, 기후에너지환경노동위원회", "재직", 1, "", 114, 114, 3, 98, 13, 0, "", 0, "219-이종배"], ["이종욱", "국민의힘", "경남 창원시진해구", "예산결산특별위원회, 재정경제기획위원회", "재직", 1, "", 50, 52, 5, 40, 7, 0, "수사", 0, "220-이종욱"], ["이주영", "개혁신당", "비례대표", "교육위원회", "재직", 1, "", 33, 33, 2, 23, 8, 0, "", 0, "221-이주영"], ["이주희", "더불어민주당", "비례대표", "기후위기 특별위원회, 과학기술정보방송통신위원회, 국회운영위원회, 성평등가족위원회", "재직", 1, "", 47, 53, 1, 46, 6, 0, "", 0, "222-이주희"], ["이준석", "개혁신당", "경기 화성시을", "제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 예산결산특별위원회, 재정경제기획위원회", "재직", 1, "", 23, 24, 1, 22, 1, 0, "", 0, "223-이준석"], ["이진숙", "국민의힘", "대구 달성군", "과학기술정보방송통신위원회", "재직", 1, "", 7, 7, 0, 7, 0, 0, "", 0, "224-이진숙"], ["이철규", "국민의힘", "강원 동해시태백시삼척시정선군", "기후에너지환경노동위원회", "재직", 1, "", 41, 41, 8, 19, 14, 0, "확정", 0, "225-이철규"], ["이춘석", "무소속", "전북 익산시갑", "재정경제기획위원회", "재직", 1, "", 63, 63, 1, 50, 12, 0, "수사", 0, "226-이춘석"], ["이학영", "더불어민주당", "경기 군포시", "기후에너지환경노동위원회", "재직", 1, "", 112, 112, 0, 96, 16, 0, "", 1, "227-이학영"], ["이해식", "더불어민주당", "서울 강동구을", "제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 행정안전위원회", "재직", 1, "", 97, 97, 9, 57, 31, 0, "", 0, "228-이해식"], ["이헌승", "국민의힘", "부산 부산진구을", "기후위기 특별위원회, 기후에너지환경노동위원회", "재직", 1, "", 84, 84, 1, 69, 14, 0, "", 0, "229-이헌승"], ["이훈기", "더불어민주당", "인천 남동구을", "과학기술정보방송통신위원회", "재직", 1, "", 122, 122, 1, 98, 23, 0, "", 0, "230-이훈기"], ["임문영", "더불어민주당", "전남광주통합특별시 광산구을", "산업통상자원중소벤처기업위원회", "재직", 1, "", 12, 12, 0, 12, 0, 0, "", 0, "231-임문영"], ["임미애", "더불어민주당", "비례대표", "국회운영위원회, 농림축산식품해양수산위원회", "재직", 1, "", 100, 100, 3, 52, 45, 0, "", 0, "232-임미애"], ["임오경", "더불어민주당", "경기 광명시갑", "문화체육관광위원회", "재직", 1, "", 101, 103, 10, 64, 29, 0, "", 0, "233-임오경"], ["임이자", "국민의힘", "경북 상주시문경시 ", "재정경제기획위원회", "재직", 1, "", 83, 83, 2, 53, 28, 0, "", 0, "234-임이자"], ["임종득", "국민의힘", "경북 영주시영양군봉화군", "국방위원회, 성평등가족위원회", "재직", 1, "", 125, 125, 2, 107, 16, 0, "", 0, "235-임종득"], ["임호선", "더불어민주당", "충북 증평군진천군음성군", "예산결산특별위원회, 행정안전위원회", "재직", 1, "", 106, 106, 3, 91, 12, 0, "", 0, "236-임호선"], ["장경태", "무소속", "서울 동대문구을", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 국토교통위원회", "재직", 1, "", 35, 35, 1, 26, 8, 0, "", 0, "237-장경태"], ["장동혁", "국민의힘", "충남 보령시서천군", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 교육위원회", "재직", 1, "", 24, 24, 0, 18, 6, 0, "1심", 0, "238-장동혁"], ["장종태", "더불어민주당", "대전 서구갑", "국토교통위원회, 국회운영위원회", "재직", 1, "", 49, 49, 7, 33, 9, 0, "", 0, "239-장종태"], ["장철민", "더불어민주당", "대전 동구", "산업통상자원중소벤처기업위원회", "재직", 1, "", 77, 79, 2, 64, 13, 0, "", 0, "240-장철민"], ["전용기", "더불어민주당", "경기 화성시정", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 국토교통위원회, 국회운영위원회", "재직", 1, "", 82, 83, 1, 73, 9, 0, "", 0, "241-전용기"], ["전은수", "더불어민주당", "충남 아산시을", "산업통상자원중소벤처기업위원회, 성평등가족위원회, 국회운영위원회", "재직", 1, "", 10, 10, 0, 10, 0, 0, "", 0, "242-전은수"], ["전종덕", "진보당", "비례대표", "연금개혁 특별위원회, 보건복지위원회", "재직", 1, "", 47, 54, 1, 45, 8, 0, "", 0, "243-전종덕"], ["전진숙", "더불어민주당", "전남광주통합특별시 북구을", "보건복지위원회, 예산결산특별위원회", "재직", 1, "", 106, 106, 2, 84, 20, 0, "", 0, "244-전진숙"], ["전현희", "더불어민주당", "서울 중구성동구갑", "정무위원회", "재직", 1, "", 60, 60, 0, 54, 6, 0, "", 0, "245-전현희"], ["정동만", "국민의힘", "부산 기장군", "국토교통위원회", "재직", 1, "", 50, 51, 0, 46, 5, 0, "", 0, "246-정동만"], ["정동영", "더불어민주당", "전북 전주시병", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 과학기술정보방송통신위원회", "재직", 1, "", 16, 17, 0, 14, 3, 0, "확정", 0, "247-정동영"], ["정성국", "국민의힘", "부산 부산진구갑", "교육위원회", "재직", 1, "", 38, 38, 2, 24, 12, 0, "", 0, "248-정성국"], ["정성호", "더불어민주당", "경기 동두천시양주시연천군갑", "재정경제기획위원회", "재직", 1, "", 50, 50, 3, 30, 17, 0, "", 0, "249-정성호"], ["정연욱", "국민의힘", "부산 수영구", "문화체육관광위원회", "재직", 1, "", 22, 22, 2, 14, 6, 0, "", 0, "250-정연욱"], ["정일영", "더불어민주당", "인천 연수구을", "국토교통위원회", "재직", 1, "", 63, 63, 0, 50, 13, 0, "", 0, "251-정일영"], ["정점식", "국민의힘", "경남 통영시고성군", "국회운영위원회, 외교통일위원회, 정보위원회", "재직", 1, "", 38, 48, 1, 40, 7, 0, "", 0, "252-정점식"], ["정준호", "더불어민주당", "전남광주통합특별시 북구갑", "문화체육관광위원회, 예산결산특별위원회", "재직", 1, "", 76, 76, 1, 60, 15, 0, "2심", 0, "253-정준호"], ["정진욱", "더불어민주당", "전남광주통합특별시 동구남구갑", "산업통상자원중소벤처기업위원회", "재직", 1, "", 53, 53, 1, 41, 11, 0, "", 0, "254-정진욱"], ["정청래", "더불어민주당", "서울 마포구을", "외교통일위원회", "재직", 1, "", 36, 36, 0, 29, 7, 0, "", 1, "255-정청래"], ["정춘생", "조국혁신당", "비례대표", "제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 성평등가족위원회, 행정안전위원회", "재직", 1, "", 112, 119, 4, 94, 21, 0, "", 1, "256-정춘생"], ["정태호", "더불어민주당", "서울 관악구을", "예산결산특별위원회, 재정경제기획위원회", "재직", 1, "", 88, 89, 2, 66, 21, 0, "", 1, "257-정태호"], ["정혜경", "진보당", "비례대표", "기후위기 특별위원회, 기후에너지환경노동위원회, 예산결산특별위원회", "재직", 1, "", 63, 74, 2, 57, 15, 0, "", 0, "258-정혜경"], ["정희용", "국민의힘", "경북 고령군성주군칠곡군", "국토교통위원회", "재직", 1, "", 110, 111, 5, 80, 26, 0, "", 0, "259-정희용"], ["조경태", "국민의힘", "부산 사하구을", "과학기술정보방송통신위원회", "재직", 1, "", 66, 66, 11, 37, 18, 0, "", 0, "260-조경태"], ["조계원", "더불어민주당", "전남광주통합특별시 여수시을", "문화체육관광위원회", "재직", 1, "", 84, 84, 4, 68, 12, 0, "확인 필요", 0, "261-조계원"], ["조국", "조국혁신당", "비례대표", "", "의원직 상실", 1, "", 10, 10, 0, 7, 3, 0, "의원직 상실", 1, "262-조국"], ["조배숙", "국민의힘", "비례대표", "예산결산특별위원회, 보건복지위원회", "재직", 1, "", 26, 26, 0, 21, 5, 0, "", 0, "263-조배숙"], ["조승래", "더불어민주당", "대전 유성구갑", "재정경제기획위원회", "재직", 1, "", 53, 54, 0, 40, 14, 0, "", 0, "264-조승래"], ["조승환", "국민의힘", "부산 중구영도구", "농림축산식품해양수산위원회", "재직", 1, "", 55, 55, 1, 40, 14, 0, "", 0, "265-조승환"], ["조은희", "국민의힘", "서울 서초구갑", "기후위기 특별위원회, 문화체육관광위원회", "재직", 1, "", 71, 72, 2, 56, 14, 0, "", 0, "266-조은희"], ["조인철", "더불어민주당", "전남광주통합특별시 서구갑", "국토교통위원회, 예산결산특별위원회", "재직", 1, "", 114, 114, 3, 74, 37, 0, "", 0, "267-조인철"], ["조정식", "무소속", "경기 시흥시을", null, "재직", 1, "", 27, 27, 0, 26, 1, 0, "", 0, "268-조정식"], ["조정훈", "국민의힘", "서울 마포구갑", "정무위원회", "재직", 1, "", 60, 60, 5, 43, 12, 0, "", 0, "269-조정훈"], ["조지연", "국민의힘", "경북 경산시", "기후위기 특별위원회, 산업통상자원중소벤처기업위원회, 성평등가족위원회", "재직", 1, "", 82, 82, 2, 53, 27, 0, "확정", 0, "270-조지연"], ["주진우", "국민의힘", "부산 해운대구갑", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 법제사법위원회", "재직", 1, "", 37, 37, 0, 36, 1, 0, "", 0, "271-주진우"], ["주철현", "더불어민주당", "전남광주통합특별시 여수시갑", "농림축산식품해양수산위원회", "재직", 1, "", 45, 45, 3, 29, 13, 0, "", 0, "272-주철현"], ["주호영", "국민의힘", "대구 수성구갑", "행정안전위원회", "재직", 1, "", 58, 59, 3, 38, 18, 0, "", 0, "273-주호영"], ["진선미", "더불어민주당", "서울 강동구갑", "문화체육관광위원회", "재직", 1, "", 46, 46, 5, 35, 6, 0, "종결", 0, "274-진선미"], ["진성준", "더불어민주당", "서울 강서구을", "국방위원회", "재직", 1, "", 64, 64, 2, 53, 9, 0, "", 1, "275-진성준"], ["진종오", "국민의힘", "비례대표", "행정안전위원회", "재직", 1, "2024.5~ 제22대", 41, 41, 1, 33, 7, 0, "", 0, "276-진종오"], ["차규근", "조국혁신당", "비례대표", "산업통상자원중소벤처기업위원회", "재직", 1, "", 63, 65, 0, 52, 13, 0, "", 0, "277-차규근"], ["차지호", "더불어민주당", "경기 오산시", "기후위기 특별위원회, 외교통일위원회", "재직", 1, "", 21, 21, 0, 18, 3, 0, "", 0, "278-차지호"], ["채현일", "더불어민주당", "서울 영등포구갑", "행정안전위원회", "재직", 1, "", 47, 47, 0, 42, 5, 0, "", 0, "279-채현일"], ["천준호", "더불어민주당", "서울 강북구갑", "국방위원회, 국회운영위원회", "재직", 1, "", 39, 39, 4, 24, 11, 0, "", 0, "280-천준호"], ["천하람", "개혁신당", "비례대표", "국방위원회, 국회운영위원회", "재직", 1, "", 20, 26, 2, 19, 5, 0, "", 0, "281-천하람"], ["최기상", "더불어민주당", "서울 금천구", "예산결산특별위원회, 기후에너지환경노동위원회", "재직", 1, "", 48, 48, 1, 36, 11, 0, "", 0, "282-최기상"], ["최민희", "더불어민주당", "경기 남양주시갑", "문화체육관광위원회", "재직", 1, "", 77, 77, 6, 42, 29, 0, "", 0, "283-최민희"], ["최보윤", "국민의힘", "비례대표", "제9회전국동시지방선거투표용지부족사태등국민참정권침해진상규명및선거관리개혁을위한국정조사특별위원회, 보건복지위원회", "재직", 1, "", 97, 98, 7, 74, 17, 0, "", 0, "284-최보윤"], ["최수진", "국민의힘", "비례대표", "국회운영위원회, 산업통상자원중소벤처기업위원회", "재직", 1, "", 83, 83, 4, 66, 13, 0, "", 0, "285-최수진"], ["최은석", "국민의힘", "대구 동구군위군갑", "국회운영위원회, 정무위원회", "재직", 1, "", 95, 95, 0, 73, 22, 0, "", 0, "286-최은석"], ["최혁진", "무소속", "비례대표", "과학기술정보방송통신위원회", "재직", 1, "", 68, 70, 0, 65, 5, 0, "", 0, "287-최혁진"], ["최형두", "국민의힘", "경남 창원시마산합포구", "과학기술정보방송통신위원회", "재직", 1, "", 47, 48, 3, 35, 10, 0, "", 1, "288-최형두"], ["추경호", "국민의힘", "대구 수성구갑", "", "사퇴(대구시장)", 1, "", 36, 36, 0, 15, 21, 0, "1심", 0, "289-추경호"], ["한기호", "국민의힘", "강원 춘천시철원군화천군양구군을", "국방위원회, 정보위원회", "재직", 1, "", 25, 26, 3, 19, 4, 0, "", 0, "290-한기호"], ["한동훈", "무소속", "부산 북구갑", "예산결산특별위원회, 외교통일위원회", "재직", 1, "", 3, 3, 0, 3, 0, 0, "", 0, "291-한동훈"], ["한민수", "더불어민주당", "서울 강북구을", "정무위원회", "재직", 1, "", 70, 70, 3, 48, 19, 0, "", 0, "292-한민수"], ["한병도", "더불어민주당", "전북 익산시을 ", "교육위원회, 국회운영위원회, 정보위원회", "재직", 1, "", 104, 104, 7, 60, 37, 0, "", 0, "293-한병도"], ["한정애", "더불어민주당", "서울 강서구병", "외교통일위원회", "재직", 1, "", 172, 172, 2, 128, 42, 0, "", 0, "294-한정애"], ["한준호", "더불어민주당", "경기 고양시을", "과학기술정보방송통신위원회", "재직", 1, "", 41, 41, 2, 29, 10, 0, "", 0, "295-한준호"], ["한지아", "국민의힘", "비례대표", "보건복지위원회", "재직", 1, "", 62, 62, 5, 32, 25, 0, "", 0, "296-한지아"], ["한창민", "사회민주당", "비례대표", "정무위원회", "재직", 1, "", 45, 52, 1, 41, 10, 0, "", 0, "297-한창민"], ["허성무", "더불어민주당", "경남 창원시성산구", "산업통상자원중소벤처기업위원회, 예산결산특별위원회", "재직", 1, "", 94, 95, 2, 82, 11, 0, "", 0, "298-허성무"], ["허영", "더불어민주당", "강원 춘천시철원군화천군양구군갑", "국토교통위원회, 예산결산특별위원회", "재직", 1, "", 98, 98, 2, 86, 10, 0, "", 0, "299-허영"], ["허종식", "더불어민주당", "인천 동구미추홀구갑", "보건복지위원회", "재직", 1, "", 46, 46, 1, 36, 9, 0, "1심", 0, "300-허종식"], ["홍기원", "더불어민주당", "경기 평택시갑", "외교통일위원회", "재직", 1, "", 61, 63, 2, 50, 11, 0, "", 0, "301-홍기원"], ["황명선", "더불어민주당", "충남 논산시계룡시금산군", "순직 해병 수사 방해 및 사건 은폐 등의 진실규명을 위한 국정조사특별위원회, 국방위원회, 예산결산특별위원회", "재직", 1, "", 56, 56, 0, 44, 12, 0, "", 0, "302-황명선"], ["황운하", "조국혁신당", "비례대표", "국토교통위원회", "재직", 1, "", 115, 122, 2, 106, 14, 0, "", 0, "303-황운하"], ["황정아", "더불어민주당", "대전 유성구을", "과학기술정보방송통신위원회", "재직", 1, "", 79, 80, 1, 47, 32, 0, "", 0, "304-황정아"], ["황희", "더불어민주당", "서울 양천구갑", "국토교통위원회", "재직", 1, "", 61, 61, 1, 52, 8, 0, "", 0, "305-황희"]];
+const P={};
+D.forEach(r=>{P[r[1]]=(P[r[1]]||0)+1});
+const ps=document.getElementById('fParty');
+Object.keys(P).sort().forEach(p=>{const o=document.createElement('option');o.textContent=p;ps.appendChild(o)});
+const CO=['국회운영위원회','법제사법위원회','정무위원회','재정경제기획위원회','교육위원회','과학기술정보방송통신위원회','외교통일위원회','국방위원회','행정안전위원회','문화체육관광위원회','농림축산식품해양수산위원회','산업통상자원중소벤처기업위원회','보건복지위원회','기후에너지환경노동위원회','국토교통위원회','정보위원회','성평등가족위원회'];
+const cs=document.getElementById('fComm'),CSET=new Set();
+D.forEach(r=>(r[3]||'').split(',').forEach(s=>{s=s.trim();if(s&&!s.includes('특별'))CSET.add(s)}));
+[...CSET].sort((a,b)=>{const ia=CO.indexOf(a),ib=CO.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib)||a.localeCompare(b,'ko')})
+ .forEach(c=>{const o=document.createElement('option');o.textContent=c;cs.appendChild(o)});
+const DR={"윤호중":"now","김성환":"now","박홍근":"now","정동영":"now,min","이소영":"now","김민석":"min","김윤덕":"min","안규백":"min","정성호":"min","권영세":"min","권칠승":"min","김형연":"min","김희정":"min","박범계":"min","박지원":"min","이인영":"min","조승환":"min","주호영":"min","진선미":"min","최민희":"min","한동훈":"min","한정애":"min","황희":"min","김기웅":"dep","김성범":"dep","맹성규":"dep","박성훈":"dep","손명수":"dep","송언석":"dep","안도걸":"dep","이종배":"dep","김대식":"dep","김현":"dep","김태규":"dep","유영하":"dep","이재관":"dep","이종욱":"dep","김의겸":"dep","이상식":"dep","이철규":"dep","윤재옥":"dep","이만희":"dep","황운하":"dep","김기현":"gov","김태호":"gov","송영길":"gov","이광재":"gov","권영진":"gov"};
+const RE={"강경숙": "초선", "강대식": "재선", "강득구": "재선", "강명구": "초선", "강민국": "재선", "강선영": "초선", "강선우": "재선", "강승규": "재선", "강준현": "재선", "고동진": "초선", "고민정": "재선", "곽규택": "초선", "곽상언": "초선", "구자근": "재선", "권성동": "", "권영세": "5선", "권영진": "재선", "권칠승": "3선", "권향엽": "초선", "김건": "초선", "김교흥": "3선", "김기웅": "초선", "김기표": "초선", "김기현": "5선", "김남국": "재선", "김남근": "초선", "김남준": "초선", "김남희": "초선", "김대식": "초선", "김도읍": "4선", "김동아": "초선", "김문수": "초선", "김미애": "재선", "김민석": "4선", "김민전": "초선", "김병기": "3선", "김병주": "재선", "김상훈": "4선", "김석기": "3선", "김선교": "재선", "김선민": "초선", "김성범": "초선", "김성원": "3선", "김성환": "3선", "김성회": "초선", "김소희": "초선", "김승수": "재선", "김승원": "재선", "김영배": "재선", "김영진": "3선", "김영호": "3선", "김영환": "초선", "김예지": "재선", "김용만": "초선", "김용민": "재선", "김용태": "초선", "김우영": "초선", "김원이": "재선", "김위상": "초선", "김윤": "초선", "김윤덕": "3선", "김은혜": "재선", "김의겸": "재선", "김장겸": "초선", "김재섭": "초선", "김재원": "초선", "김정재": "3선", "김정호": "3선", "김종민": "3선", "김종양": "초선", "김주영": "재선", "김준혁": "초선", "김준형": "초선", "김준환": "초선", "김태규": "초선", "김태년": "5선", "김태선": "초선", "김태호": "4선", "김한규": "재선", "김현": "재선", "김현정": "초선", "김형동": "재선", "김형연": "초선", "김희정": "3선", "나경원": "5선", "남인순": "4선", "노종면": "초선", "맹성규": "3선", "모경종": "초선", "문금주": "초선", "문대림": "초선", "문정복": "재선", "문진석": "재선", "민병덕": "재선", "민홍철": "4선", "박균택": "초선", "박대출": "4선", "박덕흠": "4선", "박민규": "초선", "박범계": "4선", "박상웅": "초선", "박상혁": "재선", "박선원": "초선", "박성민": "재선", "박성준": "재선", "박성훈": "초선", "박수민": "초선", "박수영": "재선", "박용갑": "초선", "박은정": "초선", "박정": "3선", "박정하": "재선", "박정현": "초선", "박정훈": "초선", "박주민": "3선", "박준태": "초선", "박지원": "5선", "박지혜": "초선", "박충권": "초선", "박해철": "초선", "박형수": "재선", "박홍근": "4선", "박홍배": "초선", "박희승": "초선", "배준영": "재선", "배현진": "재선", "백선희": "초선", "백승아": "초선", "백종헌": "재선", "백혜련": "3선", "복기왕": "재선", "부승찬": "초선", "서명옥": "초선", "서미화": "초선", "서범수": "재선", "서삼석": "3선", "서영교": "4선", "서영석": "재선", "서왕진": "초선", "서일준": "재선", "서지영": "초선", "서천호": "초선", "성일종": "3선", "소병훈": "3선", "손명수": "초선", "손솔": "초선", "송기헌": "3선", "송석준": "3선", "송언석": "3선", "송영길": "6선", "송옥주": "3선", "송재봉": "초선", "신동욱": "초선", "신성범": "3선", "신영대": "", "신장식": "초선", "신정훈": "3선", "안규백": "5선", "안도걸": "초선", "안상훈": "초선", "안철수": "4선", "안태준": "초선", "안호영": "3선", "양문석": "", "양부남": "초선", "어기구": "3선", "엄태영": "재선", "염태영": "초선", "오기형": "재선", "오세희": "초선", "용혜인": "재선", "우원식": "5선", "우재준": "초선", "유동수": "3선", "유상범": "재선", "유영하": "초선", "유용원": "초선", "유의동": "4선", "윤건영": "재선", "윤상현": "5선", "윤영석": "4선", "윤용근": "초선", "윤재옥": "4선", "윤종군": "초선", "윤종오": "재선", "윤준병": "재선", "윤한홍": "3선", "윤호중": "5선", "윤후덕": "4선", "이강일": "초선", "이개호": "4선", "이건태": "초선", "이광재": "4선", "이광희": "초선", "이기헌": "초선", "이달희": "초선", "이만희": "3선", "이병진": "", "이상식": "초선", "이상휘": "초선", "이성권": "재선", "이성윤": "초선", "이소영": "재선", "이소희": "초선", "이수진": "재선", "이양수": "3선", "이언주": "3선", "이연희": "초선", "이용선": "재선", "이용우": "초선", "이인선": "재선", "이인영": "5선", "이재강": "초선", "이재관": "초선", "이재정": "3선", "이정문": "재선", "이정헌": "초선", "이종배": "4선", "이종욱": "초선", "이주영": "초선", "이주희": "초선", "이준석": "초선", "이진숙": "초선", "이철규": "3선", "이춘석": "4선", "이학영": "4선", "이해식": "재선", "이헌승": "4선", "이훈기": "초선", "임문영": "초선", "임미애": "초선", "임오경": "재선", "임이자": "3선", "임종득": "초선", "임호선": "재선", "장경태": "재선", "장동혁": "재선", "장종태": "초선", "장철민": "재선", "전용기": "재선", "전은수": "초선", "전종덕": "초선", "전진숙": "초선", "전현희": "3선", "정동만": "재선", "정동영": "5선", "정성국": "초선", "정성호": "5선", "정연욱": "초선", "정일영": "재선", "정점식": "3선", "정준호": "초선", "정진욱": "초선", "정청래": "4선", "정춘생": "초선", "정태호": "재선", "정혜경": "초선", "정희용": "재선", "조경태": "6선", "조계원": "초선", "조국": "", "조배숙": "5선", "조승래": "3선", "조승환": "초선", "조은희": "재선", "조인철": "초선", "조정식": "6선", "조정훈": "재선", "조지연": "초선", "주진우": "초선", "주철현": "재선", "주호영": "6선", "진선미": "4선", "진성준": "3선", "진종오": "초선", "차규근": "초선", "차지호": "초선", "채현일": "초선", "천준호": "재선", "천하람": "초선", "최기상": "재선", "최민희": "재선", "최보윤": "초선", "최수진": "초선", "최은석": "초선", "최혁진": "초선", "최형두": "재선", "추경호": "", "한기호": "4선", "한동훈": "초선", "한민수": "초선", "한병도": "3선", "한정애": "4선", "한준호": "재선", "한지아": "초선", "한창민": "초선", "허성무": "초선", "허영": "재선", "허종식": "재선", "홍기원": "재선", "황명선": "초선", "황운하": "재선", "황정아": "초선", "황희": "3선"};
+const PC={'더불어민주당':'#2f7cd6','국민의힘':'#d2453a','조국혁신당':'#a3630b','개혁신당':'#bf6111','진보당':'#b04083','기본소득당':'#94720c','사회민주당':'#cc5b3b','무소속':'#8ba1b3'};
+const CC={'의원직 상실':'s-crim','2심':'s-trial','3심':'s-trial','1심':'s-trial','확정':'s-fin','수사':'s-probe','종결':'s-closed','확인 필요':'s-unk'};
+const SC={'재직':'s-live','의원직 상실':'s-crim','사퇴(대구시장)':'s-out'};
+const DL={now:'장관급(현)',min:'장관급(전)',dep:'차관급',gov:'단체장'};
+const DT={now:'현직 장관급',min:'전직 장관급',dep:'차관급',gov:'광역단체장'};
+const RES={"117-박지원":"초선","118-박지원":"5선"}; const DRS={"117-박지원":""}; function RF(n,sl){return (sl in RES)?RES[sl]:(RE[n]||"")} function DF(n,sl){var v=(sl in DRS)?DRS[sl]:DR[n];if(!v)return '<span class="chip">—</span>';return v.split(',').map(function(k){return '<span class="db db-'+k+'" title="'+DT[k]+'">'+DL[k]+'</span>'}).join('')}
+function render(){
+ const q=document.getElementById('q').value.trim().toLowerCase();
+ const fd=document.getElementById('fDual').value;
+ const fp=document.getElementById('fParty').value, fs=document.getElementById('fSt').value, fc=document.getElementById('fC').value, fm=document.getElementById('fComm').value, ft=document.getElementById('fTerm').value;
+ const sk=+document.getElementById('sort').value;
+ let rows=D.filter(r=>{
+  if(fp&&r[1]!==fp)return false;
+  if(fs&&r[4]!==fs)return false;
+  if(ft&&RE[r[0]]!==ft)return false;
+  if(fd){var dv=(r[15] in DRS)?DRS[r[15]]:(DR[r[0]]||'');if(fd==='any'){if(!dv)return false;}else if(!dv.split(',').includes(fd))return false;}
+  if(fm&&!(r[3]||'').split(',').map(s=>s.trim()).includes(fm))return false;
+  if(fc==='사건 있음'&&!r[13])return false;
+  if(fc==='운동권 전과 있음'&&!r[14])return false;
+  if(q){const s=(r[0]+' '+r[1]+' '+r[2]+' '+r[3]).toLowerCase();if(!s.includes(q))return false}
+  return true});
+ rows.sort(sk?(a,b)=>b[sk]-a[sk]:(a,b)=>a[0].localeCompare(b[0],'ko'));
+ document.getElementById('cnt').textContent=rows.length+' / '+D.length+'명';
+ document.getElementById('tb').innerHTML=rows.map(r=>`<tr style="--pc:${PC[r[1]]||'#8ba1b3'}">
+  <td data-l="이름"><span class="partydot" style="background:${PC[r[1]]||'#8ba1b3'}"></span><a href="members/${r[15]}.html">${r[0]}</a> <span class="chip">${r[1]}</span> <span class="sen">${RF(r[0],r[15])}</span>${r[14]?' <span class="chip">전과(운동권)</span>':''}</td>
+  <td class="hide-m" data-l="선거구">${r[2]}</td>
+  <td class="hide-m" data-l="위원회">${r[3]||'—'}</td>
+  <td class="hide-m" data-l="겸임">${DF(r[0],r[15])}</td>
+  <td class="mono" data-l="대표발의">${r[7]}</td>
+  <td class="mono" data-l="발의 관여">${r[8]}</td>
+  <td class="mono" data-l="가결">${r[9]}</td>
+  <td data-l="사법">${r[13]?`<span class="stamp ${CC[r[13]]||'s-unk'}">${r[13]}</span>`:'<span class="chip">확인 없음</span>'}</td>
+  <td class="hide-m" data-l="의석"><span class="stamp ${SC[r[4]]||'s-unk'}">${r[4]}${r[5]?'':' · 승계'}</span></td>
+ </tr>`).join('');
+}
+['q','fParty','fTerm','fComm','fDual','fSt','fC','sort'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+render();
+</script><button id="themeBtn" type="button" aria-label="라이트/다크 모드 전환" aria-pressed="false" title="라이트/다크 모드 전환"><span id="themeIco">☾</span></button><script id="xheat">
+(function(){var d=document.getElementById('xsec');if(!d||d.dataset.heat)return;d.dataset.heat='1';
+var tb=d.querySelector('tbody'),heads=[].map.call(d.querySelectorAll('thead th'),function(x){return x.textContent.trim()});
+var last=heads.length-1,max=0;
+tb.querySelectorAll('tr').forEach(function(tr){tr.querySelectorAll('td').forEach(function(td,i){if(i===0||i===last)return;var n=parseInt(td.textContent.replace(/\D/g,''),10)||0;if(n>max)max=n;})});
+tb.querySelectorAll('tr').forEach(function(tr){tr.querySelectorAll('td').forEach(function(td,i){if(i===0||i===last)return;var n=parseInt(td.textContent.replace(/\D/g,''),10)||0;if(!n)return;
+var c=PC[heads[i]]||'#8ba1b3',a=0.12+0.45*(n/max);td.style.background='color-mix(in srgb,'+c+' '+Math.round(a*100)+'%,transparent)';td.style.fontWeight='700';});});
+})();
+</script>
+<script id="theme-btn">
+(function(){var b=document.getElementById('themeBtn'),i=document.getElementById('themeIco');
+function sync(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.setAttribute('aria-pressed',d?'true':'false');i.textContent=d?'☀':'☾';b.title=d?'라이트 모드로':'다크 모드로';}
+b.addEventListener('click',function(){var d=document.documentElement.getAttribute('data-theme')==='dark';var n=d?'light':'dark';
+document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}
+var u=new URL(location.href);u.searchParams.set('theme',n);history.replaceState(null,'',u);sync();});
+sync();})();
+</script><script id="state-keep">
+(function(){var map={q:'q',party:'fParty',term:'fTerm',comm:'fComm',dual:'fDual',st:'fSt',c:'fC',sort:'sort'};
+var u=new URL(location.href),p=u.searchParams,els={};
+Object.keys(map).forEach(function(k){els[k]=document.getElementById(map[k]);});
+Object.keys(map).forEach(function(k){var el=els[k],v=p.get(k);if(el&&v){el.value=v;
+ el.dispatchEvent(new Event(el.tagName==='SELECT'?'change':'input',{bubbles:true}));}});
+function save(){Object.keys(map).forEach(function(k){var el=els[k];if(!el)return;
+ if(el.value){p.set(k,el.value);}else{p.delete(k);}});
+ u.searchParams.toString();history.replaceState(null,'',u.toString());}
+Object.keys(map).forEach(function(k){var el=els[k];if(!el)return;
+ el.addEventListener(el.tagName==='SELECT'?'change':'input',save);});
+if(!p.get('q')&&!p.get('party')&&!p.get('term')&&!p.get('comm')&&!p.get('st')&&!p.get('c')&&!p.get('sort')){history.replaceState(null,'',u.toString());}
+})();
+</script></body></html><footer><div class="wrap">
+<div class="brand">토지와 자유 × 디지털 대동법 연구소 — 공적 기록 명부</div>
+<p>기준일 2026-11-07. 무죄추정 원칙에 따라 수사·재판 정보는 단계와 확정 여부를 함께 표기합니다. 재산·체납 관련 표기는 공개 요건을 충족한 명단 기준이며, "확인 안 됨"은 공개 자료에서 확인되지 않았다는 뜻으로 "없다"의 의미가 아닙니다. 오류는 정정 요청으로 알려주세요(제보·정정 창구: <b>steamking@naver.com</b>).</p>
+<p class="srcs">데이터: 열린국회정보 포털 OpenAPI(의원 인적사항·대표발의법률안, 수집 2026-11-07) · 참여연대 「열려라국회」 수사·재판 추적표(2025.10.14) 및 2026년 판결 보도 교차 · 중앙선거관리위원회 당선인 전과 집계(2024.4.10) · 매일신문 국가보안법 전과 전수조사(2025.2) · 계획서 데이터 스키마(디지털 대동법 연구소).</p>
+</div></footer></body></html>
