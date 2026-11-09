@@ -964,8 +964,190 @@ table th { white-space: nowrap; }
   .tbl-usage td.font-mono{white-space:nowrap}
 }
 </style>
+
+<style>
+.gt-shell{max-width:1152px;margin:0 auto;padding:6px 20px 0}
+.gt-top{display:flex;align-items:center;justify-content:space-between;gap:12px;height:44px}
+.gt-brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink,#14213D);font-weight:800;font-size:17px;letter-spacing:-.02em}
+.gt-logo{width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;background:var(--teal,#0F766E);color:#fff;font-size:15px;font-weight:700}
+.gt-actions{display:flex;align-items:center;gap:8px}
+.gt-cta{display:inline-flex;align-items:center;gap:6px;background:var(--teal,#0F766E);color:#fff;font-weight:800;font-size:12.5px;padding:7px 15px;border-radius:999px;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(15,118,110,.22)}
+.gt-burger{width:34px;height:34px;border-radius:999px;border:1px solid rgba(20,33,61,.14);background:#fff;color:rgba(20,33,61,.7);cursor:pointer}
+.gt-wrap{display:block}
+@media(min-width:768px){
+  .gt-wrap{display:block;margin-top:2px}
+  .gt-burger{display:none}
+  body:not(.sal-mode){padding-top:14px}
+  body:not(.sal-mode){scroll-padding-top:158px}
+}
+.gt-row{display:flex;align-items:center;gap:2px;border-top:1px solid rgba(20,33,61,.06);overflow-x:auto;scrollbar-width:none}
+.gt-row::-webkit-scrollbar{display:none}
+.gt{position:relative;flex:0 0 auto;padding:9px 14px;font-size:14px;font-weight:800;color:rgba(20,33,61,.62);text-decoration:none;letter-spacing:-.01em;white-space:nowrap;border-radius:10px 10px 0 0;transition:color .15s,background .15s}
+.gt:hover{color:var(--teal,#0F766E);background:rgba(15,118,110,.05)}
+.gt.is-on{color:#fff;background:var(--teal,#0F766E)}
+.gt.is-on::after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,#0F766E,#2feaa8)}
+.st-wrap{border-top:1px solid rgba(20,33,61,.10);padding:3px 0 0}
+.st-row{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;padding:0 0 5px}
+.st-row::-webkit-scrollbar{display:none}
+.st-row[hidden]{display:none}
+.st{flex:0 0 auto;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:700;color:rgba(20,33,61,.58);text-decoration:none;white-space:nowrap;letter-spacing:-.01em;transition:color .15s,background .15s}
+.st:hover{color:var(--teal,#0F766E);background:rgba(15,118,110,.07)}
+.st.is-on{color:#fff;background:var(--teal,#0F766E);box-shadow:0 2px 8px rgba(15,118,110,.25)}
+/* ===== 탭 기본 상태: 흰 바탕 + 초록 글씨 ===== */
+#site-header .gt-cta.is-current,#mobile-menu a.gt-cta.is-current{color:#fff!important}
+#site-header .gt,#site-header .st{background:transparent!important;color:var(--teal,#0F766E)!important}
+#site-header .gt:hover,#site-header .st:hover{background:transparent!important;color:var(--teal,#0F766E)!important}
+#site-header .gt.is-current,#site-header .st.is-current{background:transparent!important;color:var(--teal,#0F766E)!important}
+#site-header .gt.is-on{background:transparent!important;color:var(--teal,#0F766E)!important;box-shadow:inset 0 -2px 0 0 var(--teal,#0F766E)}
+#site-header .st.is-on{background:transparent!important;color:var(--teal,#0F766E)!important;box-shadow:inset 0 0 0 1.5px rgba(15,118,110,.55)}
+#site-header .gt.is-on::after{display:none}
+.st-row[data-g="land"] .st[data-page="policy"],.st-row[data-g="land"] .st[href="land-dividend-manifesto.html"]{color:var(--teal,#0F766E)!important;font-weight:800}
+#site-header .st-row[data-g="land"] .st[data-page="policy"].is-on,#site-header .st-row[data-g="land"] .st[href="land-dividend-manifesto.html"].is-on{background:#fff!important;color:var(--teal,#0F766E)!important}
+
+/* ===== 호버 반전 렌즈: 커서를 따라오는 색반전 ===== */
+.gt,.st{position:relative;isolation:isolate}
+.inv-lens{position:absolute;top:0;left:calc(var(--mx,0px) - var(--sd,52px)/2);
+  width:var(--sd,52px);height:100%;padding:inherit;box-sizing:border-box;border-radius:inherit;overflow:hidden;
+  background:var(--teal,#0F766E);pointer-events:none;z-index:5;opacity:0;
+  transition:opacity .14s ease,left .12s cubic-bezier(.22,.61,.36,1);will-change:left,opacity}
+.gt.is-lens .inv-lens,.st.is-lens .inv-lens{opacity:1}
+.inv-lens .lens-t{position:absolute;display:block;box-sizing:border-box;padding:inherit;
+  font:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;white-space:nowrap;color:#fff;
+  left:calc(var(--sd,52px)/2 - var(--mx,0px));top:0}
+@media (prefers-reduced-motion: reduce){
+  .inv-lens{display:none!important}
+  #site-header .gt:hover,#site-header .st:hover{background:var(--teal,#0F766E)!important;color:#fff!important}
+}
+#mobile-menu{display:none}
+#mobile-menu.open{display:block;max-height:calc(100vh - 56px);overflow-y:auto;border-top:1px solid rgba(20,33,61,.10);background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.mm-in{max-width:1152px;margin:0 auto;padding:12px 20px 18px}
+.mm-g{margin-bottom:12px}
+.mm-g>b{display:block;font-size:10.5px;letter-spacing:.14em;color:var(--teal,#0F766E);font-weight:800;margin-bottom:5px}
+.mm-l{display:flex;flex-wrap:wrap;gap:4px}
+.mm-l a{font-size:13px;font-weight:700;color:rgba(20,33,61,.74);text-decoration:none;padding:6px 10px;border-radius:9px;background:rgba(20,33,61,.035)}
+.mm-l a:active{background:rgba(15,118,110,.12);color:var(--teal,#0F766E)}
+@media(min-width:768px){#mobile-menu{display:none !important}}
+</style>
+<style id="tab-tap-css">
+/* ===== 한 번 = 반전·펼침 / 두 번 = 이동 ===== */
+#site-header .gt,#site-header .st,#site-dock a{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+#site-header .gt,#site-header .st{transition:background .14s ease,color .14s ease,box-shadow .14s ease,transform .14s ease}
+#site-header .gt.is-press,#site-header .gt:hover,#site-header .gt:focus-visible{
+  background:var(--teal,#0F766E)!important;color:#fff!important;
+  box-shadow:0 6px 18px rgba(15,118,110,.22)!important}
+#site-header .st.is-press,#site-header .st:hover,#site-header .st:focus-visible{
+  background:var(--teal,#0F766E)!important;color:#fff!important;
+  box-shadow:0 2px 10px rgba(15,118,110,.28)!important}
+#site-header .gt.is-on{box-shadow:none}
+#site-header .gt.is-on.is-press,#site-header .gt.is-on:hover{box-shadow:0 6px 18px rgba(15,118,110,.22)!important}
+#site-header .gt:active,#site-header .st:active{transform:scale(.97)}
+.st-row.is-open{animation:tabRowIn .18s cubic-bezier(.22,.61,.36,1)}
+@keyframes tabRowIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+.inv-lens{display:none!important}
+#site-dock a{transition:background .14s ease,color .14s ease,transform .14s ease}
+#site-dock a:active{transform:scale(.94)}
+#site-dock a.cur{box-shadow:0 0 0 1px rgba(60,240,197,.55),0 4px 14px rgba(60,240,197,.22)}
+#tab-tap-hint{position:fixed;left:0;top:0;z-index:2147483646;pointer-events:none;opacity:0;
+  transform:translate(-50%,calc(-100% - 4px));transition:opacity .18s ease,transform .18s ease;
+  background:#0B1220;color:#fff;border:1px solid rgba(60,240,197,.5);
+  font:700 11.5px/1 'Pretendard','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+  padding:8px 12px;border-radius:999px;box-shadow:0 10px 24px rgba(0,0,0,.32);white-space:nowrap}
+#tab-tap-hint.on{opacity:1;transform:translate(-50%,calc(-100% - 10px))}
+@media(prefers-reduced-motion:reduce){.st-row.is-open{animation:none}#site-header .gt:active,#site-header .st:active,#site-dock a:active{transform:none}}
+</style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased overflow-x-hidden">
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="gt-shell">
+    <div class="gt-top">
+      <a href="#/" data-page="home" data-anchor="hero" class="gt-brand">
+        <span class="gt-logo">土</span>
+        <span class="gt-name"><b>토지와 자유</b></span>
+      </a>
+      <div class="gt-actions">
+        <a href="#/home#join" data-page="home" data-anchor="join" class="gt-cta">함께하기 <i class="fa-solid fa-arrow-right"></i></a>
+        <button id="menu-toggle" class="gt-burger" aria-label="메뉴" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+    <nav class="gt-wrap" aria-label="주요 메뉴">
+      <div class="gt-row" role="tablist" aria-label="대분류">
+        <a class="gt is-on" data-g="land" role="tab" aria-selected="true" href="#/home#problem" data-page="home" data-anchor="problem">토지 Land</a>
+        <a class="gt" data-g="liberty" role="tab" aria-selected="false" href="liberty.html">자유 Liberty</a>
+        <a class="gt" data-g="salriki" role="tab" aria-selected="false" href="#/salriki" data-page="salriki">대한민국 살리기</a>
+        <a class="gt" data-g="join" role="tab" aria-selected="false" href="#/home#join" data-page="home" data-anchor="join">함께하기</a>
+      </div>
+      <div class="st-wrap">
+        <div class="st-row" data-g="land">
+          <a class="st is-on" href="#/home#problem" data-page="home" data-anchor="problem">왜 지금</a>
+          <a class="st" href="#/home#privilege" data-page="home" data-anchor="privilege">3대 특권 해체</a>
+          <a class="st" href="#/home#dividend" data-page="home" data-anchor="dividend">토지배당</a>
+          <a class="st" href="#/home#finance" data-page="home" data-anchor="finance">금융 회계</a>
+          <a class="st" href="#/home#global" data-page="home" data-anchor="global">지금 세계는</a>
+          <a class="st" href="#/policy" data-page="policy">정책</a>
+          <a class="st" href="land-dividend-manifesto.html">중국 토지배당 촉구서</a>
+          <a class="st" href="22대-국회-전과-지도.html">국회 전과 지도</a>
+        </div>
+        <div class="st-row" data-g="liberty" hidden>
+          <a class="st" href="teukgeom.html">특검 수사 파일</a>
+          <a class="st" href="liberty-report.html">10.28 리포트</a>
+          <a class="st" href="liberty-archive.html">증거 아카이브</a>
+          <a class="st" href="forensic.html">국과수 감정 추적</a>
+        </div>
+        <div class="st-row" data-g="salriki" hidden>
+          <a class="st" href="#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
+          <a class="st" href="#/salriki#D-Day</a> <a class="st" href="#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a> <a class="st" href="#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a> <a class="st" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a> <a class="st" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a> <a class="st" href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a> <a class="st" href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a>
+          <a class="st" href="index-chaohan.html">중국의 한국 흡수 전략</a>
+        </div>
+        <div class="st-row" data-g="join" hidden></div>
+      </div>
+    </nav>
+  </div>
+  <div id="mobile-menu">
+    <div class="mm-in">
+      <div class="mm-g">
+        <b>토지 Land</b>
+        <div class="mm-l">
+          <a href="#/home#problem" data-page="home" data-anchor="problem">왜 지금</a>
+          <a href="#/home#privilege" data-page="home" data-anchor="privilege">3대 특권 해체</a>
+          <a href="#/home#dividend" data-page="home" data-anchor="dividend">토지배당</a>
+          <a href="#/home#finance" data-page="home" data-anchor="finance">금융 회계</a>
+          <a href="#/home#global" data-page="home" data-anchor="global">지금 세계는</a>
+          <a href="#/policy" data-page="policy">정책</a>
+          <a href="land-dividend-manifesto.html">중국 토지배당 촉구서</a>
+          <a href="22대-국회-전과-지도.html">국회 전과 지도</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>자유 Liberty</b>
+        <div class="mm-l">
+          <a href="teukgeom.html">특검 수사 파일</a>
+          <a href="liberty-report.html">10.28 리포트</a>
+          <a href="liberty-archive.html">증거 아카이브</a>
+          <a href="forensic.html">국과수 감정 추적</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>대한민국 살리기</b>
+        <div class="mm-l">
+          <a href="#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
+          <a href="#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a>
+          <a href="#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a>
+          <a href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a>
+          <a href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a>
+          <a href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a>
+          <a href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a><a href="index-chaohan.html">중국의 한국 흡수 전략</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>함께하기</b>
+        <div class="mm-l">
+          <a href="#/home#join" data-page="home" data-anchor="join">함께하기 · 뉴스레터</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 
 <!-- ===== 네비게이션 ===== -->
 <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
@@ -1035,7 +1217,7 @@ table th { white-space: nowrap; }
     <p class="mt-14 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full bg-teal px-5 py-2.5 font-mono text-xs sm:text-sm font-bold text-white tracking-wide shadow-lg shadow-teal/25 reveal">
       노력의 열매는 개인에게 <span class="text-gold">·</span> 땅의 이익은 국민에게 <span class="text-gold">·</span> 금융의 위험은 숨김없이
     </p>
-    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm reveal">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 11월 6일 (금)</b> · 시각은 1분마다 자동 갱신</p>
+    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm reveal">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 11월 9일 (월)</b> · 시각은 1분마다 자동 갱신</p>
   </div>
   <a href="#/home#problem" data-page="home" data-anchor="problem" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-ink/60 animate-bounce" aria-label="아래로 스크롤">
     <i class="fa-solid fa-chevron-down text-xl"></i>
@@ -1747,7 +1929,7 @@ table th { white-space: nowrap; }
       <a href="#/policy#hundred" data-page="policy" data-anchor="hundred" class="rounded-full bg-white border border-ink/15 px-4 py-2 font-bold text-ink hover:border-teal hover:text-teal transition">100일 입법</a>
       <a href="#/policy#messages" data-page="policy" data-anchor="messages" class="rounded-full bg-white border border-ink/15 px-4 py-2 font-bold text-ink hover:border-teal hover:text-teal transition">대상별 메시지</a>
     </div>
-    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 11월 6일 (금)</b> · 시각은 1분마다 자동 갱신</p>
+    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 11월 9일 (월)</b> · 시각은 1분마다 자동 갱신</p>
   </div>
 </section>
 
@@ -1955,14 +2137,13 @@ table th { white-space: nowrap; }
 </footer></div><div class="lnl-page lnl-sal" id="page-salriki" hidden>
 <nav><div class="in">
   <b><i class="fa-solid fa-bolt bolt" aria-hidden="true"></i>대한민국 살리기</b>
-  <a class="tab" href="#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a>
-  <a class="tab" href="#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a>
-  <a class="tab" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a>
-  <a class="tab" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a>
-  <a class="tab" href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a>
   <a class="tab" href="#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
-  <a class="tab" href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a>
-  <a class="tab" href="teukgeom.html" title="선관위 특검 수사 파일 (별도 페이지 · 기준일 2026.11.06)">선관위 특검</a>
+          <a class="tab" href="#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a>
+          <a class="tab" href="#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a>
+          <a class="tab" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a>
+          <a class="tab" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a>
+          <a class="tab" href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a>
+          <a class="tab" href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a><a class="tab" href="teukgeom.html" title="선관위 특검 수사 파일 (별도 페이지 · 기준일 2026.11.06)">선관위 특검</a>
   <a class="home-link" href="#/" data-page="home"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>토지와 자유 홈</a>
 </div></nav>
 
@@ -1972,7 +2153,7 @@ table th { white-space: nowrap; }
 <p>단정 말고 <b style="color:#fff">검증</b>. 분노 말고 <b style="color:#fff">절차</b>.<br>헌법이 이미 우리 손에 쥐여 준 도구로 권력을 감시합니다.</p>
 <p class="slogan">안보는 빈틈없이. <b>재정</b>을 <b>책임</b> 있게. 권력은 헌법 안에.</p>
 <p class="os">정권은 <b>앱</b>, 헌법은 <b>OS</b>. 앱이 OS 권한을 흡수하는 순간을 시민이 문서로 감시합니다.</p>
-<p class="clockline">현재 기준 <b data-date="today" data-date-format="fulltime">2026년 11월 6일 (금)</b> · 시각은 1분마다 자동 갱신됩니다</p>
+<p class="clockline">현재 기준 <b data-date="today" data-date-format="fulltime">2026년 11월 9일 (월)</b> · 시각은 1분마다 자동 갱신됩니다</p>
 <a class="btn p" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">지금 할 수 있는 일 보기</a>
 <a class="btn g" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈 팩트 체크</a>
 <a class="btn g" href="#/salriki#demands" data-page="salriki" data-anchor="demands">16대 요구안 보기</a>
@@ -2047,7 +2228,7 @@ table th { white-space: nowrap; }
 
 <section id="issues">
 <h2>📡 이슈 트래커</h2>
-<p class="sub"><b data-date="today" data-date-format="fulltime">2026년 11월 6일 (금)</b> 기준 · 시각은 1분마다 자동 갱신. 새로운 사실이 나오면 업데이트합니다.</p>
+<p class="sub"><b data-date="today" data-date-format="fulltime">2026년 11월 9일 (월)</b> 기준 · 시각은 1분마다 자동 갱신. 새로운 사실이 나오면 업데이트합니다.</p>
 <div class="legend"><span><span class="tag fact">확정</span> 공식 확인</span><span><span class="tag press">보도</span> 언론 확인(원문 확보 전)</span><span><span class="tag probe">진행</span> 수사·심사 중</span><span><span class="tag debate">논쟁</span> 해석 대립</span></div>
 <div class="filters">
 <button class="on" data-f="all">전체</button><button data-f="sec">🛡 안보</button>
@@ -2278,7 +2459,7 @@ table th { white-space: nowrap; }
 
 <footer>
 「콩스탕의 경고와 2026년 대한민국」(2026.10.3)<br>
-본 사이트의 사실관계는 <b data-date="today" data-date-format="fulltime">2026년 11월 6일 (금)</b> 기준 언론 보도·공식 발표에 근거하며, 수사·재판 결과에 따라 달라질 수 있습니다.<br>
+본 사이트의 사실관계는 <b data-date="today" data-date-format="fulltime">2026년 11월 9일 (월)</b> 기준 언론 보도·공식 발표에 근거하며, 수사·재판 결과에 따라 달라질 수 있습니다.<br>
 의심은 증거를 요구하고, 맹목적인 믿음을 요구하지 않습니다 — 이 사이트의 경쟁력은 더 뜨겁지 않은 대신, 다음 정권에도 같은 기준으로 남는다는 점입니다.<br>
 법률 정보는 일반 안내이며, 개별 사안은 변호사와 상담하십시오.
 <div style="text-align:center;color:#8a97b5;font-size:13px;padding:0 20px 40px">이 페이지는 <a href="#/" data-page="home">토지와 자유</a> · 대한민국 살리기 캠페인 페이지입니다. 정책은 <a href="#/policy" data-page="policy">정책</a> 페이지에서 확인하세요.</div>
@@ -3260,4 +3441,164 @@ body.admin-mode{background:#F5F7FA}
   </ul>
   <div style="font-size:12px;color:#6b7280;border-top:1px dashed rgba(20,33,61,.15);padding-top:10px">출처: 연합뉴스 2026.10.29 「이의제기 접수 투표지 국과수 이송…특검 검토 후 수사 전환 관측」 · 세계일보 2026.10.29 「올공 '이상 투표지' 국과수서 정밀 감정」 · 브레이크뉴스 2026.10.29. 감정 결과는 공개 즉시 갱신합니다.</div>
 </aside>
+
+<script>window.__GT_DEFAULT_GROUP="land";</script>
+<script id="tab-tap-js">
+/* ===== 탭 제스처: 한 번 = 색 반전·하위 탭 펼침, 두 번 = 내용으로 이동 ===== */
+(function(){
+  var DOUBLE_MS=320;   /* 두 번 탭 인식 임계값 (ms) */
+
+  function go(a){
+    var href=a.getAttribute('href')||'';
+    if(!href||href==='#') return;
+    if(href.charAt(0)==='#'){
+      if(location.hash===href){
+        try{window.dispatchEvent(new HashChangeEvent('hashchange'));}
+        catch(err){window.dispatchEvent(new Event('hashchange'));}
+      }else{ location.hash=href; }
+    }else{ location.href=href; }
+  }
+
+  /* ---- 안내 말풍선 (세션당 1회) ---- */
+  var hintEl=null,hintTimer=0;
+  function hint(a,msg,key){
+    try{ if(sessionStorage.getItem(key)==='1') return; sessionStorage.setItem(key,'1'); }catch(e){}
+    if(!hintEl){ hintEl=document.createElement('div'); hintEl.id='tab-tap-hint'; hintEl.setAttribute('aria-hidden','true'); document.body.appendChild(hintEl); }
+    hintEl.textContent=msg;
+    var r=a.getBoundingClientRect();
+    hintEl.style.left=Math.round(r.left+r.width/2)+'px';
+    hintEl.style.top=Math.round(r.top)+'px';
+    hintEl.classList.add('on');
+    clearTimeout(hintTimer);
+    hintTimer=setTimeout(function(){ hintEl.classList.remove('on'); },2400);
+  }
+
+  /* ---- 상단 큰 탭 / 작은 탭 ---- */
+  var wrap=document.querySelector('.gt-wrap');
+  var tabs=wrap?[].slice.call(wrap.querySelectorAll('.gt')):[];
+  var rows=wrap?[].slice.call(wrap.querySelectorAll('.st-row')):[];
+  var curGroup=null;
+
+  function showRows(g,anim){
+    rows.forEach(function(r){
+      var on=r.getAttribute('data-g')===g;
+      r.hidden=!on;
+      if(on&&anim){ r.classList.remove('is-open'); void r.offsetWidth; r.classList.add('is-open'); }
+    });
+  }
+  function markGroup(g){
+    var ok=false;
+    tabs.forEach(function(a){
+      var on=a.getAttribute('data-g')===g; if(on) ok=true;
+      a.classList.toggle('is-on',on);
+      a.setAttribute('aria-selected',on?'true':'false');
+    });
+    if(!ok) return;
+    curGroup=g; showRows(g,false);
+  }
+  function clearPress(keep){
+    [].slice.call(document.querySelectorAll('#site-header .is-press')).forEach(function(el){ if(el!==keep) el.classList.remove('is-press'); });
+  }
+  function press(el){ clearPress(el); el.classList.add('is-press'); }
+  function pressTab(a){ press(a); var g=a.getAttribute('data-g'); if(g) showRows(g,true); }
+
+  if(wrap){
+    tabs.forEach(function(a){
+      a.addEventListener('mouseenter',function(){ pressTab(a); });
+      a.addEventListener('focus',function(){ pressTab(a); });
+    });
+    rows.forEach(function(r){
+      [].slice.call(r.querySelectorAll('.st')).forEach(function(a){
+        a.addEventListener('mouseenter',function(){ press(a); });
+        a.addEventListener('focus',function(){ press(a); });
+      });
+    });
+    /* 마우스가 벗어나도 마지막으로 누른(머문) 큰 탭 그룹을 유지 */
+    wrap.addEventListener('mouseleave',function(){
+      var pressedLarge=wrap.querySelector('.gt.is-press');
+      clearPress(pressedLarge);
+      var g=pressedLarge?pressedLarge.getAttribute('data-g'):null;
+      if(g) showRows(g,false); else if(curGroup) showRows(curGroup,false);
+    });
+
+    wrap.addEventListener('click',function(e){
+      var a=e.target.closest?e.target.closest('.gt,.st'):null;
+      if(!a||!wrap.contains(a)) return;
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||(e.button&&e.button!==0)) return;
+      e.preventDefault(); e.stopPropagation();
+      if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+      if(e.detail===0){ go(a); return; }              /* 키보드 Enter */
+      var now=Date.now(),prev=lastTap.get(a)||0;
+      if(prev&&now-prev<DOUBLE_MS){ lastTap.delete(a); go(a); return; }
+      lastTap.set(a,now);
+      if(a.classList.contains('gt')) pressTab(a); else press(a);
+      hint(a,'한 번 = 미리보기 · 두 번 누르면 이동','tabUxTop');
+    },true);
+  }
+
+  var lastTap=new WeakMap();
+
+  function fromHash(){
+    var h=location.hash||'';
+    if(h.indexOf('salriki')>-1) return 'salriki';
+    if(h.indexOf('policy')>-1) return window.__GT_DEFAULT_GROUP||'land';
+    if(h.indexOf('join')>-1) return 'join';
+    if(h.indexOf('liberty')>-1) return 'liberty';
+    return window.__GT_DEFAULT_GROUP||'land';
+  }
+  markGroup(fromHash());
+
+  /* ---- 아래 검은 탭 막대 ---- */
+  var dock=document.getElementById('site-dock');
+  var dl=dock?[].slice.call(dock.querySelectorAll('a')):[];
+  var dockManual=false;
+  function setCur(i){ dl.forEach(function(a,k){ a.classList.toggle('cur',k===i); }); }
+  function routeIndex(){
+    var h=(location.hash||'').toLowerCase();
+    if(h.indexOf('salriki')>-1) return 2;
+    if(h.indexOf('join')>-1) return 3;
+    return 0;
+  }
+  function syncDock(){
+    if(dockManual||!dl.length) return;
+    var i=routeIndex();
+    var home=document.getElementById('page-home');
+    var join=document.getElementById('join');
+    if(i===0&&home&&!home.hidden&&join){
+      var r=join.getBoundingClientRect();
+      if(r.top<window.innerHeight*0.55&&r.bottom>140) i=3;
+    }
+    setCur(i);
+  }
+  if(dock){
+    dock.addEventListener('click',function(e){
+      var a=e.target.closest?e.target.closest('a'):null;
+      if(!a||!dock.contains(a)) return;
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||(e.button&&e.button!==0)) return;
+      e.preventDefault(); e.stopPropagation();
+      if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+      var idx=dl.indexOf(a);
+      if(e.detail===0){ go(a); return; }              /* 키보드 Enter */
+      var now=Date.now(),prev=lastTap.get(a)||0;
+      if(prev&&now-prev<DOUBLE_MS){ lastTap.delete(a); go(a); return; }
+      lastTap.set(a,now);
+      dockManual=true;
+      if(idx>-1) setCur(idx);
+      hint(a,'한 번 = 색 이동 · 두 번 누르면 이동','tabUxDock');
+    },true);
+  }
+
+  var ticking=false;
+  function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(function(){ ticking=false; syncDock(); }); }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  window.addEventListener('hashchange',function(){
+    dockManual=false;
+    clearPress(null);
+    markGroup(fromHash());
+    syncDock();
+  });
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',syncDock); else syncDock();
+})();
+</script>
 </body></html>

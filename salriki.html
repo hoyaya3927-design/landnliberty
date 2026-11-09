@@ -964,8 +964,190 @@ table th { white-space: nowrap; }
   .tbl-usage td.font-mono{white-space:nowrap}
 }
 </style>
+
+<style>
+.gt-shell{max-width:1152px;margin:0 auto;padding:6px 20px 0}
+.gt-top{display:flex;align-items:center;justify-content:space-between;gap:12px;height:44px}
+.gt-brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink,#14213D);font-weight:800;font-size:17px;letter-spacing:-.02em}
+.gt-logo{width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;background:var(--teal,#0F766E);color:#fff;font-size:15px;font-weight:700}
+.gt-actions{display:flex;align-items:center;gap:8px}
+.gt-cta{display:inline-flex;align-items:center;gap:6px;background:var(--teal,#0F766E);color:#fff;font-weight:800;font-size:12.5px;padding:7px 15px;border-radius:999px;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(15,118,110,.22)}
+.gt-burger{width:34px;height:34px;border-radius:999px;border:1px solid rgba(20,33,61,.14);background:#fff;color:rgba(20,33,61,.7);cursor:pointer}
+.gt-wrap{display:block}
+@media(min-width:768px){
+  .gt-wrap{display:block;margin-top:2px}
+  .gt-burger{display:none}
+  body:not(.sal-mode){padding-top:14px}
+  body:not(.sal-mode){scroll-padding-top:158px}
+}
+.gt-row{display:flex;align-items:center;gap:2px;border-top:1px solid rgba(20,33,61,.06);overflow-x:auto;scrollbar-width:none}
+.gt-row::-webkit-scrollbar{display:none}
+.gt{position:relative;flex:0 0 auto;padding:9px 14px;font-size:14px;font-weight:800;color:rgba(20,33,61,.62);text-decoration:none;letter-spacing:-.01em;white-space:nowrap;border-radius:10px 10px 0 0;transition:color .15s,background .15s}
+.gt:hover{color:var(--teal,#0F766E);background:rgba(15,118,110,.05)}
+.gt.is-on{color:#fff;background:var(--teal,#0F766E)}
+.gt.is-on::after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,#0F766E,#2feaa8)}
+.st-wrap{border-top:1px solid rgba(20,33,61,.10);padding:3px 0 0}
+.st-row{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;padding:0 0 5px}
+.st-row::-webkit-scrollbar{display:none}
+.st-row[hidden]{display:none}
+.st{flex:0 0 auto;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:700;color:rgba(20,33,61,.58);text-decoration:none;white-space:nowrap;letter-spacing:-.01em;transition:color .15s,background .15s}
+.st:hover{color:var(--teal,#0F766E);background:rgba(15,118,110,.07)}
+.st.is-on{color:#fff;background:var(--teal,#0F766E);box-shadow:0 2px 8px rgba(15,118,110,.25)}
+/* ===== 탭 기본 상태: 흰 바탕 + 초록 글씨 ===== */
+#site-header .gt-cta.is-current,#mobile-menu a.gt-cta.is-current{color:#fff!important}
+#site-header .gt,#site-header .st{background:transparent!important;color:var(--teal,#0F766E)!important}
+#site-header .gt:hover,#site-header .st:hover{background:transparent!important;color:var(--teal,#0F766E)!important}
+#site-header .gt.is-current,#site-header .st.is-current{background:transparent!important;color:var(--teal,#0F766E)!important}
+#site-header .gt.is-on{background:transparent!important;color:var(--teal,#0F766E)!important;box-shadow:inset 0 -2px 0 0 var(--teal,#0F766E)}
+#site-header .st.is-on{background:transparent!important;color:var(--teal,#0F766E)!important;box-shadow:inset 0 0 0 1.5px rgba(15,118,110,.55)}
+#site-header .gt.is-on::after{display:none}
+.st-row[data-g="land"] .st[data-page="policy"],.st-row[data-g="land"] .st[href="land-dividend-manifesto.html"]{color:var(--teal,#0F766E)!important;font-weight:800}
+#site-header .st-row[data-g="land"] .st[data-page="policy"].is-on,#site-header .st-row[data-g="land"] .st[href="land-dividend-manifesto.html"].is-on{background:#fff!important;color:var(--teal,#0F766E)!important}
+
+/* ===== 호버 반전 렌즈: 커서를 따라오는 색반전 ===== */
+.gt,.st{position:relative;isolation:isolate}
+.inv-lens{position:absolute;top:0;left:calc(var(--mx,0px) - var(--sd,52px)/2);
+  width:var(--sd,52px);height:100%;padding:inherit;box-sizing:border-box;border-radius:inherit;overflow:hidden;
+  background:var(--teal,#0F766E);pointer-events:none;z-index:5;opacity:0;
+  transition:opacity .14s ease,left .12s cubic-bezier(.22,.61,.36,1);will-change:left,opacity}
+.gt.is-lens .inv-lens,.st.is-lens .inv-lens{opacity:1}
+.inv-lens .lens-t{position:absolute;display:block;box-sizing:border-box;padding:inherit;
+  font:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;white-space:nowrap;color:#fff;
+  left:calc(var(--sd,52px)/2 - var(--mx,0px));top:0}
+@media (prefers-reduced-motion: reduce){
+  .inv-lens{display:none!important}
+  #site-header .gt:hover,#site-header .st:hover{background:var(--teal,#0F766E)!important;color:#fff!important}
+}
+#mobile-menu{display:none}
+#mobile-menu.open{display:block;max-height:calc(100vh - 56px);overflow-y:auto;border-top:1px solid rgba(20,33,61,.10);background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.mm-in{max-width:1152px;margin:0 auto;padding:12px 20px 18px}
+.mm-g{margin-bottom:12px}
+.mm-g>b{display:block;font-size:10.5px;letter-spacing:.14em;color:var(--teal,#0F766E);font-weight:800;margin-bottom:5px}
+.mm-l{display:flex;flex-wrap:wrap;gap:4px}
+.mm-l a{font-size:13px;font-weight:700;color:rgba(20,33,61,.74);text-decoration:none;padding:6px 10px;border-radius:9px;background:rgba(20,33,61,.035)}
+.mm-l a:active{background:rgba(15,118,110,.12);color:var(--teal,#0F766E)}
+@media(min-width:768px){#mobile-menu{display:none !important}}
+</style>
+<style id="tab-tap-css">
+/* ===== 한 번 = 반전·펼침 / 두 번 = 이동 ===== */
+#site-header .gt,#site-header .st,#site-dock a{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+#site-header .gt,#site-header .st{transition:background .14s ease,color .14s ease,box-shadow .14s ease,transform .14s ease}
+#site-header .gt.is-press,#site-header .gt:hover,#site-header .gt:focus-visible{
+  background:var(--teal,#0F766E)!important;color:#fff!important;
+  box-shadow:0 6px 18px rgba(15,118,110,.22)!important}
+#site-header .st.is-press,#site-header .st:hover,#site-header .st:focus-visible{
+  background:var(--teal,#0F766E)!important;color:#fff!important;
+  box-shadow:0 2px 10px rgba(15,118,110,.28)!important}
+#site-header .gt.is-on{box-shadow:none}
+#site-header .gt.is-on.is-press,#site-header .gt.is-on:hover{box-shadow:0 6px 18px rgba(15,118,110,.22)!important}
+#site-header .gt:active,#site-header .st:active{transform:scale(.97)}
+.st-row.is-open{animation:tabRowIn .18s cubic-bezier(.22,.61,.36,1)}
+@keyframes tabRowIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+.inv-lens{display:none!important}
+#site-dock a{transition:background .14s ease,color .14s ease,transform .14s ease}
+#site-dock a:active{transform:scale(.94)}
+#site-dock a.cur{box-shadow:0 0 0 1px rgba(60,240,197,.55),0 4px 14px rgba(60,240,197,.22)}
+#tab-tap-hint{position:fixed;left:0;top:0;z-index:2147483646;pointer-events:none;opacity:0;
+  transform:translate(-50%,calc(-100% - 4px));transition:opacity .18s ease,transform .18s ease;
+  background:#0B1220;color:#fff;border:1px solid rgba(60,240,197,.5);
+  font:700 11.5px/1 'Pretendard','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+  padding:8px 12px;border-radius:999px;box-shadow:0 10px 24px rgba(0,0,0,.32);white-space:nowrap}
+#tab-tap-hint.on{opacity:1;transform:translate(-50%,calc(-100% - 10px))}
+@media(prefers-reduced-motion:reduce){.st-row.is-open{animation:none}#site-header .gt:active,#site-header .st:active,#site-dock a:active{transform:none}}
+</style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased overflow-x-hidden">
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="gt-shell">
+    <div class="gt-top">
+      <a href="#/" data-page="home" data-anchor="hero" class="gt-brand">
+        <span class="gt-logo">土</span>
+        <span class="gt-name"><b>토지와 자유</b></span>
+      </a>
+      <div class="gt-actions">
+        <a href="#/home#join" data-page="home" data-anchor="join" class="gt-cta">함께하기 <i class="fa-solid fa-arrow-right"></i></a>
+        <button id="menu-toggle" class="gt-burger" aria-label="메뉴" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+    <nav class="gt-wrap" aria-label="주요 메뉴">
+      <div class="gt-row" role="tablist" aria-label="대분류">
+        <a class="gt" data-g="land" role="tab" aria-selected="true" href="#/home#problem" data-page="home" data-anchor="problem">토지 Land</a>
+        <a class="gt" data-g="liberty" role="tab" aria-selected="false" href="liberty.html">자유 Liberty</a>
+        <a class="gt is-on" data-g="salriki" role="tab" aria-selected="false" href="#/salriki" data-page="salriki">대한민국 살리기</a>
+        <a class="gt" data-g="join" role="tab" aria-selected="false" href="#/home#join" data-page="home" data-anchor="join">함께하기</a>
+      </div>
+      <div class="st-wrap">
+        <div class="st-row" data-g="land" hidden>
+          <a class="st is-on" href="#/home#problem" data-page="home" data-anchor="problem">왜 지금</a>
+          <a class="st" href="#/home#privilege" data-page="home" data-anchor="privilege">3대 특권 해체</a>
+          <a class="st" href="#/home#dividend" data-page="home" data-anchor="dividend">토지배당</a>
+          <a class="st" href="#/home#finance" data-page="home" data-anchor="finance">금융 회계</a>
+          <a class="st" href="#/home#global" data-page="home" data-anchor="global">지금 세계는</a>
+          <a class="st" href="#/policy" data-page="policy">정책</a>
+          <a class="st" href="land-dividend-manifesto.html">중국 토지배당 촉구서</a>
+          <a class="st" href="22대-국회-전과-지도.html">국회 전과 지도</a>
+        </div>
+        <div class="st-row" data-g="liberty" hidden>
+          <a class="st" href="teukgeom.html">특검 수사 파일</a>
+          <a class="st" href="liberty-report.html">10.28 리포트</a>
+          <a class="st" href="liberty-archive.html">증거 아카이브</a>
+          <a class="st" href="forensic.html">국과수 감정 추적</a>
+        </div>
+        <div class="st-row" data-g="salriki">
+          <a class="st" href="#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
+          <a class="st" href="#/salriki#D-Day</a> <a class="st" href="#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a> <a class="st" href="#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a> <a class="st" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a> <a class="st" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a> <a class="st" href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a> <a class="st" href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a>
+          <a class="st" href="index-chaohan.html">중국의 한국 흡수 전략</a>
+        </div>
+        <div class="st-row" data-g="join" hidden></div>
+      </div>
+    </nav>
+  </div>
+  <div id="mobile-menu">
+    <div class="mm-in">
+      <div class="mm-g">
+        <b>토지 Land</b>
+        <div class="mm-l">
+          <a href="#/home#problem" data-page="home" data-anchor="problem">왜 지금</a>
+          <a href="#/home#privilege" data-page="home" data-anchor="privilege">3대 특권 해체</a>
+          <a href="#/home#dividend" data-page="home" data-anchor="dividend">토지배당</a>
+          <a href="#/home#finance" data-page="home" data-anchor="finance">금융 회계</a>
+          <a href="#/home#global" data-page="home" data-anchor="global">지금 세계는</a>
+          <a href="#/policy" data-page="policy">정책</a>
+          <a href="land-dividend-manifesto.html">중국 토지배당 촉구서</a>
+          <a href="22대-국회-전과-지도.html">국회 전과 지도</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>자유 Liberty</b>
+        <div class="mm-l">
+          <a href="teukgeom.html">특검 수사 파일</a>
+          <a href="liberty-report.html">10.28 리포트</a>
+          <a href="liberty-archive.html">증거 아카이브</a>
+          <a href="forensic.html">국과수 감정 추적</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>대한민국 살리기</b>
+        <div class="mm-l">
+          <a href="#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
+          <a href="#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a>
+          <a href="#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a>
+          <a href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a>
+          <a href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a>
+          <a href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a>
+          <a href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a><a href="index-chaohan.html">중국의 한국 흡수 전략</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>함께하기</b>
+        <div class="mm-l">
+          <a href="#/home#join" data-page="home" data-anchor="join">함께하기 · 뉴스레터</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 
 <!-- ===== 네비게이션 ===== -->
 <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
@@ -1035,7 +1217,7 @@ table th { white-space: nowrap; }
     <p class="mt-14 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full bg-teal px-5 py-2.5 font-mono text-xs sm:text-sm font-bold text-white tracking-wide shadow-lg shadow-teal/25 reveal">
       노력의 열매는 개인에게 <span class="text-gold">·</span> 땅의 이익은 국민에게 <span class="text-gold">·</span> 금융의 위험은 숨김없이
     </p>
-    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm reveal">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 11월 6일 (금)</b> · 시각은 1분마다 자동 갱신</p>
+    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm reveal">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 11월 9일 (월)</b> · 시각은 1분마다 자동 갱신</p>
   </div>
   <a href="#/home#problem" data-page="home" data-anchor="problem" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-ink/60 animate-bounce" aria-label="아래로 스크롤">
     <i class="fa-solid fa-chevron-down text-xl"></i>
@@ -1043,6 +1225,19 @@ table th { white-space: nowrap; }
 </section>
 
 <!-- ===== 문제 제기 ===== -->
+<div style="max-width:72rem;margin:18px auto 0;padding:14px 18px;border:2px solid #FFD400;border-radius:14px;background:#FFFBE6;font-size:15px;font-weight:800;color:#111">🚨 <mark style="background:#FFE94A;color:#111;padding:0 3px;border-radius:3px">지금이 골든타임</mark> — 2027 예산안 처리(12.2)와 선관위 특검 1차 수사기한(12.5)이 다음 정례 브리핑 격입니다. 카운트다운부터 확인하세요.</div>
+<section id="calendar">
+<h2>⏳ 골든타임 D-Day</h2>
+<p class="sub">타이밍을 놓치면 도구가 무뎌집니다.</p>
+<p class="sub" style="margin-top:-8px">오늘 <b data-date="today" data-date-format="fulltime">오늘</b> 기준 · 날짜·시각은 1분마다 자동으로 갱신됩니다.</p>
+<div class="cd">
+<div class="card"><div class="num" id="d1" data-dday="2026-12-02">-</div><h3>2027 예산안 법정 처리기한</h3><p class="dd-date"><b data-date="2026-12-02" data-date-format="full">2026년 12월 2일</b></p><a class="card-more" href="dday-budget.html">자세히 보기 ▸</a></div>
+<div class="card"><div class="num" id="d4" data-dday="2026-12-05">-</div><h3>선관위 특검 1차 수사기한</h3><p class="dd-date"><b data-date="2026-12-05" data-date-format="full">2026년 12월 5일</b></p><a class="card-more" href="dday-teukgeom.html">자세히 보기 ▸</a></div>
+<div class="card"><div class="num" id="d2" data-dday="2027-06-30">-</div><h3>개헌 국민투표 목표</h3><p class="dd-date"><b data-date="2027-06-30" data-date-format="half">2027년 상반기</b></p><a class="card-more" href="dday-referendum.html">자세히 보기 ▸</a></div>
+<div class="card"><div class="num" id="d3" data-dday="2028-04-12">-</div><h3>제23대 총선</h3><p class="dd-date"><b data-date="2028-04-12" data-date-format="full">2028년 4월 12일 (수)</b></p><a class="card-more" href="dday-election.html">자세히 보기 ▸</a></div>
+</div>
+</section>
+
 <section id="problem" class="py-24 border-t border-ink/5">
   <div class="max-w-6xl mx-auto px-5">
     <p class="font-mono text-teal text-sm font-bold mb-3 reveal">THE PROBLEM</p>
@@ -1747,7 +1942,7 @@ table th { white-space: nowrap; }
       <a href="#/policy#hundred" data-page="policy" data-anchor="hundred" class="rounded-full bg-white border border-ink/15 px-4 py-2 font-bold text-ink hover:border-teal hover:text-teal transition">100일 입법</a>
       <a href="#/policy#messages" data-page="policy" data-anchor="messages" class="rounded-full bg-white border border-ink/15 px-4 py-2 font-bold text-ink hover:border-teal hover:text-teal transition">대상별 메시지</a>
     </div>
-    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 11월 6일 (금)</b> · 시각은 1분마다 자동 갱신</p>
+    <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-ink/10 px-4 py-2 text-sm font-mono text-ink/70 shadow-sm">현재 기준 <b data-date="today" data-date-format="fulltime" class="text-teal font-bold">2026년 11월 9일 (월)</b> · 시각은 1분마다 자동 갱신</p>
   </div>
 </section>
 
@@ -1955,14 +2150,13 @@ table th { white-space: nowrap; }
 </footer></div><div class="lnl-page lnl-sal" id="page-salriki" hidden>
 <nav><div class="in">
   <b><i class="fa-solid fa-bolt bolt" aria-hidden="true"></i>대한민국 살리기</b>
-  <a class="tab" href="#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a>
-  <a class="tab" href="#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a>
-  <a class="tab" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a>
-  <a class="tab" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a>
-  <a class="tab" href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a>
   <a class="tab" href="#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
-  <a class="tab" href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a>
-  <a class="tab" href="teukgeom.html" title="선관위 특검 수사 파일 (별도 페이지 · 기준일 2026.11.06)">선관위 특검</a>
+          <a class="tab" href="#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a>
+          <a class="tab" href="#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a>
+          <a class="tab" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a>
+          <a class="tab" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a>
+          <a class="tab" href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a>
+          <a class="tab" href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a><a class="tab" href="teukgeom.html" title="선관위 특검 수사 파일 (별도 페이지 · 기준일 2026.11.06)">선관위 특검</a>
   <a class="tab" href="index-chaohan.html" title="중국의 한국 흡수 전략 — 총론 + 관련 4개 문서">중국의 한국 흡수 전략</a>
   <div class="cn-docs" style="flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:8px 0 2px;border-top:1px solid rgba(20,33,61,.10);margin-top:6px">
     <a class="tab" style="font-size:12px" href="index-chaohan.html">총론</a>
@@ -1980,7 +2174,7 @@ table th { white-space: nowrap; }
 <p>단정 말고 <b style="color:#fff">검증</b>. 분노 말고 <b style="color:#fff">절차</b>.<br>헌법이 이미 우리 손에 쥐여 준 도구로 권력을 감시합니다.</p>
 <p class="slogan">안보는 빈틈없이. <b>재정</b>을 <b>책임</b> 있게. 권력은 헌법 안에.</p>
 <p class="os">정권은 <b>앱</b>, 헌법은 <b>OS</b>. 앱이 OS 권한을 흡수하는 순간을 시민이 문서로 감시합니다.</p>
-<p class="clockline">현재 기준 <b data-date="today" data-date-format="fulltime">2026년 11월 6일 (금)</b> · 시각은 1분마다 자동 갱신됩니다</p>
+<p class="clockline">현재 기준 <b data-date="today" data-date-format="fulltime">2026년 11월 9일 (월)</b> · 시각은 1분마다 자동 갱신됩니다</p>
 <a class="btn p" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">지금 할 수 있는 일 보기</a>
 <a class="btn g" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈 팩트 체크</a>
 <a class="btn g" href="#/salriki#demands" data-page="salriki" data-anchor="demands">16대 요구안 보기</a>
@@ -2055,15 +2249,23 @@ table th { white-space: nowrap; }
 
 <section id="issues">
 <h2>📡 이슈 트래커</h2>
-<p class="sub"><b data-date="today" data-date-format="fulltime">2026년 11월 6일 (금)</b> · <b style="color:#DC2626">11.6 갱신</b> 기준 · 시각은 1분마다 자동 갱신. 새로운 사실이 나오면 업데이트합니다.</p>
+<p class="sub"><b data-date="today" data-date-format="fulltime">2026년 11월 9일 (월)</b> · <b style="color:#DC2626">11.9 갱신</b> 기준 · 시각은 1분마다 자동 갱신. 새로운 사실이 나오면 업데이트합니다.</p>
 <div class="legend"><span><span class="tag fact">확정</span> 공식 확인</span><span><span class="tag press">보도</span> 언론 확인(원문 확보 전)</span><span><span class="tag probe">진행</span> 수사·심사 중</span><span><span class="tag debate">논쟁</span> 해석 대립</span></div>
 <div style="margin:0 0 26px;padding:20px 22px;border:1px solid rgba(220,38,38,.22);border-left:5px solid #DC2626;border-radius:14px;background:linear-gradient(180deg,#fff,#fff5f5)">
-  <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:.08em;color:#DC2626;font-weight:700;margin-bottom:10px">11.2 NEW BRIEF · 오늘 바뀐 것</div>
+  <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:.08em;color:#DC2626;font-weight:700;margin-bottom:10px">11.9 NEW BRIEF · 이번 주 바뀐 것</div>
   <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
-    <div style="border:1px solid rgba(20,33,61,.10);border-radius:10px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:14.5px;margin-bottom:5px">공추비 9억 · 중앙선관위 18개 부서 압수수색<span style="display:inline-block;background:#DC2626;color:#fff;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:700;letter-spacing:.08em;padding:2px 5px;border-radius:4px;vertical-align:middle;margin-left:4px">NEW</span></div><p style="margin:0;font-size:13.5px;color:#4b5563;line-height:1.65">11.2 오전 9시, 위원장실·사무총장실 포함 18개 부서 + 전 사무총장 주거지. 65명 투입, 혐의는 국고손실·직권남용·허위공문서. <a href="teukgeom.html#timeline" style="color:#0F766E;font-weight:700">수사 파일 →</a></p></div>
-    <div style="border:1px solid rgba(20,33,61,.10);border-radius:10px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:14.5px;margin-bottom:5px">주진우 의원, 총선 57개 투표구 자료 제출<span style="display:inline-block;background:#DC2626;color:#fff;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:700;letter-spacing:.08em;padding:2px 5px;border-radius:4px;vertical-align:middle;margin-left:4px">NEW</span></div><p style="margin:0;font-size:13.5px;color:#4b5563;line-height:1.65">11.2 오후 3시 특검 사무실 앞 기자회견. 41곳 → <b>57곳</b>으로 확대된 개표 불일치 자료. <a href="teukgeom.html#videos" style="color:#0F766E;font-weight:700">기자회견 영상 →</a></p></div>
-    <div style="border:1px solid rgba(20,33,61,.10);border-radius:10px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:14.5px;margin-bottom:5px">국과수 정밀감정 이번 주 착수<span style="display:inline-block;background:#DC2626;color:#fff;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:700;letter-spacing:.08em;padding:2px 5px;border-radius:4px;vertical-align:middle;margin-left:4px">NEW</span></div><p style="margin:0;font-size:13.5px;color:#4b5563;line-height:1.65">이의 700여 장 자체 분석 → 이르면 이번 주 국과수·공소청 법과학기획관 의뢰. 장비도 감정 대상. <a href="forensic.html" style="color:#0F766E;font-weight:700">감정 추적 →</a></p></div>
-    <div style="border:1px solid rgba(20,33,61,.10);border-radius:10px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:14.5px;margin-bottom:5px">납품비리 140억 · ‘선피아’<span style="display:inline-block;background:#DC2626;color:#fff;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:700;letter-spacing:.08em;padding:2px 5px;border-radius:4px;vertical-align:middle;margin-left:4px">NEW</span></div><p style="margin:0;font-size:13.5px;color:#4b5563;line-height:1.65">10.30 압수수색. BMT 미달 장비 전량 납품, 3개 업체 103건·175억 계약 의혹. <a href="teukgeom.html#videos" style="color:#0F766E;font-weight:700">영상 →</a></p></div>
+    <div style="border:1px solid rgba(20,33,61,.10);border-radius:10px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:14.5px;margin-bottom:5px">계수기 담합 · 10년 수의계약 175억<span style="display:inline-block;background:#DC2626;color:#fff;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:700;letter-spacing:.08em;padding:2px 5px;border-radius:4px;vertical-align:middle;margin-left:4px">NEW</span></div><p style="margin:0;font-size:13.5px;color:#4b5563;line-height:1.65">11.9 업체 2곳 사무실·주거지 수색(34명). <a href="tl-1109.html" style="color:#0F766E;font-weight:700">자세히 보기 →</a></p></div>
+    <div style="border:1px solid rgba(20,33,61,.10);border-radius:10px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:14.5px;margin-bottom:5px">투표록 조직적 위·변조 단서<span style="display:inline-block;background:#DC2626;color:#fff;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:700;letter-spacing:.08em;padding:2px 5px;border-radius:4px;vertical-align:middle;margin-left:4px">NEW</span></div><p style="margin:0;font-size:13.5px;color:#4b5563;line-height:1.65">11.4 "경찰 수사 전 사후 수정 지시" — 10개 부서 수색. <a href="tl-1104.html" style="color:#0F766E;font-weight:700">자세히 보기 →</a></p></div>
+    <div style="border:1px solid rgba(20,33,61,.10);border-radius:10px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:14.5px;margin-bottom:5px">국과수·공소청 감정 의뢰 확정<span style="display:inline-block;background:#DC2626;color:#fff;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:700;letter-spacing:.08em;padding:2px 5px;border-radius:4px;vertical-align:middle;margin-left:4px">NEW</span></div><p style="margin:0;font-size:13.5px;color:#4b5563;line-height:1.65">11.8 700여 장 분야별 선별 의뢰 + 보전 조치. <a href="tl-1108.html" style="color:#0F766E;font-weight:700">자세히 보기 →</a></p></div>
+    <div style="border:1px solid rgba(20,33,61,.10);border-radius:10px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:14.5px;margin-bottom:5px">2027 예산 본심사 돌입<span style="display:inline-block;background:#DC2626;color:#fff;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;font-weight:700;letter-spacing:.08em;padding:2px 5px;border-radius:4px;vertical-align:middle;margin-left:4px">NEW</span></div><p style="margin:0;font-size:13.5px;color:#4b5563;line-height:1.65">예결특위 종합정책질의 11.4~5 — <a href="dday-budget.html" style="color:#0F766E;font-weight:700">D-Day 보기 →</a></p></div>
+  </div>
+</div>
+<div style="max-width:none;margin:0 0 26px;padding:18px 22px;border:1px solid rgba(20,33,61,.12);border-radius:14px;background:#fff">
+  <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:.08em;color:#14213D;font-weight:700;margin-bottom:12px">11.9 심층 브리핑 · 안보 × 재정 × 헌정</div>
+  <div style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+    <div style="border:1px solid rgba(20,33,61,.10);border-radius:12px;padding:14px 16px;background:#fffafa"><div style="font-weight:800;font-size:15px;margin-bottom:8px">🛡 안보</div><ul style="margin:0;padding-left:18px;font-size:13.5px;line-height:1.75;color:#374151"><li>김여정 대남 확성기 재개 예고(10.19) — 군 "비례적 대응", <mark style="background:#FFE94A;color:#111">1년 4개월 만에 재가동</mark> 되나 <a href="https://www.yna.co.kr/view/AKR20261021174000504" style="color:#0F766E">연합 10.21</a></li><li>남북 군사회담 제의에 북한 <mark style="background:#FFE94A;color:#111">묵묵부답</mark> <a href="https://www.mk.co.kr/news/politics/12185257" style="color:#0F766E">매경 10.25</a></li><li>DMZ 지뢰 폭발(9.21)·국경 요새화 — <a href="issue-02.html" style="color:#0F766E">지뢰 이슈 →</a></li></ul></div>
+    <div style="border:1px solid rgba(20,33,61,.10);border-radius:12px;padding:14px 16px;background:#fbfdff"><div style="font-weight:800;font-size:15px;margin-bottom:8px">💰 재정</div><ul style="margin:0;padding-left:18px;font-size:13.5px;line-height:1.75;color:#374151"><li>2027 예산안 <mark style="background:#FFE94A;color:#111">820.9조(+12.8%)</mark> — 예결특위 종합정책질의 11.4~5 진행 <a href="https://www.youtube.com/watch?v=9gph2ga6htw" style="color:#0F766E">국회 11.4</a></li><li><mark style="background:#FFE94A;color:#111">예산 심사와 특검 1차 수사기한(12월 초)이 겹친다</mark> — 감액 논리를 공개 기록으로</li><li>미래대응기금 162.3조·교부금 개편 — <a href="issue-10.html" style="color:#0F766E">기금 →</a> <a href="issue-14.html" style="color:#0F766E">교부금 →</a></li></ul></div>
+    <div style="border:1px solid rgba(20,33,61,.10);border-radius:12px;padding:14px 16px;background:#fffdf5"><div style="font-weight:800;font-size:15px;margin-bottom:8px">⚖ 헌정</div><ul style="margin:0;padding-left:18px;font-size:13.5px;line-height:1.75;color:#374151"><li>특검-법원 영장 기각 공방 — <mark style="background:#FFE94A;color:#111">영장 기각은 무혐의가 아니다</mark> <a href="teukgeom.html#court" style="color:#0F766E">쟁송 →</a></li><li>개헌: 4년 중임·연임 재논의(8월), "여야 합의 시 임기 단축도" <a href="https://www.yna.co.kr/view/AKR20260814151351001" style="color:#0F766E">연합 8.14</a></li><li>선관위는 <mark style="background:#FFE94A;color:#111">감사원 감사 대상 아님</mark>(헌재 2023헌라5) — 특검 수사가 사실상 유일한 외부 검증 통로 <a href="issue-20.html" style="color:#0F766E">선관위 이슈 →</a></li></ul></div>
   </div>
 </div>
 <div class="filters">
@@ -2073,25 +2275,31 @@ table th { white-space: nowrap; }
 </div>
 <div class="grid" id="issueGrid">
 
-<div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag press">보도</span> <span class="tag" style="background:#DC2626;color:#fff">11.2 NEW</span> <h3>선관위 특검, ‘공추비 9억’ 중앙선관위 18개 부서 압수수색</h3><a class="card-more" href="tl-1102.html">자세히 보기 ▸</a></div>
+<div class="card" data-p="fis con"><span class="pillar">헌정·재정</span> <span class="tag press">보도</span> <span class="tag" style="background:#DC2626;color:#fff">11.9 NEW</span> <h3>계수기 담합 — 10년 수의계약 175억</h3><a class="card-more" href="tl-1109.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag press">보도</span> <span class="tag" style="background:#DC2626;color:#fff">11.2 NEW</span> <h3>주진우 의원 “22대 총선 57개 투표구 불일치” — 특검에 자료 제출</h3><a class="card-more" href="tl-1102.html">자세히 보기 ▸</a></div>
+<div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag press">보도</span> <span class="tag" style="background:#DC2626;color:#fff">11.4 NEW</span> <h3>"경찰 수사 전 투표록 위조 지시" 단서</h3><a class="card-more" href="tl-1104.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag probe">진행</span> <span class="tag" style="background:#DC2626;color:#fff">11.1 NEW</span> <h3>국과수 정밀감정 이번 주 착수 — 이의 700여 장 + 장비</h3><a class="card-more" href="tl-1101.html">자세히 보기 ▸</a></div>
+<div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag probe">진행</span> <span class="tag" style="background:#DC2626;color:#fff">11.8 NEW</span> <h3>국과수·공소청 감정 의뢰 확정 — 700여 장</h3><a class="card-more" href="tl-1108.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="fis"><span class="pillar">재정·헌정</span> <span class="tag press">보도</span> <span class="tag" style="background:#DC2626;color:#fff">10.30 NEW</span> <h3>선거장비 140억 납품비리 — BMT 미달인데 전량 합격 처리</h3><a class="card-more" href="tl-1030.html">자세히 보기 ▸</a></div>
+<div class="card" data-p="fis"><span class="pillar">재정</span> <span class="tag press">보도</span> <span class="tag" style="background:#DC2626;color:#fff">11.4 NEW</span> <h3>2027 예산 본심사 돌입 — D-Day 12.2</h3><a class="card-more" href="dday-budget.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="sec"><span class="pillar">안보</span> <span class="tag press">보도</span> <h3>전방 전 군단 ‘빈총 경계’</h3><a class="card-more" href="issue-01.html">자세히 보기 ▸</a></div>
+<div class="card" data-p="fis"><span class="pillar">재정</span> <span class="tag press">보도</span> <span class="tag" style="background:#DC2626;color:#fff">11.2 NEW</span> <h3>공추비 9억 — 18개 부서 압수수색</h3><a class="card-more" href="tl-1102.html">자세히 보기 ▸</a></div>
+
+<div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag press">보도</span> <span class="tag" style="background:#DC2626;color:#fff">11.2 NEW</span> <h3>주진우, 총선 57곳 불일치 자료 제출</h3><a class="card-more" href="tl-1102.html">자세히 보기 ▸</a></div>
+
+<div class="card" data-p="fis"><span class="pillar">재정·헌정</span> <span class="tag press">보도</span> <span class="tag" style="background:#DC2626;color:#fff">10.30 NEW</span> <h3>선거장비 140억 납품비리 — BMT 미달 전량 합격</h3><a class="card-more" href="tl-1030.html">자세히 보기 ▸</a></div>
+
+<div class="card" data-p="sec"><span class="pillar">안보</span> <span class="tag press">보도</span> <h3>전방 전 군단 '빈총 경계'</h3><a class="card-more" href="issue-01.html">자세히 보기 ▸</a></div>
 
 <div class="card" data-p="sec"><span class="pillar">안보</span> <span class="tag fact">확정</span> <span class="tag probe">진행</span> <h3>DMZ 지뢰 폭발 (9.21, 25사단)</h3><a class="card-more" href="issue-02.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="sec"><span class="pillar">안보·재정</span> <span class="tag fact">확정</span> <span class="tag press">보도</span> <span class="tag debate">10.22 갱신</span> <h3>대북 지원 예산 — 편성은 1조, 집행은 1%대</h3><a class="card-more" href="issue-03.html">자세히 보기 ▸</a></div>
+<div class="card" data-p="sec"><span class="pillar">안보·재정</span> <span class="tag fact">확정</span> <span class="tag press">보도</span> <span class="tag debate">10.22 갱신</span> <h3>대북 지원 예산 — 편성 1조, 집행 1%대</h3><a class="card-more" href="issue-03.html">자세히 보기 ▸</a></div>
 
 <div class="card" data-p="sec"><span class="pillar">안보·인도협력</span> <span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="tag debate">10.22 갱신</span> <h3>대북 인도적 지원 — 강동군병원 의료장비 166종</h3><a class="card-more" href="issue-04.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="sec future fis"><span class="pillar">농지·식량안보</span> <span class="tag fact">확정</span> <span class="tag debate">논쟁</span> <span class="tag probe">진행</span> <h3>이재명 정부 농지 전수조사 — 처분에서 ‘양성화’로 후퇴</h3><a class="card-more" href="issue-05.html">자세히 보기 ▸</a></div>
+<div class="card" data-p="sec future fis"><span class="pillar">농지·식량안보</span> <span class="tag fact">확정</span> <span class="tag debate">논쟁</span> <span class="tag probe">진행</span> <h3>농지 전수조사 — '양성화'로 후퇴</h3><a class="card-more" href="issue-05.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="sec con"><span class="pillar">안보·외교</span> <span class="tag fact">확정</span> <span class="tag press">보도</span> <span class="tag debate">10.22 갱신</span> <h3>우크라이나 北 포로 송환 공개 갈등 — 대사 소환·공관원 절반 철수</h3><a class="card-more" href="issue-06.html">자세히 보기 ▸</a></div>
+<div class="card" data-p="sec con"><span class="pillar">안보·외교</span> <span class="tag fact">확정</span> <span class="tag press">보도</span> <span class="tag debate">10.22 갱신</span> <h3>우크라이나 北 포로 송환 갈등</h3><a class="card-more" href="issue-06.html">자세히 보기 ▸</a></div>
 
 <div class="card" data-p="sec me"><span class="pillar">안보·내 정보</span> <span class="tag fact">확정</span> <span class="tag probe">진행</span> <h3>금융권 동시다발 해킹</h3><a class="card-more" href="issue-07.html">자세히 보기 ▸</a></div>
 
@@ -2099,13 +2307,13 @@ table th { white-space: nowrap; }
 
 <div class="card" data-p="fis"><span class="pillar">재정</span> <span class="tag fact">확정</span> <h3>국고채: 총발행 ≠ 새 빚</h3><a class="card-more" href="issue-09.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="fis"><span class="pillar">재정·헌정</span> <span class="tag debate">논쟁</span> <h3>미래대응기금 162.3조</h3><a class="card-more" href="issue-10.html">자세히 보기 ▸</a></div>
+<div class="card" data-p="fis"><span class="pillar">재정</span> <span class="tag debate">논쟁</span> <h3>미래대응기금 162.3조</h3><a class="card-more" href="issue-10.html">자세히 보기 ▸</a></div>
 
 <div class="card" data-p="fis"><span class="pillar">재정</span> <span class="tag press">보도</span> <h3>특검 예산: 배정·집행·불용</h3><a class="card-more" href="issue-11.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="fis con"><span class="pillar">헌정·재정</span> <span class="tag press">보도</span> <span class="tag probe">진행</span> <span class="tag debate">10.25 갱신</span> <h3>특검 인력 — 파견 충원 지연</h3><a class="card-more" href="issue-12.html">자세히 보기 ▸</a><a class="sw-file-link" href="teukgeom.html" style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:12px;padding:13px 18px;border:1.5px solid rgba(60,240,197,.65);border-radius:12px;background:rgba(60,240,197,.12);box-shadow:0 0 18px rgba(60,240,197,.22);color:#3cf0c5;font-size:18px;font-weight:800;letter-spacing:.01em;text-decoration:none"><span>선관위 특검 수사 파일</span><span style="flex:0 0 auto;font-size:12.5px;font-weight:700;opacity:.85;white-space:nowrap">기준일 2026.11.06 · 전체 보기 →</span></a></div>
+<div class="card" data-p="fis con"><span class="pillar">헌정·재정</span> <span class="tag press">보도</span> <span class="tag probe">진행</span> <span class="tag debate">10.25 갱신</span> <h3>특검 인력 — 파견 충원 지연</h3><a class="card-more" href="issue-12.html">자세히 보기 ▸</a><a class="sw-file-link" href="teukgeom.html" style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:12px;padding:13px 18px;border:1.5px solid rgba(60,240,197,.65);border-radius:12px;background:rgba(60,240,197,.12);box-shadow:0 0 18px rgba(60,240,197,.22);color:#3cf0c5;font-size:18px;font-weight:800;letter-spacing:.01em;text-decoration:none"><span>선관위 특검 수사 파일</span><span style="flex:0 0 auto;font-size:12.5px;font-weight:700;opacity:.85;white-space:nowrap">기준일 2026.11.09 · 전체 보기 →</span></a></div>
 
-<div class="card" data-p="fis con"><span class="pillar">재정·헌정</span> <span class="tag debate">논쟁</span> <h3>국회 자기 예산 · 세비</h3><a class="card-more" href="issue-13.html">자세히 보기 ▸</a></div>
+<div class="card" data-p="fis con"><span class="pillar">헌정·재정</span> <span class="tag debate">논쟁</span> <h3>국회 자기 예산 · 세비</h3><a class="card-more" href="issue-13.html">자세히 보기 ▸</a></div>
 
 <div class="card" data-p="fis future"><span class="pillar">재정·미래세대</span> <span class="tag press">보도</span> <h3>지방교육재정교부금, 55년 만의 손질</h3><a class="card-more" href="issue-14.html">자세히 보기 ▸</a></div>
 
@@ -2117,15 +2325,15 @@ table th { white-space: nowrap; }
 
 <div class="card" data-p="con me"><span class="pillar">헌정·수사공백</span> <span class="tag press">보도</span> <h3>공석의 권력 — 권한은 커졌는데 이름이 없다</h3><a class="card-more" href="issue-18.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="con"><span class="pillar">헌정·수사체계</span> <span class="tag press">보도</span> <span class="tag debate">논쟁</span> <h3>공수처 개편안 — 대통령·국회의원 수사는 중수청으로</h3><a class="card-more" href="issue-19.html">자세히 보기 ▸</a></div>
+<div class="card" data-p="con"><span class="pillar">헌정·수사체계</span> <span class="tag press">보도</span> <span class="tag debate">논쟁</span> <h3>공수처 개편안 — 수사는 중수청으로</h3><a class="card-more" href="issue-19.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="tag debate">10.18 갱신</span> <h3>선관위: 부실의 누적에서 부정으로 더 가까이</h3><a class="card-more" href="issue-20.html">자세히 보기 ▸</a><a class="sw-file-link" href="teukgeom.html" style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:12px;padding:13px 18px;border:1.5px solid rgba(60,240,197,.65);border-radius:12px;background:rgba(60,240,197,.12);box-shadow:0 0 18px rgba(60,240,197,.22);color:#3cf0c5;font-size:18px;font-weight:800;letter-spacing:.01em;text-decoration:none"><span>선관위 특검 수사 파일</span><span style="flex:0 0 auto;font-size:12.5px;font-weight:700;opacity:.85;white-space:nowrap">기준일 2026.11.06 · 전체 보기 →</span></a></div>
+<div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag fact">확정</span> <span class="tag probe">진행</span> <span class="tag debate">10.18 갱신</span> <h3>선관위 — 부실의 누적, 부정으로</h3><a class="card-more" href="issue-20.html">자세히 보기 ▸</a><a class="sw-file-link" href="teukgeom.html" style="display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:12px;padding:13px 18px;border:1.5px solid rgba(60,240,197,.65);border-radius:12px;background:rgba(60,240,197,.12);box-shadow:0 0 18px rgba(60,240,197,.22);color:#3cf0c5;font-size:18px;font-weight:800;letter-spacing:.01em;text-decoration:none"><span>선관위 특검 수사 파일</span><span style="flex:0 0 auto;font-size:12.5px;font-weight:700;opacity:.85;white-space:nowrap">기준일 2026.11.09 · 전체 보기 →</span></a></div>
 
-<div class="card" data-p="fis con"><span class="pillar">헌정·재정</span> <span class="tag press">보도</span> <span class="tag debate">논쟁</span> <h3>선관위 청사 방호 예산 — 담장 2.7m·무기고</h3><a class="card-more" href="issue-21.html">자세히 보기 ▸</a></div>
+<div class="card" data-p="fis con"><span class="pillar">헌정·재정</span> <span class="tag press">보도</span> <span class="tag debate">논쟁</span> <h3>선관위 청사 방호 예산 — 담장 2.7m</h3><a class="card-more" href="issue-21.html">자세히 보기 ▸</a></div>
 
 <div class="card" data-p="con"><span class="pillar">헌정</span> <span class="tag debate">논쟁</span> <h3>중립권력의 설계 · 개헌</h3><a class="card-more" href="issue-22.html">자세히 보기 ▸</a></div>
 
-<div class="card" data-p="con exp"><span class="pillar">헌정·표현</span> <span class="tag fact">확정</span> <h3>대북전단 금지 — 안보와 표현의 자유는 다른 트랙</h3><a class="card-more" href="issue-23.html">자세히 보기 ▸</a></div>
+<div class="card" data-p="con exp"><span class="pillar">헌정·표현</span> <span class="tag fact">확정</span> <h3>대북전단 금지 — 안보×표현의 자유</h3><a class="card-more" href="issue-23.html">자세히 보기 ▸</a></div>
 
 </div>
 <div class="note" style="margin-top:22px">🔭 <b>확장 의제(로드맵)</b> — 공공기관·지방공기업 부채 · 조달·보조금·채용 · 연금·건강보험 재정 · 에너지·핵심 공급망 · 재난·산업·생활 안전 · 표현의 자유·개인정보 · <b>주거·토지·지역개발(연구소 특화)</b> · 인구·교육·R&D · <b>미래세대 재정(교부금·기금 승계)</b> · <b>공익신고 통로</b> · <b>지방 훈련장(조례·감사·투표·소환)</b></div>
@@ -2244,18 +2452,6 @@ table th { white-space: nowrap; }
 <div class="note" style="margin-top:16px">💡 <b>재치는 문장에서, 신뢰는 각주에서.</b> 전 국민 캠페인이니 은어로 도배하지 않습니다. 톤은 짧게, 판단은 5060도 따라오게.</div>
 </section>
 
-<section id="calendar">
-<h2>⏳ 골든타임 D-Day</h2>
-<p class="sub">타이밍을 놓치면 도구가 무뎌집니다.</p>
-<p class="sub" style="margin-top:-8px">오늘 <b data-date="today" data-date-format="fulltime">오늘</b> 기준 · 날짜·시각은 1분마다 자동으로 갱신됩니다.</p>
-<div class="cd">
-<div class="card"><div class="num" id="d1" data-dday="2026-12-02">-</div><h3>2027 예산안 법정 처리기한</h3><p class="dd-date"><b data-date="2026-12-02" data-date-format="full">2026년 12월 2일</b></p><a class="card-more" href="dday-budget.html">자세히 보기 ▸</a></div>
-<div class="card"><div class="num" id="d4" data-dday="2026-12-05">-</div><h3>선관위 특검 1차 수사기한</h3><p class="dd-date"><b data-date="2026-12-05" data-date-format="full">2026년 12월 5일</b></p><a class="card-more" href="dday-teukgeom.html">자세히 보기 ▸</a></div>
-<div class="card"><div class="num" id="d2" data-dday="2027-06-30">-</div><h3>개헌 국민투표 목표</h3><p class="dd-date"><b data-date="2027-06-30" data-date-format="half">2027년 상반기</b></p><a class="card-more" href="dday-referendum.html">자세히 보기 ▸</a></div>
-<div class="card"><div class="num" id="d3" data-dday="2028-04-12">-</div><h3>제23대 총선</h3><p class="dd-date"><b data-date="2028-04-12" data-date-format="full">2028년 4월 12일 (수)</b></p><a class="card-more" href="dday-election.html">자세히 보기 ▸</a></div>
-</div>
-</section>
-
 <section id="line">
 <h2>🚫 넘지 말아야 할 선</h2>
 <p class="sub">헌법을 지키려는 운동이 헌법을 부수면, 이기는 쪽은 없습니다.</p>
@@ -2303,7 +2499,7 @@ table th { white-space: nowrap; }
 
 <footer>
 「콩스탕의 경고와 2026년 대한민국」(2026.10.3)<br>
-본 사이트의 사실관계는 <b data-date="today" data-date-format="fulltime">2026년 11월 6일 (금)</b> 기준 언론 보도·공식 발표에 근거하며, 수사·재판 결과에 따라 달라질 수 있습니다.<br>
+본 사이트의 사실관계는 <b data-date="today" data-date-format="fulltime">2026년 11월 9일 (월)</b> 기준 언론 보도·공식 발표에 근거하며, 수사·재판 결과에 따라 달라질 수 있습니다.<br>
 의심은 증거를 요구하고, 맹목적인 믿음을 요구하지 않습니다 — 이 사이트의 경쟁력은 더 뜨겁지 않은 대신, 다음 정권에도 같은 기준으로 남는다는 점입니다.<br>
 법률 정보는 일반 안내이며, 개별 사안은 변호사와 상담하십시오.
 <div style="text-align:center;color:#8a97b5;font-size:13px;padding:0 20px 40px">이 페이지는 <a href="#/" data-page="home">토지와 자유</a> · 대한민국 살리기 캠페인 페이지입니다. 정책은 <a href="#/policy" data-page="policy">정책</a> 페이지에서 확인하세요.</div>
@@ -3285,4 +3481,164 @@ body.admin-mode{background:#F5F7FA}
   </ul>
   <div style="font-size:12px;color:#6b7280;border-top:1px dashed rgba(20,33,61,.15);padding-top:10px">출처: YTN 2026.11.2 「9억 대 활동비 부당지급…특검, 중앙선관위 압수수색」 · 뉴스핌 2026.11.2 「특검, 공추비·납품비리 수사 속도…주진우 의원 57개 투표구 자료 제출」 · 연합뉴스 2026.11.1 「감정 필요한 투표지 분석 후 국과수·공소청 등에 의뢰 계획」 · 연합뉴스 2026.10.30 「성능 기준미달 알면서도 전량 납품받아」.</div>
 </aside>
+
+<script>window.__GT_DEFAULT_GROUP="salriki";</script>
+<script id="tab-tap-js">
+/* ===== 탭 제스처: 한 번 = 색 반전·하위 탭 펼침, 두 번 = 내용으로 이동 ===== */
+(function(){
+  var DOUBLE_MS=320;   /* 두 번 탭 인식 임계값 (ms) */
+
+  function go(a){
+    var href=a.getAttribute('href')||'';
+    if(!href||href==='#') return;
+    if(href.charAt(0)==='#'){
+      if(location.hash===href){
+        try{window.dispatchEvent(new HashChangeEvent('hashchange'));}
+        catch(err){window.dispatchEvent(new Event('hashchange'));}
+      }else{ location.hash=href; }
+    }else{ location.href=href; }
+  }
+
+  /* ---- 안내 말풍선 (세션당 1회) ---- */
+  var hintEl=null,hintTimer=0;
+  function hint(a,msg,key){
+    try{ if(sessionStorage.getItem(key)==='1') return; sessionStorage.setItem(key,'1'); }catch(e){}
+    if(!hintEl){ hintEl=document.createElement('div'); hintEl.id='tab-tap-hint'; hintEl.setAttribute('aria-hidden','true'); document.body.appendChild(hintEl); }
+    hintEl.textContent=msg;
+    var r=a.getBoundingClientRect();
+    hintEl.style.left=Math.round(r.left+r.width/2)+'px';
+    hintEl.style.top=Math.round(r.top)+'px';
+    hintEl.classList.add('on');
+    clearTimeout(hintTimer);
+    hintTimer=setTimeout(function(){ hintEl.classList.remove('on'); },2400);
+  }
+
+  /* ---- 상단 큰 탭 / 작은 탭 ---- */
+  var wrap=document.querySelector('.gt-wrap');
+  var tabs=wrap?[].slice.call(wrap.querySelectorAll('.gt')):[];
+  var rows=wrap?[].slice.call(wrap.querySelectorAll('.st-row')):[];
+  var curGroup=null;
+
+  function showRows(g,anim){
+    rows.forEach(function(r){
+      var on=r.getAttribute('data-g')===g;
+      r.hidden=!on;
+      if(on&&anim){ r.classList.remove('is-open'); void r.offsetWidth; r.classList.add('is-open'); }
+    });
+  }
+  function markGroup(g){
+    var ok=false;
+    tabs.forEach(function(a){
+      var on=a.getAttribute('data-g')===g; if(on) ok=true;
+      a.classList.toggle('is-on',on);
+      a.setAttribute('aria-selected',on?'true':'false');
+    });
+    if(!ok) return;
+    curGroup=g; showRows(g,false);
+  }
+  function clearPress(keep){
+    [].slice.call(document.querySelectorAll('#site-header .is-press')).forEach(function(el){ if(el!==keep) el.classList.remove('is-press'); });
+  }
+  function press(el){ clearPress(el); el.classList.add('is-press'); }
+  function pressTab(a){ press(a); var g=a.getAttribute('data-g'); if(g) showRows(g,true); }
+
+  if(wrap){
+    tabs.forEach(function(a){
+      a.addEventListener('mouseenter',function(){ pressTab(a); });
+      a.addEventListener('focus',function(){ pressTab(a); });
+    });
+    rows.forEach(function(r){
+      [].slice.call(r.querySelectorAll('.st')).forEach(function(a){
+        a.addEventListener('mouseenter',function(){ press(a); });
+        a.addEventListener('focus',function(){ press(a); });
+      });
+    });
+    /* 마우스가 벗어나도 마지막으로 누른(머문) 큰 탭 그룹을 유지 */
+    wrap.addEventListener('mouseleave',function(){
+      var pressedLarge=wrap.querySelector('.gt.is-press');
+      clearPress(pressedLarge);
+      var g=pressedLarge?pressedLarge.getAttribute('data-g'):null;
+      if(g) showRows(g,false); else if(curGroup) showRows(curGroup,false);
+    });
+
+    wrap.addEventListener('click',function(e){
+      var a=e.target.closest?e.target.closest('.gt,.st'):null;
+      if(!a||!wrap.contains(a)) return;
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||(e.button&&e.button!==0)) return;
+      e.preventDefault(); e.stopPropagation();
+      if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+      if(e.detail===0){ go(a); return; }              /* 키보드 Enter */
+      var now=Date.now(),prev=lastTap.get(a)||0;
+      if(prev&&now-prev<DOUBLE_MS){ lastTap.delete(a); go(a); return; }
+      lastTap.set(a,now);
+      if(a.classList.contains('gt')) pressTab(a); else press(a);
+      hint(a,'한 번 = 미리보기 · 두 번 누르면 이동','tabUxTop');
+    },true);
+  }
+
+  var lastTap=new WeakMap();
+
+  function fromHash(){
+    var h=location.hash||'';
+    if(h.indexOf('salriki')>-1) return 'salriki';
+    if(h.indexOf('policy')>-1) return window.__GT_DEFAULT_GROUP||'land';
+    if(h.indexOf('join')>-1) return 'join';
+    if(h.indexOf('liberty')>-1) return 'liberty';
+    return window.__GT_DEFAULT_GROUP||'land';
+  }
+  markGroup(fromHash());
+
+  /* ---- 아래 검은 탭 막대 ---- */
+  var dock=document.getElementById('site-dock');
+  var dl=dock?[].slice.call(dock.querySelectorAll('a')):[];
+  var dockManual=false;
+  function setCur(i){ dl.forEach(function(a,k){ a.classList.toggle('cur',k===i); }); }
+  function routeIndex(){
+    var h=(location.hash||'').toLowerCase();
+    if(h.indexOf('salriki')>-1) return 2;
+    if(h.indexOf('join')>-1) return 3;
+    return 0;
+  }
+  function syncDock(){
+    if(dockManual||!dl.length) return;
+    var i=routeIndex();
+    var home=document.getElementById('page-home');
+    var join=document.getElementById('join');
+    if(i===0&&home&&!home.hidden&&join){
+      var r=join.getBoundingClientRect();
+      if(r.top<window.innerHeight*0.55&&r.bottom>140) i=3;
+    }
+    setCur(i);
+  }
+  if(dock){
+    dock.addEventListener('click',function(e){
+      var a=e.target.closest?e.target.closest('a'):null;
+      if(!a||!dock.contains(a)) return;
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||(e.button&&e.button!==0)) return;
+      e.preventDefault(); e.stopPropagation();
+      if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+      var idx=dl.indexOf(a);
+      if(e.detail===0){ go(a); return; }              /* 키보드 Enter */
+      var now=Date.now(),prev=lastTap.get(a)||0;
+      if(prev&&now-prev<DOUBLE_MS){ lastTap.delete(a); go(a); return; }
+      lastTap.set(a,now);
+      dockManual=true;
+      if(idx>-1) setCur(idx);
+      hint(a,'한 번 = 색 이동 · 두 번 누르면 이동','tabUxDock');
+    },true);
+  }
+
+  var ticking=false;
+  function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(function(){ ticking=false; syncDock(); }); }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  window.addEventListener('hashchange',function(){
+    dockManual=false;
+    clearPress(null);
+    markGroup(fromHash());
+    syncDock();
+  });
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',syncDock); else syncDock();
+})();
+</script>
 </body></html>
