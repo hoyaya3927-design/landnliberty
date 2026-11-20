@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사전투표 폐지·선거개혁 캠페인 — 디지털 대동법 연구소</title>
+<meta name="description" content="6·3 투표용지 부족 사태 이후, 사전투표 폐지와 선거관리 개혁을 요구하는 시민 캠페인 페이지. 팩트·개혁안·참여 방법.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F0EA;
+  --paper-deep:#E9E6DD;
+  --ink:#1A1D23;
+  --ink-soft:#3E424B;
+  --muted:#77736A;
+  --seal:#B7301F;
+  --seal-deep:#8F2318;
+  --navy:#26406B;
+  --line:#CFC9BA;
+  --line-strong:#9C9484;
+  --white:#FBFAF7;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Pretendard',-apple-system,'Segoe UI','Noto Sans KR',sans-serif;
+  font-size:16px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--seal);color:var(--white)}
+a{color:var(--navy)}
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:3px solid var(--seal);outline-offset:3px;border-radius:2px
+}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* ---------- 문서 테두리 프레임 ---------- */
+.doc-frame{
+  border:1.5px solid var(--line-strong);
+  outline:1px solid var(--line);
+  outline-offset:4px;
+  background:var(--white);
+}
+
+/* ---------- 상단 고정 바 ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(242,240,234,.94);
+  backdrop-filter:blur(6px);
+  border-bottom:1.5px solid var(--line-strong);
+}
+.topbar-in{
+  max-width:1120px;margin:0 auto;padding:14px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em}
+.brand .seal-dot{
+  width:26px;height:26px;border-radius:50%;
+  background:var(--seal);color:var(--white);
+  display:grid;place-items:center;
+  font-family:'Gowun Batang',serif;font-size:13px;line-height:1;
+  box-shadow:0 0 0 1.5px var(--seal-deep) inset;
+}
+.brand small{font-weight:400;color:var(--muted);font-size:12px}
+.topnav{display:flex;gap:22px;font-family:'IBM Plex Mono',monospace;font-size:12.5px}
+.topnav a{color:var(--ink-soft);text-decoration:none;padding:4px 2px}
+.topnav a:hover{color:var(--seal)}
+@media (max-width:760px){.topnav{display:none}}
+
+/* ---------- 히어로 ---------- */
+.hero{padding:72px 0 56px;border-bottom:1.5px solid var(--line-strong)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
+  color:var(--seal-deep);text-transform:uppercase;margin-bottom:20px;
+}
+.eyebrow::before{content:"";width:22px;height:1.5px;background:var(--seal)}
+h1.display{
+  font-family:'Gowun Batang',serif;
+  font-size:clamp(34px,5.2vw,58px);
+  line-height:1.22;letter-spacing:-.01em;
+  font-weight:700;margin-bottom:24px;
+}
+h1.display em{font-style:normal;color:var(--seal);border-bottom:4px solid rgba(183,48,31,.25)}
+.hero-lede{color:var(--ink-soft);font-size:17.5px;max-width:34em;margin-bottom:32px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:13px 26px;font-weight:700;font-size:15px;
+  text-decoration:none;letter-spacing:-.01em;border:1.5px solid var(--ink);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--seal);border-color:var(--seal-deep);color:var(--white);box-shadow:4px 4px 0 var(--ink)}
+.btn-primary:hover{box-shadow:2px 2px 0 var(--ink);transform:translate(2px,2px)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--white)}
+
+/* 투표용지 카드 + 관인 */
+.ballot-card{
+  position:relative;
+  background:var(--white);
+  border:1.5px solid var(--line-strong);
+  padding:0;
+  box-shadow:10px 12px 0 rgba(26,29,35,.08);
+  transform:rotate(1.2deg);
+}
+.ballot-head{
+  display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1.5px solid var(--line-strong);
+  padding:14px 22px;font-size:13px;color:var(--muted);
+}
+.ballot-body{padding:26px 22px 8px}
+.ballot-body .b-row{
+  display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1px dashed var(--line-strong);
+  padding:13px 2px;font-size:15px;font-weight:600;
+}
+.ballot-body .b-row:last-child{border-bottom:none}
+.b-check{
+  width:26px;height:26px;border:1.5px solid var(--ink-soft);flex:none;
+}
+.b-stamped{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(183,48,31,.6);text-decoration-thickness:2px}
+.ballot-foot{
+  padding:12px 22px 20px;font-size:11.5px;color:var(--muted);
+  font-family:'IBM Plex Mono',monospace;
+}
+/* 관인 스탬프 */
+.seal-stamp{
+  position:absolute;right:26px;bottom:58px;z-index:2;
+  width:148px;height:148px;border-radius:50%;
+  border:4px double var(--seal);
+  display:grid;place-items:center;text-align:center;
+  color:var(--seal);
+  background:rgba(251,250,247,.06);
+  transform:rotate(-12deg) scale(2.4);opacity:0;
+  mix-blend-mode:multiply;
+  animation:stamp-in .55s cubic-bezier(.2,1.4,.4,1) .9s forwards;
+  pointer-events:none;
+}
+.seal-stamp::before{
+  content:"";position:absolute;inset:7px;border-radius:50%;
+  border:1.5px dashed var(--seal);opacity:.65;
+}
+.seal-stamp .s-big{
+  font-family:'Gowun Batang',serif;font-weight:700;font-size:44px;line-height:1;letter-spacing:.06em;
+}
+.seal-stamp .s-sub{font-size:10px;font-family:'IBM Plex Mono',monospace;margin-top:6px;letter-spacing:.12em}
+@keyframes stamp-in{
+  0%{transform:rotate(8deg) scale(2.4);opacity:0}
+  55%{transform:rotate(-14deg) scale(.94);opacity:1}
+  75%{transform:rotate(-11.5deg) scale(1.04)}
+  100%{transform:rotate(-12deg) scale(1);opacity:.92}
+}
+@media (prefers-reduced-motion: reduce){
+  .seal-stamp{transform:rotate(-12deg) scale(1);opacity:.92;animation:none}
+}
+@media (max-width:560px){
+  .seal-stamp{width:118px;height:118px;right:14px;bottom:64px}
+  .seal-stamp .s-big{font-size:34px}
+}
+
+/* ---------- 섹션 공통 ---------- */
+section{padding:88px 0;border-bottom:1.5px solid var(--line-strong)}
+.sec-head{margin-bottom:44px}
+.sec-no{
+  font-family:'Gowun Batang',serif;font-size:15px;color:var(--seal);
+  display:inline-block;margin-bottom:10px;letter-spacing:.1em;
+}
+h2{
+  font-family:'Gowun Batang',serif;
+  font-size:clamp(26px,3.6vw,40px);line-height:1.3;letter-spacing:-.01em;
+  margin-bottom:14px;
+}
+.sec-desc{color:var(--ink-soft);max-width:42em}
+
+/* ---------- 숫자 스트립 ---------- */
+.stat-strip{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border:1.5px solid var(--line-strong);background:var(--white);
+  margin-top:-44px;position:relative;z-index:5;
+  box-shadow:8px 8px 0 rgba(26,29,35,.06);
+}
+@media (max-width:820px){.stat-strip{grid-template-columns:repeat(2,1fr)}}
+.stat{
+  padding:26px 24px;border-right:1px solid var(--line);
+}
+.stat:last-child{border-right:none}
+@media (max-width:820px){
+  .stat:nth-child(2n){border-right:none}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+.stat .num{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(26px,3vw,36px);line-height:1.15;color:var(--ink)}
+.stat .num .unit{font-size:.5em;color:var(--muted)}
+.stat .cap{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.5}
+.stat .src{font-size:10.5px;font-family:'IBM Plex Mono',monospace;color:var(--line-strong);display:block;margin-top:6px}
+
+/* ---------- 타임라인 (기록표) ---------- */
+.record-table{border:1.5px solid var(--line-strong);background:var(--white)}
+.record-row{
+  display:grid;grid-template-columns:118px 1fr;gap:20px;
+  padding:18px 24px;border-bottom:1px solid var(--line);
+}
+.record-row:last-child{border-bottom:none}
+.record-row:hover{background:#F6F4EE}
+.record-row .d{font-family:'IBM Plex Mono',monospace;font-size:13.5px;font-weight:600;color:var(--seal-deep);padding-top:3px;white-space:nowrap}
+.record-row .t{font-size:15px;color:var(--ink-soft)}
+.record-row .t b{color:var(--ink)}
+.record-row .t .tag{
+  display:inline-block;font-size:11px;font-weight:700;color:var(--seal);
+  border:1px solid var(--seal);padding:0 7px;margin-right:8px;
+  vertical-align:2px;letter-spacing:.04em;
+}
+@media (max-width:640px){
+  .record-row{grid-template-columns:1fr;gap:4px}
+  .record-row .d{color:var(--seal-deep)}
+}
+
+/* ---------- 문제점 카드 ---------- */
+.prob-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1.5px solid var(--line-strong);background:var(--white)}
+@media (max-width:760px){.prob-grid{grid-template-columns:1fr}}
+.prob{
+  padding:36px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.prob:nth-child(2n){border-right:none}
+.prob:nth-child(n+3){border-bottom:none}
+@media (max-width:760px){.prob{border-right:none!important}.prob:nth-child(n+2){border-bottom:1px solid var(--line)}.prob:last-child{border-bottom:none}}
+.prob .p-no{
+  font-family:'Gowun Batang',serif;font-size:30px;font-weight:700;color:var(--paper-deep);
+  -webkit-text-stroke:1.2px var(--seal);color:transparent;
+  line-height:1;display:block;margin-bottom:16px;
+}
+@supports not (-webkit-text-stroke:1px black){.prob .p-no{color:var(--seal)}}
+.prob h3{font-size:19px;letter-spacing:-.01em;margin-bottom:10px}
+.prob p{font-size:14.5px;color:var(--ink-soft)}
+.prob .cite{margin-top:14px;font-size:11px;color:var(--muted)}
+.prob .cite a{color:var(--muted)}
+
+/* ---------- 개혁안 ---------- */
+.reform-list{border:1.5px solid var(--line-strong);background:var(--white)}
+.reform{
+  display:grid;grid-template-columns:64px 1fr;gap:24px;
+  padding:28px 28px;border-bottom:1px solid var(--line);
+}
+.reform:last-child{border-bottom:none}
+.reform .r-glyph{
+  font-family:'Gowun Batang',serif;font-size:34px;font-weight:700;color:var(--seal);
+  line-height:1;padding-top:2px;
+}
+.reform h3{font-size:18.5px;letter-spacing:-.01em;margin-bottom:6px}
+.reform p{font-size:14.5px;color:var(--ink-soft)}
+.reform .who{
+  display:inline-block;margin-top:10px;font-size:11px;font-family:'IBM Plex Mono',monospace;
+  color:var(--navy);background:rgba(38,64,107,.07);padding:3px 9px;
+}
+@media (max-width:560px){.reform{grid-template-columns:1fr;gap:8px}.reform .r-glyph{font-size:26px}}
+
+/* ---------- 데이터 / 차트 ---------- */
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media (max-width:860px){.data-grid{grid-template-columns:1fr}}
+.chart-card{border:1.5px solid var(--line-strong);background:var(--white);padding:30px 28px}
+.chart-card h3{font-size:16px;margin-bottom:4px;letter-spacing:-.01em}
+.chart-card .c-src{font-size:11px;color:var(--muted);margin-bottom:22px;display:block}
+.bar-row{display:grid;grid-template-columns:128px 1fr 52px;align-items:center;gap:10px;margin-bottom:11px;font-size:12.5px}
+@media (max-width:520px){.bar-row{grid-template-columns:96px 1fr 44px}}
+.bar-row .lbl{color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-track{height:22px;background:var(--paper-deep);position:relative}
+.bar-fill{
+  height:100%;background:var(--navy);width:0;
+  transition:width 1s cubic-bezier(.2,.8,.2,1);
+}
+.bar-fill.hot{background:var(--seal)}
+.bar-row .val{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;text-align:right}
+.chart-note{margin-top:18px;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line-strong);padding-top:14px}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:820px}
+details{
+  border:1.5px solid var(--line-strong);background:var(--white);
+  margin-bottom:14px;
+}
+summary{
+  list-style:none;cursor:pointer;
+  padding:20px 26px;font-weight:700;font-size:16.5px;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  letter-spacing:-.01em;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";font-family:'IBM Plex Mono',monospace;font-size:22px;color:var(--seal);
+  transition:transform .2s ease;flex:none;
+}
+details[open] summary::after{transform:rotate(45deg)}
+.faq-body{padding:0 26px 24px;font-size:14.8px;color:var(--ink-soft)}
+.faq-body p+p{margin-top:10px}
+
+/* ---------- 참여 ---------- */
+.act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:820px){.act-grid{grid-template-columns:1fr}}
+.act{
+  border:1.5px solid var(--line-strong);background:var(--white);
+  padding:32px 28px;display:flex;flex-direction:column;gap:12px;
+  box-shadow:6px 6px 0 rgba(26,29,35,.06);
+}
+.act .a-no{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--seal)}
+.act h3{font-size:19px;letter-spacing:-.01em}
+.act p{font-size:14px;color:var(--ink-soft);flex:1}
+.act .a-btn{
+  align-self:flex-start;padding:10px 18px;font-size:13.5px;font-weight:700;
+  background:var(--ink);color:var(--white);text-decoration:none;border:none;cursor:pointer;
+}
+.act .a-btn:hover{background:var(--seal)}
+.act .a-note{font-size:11px;color:var(--muted)}
+
+/* ---------- 콜아웃 ---------- */
+.callout{
+  border:1.5px solid var(--seal);background:var(--white);
+  padding:22px 26px;margin-top:34px;
+  position:relative;
+}
+.callout::before{
+  content:"주";position:absolute;top:-14px;left:20px;
+  background:var(--seal);color:var(--white);
+  font-family:'Gowun Batang',serif;font-size:13px;
+  width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+}
+.callout p{font-size:14px;color:var(--ink-soft)}
+.callout p b{color:var(--seal-deep)}
+
+/* ---------- 푸터 ---------- */
+footer{padding:64px 0 80px;color:var(--muted)}
+.src-list{border:1.5px solid var(--line-strong);background:var(--white);padding:28px 30px}
+.src-list h3{font-family:'Gowun Batang',serif;font-size:17px;color:var(--ink);margin-bottom:16px}
+.src-list ol{list-style:none;counter-reset:src}
+.src-list li{
+  counter-increment:src;font-size:12.5px;line-height:1.7;padding:7px 0;
+  border-bottom:1px dashed var(--line);
+  display:flex;gap:10px;
+}
+.src-list li::before{
+  content:counter(src,decimal-leading-zero);
+  font-family:'IBM Plex Mono',monospace;color:var(--seal-deep);flex:none;
+}
+.src-list li:last-child{border-bottom:none}
+.src-list a{color:var(--navy);word-break:break-all}
+.jo{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--navy);background:rgba(38,64,107,.08);border:1px solid rgba(38,64,107,.28);padding:2px 9px;border-radius:3px;margin:12px 0 4px}
+.world-note{margin-top:28px;border:1px dashed rgba(183,48,31,.5);background:rgba(183,48,31,.045);padding:20px 24px;font-size:14.8px;color:var(--ink-soft);line-height:1.8}
+.world-note b{color:var(--seal)}
+.pkg{margin-top:30px;border:1.5px solid var(--ink);background:#fff;padding:24px 28px}
+.pkg h3{font-size:18px;margin-bottom:12px}
+.pkg p{font-size:14.5px;color:var(--ink-soft);line-height:1.8;margin-bottom:12px}
+.pkg p:last-of-type{margin-bottom:0}
+.pkg-src{display:block;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-soft)}
+.foot-meta{margin-top:28px;font-size:12.5px;line-height:1.8}
+.foot-meta .mono{font-size:11px}
+
+/* ---------- 페이드 업 (JS 의존 없음 — 로드 시 재생) ---------- */
+.reveal{animation:fadeUp .7s ease both}
+.reveal:nth-child(2){animation-delay:.08s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){
+  .reveal{animation:none;opacity:1;transform:none}
+}
+
+/* ---------- 진행 배너 ---------- */
+.march{
+  border-bottom:1.5px solid var(--line-strong);background:var(--ink);
+  color:var(--paper);overflow:hidden;white-space:nowrap;padding:9px 0;
+}
+.march-in{
+  display:inline-block;animation:mar 26s linear infinite;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;
+}
+.march-in b{color:#E8B4AA;font-weight:600}
+@keyframes mar{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.march-in{animation:none}}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" />
+<style id="tabsync-gt-base">#site-header{position:fixed;top:0;left:0;right:0;z-index:998;background:rgba(255,255,255,.96);box-shadow:0 1px 12px rgba(0,0,0,.08);transition:background .3s,box-shadow .3s}#site-header.scrolled{background:rgba(255,255,255,.99);box-shadow:0 2px 14px rgba(0,0,0,.12)}#mobile-menu{display:none}#mobile-menu.open{display:block}</style>
+<style id="tabsync-gt-sync">
+.gt-shell{max-width:1152px;margin:0 auto;padding:6px 20px 0}
+.gt-top{display:flex;align-items:center;justify-content:space-between;gap:12px;height:44px}
+.gt-brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink,#14213D);font-weight:800;font-size:17px;letter-spacing:-.02em}
+.gt-logo{width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;background:var(--teal,#0F766E);color:#fff;font-size:15px;font-weight:700}
+.gt-actions{display:flex;align-items:center;gap:8px}
+.gt-cta{display:inline-flex;align-items:center;gap:6px;background:var(--teal,#0F766E);color:#fff;font-weight:800;font-size:12.5px;padding:7px 15px;border-radius:999px;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(15,118,110,.22)}
+.gt-burger{width:34px;height:34px;border-radius:999px;border:1px solid rgba(20,33,61,.14);background:#fff;color:rgba(20,33,61,.7);cursor:pointer}
+.gt-wrap{display:block}
+@media(min-width:768px){
+  .gt-wrap{display:block;margin-top:2px}
+  .gt-burger{display:none}
+  body:not(.sal-mode){padding-top:14px}
+  body:not(.sal-mode){scroll-padding-top:158px}
+}
+.gt-row{display:flex;align-items:center;gap:2px;border-top:1px solid rgba(20,33,61,.06);overflow-x:auto;scrollbar-width:none}
+.gt-row::-webkit-scrollbar{display:none}
+.gt{position:relative;flex:0 0 auto;padding:9px 14px;font-size:14px;font-weight:800;color:rgba(20,33,61,.62);text-decoration:none;letter-spacing:-.01em;white-space:nowrap;border-radius:10px 10px 0 0;transition:color .15s,background .15s}
+.gt:hover{color:var(--teal,#0F766E);background:rgba(15,118,110,.05)}
+.gt.is-on{color:#fff;background:var(--teal,#0F766E)}
+.gt.is-on::after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,#0F766E,#2feaa8)}
+.st-wrap{border-top:1px solid rgba(20,33,61,.10);padding:3px 0 0}
+.st-row{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;padding:0 0 5px}
+.st-row::-webkit-scrollbar{display:none}
+.st-row[hidden]{display:none}
+.st{flex:0 0 auto;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:700;color:rgba(20,33,61,.58);text-decoration:none;white-space:nowrap;letter-spacing:-.01em;transition:color .15s,background .15s}
+.st:hover{color:var(--teal,#0F766E);background:rgba(15,118,110,.07)}
+.st.is-on{color:#fff;background:var(--teal,#0F766E);box-shadow:0 2px 8px rgba(15,118,110,.25)}
+/* ===== 탭 기본 상태: 흰 바탕 + 초록 글씨 ===== */
+#site-header .gt-cta.is-current,#mobile-menu a.gt-cta.is-current{color:#fff!important}
+#site-header .gt,#site-header .st{background:transparent!important;color:var(--teal,#0F766E)!important}
+#site-header .gt:hover,#site-header .st:hover{background:transparent!important;color:var(--teal,#0F766E)!important}
+#site-header .gt.is-current,#site-header .st.is-current{background:transparent!important;color:var(--teal,#0F766E)!important}
+#site-header .gt.is-on{background:transparent!important;color:var(--teal,#0F766E)!important;box-shadow:inset 0 -2px 0 0 var(--teal,#0F766E)}
+#site-header .st.is-on{background:transparent!important;color:var(--teal,#0F766E)!important;box-shadow:inset 0 0 0 1.5px rgba(15,118,110,.55)}
+#site-header .gt.is-on::after{display:none}
+.st-row[data-g="land"] .st[data-page="policy"],.st-row[data-g="land"] .st[href="land-dividend-manifesto.html"]{color:var(--teal,#0F766E)!important;font-weight:800}
+#site-header .st-row[data-g="land"] .st[data-page="policy"].is-on,#site-header .st-row[data-g="land"] .st[href="land-dividend-manifesto.html"].is-on{background:#fff!important;color:var(--teal,#0F766E)!important}
+
+/* ===== 호버 반전 렌즈: 커서를 따라오는 색반전 ===== */
+.gt,.st{position:relative;isolation:isolate}
+.inv-lens{position:absolute;top:0;left:calc(var(--mx,0px) - var(--sd,52px)/2);
+  width:var(--sd,52px);height:100%;padding:inherit;box-sizing:border-box;border-radius:inherit;overflow:hidden;
+  background:var(--teal,#0F766E);pointer-events:none;z-index:5;opacity:0;
+  transition:opacity .14s ease,left .12s cubic-bezier(.22,.61,.36,1);will-change:left,opacity}
+.gt.is-lens .inv-lens,.st.is-lens .inv-lens{opacity:1}
+.inv-lens .lens-t{position:absolute;display:block;box-sizing:border-box;padding:inherit;
+  font:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;white-space:nowrap;color:#fff;
+  left:calc(var(--sd,52px)/2 - var(--mx,0px));top:0}
+@media (prefers-reduced-motion: reduce){
+  .inv-lens{display:none!important}
+  #site-header .gt:hover,#site-header .st:hover{background:var(--teal,#0F766E)!important;color:#fff!important}
+}
+#mobile-menu{display:none}
+#mobile-menu.open{display:block;max-height:calc(100vh - 56px);overflow-y:auto;border-top:1px solid rgba(20,33,61,.10);background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.mm-in{max-width:1152px;margin:0 auto;padding:12px 20px 18px}
+.mm-g{margin-bottom:12px}
+.mm-g>b{display:block;font-size:10.5px;letter-spacing:.14em;color:var(--teal,#0F766E);font-weight:800;margin-bottom:5px}
+.mm-l{display:flex;flex-wrap:wrap;gap:4px}
+.mm-l a{font-size:13px;font-weight:700;color:rgba(20,33,61,.74);text-decoration:none;padding:6px 10px;border-radius:9px;background:rgba(20,33,61,.035)}
+.mm-l a:active{background:rgba(15,118,110,.12);color:var(--teal,#0F766E)}
+@media(min-width:768px){#mobile-menu{display:none !important}}
+
+/* ===== 한 번 = 반전·펼침 / 두 번 = 이동 ===== */
+#site-header .gt,#site-header .st,#site-dock a{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+#site-header .gt,#site-header .st{transition:background .14s ease,color .14s ease,box-shadow .14s ease,transform .14s ease}
+#site-header .gt.is-press,#site-header .gt:hover,#site-header .gt:focus-visible{
+  background:var(--teal,#0F766E)!important;color:#fff!important;
+  box-shadow:0 6px 18px rgba(15,118,110,.22)!important}
+#site-header .st.is-press,#site-header .st:hover,#site-header .st:focus-visible{
+  background:var(--teal,#0F766E)!important;color:#fff!important;
+  box-shadow:0 2px 10px rgba(15,118,110,.28)!important}
+#site-header .gt.is-on{box-shadow:none}
+#site-header .gt.is-on.is-press,#site-header .gt.is-on:hover{box-shadow:0 6px 18px rgba(15,118,110,.22)!important}
+#site-header .gt:active,#site-header .st:active{transform:scale(.97)}
+.st-row.is-open{animation:tabRowIn .18s cubic-bezier(.22,.61,.36,1)}
+@keyframes tabRowIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+.inv-lens{display:none!important}
+#site-dock a{transition:background .14s ease,color .14s ease,transform .14s ease}
+#site-dock a:active{transform:scale(.94)}
+#site-dock a.cur{box-shadow:0 0 0 1px rgba(60,240,197,.55),0 4px 14px rgba(60,240,197,.22)}
+#tab-tap-hint{position:fixed;left:0;top:0;z-index:2147483646;pointer-events:none;opacity:0;
+  transform:translate(-50%,calc(-100% - 4px));transition:opacity .18s ease,transform .18s ease;
+  background:#0B1220;color:#fff;border:1px solid rgba(60,240,197,.5);
+  font:700 11.5px/1 'Pretendard','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+  padding:8px 12px;border-radius:999px;box-shadow:0 10px 24px rgba(0,0,0,.32);white-space:nowrap}
+#tab-tap-hint.on{opacity:1;transform:translate(-50%,calc(-100% - 10px))}
+@media(prefers-reduced-motion:reduce){.st-row.is-open{animation:none}#site-header .gt:active,#site-header .st:active,#site-dock a:active{transform:none}}
+
+/* 큰 탭 5개: 좁은 화면에서 간격을 줄이고 자동으로 줄바꿈 (가로 스크롤 없음) */
+.gt-row{flex-wrap:wrap;overflow-x:visible;row-gap:2px}
+.gt{flex:0 0 auto}
+@media (max-width:1023px){
+  .gt-row{gap:0;row-gap:2px}
+  .gt{padding:8px 10px;font-size:13.5px}
+}
+@media (max-width:767px){
+  .gt{padding:8px 8px;font-size:13px;letter-spacing:-.02em}
+}
+@media (max-width:640px){
+  .gt{padding:7px 7px;font-size:12.5px}
+  .gt-row{gap:0 1px;row-gap:2px}
+  body:not(.sal-mode){scroll-padding-top:190px}
+}
+@media (max-width:400px){
+  .gt{padding:7px 6px;font-size:12px}
+}
+
+/* 작은 탭 줄: 좁은 화면에서 잘리지 않고 자동 줄바꿈 */
+.st-row{flex-wrap:wrap;overflow-x:visible;row-gap:4px}
+</style>
+<style id="tabsync-gt-pad">body{padding-top:112px}</style>
+</head>
+<body>
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="gt-shell">
+    <div class="gt-top">
+      <a href="index.html#/" data-page="home" data-anchor="hero" class="gt-brand">
+        <span class="gt-logo">土</span>
+        <span class="gt-name"><b>토지와 자유</b></span>
+      </a>
+      <div class="gt-actions">
+        <a href="index.html#/home#join" data-page="home" data-anchor="join" class="gt-cta">함께하기 <i class="fa-solid fa-arrow-right"></i></a>
+        <button id="menu-toggle" class="gt-burger" aria-label="메뉴" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+    <nav class="gt-wrap" aria-label="주요 메뉴">
+      <div class="gt-row" role="tablist" aria-label="대분류">
+        <a class="gt" data-g="land" role="tab" aria-selected="false" href="index.html#/home#problem" data-page="home" data-anchor="problem">토지 Land</a>
+        <a class="gt" data-g="liberty" role="tab" aria-selected="false" href="liberty.html">자유 Liberty</a>
+        <a class="gt" data-g="salriki" role="tab" aria-selected="false" href="index.html#/salriki" data-page="salriki">대한민국 살리기</a>
+        <a class="gt" data-g="jozak" role="tab" aria-selected="false" href="jojakkiso_teukgeom_factsheet.html">조작기소 특검</a>
+        <a class="gt is-on" data-g="reset" role="tab" aria-selected="true" href="assembly-reset.html">실질적 국회 해산</a>
+      </div>
+      <div class="st-wrap">
+        <div class="st-row" data-g="land" hidden>
+          <a class="st" href="index.html#/home#privilege" data-page="home" data-anchor="privilege">3대 특권 해체</a>
+          <a class="st" href="index.html#/home#dividend" data-page="home" data-anchor="dividend">토지배당</a>
+          <a class="st" href="index.html#/home#finance" data-page="home" data-anchor="finance">금융 회계</a>
+          <a class="st" href="index.html#/home#global" data-page="home" data-anchor="global">지금 세계는</a>
+          <a class="st" href="index.html#/policy" data-page="policy">정책</a>
+          <a class="st" href="land-dividend-manifesto.html">중국 토지배당 촉구서</a>
+        </div>
+        <div class="st-row" data-g="liberty" hidden>
+          <a class="st" href="teukgeom.html">특검 수사 파일</a>
+          <a class="st" href="liberty-report.html">10.28 리포트</a>
+          <a class="st" href="liberty-archive.html">증거 아카이브</a>
+          <a class="st" href="forensic.html">국과수 감정 추적</a>
+        </div>
+        <div class="st-row" data-g="salriki" hidden>
+          <a class="st" href="index.html#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
+          <a class="st" href="index.html#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a> <a class="st" href="index.html#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a> <a class="st" href="index.html#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a> <a class="st" href="index.html#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a> <a class="st" href="index.html#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a> <a class="st" href="index.html#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a>
+          <a class="st" href="index-chaohan.html">중국의 한국 흡수 전략</a>
+        </div>
+        <div class="st-row" data-g="jozak" hidden>
+          <a class="st" href="jojakkiso_teukgeom_factsheet.html">조작기소</a>
+          <a class="st" href="daejangdong_factsheet.html">대장동</a>
+          <a class="st" href="lawyerline_factsheet.html">이재명 변호</a>
+          <a class="st" href="fivebillion_factsheet.html">50억 클럽</a>
+          <a class="st" href="hwachon_factsheet.html">전 대법관</a>
+        </div>
+        <div class="st-row" data-g="reset">
+          <a class="st" href="nec-reform.html">선거 시스템 재설계</a>
+          <a class="st" href="assembly-reset.html">2028 국회 리셋</a>
+          <a class="st is-on" href="election-reform-campaign.html">사전투표 폐지</a>
+          <a class="st" href="22대-국회의원-공개추적-갱신본/index.html">22대 국회 공개정보 추적</a>
+          <a class="st" href="22대-국회-전과-지도.html">22대 국회 전과지도</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div id="mobile-menu">
+    <div class="mm-in">
+      <div class="mm-g">
+        <b>토지 Land</b>
+        <div class="mm-l">
+          <a href="index.html#/home#privilege" data-page="home" data-anchor="privilege">3대 특권 해체</a>
+          <a href="index.html#/home#dividend" data-page="home" data-anchor="dividend">토지배당</a>
+          <a href="index.html#/home#finance" data-page="home" data-anchor="finance">금융 회계</a>
+          <a href="index.html#/home#global" data-page="home" data-anchor="global">지금 세계는</a>
+          <a href="index.html#/policy" data-page="policy">정책</a>
+          <a href="land-dividend-manifesto.html">중국 토지배당 촉구서</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>자유 Liberty</b>
+        <div class="mm-l">
+          <a href="teukgeom.html">특검 수사 파일</a>
+          <a href="liberty-report.html">10.28 리포트</a>
+          <a href="liberty-archive.html">증거 아카이브</a>
+          <a href="forensic.html">국과수 감정 추적</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>대한민국 살리기</b>
+        <div class="mm-l">
+          <a href="index.html#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
+          <a href="index.html#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a>
+          <a href="index.html#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a>
+          <a href="index.html#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a>
+          <a href="index.html#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a>
+          <a href="index.html#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a>
+          <a href="index.html#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a><a href="index-chaohan.html">중국의 한국 흡수 전략</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>조작기소 특검</b>
+        <div class="mm-l">
+          <a href="jojakkiso_teukgeom_factsheet.html">조작기소</a>
+          <a href="daejangdong_factsheet.html">대장동</a>
+          <a href="lawyerline_factsheet.html">이재명 변호</a>
+          <a href="fivebillion_factsheet.html">50억 클럽</a>
+          <a href="hwachon_factsheet.html">전 대법관</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>실질적 국회 해산</b>
+        <div class="mm-l">
+          <a href="nec-reform.html">선거 시스템 재설계</a>
+          <a href="assembly-reset.html">2028 국회 리셋</a>
+          <a href="election-reform-campaign.html">사전투표 폐지</a>
+          <a href="22대-국회의원-공개추적-갱신본/index.html">22대 국회 공개정보 추적</a>
+          <a href="22대-국회-전과-지도.html">22대 국회 전과지도</a>
+        </div>
+      </div>
+</div>
+  </div>
+</header>
+
+<!-- 진행 배너 -->
+<div class="march" aria-hidden="true">
+  <div class="march-in" id="march">
+    참정권은 하루도 쉬지 않는 권리다&ensp;·&ensp;<b>사전투표 폐지, 본투표 이틀</b>&ensp;·&ensp;모두가 같은 날 같은 조건으로&ensp;·&ensp;<b>투표용지 100% 인쇄</b>&ensp;·&ensp;0.5%p 자동 재검표&ensp;·&ensp;수개표 · 실시간 집계&ensp;·&ensp;<b>선관위 구조 개혁</b>&ensp;·&ensp;참정권은 하루도 쉬지 않는 권리다&ensp;·&ensp;<b>사전투표 폐지, 본투표 이틀</b>&ensp;·&ensp;모두가 같은 날 같은 조건으로&ensp;·&ensp;<b>투표용지 100% 인쇄</b>&ensp;·&ensp;0.5%p 자동 재검표&ensp;·&ensp;수개표 · 실시간 집계&ensp;·&ensp;<b>선관위 구조 개혁</b>&ensp;·&ensp;
+  </div>
+</div>
+
+<!-- 상단 바 -->
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brand">
+      <span class="seal-dot" aria-hidden="true">개</span>
+      <span>선거개혁 캠페인 <small>디지털 대동법 연구소</small></span>
+    </div>
+    <nav class="topnav" aria-label="주요 메뉴">
+      <a href="#problem">문제</a>
+      <a href="#reform">개혁안</a>
+      <a href="#world">세계사례</a>
+      <a href="#data">데이터</a>
+      <a href="#faq">반론와답</a>
+      <a href="#act">참여</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 히어로 -->
+<main>
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Campaign Dossier No. 2026-063 · 디지털 대동법 연구소</span>
+      <h1 class="display">투표는 <em>같은 날</em>,<br>같은 조건으로 해야 한다.</h1>
+      <p class="hero-lede">
+        2026년 6월 3일, 전국 140개 투표소에서 투표용지가 품절됐다. 유권자 수의 절반만 인쇄한 용지 때문에
+        26개 투표소가 멈췄고, 증거물은 법원 신청 익일 폐기됐다. 원인의 중심에는
+        사전투표·본투표를 '쪼개는' 이중 선거 구조가 있었다. 이제 되돌리자 — <b>사전투표는 폐지하고,
+        본투표를 이틀로 늘리자.</b>
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#act">참여 시작하기</a>
+        <a class="btn btn-ghost" href="#reform">공직선거법 개정안 보기</a>
+      </div>
+    </div>
+
+    <div class="ballot-card" role="img" aria-label="투표용지 모형. 사전투표 항목에 붉은 관인 '폐지' 도장이 찍혀 있고, 본투표 2일과 투표용지 100% 인쇄 항목은 남아 있다.">
+      <div class="ballot-head">
+        <span>공직선거법 개정안(안)</span>
+        <span class="mono">2026-11</span>
+      </div>
+      <div class="ballot-body">
+        <div class="b-row"><span class="b-stamped">사전투표 (선거일 전 이틀)</span><span class="b-check"></span></div>
+        <div class="b-row"><span>본투표 이틀 연장 · 공휴일 지정</span><span class="b-check"></span></div>
+        <div class="b-row"><span>투표용지 유권자 수 100% 인쇄</span><span class="b-check"></span></div>
+        <div class="b-row"><span>수개표 · 실시간 집계</span><span class="b-check"></span></div>
+      </div>
+      <div class="ballot-foot">PUBLIC OFFICE ELECTION ACT — AMENDMENT DRAFT</div>
+      <div class="seal-stamp" aria-hidden="true">
+        <div>
+          <div class="s-big">폐지</div>
+          <div class="s-sub">사전투표 관인</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 숫자 스트립 -->
+<div class="wrap">
+  <div class="stat-strip">
+    <div class="stat">
+      <div class="num">140<span class="unit"> / 14,288</span></div>
+      <div class="cap">투표용지가 부족했던 투표소 / 전국 투표소 수</div>
+      <span class="src">중앙선관위 집계</span>
+    </div>
+    <div class="stat">
+      <div class="num">~50<span class="unit">%</span></div>
+      <div class="cap">송파구 본투표용지가 유권자 수 대비 인쇄된 비율 (광진·강남 50~55%)</div>
+      <span class="src">중앙일보 보도</span>
+    </div>
+    <div class="stat">
+      <div class="num">82<span class="unit"> / 145억</span></div>
+      <div class="cap">투표용지 제작에 실제 집행된 금액 / 확보된 예산</div>
+      <span class="src">주간조선 보도</span>
+    </div>
+    <div class="stat">
+      <div class="num">52.7<span class="unit">%</span></div>
+      <div class="cap">"사전투표 폐지 찬성" 응답 비율 (유지 44.2%)</div>
+      <span class="src">리얼미터·에너지경제 2026.6, n=1,011</span>
+    </div>
+  </div>
+</div>
+
+<!-- 가. 문제 -->
+<section id="problem">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-no">가.</span>
+      <h2>선거가 멈춘 날, 무슨 일이 있었나</h2>
+      <p class="sec-desc">
+        부정선거를 확정 짓는 날은 아니었다. 그러나 이날 일어난 일은 그것보다 더 기초적인 사실을 드러냈다 —
+        선거관리의 물리적 기반조차 제대로 갖춰지지 않았다는 것. 그리고 그 실패가 '사전투표'라는 이중 구조와
+        결합해 증폭됐다는 것.
+      </p>
+    </div>
+
+    <div class="record-table reveal">
+      <div class="record-row">
+        <span class="d">2026. 6. 3</span>
+        <div class="t"><span class="tag">사태</span>제9회 전국동시지방선거 당일, 전국 <b>140개 투표소에서 투표용지 부족</b>. 이 중 <b>26개소에서 투표가 일시 중단</b>됐다가 재개됐고, 91곳에는 용지가 추가 송부됐다. 중앙선관위는 저녁 대국민 사과문을 발표, 허철훈 사무총장이 사의를 표명했다.</div>
+      </div>
+      <div class="record-row">
+        <span class="d">2026. 6. 4–5</span>
+        <div class="t"><span class="tag">대응</span>선관위는 "재선거 실시 사유에 해당하지 않는다"는 입장을 밝혔다. <b>노태악 위원장 사의</b>(6.5), 올림픽공원에서 재선거 촉구 집회가 시작됐다. 송파구는 유권자 수의 약 50% 수준으로만 본투표용지를 인쇄한 것으로 보도됐다(광진·강남 50~55%).</div>
+      </div>
+      <div class="record-row">
+        <span class="d">2026. 6. 8–9</span>
+        <div class="t"><span class="tag">증거</span>조희대 대법원장이 노 위원장의 사의를 수리했다. 사태 증거물이던 <b>잠실7동 제2투표소 투표용지 상자가 법원 증거보전 신청 익일, 폐기업체를 통해 폐기</b>됐다(연합뉴스·중앙일보). 폐기 중단 요청은 이뤄지지 않았다.</div>
+      </div>
+      <div class="record-row">
+        <span class="d">2026. 6. 17</span>
+        <div class="t"><span class="tag">예산</span>주간조선 보도 — 중앙선관위는 투표용지 제작 예산 <b>145억 원을 확보하고 82억 원만 집행</b>했다. 국회의원 측은 예산 확보에도 인쇄 물량을 축소한 경위에 대한 국정조사·특검을 촉구했다.</div>
+      </div>
+      <div class="record-row">
+        <span class="d">2026. 6. 23–</span>
+        <div class="t"><span class="tag">국조</span>국회 '국민참정권 침해 진상규명 및 선거관리 개혁 국정조사 특별위원회'가 활동을 시작했다. 직무대행 위원장의 "재선거 주장은 무책임하다" 발언이 논란이 되어 취소·사과됐다. 시간대별 집계와 최종 투표자 수의 <b>불일치 사례(부산 +785명, 개포2동 +147명 등)</b>가 보도됐다 — 선관위는 "부실은 인정, 부정은 아니다"라는 입장이다.</div>
+      </div>
+      <div class="record-row">
+        <span class="d">2026. 7. 20–8. 7</span>
+        <div class="t"><span class="tag">수사</span>검경 합동수사본부가 선관위와 각급 선관위를 세 차례 압수수색. 외유성 출장 의혹(업무상 횡령 적시)과 <b>투표자 수 오입력 은폐를 위한 통계 임의 수정 정황</b>을 확인하고 수사를 확대했다.</div>
+      </div>
+      <div class="record-row">
+        <span class="d">2026. 9. 7–</span>
+        <div class="t"><span class="tag">특검</span>이태한 특별검사팀이 12개 의혹 수사에 착수(90~150일). 9.8 정점식 원내대표는 대표연설에서 "관리도 못 하는 사전투표 제도를 전면 폐지"하겠다고 선언했고, <b>9.17 국민의힘은 당론으로 사전투표 폐지를 확정</b>했다.</div>
+      </div>
+      <div class="record-row">
+        <span class="d">2026. 11. 4</span>
+        <div class="t"><span class="tag">기소</span>특검팀이 투표용지 부족 투표소의 <b>투표록이 '사후 수정'된 정황</b>을 포착, 중앙선관위 관계자 10여 명을 공문서 위·변조 혐의로 입건하고 압수수색했다(연합뉴스·KBS·매경). 무번호 투표용지가 배포된 140여 곳 중 최소 40곳의 투표록에 사후 기재 정황이 보도됐다. <b>수사 진행 중이며 유죄는 아직 확정되지 않았다.</b></div>
+      </div>
+    </div>
+
+    <div class="callout reveal">
+      <p><b>여기서 잠깐, 정확하게.</b> 이 페이지는 "선거 조작이 확정됐다"고 말하지 않는다. 확정된 것은 없다 — 지금까지 확정된 것은 <b>관리 실패</b>다. 용지를 절반만 찍었고, 증거물은 폐기됐고, 통계는 사후에 고쳐 썼고, 위·변조 혐의로 직원들이 입건됐다. 부정이냐 부실이냐는 특검과 법정이 정할 일이고, 우리가 이미 알게 된 사실은 이것이다: <b>제도가 이렇게 무너질 수 있다는 걸, 온 국민이 실시간으로 봤다.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- 나. 구조적 문제 -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-no">나.</span>
+      <h2>사전투표제, 설계부터 비틀린 네 군데</h2>
+      <p class="sec-desc">
+        "부정선거 의혹 때문에 폐지하자"가 아니다. 폐지·개편 논의는 6·3 이전부터 있었다.
+        국회입법조사처도 2024년부터 문제를 지적해왔다. 6·3은 이 논거에 실험 데이터를 얹은 것뿐이다.
+      </p>
+    </div>
+
+    <div class="prob-grid reveal">
+      <div class="prob">
+        <span class="p-no">一</span>
+        <h3>정보 격차 — '쪼개진 선거'</h3>
+        <p>사전투표자는 선거운동이 끝나기 전에 투표한다. 마지막 후보 발언, 정책 수정, 새로운 의혹과 논란은 전부 본투표자만 본다. 같은 선거에서 서로 다른 정보 조건으로 투표하는 것은 공정하고 평등한 참정권 행사가 아니다. 투표율이 아니라 <b>판단의 질</b>이 선거의 본질이다.</p>
+        <div class="cite">근거: 국회입법조사처 「사전투표제 현황과 효과」(2024) · 문화일보 논평(2026.9)</div>
+      </div>
+      <div class="prob">
+        <span class="p-no">二</span>
+        <h3>관리 실패가 신뢰 붕괴로 확대되는 구조</h3>
+        <p>사전투표는 이틀간 전국 수천 개 투표소에서 발급기·명부단말기·무정전전원장치를 별도로 운영하는 초대형 이중 체계다. 운영 노력이 두 배인데 검증은 여전히 수기·서류 중심이다. 6·3에서 본투표용지가 유권자 수의 절반 수준으로 삭감되고 투표록이 사후 수정된 정황이 나온 건, 이중 체계가 감당 가능한 수준을 넘었다는 신호다.</p>
+        <div class="cite">근거: 6·3 사태 관련 보도·특검 발표(2026.11.4)</div>
+      </div>
+      <div class="prob">
+        <span class="p-no">三</span>
+        <h3>비용과 인력 — 이중 선거의 대가</h3>
+        <p>사전투표의 추가 비용과 인력 투입은 국회입법조사처가 명시한 과제다. 이번 지방선거에서는 선관위 전체 인력의 약 6%가 선거 한 달 전까지 휴직 중이었다는 보도도 나왔다. 절박한 선거일에 쓸 인력을 이틀 먼저 소진시키는 구조는, 실패가 실제로 일어난 지금 더 이상 합리적이지 않다.</p>
+        <div class="cite">근거: 입법조사처(2024) · 주간조선(2026.6)</div>
+      </div>
+      <div class="prob">
+        <span class="p-no">四</span>
+        <h3>자유선거 원칙 — 기권도 의사표시다</h3>
+        <p>공직선거법 제1조가 강조하는 '자유선거'에는 투표할지 말지를 결정할 자유까지 포함된다. 투표율 제고를 명분으로 사전투표를 대대적으로 홍보·독려하는 것 자체가 유권자의 자유로운 선택을 침해할 수 있다는 지적이 있다. 투표율 상승 기여 여부에 대해서는 전문가 평가부터 엇갈린다.</p>
+        <div class="cite">근거: 국회입법조사처(2024) · 채진원 논평(2026.9)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 다. 개혁안 -->
+<section id="reform">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-no">다.</span>
+      <h2>공직선거법 개정안 총정리 — 조문으로 간다</h2>
+      <p class="sec-desc">
+        국회에 계류된 개정안 — '국민참정권 수호법' 패키지(선관위법 전부개정·공직선거법 일부개정 등 10법안, 2026.9.21 발의)와 후속 연계 8법안(2026.11.9) — 을 <b>조문 단위</b>로 총정리했다. 폐지는 목적이 아니라 <b>시작</b>이다.
+      </p>
+    </div>
+
+    <div class="reform-list reveal">
+      <div class="reform">
+        <span class="r-glyph" aria-hidden="true">가</span>
+        <div>
+          <h3>사전투표 폐지 · 본투표 이틀 연장 + 공휴일</h3>
+          <p>사전투표를 폐지하고 본투표를 이틀 실시하되, 첫째 날을 공휴일로 지정한다. 이동·일정이 어려운 유권자의 편의는 '당일 전체'를 늘리는 방식으로 보장한다. 편의는 줄이지 않는다 — 조건 격차만 없앤다.</p>
+          <span class="jo">공직선거법 제158조(사전투표) 삭제</span>
+          <span class="who">근거: 국민의힘 당론(2026.9.17) · '국민참정권 수호법' 공직선거법 개정안 · 박대출 대표 25인 연명안</span>
+        </div>
+      </div>
+      <div class="reform">
+        <span class="r-glyph" aria-hidden="true">나</span>
+        <div>
+          <h3>투표용지 유권자 수 100% 인쇄 — 법률에 못 박는다</h3>
+          <p>이번 사태는 예산 145억을 확보하고 82억만 쓴 데서 왔다. 인쇄 비율이 위임전결로 정해질 수 없다. 유권자 수대로 100% 인쇄를 법률상 의무로 명시하고, 위반 시 책임 규정을 둔다. 종이값은 비용이 아니라 보험이다.</p>
+          <span class="jo">공직선거법 제155조(투표용지의 인쇄) 개정</span>
+          <span class="who">근거: 주간조선(2026.6) · '국민참정권 수호법' 공직선거법 개정안</span>
+        </div>
+      </div>
+      <div class="reform">
+        <span class="r-glyph" aria-hidden="true">다</span>
+        <div>
+          <h3>득표율 격차 0.5%p 이내 — 자동 재검표</h3>
+          <p>객관적 기준으로 재검표를 자동화한다. 캐나다식으로 '필요시 법원 판단에 따른 재검표'를 제도의 기본값으로 두는 것과 같은 방향이다. 인간이 신뢰에 달려 있는 게 아니라, 절차가 인간을 신뢰하게 만든다.</p>
+          <span class="jo">공직선거법 제265조(재검표 및 결정·경정) 개정</span>
+          <span class="who">근거: 국민의힘 개정안 초안(2026.9) · 캐나다 재검표 사례(르데스크)</span>
+        </div>
+      </div>
+      <div class="reform">
+        <span class="r-glyph" aria-hidden="true">라</span>
+        <div>
+          <h3>투표소 = 개표소 · 즉시 수개표 · 실시간 집계</h3>
+          <p>투표 종료 후 투표소를 개표소로 전환해 즉시 수개표하고 결과를 실시간 집계한다. 대만은 '先정표 후창표'를 법으로 금지하고 표를 한 장씩 큰 소리로 읽는다. 결과가 늦게 나올수록 불신은 곱절로 불어난다 — 이건 이미 몸으로 검증했다.</p>
+          <span class="jo">공직선거법 제174조(개표사무원)·제11장(개표)·제178조 ②(전산 사용) 개정</span>
+          <span class="who">근거: '국민참정권 수호법' 공직선거법 개정안 · 대만·독일 수개표 사례(신동아·르데스크·KBS)</span>
+        </div>
+      </div>
+      <div class="reform">
+        <span class="r-glyph" aria-hidden="true">마</span>
+        <div>
+          <h3>선관위 구조 개혁 — 상임위원장제 · 읍면동 폐지 · 법관 배제 · 독립 감사</h3>
+          <p>사무총장직 폐지, 중앙·시도 상근위원장제 도입, 읍·면·동 선관위 폐지, 법관·법원공무원 겸직 금지, 외부 전문가 과반의 독립 감사위원회 신설(징계 요구·고발권, 결과는 국회 보고). 헌법이 정한 중앙선관위 구성(대통령 3·국회 3·대법원장 지명 3)은 유지하되, 독립성은 책임을 면제받는 특권이 아니도록 한다.</p>
+          <span class="jo">선거관리위원회법 전부개정</span>
+          <span class="who">근거: '국민참정권 수호법' 선관위법 전부개정안(국민의힘 109명 서명, 2026.9.21)</span>
+        </div>
+      </div>
+      <div class="reform">
+        <span class="r-glyph" aria-hidden="true">바</span>
+        <div>
+          <h3>선거물품 관리 전 과정 기록제 · 증거물 보전 의무</h3>
+          <p>증거보전 신청이 있던 상자가 익일 폐기될 수 없다. 투표용지·투표함·개표장비의 인쇄·보관·운송·인계·사용·잔여분 처리 단계마다 책임자·일시·장소·수량·참여자를 기록하고, 정당·후보자의 열람권을 보장하며 선거일 후 30일 이내 주요 내용을 공개한다. 기록·영상은 5년, 중대 선거관리사고 관련은 10년 보존한다(현행 사전투표함 CCTV는 6개월).</p>
+          <span class="jo">공직선거법 등 후속 연계 8법 개정</span>
+          <span class="who">근거: 김미애 대표 후속 8법안(한국경제, 2026.11.9) · 잠실7동 투표용지 상자 폐기 보도(연합뉴스·중앙일보)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg reveal">
+      <h3>법안 패키지 전체 — 10 + 8</h3>
+      <p><b>① '국민참정권 수호법' 패키지(10법안, 2026.9.21)</b> — 선관위법 전부개정안(상근위원장제·읍면동 선관위 폐지·법관 겸직 금지·독립 감사위원회)과 공직선거법 일부개정안(사전투표 폐지·투표용지 100% 이상 인쇄·투표소→개표소 전환 즉시 수개표)을 축으로 정당법·국민투표법·정치자금법 등을 묶은 패키지다. 박대출·김미애·최형두 의원 발의, 국민의힘 의원 109명 전원 서명 당론.</p>
+      <p><b>② 후속 연계 8법안(2026.11.9, 김미애 대표 발의)</b> — 공직선거법·국민투표법·주민투표법·주민소환에관한법률·정당법·정치자금법·위탁선거법·국가재정법 각 30명 이상 공동발의. 선거물품 기록제와 영상 보존 연장을 각종 투표·위탁선거로 확장하고, 국가재정법 개정안은 독립 감사위원회 예산을 별도 계상하며 정부가 감액할 경우 그 규모·이유·감사위원회 의견을 국회에 제출하게 한다.</p>
+      <p><b>③ 별도 의원안</b> — 나경원 의원안(선관위 해체·새 거버넌스 구축·당일 현장 수개표 원칙), 박대출 의원 대표 한동훈 무소속 의원 등 25인 연명안(사전투표 폐지, 본투표일 이틀 확대, 사전 신고자에 한한 부재자투표 재도입).</p>
+      <span class="pkg-src">근거: KBS(2026.9.21) · 한국경제(2026.11.9) · 신동아(2026.7)</span>
+    </div>
+  </div>
+</section>
+
+<!-- 라. 세계 사례 -->
+<section id="world">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-no">라.</span>
+      <h2>세계는 이미 '당일투표 · 수개표'로 답했다</h2>
+      <p class="sec-desc">공정선거의 국제 기준은 특별한 기술이 아니라, <b>표가 유권자의 눈앞에서 떠나지 않는 원칙</b>이다. 선거 선진국 다섯 나라의 운영을 기록으로 확인한다.</p>
+    </div>
+
+    <div class="reform-list reveal">
+      <div class="reform">
+        <span class="r-glyph" aria-hidden="true">台</span>
+        <div>
+          <h3>대만 — '3無 선거', 투표소가 곧 개표소</h3>
+          <p>사전·우편·부재자투표가 모두 없는 '3無(無) 선거'. 투표는 선거일 오전 8시~오후 4시, 종료 선언과 동시에 투표소는 개표소로 전환된다. 검표→창표→기표→정표 4단계로 완전 수개표하며, 창표원은 투표지를 머리 위로 들어 "기호 ○번 ○○○ 한 표"라고 큰 소리로 외친다. '先정표 후창표'는 법으로 금지, 전자장비는 전면 배제. 투표함은 개봉 전 첫 유권자 앞에서 '비어 있음'을 확인하고 봉인하며, 종이 결과보고서는 즉시 게시돼 전산 수치의 대조 물증으로 남는다. 2022년 대선 개표는 평균 4시간 54분, 선관위는 법정 정원 60명의 미니 부처다.</p>
+          <span class="who">근거: 신동아(2026.7) · 대만·한국 투개표 비교연구(KCI) · KBS</span>
+        </div>
+      </div>
+      <div class="reform">
+        <span class="r-glyph" aria-hidden="true">法</span>
+        <div>
+          <h3>프랑스 — '속 보이는 투표함'</h3>
+          <p>투명 플라스틱 투표함 — 투표용지가 바닥에 떨어지는 순간까지 투표함 속이 유권자의 눈앞에 있다. 비밀투표는 별도 봉투로 보장하고, 입구는 한 번에 한 봉투만 통과하도록 미세하게 조정됐으며 손잡이를 당길 때마다 투표자 수가 집계된다. 투표함은 마감 후 이송되지 않고 그 자리에서 선관위 직원·시민 대표·정당 참관인 앞에서 개표한다. 재외국민투표소도 본국과 동일하다. 해킹 우려로 2017년부터 전자투표를 폐지하고 기표·수개표로 회귀했다.</p>
+          <span class="who">근거: YTN(2017) · KBS</span>
+        </div>
+      </div>
+      <div class="reform">
+        <span class="r-glyph" aria-hidden="true">德</span>
+        <div>
+          <h3>독일 — '집계 과정의 비공개 = 위헌'</h3>
+          <p>2009년 연방헌법재판소는 전자개표기의 집계 과정이 유권자에게 공개되지 않는다는 이유만으로 위헌 판결을 내렸고, 독일은 전면 수개표로 전환했다. 투표 종료 직후 투표소 현장에서 표를 한 장씩 소리 내어 읽으며, 일반 시민과 언론의 참관도 자유롭다. 투표자 수와 투표지 수의 일치를 지방·주·연방 다단계로 교차 검증하고, 연방선거관리관은 정치인이 아닌 연방통계청장이 겸임한다. 유권자의 약 80%가 선거관리의 무결성을 신뢰한다(2024년 연구).</p>
+          <span class="who">근거: 르데스크(2026.6) · KBS</span>
+        </div>
+      </div>
+      <div class="reform">
+        <span class="r-glyph" aria-hidden="true">英</span>
+        <div>
+          <h3>영국 — 조직이 아니라 '사람'이 책임진다</h3>
+          <p>선거마다 지역 선거관리책임자(Returning Officer)를 지정하고, 투표소 운영 부실·개표 오류·명부 관리 문제가 발생하면 그 사람이 직접 법적 책임을 진다. 조직 전체로 책임을 희석시키지 않는 방식이다. 모든 개표는 2인 1조 수개표이며, 참관인의 근거리 감시와 잡음 발생 시 즉석 재검표가 원칙이고, 법원은 중대한 위법 시 선거 무효·재선거를 명령할 수 있다.</p>
+          <span class="who">근거: 르데스크(2026.6) · 주간조선 런던통신</span>
+        </div>
+      </div>
+      <div class="reform">
+        <span class="r-glyph" aria-hidden="true">加</span>
+        <div>
+          <h3>캐나다 — 선관위는 정치권 밖에, 재검표는 제도 안에</h3>
+          <p>의회 산하 독립기구 선거관리청이 선거를 총괄하고, 최고선거관리관은 정권과 무관하게 임기가 보장되며 본인과 가족의 정당 가입·선거운동 참여까지 금지된다. 종이투표·수개표 원칙을 고수하고, 투표자 수=투표지 수 일치를 수차례 반복 검증하며 필요시 법원 판단에 따라 재검표한다. 선거 운영 공정성 평가는 81% — 연방정부 신뢰도(49%)를 크게 앞선다.</p>
+          <span class="who">근거: 르데스크(2026.6)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="world-note reveal">
+      <b>공정하게: 전면 이식은 답이 아니다.</b> 대만식 100% 수개표는 1만 4천여 개 투표소를 하룻밤에 처리해야 하는 한국 규모에서 현실적 어려움이 크다는 게 학계 평가다(이준한 인천대 교수는 투표지분류기 개표 + 보완적 수검표라는 절충안을 제시). 교사·공무원 선거실무 위탁도 공휴일 근무 보상 문제 등 사회적 합의가 선행돼야 한다. 쟁점은 '누구 모델이냐'가 아니라 — <b>표가 유권자의 눈앞에서 떠나지 않게 하는 원칙</b>을 어느 요소로, 어떻게 채택할 것인가다.
+    </div>
+  </div>
+</section>
+
+<!-- 마. 데이터 -->
+<section id="data">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-no">마.</span>
+      <h2>숫자는 이미 답을 알고 있다</h2>
+      <p class="sec-desc">근거 없는 폐지 운동이 아니라, 여론과 기록이 이미 방향을 가리키고 있다는 것.</p>
+    </div>
+
+    <div class="data-grid">
+      <div class="chart-card reveal">
+        <h3>역대 선거 사전투표율 추이</h3>
+        <span class="c-src">중앙선관위·BBC 코리아 정리 — 사전투표 도입 후 꾸준한 상승, 2022년 36.93% 정점</span>
+        <div class="bar-row"><span class="lbl">2016 · 20대 총선</span><div class="bar-track"><div class="bar-fill" data-w="12.19"></div></div><span class="val mono">12.19%</span></div>
+        <div class="bar-row"><span class="lbl">2017 · 19대 대선</span><div class="bar-track"><div class="bar-fill" data-w="26.06"></div></div><span class="val mono">26.06%</span></div>
+        <div class="bar-row"><span class="lbl">2018 · 7회 지선</span><div class="bar-track"><div class="bar-fill" data-w="20.14"></div></div><span class="val mono">20.14%</span></div>
+        <div class="bar-row"><span class="lbl">2020 · 21대 총선</span><div class="bar-track"><div class="bar-fill" data-w="26.69"></div></div><span class="val mono">26.69%</span></div>
+        <div class="bar-row"><span class="lbl">2022 · 20대 대선</span><div class="bar-track"><div class="bar-fill hot" data-w="36.93"></div></div><span class="val mono">36.93%</span></div>
+        <div class="bar-row"><span class="lbl">2024 · 22대 총선</span><div class="bar-track"><div class="bar-fill" data-w="31.28"></div></div><span class="val mono">31.28%</span></div>
+        <div class="bar-row"><span class="lbl">2025 · 21대 대선</span><div class="bar-track"><div class="bar-fill" data-w="34.74"></div></div><span class="val mono">34.74%</span></div>
+        <div class="chart-note">
+          22대 총선(2024)에서는 사전투표 31.28% + 당일 35.72% = 총 투표율 67.0%. 선거 전체의 <b>절반 가까이가 사전투표로 치러졌다</b>. 이제 "사전" 선거가 아예 별개의 선거처럼 군집하면, 당일 선거는 소수의 의사만 반영하는 선거가 된다.
+        </div>
+      </div>
+
+      <div class="chart-card reveal">
+        <h3>국민은 폐지를 선택했다 — 2026년 6월 여론</h3>
+        <span class="c-src">리얼미터 · 에너지경제신문 의뢰, 휴대전화 ARS 등, n=1,011 (문화일보 인용)</span>
+        <div class="bar-row"><span class="lbl">폐지 찬성</span><div class="bar-track"><div class="bar-fill hot" data-w="52.7"></div></div><span class="val mono">52.7%</span></div>
+        <div class="bar-row"><span class="lbl">유지 찬성</span><div class="bar-track"><div class="bar-fill" data-w="44.2"></div></div><span class="val mono">44.2%</span></div>
+        <div class="bar-row"><span class="lbl">모름·무응답</span><div class="bar-track"><div class="bar-fill" data-w="3.1" style="background:var(--line-strong)"></div></div><span class="val mono">3.1%</span></div>
+        <div class="chart-note">
+          6·3 사태가 벌어진 그 달의 여론조사다. 이 페이지가 여론을 만드는 게 아니라, <b>여론이 이미 만들어졌고</b> 이제 입법만 남았다는 뜻이다. 참고로 국회입법조사처는 편의성 확대는 인정하되 투표율 기여 여부는 "평가가 엇갈린다"고 진단했다.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 마. 반론과 답 -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-no">바.</span>
+      <h2>반론을 먼저 들여다보자</h2>
+      <p class="sec-desc">캠페인이란 다른 목소리를 지우는 게 아니라, 답할 수 있는 물음으로 만드는 것이다.</p>
+    </div>
+
+    <div class="faq reveal">
+      <details open>
+        <summary>"부정선거 음모론이 아니냐. 확정된 것도 없잖아."</summary>
+        <div class="faq-body">
+          <p>정확한 지적이다. 부정선거는 아직 확정되지 않았고, 특검 수사는 진행 중이다(2026.11 기준). 그래서 이 캠페인의 근거는 음모론이 아니라 <b>구조 논거</b>다 — 정보 격차(입법조사처), 이중 운영의 비용·인력, 관리 실패가 신뢰 붕괴로 확대되는 구조, 자유선거 원칙 논쟁. 그리고 이 논거는 6·3 이전부터 학계·입법기관에 있었다.</p>
+          <p>동시에, 폐지·개편 논의를 무조건 '음모론'으로 몰아세우는 낙인찍기도 경계해야 한다(주간조선 2026.6). 합리적인 제도 개편 요구를 대화 밖으로 밀어내는 건 그 자체로 선거 신뢰를 깎는 일이다.</p>
+        </div>
+      </details>
+      <details>
+        <summary>"사전투표 없애면 투표율이 뚝 떨어지는 거 아닌가?"</summary>
+        <div class="faq-body">
+          <p><b>직접 검증해보면 그렇지 않다.</b> 사전투표 도입 전 마지막 대선인 2012년(18대) 투표율은 75.8%, 도입 후 2017년(19대)은 77.2% — 사전투표율이 26.06%에 달했는데 총 투표율 상승분은 불과 1.4%p였다(KBS 팩트체크). 즉 사전투표자의 상당수는 '그날 안 가던 사람'이 아니라 <b>어차피 투표했을 사람의 날짜 이동</b>이다.</p>
+          <p>더 결정적인 데이터는 2022년 대선이다. 사전투표율이 36.93%로 역대 최고를 기록했는데, 총 투표율은 77.1%로 4년 전(77.2%)보다 오히려 <b>0.1%p 낮았다</b>(BBC 코리아). 사전투표율이 급등해도 총 투표율은 그대로였다 — '사전투표율 = 참여 확대'라는 등식은 성립하지 않는다. 입법조사처도 투표율 기여 평가가 엇갈린다는 게 2024년 보고서의 결론이다.</p>
+          <p>그리고 우리 답은 폐지만이 아니다 — <b>본투표를 이틀로 늘리고 첫째 날을 공휴일로 만드는 것</b>이 편의를 대체한다. 사전투표가 아니라 '투표할 시간'이 편의의 본질이다.</p>
+        </div>
+      </details>
+      <details>
+        <summary>"거동이 불편하거나, 당일 지방에 없는 사람은 어떻게 하지?"</summary>
+        <div class="faq-body">
+          <p>대안은 <b>부재자투표의 부활</b>이다. 해외 체류·거동 불편·거소 이동 등 법정 사유가 있는 유권자에게는 부재자투표를 정비해 제공하되, 이는 '예외 자격자' 투표로 관리 부담이 작다. 논의 후보로는 부재자투표 부활, 본투표 2~3일 연장이 이미 공론화돼 있다(문화일보 2026.9). 폐지가 편의를 없애는 게 아니라, 편의를 <b>모두에게 같은 조건으로</b> 재배치하는 것이다.</p>
+        </div>
+      </details>
+      <details>
+        <summary>"폐지하면 선거일이 더 혼잡해지지 않나?"</summary>
+        <div class="faq-body">
+          <p>지금은 사전투표 이틀 + 당일 하루 = 총 3일에 걸쳐 '두 번의 별도 선거'를 치르는 형태다. 폐지 후에는 <b>하나의 선거를 이틀에 걸쳐 치르는</b> 형태가 되므로 하루 집중 문제는 완화된다. 동시에 투표용지는 유권자 수대로 100% 준비되고, 수개표·실시간 집계로 개표 병목도 줄어든다. 여·야 각각 2026년에 사전투표 기간을 이틀에서 늘리는 방향의 논의를 하고 있었다는 점 자체가, 혼잡은 운영 설계의 문제임을 보여준다.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 바. 참여 -->
+<section id="act" style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-no">사.</span>
+      <h2>불은 여기서 붙는다</h2>
+      <p class="sec-desc">여론은 이미 52.7%다. 남은 것은 이 논의가 국회 본회의에 도달할 수 있게 하는 것. 세 가지, 지금 당장.</p>
+    </div>
+
+    <div class="act-grid reveal">
+      <div class="act">
+        <span class="a-no">STEP 01</span>
+        <h3>서명에 올라타기</h3>
+        <p>사전투표 폐지·선거관리 개혁 국민청원·서명 참여. 서명 수가 목표에 도달할 때마다 이 페이지 상단 배너에 기록된다.</p>
+        <a class="a-btn" href="#act" id="signBtn">서명하러 가기</a>
+        <span class="a-note">※ 서명 페이지 링크는 운영자가 실제 서명 주소로 교체해 사용하세요.</span>
+      </div>
+      <div class="act">
+        <span class="a-no">STEP 02</span>
+        <h3>캠페인 문구 복사 · 공유</h3>
+        <p>"표는 같은 날, 같은 조건으로. 사전투표 폐지, 본투표 이틀, 투표용지 100%." — 클릭하면 클립보드에 복사된다. 그대로 붙여넣고 공유하라.</p>
+        <button class="a-btn" id="copyBtn" type="button">문구 복사하기</button>
+        <span class="a-note" id="copyNote" role="status" aria-live="polite"></span>
+      </div>
+      <div class="act">
+        <span class="a-no">STEP 03</span>
+        <h3>내 지역구 국회의원에게</h3>
+        <p>당론이 확정된 지금, 입법 속도를 결정하는 건 상임위와 지역구 의원의 수신함이다. 이메일·청원을 통해 의견을 보내라. 의원 정보는 국회 공식 사이트에서 확인할 수 있다.</p>
+        <a class="a-btn" href="https://www.assembly.go.kr" target="_blank" rel="noopener">국회 바로가기</a>
+        <span class="a-note">국회의원 연락처는 대한민국 국회(assembly.go.kr)에서 지역구 검색</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- 푸터 -->
+<footer>
+  <div class="wrap">
+    <div class="src-list reveal">
+      <h3>이 페이지의 근거 — 주요 출처</h3>
+      <ol>
+        <li><span><a href="https://ko.wikipedia.org/wiki/6%C2%B73_%EC%A7%80%EB%B0%A9%EC%84%A0%EA%B1%B0_%ED%88%AC%ED%91%9C%EC%9A%A9%EC%A7%80_%EB%B6%80%EC%A1%B1_%EC%82%AC%ED%83%9C">6·3 지방선거 투표용지 부족 사태 개요·경과 (위키백과, 2026)</a> — 140개소 부족, 26개소 일시중단, 관련 기관 대응 정리</span></li>
+        <li><span><a href="https://www.ikbc.co.kr/article/view/kbc202609030060">국민의힘 개정안 초안 보고 (G광주방송, 2026.9.3)</a> — 폐지·본투표 2일·용지 100%·0.5%p 재검표·선관위 개혁</span></li>
+        <li><span><a href="https://www.yna.co.kr/view/AKR20260917142400001">의총 당론 확정: 폐지·수개표·실시간 집계·법관 배제 (연합뉴스, 2026.9.17)</a></span></li>
+        <li><span><a href="https://www.munhwa.com/article/11615710">채진원, "사전투표 폐지 논의할 때다" (문화일보, 2026.9.9)</a> — 여론조사 수치(52.7%·44.2%), 자유선거·정보 격차 논거</span></li>
+        <li><span><a href="https://www.nars.go.kr">국회입법조사처 「사전투표제 현황과 효과」 이슈와 논점 2242호 (2024.5)</a> — 편의성·투표율 기여·비용·정보 격차 평가</span></li>
+        <li><span><a href="https://news.kbs.co.kr/news/view.do?ncd=4423850">[팩트체크K] 사전 투표율 높으면 전체 투표율도 올라간다? (KBS, 2020.4)</a> — 2012년 대선 75.8% vs 2017년 대선 77.2%, 투표율 기여 실증 분석</span></li>
+        <li><span><a href="https://www.bbc.com/korean/news-60659235">20대 대선 최종 투표율 77.1% (BBC 코리아, 2022.3)</a> — 사전투표율 36.93% 역대 최고에도 19대 대선보다 0.1%p 낮음</span></li>
+        <li><span><a href="https://www.bbc.com/korean/articles/ckd8q91zl5vo">22대 총선 사전투표율 31.28% 역대 최고 (BBC 코리아, 2024.4)</a> — 2016~2024 사전투표율 추이</span></li>
+        <li><span><a href="https://blog.naver.com/nec1963/223423149860?viewType=pc">숫자로 보는 제22대 국회의원선거 (중앙선관위 블로그)</a> — 사전 31.28% + 당일 35.72% = 67.0%</span></li>
+        <li><span><a href="https://www.yna.co.kr/view/AKR20261104088454004">특검, '투표록 사후수정' 중앙선관위 압수수색 · 관계자 10여 명 입건 (연합뉴스, 2026.11.4)</a> — 수사 진행 중, 유죄 확정 아님</span></li>
+        <li><span><a href="https://www.joongang.co.kr/article/25434097">투표용지 제작 예산 145억 확보 · 82억 집행 관련 보도 (주간조선, 2026.6)</a></span></li>
+        <li><span><a href="http://weekly.chosun.com/news/articleView.html?idxno=52467">'쪼개진 선거'가 키운 불신, 사전투표제를 다시 묻는다 (주간조선, 2026.6)</a> — 낙인찍기 경계 논점</span></li>
+        <li><span><a href="https://shindonga.donga.com/politics/article/all/13/6324598/1">표본으로 거론되는 '대만 선거제도'의 겉과 속 (신동아, 2026.7)</a> — 3無 선거·검표-창표-기표-정표 수개표·선관위 60명 미니 부처·절충안 논점</span></li>
+        <li><span><a href="https://www.ledesk.co.kr/view.php?uid=16047">선거 선진국 투표는… 독일·대만·영국 '공개 수개표' (르데스크, 2026.6)</a> — 독일 헌재 위헌 판결·영국 책임자 개인 책임·캐나다 독립 선거관리청</span></li>
+        <li><span><a href="https://www.ytn.co.kr/_ln/0104_201705050528185941">투명 투표함·투표소 개표… 프랑스의 부정 시비 차단법 (YTN, 2017)</a></span></li>
+        <li><span><a href="https://news.kbs.co.kr/news/view.do?ncd=7851272">독일·프랑스 등 선진국도 수개표… "전자개표는 해킹 위험" (KBS, 2022)</a> — 대만 2019 전면 수개표 전환 포함</span></li>
+        <li><span><a href="https://journal.kci.go.kr/japs/archive/articlePdf?artiId=ART003160454">대만과 한국의 투·개표 방식 비교연구 (한국행정연구, KCI)</a> — 2022년 대선 개표 평균 4시간 54분</span></li>
+        <li><span><a href="https://news.kbs.co.kr/news/view.do?ncd=8668776">국민의힘, '국민참정권 수호법' 당론 발의 (KBS, 2026.9.21)</a> — 10법안 구성·선관위법 전부개정 골자</span></li>
+        <li><span><a href="https://www.hankyung.com/article/202611094459i">국힘 사전투표 폐지, 즉시 수개표 추진 후속법 발의 (한국경제, 2026.11.9)</a> — 후속 8법안·선거물품 기록제·보존기간 5·10년</span></li>
+      </ol>
+    </div>
+
+    <div class="foot-meta">
+      <p><b>디지털 대동법 연구소 · 선거개혁 캠페인</b> — 이 페이지는 공개 보도·공식 기록에 근거한 시민 제안 캠페인 자료입니다. 특정 정당의 공식 의견이 아닌 시민 운동 문서이며, 수사 중 사안에 대해서는 혐의·정황 수준으로만 기술했습니다. 기재 수치는 2026년 11월 12일 기준 공개 자료 기준입니다.</p>
+      <p class="mono">DOSSIER 2026-063 · SAME DAY, SAME TERMS · 문의·수정 제안은 캠페인 운영자에게</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 마치 배너 복제(끊김 없는 흐름)
+(function(){
+  var m=document.getElementById('march');
+  if(m){m.innerHTML=m.innerHTML+m.innerHTML;}
+})();
+
+// 차트 바 — 로드 즉시 칠함(트랜지션 재생), IO 불필요
+(function(){
+  var fills=document.querySelectorAll('.bar-fill');
+  function paintAll(){fills.forEach(function(f){f.style.width=f.dataset.w+'%';});}
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced){paintAll();return;}
+  requestAnimationFrame(function(){requestAnimationFrame(paintAll);});
+  setTimeout(paintAll,1500); // 안전망
+})();
+
+// 문구 복사
+(function(){
+  var btn=document.getElementById('copyBtn'), note=document.getElementById('copyNote');
+  var text='표는 같은 날, 같은 조건으로.\n사전투표 폐지 · 본투표 이틀 · 투표용지 100% 인쇄 · 0.5%p 자동 재검표 · 수개표·실시간 집계 · 선관위 개혁\n#선거개혁_지금';
+  if(!btn)return;
+  btn.addEventListener('click',function(){
+    function done(){note.textContent='복사 완료 — 붙여넣고 공유하세요.';setTimeout(function(){note.textContent=''},4000);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done,function(){fallback();});
+    }else{fallback();}
+    function fallback(){
+      var ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);
+      ta.select();try{document.execCommand('copy');done();}catch(e){note.textContent='복사 실패 — 문구를 직접 선택해 주세요.';}
+      document.body.removeChild(ta);
+    }
+  });
+})();
+
+// 서명 버튼 안내 (운영자 링크 교체 안내)
+(function(){
+  var b=document.getElementById('signBtn');
+  if(b)b.addEventListener('click',function(e){
+    if(b.getAttribute('href')==='#act'){
+      e.preventDefault();
+      b.textContent='링크 준비 중 — 운영자가 서명 주소를 연결하세요';
+      setTimeout(function(){b.textContent='서명하러 가기'},2500);
+    }
+  });
+})();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+<script>window.__GT_DEFAULT_GROUP='reset';</script><script id="tab-tap-js">
+/* ===== 탭 제스처: 한 번 = 색 반전·하위 탭 펼침, 두 번 = 내용으로 이동 ===== */
+(function(){
+  var DOUBLE_MS=320;   /* 두 번 탭 인식 임계값 (ms) */
+
+  function go(a){
+    var href=a.getAttribute('href')||'';
+    if(!href||href==='#') return;
+    if(href.charAt(0)==='#'){
+      if(location.hash===href){
+        try{window.dispatchEvent(new HashChangeEvent('hashchange'));}
+        catch(err){window.dispatchEvent(new Event('hashchange'));}
+      }else{ location.hash=href; }
+    }else{ location.href=href; }
+  }
+
+  /* ---- 안내 말풍선 (세션당 1회) ---- */
+  var hintEl=null,hintTimer=0;
+  function hint(a,msg,key){
+    try{ if(sessionStorage.getItem(key)==='1') return; sessionStorage.setItem(key,'1'); }catch(e){}
+    if(!hintEl){ hintEl=document.createElement('div'); hintEl.id='tab-tap-hint'; hintEl.setAttribute('aria-hidden','true'); document.body.appendChild(hintEl); }
+    hintEl.textContent=msg;
+    var r=a.getBoundingClientRect();
+    hintEl.style.left=Math.round(r.left+r.width/2)+'px';
+    hintEl.style.top=Math.round(r.top)+'px';
+    hintEl.classList.add('on');
+    clearTimeout(hintTimer);
+    hintTimer=setTimeout(function(){ hintEl.classList.remove('on'); },2400);
+  }
+
+  /* ---- 상단 큰 탭 / 작은 탭 ---- */
+  var wrap=document.querySelector('.gt-wrap');
+  var tabs=wrap?[].slice.call(wrap.querySelectorAll('.gt')):[];
+  var rows=wrap?[].slice.call(wrap.querySelectorAll('.st-row')):[];
+  var curGroup=null;
+
+  function showRows(g,anim){
+    rows.forEach(function(r){
+      var on=r.getAttribute('data-g')===g;
+      r.hidden=!on;
+      if(on&&anim){ r.classList.remove('is-open'); void r.offsetWidth; r.classList.add('is-open'); }
+    });
+  }
+  function markGroup(g){
+    var ok=false;
+    tabs.forEach(function(a){
+      var on=a.getAttribute('data-g')===g; if(on) ok=true;
+      a.classList.toggle('is-on',on);
+      a.setAttribute('aria-selected',on?'true':'false');
+    });
+    if(!ok) return;
+    curGroup=g; showRows(g,false);
+  }
+  function clearPress(keep){
+    [].slice.call(document.querySelectorAll('#site-header .is-press')).forEach(function(el){ if(el!==keep) el.classList.remove('is-press'); });
+  }
+  function press(el){ clearPress(el); el.classList.add('is-press'); }
+  function pressTab(a){ press(a); var g=a.getAttribute('data-g'); if(g) showRows(g,true); }
+
+  if(wrap){
+    tabs.forEach(function(a){
+      a.addEventListener('mouseenter',function(){ pressTab(a); });
+      a.addEventListener('focus',function(){ pressTab(a); });
+    });
+    rows.forEach(function(r){
+      [].slice.call(r.querySelectorAll('.st')).forEach(function(a){
+        a.addEventListener('mouseenter',function(){ press(a); });
+        a.addEventListener('focus',function(){ press(a); });
+      });
+    });
+    /* 마우스가 벗어나도 마지막으로 누른(머문) 큰 탭 그룹을 유지 */
+    wrap.addEventListener('mouseleave',function(){
+      var pressedLarge=wrap.querySelector('.gt.is-press');
+      clearPress(pressedLarge);
+      var g=pressedLarge?pressedLarge.getAttribute('data-g'):null;
+      if(g) showRows(g,false); else if(curGroup) showRows(curGroup,false);
+    });
+
+    wrap.addEventListener('click',function(e){
+      var a=e.target.closest?e.target.closest('.gt,.st'):null;
+      if(!a||!wrap.contains(a)) return;
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||(e.button&&e.button!==0)) return;
+      e.preventDefault(); e.stopPropagation();
+      if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+      if(e.detail===0){ go(a); return; }              /* 키보드 Enter */
+      var now=Date.now(),prev=lastTap.get(a)||0;
+      if(prev&&now-prev<DOUBLE_MS){ lastTap.delete(a); go(a); return; }
+      lastTap.set(a,now);
+      if(a.classList.contains('gt')) pressTab(a); else press(a);
+      hint(a,'한 번 = 미리보기 · 두 번 누르면 이동','tabUxTop');
+    },true);
+  }
+
+  var lastTap=new WeakMap();
+
+  function fromHash(){
+    var h=location.hash||'';
+    if(h.indexOf('salriki')>-1) return 'salriki';
+    if(h.indexOf('policy')>-1) return window.__GT_DEFAULT_GROUP||'land';
+    if(h.indexOf('join')>-1) return 'join';
+    if(h.indexOf('liberty')>-1) return 'liberty';
+    return window.__GT_DEFAULT_GROUP||'land';
+  }
+  markGroup(fromHash());
+
+  /* ---- 아래 검은 탭 막대 ---- */
+  var dock=document.getElementById('site-dock');
+  var dl=dock?[].slice.call(dock.querySelectorAll('a')):[];
+  var dockManual=false;
+  function setCur(i){ dl.forEach(function(a,k){ a.classList.toggle('cur',k===i); }); }
+  function routeIndex(){
+    var h=(location.hash||'').toLowerCase();
+    if(h.indexOf('salriki')>-1) return 2;
+    return 0;
+  }
+  function syncDock(){
+    if(dockManual||!dl.length) return;
+    var i=routeIndex();
+    var home=document.getElementById('page-home');
+    var join=document.getElementById('join');
+    if(i===0&&home&&!home.hidden&&join){
+      var r=join.getBoundingClientRect();
+      if(r.top<window.innerHeight*0.55&&r.bottom>140) i=3;
+    }
+    setCur(i);
+  }
+  if(dock){
+    dock.addEventListener('click',function(e){
+      var a=e.target.closest?e.target.closest('a'):null;
+      if(!a||!dock.contains(a)) return;
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||(e.button&&e.button!==0)) return;
+      e.preventDefault(); e.stopPropagation();
+      if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+      var idx=dl.indexOf(a);
+      if(e.detail===0){ go(a); return; }              /* 키보드 Enter */
+      var now=Date.now(),prev=lastTap.get(a)||0;
+      if(prev&&now-prev<DOUBLE_MS){ lastTap.delete(a); go(a); return; }
+      lastTap.set(a,now);
+      dockManual=true;
+      if(idx>-1) setCur(idx);
+      hint(a,'한 번 = 색 이동 · 두 번 누르면 이동','tabUxDock');
+    },true);
+  }
+
+  var ticking=false;
+  function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(function(){ ticking=false; syncDock(); }); }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  window.addEventListener('hashchange',function(){
+    dockManual=false;
+    clearPress(null);
+    markGroup(fromHash());
+    syncDock();
+  });
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',syncDock); else syncDock();
+})();
+</script>undefined
+<script>document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('#menu-toggle');if(!b)return;var mm=document.getElementById('mobile-menu');if(mm)mm.classList.toggle('open');});</script>
+</body>
+</html>

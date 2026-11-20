@@ -1005,13 +1005,13 @@ table th { white-space: nowrap; }
         </div>
         <div class="st-row" data-g="salriki" hidden>
           <a class="st" href="#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
-          <a class="st" href="#/salriki#D-Day</a> <a class="st" href="#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a> <a class="st" href="#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a> <a class="st" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a> <a class="st" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a> <a class="st" href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a> <a class="st" href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a>
+          <a class="st" href="#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a> <a class="st" href="#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a> <a class="st" href="#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a> <a class="st" href="#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a> <a class="st" href="#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a> <a class="st" href="#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a>
           <a class="st" href="index-chaohan.html">중국의 한국 흡수 전략</a>
         </div>
         <div class="st-row" data-g="jozak" hidden>
           <a class="st" href="jojakkiso_teukgeom_factsheet.html">조작기소</a>
           <a class="st" href="daejangdong_factsheet.html">대장동</a>
-          <a class="st" href="lawyerline_factsheet.html">이재명</a>
+          <a class="st" href="lawyerline_factsheet.html">이재명 변호</a>
           <a class="st" href="fivebillion_factsheet.html">50억 클럽</a>
           <a class="st" href="hwachon_factsheet.html">전 대법관</a>
         </div>
@@ -1064,7 +1064,7 @@ table th { white-space: nowrap; }
         <div class="mm-l">
           <a href="jojakkiso_teukgeom_factsheet.html">조작기소</a>
           <a href="daejangdong_factsheet.html">대장동</a>
-          <a href="lawyerline_factsheet.html">이재명</a>
+          <a href="lawyerline_factsheet.html">이재명 변호</a>
           <a href="fivebillion_factsheet.html">50억 클럽</a>
           <a href="hwachon_factsheet.html">전 대법관</a>
         </div>
@@ -3154,9 +3154,10 @@ body.admin-mode{background:#F5F7FA}
 </style>
 <div id="site-dock" role="navigation" aria-label="사이트 바로가기">
   <a href="#/" class="cur">토지 Land</a>
-  <a href="liberty.html" class="">자유 Liberty</a>
-  <a href="#/salriki" class="">대한민국 살리기</a>
-  <a href="#/home#join">함께하기</a>
+  <a href="liberty.html">자유 Liberty</a>
+  <a href="#/salriki">대한민국 살리기</a>
+  <a href="jojakkiso_teukgeom_factsheet.html">조작기소 특검</a>
+  <a href="assembly-reset.html">실질적 국회 해산</a>
 </div>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
@@ -3561,7 +3562,6 @@ body.admin-mode{background:#F5F7FA}
   function routeIndex(){
     var h=(location.hash||'').toLowerCase();
     if(h.indexOf('salriki')>-1) return 2;
-    if(h.indexOf('join')>-1) return 3;
     return 0;
   }
   function syncDock(){

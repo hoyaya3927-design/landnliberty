@@ -91,15 +91,35 @@ td small{color:var(--ink2)}
 
 .src{font-size:13px;color:var(--ink2)}
 .src li{margin:4px 0}
-footer.site{border-top:3px solid var(--ink);margin-top:34px;padding:28px 0 46px}
+footer.site{border-top:3px solid var(--ink);margin-top:34px;padding:28px 0 96px}
 footer.site .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 footer.site a{text-decoration:none;font-size:14px}
 footer.site .ftitle{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--ink2);margin-bottom:6px}
 @media(max-width:640px){section{padding:22px 18px}}
 </style>
+<style id="site-dock-css">
+#site-dock{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:2147483000;display:flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:rgba(10,14,26,.97);border:1px solid rgba(60,240,197,.35);box-shadow:0 10px 30px rgba(0,0,0,.45);font-family:'Pretendard','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;max-width:calc(100vw - 20px);overflow-x:auto;scrollbar-width:none}
+#site-dock::-webkit-scrollbar{display:none}
+#site-dock a{flex:0 0 auto;padding:7px 13px;border-radius:999px;color:#cfd8e3;text-decoration:none;font-size:12.5px;font-weight:700;white-space:nowrap;letter-spacing:-.01em;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+#site-dock a:hover{background:rgba(255,255,255,.09);color:#fff}
+#site-dock a.cur{background:#3cf0c5;color:#06121a;box-shadow:0 0 0 1px rgba(60,240,197,.55),0 4px 14px rgba(60,240,197,.22)}
+#site-dock a:active{transform:scale(.94)}
+@media(max-width:640px){#site-dock{bottom:10px;gap:2px;padding:5px}#site-dock a{padding:6px 10px;font-size:11.5px}}
+</style>
 </head>
 <body>
 <div id="back-to-index" style="position:sticky;top:0;z-index:9999;background:#181D22;color:#fff;font-family:IBM Plex Mono,ui-monospace,monospace"><div style="max-width:1060px;margin:0 auto;padding:9px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap"><a href="index.html" style="color:#fff;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.02em;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 14px;display:inline-flex;align-items:center;gap:7px"><span aria-hidden="true">←</span> 토지와 자유 홈</a><span style="font-size:11px;opacity:.65;letter-spacing:.04em">디지털 대동법 연구소 · 팭트시트 · 2026.11.09 기준</span></div></div>
+
+
+<style id="tab-tap-css">
+/* ===== 한 번 = 반전·펼침 / 두 번 = 이동 ===== */
+#site-dock a{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+#site-dock a{transition:background .14s ease,color .14s ease,transform .14s ease}
+#site-dock a:active{transform:scale(.94)}
+#site-dock a.cur{box-shadow:0 0 0 1px rgba(60,240,197,.55),0 4px 14px rgba(60,240,197,.22)}#site-dock a:active{transform:none}</style>
+
+
+
 <header class="mast">
   <div class="wrap">
     <div class="eyebrow">
@@ -369,10 +389,10 @@ footer.site .ftitle{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
     <div class="fgrid">
       <div>
         <div class="ftitle">시리즈 · 팩트시트</div>
-        <a href="https://www.landnliberty.kr/%EB%8C%80%EC%9E%A5%EB%8F%99_%EB%B0%B1%ED%98%84%EB%8F%99_%ED%8C%A9%ED%8A%B8%EC%8B%9C%ED%8A%B8.html">DOC 2026-001 대장동·백현동</a><br>
-        <a href="https://www.landnliberty.kr/%EB%8C%80%EC%9E%A5%EB%8F%99_50%EC%96%B5%ED%81%B4%EB%9F%BD_%EA%B3%BD%EC%83%81%EB%8F%84_%ED%8C%A9%ED%8A%B8%EC%8B%9C%ED%8A%B8.html">DOC 2026-002 50억 클럽·곽상도</a><br>
-        <a href="https://www.landnliberty.kr/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EB%B3%80%ED%98%B8%EB%9D%BC%EC%9D%B8_%EC%9A%94%EC%A7%81%EC%9D%B8%EC%82%AC_%ED%8C%A9%ED%8A%B8%EC%8B%9C%ED%8A%B8.html">DOC 2026-003 변호라인·요직인사</a><br>
-        <a href="https://www.landnliberty.kr/%EA%B6%8C%EC%88%9C%EC%9D%BC_%EC%A0%84%EB%8C%80%EB%B2%95%EA%B4%80_%ED%99%94%EC%B2%9C%EB%8C%80%EC%9C%A0_%ED%8C%A9%ED%8A%B8%EC%8B%9C%ED%8A%B8.html">DOC 2026-004 권순일·화천대유</a><br>
+        <a href="daejangdong_factsheet.html">DOC 2026-001 대장동·백현동</a><br>
+        <a href="fivebillion_factsheet.html">DOC 2026-002 50억 클럽·곽상도</a><br>
+        <a href="lawyerline_factsheet.html">DOC 2026-003 변호라인·요직인사</a><br>
+        <a href="hwachon_factsheet.html">DOC 2026-004 권순일·화천대유</a><br>
         <b>DOC 2026-005 조작기소 특검법</b> (본 문서)
       </div>
       <div>
@@ -390,5 +410,12 @@ footer.site .ftitle{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+<div id="site-dock" role="navigation" aria-label="사이트 바로가기">
+  <a href="index.html">토지 Land</a>
+  <a href="liberty.html">자유 Liberty</a>
+  <a href="salriki.html#/salriki">대한민국 살리기</a>
+  <a href="jojakkiso_teukgeom_factsheet.html" class="cur">조작기소 특검</a>
+  <a href="assembly-reset.html">실질적 국회 해산</a>
+</div>
 </body>
 </html>

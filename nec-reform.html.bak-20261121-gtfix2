@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>선거 시스템 재설계 — 선관위 해체 및 재구성 운동 | LandnLiberty.kr</title>
+  <meta name="description" content="개헌이 먼저가 아니다. 2028 국회 리셋! 선관위법·공직선거법 우선 개정을 통한 선관위 해체·재구성 및 당일 수개표 운동 | 디지털 대동법 연구소 (DDLI)" />
+  <meta property="og:title" content="선거 시스템 재설계 — 선관위 해체 및 재구성 운동 | LandnLiberty.kr" />
+  <meta property="og:description" content="선관위법·공직선거법 우선 개정으로 2028 총선 전 선관위 해체·재구성 및 사전투표 폐지·각 투표소 당일 수개표를 시행하라." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.landnliberty.kr/nec-reform.html" />
+  <style>
+    :root {
+      --primary: #0F3D3E;
+      --primary-light: #165557;
+      --dark: #1E293B;
+      --darker: #0F172A;
+      --gold: #D97706;
+      --gold-bg: #FEF3C7;
+      --crimson: #B91C1C;
+      --bg: #F8FAFC;
+      --card: #FFFFFF;
+      --border: #E2E8F0;
+      --text: #1E293B;
+      --muted: #64748B;
+      --badge-confirmed: #065F46;
+      --badge-confirmed-bg: #D1FAE5;
+      --badge-progress: #1E40AF;
+      --badge-progress-bg: #DBEAFE;
+      --badge-caution: #92400E;
+      --badge-caution-bg: #FEF3C7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Malgun Gothic", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Top Status Bar */
+    .status-bar {
+      background: var(--darker);
+      color: #CBD5E1;
+      font-size: 0.82rem;
+      padding: 8px 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-bottom: 1px solid #334155;
+    }
+    .status-bar span strong { color: #FBBF24; }
+
+    /* GNB */
+    header {
+      background: var(--primary);
+      color: #FFFFFF;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .nav-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+    .brand-tag {
+      background: var(--gold);
+      color: #FFF;
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      flex-wrap: wrap;
+    }
+    nav ul li a:hover { color: #FBBF24; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--darker) 0%, var(--primary) 100%);
+      color: #FFFFFF;
+      padding: 64px 24px;
+      border-bottom: 4px solid var(--gold);
+    }
+    .hero-inner { max-width: 1040px; margin: 0 auto; }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(217, 119, 6, 0.2);
+      border: 1px solid var(--gold);
+      color: #FCD34D;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.28;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: #E2E8F0;
+      max-width: 820px;
+      margin-bottom: 28px;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-gold { background: var(--gold); color: #FFF; }
+    .btn-gold:hover { background: #B45309; }
+    .btn-outline { background: transparent; border: 1.5px solid #94A3B8; color: #FFF; }
+    .btn-outline:hover { border-color: #FFF; background: rgba(255,255,255,0.08); }
+
+    /* Main Container */
+    main { max-width: 1180px; margin: 0 auto; padding: 48px 24px; }
+    section { margin-bottom: 64px; }
+    .sec-header {
+      margin-bottom: 24px;
+      border-left: 4px solid var(--primary);
+      padding-left: 14px;
+    }
+    .sec-header h2 { font-size: 1.5rem; font-weight: 800; color: var(--darker); }
+    .sec-header p { font-size: 0.95rem; color: var(--muted); margin-top: 4px; }
+
+    /* 5-Point Roadmap Banner */
+    .roadmap-banner {
+      background: #FFFFFF;
+      border: 2px solid var(--primary);
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(15, 61, 62, 0.08);
+    }
+    .roadmap-title { font-size: 1.35rem; font-weight: 800; color: var(--crimson); margin-bottom: 6px; }
+    .roadmap-sub { font-size: 0.94rem; color: var(--muted); margin-bottom: 20px; }
+    .step-list { list-style: none; display: grid; gap: 12px; }
+    .step-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-size: 0.96rem;
+    }
+    .step-num {
+      background: var(--primary);
+      color: #FFF;
+      font-weight: 800;
+      font-size: 0.82rem;
+      min-width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    /* Grid & Cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+      gap: 20px;
+    }
+    @media (max-width: 520px) { .grid-2 { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+    }
+    .card h3 { font-size: 1.12rem; font-weight: 700; margin: 10px 0 8px; color: var(--darker); }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+    .b-confirmed { background: var(--badge-confirmed-bg); color: var(--badge-confirmed); }
+    .b-progress { background: var(--badge-progress-bg); color: var(--badge-progress); }
+    .b-caution { background: var(--badge-caution-bg); color: var(--badge-caution); }
+
+    /* Notice Box */
+    .method-box {
+      background: #F1F5F9;
+      border-left: 4px solid #334155;
+      padding: 16px 20px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #1E293B;
+      margin-top: 16px;
+    }
+
+    /* Manifesto Box */
+    .manifesto-box {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-top: 5px solid var(--primary);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+    }
+    .manifesto-quote {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+      background: #F0FDF4;
+      padding: 14px 18px;
+      border-left: 4px solid var(--primary);
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    .manifesto-box p { margin-bottom: 14px; font-size: 0.98rem; }
+    .manifesto-list { list-style: none; margin: 18px 0; display: grid; gap: 10px; }
+    .manifesto-list li {
+      background: #F8FAFC;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border-left: 3px solid var(--gold);
+      font-size: 0.94rem;
+    }
+
+    /* Comparison Table */
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #FFF;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.91rem;
+    }
+    th {
+      background: var(--primary);
+      color: #FFF;
+      text-align: left;
+      padding: 12px 14px;
+      font-weight: 700;
+    }
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #F8FAFC; }
+
+    /* Toolkit */
+    .toolkit-panel {
+      background: #FFF;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    select, input[type="text"], textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      margin-top: 6px;
+      margin-bottom: 12px;
+      font-family: inherit;
+    }
+    .output-box {
+      background: #0F172A;
+      color: #E2E8F0;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      white-space: pre-wrap;
+      font-family: "Consolas", monospace;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: var(--darker);
+      color: #94A3B8;
+      padding: 36px 24px;
+      font-size: 0.86rem;
+      text-align: center;
+      border-top: 3px solid var(--primary);
+    }
+    footer strong { color: #FFF; }
+  </style>
+<style id="tabsync-gt-base">#site-header{position:fixed;top:0;left:0;right:0;z-index:998;background:rgba(255,255,255,.96);box-shadow:0 1px 12px rgba(0,0,0,.08);transition:background .3s,box-shadow .3s}#site-header.scrolled{background:rgba(255,255,255,.99);box-shadow:0 2px 14px rgba(0,0,0,.12)}#mobile-menu{display:none}#mobile-menu.open{display:block}</style><style id="tabsync-gt-sync">
+.gt-shell{max-width:1152px;margin:0 auto;padding:6px 20px 0}
+.gt-top{display:flex;align-items:center;justify-content:space-between;gap:12px;height:44px}
+.gt-brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink,#14213D);font-weight:800;font-size:17px;letter-spacing:-.02em}
+.gt-logo{width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;background:var(--teal,#0F766E);color:#fff;font-size:15px;font-weight:700}
+.gt-actions{display:flex;align-items:center;gap:8px}
+.gt-cta{display:inline-flex;align-items:center;gap:6px;background:var(--teal,#0F766E);color:#fff;font-weight:800;font-size:12.5px;padding:7px 15px;border-radius:999px;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(15,118,110,.22)}
+.gt-burger{width:34px;height:34px;border-radius:999px;border:1px solid rgba(20,33,61,.14);background:#fff;color:rgba(20,33,61,.7);cursor:pointer}
+.gt-wrap{display:block}
+@media(min-width:768px){
+  .gt-wrap{display:block;margin-top:2px}
+  .gt-burger{display:none}
+  body:not(.sal-mode){padding-top:14px}
+  body:not(.sal-mode){scroll-padding-top:158px}
+}
+.gt-row{display:flex;align-items:center;gap:2px;border-top:1px solid rgba(20,33,61,.06);overflow-x:auto;scrollbar-width:none}
+.gt-row::-webkit-scrollbar{display:none}
+.gt{position:relative;flex:0 0 auto;padding:9px 14px;font-size:14px;font-weight:800;color:rgba(20,33,61,.62);text-decoration:none;letter-spacing:-.01em;white-space:nowrap;border-radius:10px 10px 0 0;transition:color .15s,background .15s}
+.gt:hover{color:var(--teal,#0F766E);background:rgba(15,118,110,.05)}
+.gt.is-on{color:#fff;background:var(--teal,#0F766E)}
+.gt.is-on::after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,#0F766E,#2feaa8)}
+.st-wrap{border-top:1px solid rgba(20,33,61,.10);padding:3px 0 0}
+.st-row{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;padding:0 0 5px}
+.st-row::-webkit-scrollbar{display:none}
+.st-row[hidden]{display:none}
+.st{flex:0 0 auto;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:700;color:rgba(20,33,61,.58);text-decoration:none;white-space:nowrap;letter-spacing:-.01em;transition:color .15s,background .15s}
+.st:hover{color:var(--teal,#0F766E);background:rgba(15,118,110,.07)}
+.st.is-on{color:#fff;background:var(--teal,#0F766E);box-shadow:0 2px 8px rgba(15,118,110,.25)}
+/* ===== 탭 기본 상태: 흰 바탕 + 초록 글씨 ===== */
+#site-header .gt-cta.is-current,#mobile-menu a.gt-cta.is-current{color:#fff!important}
+#site-header .gt,#site-header .st{background:transparent!important;color:var(--teal,#0F766E)!important}
+#site-header .gt:hover,#site-header .st:hover{background:transparent!important;color:var(--teal,#0F766E)!important}
+#site-header .gt.is-current,#site-header .st.is-current{background:transparent!important;color:var(--teal,#0F766E)!important}
+#site-header .gt.is-on{background:transparent!important;color:var(--teal,#0F766E)!important;box-shadow:inset 0 -2px 0 0 var(--teal,#0F766E)}
+#site-header .st.is-on{background:transparent!important;color:var(--teal,#0F766E)!important;box-shadow:inset 0 0 0 1.5px rgba(15,118,110,.55)}
+#site-header .gt.is-on::after{display:none}
+.st-row[data-g="land"] .st[data-page="policy"],.st-row[data-g="land"] .st[href="land-dividend-manifesto.html"]{color:var(--teal,#0F766E)!important;font-weight:800}
+#site-header .st-row[data-g="land"] .st[data-page="policy"].is-on,#site-header .st-row[data-g="land"] .st[href="land-dividend-manifesto.html"].is-on{background:#fff!important;color:var(--teal,#0F766E)!important}
+
+/* ===== 호버 반전 렌즈: 커서를 따라오는 색반전 ===== */
+.gt,.st{position:relative;isolation:isolate}
+.inv-lens{position:absolute;top:0;left:calc(var(--mx,0px) - var(--sd,52px)/2);
+  width:var(--sd,52px);height:100%;padding:inherit;box-sizing:border-box;border-radius:inherit;overflow:hidden;
+  background:var(--teal,#0F766E);pointer-events:none;z-index:5;opacity:0;
+  transition:opacity .14s ease,left .12s cubic-bezier(.22,.61,.36,1);will-change:left,opacity}
+.gt.is-lens .inv-lens,.st.is-lens .inv-lens{opacity:1}
+.inv-lens .lens-t{position:absolute;display:block;box-sizing:border-box;padding:inherit;
+  font:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;white-space:nowrap;color:#fff;
+  left:calc(var(--sd,52px)/2 - var(--mx,0px));top:0}
+@media (prefers-reduced-motion: reduce){
+  .inv-lens{display:none!important}
+  #site-header .gt:hover,#site-header .st:hover{background:var(--teal,#0F766E)!important;color:#fff!important}
+}
+#mobile-menu{display:none}
+#mobile-menu.open{display:block;max-height:calc(100vh - 56px);overflow-y:auto;border-top:1px solid rgba(20,33,61,.10);background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.mm-in{max-width:1152px;margin:0 auto;padding:12px 20px 18px}
+.mm-g{margin-bottom:12px}
+.mm-g>b{display:block;font-size:10.5px;letter-spacing:.14em;color:var(--teal,#0F766E);font-weight:800;margin-bottom:5px}
+.mm-l{display:flex;flex-wrap:wrap;gap:4px}
+.mm-l a{font-size:13px;font-weight:700;color:rgba(20,33,61,.74);text-decoration:none;padding:6px 10px;border-radius:9px;background:rgba(20,33,61,.035)}
+.mm-l a:active{background:rgba(15,118,110,.12);color:var(--teal,#0F766E)}
+@media(min-width:768px){#mobile-menu{display:none !important}}
+
+/* ===== 한 번 = 반전·펼침 / 두 번 = 이동 ===== */
+#site-header .gt,#site-header .st,#site-dock a{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+#site-header .gt,#site-header .st{transition:background .14s ease,color .14s ease,box-shadow .14s ease,transform .14s ease}
+#site-header .gt.is-press,#site-header .gt:hover,#site-header .gt:focus-visible{
+  background:var(--teal,#0F766E)!important;color:#fff!important;
+  box-shadow:0 6px 18px rgba(15,118,110,.22)!important}
+#site-header .st.is-press,#site-header .st:hover,#site-header .st:focus-visible{
+  background:var(--teal,#0F766E)!important;color:#fff!important;
+  box-shadow:0 2px 10px rgba(15,118,110,.28)!important}
+#site-header .gt.is-on{box-shadow:none}
+#site-header .gt.is-on.is-press,#site-header .gt.is-on:hover{box-shadow:0 6px 18px rgba(15,118,110,.22)!important}
+#site-header .gt:active,#site-header .st:active{transform:scale(.97)}
+.st-row.is-open{animation:tabRowIn .18s cubic-bezier(.22,.61,.36,1)}
+@keyframes tabRowIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+.inv-lens{display:none!important}
+#site-dock a{transition:background .14s ease,color .14s ease,transform .14s ease}
+#site-dock a:active{transform:scale(.94)}
+#site-dock a.cur{box-shadow:0 0 0 1px rgba(60,240,197,.55),0 4px 14px rgba(60,240,197,.22)}
+#tab-tap-hint{position:fixed;left:0;top:0;z-index:2147483646;pointer-events:none;opacity:0;
+  transform:translate(-50%,calc(-100% - 4px));transition:opacity .18s ease,transform .18s ease;
+  background:#0B1220;color:#fff;border:1px solid rgba(60,240,197,.5);
+  font:700 11.5px/1 'Pretendard','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+  padding:8px 12px;border-radius:999px;box-shadow:0 10px 24px rgba(0,0,0,.32);white-space:nowrap}
+#tab-tap-hint.on{opacity:1;transform:translate(-50%,calc(-100% - 10px))}
+@media(prefers-reduced-motion:reduce){.st-row.is-open{animation:none}#site-header .gt:active,#site-header .st:active,#site-dock a:active{transform:none}}
+
+/* 큰 탭 5개: 좁은 화면에서 간격을 줄이고 자동으로 줄바꿈 (가로 스크롤 없음) */
+.gt-row{flex-wrap:wrap;overflow-x:visible;row-gap:2px}
+.gt{flex:0 0 auto}
+@media (max-width:1023px){
+  .gt-row{gap:0;row-gap:2px}
+  .gt{padding:8px 10px;font-size:13.5px}
+}
+@media (max-width:767px){
+  .gt{padding:8px 8px;font-size:13px;letter-spacing:-.02em}
+}
+@media (max-width:640px){
+  .gt{padding:7px 7px;font-size:12.5px}
+  .gt-row{gap:0 1px;row-gap:2px}
+  body:not(.sal-mode){scroll-padding-top:190px}
+}
+@media (max-width:400px){
+  .gt{padding:7px 6px;font-size:12px}
+}
+
+/* 작은 탭 줄: 좁은 화면에서 잘리지 않고 자동 줄바꿈 */
+.st-row{flex-wrap:wrap;overflow-x:visible;row-gap:4px}
+</style><style id="tabsync-gt-pad">body{padding-top:112px}</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" />
+</head>
+<body>
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="gt-shell">
+    <div class="gt-top">
+      <a href="index.html" data-page="home" data-anchor="hero" class="gt-brand">
+        <span class="gt-logo">土</span>
+        <span class="gt-name"><b>토지와 자유</b></span>
+      </a>
+      <div class="gt-actions">
+        <a href="index.html#/home#join" data-page="home" data-anchor="join" class="gt-cta">함께하기 <i class="fa-solid fa-arrow-right"></i></a>
+        <button id="menu-toggle" class="gt-burger" aria-label="메뉴" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+    <nav class="gt-wrap" aria-label="주요 메뉴">
+      <div class="gt-row" role="tablist" aria-label="대분류">
+        <a class="gt" data-g="land" role="tab" aria-selected="false" href="index.html#/home#problem" data-page="home" data-anchor="problem">토지 Land</a>
+        <a class="gt" data-g="liberty" role="tab" aria-selected="false" href="liberty.html">자유 Liberty</a>
+        <a class="gt" data-g="salriki" role="tab" aria-selected="false" href="salriki.html#/salriki" data-page="salriki">대한민국 살리기</a>
+        <a class="gt" data-g="jozak" role="tab" aria-selected="false" href="jojakkiso_teukgeom_factsheet.html">조작기소 특검</a>
+        <a class="gt is-on" data-g="reset" role="tab" aria-selected="true" href="assembly-reset.html">실질적 국회 해산</a>
+      </div>
+      <div class="st-wrap">
+        <div class="st-row" data-g="land" hidden>
+          <a class="st is-on" href="index.html#/home#privilege" data-page="home" data-anchor="privilege">3대 특권 해체</a>
+          <a class="st" href="index.html#/home#dividend" data-page="home" data-anchor="dividend">토지배당</a>
+          <a class="st" href="index.html#/home#finance" data-page="home" data-anchor="finance">금융 회계</a>
+          <a class="st" href="index.html#/home#global" data-page="home" data-anchor="global">지금 세계는</a>
+          <a class="st" href="policy.html#/policy" data-page="policy">정책</a>
+          <a class="st" href="land-dividend-manifesto.html">중국 토지배당 촉구서</a>
+        </div>
+        <div class="st-row" data-g="liberty" hidden>
+          <a class="st" href="teukgeom.html">특검 수사 파일</a>
+          <a class="st" href="liberty-report.html">10.28 리포트</a>
+          <a class="st" href="liberty-archive.html">증거 아카이브</a>
+          <a class="st" href="forensic.html">국과수 감정 추적</a>
+        </div>
+        <div class="st-row" data-g="salriki" hidden>
+          <a class="st" href="salriki.html#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
+          <a class="st" href="salriki.html#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a> <a class="st" href="salriki.html#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a> <a class="st" href="salriki.html#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a> <a class="st" href="salriki.html#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a> <a class="st" href="salriki.html#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a> <a class="st" href="salriki.html#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a>
+          <a class="st" href="index-chaohan.html">중국의 한국 흡수 전략</a>
+        </div>
+        <div class="st-row" data-g="jozak" hidden>
+          <a class="st" href="jojakkiso_teukgeom_factsheet.html">조작기소</a>
+          <a class="st" href="daejangdong_factsheet.html">대장동</a>
+          <a class="st" href="lawyerline_factsheet.html">이재명 변호</a>
+          <a class="st" href="fivebillion_factsheet.html">50억 클럽</a>
+          <a class="st" href="hwachon_factsheet.html">전 대법관</a>
+        </div>
+        <div class="st-row" data-g="reset">
+          <a class="st is-on" href="nec-reform.html">선거 시스템 재설계</a>
+          <a class="st" href="assembly-reset.html">2028 국회 리셋</a>
+          <a class="st" href="election-reform-campaign.html">사전투표 폐지</a>
+          <a class="st" href="22대-국회의원-공개추적-갱신본/index.html">22대 국회 공개정보 추적</a>
+          <a class="st" href="22대-국회-전과-지도.html">22대 국회 전과지도</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div id="mobile-menu">
+    <div class="mm-in">
+      <div class="mm-g">
+        <b>토지 Land</b>
+        <div class="mm-l">
+          <a href="index.html#/home#privilege" data-page="home" data-anchor="privilege">3대 특권 해체</a>
+          <a href="index.html#/home#dividend" data-page="home" data-anchor="dividend">토지배당</a>
+          <a href="index.html#/home#finance" data-page="home" data-anchor="finance">금융 회계</a>
+          <a href="index.html#/home#global" data-page="home" data-anchor="global">지금 세계는</a>
+          <a href="policy.html#/policy" data-page="policy">정책</a>
+          <a href="land-dividend-manifesto.html">중국 토지배당 촉구서</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>자유 Liberty</b>
+        <div class="mm-l">
+          <a href="teukgeom.html">특검 수사 파일</a>
+          <a href="liberty-report.html">10.28 리포트</a>
+          <a href="liberty-archive.html">증거 아카이브</a>
+          <a href="forensic.html">국과수 감정 추적</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>대한민국 살리기</b>
+        <div class="mm-l">
+          <a href="salriki.html#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
+          <a href="salriki.html#/salriki#principle" data-page="salriki" data-anchor="principle">원칙</a>
+          <a href="salriki.html#/salriki#frame" data-page="salriki" data-anchor="frame">프레임</a>
+          <a href="salriki.html#/salriki#issues" data-page="salriki" data-anchor="issues">이슈</a>
+          <a href="salriki.html#/salriki#toolkit" data-page="salriki" data-anchor="toolkit">툴킷</a>
+          <a href="salriki.html#/salriki#demands" data-page="salriki" data-anchor="demands">요구안</a>
+          <a href="salriki.html#/salriki#pledge" data-page="salriki" data-anchor="pledge">참여 체크</a><a href="index-chaohan.html">중국의 한국 흡수 전략</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>조작기소 특검</b>
+        <div class="mm-l">
+          <a href="jojakkiso_teukgeom_factsheet.html">조작기소</a>
+          <a href="daejangdong_factsheet.html">대장동</a>
+          <a href="lawyerline_factsheet.html">이재명 변호</a>
+          <a href="fivebillion_factsheet.html">50억 클럽</a>
+          <a href="hwachon_factsheet.html">전 대법관</a>
+        </div>
+      </div>
+      <div class="mm-g">
+        <b>실질적 국회 해산</b>
+        <div class="mm-l">
+          <a href="nec-reform.html">선거 시스템 재설계</a>
+          <a href="assembly-reset.html">2028 국회 리셋</a>
+          <a href="election-reform-campaign.html">사전투표 폐지</a>
+          <a href="22대-국회의원-공개추적-갱신본/index.html">22대 국회 공개정보 추적</a>
+          <a href="22대-국회-전과-지도.html">22대 국회 전과지도</a>
+        </div>
+      </div>
+</div>
+  </div>
+</header>
+
+
+  <!-- 상단 상태바 -->
+  <div class="status-bar">
+    <span><strong>LandnLiberty.kr</strong> · 디지털 대동법 연구소(DDLI) 선거제도 개혁 자료실</span>
+    <span>조사 기준일: <strong>2026.11.16</strong> | 현재 시각: <strong id="live-clock">로딩 중...</strong> | 제23대 총선(2028.04.12)까지 <strong id="dday-counter">계산 중...</strong></span>
+  </div>
+
+  <!-- 글로벌 내비게이션 -->
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <span>선거 시스템 재설계</span>
+        <span class="brand-tag">선관위 해체·재구성 운동</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#sequence">5대 실행 순서</a></li>
+          <li><a href="#press-briefing">의장 기자회견</a></li>
+          <li><a href="#legal-premise">법적 경로 구분</a></li>
+          <li><a href="#evidence-balance">공식 조사·판례·반론</a></li>
+          <li><a href="#comparative">해외 제도·대안 설계</a></li>
+          <li><a href="#manifesto">대국민 선언문</a></li>
+          <li><a href="#toolkit">시민 액션 툴킷</a></li>
+          <li><a href="assembly-reset.html" style="color:#FBBF24;">2028 국회 리셋 ↗</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 히어로 섹션 -->
+  <section class="hero" style="margin-bottom:0;">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">2027–2028 법률 개정 우선 캠페인 · "개헌이 먼저가 아니다. 2028 국회 리셋!"</div>
+      <h1>개헌이 먼저가 아니다. 2028 국회 리셋! —<br>법률 개정으로 선관위를 먼저 해체·재구성하고<br>2028 총선 전 사전투표 폐지·당일 수개표를 시행하라.</h1>
+      <p>
+        헌법기관 폐지(개헌 과제)와 사무처·채용·감사·투개표 개편(법률 개정 과제)을 엄격히 구별합니다. 개헌 핑계로 시간을 끌지 말고, 선관위법과 공직선거법 우선 개정을 통해 2028년 제23대 총선 전에 선관위 조직을 재구성하고 사전투표 폐지 및 각 투표소 당일 수개표를 즉시 실현합니다.
+      </p>
+      <div class="hero-btns">
+        <a href="#sequence" class="btn btn-gold">개헌보다 먼저 할 5대 실행 순서 보기</a>
+        <a href="#legal-premise" class="btn btn-outline">개헌 vs 법률 개정 법적 경로표 확인</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- 섹션 0: 개헌이 먼저가 아니다. 2028 국회 리셋! 5대 순서 -->
+    <section id="sequence">
+      <div class="roadmap-banner">
+        <div class="roadmap-title">개헌이 먼저가 아니다. 2028 국회 리셋!</div>
+        <p class="roadmap-sub">개헌 논의를 앞세워 선거 개혁과 현역 검증을 지연시키는 정치적 기만을 차단하는 5단계 주권자 실행 원칙</p>
+        <ol class="step-list">
+          <li>
+            <span class="step-num">1</span>
+            <div><strong>선관위법 개정을 통해 중앙선관위, 시도선관위, 시군구 선관위를 먼저 해체하고 재구성하라.</strong><br><span style="font-size:0.88rem; color:#475569;">헌법 제114조의 범위 내에서 「선거관리위원회법」을 우선 개정하여 폐쇄적 사무처 조직·채용·인사·자체감사 체계를 전면 해체하고 외부 통제가 작동하는 구조로 재편합니다.</span></div>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <div><strong>공직선거법 개정을 통해 2028년 23대 총선 전 사전투표를 전면 폐지하고, 각 투표소에서 당일개표, 수개표를 시행하라.</strong><br><span style="font-size:0.88rem; color:#475569;">투표함 이송·보관 논란과 집계 불신을 원천 차단하기 위해 모든 유권자의 당일투표 원칙과 투표소 현장 즉시 수개표를 법제화합니다.</span></div>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <div><strong>22대 현직 모든 국회의원은 2028년 23대 총선을 치르기 6개월 전부터 국민 검증에 모두 응하여 실질적인 국회 해산에 응답하라.</strong><br><span style="font-size:0.88rem; color:#475569;">2027년 10월부터 253개 지역구 현역 전원에게 선관위 개혁·특권 반납·공개 검증을 의무화하여 불응 시 주권자의 투표로 실질적으로 국회 해산을 집행합니다.</span></div>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <div><strong>2028년 23대 국회 구성 후 개헌특위를 통해 개헌 의제를 국민 숙의와 함께 논의하라.</strong><br><span style="font-size:0.88rem; color:#475569;">헌법 제128조~제130조의 정식 개헌 절차(발의→20일 공고→국회 2/3 의결→국민투표)는 투명한 선거와 국민 검증을 통과한 제23대 국회 구성 후 개헌특위에서 국민 숙의와 함께 추진합니다.</span></div>
+          </li>
+          <li>
+            <span class="step-num">5</span>
+            <div><strong>이재명 대통령은 현직 대통령의 연임 불가 조항을 염두에 두고, 23대 국회 구성 후 잔여 임기까지에 대하여 국민 전체에 재신임 여부를 물으라. 불신임 시에는 내각과 함께 총사퇴하라.</strong><br><span style="font-size:0.88rem; color:#475569;">헌법 제128조 제2항의 대통령 연임 불가 원칙에 비추어, 2028년 새 국회 구성 직후 국민 전체의 재신임 투표를 통해 국정 정당성을 검증받고 불신임 시 내각과 동반 총사퇴할 것을 요구합니다.</span></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    
+    <!-- 현안 브리핑: 조정식 국회의장 개헌 관련 긴급 기자회견 풀영상 링크 -->
+    <section id="press-briefing">
+      <div class="sec-header">
+        <h2>현안 브리핑: 조정식 국회의장 ‘개헌’ 관련 긴급 기자회견 풀영상 (2026.11.16)</h2>
+        <p>의장 직속 헌법개정자문위원회 출범 발표 원문을 직접 확인하고, 5단계 실행 순서와 헌법적 절차를 대조합니다.</p>
+      </div>
+      <div class="card" style="border-left: 5px solid #D97706;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px;">
+          <div style="flex:1; min-width:280px;">
+            <span class="badge" style="background:#FEF3C7; color:#92400E;">2026년 11월 16일 오전 10시 국회의장 접견실 기자회견 (풀영상)</span>
+            <h3 style="margin:10px 0 8px;">조정식 국회의장 헌법개정자문위원회 출범 및 개헌 추진 입장 발표</h3>
+            <ul style="font-size:0.92rem; color:#334155; padding-left:18px; margin-bottom:14px;">
+              <li><strong>주요 발표 내용:</strong> 2026년 11월 16일 오전 10시 국회의장 접견실에서 긴급 기자회견을 열고, 1987년 헌법체제 40주년을 맞는 2027년 개헌 논의를 준비하기 위한 의장 직속 헌법개정자문위원회 출범(공동위원장 김형오·정세균 전 국회의장)과 국회 주도·여야 합의·국민 동의 원칙을 직접 발표했습니다.</li>
+              <li><strong>헌법 개정 절차와의 관계:</strong> 헌법 제128조~제130조에 따른 개헌은 대통령 또는 국회 재적의원 과반수 발의 → 20일 이상 공고 → 60일 이내 국회 재적 3분의 2 이상 의결 → 30일 이내 국민투표 과반 찬성을 거쳐야 합니다. 따라서 선관위법·공직선거법 우선 개정과 22대 현역 전원 국민 검증이 선행되어야 한다는 ‘개헌이 먼저가 아니다. 2028 국회 리셋!’ 5대 실행 원칙의 맥락을 기자회견 원문 영상에서 직접 확인할 수 있습니다.</li>
+            </ul>
+            <a href="http://www.youtube.com/watch?v=Sko8PPyN_bk" target="_blank" rel="noopener noreferrer" class="btn" style="background:#DC2626; color:#FFFFFF; font-size:0.88rem; padding:10px 18px;">
+              ▶ 조정식 국회의장 ‘개헌’ 관련 긴급 기자회견 [풀영상 다시보기] (YouTube)
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 섹션 1: 법적 전제 정리 (해체·재편·교체의 법적 경로 구분) -->
+    <section id="legal-premise">
+      <div class="sec-header">
+        <h2>01. 법적 전제: 선관위 ‘해체’와 ‘재구성’의 정확한 법적 경로 구분</h2>
+        <p>주장을 공개적으로 검증받을 수 있도록 헌법 제114조의 한계와 법률·규칙 개정의 즉시 실행 영역을 명확히 분리합니다.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:36%;">요구의 실제 내용</th>
+              <th style="width:24%;">법적 경로</th>
+              <th style="width:40%;">법리적 근거 및 추진 시점</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>사무처 조직·채용·인사·감사체계 전면 개편</strong></td>
+              <td><span class="badge b-confirmed">법률·규칙 개정 (즉시 가능)</span></td>
+              <td>헌법의 범위 내에서 <strong>「선거관리위원회법」·「공직선거법」 개정</strong>으로 2028 총선 전 즉시 실행</td>
+            </tr>
+            <tr>
+              <td><strong>사전투표 폐지 및 각 투표소 당일·수개표 전환</strong></td>
+              <td><span class="badge b-confirmed">법률 개정 (즉시 가능)</span></td>
+              <td><strong>「공직선거법」 개정</strong> 사항으로 개헌 없이 국회 의결만으로 2028 총선 전 시행 가능</td>
+            </tr>
+            <tr>
+              <td><strong>위법행위를 한 개인의 징계·형사책임 추궁</strong></td>
+              <td><span class="badge b-progress">개별 조사·징계·수사·재판</span></td>
+              <td>기관 전체의 문제와 개별 구성원의 위법을 구분하여 적법절차·영장주의에 따라 책임 추궁</td>
+            </tr>
+            <tr>
+              <td><strong>헌법기관 자체의 폐지 및 다른 기관으로 대체</strong></td>
+              <td><span class="badge b-caution">개헌 및 후속 입법 (23대 국회)</span></td>
+              <td>헌법 제114조가 선관위 설치를 직접 규정하고 있으므로 2028년 제23대 국회 개헌특위에서 논의</td>
+            </tr>
+            <tr>
+              <td><strong>대통령·국회·대법원장 배분 위원 구성방식 변경</strong></td>
+              <td><span class="badge b-caution">개헌 (23대 국회)</span></td>
+              <td>헌법 제114조 제2항(각 3인 구성) 및 제5항(임기 6년·신분보장) 변경은 개헌 절차 필요</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="method-box">
+        <strong>[헌법적 절차 고지]</strong> 헌법 제128조~제130조에 따른 헌법개정은 ① 대통령 또는 국회 재적 과반수 발의 → ② 20일 이상 공고 → ③ 60일 이내 국회 재적 3분의 2 이상 찬성 의결 → ④ 30일 이내 국민투표(선거권자 과반 투표·투표자 과반 찬성) → ⑤ 대통령 공포를 거칩니다. 민간 서명은 개헌을 요구하는 주권자의 의사표시이며, 2028년 총선 전 즉각적 변화를 위해서는 <strong>선관위법·공직선거법 우선 개정</strong>이 핵심입니다.
+      </div>
+    </section>
+
+    <!-- 섹션 2: 공식 조사자료·헌재 결정·기관 반론·판례 균형 배치 -->
+    <section id="evidence-balance">
+      <div class="sec-header">
+        <h2>02. 확인된 공식 조사·헌재 판단·기관 반론·사법 판결 (비약 방지 원칙)</h2>
+        <p>확인된 사실, 기관의 반론 설명, 법원의 판단을 나란히 공개하여 주장의 신뢰성과 검증 가능성을 높입니다.</p>
+      </div>
+
+      <div class="grid-2">
+        <!-- 카드 1: 권익위 채용실태 조사 -->
+        <div class="card">
+          <span class="badge b-confirmed">공식 조사 발표 · 국민권익위원회 (2023.09.11)</span>
+          <h3>① 채용 공정성·자체감사 붕괴 실태</h3>
+          <p style="font-size:0.9rem; color:#334155; margin-bottom:10px;">
+            국민권익위원회는 선관위 채용실태 조사 결과 <strong>채용비리 353건 적발, 채용관련자 28명 고발, 312건 수사의뢰</strong>를 발표했습니다(적발·수사의뢰 수치이며 확정 유죄 건수와 구별). 지난 7년간 자체 경력채용 162회 중 104회에서 공정채용 절차 미준수, 384명 중 58명 부정합격 의혹, 정례적 자체 인사감사 부재가 지적되었습니다.
+          </p>
+          <p style="font-size:0.86rem; color:#475569; background:#F8FAFC; padding:10px; border-radius:6px;">
+            <strong>후속 조치 및 주의점:</strong> 중앙선관위는 2025년 4월 8일 특혜 의혹 당사자 10명의 임용취소 절차 진행을 발표했으나 최종 확정 처분 현황은 추가 확인이 필요합니다. 또한 <em>채용 공정성 문제와 선거결과 조작 주장은 별개의 사안으로 각각 독립적 증거가 필요</em>합니다.
+          </p>
+        </div>
+
+        <!-- 카드 2: 헌재 2023헌라5 및 징계시효 판결 -->
+        <div class="card">
+          <span class="badge b-confirmed">헌재 결정 (2025.02.27) · 행정법원 판결 (2026.06 보도)</span>
+          <h3>② 감사원 직무감찰 배제와 징계시효 공백</h3>
+          <p style="font-size:0.9rem; color:#334155; margin-bottom:10px;">
+            헌법재판소는 대통령 소속 감사원의 선관위 인력관리 직무감찰이 헌법상 독립기관 권한을 침해했다고 결정(2023헌라5)했습니다. 이어 2026년 6월 서울행정법원은 감사원 직무감찰권 부재를 이유로 조사개시 통보에 따른 징계시효 정지를 불인정하며 선관위 직원 견책처분을 취소했습니다(선관위 항소로 미확정).
+          </p>
+          <p style="font-size:0.86rem; color:#475569; background:#F8FAFC; padding:10px; border-radius:6px;">
+            <strong>제도적 도출점:</strong> 감사권 부정과 개별 비위의 소멸은 별개입니다. 선거관리의 독립성을 지키면서도 내부 비위를 제때 처벌할 수 있도록 <strong>조사권한·독립 자체감사·징계시효를 법률로 재설계</strong>해야 합니다.
+          </p>
+        </div>
+
+        <!-- 카드 3: 정보보안 4칸 분리표 -->
+        <div class="card">
+          <span class="badge b-progress">합동 보안점검 (2023) · 선관위 반론 병기</span>
+          <h3>③ 정보보안 점검: 취약점과 실제 조작의 분리</h3>
+          <p style="font-size:0.9rem; color:#334155; margin-bottom:10px;">
+            2023년 국정원·선관위·KISA 합동 보안점검에서는 가상 침투점검을 통한 기술적 취약점이 제기되었고, 선관위는 법적·제도적 통제장치와 실물 투표지·공개 참관 절차로 인해 실제 결과 조작으로 이어질 수 없다고 반박하며 접근통제 보완을 발표했습니다.
+          </p>
+          <div style="font-size:0.84rem; background:#F8FAFC; padding:10px; border-radius:6px; border:1px solid #E2E8F0;">
+            <strong>[4칸 검증 기준]</strong> ① 취약점 발견 조건 → ② 선관위 보완 조치 발표 내역 → ③ 외부 전문가의 독립 재검증 여부 → ④ 특정 선거 결과 영향 증거 유무를 엄격히 분리해 검증합니다.
+          </div>
+        </div>
+
+        <!-- 카드 4: 대법원 2020수30 및 헌재 2025 탄핵 결정 -->
+        <div class="card">
+          <span class="badge b-confirmed">대법원 2020수30 (2022.07.28) · 헌재 결정 (2025)</span>
+          <h3>④ 사법부 판단과 평화적·적법절차 개혁 원칙</h3>
+          <p style="font-size:0.9rem; color:#334155; margin-bottom:10px;">
+            대법원은 인천 연수구을 선거무효 소송(2020수30)에서 재검표·투표지 감정·전산센터 현장검증 후 선거무효사유 증명 부족을 이유로 청구를 기각했습니다. 또한 헌법재판소는 2025년 대통령 탄핵 결정에서 선거 의혹은 정치·제도·사법적 수단으로 해결할 사안이며 병력 동원 압수수색은 영장주의와 선관위 독립성 침해라고 판단했습니다.
+          </p>
+          <p style="font-size:0.86rem; color:#475569; background:#F8FAFC; padding:10px; border-radius:6px;">
+            <strong>운동의 원칙:</strong> 본 운동은 어떠한 초헌법적 물리력도 배격하며, 오직 <strong>평화적 주권 행사, 법률 개정, 적법한 검증 절차</strong>만을 추구합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 섹션 3: 해외 제도 비교 및 대체 제도 설계 -->
+    <section id="comparative">
+      <div class="sec-header">
+        <h2>03. ‘해체 다음’의 대안 설계: 국제 비교 및 전환 공백 방지 장치</h2>
+        <p>단순 폐지 주장을 넘어 국제 IDEA·캐나다·미국 제도를 참고한 구체적 대안과 조직 전환 계획을 제시합니다.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:22%;">비교·설계 항목</th>
+              <th style="width:33%;">해외 제도 및 연구 참고</th>
+              <th style="width:45%;">대한민국 선관위 재구성 대안 반영</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>임명·보고·해임의 균형</strong></td>
+              <td><strong>캐나다 선거관리기관:</strong> 행정부로부터 독립된 의회기관으로 하원 결의 임명(10년 단임), 의회 직접 보고 및 엄격한 해임 절차 결합</td>
+              <td>대법관·법관의 선관위원장 비상임 겸직을 법률로 금지하고, 상임 책임제·국회 보고 의무·위원 후보자 공개검증 및 이해충돌 공개 의무화</td>
+            </tr>
+            <tr>
+              <td><strong>종이기록과 감사 가능성</strong></td>
+              <td><strong>미국 선거지원위원회(EAC, 2025) 및 위험제한감사(RLA):</strong> 소프트웨어 의존을 배제한 투표별 종이기록 의무화 및 통계적 사후 감사</td>
+              <td><strong>「공직선거법」 우선 개정</strong>으로 2028 총선 전 사전투표 전면 폐지, 각 투표소 당일개표·100% 수개표 시행, 투표용지 110% 인쇄 및 보관·인계기록 공개</td>
+            </tr>
+            <tr>
+              <td><strong>채용·보안·회계 독립 통제</strong></td>
+              <td><strong>국제 IDEA 『선거관리기구 설계』:</strong> 독립성 유지와 내부 책임성·재정·보안 투명성의 제도적 균형</td>
+              <td>채용 부서와 감사 부서의 완전 분리, 외부 전문가 정기 보안평가 및 이행 재검증 의무화, 회계·계약 내역 상시 외부 감사</td>
+            </tr>
+            <tr>
+              <td><strong>조직 전환 중 공백 방지</strong></td>
+              <td>선거 일정 연속성 보장 원칙</td>
+              <td>법률 개정 부칙에 경과규정을 두어 선거사무 인력·장비·기록물의 무중단 승계 절차를 명문화하고, 선거사무·단속·정치자금 감독 기능을 체계적으로 분리</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 섹션 4: 대국민 선언문 -->
+    <section id="manifesto">
+      <div class="sec-header">
+        <h2>04. 선거 시스템 재설계 대국민 선언문</h2>
+        <p>2027년 1월 캠페인 출범 공식 선언문 전문</p>
+      </div>
+      <div class="manifesto-box">
+        <div class="manifesto-quote">
+          “개헌이 먼저가 아니다. 선관위법·공직선거법 개정으로 선거 시스템부터 재설계하라.”
+        </div>
+        <p>
+          민주주의에서 정권은 5년마다 교체되는 ‘애플리케이션’이지만, 헌법과 선거 제도는 그 정권이 작동하는 ‘운영체제(OS)’다. 국민권익위원회의 채용실태 조사에서 드러난 공정채용 절차 붕괴와 자체감사 부재, 감사원 직무감찰 배제 이후 드러난 징계시효 공백, 그리고 현직 대법관과 법원장이 각급 선관위원장을 겸직해 관리 주체와 재판 주체가 동일체화된 구조는 현행 선관위 운영체제의 한계를 여실히 보여준다.
+        </p>
+        <p>
+          일각에서는 개헌을 앞세워 제도 개혁의 시계를 늦추려 한다. 그러나 헌법기관 자체의 폐지나 구성방식 변경은 개헌 사항이지만, 사무처 조직·채용·감사체계 개편과 사전투표 폐지·당일 수개표 전환은 국회 법률 개정만으로 즉시 실행할 수 있다. 개헌을 핑계로 낡은 선거 제도를 그대로 둔 채 2028년 제23대 총선을 치르는 것은 주권자에 대한 직무유기다.
+        </p>
+        <ul class="manifesto-list">
+          <li><strong>하나.</strong> <strong>선관위법 개정</strong>을 통해 중앙선관위, 시도선관위, 시군구 선관위를 먼저 해체하고 투명성과 책임성이 보장되는 새로운 선거관리 기구로 재구성한다.</li>
+          <li><strong>둘.</strong> <strong>공직선거법 개정</strong>을 통해 2028년 제23대 총선 전 사전투표를 전면 폐지하고, 각 투표소 현장에서 즉각적인 <strong>당일개표, 100% 수개표</strong>를 시행한다.</li>
+          <li><strong>셋.</strong> 22대 현직 모든 국회의원은 2028년 제23대 총선을 치르기 6개월 전부터 국민 검증에 모두 응하여 실질적인 국회 해산에 응답하도록 한다.</li>
+          <li><strong>넷.</strong> 국민 검증을 거쳐 2028년 제23대 국회가 새롭게 구성된 이후, 국회 개헌특위를 통해 개헌 의제를 국민 숙의와 함께 책임 있게 논의한다.</li>
+          <li><strong>다섯.</strong> 이재명 대통령은 현직 대통령의 연임 불가 조항(헌법 제128조 제2항)을 염두에 두고, 23대 국회 구성 후 잔여 임기까지에 대하여 국민 전체에 재신임 여부를 묻고, 불신임 시에는 내각과 함께 총사퇴할 것을 촉구한다.</li>
+        </ul>
+        <p style="font-weight:700; color:var(--darker); margin-top:16px;">
+          우리는 특정 결과를 강요하지 않는다. 우리는 검증 가능한 선거를 요구한다. 2027년 1월부터 2028년 4월 제23대 총선까지, 우리는 법률 개정과 주권자 검증의 힘으로 대한민국 선거 시스템를 완전히 새로 쓸 것이다.
+        </p>
+        <p style="font-size:0.88rem; color:var(--muted); margin-top:12px;">
+          2027년 1월 · 토지와 자유 (LandnLiberty.kr) · 디지털 대동법 연구소 (DDLI)
+        </p>
+      </div>
+    </section>
+
+    <!-- 섹션 5: 시민 액션 툴킷 -->
+    <section id="toolkit">
+      <div class="sec-header">
+        <h2>05. 시민 액션 툴킷 (적법절차 기반 행동 센터)</h2>
+        <p>정보공개포털(open.go.kr)에 즉시 붙여넣어 청구할 수 있는 표준 청구서 생성기 및 감시단 등록입니다.</p>
+      </div>
+      <div class="grid-2">
+        <div class="toolkit-panel">
+          <h3 style="margin-bottom:10px;">① 선관위 대상 정보공개청구서 5문항 자동 생성기</h3>
+          <label style="font-size:0.85rem; font-weight:700;">청구 대상 기관 선택</label>
+          <select id="nec-target" onchange="generateFOIA()">
+            <option value="중앙선거관리위원회">중앙선거관리위원회</option>
+            <option value="서울특별시선거관리위원회">서울특별시선거관리위원회</option>
+            <option value="부산광역시선거관리위원회">부산광역시선거관리위원회</option>
+            <option value="대구광역시선거관리위원회">대구광역시선거관리위원회</option>
+            <option value="인천광역시선거관리위원회">인천광역시선거관리위원회</option>
+            <option value="광주광역시선거관리위원회">광주광역시선거관리위원회</option>
+            <option value="대전광역시선거관리위원회">대전광역시선거관리위원회</option>
+            <option value="울산광역시선거관리위원회">울산광역시선거관리위원회</option>
+            <option value="세종특별자치시선거관리위원회">세종특별자치시선거관리위원회</option>
+            <option value="경기도선거관리위원회">경기도선거관리위원회</option>
+            <option value="강원특별자치도선거관리위원회">강원특별자치도선거관리위원회</option>
+            <option value="충청북도선거관리위원회">충청북도선거관리위원회</option>
+            <option value="충청남도선거관리위원회">충청남도선거관리위원회</option>
+            <option value="전북특별자치도선거관리위원회">전북특별자치도선거관리위원회</option>
+            <option value="전라남도선거관리위원회">전라남도선거관리위원회</option>
+            <option value="경상북도선거관리위원회">경상북도선거관리위원회</option>
+            <option value="경상남도선거관리위원회">경상남도선거관리위원회</option>
+            <option value="제주특별자치도선거관리위원회">제주특별자치도선거관리위원회</option>
+          </select>
+          <label style="font-size:0.85rem; font-weight:700;">청구인 성명 (선택)</label>
+          <input type="text" id="foia-name" placeholder="예: 홍길동 (입력 시 청구문 하단에 자동 반영)" oninput="generateFOIA()" />
+          <button class="btn btn-gold" style="width:100%;" onclick="copyFOIA()">청구 문안 전체 복사하기</button>
+          <div class="output-box" id="foia-output"></div>
+        </div>
+
+        <div class="toolkit-panel">
+          <h3 style="margin-bottom:10px;">② 2028 총선 투표소 당일 수개표 시민 감시단 사전 등록</h3>
+          <p style="font-size:0.88rem; color:var(--muted); margin-bottom:14px;">
+            제23대 국회의원 선거(2028.04.12) 각 투표소 당일 개표·수개표 현장 참관 및 검증 네트워크에 합류합니다.
+          </p>
+          <label style="font-size:0.85rem; font-weight:700;">거주 시·도 및 선거구</label>
+          <input type="text" id="observer-region" placeholder="예: 인천광역시 남동구 갑 (논현고잔동)" />
+          <label style="font-size:0.85rem; font-weight:700;">연락처 (이메일 또는 휴대전화)</label>
+          <input type="text" id="observer-contact" placeholder="예: citizen@example.com" />
+          <button class="btn" style="width:100%; background:var(--primary); color:#FFF;" onclick="registerObserver()">감시단 사전 등록 신청하기</button>
+          <div id="observer-msg" style="margin-top:12px; font-size:0.88rem; font-weight:700; color:var(--badge-confirmed);"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>토지와 자유 (LandnLiberty.kr) × 디지털 대동법 연구소 (DDLI)</strong></p>
+    <p style="margin-top:6px;">편집 원칙: “단정 말고 검증. 분노 말고 절차.” · 개헌이 먼저가 아니다. 2028 국회 리셋!</p>
+  </footer>
+
+  <script>
+    function updateClockAndDday() {
+      const now = new Date();
+      document.getElementById('live-clock').textContent = now.toLocaleString('ko-KR', {
+        year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit'
+      });
+      const electionDate = new Date('2028-04-12T06:00:00+09:00');
+      const diffDays = Math.ceil((electionDate - now) / (1000 * 60 * 60 * 24));
+      document.getElementById('dday-counter').textContent = diffDays > 0 ? `D-${diffDays}일` : '선거일 도래';
+    }
+    updateClockAndDday();
+    setInterval(updateClockAndDday, 60000);
+
+    function generateFOIA() {
+      const target = document.getElementById('nec-target').value;
+      const name = document.getElementById('foia-name').value.trim() || '주권자 시민';
+      const text = `[정보공개청구서 표준안 — 수신: ${target}]
+
+「공공기관의 정보공개에 관한 법률」에 따라 다음 5개 항목의 원시 자료 공개를 청구합니다.
+
+1. 권익위 채용실태 조사 이후 특혜 채용 의혹 당사자 최종 징계·임용취소 처분 결과 및 자체 인사감사 규칙 개정 전문
+2. 2023년 합동 보안점검 지적사항별 보완 조치 완료 내역 및 외부 전문가 독립 재검증 결과 보고서
+3. 투표용지 인쇄 비율 기준 설정 관련 내부 결재 문서 및 지침 일체
+4. 최근 5년간(2022~2026) 선거물품 제작·보관·전산 용역 수의계약 내역 및 업체 선정 평가표
+5. 각 투표소 현장 당일개표·수개표 전환 시 소요 인력·예산 산출 기초 자료
+
+청구인: ${name} (LandnLiberty.kr · 디지털 대동법 연구소 시민 네트워크)`;
+      document.getElementById('foia-output').textContent = text;
+    }
+    generateFOIA();
+
+    function copyFOIA() {
+      const text = document.getElementById('foia-output').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('정보공개청구 문안이 클립보드에 복사되었습니다. 대한민국 정보공개포털(open.go.kr)에 붙여넣어 제출하세요.');
+      });
+    }
+
+    function registerObserver() {
+      const region = document.getElementById('observer-region').value.trim();
+      const contact = document.getElementById('observer-contact').value.trim();
+      if (!region || !contact) {
+        alert('거주 선거구와 연락처를 모두 입력해 주세요.');
+        return;
+      }
+      document.getElementById('observer-msg').textContent =
+        `[등록 접수 완료] ${region} 투표소 당일 수개표 시민 감시단 사전 등록이 기록되었습니다.`;
+    }
+  </script>
+<script id="tabsync-gt-js">(function(){var hdr=document.getElementById("site-header");if(!hdr)return;var gts=[].slice.call(hdr.querySelectorAll("a.gt[data-g]"));var rows={};[].slice.call(hdr.querySelectorAll(".st-row")).forEach(function(r){rows[r.getAttribute("data-g")]=r;});var DEF="reset";function mark(g){gts.forEach(function(t){var on=t.getAttribute("data-g")===g;t.classList.toggle("is-press",on);t.setAttribute("aria-selected",on?"true":"false");});Object.keys(rows).forEach(function(k){rows[k].hidden=(k!==g);});}mark(DEF);var wrap=hdr.querySelector(".gt-wrap");if(wrap){wrap.addEventListener("mouseleave",function(){mark(DEF);});}gts.forEach(function(t){var g=t.getAttribute("data-g");t.addEventListener("mouseenter",function(){mark(g);});t.addEventListener("focus",function(){mark(g);});t.addEventListener("click",function(){mark(g);});});function onScroll(){if(window.scrollY>8){hdr.classList.add("scrolled");}else{hdr.classList.remove("scrolled");}}window.addEventListener("scroll",onScroll,{passive:true});onScroll();var bt=document.getElementById("menu-toggle"),mm=document.getElementById("mobile-menu");if(bt&&mm){bt.addEventListener("click",function(){var o=mm.classList.toggle("open");bt.setAttribute("aria-expanded",o?"true":"false");});}})();</script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!doctype html><html lang="ko"><head><script id="theme-init">
+(function(){try{var s=localStorage.getItem('theme');var q=new URLSearchParams(location.search).get('theme');
+var t=s||q||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<style>:root{--bg:#f4f9fd;--panel:#ffffff;--panel2:#eef6fc;--ink:#0c1b2a;--ink2:#2e4658;--muted:#5a7183;--faint:#8ba1b3;--line:#d4e4f1;--line2:#e7f1f9;--red:#d23b2c;--amber:#a3630b;--green:#0e7d66;--blue:#24689f;--gray:#6f8497;--yellow:#8c6d0a;--serif:'Noto Serif KR','Nanum Myeongjo',serif;--sans:'Noto Sans KR','Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;--mono:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#e8f4fe,#f8fbff)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin:0 0 10px}
+h1{font-family:var(--serif);font-weight:900;font-size:clamp(26px,4.6vw,40px);line-height:1.25;margin:8px 0 6px;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:13.5px;margin:0 0 4px}
+.stamp{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;border:1px solid;border-radius:3px;padding:3px 9px;vertical-align:middle}
+.s-live{color:var(--green);border-color:var(--green)} .s-lost{color:var(--red);border-color:var(--red)} .s-out{color:var(--amber);border-color:var(--amber)}
+.s-trial{color:var(--amber);border-color:var(--amber)} .s-fin{color:var(--yellow);border-color:var(--yellow)} .s-probe{color:var(--blue);border-color:var(--blue)} .s-closed{color:var(--gray);border-color:var(--gray)} .s-unk{color:var(--muted);border-color:var(--muted)} .s-crim{color:var(--red);border-color:var(--red)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:10px;margin:26px 0 8px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.stat b{display:block;font-family:var(--mono);font-size:26px;font-weight:700;color:var(--ink)}
+.stat span{font-size:12.5px;color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 10px;align-items:center}
+.filters input,.filters select{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:8px 10px;font-size:13.5px;font-family:var(--sans)}
+.filters input{flex:1;min-width:200px}
+.filters input:focus,.filters select:focus{outline:2px solid var(--amber);outline-offset:1px}
+.cnt{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+table.ledger{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0 30px}
+.ledger th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--muted);text-align:left;border-bottom:1px solid var(--line);padding:8px 10px;position:sticky;top:0;background:var(--bg);cursor:pointer;white-space:nowrap}
+.ledger td{padding:9px 10px;border-bottom:1px solid var(--line2);vertical-align:top}
+.ledger tr{background:transparent}
+.ledger tbody tr:hover{background:var(--panel)}
+.ledger a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--faint)}
+.ledger a:hover{border-color:var(--red)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.partydot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;vertical-align:1px}
+.chip{display:inline-block;font-size:11px;font-family:var(--mono);border:1px solid var(--line);border-radius:3px;padding:1px 6px;color:var(--ink2);white-space:nowrap}
+h2.sec{font-family:var(--serif);font-size:21px;font-weight:700;margin:44px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+h2.sec small{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.1em;display:block;font-weight:400;margin-bottom:2px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.strip{display:flex;height:14px;border-radius:4px;overflow:hidden;border:1px solid var(--line);margin:12px 0 6px}
+.strip i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);margin:0 0 18px}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+table.data{width:100%;border-collapse:collapse;font-size:13px}
+.data th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;border-bottom:1px solid var(--line);padding:7px 9px;white-space:nowrap}
+.data td{padding:7px 9px;border-bottom:1px solid var(--line2);vertical-align:top}
+.data a{color:var(--ink2);text-decoration:none;border-bottom:1px dotted var(--faint)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:12px 0}
+.panel h3{margin:0 0 8px;font-size:15px;font-family:var(--serif)}
+.panel .tag{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}.hide-m{display:none}.ledger thead{display:none}.ledger tbody tr{display:block;border:1px solid var(--line);border-radius:8px;margin-bottom:8px;background:var(--panel2)}.ledger td{display:block;border:0;padding:4px 12px}.ledger td:before{content:attr(data-l);font-family:var(--mono);font-size:10px;color:var(--faint);display:block}}
+.notice{border-left:3px solid var(--amber);background:var(--panel2);padding:12px 16px;font-size:13px;color:var(--ink2);border-radius:0 6px 6px 0;margin:14px 0}
+.srcs{font-size:12.5px;color:var(--muted)} .srcs a{color:var(--blue);text-decoration:none;border-bottom:1px dotted var(--faint)}
+.srcs li{margin-bottom:5px}
+footer{border-top:1px solid var(--line);margin-top:50px;padding:22px 0 40px;color:var(--muted);font-size:12.5px}
+footer .brand{font-family:var(--serif);color:var(--ink2)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 6px}
+.tabs a{font-size:13px;text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:6px 14px;color:var(--ink2)}
+.tabs a:hover{border-color:var(--red);color:var(--ink)}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:2px 18px;font-size:13.5px;margin:12px 0}
+.meta dt{color:var(--faint);font-family:var(--mono);font-size:11px;letter-spacing:.08em;margin-top:8px}
+.meta dd{margin:1px 0 0;color:var(--ink2)}
+.pcard{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:12px 0}
+.pcard .st{float:right}
+.pcard b.t{font-size:15px}
+.pcard .m{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:6px}
+.linklist{font-size:13px;line-height:2}
+.linklist a{color:var(--blue);text-decoration:none;border-bottom:1px dotted var(--faint)}
+.empty{color:var(--muted);font-size:13.5px;background:var(--panel2);border:1px dashed var(--line);border-radius:8px;padding:14px 16px;margin:12px 0}.sc a .sen{display:inline-block;font-size:9.5px;font-weight:800;line-height:1.05;vertical-align:top;margin:1px 0 0 5px;padding:1px 3px;border-radius:4px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);letter-spacing:0}
+</style><style id="theme-refresh">
+body{background:linear-gradient(180deg,#e7f4fe 0,#f5fafe 560px,#f5fafe 100%)}header.top{background:linear-gradient(180deg,#e3f1fd 0,#f0f9ff 100%);border-bottom:1px solid #cfe3f3}
+.eyebrow{color:#2f7fc1}
+.stat{background:linear-gradient(180deg,#ffffff,#f7fbfe);border-color:#dbe9f5;box-shadow:0 1px 2px rgba(20,60,95,.05),0 12px 28px -24px rgba(20,60,95,.6)}
+.stat b{color:#123c5e}
+.panel{background:linear-gradient(180deg,#ffffff,#fbfdff);border-color:#dbe9f5;box-shadow:0 1px 2px rgba(20,60,95,.05),0 14px 32px -26px rgba(20,60,95,.5)}
+h2.sec{border-top-color:#dbe9f5}
+.ledger th{background:#edf6fd;color:#4a6275;border-bottom-color:#cfe3f3}
+.ledger tbody tr:hover{background:#eff8ff}
+.ledger a{border-bottom-color:#b3cde0}
+.ledger a:hover{border-color:#24689f;color:#123c5e}
+table.data th{background:#f2f9fe;color:#4a6275}
+table.data tbody tr:hover{background:#f6fbff}
+table.data a{border-bottom-color:#b3cde0}
+.chip{color:#3b5568;border-color:#d8e7f3;background:#f6fbff}
+.notice{border-left-color:#3f9ad6;background:linear-gradient(90deg,#eaf6ff,#f8fcff)}
+::selection{background:#c6e6fb;color:#0c1b2a}
+.filters input,.filters select{background:#ffffff;border-color:#d8e7f3}
+.filters input:focus,.filters select:focus{outline-color:#3f9ad6}
+.stamp{background:rgba(255,255,255,.72);white-space:nowrap}
+</style><title>전진숙 의원 — 제22대 국회의원 공개 추적</title>
+<style id="mobile-refine">
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{-webkit-tap-highlight-color:transparent;word-break:keep-all;overflow-wrap:break-word}
+img,svg,canvas{max-width:100%;height:auto}
+
+@media (max-width:760px){
+  .wrap{padding:0 15px}
+  header.top{padding:20px 0 16px}
+  h1{font-size:clamp(21px,6.6vw,30px);line-height:1.28;letter-spacing:-.02em;word-break:keep-all}
+  h1 small{font-size:14px!important}
+  .sub{font-size:13px;line-height:1.55}
+  .eyebrow{font-size:10px;letter-spacing:.1em;line-height:1.5}
+  h2.sec{font-size:18px;margin:30px 0 10px;padding-top:6px}
+  h2.sec small{font-size:10px;letter-spacing:.08em}
+
+  /* 요약 수치 */
+  .stats{grid-template-columns:1fr 1fr;gap:8px;margin:16px 0 4px}
+  .stat{padding:11px 12px;border-radius:10px}
+  .stat b{font-size:21px;line-height:1.22}
+  .stat span{display:block;margin-top:2px;font-size:11.5px;line-height:1.4}
+  .cards{grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+  .cards .stat:last-child:nth-child(odd){grid-column:1/-1}
+
+  /* 필터 */
+  .filters{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:14px 0 8px}
+  .filters input{grid-column:1/-1;min-width:0;width:100%;font-size:16px;padding:11px 12px}
+  .filters select{width:100%;min-width:0;font-size:16px;padding:11px 10px}
+  .filters .cnt{grid-column:1/-1;text-align:right;padding:2px 2px 0}
+
+  /* 탭 가로 스크롤 */
+  .tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:6px;padding-bottom:3px;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs a{flex:0 0 auto;white-space:nowrap;padding:8px 13px;font-size:12.5px}
+
+  /* ── 명부: 카드형 ── */
+  .ledger{display:block;width:100%;border-collapse:separate;margin:6px 0 26px;font-size:14px}
+  .ledger thead{display:none}
+  .ledger tbody{display:block}
+  .ledger tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;position:relative;
+    padding:11px 13px 11px 14px;margin:0 0 9px;background:var(--panel);
+    border:1px solid var(--line);border-left:3px solid var(--pc,var(--line));border-radius:12px;
+    box-shadow:0 1px 2px rgba(12,27,42,.05)}
+  .ledger tbody tr:hover{background:var(--panel)}
+  .ledger tbody tr:active{background:var(--panel2)}
+  .ledger td{display:block;padding:0;border:0;min-width:0}
+  .ledger td.hide-m{display:none}
+  .ledger td:first-child{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;
+    padding-bottom:8px;margin-bottom:6px;border-bottom:1px dashed var(--line)}
+  .ledger td:first-child::before{content:none;display:none}
+  .ledger td:first-child .partydot{width:7px;height:7px;margin-right:0}
+  .ledger td:first-child a{font-size:17px;font-weight:700;letter-spacing:-.01em;border-bottom:0;padding:2px 0}
+  .ledger td:first-child .chip{font-size:10.5px;padding:1px 5px}
+  .ledger td:not(:first-child)::before{content:attr(data-l);display:block;font-family:var(--mono);
+    font-size:9.5px;letter-spacing:.08em;color:var(--faint);margin-bottom:1px;white-space:nowrap}
+  .ledger td.mono{font-size:15.5px;font-weight:600;font-variant-numeric:tabular-nums}
+  .ledger td .stamp{font-size:10px;padding:2px 7px;letter-spacing:.04em}
+
+  /* ── 공통 표·패널 ── */
+  .panel,.pcard{padding:14px;border-radius:10px}
+  .pcard .st{float:none;display:inline-block;margin-left:6px;vertical-align:middle}
+  .pcard b.t{font-size:14px}
+  .pcard .m{font-size:11px;line-height:1.65;word-break:break-word}
+  .meta{grid-template-columns:auto minmax(0,1fr);column-gap:10px;align-items:baseline}
+  .meta dt{margin-top:10px;font-size:10px;letter-spacing:.06em;white-space:nowrap}
+  .meta dd{margin-top:10px;font-size:12.5px;line-height:1.5;word-break:break-word}
+  .meta dd a{word-break:break-all}
+  .linklist{line-height:1.45}
+  .linklist a{display:inline-block;padding:4px 0;word-break:break-all}
+  .strip{height:12px}
+  .legend{gap:5px 12px;font-size:11px;margin-bottom:14px}
+  .notice{font-size:12.5px;padding:11px 13px;line-height:1.65;border-radius:0 8px 8px 0}
+  .empty{padding:12px 13px;font-size:12.5px}
+  .grid2{gap:10px}
+  .srcs{font-size:11.5px;line-height:1.65}
+  footer{margin-top:34px;padding:18px 0 calc(30px + env(safe-area-inset-bottom))}
+  footer .brand{font-size:12px}
+
+  /* ── 의원 페이지: 발의법안 목록을 2줄 행으로 ── */
+  .page-member .data{display:block;width:100%;font-size:13px}
+  .page-member .data thead{display:none}
+  .page-member .data tbody{display:block}
+  .page-member .data tr{display:block;padding:9px 0;border-bottom:1px solid var(--line2)}
+  .page-member .data td{display:inline-block;padding:0;border:0;vertical-align:baseline}
+  .page-member .data td.hide-m{display:none}
+  .page-member .data td:nth-child(3){display:block;font-size:13.5px;font-weight:600;line-height:1.5;margin-bottom:3px}
+  .page-member .data td:nth-child(4){font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-right:8px}
+  .page-member .data td:nth-child(5){font-size:11.5px;color:var(--ink2)}
+  .page-member .data td:nth-child(5) .stamp{font-size:9.5px;padding:1px 5px}
+
+  /* ── 법안 순위표: 2줄 카드 행 ── */
+  .page-bills .data{display:block;width:100%;border-collapse:separate}
+  .page-bills .data thead{display:none}
+  .page-bills .data tbody{display:block}
+  .page-bills .data tr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:baseline;gap:3px 6px;
+    padding:11px 12px;margin:0 0 8px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+  .page-bills .data td{display:block;padding:0;border:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .page-bills .data td:nth-child(1){grid-column:1/4;font-weight:700;font-size:15px;color:var(--ink)}
+  .page-bills .data td:nth-child(2){grid-column:4;justify-self:end;font-size:10.5px;color:var(--muted)}
+  .page-bills .data td:nth-child(3){grid-column:1;font-size:12px}
+  .page-bills .data td:nth-child(4){grid-column:2;font-size:12px}
+  .page-bills .data td:nth-child(5){grid-column:3;font-size:12px}
+  .page-bills .data td:nth-child(6){grid-column:4;justify-self:end;font-size:13px;font-weight:700;color:var(--ink)}
+  .page-bills .data td:nth-child(3)::before,
+  .page-bills .data td:nth-child(4)::before,
+  .page-bills .data td:nth-child(5)::before{font-family:var(--mono);font-size:9.5px;color:var(--faint);letter-spacing:.04em}
+  .page-bills .data td:nth-child(3)::before{content:"대표 "}
+  .page-bills .data td:nth-child(4)::before{content:"관여 "}
+  .page-bills .data td:nth-child(5)::before{content:"가결 "}
+
+  /* ── 사법 리스크: 항목별 스택 ── */
+  .page-cases .data{display:block;width:100%}
+  .page-cases .data thead{display:none}
+  .page-cases .data tr{display:block;padding:10px 0;border-bottom:1px solid var(--line2)}
+  .page-cases .data td{display:block;padding:0;border:0}
+  .page-cases .data td:nth-child(1){font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.06em}
+  .page-cases .data td:nth-child(2){font-size:15px;font-weight:600;margin:1px 0 2px}
+  .page-cases .data td:nth-child(3){font-size:12.5px;color:var(--ink2);line-height:1.6}
+}
+
+@media (max-width:400px){
+  .wrap{padding:0 13px}
+  .stat b{font-size:19px}
+  .ledger td:first-child a{font-size:16px}
+  .meta dt{font-size:9.5px}
+  .meta dd{font-size:12px}
+}
+</style>
+<style id="dark-refresh">
+html[data-theme=dark]{--bg:#0b1219;--panel:#121c25;--panel2:#18242f;--ink:#e9f2f9;--ink2:#c2d4e2;--muted:#93a8ba;--faint:#6d8598;--line:#26343f;--line2:#1d2833;--red:#ff7a68;--amber:#e2a95a;--green:#45cfae;--blue:#77b6e6;--gray:#94a5b3;--yellow:#e4c96f;color-scheme:dark}
+html[data-theme=dark],html[data-theme=dark] body{background:var(--bg);color:var(--ink)}
+html[data-theme=dark] header.top{background:linear-gradient(180deg,#101c27,#0b1219);border-bottom-color:var(--line)}
+html[data-theme=dark] .stat,html[data-theme=dark] .notice,html[data-theme=dark] .box,html[data-theme=dark] .card,html[data-theme=dark] .kv,html[data-theme=dark] .note,html[data-theme=dark] .callout,html[data-theme=dark] .panel,html[data-theme=dark] .method,html[data-theme=dark] .srcbox{background:var(--panel);border-color:var(--line)}
+html[data-theme=dark] .ledger th{background:var(--bg);border-bottom-color:var(--line)}
+html[data-theme=dark] .ledger td{border-bottom-color:var(--line2)}
+html[data-theme=dark] .ledger tbody tr:hover{background:var(--panel2)}
+html[data-theme=dark] .filters input,html[data-theme=dark] .filters select{background:var(--panel2);border-color:var(--line);color:var(--ink)}
+html[data-theme=dark] .stamp{background:rgba(18,28,37,.86)}
+html[data-theme=dark] .chip{background:var(--panel2);border-color:var(--line);color:var(--ink2)}
+html[data-theme=dark] .tabs a{background:var(--panel);border-color:var(--line);color:var(--ink2)}
+html[data-theme=dark] .tabs a.on,html[data-theme=dark] .tabs a[aria-current]{background:var(--panel2);color:var(--ink);border-color:var(--blue)}
+html[data-theme=dark] .strip{border-color:var(--line)}
+html[data-theme=dark] footer{border-top-color:var(--line);color:var(--muted)}
+html[data-theme=dark] ::selection{background:#1d3b52;color:#eaf4fb}
+html[data-theme=dark] [style*="background:#fff"],html[data-theme=dark] [style*="background: #fff"],html[data-theme=dark] [style*="background:#ffffff"],html[data-theme=dark] [style*="background:white"],html[data-theme=dark] [style*="background:#f8fbff"],html[data-theme=dark] [style*="background:#eef6fc"],html[data-theme=dark] [style*="background:#f4f9fd"],html[data-theme=dark] [style*="background:#e8f4fe"]{background:var(--panel)!important}
+html[data-theme=dark] [style*="color:#0c1b2a"],html[data-theme=dark] [style*="color:#2e4658"]{color:var(--ink)!important}
+body,header.top,.stat,.notice,.ledger td:hover{transition:background-color .22s ease,color .22s ease,border-color .22s ease}
+
+/* 라이트/다크 전환 버튼 */
+#themeBtn{position:fixed;right:18px;bottom:18px;z-index:80;width:44px;height:44px;border-radius:999px;
+ border:1px solid var(--line);background:var(--panel);color:var(--ink2);cursor:pointer;font-size:17px;line-height:1;
+ display:grid;place-items:center;box-shadow:0 6px 18px rgba(12,27,42,.16);backdrop-filter:blur(6px);
+ transition:transform .18s ease,background-color .2s ease,color .2s ease}
+#themeBtn:hover{transform:translateY(-2px)}
+#themeBtn:active{transform:scale(.94)}
+#themeBtn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+@media (max-width:760px){#themeBtn{width:42px;height:42px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));font-size:16px;box-shadow:0 4px 14px rgba(12,27,42,.2)}}
+@media print{#themeBtn{display:none}}
+</style><style id="dark-party">html[data-theme=dark] [style*="--pc:#2f7cd6"]{--pc:#70a7e6}
+html[data-theme=dark] [style*="--pc:#d2453a"]{--pc:#e4827a}
+html[data-theme=dark] [style*="--pc:#a3630b"]{--pc:#f6a332}
+html[data-theme=dark] [style*="--pc:#bf6111"]{--pc:#f28c36}
+html[data-theme=dark] [style*="--pc:#b04083"]{--pc:#dc65ac}
+html[data-theme=dark] [style*="--pc:#94720c"]{--pc:#f3c434}
+html[data-theme=dark] [style*="--pc:#cc5b3b"]{--pc:#e08f78}
+html[data-theme=dark] [style*="--pc:#8ba1b3"]{--pc:#9fadba}
+html[data-theme=dark] [style*="background:#2f7cd6"]{background:#70a7e6!important}
+html[data-theme=dark] [style*="background:#d2453a"]{background:#e4827a!important}
+html[data-theme=dark] [style*="background:#a3630b"]{background:#f6a332!important}
+html[data-theme=dark] [style*="background:#bf6111"]{background:#f28c36!important}
+html[data-theme=dark] [style*="background:#b04083"]{background:#dc65ac!important}
+html[data-theme=dark] [style*="background:#94720c"]{background:#f3c434!important}
+html[data-theme=dark] [style*="background:#cc5b3b"]{background:#e08f78!important}
+html[data-theme=dark] [style*="background:#8ba1b3"]{background:#9fadba!important}
+html[data-theme=dark] .partydot{box-shadow:0 0 0 2px rgba(11,18,25,.85)}
+html[data-theme=dark] .ledger tbody tr:hover{border-left-color:var(--pc,var(--line))}</style><style id="same-css">
+.cmtheads{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.cmtheads a{font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);text-decoration:none}
+.cmtheads a:hover{border-color:var(--blue);color:var(--blue)}
+.scg{display:flex;gap:12px;align-items:baseline;margin:0 0 8px}
+.plab{flex:0 0 92px;font-size:12px;font-weight:700;color:var(--ink2);display:flex;align-items:center;gap:6px;line-height:1.3;text-decoration:none}
+.plab:hover{color:var(--blue)}
+.plab i{width:8px;height:8px;border-radius:50%;flex:0 0 8px}
+.plab em{font-style:normal;font-weight:500;color:var(--faint);font-size:11.5px}
+.sc{flex:1 1 auto;display:flex;flex-wrap:wrap;gap:7px}
+.sc a{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--panel2);color:var(--ink2);text-decoration:none;line-height:1.2}
+.sc a:hover{border-color:var(--blue);color:var(--blue)}
+.sc a i{width:7px;height:7px;border-radius:50%;display:inline-block;flex:0 0 7px}
+@media(max-width:640px){.scg{display:block}.plab{margin:6px 0 6px;flex:none}.sc a{font-size:12.5px;padding:6px 11px}}
+</style></head><body class="page-member">
+<header class="top"><div class="wrap">
+<p class="eyebrow">토지와 자유 × 디지털 대동법 연구소 · 제22대 국회의원 공개 추적</p>
+<h1>전진숙 <small style="font-size:16px;color:var(--muted);font-family:var(--sans);font-weight:400">全眞淑</small> <span class="stamp s-live">재직</span></h1>
+<p class="sub"><a href="../index.html">← 전체 명부로</a></p>
+<dl class="meta">
+<dt>소속 정당</dt><dd><i class="partydot" style="background:#2f7cd6"></i>더불어민주당</dd>
+<dt>선거구</dt><dd>전남광주통합특별시 북구을 (지역구)</dd>
+<dt>소속 위원회</dt><dd>보건복지위원회, 예산결산특별위원회</dd>
+<dt>당선</dt><dd>초선 · 2024년 22대 당선인</dd>
+<dt>생년월일</dt><dd>1969-02-05 (여)</dd>
+<dt>의원실</dt><dd>02-784-6120</dd>
+<dt>이메일</dt><dd>518jjs@naver.com</dd>
+<dt>누리집</dt><dd><a href="https://blog.naver.com/gwangjusook" target="_blank" rel="noopener">https://blog.naver.com/gwangjusook</a></dd>
+</dl></div></header>
+<main class="wrap">
+
+<h2 class="sec"><small>TRACK 0</small>요약</h2>
+<div class="cards">
+<div class="stat"><b class="mono">106</b><span>대표발의 법률안</span></div>
+<div class="stat"><b class="mono">106</b><span>발의 관여(제안자 기준)</span></div>
+<div class="stat"><b class="mono">2</b><span>발의 법률안 중 가결(공포 포함)</span></div>
+<div class="stat"><b class="mono">0</b><span>확인된 사법 사건</span></div>
+<div class="stat"><b class="mono">확인 안 됨</b><span>과거 형사 기록(명단 기준)</span></div>
+</div>
+<h2 class="sec"><small>TRACK 1 · 열린국회정보 API</small>입법 추적 — 발의에서 가결까지</h2>
+<div class="strip" role="img" aria-label="발의법안 단계 분포"><i style="width:79.2%;background:#24689f" title="심사 중 84건"></i><i style="width:1.9%;background:#0e7d66" title="가결 2건"></i><i style="width:18.9%;background:#6f8497" title="폐기·철회 20건"></i></div><div class="legend"><span><i style="background:#24689f"></i>심사 중 84</span> <span><i style="background:#0e7d66"></i>가결 2</span> <span><i style="background:#9db0c0"></i>부결 0</span> <span><i style="background:#6f8497"></i>폐기·철회 20</span></div>
+<p class="srcs">처리상태는 의안정보시스템 표기를 그대로 씁니다. "가결"은 원안·수정·대안가결과 공포를 합친 것으로, 공포·시행 여부는 원문 링크에서 확인하세요.</p>
+<table class="data"><thead><tr><th>의안번호</th><th>법안명(원문 링크)</th><th class="hide-m">제안일</th><th class="hide-m">소관위</th><th>처리상태</th></tr></thead><tbody><tr><td class="mono">2222538</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_4461CDF2B379461C89B6EC94731CCF&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">혈액관리법 일부개정법률안</a></td><td class="mono hide-m">2026-11-06</td><td class="hide-m"></td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2222164</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_C2A6B0J9H0I8G2H0F5G6N3O7M1L6M5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">마약류 관리에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2026-10-28</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2221996</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_B3E17D9538E74832931049996F1DD7&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">보건의료기술 진흥법 일부개정법률안</a></td><td class="mono hide-m">2026-10-21</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2221415</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_K2K6Q0P6O1X7W1T1B5A2Z1Y0U2T5S3&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">성매매알선 등 행위의 처벌에 관한 법률 전부개정법률안</a></td><td class="mono hide-m">2026-09-17</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2221073</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_J2J6I0I8H2H5P1O8O4M9N4M4M8H3G9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">보건의료기본법 일부개정법률안</a></td><td class="mono hide-m">2026-09-03</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2221072</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_T2S6S0A7X1E4F1E3E2C5D5C9X0Y0W6&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">12·29여객기참사 피해구제 및 지원 등을 위한 특별법 일부개정법률안</a></td><td class="mono hide-m">2026-09-03</td><td class="hide-m">국토교통위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2221069</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_L2M6K0L7J1R4R1Q3R2P6P4O0W7W9V1&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">10·29이태원참사 피해자 권리보장과 진상규명 및 재발방지를 위한 특별법 일부개정법률안</a></td><td class="mono hide-m">2026-09-03</td><td class="hide-m">행정안전위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2220797</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_G2G6E0F7E2E7A0Y9Z4X2Y0W7X8E0D1&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">디지털 헬스케어 진흥 및 보건의료정보 활용 지원에 관한 법률안</a></td><td class="mono hide-m">2026-08-26</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2219896</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_R2P6Q0O4P2X3X1V5W4V4T2T5C9C6A0&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">영유아보육법 일부개정법률안</a></td><td class="mono hide-m">2026-07-10</td><td class="hide-m">교육위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2219895</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_S2R6P0O7W0V2W1U7T2O2P5O5M7L1M9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">약사법 일부개정법률안</a></td><td class="mono hide-m">2026-07-10</td><td class="hide-m">보건복지위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2219891</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_X2W6U0U4C2B3Z1Y5Z4H5F2G4E0F7D9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">유아교육법 일부개정법률안</a></td><td class="mono hide-m">2026-07-10</td><td class="hide-m">교육위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2219887</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_R2Q6Y0Z6X2W3V2R0S1Q2O0N5V2R0S8&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">청소년복지 지원법 일부개정법률안</a></td><td class="mono hide-m">2026-07-10</td><td class="hide-m">성평등가족위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2219479</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_J2G6F0E6D1L7K1J1H5Q5P0O8M0T0R6&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">양성평등기본법 일부개정법률안</a></td><td class="mono hide-m">2026-06-24</td><td class="hide-m">성평등가족위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2219360</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_D2D6B0C6B1W6X1V7W2U6V3T7B4B7A2&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">일제하 일본군위안부 피해자에 대한 보호ㆍ지원 및 기념사업 등에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2026-06-19</td><td class="hide-m">성평등가족위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2219050</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_V2S6R0A5Y2V1E1G3F3E6L0K5I8I4C7&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">5·18민주화운동 등에 관한 특별법 일부개정법률안</a></td><td class="mono hide-m">2026-05-22</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2218898</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_W2X6F0G4E2E3C1B5C4J3K3J5J5H6G0&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">다문화가족지원법 일부개정법률안</a></td><td class="mono hide-m">2026-05-08</td><td class="hide-m">성평등가족위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2218404</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_L2L6T0T4S1S5R1R1Q2X6Z0X4X4W3U8&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">기초연금법 일부개정법률안</a></td><td class="mono hide-m">2026-04-17</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2218395</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_V2R6Q0P3O1U7T1S3B4A9Z5F9E8D6B7&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">아동·청소년의 성보호에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2026-04-17</td><td class="hide-m">성평등가족위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2217790</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_L2K6L0K3I2Q0P1O1O0N6J4I5G7H1F6&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">성폭력범죄의 처벌 등에 관한 특례법 일부개정법률안</a></td><td class="mono hide-m">2026-03-27</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2217332</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_F2D6E0C2C1B2J1J4H4I6H1H6F2G5B0&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">약사법 일부개정법률안</a></td><td class="mono hide-m">2026-03-09</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2217311</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_N2O6M0N2L2M7B0C9B2Z1Z2X8Y1G7H6&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">의료기기법 일부개정법률안</a></td><td class="mono hide-m">2026-03-06</td><td class="hide-m">보건복지위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2217306</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_Q2O6O0N1N2M3M1B5C4A1A1Z4X1Y4G7&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">약사법 일부개정법률안</a></td><td class="mono hide-m">2026-03-06</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2217301</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_D2B6C0A2B1X0X1V7W0U7T1T5B1B3A2&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국회법 일부개정법률안</a></td><td class="mono hide-m">2026-03-06</td><td class="hide-m">국회운영위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2217258</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_S2T6R0S2A1A3Y1Z1X3W3W1E2F2D5E9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">약사법 일부개정법률안</a></td><td class="mono hide-m">2026-03-05</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2217185</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_M2L6M0H2I1G0G1F3G5E1E1M7N0L5K5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">가정폭력범죄의 처벌 등에 관한 특례법 전부개정법률안</a></td><td class="mono hide-m">2026-03-03</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2217179</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_O2P6N0N2M1M0K1L0T3R5S2Q0R1P1Q8&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">의료법 일부개정법률안</a></td><td class="mono hide-m">2026-03-03</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2217177</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_P2Q6O0O2K1K0J1H0I3G6H3P4P9O4O5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">의료사고 피해구제 및 의료분쟁 조정 등에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2026-03-03</td><td class="hide-m">보건복지위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2216974</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_D2D6B0C1K2L7J1J9I2G4H5P4P3N4O4&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">생명윤리 및 안전에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2026-02-24</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2216753</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_D2B6B0J1I2I3H1H5F3G9O3O1N0N4M8&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민건강보험법 일부개정법률안</a></td><td class="mono hide-m">2026-02-11</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2216752</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_B2Z6A0Y1D2E3D1D5S4S0R2P7Q7O3P4&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민연금법 일부개정법률안</a></td><td class="mono hide-m">2026-02-11</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2216623</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_Z2Z6Y0Z1X2X3F1F7E0C8D3B8C4J3L1&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민연금법 일부개정법률안</a></td><td class="mono hide-m">2026-02-05</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2216622</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_L2L6J0K1F2G3F1F7D0E6C4K7L0J4K6&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">돌봄기본법안</a></td><td class="mono hide-m">2026-02-05</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2216621</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_N2L6M0K1I2J3R1R7P0Q7P4P0N3O0K7&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">정부조직법 일부개정법률안</a></td><td class="mono hide-m">2026-02-05</td><td class="hide-m">행정안전위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2215829</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_O2P5W1X2W2W6U1V7U2B6C4A1B8Z3A4&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민건강보험법 일부개정법률안</a></td><td class="mono hide-m">2026-01-02</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2215828</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_Z2A5Y1Y2X2V6W1D7E2D7D3B3C9A6I8&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민건강증진법 일부개정법률안</a></td><td class="mono hide-m">2026-01-02</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2215764</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_I2I5H1H2F2G6F1F4N2N5M0M0L2J8J8&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">첨단의료복합단지 육성에 관한 특별법 일부개정법률안</a></td><td class="mono hide-m">2025-12-30</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2215759</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_E2E5M1L2L2J6K1I7J0F2F1D5E0C6B1&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">건강가정기본법 일부개정법률안</a></td><td class="mono hide-m">2025-12-30</td><td class="hide-m">성평등가족위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2215711</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_C2D5Y1Z2X2Y6W1U4V2D3D5C3C1B9B9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">치매관리법 일부개정법률안</a></td><td class="mono hide-m">2025-12-30</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2214465</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_G2G5E1F1D0E1Z1Y8Z0X2X2W9X3E0F9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">스토킹범죄의 처벌 등에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2025-11-21</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2214464</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_W2Z5Z1Y1Z0U1V1T7U5S9Q5R3Z7Z2X3&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">가정폭력범죄의 처벌 등에 관한 특례법 일부개정법률안</a></td><td class="mono hide-m">2025-11-21</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2214463</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_F2D5E1C1D0B1C1X8Y0W0U4V3T8U3B7&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">경찰공무원법 일부개정법률안</a></td><td class="mono hide-m">2025-11-21</td><td class="hide-m">행정안전위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2214459</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_O2M5N1V1V0T1S1S8R0R1Z2A7Y4Z6X6&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">경찰관 직무집행법 일부개정법률안</a></td><td class="mono hide-m">2025-11-21</td><td class="hide-m">행정안전위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2214458</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_Q2R5Q1Q1Y0Z1X1X8V0U3V0Q5R0P1Q2&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">채용절차의 공정화에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2025-11-21</td><td class="hide-m">기후에너지환경노동위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2213756</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_D2E5C0B9A1W9V1V7U3T2B4Z4D4C7A0&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">군사법원법 일부개정법률안</a></td><td class="mono hide-m">2025-10-28</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2213755</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_W2V5T0T9R1S9A1B7Z3A4Y1Y9W9F3F7&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">가정폭력범죄의 처벌 등에 관한 특례법 일부개정법률안</a></td><td class="mono hide-m">2025-10-28</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2213748</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_M2K5L0J9K1I9J1Q7R3Q5O3O7M4N1V5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">형사소송법 일부개정법률안</a></td><td class="mono hide-m">2025-10-28</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2213747</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_L2L5K0K9S1T9R1Q7Q3O5P0X2Y7W2W6&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">민법 일부개정법률안</a></td><td class="mono hide-m">2025-10-28</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2211776</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_D2B5C0A7W2X4V0V9U5U5T0T2B3C2A0&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">하천법 일부개정법률안</a></td><td class="mono hide-m">2025-07-28</td><td class="hide-m">기후에너지환경노동위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2211771</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_E2C5C0B7C2X4Y0W9X5V5T4U9C5D9B6&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">건축법 일부개정법률안</a></td><td class="mono hide-m">2025-07-28</td><td class="hide-m">국토교통위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2211764</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_V2T5R0S7Q0R9Y0A9Y4Y7W1X5W8R0S1&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">축산물 위생관리법 일부개정법률안</a></td><td class="mono hide-m">2025-07-25</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2211456</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_P2Q5P0W6X1V1W1U8V2T2U5P9O0O0N4&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">노인복지법 일부개정법률안</a></td><td class="mono hide-m">2025-07-11</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2210749</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_N2L5M0T4U1T5R1R4P0Q1M0N1L4L0K9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">형법 일부개정법률안</a></td><td class="mono hide-m">2025-06-12</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2210740</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_W2E5D0D4B1C8B1B0J3K1I4G6H1F6G1&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">가정폭력방지 및 피해자보호 등에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2025-06-11</td><td class="hide-m">성평등가족위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2210703</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_Y2Y5U0U4T2U5S1S0Q1Z7Z2X5Y4W5X2&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">의료법 일부개정법률안</a></td><td class="mono hide-m">2025-06-11</td><td class="hide-m">보건복지위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2209730</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_G2H5F0F4D0E9D1K8L2J3K0I5J0H5I3&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">사회복지사 등의 처우 및 지위 향상을 위한 법률 일부개정법률안</a></td><td class="mono hide-m">2025-04-10</td><td class="hide-m">보건복지위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2209727</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_S2S5B0Z4Z0Y9Z1X8X2F3E5E8C6D1C1&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민연금법 일부개정법률안</a></td><td class="mono hide-m">2025-04-10</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2209725</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_J2G5G0E4F0D9E1C8K2L4J2K9I9J5H6&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">식품안전기본법 일부개정법률안</a></td><td class="mono hide-m">2025-04-10</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2209435</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_O2P5O0O2M0N3M0T9U0S8S2R5S8Q4Y8&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">조세특례제한법 일부개정법률안</a></td><td class="mono hide-m">2025-03-28</td><td class="hide-m">재정경제기획위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2209429</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_O2P5N0N2M2K7L1S6T4S2S1Q7P8Q4L7&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">치매관리법 일부개정법률안</a></td><td class="mono hide-m">2025-03-28</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2209033</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_Y2W5X0V2W2U7V1D6D4B1A4A3Z8Z3H3&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">지방자치법 일부개정법률안</a></td><td class="mono hide-m">2025-03-18</td><td class="hide-m">행정안전위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2208725</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_B2Z5A0Y2Y1X1Y1T5U5S6R3R4P0Q4Y7&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민기초생활 보장법 일부개정법률안</a></td><td class="mono hide-m">2025-03-07</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2208672</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_O2P5N0O3M0K4L2T3T2R2T5R9R4P2L2&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">12·29여객기참사 피해자 권리보장을 위한 특별법안</a></td><td class="mono hide-m">2025-03-05</td><td class="hide-m">12.29여객기참사진상규명과피해자및유가족의피해구제를위한특별위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2208552</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_Y2X5Y0W2W1V1D1D7C5C4A5B8Z6A1I5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">정신건강증진 및 정신질환자 복지서비스 지원에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2025-02-27</td><td class="hide-m">보건복지위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2208549</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_U2V5U0U1S1T0R1Z7A3Y6Y3X1Y6W9L6&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">영유아보육법 일부개정법률안</a></td><td class="mono hide-m">2025-02-27</td><td class="hide-m">교육위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2208049</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_W2V5V0T1U0C2D0B9Z0A2Y2Z0H9H5G2&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">의료법 일부개정법률안</a></td><td class="mono hide-m">2025-02-11</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2208019</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_J2H5I0H1H0P2P1O1M1N6L3M8T9U5T4&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">정신건강증진 및 정신질환자 복지서비스 지원에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2025-02-10</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2208017</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_C2A5A0W1U0V2T1U1S1T7B1B6A1Y4Y9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국립국가폭력트라우마치유센터의 설립 및 운영에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2025-02-10</td><td class="hide-m">행정안전위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2207926</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_N2M5K0L1T0U6S1S3R5P7Q1X7Y5W9X9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">여성의 경제활동 촉진과 경력단절 예방법 일부개정법률안</a></td><td class="mono hide-m">2025-02-06</td><td class="hide-m">성평등가족위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2207921</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_Y2X5X0W1X0E6D1D3C5C6B1B7J4K5I8&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">영유아보육법 일부개정법률안</a></td><td class="mono hide-m">2025-02-06</td><td class="hide-m">교육위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2207126</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_U2S4T1R2S2Q6R1N7L1L2K2L5J7J2R8&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민건강보험법 일부개정법률안</a></td><td class="mono hide-m">2024-12-31</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2207124</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_L2K4K1I2J2I6I1E7E1D3B3B2A8B7J5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">복권 및 복권기금법 일부개정법률안</a></td><td class="mono hide-m">2024-12-31</td><td class="hide-m">재정경제기획위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2207121</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_V2E4A1B2A2U6T1S5A4Z8Y4X9F8G7E0&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">노인복지법 일부개정법률안</a></td><td class="mono hide-m">2024-12-31</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2207118</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_A2I4I1H2F2G6E1F7M0N9M2M1K8L3R9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">아동사망 조사 및 예방에 관한 법률안</a></td><td class="mono hide-m">2024-12-31</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2207030</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_R2S4Q1P2P2X6Y1W5X4V7U4U5C3C1A7&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민연금법 일부개정법률안</a></td><td class="mono hide-m">2024-12-27</td><td class="hide-m">보건복지위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2206983</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_F2D4D1Z2A1Y7X1X1V0W5E3F3D5B1C7&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">폐기물관리법 일부개정법률안</a></td><td class="mono hide-m">2024-12-26</td><td class="hide-m">기후에너지환경노동위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2206982</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_O2O4X1V2V1U7U1T1T0P4N2O0M0N9L5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">교통사고처리 특례법 일부개정법률안</a></td><td class="mono hide-m">2024-12-26</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2206720</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_E2C4B1B2A1A7I1J1H1G0G0E7F3N3O3&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민건강보험법 일부개정법률안</a></td><td class="mono hide-m">2024-12-19</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2206716</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_K2G4G1F2G1E6C1D7L1M0K0K5J7H4I9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">의료 해외진출 및 외국인환자 유치 지원에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2024-12-19</td><td class="hide-m">보건복지위원회</td><td><span class="chip">수정가결</span></td></tr><tr><td class="mono">2206531</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_P2N4L1M2U0U6T1T2S0S0Q3Z0Z4X7Y4&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">사법경찰관리의 직무를 수행할 자와 그 직무범위에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2024-12-16</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2206519</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_I2H4H1P2Q0O4M2N1M4M4U0T9T4R1S4&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민기초생활 보장법 일부개정법률안</a></td><td class="mono hide-m">2024-12-16</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2206483</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_G2E4F1E2C1C1K1L6J0K2I2H1H5P2P6&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국회의원의 국민소환에 관한 법률안</a></td><td class="mono hide-m">2024-12-13</td><td class="hide-m">행정안전위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2206469</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_X2Y4G1E2F1D0E1C0C2L4J4K6I1J3H9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국회법 일부개정법률안</a></td><td class="mono hide-m">2024-12-13</td><td class="hide-m">국회운영위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2206012</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_M2M4L1J1K0I8J1R7P5Q0O2P2N2O2V5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">사회복지사업법 일부개정법률안</a></td><td class="mono hide-m">2024-11-28</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2206006</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_D2B4Q1R1P2Q7O1P1N1N3V5U4U8T3U4&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민연금법 일부개정법률안</a></td><td class="mono hide-m">2024-11-28</td><td class="hide-m">보건복지위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2206005</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_D2E4L1K1L1J5J1I7I2E0D5D0C8C3A4&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">마약류 관리에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2024-11-28</td><td class="hide-m">보건복지위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2206000</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_R2Z4X0Y8W1W4V0D8E5C8C3B3Z9A8V5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">의료법 일부개정법률안</a></td><td class="mono hide-m">2024-11-28</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2205981</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_S2O4P1N1O2M0M1L0T3T6R0S2R4R6P9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">변호사법 일부개정법률안</a></td><td class="mono hide-m">2024-11-28</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2205825</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_J2H4I0G8O1P3N1N3M5M5L2L3T3S2S5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민건강증진법 일부개정법률안</a></td><td class="mono hide-m">2024-11-22</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2204695</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_X2W4W0C9B2A4J1H3E1N2M5L4J6G5F9&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">5·18민주유공자예우 및 단체설립에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2024-10-15</td><td class="hide-m">정무위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2204672</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_L2K4L0S8T1R3S1Q3R5P6Q1Y9W3X1V5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국민건강증진법 일부개정법률안</a></td><td class="mono hide-m">2024-10-11</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2204643</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_Q2O4P0N8O1M4N0U8V5T7S0S3Q5R8Z0&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">담배사업법 일부개정법률안</a></td><td class="mono hide-m">2024-10-10</td><td class="hide-m">기획재정위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2204412</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_I2G4F0F9D0E9M0M9L4L4J1I8J6Q0R4&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">정부조직법 일부개정법률안</a></td><td class="mono hide-m">2024-09-27</td><td class="hide-m">행정안전위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2203832</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_R2S4Q0R8P2Q7Y0W7X4V5W2U2Q3R9P3&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">정신건강증진 및 정신질환자 복지서비스 지원에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2024-09-10</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2203629</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_N2N4M0N9L0J2K1F1G0F4F2D0E0D0K5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">성폭력범죄의 처벌 등에 관한 특례법 일부개정법률안</a></td><td class="mono hide-m">2024-09-04</td><td class="hide-m">법제사법위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2203558</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_H2G4G0F8F1E4E0M8M5L9J3K3I7J1Q0&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">의료법 일부개정법률안</a></td><td class="mono hide-m">2024-09-03</td><td class="hide-m">보건복지위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2203553</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_J2K4S0S8Q1P4Q0O8P5W7V5W2U6V6T2&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">보건의료기본법 일부개정법률안</a></td><td class="mono hide-m">2024-09-03</td><td class="hide-m">보건복지위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2203318</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_P2V4T0T8R2A7A0Y7Z4X4Y2W3X4F9F0&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">한부모가족지원법 일부개정법률안</a></td><td class="mono hide-m">2024-08-28</td><td class="hide-m">여성가족위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2203090</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_C2D4C0C8A1B4X0V9W1U0V3T4U4B1A1&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">체외진단의료기기법 일부개정법률안</a></td><td class="mono hide-m">2024-08-22</td><td class="hide-m">보건복지위원회</td><td><span class="chip">수정가결</span></td></tr><tr><td class="mono">2203089</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_B2Z4Z0X8W1X4E0F9D0E9C4D7B2C4J8&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">의료기기법 일부개정법률안</a></td><td class="mono hide-m">2024-08-22</td><td class="hide-m">보건복지위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2203088</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_G2H4F0G8E1D4D0L9L0K9K1J7H4I5D7&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">위생용품 관리법 일부개정법률안</a></td><td class="mono hide-m">2024-08-22</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2203087</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_K2L4J0J8H1I4G0H9P0Q8O3O6N7N4L4&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">실험동물에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2024-08-22</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2203086</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_H2I4H0H8F1G4C0C9A0Z7A5Y6Y8G5H5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">식품·의약품분야 시험·검사 등에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2024-08-22</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2202468</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_W2V4U0C7B3Z1H1G0H1F0O1M0L3K7G6&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">성폭력방지 및 피해자보호 등에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2024-08-01</td><td class="hide-m">여성가족위원회</td><td><span class="chip">대안반영폐기</span></td></tr><tr><td class="mono">2201969</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_L2S4R0Q7W1W7V1P4C2B3A1Z3F5E4D7&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">지방의료원의 설립 및 운영에 관한 법률 일부개정법률안</a></td><td class="mono hide-m">2024-07-18</td><td class="hide-m">보건복지위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2201968</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_Z2W4V0S7R1O7W1V4U2C2Y3X3W1V0C5&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">국가재정법 일부개정법률안</a></td><td class="mono hide-m">2024-07-18</td><td class="hide-m">재정경제기획위원회</td><td><span class="chip">심사 중</span></td></tr><tr><td class="mono">2200147</td><td><a href="http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_R2W4T0N6F0M5T1G4U3I6Q3J8A0A7I1&amp;ageFrom=22&amp;ageTo=22" target="_blank" rel="noopener">아동수당법 일부개정법률안</a></td><td class="mono hide-m">2024-06-05</td><td class="hide-m">보건복지위원회</td><td><span class="chip">대안반영폐기</span></td></tr></tbody></table>
+
+<h2 class="sec"><small>TRACK 2 · 참여연대 추적표 + 2026년 판결 보도</small>수사 · 재판 · 형량</h2>
+<div class="empty">참여연대 추적표(2025.10.14) 및 2026년 보도 교차 기준으로 확인된 수사·재판 기록이 없습니다. 추적은 계속되며, 새 사건은 정정 이력으로 갱신됩니다.</div>
+<div style="height:18px"></div>
+<h2 class="sec"><small>TRACK 3 · 관보·PETI·병무청·국세청</small>재산 · 병역 · 세금</h2>
+<div class="panel"><h3>재산(토지·건물·주식·가상자산·예금·채무)</h3><p style="margin:0 0 8px;font-size:13.5px;color:var(--ink2)">국회의원 재산은 공직자윤리법에 따라 국회 공직자윤리위원회가 매년 관보·공직윤리시스템에 공개합니다(신고가액 기준). 본 명부는 항목별 원문 연동 전 단계로, 아래 공식 원문에서 직접 열람하세요.</p>
+<p class="linklist">→ <a href="https://www.peti.go.kr/peOptpListVie.do" target="_blank" rel="noopener">공직윤리시스템(PETI) 재산등록사항 공개목록</a> · <a href="https://www.gwanbo.go.kr/user/search/searchThema.do?tabType=1" target="_blank" rel="noopener">대한민국 전자관보 — 공직자 재산공개</a></p></div>
+<div class="panel"><h3>병역</h3><p style="margin:0 0 8px;font-size:13.5px;color:var(--ink2)">병무청 공개·개방 포털에서 공직자 및 가족의 병역사항(법령이 공개를 요구한 범위)을 열람할 수 있습니다. 상세 사유 등 민감정보는 이 명부에서 다루지 않습니다.</p>
+<p class="linklist">→ <a href="https://open.mma.go.kr/caisGGGS/bygg/ggjByshList.do" target="_blank" rel="noopener">병무청 — 공직자등의 병역사항 열람</a></p></div>
+<div class="panel"><h3>세금 체납</h3><p style="margin:0 0 8px;font-size:13.5px;color:var(--ink2)">국세·지방세 고액·상습체납자 명단은 공개 요건을 충족한 경우에만 공개됩니다. 명단에 올라 있지 않다고 해서 "성실히 납부했다"고 쓰지 않습니다 — 이 명부의 표기 원칙입니다.</p>
+<p class="linklist">→ <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6685&cntntsId=8097" target="_blank" rel="noopener">국세청 고액·상습체납자 명단공개</a> · <a href="https://www.wetax.go.kr/tcp/loi/J030501M01.do" target="_blank" rel="noopener">위택스 지방세 체납자 명단</a></p></div>
+<h2 class="sec"><small>TRACK 4 · 선관위·권익위·의안정보시스템</small>이해충돌 · 정치자금 · 로비</h2>
+<div class="panel"><p style="margin:0;font-size:13.5px;color:var(--ink2)">이해충돌방지법(2022.5.19 시행)은 가족 채용 제한·수의계약 제한 등 10개 행위기준을 국회의원에게도 적용하며, 위반 여부는 국민권익위원회의 공식 처분이 있을 때만 기재합니다. 정치자금 수입·지출은 선관위 회계보고서(매년 3월 일제 공고)로 열람하며, 로비는 한국에 등록·공개 제도가 없어 "공개 인프라 부재" 자체를 기록합니다.</p>
+<p class="linklist">→ <a href="https://www.acrc.go.kr/menu.es?mid=a10101110100" target="_blank" rel="noopener">권익위 이해충돌방지법</a> · <a href="https://www.nec.go.kr/" target="_blank" rel="noopener">선관위 정치자금 회계보고서</a> · <a href="https://www.give.go.kr/" target="_blank" rel="noopener">정치후원금센터</a></p></div>
+<h2 class="sec"><small>참고</small>의원 이력</h2><div class="panel"><h3>의원 이력(국회 공개)</h3><p style="margin:0;font-size:13px;color:var(--ink2)">&lt;학력&gt; - 광주 백운초·수피아여중·동신여고 졸업 - 전남대학교 화학과 학사 - 전남대학교 사회학과 석사 수료  &lt;약력&gt; - (현) 제22대 국회의원(더불어민주당/광주 북구을) - (현) 더불어민주당 여성정치참여확대위원회 위원장 - (현) 더불어민주당 첨단바이오산업 부스트업 전략지원 추진단 간사 - (현) 제22대12.29여객기참사진상규명과피해자및유가족의피해구제를위한특별위원회 위원 - (전) 더불어민주당 원내부대표 - (전) 더불어민주당 전국여성위원회 수석부위원장 - (전) 더불어민주당 보육특별위원회 위원장 - (전) 더불어민주당 여성리더십센터 부소장 - (전) 제10대 농어촌청소년육성재단 사무총장 - (전) 대통령비서실 행정관 - (전) 더불어민주당 전국여성위원회 부위원장 - (전) 제7대 광주광역시의회 의원 - (전) 제6대 광주광역시 북구의회 의원 - (전) 광주여성민우회 공동대표 - (전) 광주여성회 공동대표 - (전) 한국여성단체연합 이사</p></div>
+<section id="same-comm"><h2 class="sec"><small>COMMITTEE</small>소속 상임위 · 같은 위원회 의원</h2><div class="panel"><p class="srcs" style="margin:0 0 10px">특별위원회는 제외한 상임위 기준이며, 같은 위원회 의원은 <b>정당 순(의석 많은 순) → 이름 순</b>으로 묶었습니다. 위 버튼은 해당 상임위만 걸러진 명부로 이동합니다.</p><div class="cmtheads"><a href="../index.html?comm=보건복지위원회">보건복지위원회 전체 →</a></div><p style="margin:16px 0 8px;font-size:12.5px;color:var(--muted)"><b style="color:var(--ink2)">보건복지위원회</b> · 23명</p><div class="scg"><a class="plab" href="../index.html?comm=%EB%B3%B4%EA%B1%B4%EB%B3%B5%EC%A7%80%EC%9C%84%EC%9B%90%ED%9A%8C&party=%EB%8D%94%EB%B6%88%EC%96%B4%EB%AF%BC%EC%A3%BC%EB%8B%B9"><i style="background:#2f7cd6"></i>더불어민주당 <em>12</em></a><div class="sc"><a href="018-권칠승.html">권칠승<span class="sen">3</span></a><a href="021-김교흥.html">김교흥<span class="sen">3</span></a><a href="060-김윤.html">김윤<span class="sen">초</span></a><a href="086-남인순.html">남인순<span class="sen">4</span></a><a href="109-박용갑.html">박용갑<span class="sen">초</span></a><a href="117-박지원.html">박지원<span class="sen">5</span></a><a href="135-서미화.html">서미화<span class="sen">초</span></a><a href="139-서영석.html">서영석<span class="sen">재</span></a><a href="145-소병훈.html">소병훈<span class="sen">3</span></a><a href="206-이수진.html">이수진<span class="sen">재</span></a><a href="213-이인영.html">이인영<span class="sen">5</span></a><a href="300-허종식.html">허종식<span class="sen">재</span></a></div></div><div class="scg"><a class="plab" href="../index.html?comm=%EB%B3%B4%EA%B1%B4%EB%B3%B5%EC%A7%80%EC%9C%84%EC%9B%90%ED%9A%8C&party=%EA%B5%AD%EB%AF%BC%EC%9D%98%ED%9E%98"><i style="background:#d2453a"></i>국민의힘 <em>9</em></a><div class="sc"><a href="022-김기웅.html">김기웅<span class="sen">초</span></a><a href="078-김태호.html">김태호<span class="sen">4</span></a><a href="130-백종헌.html">백종헌<span class="sen">재</span></a><a href="197-이달희.html">이달희<span class="sen">초</span></a><a href="198-이만희.html">이만희<span class="sen">3</span></a><a href="205-이소희.html">이소희<span class="sen">초</span></a><a href="263-조배숙.html">조배숙<span class="sen">5</span></a><a href="284-최보윤.html">최보윤<span class="sen">초</span></a><a href="296-한지아.html">한지아<span class="sen">초</span></a></div></div><div class="scg"><a class="plab" href="../index.html?comm=%EB%B3%B4%EA%B1%B4%EB%B3%B5%EC%A7%80%EC%9C%84%EC%9B%90%ED%9A%8C&party=%EC%A1%B0%EA%B5%AD%ED%98%81%EC%8B%A0%EB%8B%B9"><i style="background:#a3630b"></i>조국혁신당 <em>1</em></a><div class="sc"><a href="128-백선희.html">백선희<span class="sen">초</span></a></div></div><div class="scg"><a class="plab" href="../index.html?comm=%EB%B3%B4%EA%B1%B4%EB%B3%B5%EC%A7%80%EC%9C%84%EC%9B%90%ED%9A%8C&party=%EC%A7%84%EB%B3%B4%EB%8B%B9"><i style="background:#b04083"></i>진보당 <em>1</em></a><div class="sc"><a href="243-전종덕.html">전종덕<span class="sen">초</span></a></div></div></div></section><h2 class="sec"><small>SOURCES</small>출처와 표기 규칙</h2>
+<ul class="srcs">
+<li>인적사항·발의법률안: 열린국회정보 포털 OpenAPI (수집 2026-11-07)</li>
+<li>수사·재판: 참여연대 「열려라국회」 추적표(2025.10.14) + 2026년 판결 보도(각 카드 출처 링크) — "혐의"와 "확정"은 구분 표기, 무혐의·무죄도 같은 비중으로 남깁니다</li>
+<li>전과 집계: 중앙선관위 당선인 전과 자료(2024.4.10, 전과 86명/28.7%)</li>
+<li>정정·반론: 오류 발견 시 요청 후 7일 내 확인, 조치 후 정정 이력에 기록합니다. 제보·정정 창구: <b>steamking@naver.com</b></li>
+</ul>
+</main><footer><div class="wrap">
+<div class="brand">토지와 자유 × 디지털 대동법 연구소 — 공적 기록 명부</div>
+<p>기준일 2026-11-07. 무죄추정 원칙에 따라 수사·재판 정보는 단계와 확정 여부를 함께 표기합니다. 재산·체납 관련 표기는 공개 요건을 충족한 명단 기준이며, "확인 안 됨"은 공개 자료에서 확인되지 않았다는 뜻으로 "없다"의 의미가 아닙니다. 오류는 정정 요청으로 알려주세요(제보·정정 창구: <b>steamking@naver.com</b>).</p>
+<p class="srcs">데이터: 열린국회정보 포털 OpenAPI(의원 인적사항·대표발의법률안, 수집 2026-11-07) · 참여연대 「열려라국회」 수사·재판 추적표(2025.10.14) 및 2026년 판결 보도 교차 · 중앙선거관리위원회 당선인 전과 집계(2024.4.10) · 매일신문 국가보안법 전과 전수조사(2025.2) · 계획서 데이터 스키마(디지털 대동법 연구소).</p>
+</div></footer><button id="themeBtn" type="button" aria-label="라이트/다크 모드 전환" aria-pressed="false" title="라이트/다크 모드 전환"><span id="themeIco">☾</span></button><script id="theme-btn">
+(function(){var b=document.getElementById('themeBtn'),i=document.getElementById('themeIco');
+function sync(){var d=document.documentElement.getAttribute('data-theme')==='dark';b.setAttribute('aria-pressed',d?'true':'false');i.textContent=d?'☀':'☾';b.title=d?'라이트 모드로':'다크 모드로';}
+b.addEventListener('click',function(){var d=document.documentElement.getAttribute('data-theme')==='dark';var n=d?'light':'dark';
+document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}
+var u=new URL(location.href);u.searchParams.set('theme',n);history.replaceState(null,'',u);sync();});
+sync();})();
+</script></body></html>
