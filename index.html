@@ -2560,8 +2560,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const msg = document.getElementById('join-msg');
   if (form && msg) {
     const submitBtn = form.querySelector('button[type="submit"]');
+    let joinBusy = false;
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (joinBusy) return;
       const email = document.getElementById('join-email').value.trim();
       if (!email) return;
 
@@ -2582,6 +2584,7 @@ document.addEventListener('DOMContentLoaded', () => {
         msg.textContent = `서버 저장에 실패했어요 (${result.error}). 잠시 후 다시 시도해 주세요.`;
       }
       submitBtn.disabled = false;
+      joinBusy = false;
       setTimeout(() => (msg.textContent = ''), 7000);
     });
   }
@@ -3080,32 +3083,6 @@ body.admin-mode{background:#F5F7FA}
   })();
 })();
 
-(function(){
-  var f=document.getElementById('join-form'); if(!f) return;
-  var STORE='lf_emails_v1';
-  function local(e){
-    try{
-      var a=JSON.parse(localStorage.getItem(STORE)||'[]');
-      if(!a.some(function(x){ return String(x.email).toLowerCase()===e.toLowerCase(); })){
-        a.push({email:e, at:new Date().toISOString(), src:'join', consent_at:new Date().toISOString()});
-        localStorage.setItem(STORE, JSON.stringify(a));
-      }
-    }catch(err){}
-  }
-  f.addEventListener('submit',function(){
-    var el=document.getElementById('join-email'); var e=((el&&el.value)||'').trim();
-    if(!/^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(e)) return;
-    local(e);
-    try{
-      fetch('https://script.google.com/macros/s/AKfycbw9Np6zYZX5ns9UX2AuJYaajtt6MDywr9RweE0RI_WwBx-kzNuC4_WD37C9mXnaYAc9yQ/exec',{
-        method:'POST',
-        
-        credentials:'same-origin',
-        body:JSON.stringify({email:e, src:'join',consent:true})
-      }).catch(function(){});
-    }catch(err){}
-  });
-})();
 </script>
 </div>
 <style>
@@ -3559,10 +3536,41 @@ body.admin-mode{background:#F5F7FA}
   var dl=dock?[].slice.call(dock.querySelectorAll('a')):[];
   var dockManual=false;
   function setCur(i){ dl.forEach(function(a,k){ a.classList.toggle('cur',k===i); }); }
+  var DOCK_GROUP={};
+  DOCK_GROUP['teukgeom.html']='lib';
+  DOCK_GROUP['liberty.html']='lib';
+  DOCK_GROUP['liberty-report.html']='lib';
+  DOCK_GROUP['liberty-archive.html']='lib';
+  DOCK_GROUP['forensic.html']='lib';
+  DOCK_GROUP['salriki.html']='sal';
+  DOCK_GROUP['jojakkiso_teukgeom_factsheet.html']='joz';
+  DOCK_GROUP['jozakkiso_teukgeom_factsheet.html']='joz';
+  DOCK_GROUP['assembly-reset.html']='rst';
+  DOCK_GROUP['index.html']='land';
+  DOCK_GROUP['policy.html']='land';
+  DOCK_GROUP['land-dividend-manifesto.html']='land';
+  function dockFind(key){
+    for(var k=0;k<dl.length;k++){
+      var hr=(dl[k].getAttribute('href')||'').toLowerCase();
+      if(hr.indexOf(key)>-1) return k;
+    }
+    return -1;
+  }
   function routeIndex(){
+    var p=(location.pathname||'').split('/').pop().toLowerCase()||'index.html';
     var h=(location.hash||'').toLowerCase();
-    if(h.indexOf('salriki')>-1) return 2;
-    return 0;
+    var ix=-1;
+    if(h.indexOf('join')>-1) ix=dockFind('join');
+    if(ix<0) ix=dockFind(p);
+    if(ix<0){
+      var g=DOCK_GROUP[p]||'land';
+      if(g==='lib') ix=dockFind('liberty.html');
+      else if(g==='sal') ix=dockFind('salriki');
+      else if(g==='joz') ix=dockFind('jojakkiso');
+      else if(g==='rst') ix=dockFind('assembly-reset');
+      else ix=dockFind('#/');
+    }
+    return ix<0?0:ix;
   }
   function syncDock(){
     if(dockManual||!dl.length) return;
