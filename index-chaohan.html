@@ -27,10 +27,10 @@ a:hover{color:var(--text);border-bottom-color:var(--text)}
 .topnav a:hover{color:var(--text);border:1px solid var(--line)}
 .topnav a.here{color:var(--text);border:1px solid var(--line);background:var(--panel)}
 /* masthead */
-.mast{padding:56px 0 36px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
+.mast{padding:56px 0 36px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:start}
 .seal{width:96px;height:96px;background:var(--zhu);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif KR',serif;font-size:56px;font-weight:900;border-radius:6px;box-shadow:0 6px 24px rgba(216,69,58,.28);transform:rotate(-2deg)}
 .docno{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--brass);margin-bottom:10px}
-h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(28px,4.6vw,44px);line-height:1.25;letter-spacing:-.01em}
+h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(26px,4vw,38px);line-height:1.25;letter-spacing:-.01em}
 .subtitle{color:var(--muted);margin-top:12px;font-size:15.5px}
 .meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
 .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:2px}
@@ -83,8 +83,16 @@ td.num{font-family:'IBM Plex Mono',monospace;color:var(--brass);white-space:nowr
 .srcs{font-size:13px;color:var(--muted)}
 .srcs li{margin-bottom:7px;margin-left:18px}
 .srcs a{word-break:break-all}
+/* side link cards */
+.sidecards{display:flex;flex-direction:column;gap:12px;justify-self:end;width:230px}
+.side{display:block;background:#f5f1e6;border:1px solid #dcd6c2;border-top:3px solid var(--zhu);border-bottom:1px solid #dcd6c2;border-radius:3px;padding:14px 16px 12px;text-decoration:none;transition:background .15s,border-color .15s,transform .15s}
+.side:hover{background:#eee8d5;border-color:#b9ac86;border-top-color:var(--zhu);transform:translateY(-2px)}
+.side .side-k{display:block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8a6d2f;margin-bottom:7px}
+.side .side-t{display:block;font-family:'Noto Serif KR',serif;font-size:16px;font-weight:800;color:#161a14;line-height:1.35;margin-bottom:5px}
+.side .side-d{display:block;font-size:12px;color:#575243;line-height:1.55;margin-bottom:9px}
+.side .side-g{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#7c611f;letter-spacing:.06em}
 footer{padding:34px 0 60px;color:var(--muted);font-size:13px}
-@media(max-width:640px){.mast{grid-template-columns:1fr}.seal{width:72px;height:72px;font-size:42px}}
+@media(max-width:640px){.mast{grid-template-columns:1fr}.seal{width:72px;height:72px;font-size:42px}.sidecards{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 :focus-visible{outline:2px solid var(--brass);outline-offset:2px}
 </style>
@@ -95,8 +103,8 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:13px}
 <main>
 <div class="wrap">
   <nav class="topnav" aria-label="문서 시리즈">
-    <span class="brand">吸收戰略 DOC</span>
-    <a href="index.html" class="here">101 총론</a>
+    <span class="brand">DOC</span>
+    <a href="index.html" class="here">토지와 자유 홈</a>
     <a href="doc-01-chaohan.html">102 초한전</a>
     <a href="doc-02-samjeon.html">103 삼전</a>
     <a href="doc-03-hongkong.html">104 홍콩</a>
@@ -115,6 +123,20 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:13px}
         <span class="chip">보안등급: 공개 자료 기반 분석</span>
         <span class="chip">문서 5종 (101~105)</span>
       </div>
+    </div>
+    <div class="sidecards">
+      <a class="side" href="hanjung_fta_trap_economic_war.html">
+        <span class="side-k">연계 보고서 · 경제전</span>
+        <span class="side-t">한중 FTA의 함정</span>
+        <span class="side-d">경제전 분석 보고서</span>
+        <span class="side-g">열기 →</span>
+      </a>
+      <a class="side" href="exam_cheating_trust_erosion_war.html">
+        <span class="side-k">연계 보고서 · 신뢰 침식전</span>
+        <span class="side-t">수능 AI 부정 사태</span>
+        <span class="side-d">신뢰 침식전 분석 보고서</span>
+        <span class="side-g">열기 →</span>
+      </a>
     </div>
   </header>
 
@@ -163,11 +185,11 @@ footer{padding:34px 0 60px;color:var(--muted);font-size:13px}
     <h2>다섯 레버의 흡수 사다리 — 홍콩에서 보고, 한국에 겹쳐 보기</h2>
     <p>홍콩 앞선 30년을 다섯 겹으로 정리하면, 같은 레버들이 한국에 이미 부분적으로 걸려 있는지 대조할 수 있다. 이 사다리가 본 시리즈 전체의 분석 뼈대다.</p>
     <div class="ladder">
-      <div class="step"><div class="n">壹</div><div class="c"><div class="t">법적 권한 — 국안법으로 ‘허용 범위’를 다시 긋는다</div><div class="d">홍콩: 2020 국가보안법 → 2024 기본법 23조 → 2026 인증서 제도로 소급성 논란까지. <b>한국 대응물: 한반도 ‘하나의 중국’ 논리, 동북공정, EEZ·방공식별구역 주장 — 법률전의 국내법·국제법 이중 운용.</b></div></div></div>
-      <div class="step"><div class="n">貳</div><div class="c"><div class="t">엘리트 포섭 — 시장 접근권으로 인맥을 묶는다</div><div class="d">홍콩: 기업·언론·정치·교육·종교 지도자에게 본토 시장 접근권·투자 기회·자문직 제공. <b>한국 대응물: 교민단체·정치권 임원 겸직 사례(베이징 해외연의회 상무이사 위촉 인사), 귀화 정치인 발굴·육성 기조.</b></div></div></div>
-      <div class="step"><div class="n">叁</div><div class="c"><div class="t">경제적 지렛대 — 이득과 손실을 정치 방향으로 돌린다</div><div class="d">홍콩: 비판 세력에 규제 조사·상업 기회 상실·본토 시장 배제. <b>한국 대응물: THAAD 보복(2017), 관광·유통·게임 등 선택적 차별, 공급망·기술 패권 압박(2026 산업 경쟁 격화).</b></div></div></div>
-      <div class="step"><div class="n">肆</div><div class="c"><div class="t">제도 개편 — 참여 규칙을 ‘충분히 애국적인’ 사람으로 좁힌다</div><div class="d">홍콩: 후보 심사·선거 규칙 개정으로 후보군 축소, 민주당·사민연맹 해산(2025). <b>한국 대응물: 동포·다문화 정치 채널을 통한 영향력 진입 시도 — 제도 자체는 아직 중국화되지 않았으므로, 해외 개입으로 우회하는 모습.</b></div></div></div>
-      <div class="step"><div class="n">伍</div><div class="c"><div class="t">서사 통제 — 기억과 정체성을 다시 쓴다</div><div class="d">홍콩: 교육 개혁·교과 개정·애국 프로그램, 독립 언론 폐쇄·시민사회 해산. <b>한국 대응물: 동북공정, 가짜 한국어 뉴스 사이트(국정원 2023년 38개·2025년 추가 적발), AI 기반 여론 작전 확대 전망.</b></div></div></div>
+      <div class="step"><div class="n">가</div><div class="c"><div class="t">법적 권한 — 국안법으로 ‘허용 범위’를 다시 긋는다</div><div class="d">홍콩: 2020 국가보안법 → 2024 기본법 23조 → 2026 인증서 제도로 소급성 논란까지. <b>한국 대응물: 한반도 ‘하나의 중국’ 논리, 동북공정, EEZ·방공식별구역 주장 — 법률전의 국내법·국제법 이중 운용.</b></div></div></div>
+      <div class="step"><div class="n">나</div><div class="c"><div class="t">엘리트 포섭 — 시장 접근권으로 인맥을 묶는다</div><div class="d">홍콩: 기업·언론·정치·교육·종교 지도자에게 본토 시장 접근권·투자 기회·자문직 제공. <b>한국 대응물: 교민단체·정치권 임원 겸직 사례(베이징 해외연의회 상무이사 위촉 인사), 귀화 정치인 발굴·육성 기조.</b></div></div></div>
+      <div class="step"><div class="n">다</div><div class="c"><div class="t">경제적 지렛대 — 이득과 손실을 정치 방향으로 돌린다</div><div class="d">홍콩: 비판 세력에 규제 조사·상업 기회 상실·본토 시장 배제. <b>한국 대응물: THAAD 보복(2017), 관광·유통·게임 등 선택적 차별, 공급망·기술 패권 압박(2026 산업 경쟁 격화).</b></div></div></div>
+      <div class="step"><div class="n">라</div><div class="c"><div class="t">제도 개편 — 참여 규칙을 ‘충분히 애국적인’ 사람으로 좁힌다</div><div class="d">홍콩: 후보 심사·선거 규칙 개정으로 후보군 축소, 민주당·사민연맹 해산(2025). <b>한국 대응물: 동포·다문화 정치 채널을 통한 영향력 진입 시도 — 제도 자체는 아직 중국화되지 않았으므로, 해외 개입으로 우회하는 모습.</b></div></div></div>
+      <div class="step"><div class="n">마</div><div class="c"><div class="t">서사 통제 — 기억과 정체성을 다시 쓴다</div><div class="d">홍콩: 교육 개혁·교과 개정·애국 프로그램, 독립 언론 폐쇄·시민사회 해산. <b>한국 대응물: 동북공정, 가짜 한국어 뉴스 사이트(국정원 2023년 38개·2025년 추가 적발), AI 기반 여론 작전 확대 전망.</b></div></div></div>
     </div>
     <p>핵심 통찰은 이렇다. <strong>홍콩에서 다섯 레버가 순차적이 아니라 겹층적으로 작동했다는 사실</strong>이다. 법이 먼저 오고 포섭이 따라오는 선형 과정이 아니라, 시장 접근권으로 엘리트를 묶어 두는 동안 법제화를 준비하고, 제도 개편으로 반대 세력의 발판을 걷어내는 동안 서사를 다시 쓴다. 한국에 대한 접근도 이와 같은 <em>동시 다발적 겹층</em>으로 읽어야 관측되는 단편들이 하나의 그림이 된다.</p>
   </section>

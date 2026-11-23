@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>초한전(超限戰) 24전법 아카이브 — 디지털 대동법 연구소</title>
+<meta name="description" content="초한전 24개 전법 각각의 개념, 홍콩·한국·타국 적용 사례, 데이터·기사·영상 자료를 담은 24개 웹페이지 아카이브">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800;900&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fafbfd;--card:#ffffff;--ink:#1f2430;--mut:#5b6472;--line:#e4e8ef;--a1:#4b6ef5;--a2:#8f5cf0;--seal:#b3282d;
+--grad:linear-gradient(96deg,#4b6ef5 0%,#8f5cf0 100%)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',system-ui,sans-serif;line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--a1);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+@media(max-width:640px){.wrap{padding:0 16px}}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(250,251,253,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:14px;height:58px}
+.brand{font-weight:800;font-size:15.5px;letter-spacing:-.3px;color:var(--ink)}
+.brand b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand small{display:block;font-size:10px;font-weight:500;color:var(--mut);letter-spacing:2px}
+.topnav{margin-left:auto;display:flex;gap:8px;align-items:center;font-size:13px}
+.topnav a{color:var(--mut);padding:6px 10px;border-radius:999px}
+.topnav a:hover{background:#eef1f8;color:var(--ink);text-decoration:none}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--mut)}
+.chip b{color:var(--a1)}
+.hero{position:relative;overflow:hidden;padding:58px 0 30px}
+.hero .glyph{position:absolute;right:-30px;top:-38px;font-family:'Noto Serif KR',serif;font-size:230px;line-height:1;font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.13;pointer-events:none;user-select:none}
+@media(max-width:640px){.hero .glyph{font-size:150px;right:-18px}}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:1.5px;color:var(--a1);text-transform:uppercase;margin-bottom:10px}
+h1{font-size:clamp(30px,5.6vw,44px);font-weight:800;letter-spacing:-1.2px;line-height:1.2;margin-bottom:6px}
+h1 .en{display:block;font-size:15px;font-weight:600;color:var(--mut);letter-spacing:.4px;margin-top:8px}
+.lead{font-size:17px;color:#3a4150;max-width:640px;margin-top:16px}
+.seal{position:absolute;right:34px;top:210px;width:74px;height:74px;border:3px solid var(--seal);border-radius:14px;color:var(--seal);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Noto Serif KR',serif;font-weight:900;transform:rotate(6deg);opacity:.85;background:rgba(179,40,45,.04)}
+.seal span{font-size:26px;line-height:1.15}
+.seal small{font-size:9px;font-weight:700;letter-spacing:1px}
+@media(max-width:640px){.seal{display:none}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 28px;box-shadow:0 1px 3px rgba(31,36,48,.04)}
+@media(max-width:640px){.card{padding:20px 18px;border-radius:14px}}
+section{margin-top:34px}
+h2{font-size:21px;font-weight:800;letter-spacing:-.5px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:5px;height:20px;border-radius:3px;background:var(--grad);flex:none}
+.mech{font-size:16.5px;color:#2c3442}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:860px){.cases{grid-template-columns:1fr}}
+.case{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 1px 3px rgba(31,36,48,.04)}
+.case h3{font-size:14px;font-weight:800;letter-spacing:.5px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.case h3 i{font-style:normal;width:26px;height:26px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff}
+.case.hk h3 i{background:#e0662a}.case.kr h3 i{background:#b3282d}.case.wd h3 i{background:#4b6ef5}
+.case p{font-size:14.5px;color:#3a4150;line-height:1.8}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 26px;box-shadow:0 1px 3px rgba(31,36,48,.04)}
+.chart figcaption{font-weight:800;font-size:15.5px;margin-bottom:16px}
+.chart svg{width:100%;height:auto;display:block}
+.chart small{display:block;margin-top:12px;color:var(--mut);font-size:12px}
+.cl{font-size:13px;fill:#3a4150;font-weight:600}
+.cv{font-size:13px;fill:#1f2430;font-weight:800}
+.tz{font-size:13px;fill:#3a4150;font-weight:700;text-anchor:middle}
+.ti{font-size:14px;fill:#fff;font-weight:800;text-anchor:middle}
+.tn{font-size:12px;fill:#5b6472;text-anchor:middle}
+.tl{font-size:14px;fill:#1f2430;font-weight:800;text-anchor:middle}
+.td{font-size:11px;fill:#5b6472;text-anchor:middle}
+.dwrap{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.legend{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#3a4150}
+.dot{width:11px;height:11px;border-radius:3px;display:inline-block;margin-right:8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.stat b{display:block;font-size:26px;font-weight:900;letter-spacing:-1px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:12.5px;color:var(--mut);line-height:1.55;display:block;margin-top:5px}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.photos{grid-template-columns:1fr}}
+.photos figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.photos img{width:100%;height:230px;object-fit:cover;display:block;background:#eef1f8}
+.photos figcaption{font-size:12px;color:var(--mut);padding:10px 14px;line-height:1.5}
+.articles{display:flex;flex-direction:column;gap:10px}
+.art{display:flex;gap:14px;align-items:baseline;padding:14px 18px;background:var(--card);border:1px solid var(--line);border-radius:14px;transition:border-color .15s}
+.art:hover{border-color:var(--a1)}
+.art .dom{flex:none;font-size:11px;font-weight:800;color:var(--a1);background:#eef1f8;padding:4px 10px;border-radius:999px;letter-spacing:.4px}
+.art a{font-size:14.5px;font-weight:600;color:var(--ink)}
+.video{display:flex;gap:18px;align-items:center;background:#14161f;border-radius:18px;padding:18px;color:#e8eaf2}
+.video img{width:250px;border-radius:10px;flex:none;display:block;background:#222}
+@media(max-width:640px){.video{flex-direction:column;align-items:stretch}.video img{width:100%}}
+.video .vt{font-size:15.5px;font-weight:700;line-height:1.5}
+.video .vs{font-size:12px;color:#9aa3b5;margin-top:6px}
+.video a.vb{display:inline-flex;margin-top:12px;background:var(--grad);color:#fff;font-size:13px;font-weight:700;padding:9px 18px;border-radius:999px}
+.video a.vb:hover{text-decoration:none;opacity:.9}
+.note{background:linear-gradient(120deg,#f3f5ff,#faf5ff);border:1px solid #dfe3fb;border-radius:18px;padding:24px 28px}
+.note .lab{font-size:12px;font-weight:800;letter-spacing:1.2px;color:var(--a2);margin-bottom:8px}
+.note p{font-size:15.5px;color:#2c3442}
+.levers{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.levers span{font-size:12px;font-weight:700;color:#5b4a1f;background:#fdf6e3;border:1px solid #f0e4bd;padding:4px 12px;border-radius:999px}
+.nav{display:flex;gap:10px;margin:44px 0 60px}
+.nav a{flex:1;padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px;font-size:13.5px;font-weight:700;color:var(--mut);display:flex;flex-direction:column;gap:2px}
+.nav a:hover{border-color:var(--a1);text-decoration:none;color:var(--ink)}
+.nav a small{font-size:11px;color:#9aa3b5;font-weight:600}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--mut);font-size:12.5px;line-height:1.8}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+:focus-visible{outline:2px solid var(--a1);outline-offset:2px}
+/* index */
+.idx-hero{padding:64px 0 34px;position:relative;overflow:hidden}
+.idx-hero .glyph{position:absolute;right:10px;top:-30px;font-family:'Noto Serif KR',serif;font-size:210px;font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.12;pointer-events:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:8px;transition:transform .15s,border-color .15s,box-shadow .15s}
+.tcard:hover{transform:translateY(-3px);border-color:var(--a1);box-shadow:0 8px 24px rgba(75,110,245,.10);text-decoration:none}
+.tcard .no{font-size:11px;font-weight:800;color:var(--a1);letter-spacing:1px}
+.tcard .hz{font-family:'Noto Serif KR',serif;font-size:30px;font-weight:900;color:#1f2430}
+.tcard .nm{font-size:17px;font-weight:800;letter-spacing:-.4px}
+.tcard .ds{font-size:13px;color:var(--mut);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.partband{margin:34px 0 14px;display:flex;align-items:center;gap:12px}
+.partband b{font-size:16px;font-weight:800}
+.partband span{flex:1;height:1px;background:var(--line)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:26px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.kpi b{font-size:28px;font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kpi span{display:block;font-size:12.5px;color:var(--mut);margin-top:4px}
+
+/* 2026-11-23-24 */
+.rev-verse{margin:0 0 22px;padding:17px 20px;border-left:4px solid #a5242b;border-radius:0 12px 12px 0;background:#fff2f1;color:#a5242b;font-size:clamp(16px,2.1vw,21px);font-weight:750;line-height:1.75;overflow-wrap:break-word}.rev-verse p{margin:0}.rev-verse cite{display:block;margin-top:7px;font-size:13px;font-style:normal}
+.rev-timeline,.rev-metrics{list-style:none;margin:0;padding:0;font-size:14px;line-height:1.6}.rev-timeline li{display:grid;grid-template-columns:minmax(74px,110px) minmax(0,1fr);gap:10px;padding:11px 0;border-bottom:1px solid #e1e6ee}.rev-timeline li:last-child{border:0}.rev-timeline strong{color:#3446a5;align-self:start}.rev-metrics li+li{margin-top:13px}.rev-label{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap;margin-bottom:4px}.rev-label b{color:#333f91}.rev-track{height:12px;overflow:hidden;background:#e8edf7;border-radius:20px}.rev-track span{display:block;height:100%;background:#4b60ce;border-radius:20px}.rev-track .goal{background:repeating-linear-gradient(135deg,#6148a5 0 5px,#957dd5 5px 10px)}.rev-chart small{line-height:1.6;overflow-wrap:anywhere}.rev-photo-note{padding:16px 14px 4px;display:grid;gap:8px;line-height:1.5}.rev-photo-note a{width:fit-content;font-weight:700}.photos .rev-local-photo img{height:auto;max-height:320px;object-fit:contain;background:#eef1f8}.rev-related li{margin:.55em 0;line-height:1.65}.rev-related{font-size:14px}.rev-photo-note span{color:var(--mut);font-size:12px}
+@media(max-width:480px){.rev-timeline li{grid-template-columns:minmax(0,1fr);gap:2px}.chart.rev-chart{padding:16px}.rev-verse{padding:14px}}
+</style></head><body>
+<header class="topbar"><div class="wrap"><div class="brand">超限戰 <b>24전법 아카이브</b><small>UNRESTRICTED WARFARE ARCHIVE</small></div>
+<nav class="topnav"><span class="chip"><b>3</b> 부문 · <b>24</b> 전법</span></nav></div></header>
+<main class="wrap">
+<div class="idx-hero"><div class="glyph">超限戰</div>
+<p class="eyebrow">디지털 대동법 연구소 · DOC 2026 시리즈</p>
+<h1>총성 없는 전쟁의 전체 지도<br>초한전 24전법</h1>
+<p class="lead">1999년 차오량·왕샹수이 대령의 『초한전(超限戰)』은 군사와 비군사의 경계를 허물고 금융·무역·매체·법·문화·네트워크까지 모든 영역을 전장으로 재정의했다. 원전은 전쟁 수단을 <b>군사 8 · 초군사 8 · 비군사 8</b>의 24개 전법으로 체계화한다. 이 아카이브는 24개 전법 각각을 한 페이지로 정리해 개념, 홍콩·한국·타국 적용 사례, 데이터, 기사와 영상 자료를 담았다.</p>
+<div class="kpis"><div class="kpi"><b>24</b><span>전법 · 각 1페이지</span></div><div class="kpi"><b>3</b><span>부문(군사·초군사·비군사)</span></div><div class="kpi"><b>5</b><span>레버 — 법적권한·엘리트포섭·경제지렛대·제도개편·서사통제</span></div><div class="kpi"><b>72</b><span>적용 사례(홍콩·한국·타국 × 24)</span></div></div></div>
+<section><div class="card"><blockquote class="rev-verse" data-rev="verse"><p>“또 하늘에 또 다른 이적이 나타나더니, 보라, 크고 붉은 한 용(龍)이 있는데 일곱(7) 머리와 열(10) 뿔이 있고 그의 머리들 위에는 일곱(7) 왕관이 있더라.”</p><cite>킹제임스 근본역 요한계시록 12장 3절</cite></blockquote><h2>24전법의 결합 원리</h2><p class="mech">이 24개 전법은 개별 사건으로 고립되어 움직이지 않는다. ① 법적 권한 ② 엘리트 포섭 ③ 경제적 지렛대 ④ 제도 개편 ⑤ 서사 통제라는 다섯 개 레버로 묶여 동시다발적·겹층적으로 작동한다. 홍콩은 비군사·초군사 수단이 법제화와 제도 개편으로 최종 봉합된 <b>완결형 사례</b>이며, 한국은 경제 지렛대(무역·자원·제재전)와 서사 통제(네트워크·심리·매체전)가 깊게 진입한 <b>분기점</b>에 서 있다. 개별 사안을 다룰 때는 확정된 사실과 의혹·가설을 엄격히 구분하는 검증 규율을 유지하고, 경제적 자율성 확보와 내부 제도 투명성 강화로 외부 전법이 파고들 취약 지점을 선제적으로 줄여나가는 것이 대응의 골자다.</p></div></section>
+<div class="partband"><b>Ⅰ. 군사 부문 (Military · 1~8)</b><span></span></div><p style="color:var(--mut);font-size:14px;margin:-6px 0 16px">물리적 무력과 전통·현대 군사 영역. 전면전보다 무력 시위·회색지대 압박 형태로 변용되어 작동한다.</p><div class="grid"><a class="tcard" href="01-원자전.html"><span class="no">군사 부문 · 第 01 法</span>
+<span class="hz">原子戰</span><span class="nm">01 원자전</span>
+<span class="ds">핵위협으로 개입 의지를 꺾는 최상위 억지 전법</span></a><a class="tcard" href="02-재래전.html"><span class="no">군사 부문 · 第 02 法</span>
+<span class="hz">常規戰</span><span class="nm">02 재래전</span>
+<span class="ds">정규군 무력 시위로 정치적 양보를 끌어낸다</span></a><a class="tcard" href="03-생화학전.html"><span class="no">군사 부문 · 第 03 法</span>
+<span class="hz">生化戰</span><span class="nm">03 생화학전</span>
+<span class="ds">병원체·의약 공급망을 압박 수단으로</span></a><a class="tcard" href="04-생태전.html"><span class="no">군사 부문 · 第 04 法</span>
+<span class="hz">生態戰</span><span class="nm">04 생태전</span>
+<span class="ds">수자원·생태계를 지렛대로 전가한다</span></a><a class="tcard" href="05-우주전.html"><span class="no">군사 부문 · 第 05 法</span>
+<span class="hz">太空戰</span><span class="nm">05 우주전</span>
+<span class="ds">위성을 무력화해 상대의 눈과 귀를 마비</span></a><a class="tcard" href="06-전자전.html"><span class="no">군사 부문 · 第 06 法</span>
+<span class="hz">电子戰</span><span class="nm">06 전자전</span>
+<span class="ds">전자기 스펙트럼을 교란·기만해 무기체계를 마비</span></a><a class="tcard" href="07-게릴라전.html"><span class="no">군사 부문 · 第 07 法</span>
+<span class="hz">游擊戰</span><span class="nm">07 게릴라전</span>
+<span class="ds">민간 위장 조직으로 책임을 모호하게</span></a><a class="tcard" href="08-테러전.html"><span class="no">군사 부문 · 第 08 法</span>
+<span class="hz">恐怖戰</span><span class="nm">08 테러전</span>
+<span class="ds">공포와 초국적 억압으로 저항 의지를 꺾는다</span></a></div><div class="partband"><b>Ⅱ. 초군사 부문 (Trans-military · 9~16)</b><span></span></div><p style="color:var(--mut);font-size:14px;margin:-6px 0 16px">군사와 비군사의 경계에서 평시에도 상시 가동되어 의사결정 체계와 사회 인프라를 침식한다.</p><div class="grid"><a class="tcard" href="09-외교전.html"><span class="no">초군사 부문 · 第 09 法</span>
+<span class="hz">外交戰</span><span class="nm">09 외교전</span>
+<span class="ds">고립·이간·전랑외교로 정책을 관철</span></a><a class="tcard" href="10-네트워크전.html"><span class="no">초군사 부문 · 第 10 法</span>
+<span class="hz">網絡戰</span><span class="nm">10 네트워크전</span>
+<span class="ds">인프라·여론망에 침투해 마비시킨다</span></a><a class="tcard" href="11-첩보전.html"><span class="no">초군사 부문 · 第 11 法</span>
+<span class="hz">情報戰</span><span class="nm">11 첩보전</span>
+<span class="ds">인적·사이버 첩보와 통일전선 포섭</span></a><a class="tcard" href="12-심리전.html"><span class="no">초군사 부문 · 第 12 法</span>
+<span class="hz">心理戰</span><span class="nm">12 심리전</span>
+<span class="ds">공포·패배주의·분열로 저항을 스스로 포기</span></a><a class="tcard" href="13-기술전.html"><span class="no">초군사 부문 · 第 13 法</span>
+<span class="hz">技術戰</span><span class="nm">13 기술전</span>
+<span class="ds">기술 탈취·표준 선점으로 주권을 종속</span></a><a class="tcard" href="14-밀수전.html"><span class="no">초군사 부문 · 第 14 法</span>
+<span class="hz">走私戰</span><span class="nm">14 밀수전</span>
+<span class="ds">제재 우회·원산지 세탁으로 질서를 교란</span></a><a class="tcard" href="15-마약전.html"><span class="no">초군사 부문 · 第 15 法</span>
+<span class="hz">毒品戰</span><span class="nm">15 마약전</span>
+<span class="ds">마약·전구체 유입으로 사회 기반을 붕괴</span></a><a class="tcard" href="16-가상전.html"><span class="no">초군사 부문 · 第 16 法</span>
+<span class="hz">威懾</span><span class="nm">16 가상전</span>
+<span class="ds">전쟁 없이 패배의 이미지로 굴복시킨다</span></a></div><div class="partband"><b>Ⅲ. 비군사 부문 (Non-military · 17~24)</b><span></span></div><p style="color:var(--mut);font-size:14px;margin:-6px 0 16px">총성 없이 경제·법률·여론·정체성을 장악하는 핵심 전장이다.</p><div class="grid"><a class="tcard" href="17-금융전.html"><span class="no">비군사 부문 · 第 17 法</span>
+<span class="hz">金融戰</span><span class="nm">17 금융전</span>
+<span class="ds">자본·결제망 장악으로 금융 주권 흔들기</span></a><a class="tcard" href="18-무역전.html"><span class="no">비군사 부문 · 第 18 法</span>
+<span class="hz">貿易戰</span><span class="nm">18 무역전</span>
+<span class="ds">덤핑·밸브 통제로 산업 기반을 붕괴</span></a><a class="tcard" href="19-자원전.html"><span class="no">비군사 부문 · 第 19 法</span>
+<span class="hz">資源戰</span><span class="nm">19 자원전</span>
+<span class="ds">희토류·소재 독점 후 수출통제로 압박</span></a><a class="tcard" href="20-경제원조전.html"><span class="no">비군사 부문 · 第 20 法</span>
+<span class="hz">經援戰</span><span class="nm">20 경제원조전</span>
+<span class="ds">차관으로 부채 함정을 파고 운영권을 얻는다</span></a><a class="tcard" href="21-법률전.html"><span class="no">비군사 부문 · 第 21 法</span>
+<span class="hz">法規戰</span><span class="nm">21 법률전</span>
+<span class="ds">법과 규범을 역이용해 상대를 구속</span></a><a class="tcard" href="22-제재전.html"><span class="no">비군사 부문 · 第 22 法</span>
+<span class="hz">制裁戰</span><span class="nm">22 제재전</span>
+<span class="ds">공식·비공식 보복으로 굴복을 강제한다</span></a><a class="tcard" href="23-매체전.html"><span class="no">비군사 부문 · 第 23 法</span>
+<span class="hz">媒體戰</span><span class="nm">23 매체전</span>
+<span class="ds">언론·플랫폼 장악으로 서사를 통제</span></a><a class="tcard" href="24-이념전.html"><span class="no">비군사 부문 · 第 24 法</span>
+<span class="hz">意識形態戰</span><span class="nm">24 이념전</span>
+<span class="ds">역사·교육·정체성을 장기적으로 침식</span></a></div>
+<section><div class="note"><div class="lab">이용 안내</div><p>각 전법 페이지의 수치·사례는 원전 자료와 인용 기사에 근거하며, '적용 강도' 그래프는 연구소의 편집 평가(5점 척도)다. 사진은 웹 이미지 검색(CC 라이선스 필터), 영상은 YouTube 검색 결과 링크를 사용했다.</p></div></section>
+<footer><b>超限戰 24전법 아카이브</b> · 디지털 대동법 연구소 편집<br>원전: 차오량·왕샹수이, 『초한전(超限戰)』(1999) · 연구소 자료 『초한전 24전법 1·2』 기반</footer>
+</main><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body></html>

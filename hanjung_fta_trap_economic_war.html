@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>한중 FTA의 함정 - 경제전 | 디지털 대동법 연구소 분석 보고서</title>
+  <meta name="description" content="중국 공산당·인민해방군의 대한민국 흡수 전략(DOC 2026-101~105) 관점에서 본 2026년 한중 FTA 2단계 실질 타결 심층 분석 및 국회 비준 검증 체크리스트" />
+  <meta property="og:title" content="한중 FTA의 함정 - 경제전 | LandnLiberty.kr" />
+  <meta property="og:description" content="흡수 전략 5대 레버, 홍콩 CEPA 비교, 미 의회 중국 영향력 평가 파장 및 2027 국회 비준 12대 검증 체크리스트" />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --bg: #FAF8F4;
+      --surface: #FFFFFF;
+      --surface-alt: #F3EFE6;
+      --navy: #14213D;
+      --navy-light: #1F325C;
+      --crimson: #9B1C1C;
+      --crimson-soft: #FEF2F2;
+      --gold: #B45309;
+      --gold-soft: #FEF3C7;
+      --emerald: #065F46;
+      --emerald-soft: #ECFDF5;
+      --text: #1F2937;
+      --muted: #5B6472;
+      --border: #E2DDD2;
+      --shadow: 0 4px 18px rgba(20, 33, 61, 0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+      word-break: keep-all;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* Reading Progress Bar */
+    #progress-wrap {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 4px;
+      background: rgba(20, 33, 61, 0.12);
+      z-index: 1000;
+    }
+    #progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--crimson), var(--gold));
+      transition: width 0.08s linear;
+    }
+
+    /* Header & Sticky Nav */
+    .top-meta {
+      background: #0D1629;
+      color: #CBD5E1;
+      font-size: 0.8rem;
+      padding: 8px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .top-meta strong { color: #FCD34D; }
+
+    header {
+      position: sticky;
+      top: 4px;
+      z-index: 900;
+      background: rgba(20, 33, 61, 0.96);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      border-bottom: 2px solid var(--crimson);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.14);
+    }
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 13px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+    .doc-code {
+      background: var(--crimson);
+      color: #FFF;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    nav ul li a { color: #E2E8F0; transition: color 0.15s; }
+    nav ul li a:hover { color: #FCD34D; }
+    nav ul li a.cross-link {
+      color: #FCD34D;
+      border: 1px solid rgba(252, 211, 77, 0.45);
+      padding: 3px 9px;
+      border-radius: 5px;
+      font-size: 0.82rem;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0D1629 0%, #14213D 65%, #2B1218 100%);
+      color: #FFFFFF;
+      padding: 64px 24px 56px;
+      border-bottom: 4px solid var(--gold);
+    }
+    .hero-inner { max-width: 1020px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-block;
+      background: rgba(180, 83, 9, 0.25);
+      border: 1px solid rgba(252, 211, 77, 0.5);
+      color: #FDE68A;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+    .hero .subtitle {
+      font-size: 1.04rem;
+      color: #E2E8F0;
+      max-width: 820px;
+      margin-bottom: 26px;
+    }
+    .meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.82rem;
+    }
+    .meta-pill {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 5px 12px;
+      border-radius: 6px;
+      color: #F1F5F9;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+    section { margin-bottom: 60px; scroll-margin-top: 84px; }
+    .sec-head {
+      border-left: 4px solid var(--crimson);
+      padding-left: 14px;
+      margin-bottom: 22px;
+    }
+    .sec-num {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--crimson);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .sec-head h2 {
+      font-size: 1.48rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+    .sec-head p {
+      font-size: 0.93rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* Callout & Cards */
+    .exec-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--navy);
+      border-radius: 12px;
+      padding: 26px 28px;
+      box-shadow: var(--shadow);
+    }
+    .exec-lead {
+      font-size: 1.06rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .exec-points {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .exec-points li {
+      background: var(--bg);
+      border-left: 3px solid var(--crimson);
+      padding: 11px 14px;
+      border-radius: 6px;
+      font-size: 0.94rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .card h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 8px 0 8px;
+    }
+    .card p, .card li { font-size: 0.92rem; color: #374151; }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+    .b-crimson { background: var(--crimson-soft); color: var(--crimson); border: 1px solid #FECACA; }
+    .b-navy { background: #E0E7FF; color: var(--navy); border: 1px solid #C7D2FE; }
+    .b-gold { background: var(--gold-soft); color: var(--gold); border: 1px solid #FDE68A; }
+    .b-emerald { background: var(--emerald-soft); color: var(--emerald); border: 1px solid #A7F3D0; }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: var(--surface);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      min-width: 640px;
+    }
+    th {
+      background: var(--navy);
+      color: #FFFFFF;
+      text-align: left;
+      padding: 13px 15px;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+    td {
+      padding: 13px 15px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #FCFBF8; }
+    tr:last-child td { border-bottom: none; }
+
+    /* Interactive Tabs */
+    .tab-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .tab-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tab-btn:hover { border-color: var(--navy); background: var(--surface-alt); }
+    .tab-btn.active {
+      background: var(--navy);
+      color: #FFFFFF;
+      border-color: var(--navy);
+      box-shadow: 0 3px 10px rgba(20, 33, 61, 0.2);
+    }
+    .tab-panel {
+      display: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--crimson);
+      border-radius: 12px;
+      padding: 24px 26px;
+      box-shadow: var(--shadow);
+      animation: fadeIn 0.2s ease;
+    }
+    .tab-panel.active { display: block; }
+    .tab-panel h3 {
+      font-size: 1.18rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .tab-panel ul {
+      padding-left: 20px;
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+      font-size: 0.94rem;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 26px;
+      border-left: 3px solid var(--navy);
+      display: grid;
+      gap: 18px;
+    }
+    .tl-item {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      box-shadow: var(--shadow);
+    }
+    .tl-item::before {
+      content: "";
+      position: absolute;
+      left: -34px;
+      top: 20px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--crimson);
+      border: 3px solid var(--bg);
+    }
+    .tl-date {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--crimson);
+      margin-bottom: 4px;
+    }
+    .tl-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .tl-desc { font-size: 0.91rem; color: #374151; }
+
+    /* Boundary Box (Fact vs Hypothesis) */
+    .boundary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+    }
+    .fact-box {
+      background: var(--emerald-soft);
+      border: 1px solid #A7F3D0;
+      border-top: 4px solid var(--emerald);
+      border-radius: 10px;
+      padding: 20px 22px;
+    }
+    .hypo-box {
+      background: var(--gold-soft);
+      border: 1px solid #FDE68A;
+      border-top: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 20px 22px;
+    }
+    .fact-box h3 { color: var(--emerald); font-size: 1.04rem; margin-bottom: 10px; }
+    .hypo-box h3 { color: var(--gold); font-size: 1.04rem; margin-bottom: 10px; }
+    .fact-box ul, .hypo-box ul { padding-left: 18px; font-size: 0.91rem; display: grid; gap: 7px; }
+
+    /* Interactive Checklist */
+    .checklist-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 26px;
+      box-shadow: var(--shadow);
+    }
+    .cl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .cl-progress-track {
+      width: 100%;
+      height: 10px;
+      background: #E5E7EB;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+    .cl-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--navy), var(--emerald));
+      transition: width 0.25s ease;
+    }
+    .cl-group-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--crimson);
+      margin: 18px 0 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cl-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .cl-item:hover { background: var(--bg); }
+    .cl-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--navy);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .cl-label { font-size: 0.93rem; font-weight: 700; color: var(--navy); display: block; }
+    .cl-sub { font-size: 0.84rem; color: var(--muted); display: block; margin-top: 2px; }
+    .cl-item.done .cl-label { text-decoration: line-through; color: var(--muted); }
+    .btn-reset {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-reset:hover { background: #E5DFD3; }
+
+    /* Quote */
+    blockquote {
+      background: var(--surface-alt);
+      border-left: 4px solid var(--navy);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 20px 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #0D1629;
+      color: #94A3B8;
+      padding: 36px 24px;
+      text-align: center;
+      font-size: 0.84rem;
+      border-top: 3px solid var(--crimson);
+    }
+    footer strong { color: #FFFFFF; }
+    @media (max-width: 640px) {
+      .hero { padding: 44px 18px 40px; }
+      main { padding: 32px 16px 56px; }
+      .exec-box, .tab-panel, .checklist-card { padding: 18px; }
+    }
+</style>
+</head>
+<body>
+  <div id="progress-wrap"><div id="progress-bar"></div></div>
+
+  <div class="top-meta">
+    <span><strong>디지털 대동법 연구소 (DDLI)</strong> · LandnLiberty.kr 흡수 전략 시리즈 연계 특집</span>
+    <span>문서번호: <strong>DOC 2026-201 (경제전)</strong> · 기준일: 2026-11-24 · 공개 출처 기반 분석</span>
+  </div>
+
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <span class="doc-code">경제전</span>
+        <span>한중 FTA의 함정</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#summary">핵심 요약</a></li>
+          <li><a href="#facts">타결 팩트</a></li>
+          <li><a href="#levers">5대 레버 해부</a></li>
+          <li><a href="#cepa">홍콩 CEPA 비교</a></li>
+          <li><a href="#us-alliance">한미동맹 파장</a></li>
+          <li><a href="#checklist">비준 체크리스트</a></li>
+          <li><a href="exam_cheating_trust_erosion_war.html" class="cross-link">연계 보고서: 신뢰 침식전 ↗</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="margin-bottom:0;">
+    <div class="hero-inner">
+      <div class="eyebrow">ABSORPTION STRATEGY SERIES · 초한전·삼전·홍콩 모델 적용 분석</div>
+      <h1>한중 FTA의 함정 — 경제전</h1>
+      <p class="subtitle">
+        2026년 11월 18일 선전 한중 정상회담에서 8년 8개월 만에 실질 타결된 <strong>한중 FTA 2단계(서비스·투자 후속협상)</strong>를
+        중공의 대한민국 흡수 전략(DOC 2026-101~105) 프레임워크로 해부한다.
+        시장 개방의 기회 뒤에 숨은 5대 레버 확장, 홍콩 CEPA형 자가검열 구조, 그리고 한미동맹 균열 리스크를 정밀 진단한다.
+      </p>
+      <div class="meta-pills">
+        <span class="meta-pill">타결일: 2026.11.18 (선전)</span>
+        <span class="meta-pill">정식 서명·발효 목표: 2027년 하반기</span>
+        <span class="meta-pill">핵심 키워드: 네거티브·래칫·ISDS·인터넷 서비스 협력</span>
+        <span class="meta-pill">방법론: 확인된 사실 ≠ 의혹·가설 엄격 구분</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- 1. Executive Summary -->
+    <section id="summary">
+      <div class="sec-head">
+        <span class="sec-num">SECTION 01 · EXECUTIVE SUMMARY</span>
+        <h2>핵심 결론: 상품에서 서비스·데이터·서사로 확장되는 5대 레버</h2>
+        <p>디지털 대동법 연구소 『중국의 한국 흡수 전략』(DOC 2026-101~105) 통합 프레임 적용</p>
+      </div>
+      <div class="exec-box">
+        <div class="exec-lead">
+          한중 FTA 2단계는 한국 기업에 네거티브 개방·역진방지(래칫)·설립 전 ISDS라는 제도적 안전판을 제공하는 동시에,
+          중국 공산당의 흡수 전략 5대 레버가 <strong>상품 교역을 넘어 문화·서비스·인터넷 플랫폼·법률 생태계로 침투</strong>할 수 있는 구조적 통로를 연다.
+        </div>
+        <ul class="exec-points">
+          <li><strong>① 이론·수단·모델의 연장선:</strong> 초한전(무역·금융·법률전) → 삼전(여론·심리·법률전) → 인지영역작전(CDO)으로 이어지는 비군사 통합 전략은 홍콩 CEPA에서 검증된 '당근과 인허가 밸브' 문법을 한국 서비스 시장에 이식한다.</li>
+          <li><strong>② 비대칭 개방의 구조:</strong> 영화·게임 최혜국대우(MFN)와 공동제작 확대에도 중국의 사전심의권·판호 발급 권한은 그대로 유지되며 K팝 공연은 제외되었다. 반면 한국은 중국 대형 플랫폼(알리·테무·트립닷컴 등)의 국내 진입 장벽을 낮춘다.</li>
+          <li><strong>③ 중국 상무부의 '인터넷 서비스 협력'과 '반보호주의':</strong> 한국 발표에 빠진 '인터넷 서비스 협력 실행계획'과 "일방·보호주의 공동 반대" 프레이밍은 데이터 주권 취약성과 미국의 대중 견제 전선 이탈 오인을 동시에 자극한다.</li>
+          <li><strong>④ 2026년 최대 동맹 변수와의 충돌:</strong> 미 의회 양원 국방위의 '한국 내 중국 악의적 영향력 평가'가 진행되는 시점에 한중 서비스·인터넷 협력이 부각되면서, 한미 군사 정보공유 축소와 OPCON 전환 지연 리스크를 높인다.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 2. 타결 팩트 비교 -->
+    <section id="facts">
+      <div class="sec-head">
+        <span class="sec-num">SECTION 02 · FACT MATRIX</span>
+        <h2>한중 FTA 2단계 실질 타결(2026.11.18) 핵심 팩트와 비대칭성</h2>
+        <p>한국 측 발표(시장 기회·규범 보호)와 중국 측 발표·구조적 한계의 대조</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:18%;">분야</th>
+              <th style="width:41%;">한국 측 발표 핵심 (제도적 진전)</th>
+              <th style="width:41%;">구조적 한계 · 쌍방향 개방 · 중국 측 발표</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>개방 방식 및<br>투자 규범</strong></td>
+              <td>• 포지티브 → <strong>네거티브 리스트</strong> 전환<br>• <strong>역진방지(래칫)</strong> 원칙 도입<br>• 기술이전 강제 등 이행요건 금지<br>• <strong>ISDS</strong> 보호 범위를 '설립 전 단계'까지 확대</td>
+              <td>• 실제 개방 폭과 안보 방어선은 최종 협정문·<strong>유보 목록</strong> 공개 전까지 미확정<br>• 구두 지시·통관 지연 등 비공식 행정지도 보복은 ISDS 입증이 극히 어려움</td>
+            </tr>
+            <tr>
+              <td><strong>콘텐츠·문화</strong></td>
+              <td>• 영화·게임 <strong>최혜국대우(MFN)</strong> 및 사전심사 비차별 원칙 최초 명문화<br>• 공동제작 대상을 영화 → 드라마·예능·애니·다큐로 확대(수입 쿼터 제외)</td>
+              <td>• 내국민대우가 아닌 MFN으로 <strong>사전심의·쿼터·판호 통제권 유지</strong><br>• <strong>K팝 공연 제외</strong>, 한한령 공식 해제 선언 없음<br>• 한국도 영화 상영 서비스 개방 반영, 중국 자본·콘텐츠 국내 유입 확대</td>
+            </tr>
+            <tr>
+              <td><strong>관광·유통</strong></td>
+              <td>• 중국 23개 지정 지역 한국 여행사의 아웃바운드(해외여행) 모객 허용<br>• 중국 내 30개 이상 매장 합작 없이 독자 운영 허용</td>
+              <td>• 상호주의에 따라 <strong>알리·테무·트립닷컴</strong> 등 중국 대형 플랫폼의 국내 서비스 시장 진입 장벽 완화<br>• 지정 지역 한정 개방으로 지방정부 인허가 밸브 잔존</td>
+            </tr>
+            <tr>
+              <td><strong>법률·건설·<br>금융·인터넷</strong></td>
+              <td>• 한중 로펌 공동수임 지역 확대(상하이 → 톈진·첸하이·하이난)<br>• 건설 프로젝트 유형 제한 삭제, 금융 '미래 최혜국대우'</td>
+              <td>• 한국도 한중 로펌 업무제휴 허용<br>• <strong>중국 상무부 발표:</strong> 전통의학·문화·<strong>인터넷 서비스 협력 실행계획</strong> 마련 및 <strong>"일방·보호주의 공동 반대"</strong> 천명</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. 5대 레버 인터랙티브 해부 -->
+    <section id="levers">
+      <div class="sec-head">
+        <span class="sec-num">SECTION 03 · 5 LEVERS DEEP DIVE</span>
+        <h2>흡수 전략 5대 레버 관점의 한중 FTA 2단계 심층 해부</h2>
+        <p>각 탭을 클릭하여 홍콩 모델에서 관찰된 5대 레버가 이번 합의에서 어떻게 작동하는지 확인하세요.</p>
+      </div>
+
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="lever-1">① 경제적 지렛대 (제3레버)</button>
+        <button class="tab-btn" data-tab="lever-2">② 엘리트 포섭 (제2레버)</button>
+        <button class="tab-btn" data-tab="lever-3">③ 서사·인지전 (제5레버)</button>
+        <button class="tab-btn" data-tab="lever-4">④ 법률전·비대칭성 (제1레버)</button>
+        <button class="tab-btn" data-tab="lever-5">⑤ 미국 변수·동맹 균열</button>
+      </div>
+
+      <div class="tab-panel active" id="lever-1">
+        <span class="badge b-crimson">제3레버 · 초한전의 무역전</span>
+        <h3>사드(THAAD) 보복의 교훈: '인허가 밸브'는 여전히 베이징 손에 있다</h3>
+        <p>네거티브·래칫·ISDS 확대는 명백한 제도적 진전이지만, DOC 2026-105가 지적하는 핵심 취약성은 <strong>'매출과 생존의 대중 의존도 심화'</strong>에서 발생한다.</p>
+        <ul>
+          <li><strong>서비스·문화 산업의 인질화 리스크:</strong> 452조 원 규모의 중국 콘텐츠·서비스 시장에 한국 기업이 재진입해 수익 의존도가 높아지면, 상품에 이어 문화·서비스 산업까지 외교·안보 갈등 시 정치적 지렛대로 동원될 수 있다.</li>
+          <li><strong>사전심의와 판호 밸브 유지:</strong> 최혜국대우는 중국의 사전심의권 자체를 없애지 않았으며 K팝 공연은 빠졌다. 중국 당국은 '개방 속도'와 '개별 허가'를 조절하며 선택적 당근과 채찍을 구사할 수 있다.</li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="lever-2">
+        <span class="badge b-gold">제2레버 · 통일전선 포섭</span>
+        <h3>시장 접근권으로 문화·법조·유통 엘리트의 이해관계를 묶는다</h3>
+        <p>홍콩 모델에서 제2레버는 기업·언론·문화·법조계 엘리트에게 본토 시장 접근권과 합작 기회를 제공해 자발적 순응을 이끌어내는 방식으로 작동했다.</p>
+        <ul>
+          <li><strong>공동제작을 통한 '내면화된 자가검열':</strong> 드라마·예능·다큐 공동제작이 확대될수록 한국 제작사는 기획 단계부터 중국 당국의 심의 기준과 정치적 레드라인을 스스로 의식하게 된다.</li>
+          <li><strong>법조·관광 네트워크 밀착:</strong> 한중 로펌 업무제휴와 23개 지정 지역 현지 여행사 설립은 한국 전문직·상공계 엘리트가 중국 자본 및 지방정부 인허가 네트워크와 구조적으로 결속되는 접점을 넓힌다.</li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="lever-3">
+        <span class="badge b-navy">제5레버 · 인지영역작전(CDO)</span>
+        <h3>중국 상무부가 강조한 '인터넷 서비스 협력'과 데이터·알고리즘 침투</h3>
+        <p>DOC 2026-103·105는 중국의 인지전이 가짜 한국어 뉴스 사이트(누적 200여 개)와 AI 여론 작전을 넘어 국내 플랫폼 침투로 진화하고 있다고 경고한다.</p>
+        <ul>
+          <li><strong>플랫폼 진입 장벽 완화:</strong> 알리·테무·트립닷컴 등 중국 대형 플랫폼과 자본의 국내 서비스 시장 진출이 넓어지면 한국 국민의 소비·위치·취향 데이터 수집 반경이 확장된다.</li>
+          <li><strong>장기 서사 침투 인프라:</strong> '인터넷 서비스 협력 실행계획'의 범위가 클라우드·AI·콘텐츠 유통으로 확장될 경우, 알고리즘과 미디어를 통한 비가시적 여론전·심리전의 교두보가 될 위험이 있다.</li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="lever-4">
+        <span class="badge b-crimson">제1레버 · 삼전의 법률전</span>
+        <h3>"일방·보호주의 공동 반대" 프레이밍과 법치주의의 비대칭성</h3>
+        <p>중국 상무부는 이번 타결을 "다자주의 실천이자 일방·보호주의에 함께 반대하는 구체적 행동"으로 규정하며 국제 여론전·법률전 프레임에 활용했다.</p>
+        <ul>
+          <li><strong>규범 준수의 비대칭성:</strong> 법치주의 국가인 한국은 네거티브·래칫·ISDS 의무를 엄격히 이행해야 하지만, 당(黨)이 법 위에 있는 중국은 '국가안보·공공질서·건전한 문화 교류' 같은 모호한 행정 재량으로 개방 효과를 조절할 수 있다.</li>
+          <li><strong>중국 국영기업(SOE)의 ISDS 역공 가능성:</strong> 설립 전 단계 ISDS 확대 시 한국 정부가 안보 심사로 중국 국영기업의 국내 투자·M&A를 불허할 때 국제 중재 제소로 압박하는 법률전 수단으로 악용될 여지를 차단해야 한다.</li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="lever-5">
+        <span class="badge b-navy">7차원 · 미국 변수</span>
+        <h3>동맹 균열이 진짜 목표: 미 의회 중국 영향력 평가와의 정면 충돌</h3>
+        <p>DOC 2026-101·105가 강조하듯 초한전의 1차 목표는 한국을 당장 친중화하는 것이 아니라 한미동맹 내부의 상호 불신을 키워 방어막을 약화시키는 것이다.</p>
+        <ul>
+          <li><strong>워싱턴의 오인 신호:</strong> 미 FCC의 중국산 통신·데이터센터 장비 규제 등 미·중 기술 디커플링이 격화되는 시점에, 중국이 한국과의 합의를 "반보호주의 공동 행보"로 선전하면 워싱턴 강경파에 치명적 오인을 줄 수 있다.</li>
+          <li><strong>연쇄 안보 파장:</strong> KIDA(2026.10.28) 분석대로 미 의회의 중국 영향력 평가가 부정적으로 귀결될 경우 한미 군사 정보공유 축소, OPCON 전환 지연, 방산 협력 위축으로 이어질 수 있다.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. 홍콩 CEPA vs 한중 FTA 2단계 비교 -->
+    <section id="cepa">
+      <div class="sec-head">
+        <span class="sec-num">SECTION 04 · HISTORICAL PARALLEL</span>
+        <h2>홍콩 CEPA(2003~2025) vs 한중 FTA 2단계 구조 비교</h2>
+        <p>유사한 '선행시험·공동제작·사전심의' 통제 문법과, 한국이 가진 결정적 주권·시장 방어막</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:18%;">비교 항목</th>
+              <th style="width:27%;">홍콩 CEPA (2003~2025)</th>
+              <th style="width:28%;">한중 FTA 2단계 (2026.11 타결)</th>
+              <th style="width:27%;">흡수 전략 관점 시사점</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>협정 성격 및 주권</strong></td>
+              <td>일국양제 내 중앙-특별행정구 간 비대칭 특혜 협정</td>
+              <td>독립 주권국 간 상호주의 국제 통상조약</td>
+              <td>한국은 제1레버(법)·제4레버(제도) 직접 개입을 막는 <strong>주권 방어선</strong> 보유</td>
+            </tr>
+            <tr>
+              <td><strong>지역·단계 개방</strong></td>
+              <td>네거티브 리스트 + 광둥성·자유무역구 <strong>선행시험(先行先試)</strong></td>
+              <td>네거티브 리스트 + <strong>지정 지역 한정 개방</strong>(여행사 23곳, 로펌 4개 거점)</td>
+              <td>중국 특유의 '지역별·단계별 허가 밸브' 통제 문법이 유사하게 적용</td>
+            </tr>
+            <tr>
+              <td><strong>문화·콘텐츠</strong></td>
+              <td>합작·홍콩 영화 쿼터 면제, 단 <strong>광전총국 사전심의 유지</strong></td>
+              <td>드라마·예능·다큐 공동제작 쿼터 면제, 단 <strong>사전심의 유지·K팝 제외</strong></td>
+              <td><strong>가장 높은 구조적 유사성.</strong> 시장 접근권을 매개로 창작 자가검열 유도 가능</td>
+            </tr>
+            <tr>
+              <td><strong>분쟁해결 장치</strong></td>
+              <td>정부 간 행정 협의 (국제중재 없음)</td>
+              <td><strong>ISDS 설립 전 단계 확대</strong></td>
+              <td>최소한의 국제법적 방어막 확보, 단 비공식 행정지도 입증에는 한계</td>
+            </tr>
+            <tr>
+              <td><strong>경제적 대체 시장</strong></td>
+              <td>본토 의존도 절대적 (대체 불가)</td>
+              <td>북미·유럽·글로벌 OTT·동남아 다변화 시장 및 <strong>한미동맹</strong> 존재</td>
+              <td>중국 시장을 '생존 통로'가 아닌 '추가 수익원'으로 관리할 자율성 보유</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <blockquote>
+        홍콩의 교훈: "자치는 법이 무너뜨리기 전에, 경제적 의존과 엘리트 순응을 통해 내부 신뢰가 먼저 무너진다." — 한국이 '제2의 홍콩화'를 피하는 백신은 대중 매출 의존도 상한선 관리(시장 다변화)와 2027년 국회 비준 과정의 안보 유보 조항 확보다.
+      </blockquote>
+    </section>
+
+    <!-- 5. 한미동맹 파장 분석 -->
+    <section id="us-alliance">
+      <div class="sec-head">
+        <span class="sec-num">SECTION 05 · US-ROK ALLIANCE IMPACT</span>
+        <h2>미 의회 '한국 내 중국 악의적 영향력 평가'와 한미동맹 연쇄 파장</h2>
+        <p>KIDA(2026.10.28) 경고 및 주한미군사령관 정보공유 발언(2026.10.31)과 맞물린 안보 리스크</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:18%;">동맹 협력 영역</th>
+              <th style="width:27%;">기존 경고 (KIDA · DOC 105)</th>
+              <th style="width:27%;">FTA 2단계·반보호주의 촉발 리스크</th>
+              <th style="width:28%;">예상되는 구체적 파장</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>군사 정보공유</strong></td>
+              <td>부정적 평가 시 고기밀 정보공유 축소 가능</td>
+              <td>중국 인터넷 서비스·플랫폼의 국내 데이터 접근성 확대 우려</td>
+              <td>미국의 <strong>NOFORN</strong> 지정 확대, 연합 C4I 실시간 연동 및 대북·대중 첩보 공유 문턱 상향</td>
+            </tr>
+            <tr>
+              <td><strong>OPCON 전환</strong></td>
+              <td>신뢰 기반 약화 시 전작권 전환 일정 지연</td>
+              <td>대중 경제·데이터 의존도 심화로 연합 지휘체계 보안 우려 증폭</td>
+              <td>미래연합군사령부(FOC/FMC) 검증 기준 강화 및 <strong>전작권 전환 일정 순연</strong></td>
+            </tr>
+            <tr>
+              <td><strong>주한미군 보호 ·<br>방산 협력</strong></td>
+              <td>하원 국방위 핵심 점검 대상(인적 보호·기술 유출)</td>
+              <td>중국 자본·로펌·기업의 국내 활동 반경 확대 및 설립 전 ISDS</td>
+              <td>한미 방산 기술 이전 심사 강화, 미 국방부 조달(RDP-A) 보안 검증 문턱 상승</td>
+            </tr>
+            <tr>
+              <td><strong>확장억지 ·<br>연합훈련</strong></td>
+              <td>2026년 8월 연합훈련 축소 움직임 등 동맹 공백 우려</td>
+              <td>중국의 '반보호주의 공동전선' 선전이 워싱턴의 동맹 피로감 자극</td>
+              <td>핵협의그룹(NCG) 등 확장억지 실무 협력의 추진 동력 저하</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 6. 사실과 가설의 경계 -->
+    <section id="boundary">
+      <div class="sec-head">
+        <span class="sec-num">SECTION 06 · FACT VS HYPOTHESIS</span>
+        <h2>방법론적 경계선: 확인된 사실과 검증 필요 영역</h2>
+        <p>디지털 대동법 연구소 원칙에 따라 사실과 전략적 우려를 명확히 구분합니다.</p>
+      </div>
+      <div class="boundary-grid">
+        <div class="fact-box">
+          <h3>✔ 확인된 사실 (Confirmed Facts)</h3>
+          <ul>
+            <li>2026년 11월 18일 선전 한중 정상회담에서 한중 FTA 2단계 실질 타결(2027년 정식 서명·하반기 발효 목표).</li>
+            <li>네거티브 리스트·역진방지(래칫)·설립 전 ISDS 확대, 영화·게임 MFN 및 공동제작 확대 합의(단 K팝 공연 제외·사전심의 유지).</li>
+            <li>중국 상무부가 '인터넷 서비스 협력 실행계획' 마련과 "일방·보호주의 공동 반대"를 공식 발표.</li>
+            <li>2026년 미 의회 양원 국방위의 한국 내 중국 악의적 영향력 평가 요청 및 KIDA의 정보공유·OPCON 파장 분석.</li>
+          </ul>
+        </div>
+        <div class="hypo-box">
+          <h3>⚠ 검증 필요 영역 (Risks & Hypotheses)</h3>
+          <ul>
+            <li>실제 발효 후 중국이 구두 행정지도·판호 지연 같은 비공식 차별을 실질적으로 중단할지 여부.</li>
+            <li>최종 협정문과 유보 목록, '인터넷 서비스 협력 실행계획'에 데이터 주권·안보 취약 조항이 포함되는지 여부.</li>
+            <li>이번 타결이 미 국방부의 최종 영향력 평가 보고서와 한미 정보공유·OPCON 일정에 미칠 구체적 수치적 영향.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. 국회 비준 12대 검증 체크리스트 -->
+    <section id="checklist">
+      <div class="sec-head">
+        <span class="sec-num">SECTION 07 · RATIFICATION CHECKLIST</span>
+        <h2>2027년 정식 서명·국회 비준 필수 안보·통상 검증 체크리스트 (12항목)</h2>
+        <p>체크 상태는 브라우저(localStorage)에 자동 저장됩니다. 비준 전 모든 항목의 투명한 검증이 필요합니다.</p>
+      </div>
+      <div class="checklist-card">
+        <div class="cl-header">
+          <strong id="cl-count" style="color:var(--navy); font-size:0.95rem;">0 / 12 항목 점검 완료 (0%)</strong>
+          <button class="btn-reset" id="cl-reset">체크 초기화</button>
+        </div>
+        <div class="cl-progress-track"><div class="cl-progress-fill" id="cl-fill"></div></div>
+
+        <div class="cl-group-title">1. 데이터 주권 (Data Sovereignty)</div>
+        <label class="cl-item"><input type="checkbox" id="fta-1"><span><span class="cl-label">핵심·민감 데이터의 국외 이전 통제권(데이터 현지화) 예외 확보</span><span class="cl-sub">공공·금융·의료·위치·유권자 정보의 중국 서버 이전 제한 권한이 협정문 안보 예외에 명시되었는지 확인</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="fta-2"><span><span class="cl-label">중국 국가정보법·데이터보안법과의 법적 비대칭성 차단</span><span class="cl-sub">중국 당국의 자국 기업 데이터 제출 요구권에 맞서 국내 진출 중국 플랫폼의 데이터 접근 통제 장치 확인</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="fta-3"><span><span class="cl-label">한미동맹·미국 대중 데이터 안보 통제선과의 충돌 여부 점검</span><span class="cl-sub">미 의회 중국 영향력 평가 및 미 FCC·상무부 대중 통신·데이터 규제와 상충해 정보공유 리스크가 없는지 검토</span></span></label>
+
+        <div class="cl-group-title">2. 인터넷 서비스 협력 (실행계획 검증)</div>
+        <label class="cl-item"><input type="checkbox" id="fta-4"><span><span class="cl-label">중국 상무부가 발표한 '인터넷 서비스 협력 실행계획' 전문 공개</span><span class="cl-sub">한국 산업부 발표에 생략된 클라우드·AI·플랫폼·결제·콘텐츠 유통 협력의 구체적 범위 확인</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="fta-5"><span><span class="cl-label">국내 플랫폼·미디어·여론 생태계 침투 방지 장치 확인</span><span class="cl-sub">중국발 생성형 AI·소셜 플랫폼·뉴스 애그리게이터 진입 시 출처 투명성 및 알고리즘 규제 권한 유지 검증</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="fta-6"><span><span class="cl-label">통신망·데이터센터·클라우드 핵심 인프라의 개방 제외 확인</span><span class="cl-sub">국가기간통신망, 공공 클라우드, AI 데이터센터가 인터넷 서비스 협력 대상에서 완전히 배제되었는지 점검</span></span></label>
+
+        <div class="cl-group-title">3. 유보 목록 (네거티브·래칫 방어선)</div>
+        <label class="cl-item"><input type="checkbox" id="fta-7"><span><span class="cl-label">미래 유보 목록(부속서 II)에 안보·미디어·신기술 영역 등재 여부</span><span class="cl-sub">역진방지(래칫)가 적용되지 않는 미래 유보에 AI·양자·우주·방송·여론조사·핵심 공급망 서비스 포함 확인</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="fta-8"><span><span class="cl-label">현재 유보 목록(부속서 I)의 외국인 지분 제한 및 인허가 요건 점검</span><span class="cl-sub">방송·영화 상영·법률·금융·유통 분야에서 중국 자본의 우회 지배를 막을 현행 국내 규제 기재 확인</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="fta-9"><span><span class="cl-label">중국 측 유보 목록의 '국가안보·공공질서' 모호성 및 비대칭성 검증</span><span class="cl-sub">영화·게임 MFN 및 공동제작 약속을 중국 당국이 사전심의·판호 지연으로 무력화할 여지가 없는지 대조</span></span></label>
+
+        <div class="cl-group-title">4. ISDS 조항 (법률전·규제 위축 방지)</div>
+        <label class="cl-item"><input type="checkbox" id="fta-10"><span><span class="cl-label">설립 전 단계 ISDS 확대에 따른 '중국 국영기업(SOE)' 제소 리스크 차단</span><span class="cl-sub">한국 정부의 안보 심사에 따른 중국 국영·민간 기업 투자 불허가 ISDS 제소 대상에서 제외되는지 확인</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="fta-11"><span><span class="cl-label">비공식 행정지도·회색지대 보복에 대한 ISDS 실효성 검증</span><span class="cl-sub">사드 보복처럼 문서 없는 구두 지시·통관 지연·판호 중단 발생 시 우리 기업의 실질적 구제 가능성 검토</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="fta-12"><span><span class="cl-label">공공정책·국가안보 규제에 대한 '규제 위축(Regulatory Chill)' 방지 장치</span><span class="cl-sub">한국의 정당한 개인정보·플랫폼·간첩방지 규제가 간접수용으로 몰리지 않도록 명확한 예외 안전장치 확인</span></span></label>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>디지털 대동법 연구소 (DDLI) · LandnLiberty.kr</strong></p>
+    <p style="margin-top:6px;">DOC 2026-201 · 한중 FTA의 함정 — 경제전 · 기준일 2026-11-24 · 공개 출처 기반 분석</p>
+  </footer>
+
+  <script>
+    
+    // Reading progress bar
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      document.getElementById('progress-bar').style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+    });
+
+    // Interactive Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
+    // Checklist with localStorage persistence
+    function initChecklist(storageKey) {
+      const checkboxes = document.querySelectorAll('.cl-item input[type="checkbox"]');
+      const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+
+      function updateProgress() {
+        let checked = 0;
+        checkboxes.forEach(cb => {
+          const parent = cb.closest('.cl-item');
+          if (cb.checked) {
+            checked++;
+            parent.classList.add('done');
+          } else {
+            parent.classList.remove('done');
+          }
+          saved[cb.id] = cb.checked;
+        });
+        localStorage.setItem(storageKey, JSON.stringify(saved));
+        const pct = checkboxes.length ? Math.round((checked / checkboxes.length) * 100) : 0;
+        document.getElementById('cl-count').textContent = `${checked} / ${checkboxes.length} 항목 점검 완료 (${pct}%)`;
+        document.getElementById('cl-fill').style.width = pct + '%';
+      }
+
+      checkboxes.forEach(cb => {
+        if (saved[cb.id]) cb.checked = true;
+        cb.addEventListener('change', updateProgress);
+      });
+
+      document.getElementById('cl-reset').addEventListener('click', () => {
+        checkboxes.forEach(cb => cb.checked = false);
+        localStorage.removeItem(storageKey);
+        updateProgress();
+      });
+
+      updateProgress();
+    }
+
+    initChecklist('ddli_fta_checklist_v1');
+  </script>
+</body>
+</html>

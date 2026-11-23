@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>국가고시·수능 AI 부정 사태와 교육부 격변 — 신뢰 침식전 | 디지털 대동법 연구소</title>
+  <meta name="description" content="중국 공산당의 대한민국 흡수 전략 관점에서 본 제63회 세무사 수석 AI 부정행위, 중국 텔레그램 장비 업체 개입, 2027 수능 대혼란, 최교진 교육부 장관 사퇴 및 고민정 의원 입각 가능성 심층 분석" />
+  <meta property="og:title" content="국가고시·수능 AI 부정 사태와 교육부 격변 — 신뢰 침식전 | LandnLiberty.kr" />
+  <meta property="og:description" content="9일간의 사태 타임라인, 4대 흡수 전략 해부, 최교진 사퇴·고민정 등 후임 후보군 비교, 8대 대응 체크리스트" />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --bg: #FAF8F4;
+      --surface: #FFFFFF;
+      --surface-alt: #F3EFE6;
+      --navy: #14213D;
+      --navy-light: #1F325C;
+      --crimson: #9B1C1C;
+      --crimson-soft: #FEF2F2;
+      --gold: #B45309;
+      --gold-soft: #FEF3C7;
+      --emerald: #065F46;
+      --emerald-soft: #ECFDF5;
+      --text: #1F2937;
+      --muted: #5B6472;
+      --border: #E2DDD2;
+      --shadow: 0 4px 18px rgba(20, 33, 61, 0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+      word-break: keep-all;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* Reading Progress Bar */
+    #progress-wrap {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 4px;
+      background: rgba(20, 33, 61, 0.12);
+      z-index: 1000;
+    }
+    #progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--crimson), var(--gold));
+      transition: width 0.08s linear;
+    }
+
+    /* Header & Sticky Nav */
+    .top-meta {
+      background: #0D1629;
+      color: #CBD5E1;
+      font-size: 0.8rem;
+      padding: 8px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .top-meta strong { color: #FCD34D; }
+
+    header {
+      position: sticky;
+      top: 4px;
+      z-index: 900;
+      background: rgba(20, 33, 61, 0.96);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      border-bottom: 2px solid var(--crimson);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.14);
+    }
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 13px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+    .doc-code {
+      background: var(--crimson);
+      color: #FFF;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    nav ul li a { color: #E2E8F0; transition: color 0.15s; }
+    nav ul li a:hover { color: #FCD34D; }
+    nav ul li a.cross-link {
+      color: #FCD34D;
+      border: 1px solid rgba(252, 211, 77, 0.45);
+      padding: 3px 9px;
+      border-radius: 5px;
+      font-size: 0.82rem;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0D1629 0%, #14213D 65%, #2B1218 100%);
+      color: #FFFFFF;
+      padding: 64px 24px 56px;
+      border-bottom: 4px solid var(--gold);
+    }
+    .hero-inner { max-width: 1020px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-block;
+      background: rgba(180, 83, 9, 0.25);
+      border: 1px solid rgba(252, 211, 77, 0.5);
+      color: #FDE68A;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+    .hero .subtitle {
+      font-size: 1.04rem;
+      color: #E2E8F0;
+      max-width: 820px;
+      margin-bottom: 26px;
+    }
+    .meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.82rem;
+    }
+    .meta-pill {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 5px 12px;
+      border-radius: 6px;
+      color: #F1F5F9;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+    section { margin-bottom: 60px; scroll-margin-top: 84px; }
+    .sec-head {
+      border-left: 4px solid var(--crimson);
+      padding-left: 14px;
+      margin-bottom: 22px;
+    }
+    .sec-num {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--crimson);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .sec-head h2 {
+      font-size: 1.48rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+    .sec-head p {
+      font-size: 0.93rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* Callout & Cards */
+    .exec-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--navy);
+      border-radius: 12px;
+      padding: 26px 28px;
+      box-shadow: var(--shadow);
+    }
+    .exec-lead {
+      font-size: 1.06rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .exec-points {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .exec-points li {
+      background: var(--bg);
+      border-left: 3px solid var(--crimson);
+      padding: 11px 14px;
+      border-radius: 6px;
+      font-size: 0.94rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .card h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 8px 0 8px;
+    }
+    .card p, .card li { font-size: 0.92rem; color: #374151; }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+    .b-crimson { background: var(--crimson-soft); color: var(--crimson); border: 1px solid #FECACA; }
+    .b-navy { background: #E0E7FF; color: var(--navy); border: 1px solid #C7D2FE; }
+    .b-gold { background: var(--gold-soft); color: var(--gold); border: 1px solid #FDE68A; }
+    .b-emerald { background: var(--emerald-soft); color: var(--emerald); border: 1px solid #A7F3D0; }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: var(--surface);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      min-width: 640px;
+    }
+    th {
+      background: var(--navy);
+      color: #FFFFFF;
+      text-align: left;
+      padding: 13px 15px;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+    td {
+      padding: 13px 15px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #FCFBF8; }
+    tr:last-child td { border-bottom: none; }
+
+    /* Interactive Tabs */
+    .tab-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .tab-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tab-btn:hover { border-color: var(--navy); background: var(--surface-alt); }
+    .tab-btn.active {
+      background: var(--navy);
+      color: #FFFFFF;
+      border-color: var(--navy);
+      box-shadow: 0 3px 10px rgba(20, 33, 61, 0.2);
+    }
+    .tab-panel {
+      display: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--crimson);
+      border-radius: 12px;
+      padding: 24px 26px;
+      box-shadow: var(--shadow);
+      animation: fadeIn 0.2s ease;
+    }
+    .tab-panel.active { display: block; }
+    .tab-panel h3 {
+      font-size: 1.18rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .tab-panel ul {
+      padding-left: 20px;
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+      font-size: 0.94rem;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 26px;
+      border-left: 3px solid var(--navy);
+      display: grid;
+      gap: 18px;
+    }
+    .tl-item {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      box-shadow: var(--shadow);
+    }
+    .tl-item::before {
+      content: "";
+      position: absolute;
+      left: -34px;
+      top: 20px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--crimson);
+      border: 3px solid var(--bg);
+    }
+    .tl-date {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--crimson);
+      margin-bottom: 4px;
+    }
+    .tl-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .tl-desc { font-size: 0.91rem; color: #374151; }
+
+    /* Boundary Box (Fact vs Hypothesis) */
+    .boundary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+    }
+    .fact-box {
+      background: var(--emerald-soft);
+      border: 1px solid #A7F3D0;
+      border-top: 4px solid var(--emerald);
+      border-radius: 10px;
+      padding: 20px 22px;
+    }
+    .hypo-box {
+      background: var(--gold-soft);
+      border: 1px solid #FDE68A;
+      border-top: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 20px 22px;
+    }
+    .fact-box h3 { color: var(--emerald); font-size: 1.04rem; margin-bottom: 10px; }
+    .hypo-box h3 { color: var(--gold); font-size: 1.04rem; margin-bottom: 10px; }
+    .fact-box ul, .hypo-box ul { padding-left: 18px; font-size: 0.91rem; display: grid; gap: 7px; }
+
+    /* Interactive Checklist */
+    .checklist-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 26px;
+      box-shadow: var(--shadow);
+    }
+    .cl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .cl-progress-track {
+      width: 100%;
+      height: 10px;
+      background: #E5E7EB;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+    .cl-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--navy), var(--emerald));
+      transition: width 0.25s ease;
+    }
+    .cl-group-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--crimson);
+      margin: 18px 0 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cl-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .cl-item:hover { background: var(--bg); }
+    .cl-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--navy);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .cl-label { font-size: 0.93rem; font-weight: 700; color: var(--navy); display: block; }
+    .cl-sub { font-size: 0.84rem; color: var(--muted); display: block; margin-top: 2px; }
+    .cl-item.done .cl-label { text-decoration: line-through; color: var(--muted); }
+    .btn-reset {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-reset:hover { background: #E5DFD3; }
+
+    /* Quote */
+    blockquote {
+      background: var(--surface-alt);
+      border-left: 4px solid var(--navy);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 20px 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #0D1629;
+      color: #94A3B8;
+      padding: 36px 24px;
+      text-align: center;
+      font-size: 0.84rem;
+      border-top: 3px solid var(--crimson);
+    }
+    footer strong { color: #FFFFFF; }
+    @media (max-width: 640px) {
+      .hero { padding: 44px 18px 40px; }
+      main { padding: 32px 16px 56px; }
+      .exec-box, .tab-panel, .checklist-card { padding: 18px; }
+    }
+</style>
+</head>
+<body>
+  <div id="progress-wrap"><div id="progress-bar"></div></div>
+
+  <div class="top-meta">
+    <span><strong>디지털 대동법 연구소 (DDLI)</strong> · LandnLiberty.kr 흡수 전략 시리즈 연계 특집</span>
+    <span>문서번호: <strong>DOC 2026-202 (신뢰 침식전)</strong> · 기준일: 2026-11-24 · 공개 출처 기반 분석</span>
+  </div>
+
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <span class="doc-code">신뢰 침식전</span>
+        <span>국가고시·수능 AI 부정 사태와 교육부 격변</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#summary">핵심 요약</a></li>
+          <li><a href="#timeline">9일 타임라인</a></li>
+          <li><a href="#analysis">4대 해부</a></li>
+          <li><a href="#cabinet">교육부 격변</a></li>
+          <li><a href="#boundary">사실 vs 의혹</a></li>
+          <li><a href="#checklist">8대 대응안</a></li>
+          <li><a href="hanjung_fta_trap_economic_war.html" class="cross-link">연계 보고서: 경제전 ↗</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="margin-bottom:0;">
+    <div class="hero-inner">
+      <div class="eyebrow">ABSORPTION STRATEGY SERIES · 인지전·제도 신뢰 침식·서사 통제 분석</div>
+      <h1>국가고시·수능 AI 부정 사태와 교육부 격변 — 신뢰 침식전</h1>
+      <p class="subtitle">
+        2026년 11월, 제63회 세무사 시험 수석 합격자의 AI 부정행위 인정과 구독자 21만 명 규모의 중국어권 텔레그램 커닝 장비 생태계 노출,
+        2027학년도 수능 대혼란, 그리고 취임 14개월 만의 <strong>최교진 교육부 장관 사실상 경질</strong>과 <strong>고민정 의원 등 후임 인선</strong>까지—
+        중공의 대한민국 흡수 전략(DOC 2026-101~105) 관점에서 국가 공정성 인프라 붕괴의 메커니즘을 추적한다.
+      </p>
+      <div class="meta-pills">
+        <span class="meta-pill">세무사 수석 부정 인정: 2026.11.15</span>
+        <span class="meta-pill">2027 수능 실시: 2026.11.19 (적발 98명)</span>
+        <span class="meta-pill">최교진 장관 사퇴·재가: 2026.11.22 (54분 만의 수락)</span>
+        <span class="meta-pill">방법론: 확인된 사실 ≠ 의혹·가설 엄격 구분</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- 1. Executive Summary -->
+    <section id="summary">
+      <div class="sec-head">
+        <span class="sec-num">SECTION 01 · EXECUTIVE SUMMARY</span>
+        <h2>핵심 결론: 공정성 최후 보루의 붕괴는 흡수 전략이 노리는 최적의 지형</h2>
+        <p>DOC 2026-105의 핵심 테제 — "어느 쪽이든 국가 기관에 대한 신뢰 침식은 흡수 전략이 놓고 가는 지형이다"</p>
+      </div>
+      <div class="exec-box">
+        <div class="exec-lead">
+          국가고시(세무사·감정평가사)와 대학수학능력시험(수능)은 대한민국 사회 이동성과 공정성을 지탱하는 최후의 제도적 기둥이다.
+          중국발 초소형 AI 부정행위 장비 유통망의 상업적·회색지대 침투와 한국 교육 당국의 무사안일한 땜질 대응이 맞물리며,
+          단 9일 만에 <strong>시험 공정성 붕괴 → 행정 리더십 마비 → 교육부 수장 교체</strong>라는 연쇄 충격이 발생했다.
+        </div>
+        <ul class="exec-points">
+          <li><strong>① 중국어권 AI 커닝 장비 생태계:</strong> 합산 구독자 21만 명이 넘는 중국어권 텔레그램 채널들이 "안 걸리면 수석, 걸리면 군대" 식의 문구로 AI 안경·초소형 카메라·이어폰을 판매하며, 원화를 거부하고 위안화(RMB)·홍콩달러·비트코인·테더(USDT)로 국경 간 자금을 세탁한다.</li>
+          <li><strong>② 마케팅·공포 심리전과 데이터 협박 의혹:</strong> 중국 업체가 "한국 세무사 수석도 우리가 도왔다"고 홍보하며 한국 수험생 불안을 자극한 데 이어, 이용자 개인정보·수령 장소를 빌미로 1인당 이더리움 5개(약 1,200만 원)를 요구하는 협박·사칭 메시지까지 확산됐다.</li>
+          <li><strong>③ 행정 리더십의 붕괴와 54분 만의 사실상 경질:</strong> 최교진 교육부 장관은 사전 경고에도 대비 없이 국회에서 "나이가 있어서 못 할 것 같다"는 실언을 남겼고, 수능 직전 '단추 스티커·흑색 연필 제한' 땜질 혼선 끝에 수능 사흘 만인 11월 22일 사의를 표명, 이재명 대통령이 54분 만에 재가했다.</li>
+          <li><strong>④ 후임 인선과 서사 통제 리스크:</strong> 후임으로 여당 교육위 간사 고민정 의원(친문 탕평 인사 해석), 김영호 의원, 박백범 전 차관, 최은옥 차관 등이 거론되는 가운데, 기술·보안 검증 역량보다 정치적 소통·진영 안배가 우선될 경우 장기적 시험·교육 시스템 방어력이 약화될 우려가 크다.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 2. 9일간의 사태 타임라인 -->
+    <section id="timeline">
+      <div class="sec-head">
+        <span class="sec-num">SECTION 02 · CRISIS TIMELINE</span>
+        <h2>2026년 11월, 국가시험 신뢰 붕괴와 교육부 격변 9일 타임라인</h2>
+        <p>세무사 수석 부정행위 자백부터 최교진 교육부 장관 면직 재가까지의 전개 과정</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">2026년 11월 15일 (일)</div>
+          <div class="tl-title">제63회 세무사 시험 수석 합격자 한모씨, AI·초소형 장비 부정행위 인정</div>
+          <div class="tl-desc">공학용 계산기 개조, 초소형 모니터·카메라와 생성형 AI를 결합한 부정행위가 드러나며 국가전문자격시험과 수능 공정성에 대한 전국적 충격 확산.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026년 11월 16일 (월)</div>
+          <div class="tl-title">최교진 교육부 장관, 국회 교육위 '나이' 실언 파문</div>
+          <div class="tl-desc">국회 교육위원회 전체회의에서 AI 부정행위 100% 적발 자신감을 묻는 질의에 "전 못할 것 같다. 제 나이가 있어서"라고 답변해 여야·수험생의 거센 비판 직면.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026년 11월 17일 (화)</div>
+          <div class="tl-title">국민의힘 해임건의안 압박 · 한성숙 총리 대국민 담화 · '단추 스티커' 혼선</div>
+          <div class="tl-desc">야당의 해임건의안 압박과 여당 대표의 우려 표명 속에 교육부 추가 대책 발표가 한성숙 국무총리 대국민 담화로 대체됨. 수능 이틀 전 '단추에 스티커 붙이기' 등 급조 지침으로 현장 혼란 가중.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026년 11월 18일 (수)</div>
+          <div class="tl-title">중국 텔레그램 업체 '수석 고객' 홍보·이더리움 협박 논란 · 수능 전날 필기구 제한</div>
+          <div class="tl-desc">중국어권 텔레그램 채널들의 AI 커닝 장비 대량 유통, 가상자산 결제 및 이용자 개인정보 협박(이더리움 5개 요구·사칭 반박) 정황 보도. 같은 날 교육부는 수능 하루 전 반입 필기구를 '흑색 연필'로 급거 제한해 수험생 대혼란 초래.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026년 11월 19일 (목)</div>
+          <div class="tl-title">2027학년도 대학수학능력시험 실시 — 부정행위 98명(위급재난문자 적발 49명)</div>
+          <div class="tl-desc">전례 없는 AI 커닝 공포 속에 치러진 수능에서 4교시 기준 부정행위자 총 98명 집계(3차례 위급재난문자 발송을 통한 적발 49명 포함).</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2026년 11월 22일 (일)</div>
+          <div class="tl-title">최교진 교육부 장관 사의 표명 — 이재명 대통령 54분 만에 재가 (사실상 경질)</div>
+          <div class="tl-desc">수능 종료 사흘, 취임 14개월 만에 최교진 장관 하차. 이 대통령은 전 부처·청 합동 국가자격시험 관리 실태 점검 및 법령 개정을 지시했고, 청와대는 고민정·김영호·박백범·최은옥 등 후임 인선 작업에 착수.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 흡수 전략 4대 심층 해부 (Interactive Tabs) -->
+    <section id="analysis">
+      <div class="sec-head">
+        <span class="sec-num">SECTION 03 · 4-DIMENSION DEEP DIVE</span>
+        <h2>중공 흡수 전략 관점의 4대 심층 해부</h2>
+        <p>각 탭을 클릭하여 시험 부정 사태가 어떻게 인지전·경제·데이터·서사 통제 영역과 연결되는지 확인하세요.</p>
+      </div>
+
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="ex-1">① 신뢰 침식과 인지전</button>
+        <button class="tab-btn" data-tab="ex-2">② 중국 텔레그램·자금·협박망</button>
+        <button class="tab-btn" data-tab="ex-3">③ 제도·행정 방어선 마비</button>
+        <button class="tab-btn" data-tab="ex-4">④ 교육부 수장과 서사 통제</button>
+      </div>
+
+      <div class="tab-panel active" id="ex-1">
+        <span class="badge b-crimson">삼전(심리전·여론전) · 신뢰 침식</span>
+        <h3>"공정한 시험은 없다" — 사회적 신뢰 인프라의 내부 붕괴</h3>
+        <p>DOC 2026-105는 선거 개입 의혹과 마찬가지로, 외부 세력의 직접 조작 여부가 사법적으로 확정되기 전이라도 <strong>국가 핵심 평가 시스템에 대한 국민적 불신 자체가 흡수 전략의 전리품</strong>이 된다고 진단한다.</p>
+        <ul>
+          <li><strong>공정성 신화의 타격:</strong> 세무사 수석 부정행위, 감정평가사 AI 안경 합격 주장, 유튜버의 AI 안경 수능 수학 51분 80점 시연이 연쇄 확산되며 "정직하게 공부하는 사람만 손해"라는 냉소와 체제 불신이 젊은 세대에 급속히 퍼졌다.</li>
+          <li><strong>회색지대 심리전의 증폭 효과:</strong> 중국 업체들이 실제 관여 여부와 무관하게 "한국 세무사 수석도 우리 고객", "전문 장비 없이는 적발 불가"라고 과장 홍보한 행위는 한국 수험생과 학부모의 불안을 극대화하는 심리전 효과를 낳았다.</li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="ex-2">
+        <span class="badge b-gold">초한전(네트워크·금융전) · 데이터 취약성</span>
+        <h3>21만 구독 중국 텔레그램망 · 가상자산 세탁 · '콤프로마트'형 협박</h3>
+        <p>중국어권 텔레그램 채널(합산 구독자 21만 명 이상)은 단순 암시장을 넘어 교차국경 불법 유통·자금 세탁·개인정보 탈취가 결합된 초국가적 회색지대 생태계로 작동하고 있다.</p>
+        <ul>
+          <li><strong>추적 회피 자금망:</strong> 한국 원화 결제를 일절 거부하고 중국 위안화(RMB), 홍콩 달러, 비트코인(BTC)·테더(USDT)만 수취하며, 홍콩 현지 픽업·대리인 전달·해외 택배로 세관과 수사망을 우회한다.</li>
+          <li><strong>약점 확보(Kompromat) 구조:</strong> 불법 장비를 구매한 수험생·전문직 지망생은 수사기관에 신고할 수 없다는 치명적 약점을 가진다. 실제 이용 기록과 수령 장소를 빌미로 1인당 이더리움 5개(약 1,200만 원)를 요구하는 협박 메시지가 유포되었으며, 향후 전문직·공직 진출자에 대한 장기 협박·포섭 고리로 악용될 위험이 존재한다.</li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="ex-3">
+        <span class="badge b-navy">제도 방어력 부재 · 위기 대응 실패</span>
+        <h3>사전 경고 묵살과 '단추 스티커·흑색 연필' 땜질이 드러낸 국가 OS의 노후화</h3>
+        <p>생성형 AI가 과거 시험장 밖 공범의 역할을 대체하며 공격 비용을 급격히 낮췄음에도, 한국의 시험 관리 체계는 아날로그 육안 감식에 머물러 있었다.</p>
+        <ul>
+          <li><strong>예고된 위기의 방치:</strong> 2024년 오픈소스 사이트(PyTorch)에 공학용 계산기 AI 개조법이 공개되고 대학·내신 스마트 안경 부정이 이미 확인되었음에도 교육부는 "수능은 감독이 철저하다"며 안이하게 대응했다.</li>
+          <li><strong>리더십 공백의 노출:</strong> 주무 장관의 "나이 때문에 못 잡는다"는 발언과 수능 하루 전 필기구 규정 번복은 한국 행정 시스템이 AI 시대 비대칭 위협(초한전형 기술 교란)에 얼마나 취약한지를 대내외에 노출했다.</li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="ex-4">
+        <span class="badge b-crimson">제5레버(서사 통제) · 교육 정책 향방</span>
+        <h3>교육부 수장 교체기: '기술·공정성 재설계'인가, '정치적 서사 관리'인가</h3>
+        <p>홍콩 흡수 모델에서 제5레버(서사 통제)의 핵심 무대는 교육과 교과 과정이었다. 교육부 장관은 단순 입시 관리자가 아니라 국가의 미래 세대 정체성, AI 교육 주권, 평가 신뢰를 총괄하는 전략적 요직이다.</p>
+        <ul>
+          <li><strong>단기 위기 수습의 딜레마:</strong> 최교진 장관 사퇴 직후 대학별 논술·면접, 고교 내신, 내년 2028 수능 및 국가자격시험 전면 개편이라는 과제가 산적해 있다.</li>
+          <li><strong>정치인 발탁 시 검증 포인트:</strong> 청와대 대변인·언론인 출신 고민정 의원 등 정치권 인사가 입각할 경우, 위기 소통 능력과 친문 탕평 효과는 기대할 수 있으나 <strong>AI 보안 인프라 구축·대입 평가 재설계·교육 현장의 정치적 중립성 및 서사 방어</strong>를 실질적으로 주도할 수 있을지 엄격한 인사청문 검증이 필수적이다.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. 최교진 사퇴 및 고민정 등 후임 후보군 비교 -->
+    <section id="cabinet">
+      <div class="sec-head">
+        <span class="sec-num">SECTION 04 · MINISTRY OF EDUCATION SHAKE-UP</span>
+        <h2>최교진 장관 사실상 경질과 후임 후보군 정밀 비교</h2>
+        <p>2026년 11월 22일 사의 표명 54분 만의 재가 이후 거론되는 주요 후임 하마평 (공식 내정 전)</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:17%;">후보군 (유형)</th>
+              <th style="width:24%;">주요 경력 및 배경</th>
+              <th style="width:29%;">거론 배경 · 강점 (정치권·언론 평가)</th>
+              <th style="width:30%;">흡수 전략·교육 안보 관점 검증 과제</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>고민정 의원</strong><br><span class="badge b-crimson" style="margin-top:4px;">여당 간사 · 친문</span></td>
+              <td>더불어민주당 의원, 국회 교육위 여당 간사, 전 청와대 대변인, 전 KBS 아나운서</td>
+              <td>• 교육위 간사로서 현안 파악 및 뛰어난 대국민 위기 소통 능력<br>• <strong>친문계 발탁 시 여권 내 탕평 인사</strong>라는 정치적 메시지 효과</td>
+              <td>• 교육 행정·AI 보안 기술 전문성 부족 우려<br>• 언론·정치 소통 중심 접근이 자칫 근본적 시험 보안·제도 개혁보다 여론 관리에 치우칠 리스크 점검 필요</td>
+            </tr>
+            <tr>
+              <td><strong>김영호 의원</strong><br><span class="badge b-navy" style="margin-top:4px;">3선 중진</span></td>
+              <td>더불어민주당 3선 의원, 전 국회 교육위원장</td>
+              <td>• 국회 교육위원장 역임으로 입법·여야 협상 및 정책 조정 능력 보유<br>• 국가자격시험 관련 법령 개정 추진력 기대</td>
+              <td>• 정치권 중심 인선 시 진영 갈등 해소 및 초당적 입시·평가 합의 도출 능력 검증 필요</td>
+            </tr>
+            <tr>
+              <td><strong>박백범 전 차관</strong><br><span class="badge b-emerald" style="margin-top:4px;">정통 관료</span></td>
+              <td>전 교육부 차관, 서울시교육청 부교육감, 가톨릭꽃동네대 총장</td>
+              <td>• 초·중등교육부터 대학 행정까지 아우르는 정통 교육 관료 출신<br>• 조직 장악력과 입시 행정 안정화 강점</td>
+              <td>• 기존 관료주의적 '땜질 대응' 관성을 깨고 AI 시대 비대칭 보안 위협에 맞설 혁신 의지 검증 필요</td>
+            </tr>
+            <tr>
+              <td><strong>최은옥 차관</strong><br><span class="badge b-gold" style="margin-top:4px;">내부 승진</span></td>
+              <td>현 교육부 차관 (2027 수능 부정행위 브리핑 총괄)</td>
+              <td>• 현재 대입 일정 및 AI 부정행위 사후 수습의 연속성 확보 가능<br>• 공백 최소화(과거 후임 임명까지 7~91일 소요)</td>
+              <td>• 최교진 전 장관 체제의 수능 혼선 공동 책임론 및 근본적 쇄신 신호 약화 우려</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 5. 사실과 의혹의 경계 -->
+    <section id="boundary">
+      <div class="sec-head">
+        <span class="sec-num">SECTION 05 · FACT VS HYPOTHESIS</span>
+        <h2>방법론적 경계선: 확인된 사실과 의혹·가설의 엄격한 분리</h2>
+        <p>과장된 음모론도, 안일한 축소도 경계하는 공개 출처 기반 검증 원칙</p>
+      </div>
+      <div class="boundary-grid">
+        <div class="fact-box">
+          <h3>✔ 확인된 사실 (Confirmed Facts)</h3>
+          <ul>
+            <li>제63회 세무사 수석 합격자 한모씨가 개조 계산기·초소형 모니터·카메라·AI를 이용한 부정행위를 인정.</li>
+            <li>합산 구독자 21만 명 이상의 중국어권 텔레그램 채널들이 AI 커닝 장비를 홍보·판매하며 위안화·가상자산 결제를 요구.</li>
+            <li>2027 수능에서 부정행위자 98명(위급재난문자 적발 49명 포함) 집계, 최교진 교육부 장관은 11월 22일 사의 표명 54분 만에 면직 재가.</li>
+            <li>후임 교육부 장관 후보군으로 고민정·김영호·박백범·최은옥 등이 거론 중(공식 내정 전).</li>
+          </ul>
+        </div>
+        <div class="hypo-box">
+          <h3>⚠ 의혹·수사 및 검증 대상 (Hypotheses & Unconfirmed)</h3>
+          <ul>
+            <li><strong>세무사 수석의 중국 업체 직접 연계 여부:</strong> 중국 업체는 "우리가 도왔다"고 홍보했으나, 한씨 측과 경찰 조사에서는 외부 브로커 없이 계산기를 직접 개조했다는 진술이 나왔으며 장비 유형도 상이함(수사 확인 필요).</li>
+            <li><strong>이더리움 협박 메시지 주체:</strong> 이용자 개인정보로 1,200만 원 상당을 요구한 메시지에 대해 해당 중국 업체는 "사칭 사기"라고 반박 중.</li>
+            <li><strong>국가 배후 조직적 공작 여부:</strong> 현재 확인된 것은 상업적·범죄적 중국어권 암시장 생태계이며, 중국 당국·통일전선의 직접 지시 여부는 확인된 바 없음. 다만 결과적으로 한국의 제도 신뢰를 침식하는 회색지대 효과를 낳고 있음.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 8대 대응 체크리스트 -->
+    <section id="checklist">
+      <div class="sec-head">
+        <span class="sec-num">SECTION 06 · DEFENSE CHECKLIST</span>
+        <h2>국가고시·수능 AI 부정 차단 및 교육 신뢰 회복 8대 대응 체크리스트</h2>
+        <p>체크 상태는 브라우저(localStorage)에 자동 저장됩니다. 단기 보안 복구와 장기 제도 백신을 병행해야 합니다.</p>
+      </div>
+      <div class="checklist-card">
+        <div class="cl-header">
+          <strong id="cl-count" style="color:var(--navy); font-size:0.95rem;">0 / 8 항목 점검 완료 (0%)</strong>
+          <button class="btn-reset" id="cl-reset">체크 초기화</button>
+        </div>
+        <div class="cl-progress-track"><div class="cl-progress-fill" id="cl-fill"></div></div>
+
+        <div class="cl-group-title">1. 단기 기술·수사 방어선 (즉시 실행)</div>
+        <label class="cl-item"><input type="checkbox" id="ex-c1"><span><span class="cl-label">국가시험장 전파 탐지·차단(재밍) 및 광학·열화상 보안 장비 표준화</span><span class="cl-sub">'단추 스티커'식 임시방편을 폐기하고 수능·변호사·세무사·회계사 등 전 국가시험장에 과학적 통신·전자기기 탐지 인프라 구축</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="ex-c2"><span><span class="cl-label">중국어권 텔레그램 커닝 장비 유통·자금 세탁망 국제 공조 수사</span><span class="cl-sub">가상자산(BTC·USDT) 추적 및 해외 배송·홍콩 픽업 경로에 대한 관세청·경찰·국정원 합동 차단 체계 가동</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="ex-c3"><span><span class="cl-label">AI 부정행위 장비 판매·사용 및 2차 협박 범죄 처벌 법령 개정</span><span class="cl-sub">단순 시험 무효·응시 제한을 넘어 AI 커닝 기기 제작·수입·판매·유통 브로커에 대한 형사 처벌 및 범죄수익 몰수 명문화</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="ex-c4"><span><span class="cl-label">세무사 수석 및 국가자격시험 부정행위 전수 감사·수사 결과 투명 공개</span><span class="cl-sub">외부 브로커 연계 여부와 최근 3년 주요 국가전문자격시험 이상 징후 점검 결과를 투명하게 공개해 음모론 차단</span></span></label>
+
+        <div class="cl-group-title">2. 중장기 교육 거버넌스·신뢰 백신</div>
+        <label class="cl-item"><input type="checkbox" id="ex-c5"><span><span class="cl-label">후임 교육부 장관 인사청문회 'AI 보안·평가 혁신·정치적 중립' 검증</span><span class="cl-sub">고민정 의원 등 정치권·관료 후보군 모두에게 진영 논리가 아닌 실질적 시험 보안 로드맵과 서사 중립성 검증 적용</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="ex-c6"><span><span class="cl-label">AI 시대에 부합하는 대입·국가자격 평가 방식 구조 개편</span><span class="cl-sub">단순 암기·객관식 줄세우기 취약점을 줄이고 구술·심층 검증·표준화된 보안 CBT(컴퓨터 기반 시험) 전환 검토</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="ex-c7"><span><span class="cl-label">부정행위 구매자 개인정보 유출·협박(콤프로마트) 피해 차단 및 신고 보호</span><span class="cl-sub">해외 범죄 조직이 확보한 국내 수험생·전문직 개인정보가 향후 공직·산업계 협박 수단으로 악용되지 않도록 방첩 모니터링 연계</span></span></label>
+        <label class="cl-item"><input type="checkbox" id="ex-c8"><span><span class="cl-label">전 부처·청 국가시험 보안 통합 컨트롤타워 상설화</span><span class="cl-sub">교육부·고용부·기재부·법무부 등으로 흩어진 시험 관리 규정을 통합해 매년 신종 AI 부정 수법에 대한 모의 침투 테스트 의무화</span></span></label>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>디지털 대동법 연구소 (DDLI) · LandnLiberty.kr</strong></p>
+    <p style="margin-top:6px;">DOC 2026-202 · 국가고시·수능 AI 부정 사태와 교육부 격변 — 신뢰 침식전 · 기준일 2026-11-24 · 공개 출처 기반 분석</p>
+  </footer>
+
+  <script>
+    
+    // Reading progress bar
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      document.getElementById('progress-bar').style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+    });
+
+    // Interactive Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
+    // Checklist with localStorage persistence
+    function initChecklist(storageKey) {
+      const checkboxes = document.querySelectorAll('.cl-item input[type="checkbox"]');
+      const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+
+      function updateProgress() {
+        let checked = 0;
+        checkboxes.forEach(cb => {
+          const parent = cb.closest('.cl-item');
+          if (cb.checked) {
+            checked++;
+            parent.classList.add('done');
+          } else {
+            parent.classList.remove('done');
+          }
+          saved[cb.id] = cb.checked;
+        });
+        localStorage.setItem(storageKey, JSON.stringify(saved));
+        const pct = checkboxes.length ? Math.round((checked / checkboxes.length) * 100) : 0;
+        document.getElementById('cl-count').textContent = `${checked} / ${checkboxes.length} 항목 점검 완료 (${pct}%)`;
+        document.getElementById('cl-fill').style.width = pct + '%';
+      }
+
+      checkboxes.forEach(cb => {
+        if (saved[cb.id]) cb.checked = true;
+        cb.addEventListener('change', updateProgress);
+      });
+
+      document.getElementById('cl-reset').addEventListener('click', () => {
+        checkboxes.forEach(cb => cb.checked = false);
+        localStorage.removeItem(storageKey);
+        updateProgress();
+      });
+
+      updateProgress();
+    }
+
+    initChecklist('ddli_exam_checklist_v1');
+  </script>
+</body>
+</html>

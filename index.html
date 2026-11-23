@@ -998,10 +998,10 @@ table th { white-space: nowrap; }
           <a class="st" href="land-dividend-manifesto.html">중국 토지배당 촉구서</a>
         </div>
         <div class="st-row" data-g="liberty" hidden>
-          <a class="st" href="teukgeom.html">특검 수사 파일</a>
           <a class="st" href="liberty-report.html">10.28 리포트</a>
           <a class="st" href="liberty-archive.html">증거 아카이브</a>
           <a class="st" href="forensic.html">국과수 감정 추적</a>
+          <a class="st" href="teukgeom.html">특검 수사 파일</a>
         </div>
         <div class="st-row" data-g="salriki" hidden>
           <a class="st" href="#/salriki#calendar" data-page="salriki" data-anchor="calendar">D-Day</a>
@@ -1041,10 +1041,10 @@ table th { white-space: nowrap; }
       <div class="mm-g">
         <b>자유 Liberty</b>
         <div class="mm-l">
-          <a href="teukgeom.html">특검 수사 파일</a>
           <a href="liberty-report.html">10.28 리포트</a>
           <a href="liberty-archive.html">증거 아카이브</a>
           <a href="forensic.html">국과수 감정 추적</a>
+          <a href="teukgeom.html">특검 수사 파일</a>
         </div>
       </div>
       <div class="mm-g">
@@ -1767,7 +1767,7 @@ table th { white-space: nowrap; }
 
     <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm reveal">
       <a href="#/salriki" data-page="salriki" class="rounded-full border border-ink/15 bg-white px-5 py-2.5 font-bold text-ink/80 hover:border-teal hover:text-teal transition"><i class="fa-solid fa-flag mr-1"></i> 대한민국 살리기</a>
-      <a href="https://blog.naver.com/hoyaya" target="_blank" rel="noopener noreferrer" class="rounded-full border border-ink/15 bg-white px-5 py-2.5 font-bold text-ink/80 hover:border-teal hover:text-teal transition"><i class="fa-solid fa-book-open mr-1"></i> 연구소 블로그</a>
+      <a href="https://blog.naver.com/hoyaya" target="_blank" rel="noopener noreferrer" class="rounded-full border border-ink/15 bg-white px-5 py-2.5 font-bold text-ink/80 hover:border-teal hover:text-teal transition"><i class="fa-solid fa-book-open mr-1"></i> 디지털 대동법 연구소 블로그</a>
     </div>
 
     <div id="sns-links" class="mt-10 flex justify-center gap-5 text-ink/50 reveal">
@@ -1818,7 +1818,7 @@ table th { white-space: nowrap; }
       <li><a href="#/salriki" data-page="salriki" class="hover:text-teal">대한민국 살리기</a></li>
     </ul>
     <p>디지털 대동법 연구소(DDLI) · 
-      <a href="/admin" class="ml-2 text-ink/25 hover:text-teal transition" aria-label="운영자 페이지" title="운영자 전용"><i class="fa-solid fa-lock text-xs"></i></a>
+      <a href="#/admin" data-page="admin" class="ml-2 text-ink/25 hover:text-teal transition" aria-label="운영자 페이지" title="운영자 전용"><i class="fa-solid fa-lock text-xs"></i></a>
     </p>
   </div>
 </footer></div><div class="lnl-page" id="page-policy" hidden>
@@ -3579,7 +3579,7 @@ body.admin-mode{background:#F5F7FA}
     var join=document.getElementById('join');
     if(i===0&&home&&!home.hidden&&join){
       var r=join.getBoundingClientRect();
-      if(r.top<window.innerHeight*0.55&&r.bottom>140) i=3;
+      if(r.top<window.innerHeight*0.55&&r.bottom>140) i=0;
     }
     setCur(i);
   }
