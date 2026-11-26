@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한준호 행정안전부 장관 후보자 의혹 파일 — 기밀해제 도시어</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDEAE2;
+  --paper-deep:#E3DFD4;
+  --ink:#1B1916;
+  --ink-soft:#4A463F;
+  --navy:#1D2E4E;
+  --navy-deep:#12203A;
+  --stamp:#B3261E;
+  --amber:#9A6E12;
+  --ok:#2E6B4F;
+  --line:#C9C3B4;
+  --card:#F7F5EF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans KR',sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(29,46,78,.035) 31px 32px);
+}
+a{color:var(--navy)}
+:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* ───────── top bar ───────── */
+.topbar{
+  background:var(--navy-deep);color:#E8E4D8;
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;
+  padding:9px 0;border-bottom:3px double var(--stamp);
+}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar .red{color:#E9695F}
+
+/* ───────── hero ───────── */
+header.hero{padding:64px 0 40px;position:relative;overflow:hidden}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;
+  color:var(--stamp);font-weight:600;margin-bottom:22px;
+}
+.kicker::before{content:"";width:34px;height:2px;background:var(--stamp)}
+h1{
+  font-family:'Nanum Myeongjo',serif;font-weight:800;
+  font-size:clamp(30px,5.4vw,54px);line-height:1.28;letter-spacing:-.01em;
+  max-width:820px;
+}
+h1 .redact{
+  display:inline-block;background:var(--ink);color:transparent;
+  border-radius:2px;padding:0 .18em;user-select:none;cursor:help;
+  transition:background .3s,color .3s;
+}
+h1 .redact:hover{background:var(--stamp);color:#fff}
+.hero-sub{
+  margin-top:22px;max-width:640px;color:var(--ink-soft);font-size:17px;
+}
+.hero-meta{
+  margin-top:38px;display:grid;grid-template-columns:repeat(4,1fr);
+  border:1.5px solid var(--ink);background:var(--card);
+}
+.hero-meta div{
+  padding:16px 18px;border-right:1.5px solid var(--ink);
+}
+.hero-meta div:last-child{border-right:none}
+.hero-meta dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:var(--ink-soft);margin-bottom:6px}
+.hero-meta dd{font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:19px;line-height:1.35}
+.hero-meta dd small{display:block;font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+
+/* ───────── stamps ───────── */
+.stamp{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-weight:600;
+  font-size:11.5px;letter-spacing:.1em;padding:5px 12px 4px;border-radius:3px;
+  border:2px solid currentColor;transform:rotate(-2deg);white-space:nowrap;
+}
+.stamp.s-fact{color:var(--navy)}
+.stamp.s-ctx{color:var(--amber)}
+.stamp.s-deny{color:var(--stamp)}
+.stamp.s-claim{color:var(--ink-soft)}
+.stamp.s-pend{color:#7A5A0A;background:rgba(154,110,18,.08)}
+
+/* ───────── sections ───────── */
+section{padding:52px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.sec-no{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--stamp);
+  letter-spacing:.2em;font-weight:600;
+}
+h2{
+  font-family:'Nanum Myeongjo',serif;font-weight:800;
+  font-size:clamp(23px,3.4vw,32px);line-height:1.3;
+}
+.sec-desc{color:var(--ink-soft);max-width:720px;margin:10px 0 26px;font-size:15.5px}
+hr.rule{border:none;border-top:1.5px solid var(--line);margin:34px 0 0}
+
+/* ───────── onion timeline ───────── */
+.onion{
+  border:1.5px solid var(--ink);background:var(--card);margin-top:8px;
+}
+.onion-row{display:grid;grid-template-columns:120px 1fr;border-bottom:1px dashed var(--line)}
+.onion-row:last-child{border-bottom:none}
+.onion-row>time{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;
+  padding:16px 14px;border-right:1px dashed var(--line);
+  color:var(--navy);background:rgba(29,46,78,.04);
+}
+.onion-row>p{padding:16px 20px;font-size:15px}
+.onion-row>p b{font-weight:700}
+.peel-tag{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:.12em;color:#fff;background:var(--stamp);border-radius:2px;
+  padding:1px 7px;margin-right:8px;vertical-align:2px;
+}
+.peel-tag.t2{background:var(--navy)}
+
+/* ───────── suspicion cards ───────── */
+.cards{display:grid;gap:26px;margin-top:8px}
+article.card{
+  border:1.5px solid var(--ink);background:var(--card);
+  box-shadow:5px 5px 0 rgba(29,46,78,.12);
+}
+.card-head{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+  padding:20px 24px 0;
+}
+.card-head h3{
+  font-family:'Nanum Myeongjo',serif;font-size:21px;font-weight:800;line-height:1.4;
+}
+.card-head h3 .idx{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--stamp);
+  display:block;letter-spacing:.18em;margin-bottom:4px;font-weight:600;
+}
+.card-head .stamp{flex-shrink:0;margin-top:6px}
+.card-body{padding:14px 24px 22px}
+.card-body p{font-size:15px;color:var(--ink);margin-bottom:12px}
+.card-body p:last-child{margin-bottom:0}
+.tagline{font-size:13px;color:var(--ink-soft)}
+.redact{
+  display:inline-block;background:var(--ink);color:transparent;
+  border-radius:2px;padding:0 .3em;cursor:help;
+  transition:background .3s,color .3s;
+}
+.redact:hover{background:var(--stamp);color:#fff}
+.note-box{
+  border-left:4px solid var(--navy);background:rgba(29,46,78,.055);
+  padding:12px 16px;margin-top:14px;font-size:14px;
+}
+.note-box.denied{border-color:var(--stamp);background:rgba(179,38,30,.05)}
+.note-box .nb-label{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;
+  font-weight:600;display:block;margin-bottom:4px;
+}
+.note-box .nb-label.navy{color:var(--navy)}
+.note-box .nb-label.red{color:var(--stamp)}
+
+/* ───────── two-column debate ───────── */
+.debate{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.debate-col{border:1.5px solid var(--ink);background:var(--card)}
+.debate-col h3{
+  font-family:'Nanum Myeongjo',serif;font-size:18px;font-weight:800;
+  padding:14px 20px;border-bottom:1.5px solid var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+}
+.debate-col h3 .stamp{transform:rotate(-2deg) scale(.88)}
+.debate-col ul{list-style:none;padding:16px 20px}
+.debate-col li{
+  font-size:14.5px;padding:9px 0 9px 20px;position:relative;
+  border-bottom:1px dashed var(--line);
+}
+.debate-col li:last-child{border-bottom:none}
+.debate-col li::before{content:"▸";position:absolute;left:0;color:var(--navy)}
+.debate-col.oppose li::before{color:var(--stamp)}
+.debate-col li small{color:var(--ink-soft)}
+
+/* ───────── background timeline ───────── */
+.bg-line{border-left:2px solid var(--navy);margin-left:8px;padding-left:0;margin-top:8px}
+.bg-item{position:relative;padding:0 0 22px 26px}
+.bg-item::before{
+  content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;
+  background:var(--paper);border:2.5px solid var(--stamp);border-radius:50%;
+}
+.bg-item time{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--stamp);letter-spacing:.06em}
+.bg-item h4{font-family:'Nanum Myeongjo',serif;font-size:16.5px;font-weight:700;margin:2px 0 3px}
+.bg-item p{font-size:14.5px;color:var(--ink-soft);max-width:760px}
+
+/* ───────── profile strip ───────── */
+.profile{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1.5px solid var(--ink);background:var(--card)}
+.profile div{padding:14px 20px;border-bottom:1px dashed var(--line);border-right:1px dashed var(--line)}
+.profile div:nth-child(2n){border-right:none}
+.profile div:nth-last-child(-n+2){border-bottom:none}
+.profile dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--ink-soft)}
+.profile dd{font-size:15px;font-weight:500}
+
+/* ───────── sources ───────── */
+.sources ol{list-style:none;counter-reset:src;margin-top:8px}
+.sources li{
+  counter-increment:src;padding:12px 0 12px 44px;position:relative;
+  border-bottom:1px dashed var(--line);font-size:14.5px;
+}
+.sources li::before{
+  content:"["counter(src)"]";position:absolute;left:0;top:12px;
+  font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--navy);
+}
+.sources li a{font-weight:600}
+.sources li small{display:block;color:var(--ink-soft);font-size:13px}
+
+/* ───────── footer ───────── */
+footer{
+  margin-top:60px;background:var(--navy-deep);color:#B9BEC9;
+  padding:34px 0 44px;font-size:13px;line-height:1.8;
+}
+footer .wrap p+p{margin-top:10px}
+footer strong{color:#E8E4D8}
+
+/* ───────── responsive ───────── */
+@media (max-width:820px){
+  .hero-meta{grid-template-columns:1fr 1fr}
+  .hero-meta div:nth-child(2n){border-right:none}
+  .hero-meta div{border-bottom:1.5px solid var(--ink)}
+  .hero-meta div:nth-last-child(-n+2){border-bottom:none}
+  .debate{grid-template-columns:1fr}
+  .profile{grid-template-columns:1fr}
+  .profile div{border-right:none}
+  .profile div:nth-last-child(-n+2){border-bottom:1px dashed var(--line)}
+  .profile div:last-child{border-bottom:none}
+  .onion-row{grid-template-columns:88px 1fr}
+  .onion-row>time{padding:12px 8px;font-size:11px}
+}
+@media (max-width:560px){
+  .card-head{flex-direction:column;gap:10px}
+  .onion-row{grid-template-columns:1fr}
+  .onion-row>time{border-right:none;border-bottom:1px dashed var(--line)}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>INSPECTION DOSSIER · 인사검증 파일 No.2026-1123-04</span><span class="red">상위 비밀 — 기밀해제</span><span>작성일 2026. 11. 26.</span></div></div>
+<header class="hero"><div class="wrap"><span class="kicker">FACT DOSSIER · 한준호 행정안전부 장관 후보자</span>
+<h1>MBC 아나운서 출신 대선 수행실장<br>— 법안 143건 중 행안 소관 9건의 치안·수사 수장</h1>
+<p class="hero-sub">2026년 11월 23일, 한준호 더불어민주당 의원이 행정안전부 장관 후보자로 지명됐다. 이재명 대통령의 대선 수행실장을 지낸 친명계 재선 의원이지만, 행안위 소관 법안이 대표발의 143건 중 9건(6%)뿐이라는 분석과 중수청·경찰청을 관할하는 자리에 대한 '친위 인사' 비판이 겹치고 있다. 이 페이지는 쟁점 4건을 사실관계·해명·판정으로 나눠 정리한다.</p>
+<dl class="hero-meta"><div><dt>후보자</dt><dd>한준호<small>1974년생 · 연세대 수학과</small></dd></div><div><dt>지명일</dt><dd>2026. 11. 23.<small>5개 부처 개각</small></dd></div><div><dt>핵심 경력</dt><dd>재선 국회의원<small>21·22대 고양시을</small><small>이재명 대선 수행실장</small></dd></div><div><dt>행안위 법안</dt><dd>9 / 143<small>대표발의 중 소관 비중 약 6%</small></dd></div></dl></div></header>
+<section><div class="sec-head"><span class="sec-no">SECTION 01</span><h2>매일 아침 까지는 것들 — 공개 타임라인</h2></div><p class="sec-desc">지명일(11.23) 기준의 공개 순서 기록. 사실관계는 SECTION 02의 검증 카드와 연결된다.</p><div class="onion"><div class="onion-row"><time>11.23 (일)</time><p><b>후보자 지명.</b> 임광현 비서실장 "국정철학에 대한 이해와 실행력을 갖춘 차세대 리더". 장동혁 국민의힘 대표는 즉시 "대통령 시키는 대로 할 사람 뽑은 것"이라고 반박.</p></div><div class="onion-row"><time>11.24 (월)</time><p><span class="peel-tag">껍질 1</span><b>전문성 분석 공개</b> — 한국일보, 대표발의 법안 143건 중 행안위 소관 9건(약 6%)·22대 42건 중 2건, 중수청법 본회의 표결 불참 등 분석 보도. 국민의힘 "행정부 경험 제로" 공세.</p></div><div class="onion-row"><time>11.25 (화)</time><p><span class="peel-tag">껍질 2</span><b>"왜 하필 찐명인가" 분석</b> — 허프포스트코리아, 행안부의 중수청·경찰청 동시 관할 구조와 수행실장 출신 후보자의 결합, 추미애 견제 해석 등 정치적 맥락 총정리.</p></div><div class="onion-row"><time>11.26 (수)</time><p><b>청문준비단 첫 출근</b> — "경험 부족 지적, 활동으로 증명하겠다". 청문회는 12월 2주 개회 예정이나 확정 일정은 아직 공고되지 않았다.</p></div></div>
+</section>
+<section><div class="sec-head"><span class="sec-no">SECTION 02</span><h2>의혹 검증 파일 — 4건</h2></div><p class="sec-desc">판정 기준: 보도·기록으로 직접 확인된 것, 의혹 단계인 것, 정치적 평가로 나눴다.</p><div class="cards"><article class="card"><div class="card-head"><h3><span class="idx">FILE 01</span>행안 소관 법안 9 / 143 — "치안·수사 수장의 빈약한 이력"</h3><span class="stamp s-fact">사실 확인 · 매체 분석</span></div><div class="card-body"><p>한국일보가 분석한 결과, 한 후보자의 21·22대 대표발의 법안 <b>143건 중 행정안전위 소관은 9건(약 6%)</b>이고, 22대 42건 중에는 2건뿐이다 — 공중화장실 비상벨, 공공기관 회의록 공개 등이 소재였다. 재난 지휘체계·치안·수사 관련 입법 이력은 확인되지 않았다. 중수청 설치법은 공동발의만 하고 <b>본회의 표결에 불참</b>했으며, 중수청 관련 국회 질의·발언 이력도 없다. 윤호중 전 후보자 지명 당시 법안 소관 비중(25.9%)과의 대비도 지적됐다.</p><div class="note-box"><span class="nb-label navy">해명 · 반론</span>후보자는 첫 출근길 "경험 부족 지적, 활동으로 증명하겠다"고 답했고, 이태원 참사 유가족과의 인연을 언급했다. 커뮤니티에서 도는 "22대 표결 불참 194회" 수치는 신뢰 소재가 부족해 미확인으로 분류한다.</div></div></div></article>
+<article class="card"><div class="card-head"><h3><span class="idx">FILE 02</span>중수청·경찰청을 모두 관할하는 자리 — "친위 인사" 비판</h3><span class="stamp s-claim">논거 · 정치적 평가</span></div><div class="card-body"><p>검찰청 폐지 이후 행안부는 <b>중수청과 경찰청을 모두</b> 관할한다 — 중수청법 제6조상 장관은 개별 수사사건의 지휘·감독이 가능하다. 대선 수행실장 출신 최측근이 이 자리에 앉는 구조에 대해 야당은 <b>"수사 리스크 방어용 인사"</b>라고 주장한다. 장동혁 대표: "(행안부 장관은) 경찰과 중수청을 지휘하고 선거 관리를 총괄하는 자리다. 그런데 아나운서 출신에 행정부 경험은 제로다… 결국 대통령 시키는 대로 할 사람 뽑은 거다. <b>본인 범죄는 건드릴 생각도 하지 말라는 소리다.</b>"</p><p>여권 일각에서도 경기도지사 경선에서 <b>추미애 지사에게 패한</b> 후보자가 특별교부세 배분권을 쥔 행안부를 맡는 것을 "추미애 견제용"으로 해석하는 시각이 나왔다. 박충권 수석대변인은 한 후보자가 "공소취소 모임"(공취모)에 이름을 올렸다고 주장했다 — 후보자 측 인정 여부는 미확인이다.</p></div></div></article>
+<article class="card"><div class="card-head"><h3><span class="idx">FILE 03</span>KBS 탄원서 보도 외압 논란 — 후보자 최대 개인 스캔들 후보</h3><span class="stamp s-pend">의혹 · 후보자 측 해명 미확인</span></div><div class="card-body"><p>2026년 9월 19일, 김승원 전 법무부 장관 후보자 성추행 탄원서 보도를 둘러싸고 <b>한 의원실의 KBS 압력 의혹</b>이 제기됐다. 나무위키는 논란 유형을 "외압", 혐의 유형을 "방송법 위반·직권남용·강요·업무방해"로 기재했으나 위키 특성상 중립성 검증이 필요하다. KBS가 "떳떳하다"고 반박하자 한 의원 측이 통신기록 공개를 요구하며 갈등이 확산됐다.</p><div class="note-box denied"><span class="nb-label red">확인 상태</span>논란의 존재는 다수 소스로 확인되지만, 법적 조치·감사 결과 등 확정된 판정은 없고, 외압 의혹 자체에 대한 후보자 측 공식 해명문은 이번 조사에서 확인되지 않았다(미확인). 언론인 출신 정치인의 언론 관련 행보라는 점에서 청문회 검증이 핵심 과제다.</div></div></div></article>
+<article class="card"><div class="card-head"><h3><span class="idx">FILE 04</span>과거 행적 — "토리 엄마" 사과·방송4법 발의</h3><span class="stamp s-fact">사실 확인</span></div><div class="card-body"><p>2021년 11월, 김건희 여사를 <b>"토리 엄마 김건희"</b>라고 표현한 글로 여성혐오 논란이 일자 공개 사과했다. 최고위원 재선 후에는 언론개혁TF 단장으로 <b>방송4법 발의를 주도</b>했고, 야당·언론계에서 "언론 통제" 우려가 제기되자 "언론 자유·독립 보장"이라고 반박했다. 2026년 3월에는 김어준·장인수 명예훼손 관련 "당은 왜 미적지근하게 대응하나"라는 강경 발언도 있었다.</p><p>전력을 정리하면: 데이콤ST 프로그래머(1999) → 코스닥 애널리스트(2000) → <b>MBC 아나운서(2003~2018)</b> — 언론노조 파업 참여로 2차례 징계 — 우상호 캠프 대변인 → 청와대 국민소통수석실 행정관 → 2020년 고양시을 초선. <b>공무원 시험(행정고시) 출신이 아니며</b> 지방자치·부처 행정 근무 경력도 없다 — 다만 "행정 경험 전무"라는 야당 주장에는 청와대 행정관 경력이 있어 과장이 따른다.</p></div></div></article>
+</div></section>
+<section><div class="sec-head"><span class="sec-no">SECTION 03</span><h2>찬성 vs 반대 — 인사 적합성 공방</h2></div><p class="sec-desc">동일한 사실 집합에서 양측이 서로 다른 결론을 내고 있다.</p><div class="debate"><div class="debate-col support"><h3>지지 · 해명 측 <span class="stamp s-fact">찬성론</span></h3><ul><li><b>청와대(임광현):</b> "국토, 교통, AI 등 다양한 분야에서 의정 경험을 두루 쌓았으며 국정철학에 대한 이해와 실행력을 갖춘 차세대 리더"<small> (한국일보 인용)</small></li><li><b>밀착 신뢰:</b> 대선 수행실장·12·3 계엄 당일 보좌 — 국정 수행 속도를 높일 청와대 측 판단<small> (경향 연표)</small></li><li><b>재난행정:</b> 재난 중계 아나운서 출신 — "재난 취재 경험 많다"는 본인 강조점<small> (아주경제)</small></li><li>2남 1녀 다자녀·노조 파업 경력·서울-양평 고속도로 특혜 의혹 제기 등 기본 인성·검증된 의정 활동<small> (연합 등)</small></li></ul></div><div class="debate-col oppose"><h3>반대 · 철회 요구 측 <span class="stamp s-claim">반대론</span></h3><ul><li><b>장동혁:</b> "대통령 시키는 대로 할 사람… 본인 범죄는 건드릴 생각도 하지 말라는 소리"<small> (허프포스트·한국일보)</small></li><li><b>전문성:</b> 행안 소관 법안 9/143건·중수청법 표결 불참 — 치안·수사·재난 지휘 경력 부실<small> (한국일보 분석)</small></li><li><b>수사기관 관할:</b> 중수청+경찰 지휘권을 최측근이 맡는 구조 — 민주주의적 견제 우려<small> (허프포스트)</small></li><li><b>KBS 외압 논란</b> — 언론인 출신의 언론 관련 행보 재검증 필요<small> (나무위키·디일련, 판정 미확정)</small></li><li><b>"토리 엄마" 발언</b> 사과 전력과 방송4법 발의<small> (경향 2021 등)</small></li></ul></div></div>
+</section>
+<section><div class="sec-head"><span class="sec-no">SECTION 05</span><h2>후보자 이력 한눈에</h2></div><p class="sec-desc">논란이 됐거나 맥락 설명이 필요한 이력에는 표식을 달았다.</p><dl class="profile"><div><dt>1974. 2. 20.</dt><dd>전북 전주 출생<small>우석고 · 연세대 수학과·생활디자인학과 · 가톨릭대 한류MBA</small><small></small></dd></div><div><dt>1999–2000</dt><dd>데이콤ST 프로그래머·코스닥 애널리스트<small>IT·금융 경력 시작</small><small></small></dd></div><div><dt>2003–2018</dt><dd>MBC 아나운서<small>언론노조 파업 참여로 2차례 사내 징계</small><small></small></dd></div><div><dt>2018</dt><dd>청와대 국민소통수석실 행정관<small>우상호 서울시장 경선 캠프 대변인 거쳐</small><small></small></dd></div><div><dt>2020</dt><dd>제21대 국회의원 초선<small>경기 고양시을 — 2024년 재선</small><small></small></dd></div><div><dt>2021. 11.</dt><dd>"토리 엄마 김건희" 발언 사과<small>FILE 04</small><small></small></dd></div><div><dt>2022</dt><dd>이재명 대선 수행실장<small>계양을 보궐선거 수행실장 겸임</small><small></small></dd></div><div><dt>2024. 12. 3.</dt><dd>비상계엄 당일 이 대통령 밀착 보좌<small>8월 전당대회 최고위원·언론개혁TF 단장</small><small></small></dd></div><div><dt>2026. 4.</dt><dd>경기도지사 경선 출마<small>추미애에 패배(후보적합도 14%) — 견제 해석 논란 FILE 02</small><small></small></dd></div><div><dt>2026. 11. 23.</dt><dd><b>행정안전부 장관 후보자 지명</b><small>윤호중 후임 — 의원직 겸직 입각 시 민주당 11번째</small><small></small></dd></div><div><dt>진행 중</dt><dd>인사청문회 검증 대기<small>12월 2주 개회 예정 — 확정 일정 미공고<small></small></dd></div></dl>
+</section>
+<section id="sources" class="sources"><div class="sec-head"><span class="sec-no">SOURCES</span><h2>출처</h2></div><p class="sec-desc">이 파일의 모든 사실관계는 아래 공개 보도에 근거한다. 클릭하면 원문으로 이동한다.</p><ol><li><a href="생년·학력·전 경력·친명 배경">연합뉴스 "[프로필] 한준호 행안장관 후보자…언론 출신 친명계 재선"</a><small>https://www.yna.co.kr/view/AKR20261123135700001</small></li><li><a href="전문성 분석·장동혁 발언 전문">한국일보 "행안 소관 법안 9/143건… 국민의힘 반대 논거"</a><small>https://www.hankookilbo.com/news/article/A2026112414560003512</small></li><li><a href="수사 리스크·추미애 견제·공취모 분석">허프포스트코리아 "'막강' 행안부 장관에 왜 하필 '찐명' 한준호일까"</a><small>https://www.huffingtonpost.kr/article/262395</small></li><li><a href="이재명과의 관계사 연표">경향신문 "이 대통령 대선 후보 때부터 수행실장 밀착 보좌"</a><small>https://www.khan.co.kr/article/202611232104015</small></li><li><a href="학력·청와대 행정관 확인">머니투데이 프로필</a><small>https://www.mt.co.kr/policy/2026/11/23/2026112315181034998</small></li><li><a href="지명 후 여론">YTN "전문성 문제 도마, 청문회 전 삐걱"</a><small>https://www.ytn.co.kr/_ln/0134_202611250942002580</small></li><li><a href="용혜인·김승원 낙마 선례">디일련 "국민의힘 송곳검증 방침"</a><small>https://m.dailian.co.kr/news/view/1719219/</small></li><li><a href="2026.9. 논란 개요(중립성 유의)">나무위키 "한준호 의원실 KBS 김승원 탄원서 보도 외압 논란"</a><small>https://namu.wiki/w/%ED%95%9C%EC%A4%80%ED%98%B8%20%EC%9D%98%EC%9B%90%EC%8B%A4%20KBS%20%EA%B9%80%EC%8A%B9%EC%9B%90%20%ED%83%84%EC%9B%90%EC%84%9C%20%EB%B3%B4%EB%8F%84%20%EC%99%B8%EC%95%95%20%EB%85%BC%EB%9E%80</small></li><li><a href="과거 발언 사과">경향신문(2021) "토리 엄마 김건희" 발언 사과 원문</a><small>https://www.khan.co.kr/article/202111201746001</small></li><li><a href="인사 해석">경향위클리 "추미애 견제 vs 대권주자 육성"</a><small>https://weekly.khan.co.kr/article/202611231702001</small></li><li><a href="지명 배경 분석">조선일보 "경찰·중수청 관할 자리에 찐명 지명 배경"</a><small>https://www.chosun.com/politics/assembly/2026/11/24/64CS3IPNSRGU7OD2QD6R5VKD4Q/</small></li><li><a href="후보자 입장">아주경제 "11.26 첫 출근, 전문성 부족, 활동으로 증명"</a><small>https://www.ajunews.com/view/20261126102901666</small></li></ol></section>
+<section class="sec" id="assets-sec"><h2>재산공개 현황</h2><style>.asst-wrap{margin-top:8px}.asst-tbl{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0 6px}.asst-tbl th,.asst-tbl td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}.asst-tbl th{background:var(--panel2);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--ink)}.asst-tbl td b{font-weight:700}.asst-note{font-size:13px;color:var(--ink-soft);margin-top:10px;line-height:1.7}.asst-src{font-size:13px;margin-top:10px}.asst-src a{color:var(--navy)}</style><div class="asst-wrap"><p>한준호 후보자는 <b>제22대 국회의원</b>으로, <b>국회 공직자윤리위원회 정기 재산공개</b> 대상이다. 토지와 자유는 294명 전원의 재산을 2026. 11. 21. 전수 갱신해 공개 추적하고 있으며, 그 기준(2026. 3. 26. 공개 · 기준일 2025. 12. 31. · 신고가액)에서 한준호 의원의 재산은 다음과 같다.</p><table class="asst-tbl"><tr><th style="width:32%">항목</th><th>내역</th></tr><tr><th>신고 재산 총액</th><td><b>7억 6,527만 3,000원</b>(직전 대비 +1억 6,844만 4,000원) — 배우자 명의 제주 제주시 도두이동 과수원 2필지(2억 6,900만원), 경기 고양시 일산서구 아파트(2억원) 등 <span style="color:var(--ink-soft);font-size:12.5px">※ 언론 보도 라운드 수치(7억 6,500만원)는 반올림</span></td></tr><tr><th>가족 예금</th><td>총 3억 5,900만원</td></tr><tr><th>정치자금 예금</th><td>1억 3,700만원</td></tr><tr><th>채무</th><td>2억 5,500만원 <span style="color:var(--ink-soft);font-size:12.5px">※ 토지와 자유 원부 항목 합산은 사인간채권 5,000만원 + 금융채무 2억 3,206만원 = 2억 8,206만원으로 집계 차이(약 3,200만원)가 있음 — 기사 집계와 원부 합산이 어긋나 단정 불가, 원부 대조 권장</span></td></tr></table><p class="asst-note">공직자 재산공개는 국회 공직자윤리위원회가 2026년 3월 26일 0시 국회공보로 공개한 「2026년 정기 재산변동사항」이며, 신고 기준일은 2025년 12월 31일, 금액은 모두 <b>신고가액</b> 기준이다(실시가·시세 아님).</p><p class="asst-src">출처: <a href="https://www.landnliberty.kr/22%EB%8C%80-%EA%B5%AD%ED%9A%8C%EC%9D%98%EC%9B%90-%EA%B3%B5%EA%B0%9C%EC%B6%94%EC%A0%81-%EA%B0%B1%EC%8B%A0%EB%B3%B8/assets.html" target="_blank" rel="noopener">토지와 자유 — 22대 국회의원 재산공개 현황(294명, 2026. 11. 21. 전수 갱신)</a> · <a href="https://www.landnliberty.kr/22%EB%8C%80-%EA%B5%AD%ED%9A%8C%EC%9D%98%EC%9B%90-%EA%B3%B5%EA%B0%9C%EC%B6%94%EC%A0%81-%EA%B0%B1%EC%8B%A0%EB%B3%B8/members/295-%ED%95%9C%EC%A4%80%ED%98%B8.html" target="_blank" rel="noopener">토지와 자유 — 한준호 의원 개별 명부(가나다 295번)</a> · <a href="https://www.mt.co.kr/politics/2026/11/23/2026112316021226438" target="_blank" rel="noopener">머니투데이 — "강유정 문체부 장관 후보자 재산 37.9억…한준호 행안장관 후보자 7.7억"(2026. 11. 23.)</a></p></div></section>
+<footer><div class="wrap"><p><strong>파일에 대한 각주.</strong> 이 도시어는 2026. 11. 26. 기준 공개 보도를 정리한 것이다. 후보자는 아직 국회 인사청문회를 거치지 않았다. 공취모 관련성(주장 단계)·표결 불참 194회 수치(커뮤니티 소스만)·KBS 외압 의혹에 대한 공식 해명문은 확인되지 않았고(미확인), 후보자 관련 감사·재판 결과는 확인된 사례가 없다. '사실 확인' 판정은 행위·기록의 존재를 확인한 것이며 평가·해석은 독자의 몫이다.</p><p>수정·반박 자료가 나오면 갱신한다. <span style="font-family:'IBM Plex Mono',monospace;letter-spacing:.14em">— END OF FILE.</span></p></div></footer>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

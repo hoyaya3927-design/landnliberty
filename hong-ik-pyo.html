@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>홍익표 통일부 장관 후보자 의혹 파일 — 기밀해제 도시어</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDEAE2;
+  --paper-deep:#E3DFD4;
+  --ink:#1B1916;
+  --ink-soft:#4A463F;
+  --navy:#1D2E4E;
+  --navy-deep:#12203A;
+  --stamp:#B3261E;
+  --amber:#9A6E12;
+  --ok:#2E6B4F;
+  --line:#C9C3B4;
+  --card:#F7F5EF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans KR',sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(29,46,78,.035) 31px 32px);
+}
+a{color:var(--navy)}
+:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* ───────── top bar ───────── */
+.topbar{
+  background:var(--navy-deep);color:#E8E4D8;
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;
+  padding:9px 0;border-bottom:3px double var(--stamp);
+}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar .red{color:#E9695F}
+
+/* ───────── hero ───────── */
+header.hero{padding:64px 0 40px;position:relative;overflow:hidden}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;
+  color:var(--stamp);font-weight:600;margin-bottom:22px;
+}
+.kicker::before{content:"";width:34px;height:2px;background:var(--stamp)}
+h1{
+  font-family:'Nanum Myeongjo',serif;font-weight:800;
+  font-size:clamp(30px,5.4vw,54px);line-height:1.28;letter-spacing:-.01em;
+  max-width:820px;
+}
+h1 .redact{
+  display:inline-block;background:var(--ink);color:transparent;
+  border-radius:2px;padding:0 .18em;user-select:none;cursor:help;
+  transition:background .3s,color .3s;
+}
+h1 .redact:hover{background:var(--stamp);color:#fff}
+.hero-sub{
+  margin-top:22px;max-width:640px;color:var(--ink-soft);font-size:17px;
+}
+.hero-meta{
+  margin-top:38px;display:grid;grid-template-columns:repeat(4,1fr);
+  border:1.5px solid var(--ink);background:var(--card);
+}
+.hero-meta div{
+  padding:16px 18px;border-right:1.5px solid var(--ink);
+}
+.hero-meta div:last-child{border-right:none}
+.hero-meta dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:var(--ink-soft);margin-bottom:6px}
+.hero-meta dd{font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:19px;line-height:1.35}
+.hero-meta dd small{display:block;font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+
+/* ───────── stamps ───────── */
+.stamp{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-weight:600;
+  font-size:11.5px;letter-spacing:.1em;padding:5px 12px 4px;border-radius:3px;
+  border:2px solid currentColor;transform:rotate(-2deg);white-space:nowrap;
+}
+.stamp.s-fact{color:var(--navy)}
+.stamp.s-ctx{color:var(--amber)}
+.stamp.s-deny{color:var(--stamp)}
+.stamp.s-claim{color:var(--ink-soft)}
+.stamp.s-pend{color:#7A5A0A;background:rgba(154,110,18,.08)}
+
+/* ───────── sections ───────── */
+section{padding:52px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.sec-no{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--stamp);
+  letter-spacing:.2em;font-weight:600;
+}
+h2{
+  font-family:'Nanum Myeongjo',serif;font-weight:800;
+  font-size:clamp(23px,3.4vw,32px);line-height:1.3;
+}
+.sec-desc{color:var(--ink-soft);max-width:720px;margin:10px 0 26px;font-size:15.5px}
+hr.rule{border:none;border-top:1.5px solid var(--line);margin:34px 0 0}
+
+/* ───────── onion timeline ───────── */
+.onion{
+  border:1.5px solid var(--ink);background:var(--card);margin-top:8px;
+}
+.onion-row{display:grid;grid-template-columns:120px 1fr;border-bottom:1px dashed var(--line)}
+.onion-row:last-child{border-bottom:none}
+.onion-row>time{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;
+  padding:16px 14px;border-right:1px dashed var(--line);
+  color:var(--navy);background:rgba(29,46,78,.04);
+}
+.onion-row>p{padding:16px 20px;font-size:15px}
+.onion-row>p b{font-weight:700}
+.peel-tag{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:.12em;color:#fff;background:var(--stamp);border-radius:2px;
+  padding:1px 7px;margin-right:8px;vertical-align:2px;
+}
+.peel-tag.t2{background:var(--navy)}
+
+/* ───────── suspicion cards ───────── */
+.cards{display:grid;gap:26px;margin-top:8px}
+article.card{
+  border:1.5px solid var(--ink);background:var(--card);
+  box-shadow:5px 5px 0 rgba(29,46,78,.12);
+}
+.card-head{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+  padding:20px 24px 0;
+}
+.card-head h3{
+  font-family:'Nanum Myeongjo',serif;font-size:21px;font-weight:800;line-height:1.4;
+}
+.card-head h3 .idx{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--stamp);
+  display:block;letter-spacing:.18em;margin-bottom:4px;font-weight:600;
+}
+.card-head .stamp{flex-shrink:0;margin-top:6px}
+.card-body{padding:14px 24px 22px}
+.card-body p{font-size:15px;color:var(--ink);margin-bottom:12px}
+.card-body p:last-child{margin-bottom:0}
+.tagline{font-size:13px;color:var(--ink-soft)}
+.redact{
+  display:inline-block;background:var(--ink);color:transparent;
+  border-radius:2px;padding:0 .3em;cursor:help;
+  transition:background .3s,color .3s;
+}
+.redact:hover{background:var(--stamp);color:#fff}
+.note-box{
+  border-left:4px solid var(--navy);background:rgba(29,46,78,.055);
+  padding:12px 16px;margin-top:14px;font-size:14px;
+}
+.note-box.denied{border-color:var(--stamp);background:rgba(179,38,30,.05)}
+.note-box .nb-label{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;
+  font-weight:600;display:block;margin-bottom:4px;
+}
+.note-box .nb-label.navy{color:var(--navy)}
+.note-box .nb-label.red{color:var(--stamp)}
+
+/* ───────── two-column debate ───────── */
+.debate{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.debate-col{border:1.5px solid var(--ink);background:var(--card)}
+.debate-col h3{
+  font-family:'Nanum Myeongjo',serif;font-size:18px;font-weight:800;
+  padding:14px 20px;border-bottom:1.5px solid var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+}
+.debate-col h3 .stamp{transform:rotate(-2deg) scale(.88)}
+.debate-col ul{list-style:none;padding:16px 20px}
+.debate-col li{
+  font-size:14.5px;padding:9px 0 9px 20px;position:relative;
+  border-bottom:1px dashed var(--line);
+}
+.debate-col li:last-child{border-bottom:none}
+.debate-col li::before{content:"▸";position:absolute;left:0;color:var(--navy)}
+.debate-col.oppose li::before{color:var(--stamp)}
+.debate-col li small{color:var(--ink-soft)}
+
+/* ───────── background timeline ───────── */
+.bg-line{border-left:2px solid var(--navy);margin-left:8px;padding-left:0;margin-top:8px}
+.bg-item{position:relative;padding:0 0 22px 26px}
+.bg-item::before{
+  content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;
+  background:var(--paper);border:2.5px solid var(--stamp);border-radius:50%;
+}
+.bg-item time{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--stamp);letter-spacing:.06em}
+.bg-item h4{font-family:'Nanum Myeongjo',serif;font-size:16.5px;font-weight:700;margin:2px 0 3px}
+.bg-item p{font-size:14.5px;color:var(--ink-soft);max-width:760px}
+
+/* ───────── profile strip ───────── */
+.profile{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1.5px solid var(--ink);background:var(--card)}
+.profile div{padding:14px 20px;border-bottom:1px dashed var(--line);border-right:1px dashed var(--line)}
+.profile div:nth-child(2n){border-right:none}
+.profile div:nth-last-child(-n+2){border-bottom:none}
+.profile dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--ink-soft)}
+.profile dd{font-size:15px;font-weight:500}
+
+/* ───────── sources ───────── */
+.sources ol{list-style:none;counter-reset:src;margin-top:8px}
+.sources li{
+  counter-increment:src;padding:12px 0 12px 44px;position:relative;
+  border-bottom:1px dashed var(--line);font-size:14.5px;
+}
+.sources li::before{
+  content:"["counter(src)"]";position:absolute;left:0;top:12px;
+  font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--navy);
+}
+.sources li a{font-weight:600}
+.sources li small{display:block;color:var(--ink-soft);font-size:13px}
+
+/* ───────── footer ───────── */
+footer{
+  margin-top:60px;background:var(--navy-deep);color:#B9BEC9;
+  padding:34px 0 44px;font-size:13px;line-height:1.8;
+}
+footer .wrap p+p{margin-top:10px}
+footer strong{color:#E8E4D8}
+
+/* ───────── responsive ───────── */
+@media (max-width:820px){
+  .hero-meta{grid-template-columns:1fr 1fr}
+  .hero-meta div:nth-child(2n){border-right:none}
+  .hero-meta div{border-bottom:1.5px solid var(--ink)}
+  .hero-meta div:nth-last-child(-n+2){border-bottom:none}
+  .debate{grid-template-columns:1fr}
+  .profile{grid-template-columns:1fr}
+  .profile div{border-right:none}
+  .profile div:nth-last-child(-n+2){border-bottom:1px dashed var(--line)}
+  .profile div:last-child{border-bottom:none}
+  .onion-row{grid-template-columns:88px 1fr}
+  .onion-row>time{padding:12px 8px;font-size:11px}
+}
+@media (max-width:560px){
+  .card-head{flex-direction:column;gap:10px}
+  .onion-row{grid-template-columns:1fr}
+  .onion-row>time{border-right:none;border-bottom:1px dashed var(--line)}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>INSPECTION DOSSIER · 인사검증 파일 No.2026-1123-02</span><span class="red">상위 비밀 — 기밀해제</span><span>작성일 2026. 11. 26.</span></div></div>
+<header class="hero"><div class="wrap"><span class="kicker">FACT DOSSIER · 홍익표 통일부 장관 후보자</span>
+<h1>북한경제 16년 연구자 출신 '통일외교 정책통'<br>— 청문회 1호 쟁점은 박사논문 '자기표절'</h1>
+<p class="hero-sub">2026년 11월 23일, 홍익표 전 청와대 정무수석이 통일부 장관 후보자로 지명됐다. 한양대 정치학 박사·KIEP 북한경제 연구자 출신 3선 의원이지만, 지명 이틀 만에 박사논문 재사용 의혹이 1호 쟁점으로 제기됐고 10년 전 본회의 발언들이 재소환되고 있다. 이 페이지는 쟁점 4건을 사실관계·해명·판정으로 나눠 정리한다.</p>
+<dl class="hero-meta"><div><dt>후보자</dt><dd>홍익표<small>1967년생 · 한양대 정치학 박사</small></dd></div><div><dt>지명일</dt><dd>2026. 11. 23.<small>5개 부처 개각</small></dd></div><div><dt>핵심 경력</dt><dd>청와대 정무수석<small>2026. 1.~11월 초</small><small>전 더불어민주당 원내대표</small></dd></div><div><dt>국회</dt><dd>3선<small>19·20·21대(서울 성동을·중성동갑)</small></dd></div></dl></div></header>
+<section><div class="sec-head"><span class="sec-no">SECTION 01</span><h2>매일 아침 까지는 것들 — 공개 타임라인</h2></div><p class="sec-desc">지명일(11.23) 기준의 공개 순서 기록. 사실관계는 SECTION 02의 검증 카드와 연결된다.</p><div class="onion"><div class="onion-row"><time>11.23 (일)</time><p><b>후보자 지명.</b> 임광현 비서실장 "남북 간 긴장 완화와 신뢰 구축에 중대한 전환점에서… 실질적인 조치를 주도할 적임자". 정동영 통일부장관 후임.</p></div><div class="onion-row"><time>11.25 (화)</time><p><span class="peel-tag">껍질 1</span><b>박사논문 "자기표절" 의혹</b> — 김대식 국민의힘 의원실, 2005년 박사논문이 2004년 KIEP 정책연구보고서와 겹치는데 인용 표시가 누락됐다고 제기. 같은 날 MBC, "공저 보고서 20쪽 가량을 사실상 베낀 것" 단독 보도. 후보자 측 "인사청문회에서 소상히 설명하겠다".</p></div><div class="onion-row"><time>11.26 (수)</time><p><span class="peel-tag">껍질 2</span><b>과거 대북 발언 총정리</b>(연합뉴스) — 2016년 본회의 무제한토론 발언(응징은 하책·개성공단 폐쇄는 행정권 남용·북한인권법 "아무 관련 없다")과 2021년 한미 워킹그룹 "옥상옥" 발언 재소환. 같은 날 남북회담본부 도어스테핑.</p></div><div class="onion-row"><time>진행 중</time><p><span class="peel-tag">껍질 3</span><b>정무수석 시절 정치 현안 발언</b> — 연임·공소취소·파병 발언과 4월의 "대통령 의중 왜곡 전달" 파문이 검증 대상으로 재등장. 청문회 확정 일정은 아직 공고되지 않았다.</p></div></div>
+</section>
+<section><div class="sec-head"><span class="sec-no">SECTION 02</span><h2>의혹 검증 파일 — 4건</h2></div><p class="sec-desc">판정 기준: 보도·기록으로 직접 확인된 것, 의혹 단계인 것, 맥락 평가가 유보되는 것으로 나눴다.</p><div class="cards"><article class="card"><div class="card-head"><h3><span class="idx">FILE 01</span>박사논문 "자기표절" — KIEP 보고서와의 중복</h3><span class="stamp s-pend">의혹 · 청문회 대기</span></div><div class="card-body"><p>2005년 한양대 정치학 박사논문 『김정일체제의 경제개혁에 관한 연구』가 <b>2004년 12월 발간된 본인의 KIEP 정책연구보고서(『최근 북한의 가격·유통체제 변화 및 향후 개혁과제: 중국과의 비교 연구』)와 상당 부분 겹치는데 인용 표시가 누락됐다</b>는 것이 김대식 국민의힘 의원실의 제기다. MBC는 "공저 보고서 20쪽 가량을 사실상 베낀 것"이라고 단독 보도했다.</p><p>단, "자기표절"은 자기 연구물의 재사용으로 <b>타인의 연구를 베끼는 표절과는 구분</b>된다. 학위 취소·감사 결과 등 공식 판정은 아직 나오지 않았다.</p><div class="note-box"><span class="nb-label navy">후보자 측 입장</span>"인사청문회에서 소상히 설명하겠다." — 한양대 공식 입장은 이번 조사에서 확인되지 않았다(미확인).</div></div></div></article>
+<article class="card"><div class="card-head"><h3><span class="idx">FILE 02</span>2016년 본회의 대북 발언 — "응징은 하책", 북한인권법 "아무 관련 없다"</h3><span class="stamp s-ctx">발언 사실 · 맥락 유보</span></div><div class="card-body"><p>2016년 2월 제340회 임시국회 본회의 무제한토론에서 홍 후보자는 (북한이) "도발을 하면 이렇게 응징하겠다, 그것은 <b>하책</b>", 개성공단 폐쇄는 "법적 근거도 없이 과도한 <b>행정권이 남용됐다</b>", 북한인권법은 "실질적 북한인권 개선하고 <b>아무 관련이 없다</b>", 북핵은 "결국 보수정권에서 시작됐다"고 말했다. 2021년에는 한미 워킹그룹을 <b>"옥상옥"</b>이라 평했고, 5.24 대북제재의 즉각 해제를 요구한 전력도 보도됐다.</p><p>이 발언들은 야당의 "대북 유화" 논거로 재소환되고 있다. 연합뉴스는 반대로 이런 이력 때문에 이재명 정부의 한반도 평화공존 정책의 연속성이 지켜질 것으로 보되, "자주파 동반 퇴진"으로 읽히는 개각 성격상 외교부·유엔군사령부와의 조율이 과제라고 전망했다.</p><div class="note-box"><span class="nb-label navy">해명 · 반론</span>발언 원문은 언론이 전문으로 공개해 확인되지만, 이를 "친북 성향"으로 평가할지는 정치적 해석의 영역이다. 대북 발언과 통일정책 역량은 별개로 평가할 필요가 있다는 지적도 있다(CBC뉴스).</div></div></div></article>
+<article class="card"><div class="card-head"><h3><span class="idx">FILE 03</span>연임·공소취소·파병 — 정무수석 시절 발언</h3><span class="stamp s-ctx">발언 사실 · 해석 분분</span></div><div class="card-body"><p>청와대 정무수석 시절의 정치 현안 발언이 청문회 검증 대상으로 돌아왔다. ① 이 대통령이 정청래·장동혁 회동에서 <b>"연임에 별다른 생각이 없다"</b>고 했다고 전달했고, ② "공소 취소"에 대해 <b>"조작 기소가 명백하게 밝혀진 이후에는 공소 취소 문제도 검토될 수 있다"</b>는 취지로 말했으며, ③ 중동 파병 보도는 실제와 다를 수 있다고 설명했다.</p><div class="note-box denied"><span class="nb-label red">파문 — "대통령 의중 왜곡 전달"</span>재직 중 지방선거 홍보물 공문 건에서 이해찬 상임고문 측이 <b>"대통령의 의중을 왜곡 전달했다"</b>고 반박하며 이재명 대통령의 사실상 공개 경고(감찰 지시)를 받았다는 보도(뉴탐사)가 있다. 이해찬 측 반박과 함께 소비되어 독립적 확인은 어려운 지점이다. 이 파문 이후 11월 초 정무수석 사의가 이뤄졌고, 구체적 배경은 공식 확인되지 않았다.</div></div></div></article>
+<article class="card"><div class="card-head"><h3><span class="idx">FILE 04</span>프로필 — 판사·헌재 경력 없음, 16년 북한경제 연구자</h3><span class="stamp s-fact">사실 확인 · 착시 정리</span></div><div class="card-body"><p>일부에서 홍 후보자를 법조인 출신으로 오인하는 게 돌지만, 확보된 모든 프로필에 <b>판사·대법관·헌법재판관 경력은 없다.</b> 실제 이력은 한양대 정치외교학과 → 동 대학원 정치학 석사(1991)·박사(2005) → <b>KIEP 전문연구원(북한경제·남북경협 약 16년)</b> → 노무현 정부 통일부 정책보좌관 → 북한대학원대 겸임교수 → 2012년 19대 총선 성동을 당선으로 정계입문(3선) → 민주당 수석대변인·정책위의장·문체위원장 → 2023년 9월 이재명 체포동의안 가결 직후 원내대표 → 2024년 총선 서초을 낙선(41.79%) → 2026년 1월 정무수석. 참고로 셀프표절 의혹이 있던 2015년 통일부 장관 후보자는 홍용표로, 별개의 인물이다.</p></div></div></article>
+</div></section>
+<section><div class="sec-head"><span class="sec-no">SECTION 03</span><h2>찬성 vs 반대 — 인사 적합성 공방</h2></div><p class="sec-desc">동일한 사실 집합에서 양측이 서로 다른 결론을 내고 있다.</p><div class="debate"><div class="debate-col support"><h3>지지 · 해명 측 <span class="stamp s-fact">찬성론</span></h3><ul><li><b>청와대(임광현):</b> "남북 간 긴장 완화와 신뢰 구축에 중대한 전환점에서… 실질적인 조치를 주도할 적임자"<small> (지명 발표)</small></li><li><b>전문성:</b> 북한경제 16년 연구 + 노무현 정부 통일부 실무 + 원내대표·정무수석의 정무감각 — 8년 단절된 남북 대화채널 복원에 적합하다는 평가<small> (뉴스1·한겨레)</small></li><li>2023년 "비명 횡사" 공천 논란 속에서도 단일대오를 유지해 총선 승리를 이끈 수습 능력<small> (연합 프로필)</small></li><li>자기표절은 타인 연구 절도와 다른 유형의 문제<small> (중앙일보)</small></li></ul></div><div class="debate-col oppose"><h3>반대 · 철회 요구 측 <span class="stamp s-claim">반대론</span></h3><ul><li><b>김대식:</b> 박사논문의 KIEP 보고서 중복·인용 누락 — 청문회 1호 쟁점 제기<small> (의원실 배포)</small></li><li>2016년 대북 발언 원문(응징은 하책·북한인권법 무관·개성공단 폐쇄 비판) — "대북 유화" 논거<small> (연합뉴스 총정리)</small></li><li>연임·공소취소·파병 발언 — 대통령실 대변 역할 발언의 적절성 재검증 필요<small> (CBC뉴스)</small></li><li>남북 협상 직접 주도 경험 부족 지적<small> (뉴스토마토)</small></li></ul></div></div>
+</section>
+<section><div class="sec-head"><span class="sec-no">SECTION 05</span><h2>후보자 이력 한눈에</h2></div><p class="sec-desc">논란이 됐거나 맥락 설명이 필요한 이력에는 표식을 달았다.</p><dl class="profile"><div><dt>1967. 11. 20.</dt><dd>서울 관악구 출생<small>관악고 · 한양대 정치외교학과</small><small></small></dd></div><div><dt>1991 / 2005</dt><dd>한양대 대학원 정치학 석사·박사<small>박사논문 — KIEP 보고서 중복 의혹 FILE 01</small><small></small></dd></div><div><dt>~2012</dt><dd>KIEP 전문연구원·통일부 정책보좌관<small>북한경제·남북경협 연구 약 16년</small><small></small></dd></div><div><dt>2012–2022</dt><dd>19~21대 국회의원(3선)<small>서울 성동을·중성동갑 — 문체위원장·행안위 간사 등</small><small></small></dd></div><div><dt>2016. 2.</dt><dd>본회의 무제한토론<small>"응징은 하책" 등 대북 발언 — FILE 02</small><small></small></dd></div><div><dt>2023. 9.</dt><dd>더불어민주당 원내대표<small>이재명 체포동의안 가결 직후 수습</small><small></small></dd></div><div><dt>2026. 1.</dt><dd>청와대 정무수석<small>4월 "의중 왜곡 전달" 파문 — FILE 03 · 11월 초 사의</small><small></small></dd></div><div><dt>2026. 11. 23.</dt><dd><b>통일부 장관 후보자 지명</b><small>정동영 장관 후임</small><small></small></dd></div><div><dt>진행 중</dt><dd>인사청문회 검증 대기<small>논문 소명 예상 — 일정 미공고<small></small></dd></div></dl>
+</section>
+<section id="sources" class="sources"><div class="sec-head"><span class="sec-no">SOURCES</span><h2>출처</h2></div><p class="sec-desc">이 파일의 모든 사실관계는 아래 공개 보도에 근거한다. 클릭하면 원문으로 이동한다.</p><ol><li><a href="지명 당일 종합 프로필">연합뉴스 "[프로필] 홍익표 통일장관 후보자…정무감각 갖춘 통일외교 정책통"</a><small>https://www.yna.co.kr/view/AKR20261123127000001</small></li><li><a href="자기표절 쟁점 원보">중앙일보 "홍익표 후보자 박사논문과 연구보고서 겹쳐…재사용 가능성"</a><small>https://www.joongang.co.kr/article/25481975</small></li><li><a href="공저 보고서 중복 취재 상세">MBC 단독 "박사논문 자기표절 20쪽 복붙"</a><small>https://imnews.imbc.com/news/2026/politics/article/6868562_36911.html</small></li><li><a href="2016·2021 발언 원문 전문">연합뉴스 과거 대북 발언 총정리</a><small>https://www.yna.co.kr/view/AKR20261125177800504</small></li><li><a href="수석 시절 현안 발언">CBC뉴스 "연임·공소취소·파병 발언 재조명"</a><small>https://www.cbci.co.kr/news/articleView.html?idxno=629869</small></li><li><a href="2026.9.8 발언">연합뉴스 "연임 논란 커져 유감" 브리핑</a><small>https://www.yna.co.kr/view/AKR20260908065500001</small></li><li><a href="재산 60억 7834만 원(2020.4.15 기준)">뉴스타파 공직자 재산 정보</a><small>https://jaesan.newstapa.org/people/aVaFj_P7XMnqIYc</small></li><li><a href="적임자 평가">뉴스1 프로필 "대북정책 경험 갖춘 3선 정책통"</a><small>https://www.news1.kr/diplomacy/unikorea/6362988</small></li><li><a href="대북 발언 근거">KBS "5.24 대북제재 즉각 해제" 발언</a><small>https://news.kbs.co.kr/news/mobile/view/view.do?ncd=4452554</small></li><li><a href="수석 시절 갈등(비판적 시각 소스 — 참고)">뉴탐사 "대통령 의중 왜곡 전달 파문"</a><small>https://newtamsa.org/news/LycTQt</small></li><li><a href="41.79% 득표">이데일리 22대 총선 서초을 낙선</a><small>https://www.edaily.co.kr/News/Read?newsId=02151686638855136&mediaCodeNo=257</small></li><li><a href="정책통 이력 상세">한국일보 프로필</a><small>https://www.hankookilbo.com/news/article/amp/A2026112315510001956</small></li></ol></section>
+<footer><div class="wrap"><p><strong>파일에 대한 각주.</strong> 이 도시어는 2026. 11. 26. 기준 공개 보도를 정리한 것이다. 후보자는 아직 국회 인사청문회를 거치지 않았고, 박사논문 의혹에 대한 공식 판정은 나오지 않았다. 뉴탐사 관련 항목은 비판적 성향의 매체 보도로 독립 확인이 어렵다는 점을 밝힌다. 최신 재산 신고액·청문회 확정 일정은 이번 조사에서 확인되지 않았다(미확인).</p><p>수정·반박 자료가 나오면 갱신한다. <span style="font-family:'IBM Plex Mono',monospace;letter-spacing:.14em">— END OF FILE.</span></p></div></footer>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

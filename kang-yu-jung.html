@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>강유정 문화체육관광부 장관 후보자 의혹 파일 — 기밀해제 도시어</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDEAE2;
+  --paper-deep:#E3DFD4;
+  --ink:#1B1916;
+  --ink-soft:#4A463F;
+  --navy:#1D2E4E;
+  --navy-deep:#12203A;
+  --stamp:#B3261E;
+  --amber:#9A6E12;
+  --ok:#2E6B4F;
+  --line:#C9C3B4;
+  --card:#F7F5EF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans KR',sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(29,46,78,.035) 31px 32px);
+}
+a{color:var(--navy)}
+:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* ───────── top bar ───────── */
+.topbar{
+  background:var(--navy-deep);color:#E8E4D8;
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;
+  padding:9px 0;border-bottom:3px double var(--stamp);
+}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar .red{color:#E9695F}
+
+/* ───────── hero ───────── */
+header.hero{padding:64px 0 40px;position:relative;overflow:hidden}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;
+  color:var(--stamp);font-weight:600;margin-bottom:22px;
+}
+.kicker::before{content:"";width:34px;height:2px;background:var(--stamp)}
+h1{
+  font-family:'Nanum Myeongjo',serif;font-weight:800;
+  font-size:clamp(30px,5.4vw,54px);line-height:1.28;letter-spacing:-.01em;
+  max-width:820px;
+}
+h1 .redact{
+  display:inline-block;background:var(--ink);color:transparent;
+  border-radius:2px;padding:0 .18em;user-select:none;cursor:help;
+  transition:background .3s,color .3s;
+}
+h1 .redact:hover{background:var(--stamp);color:#fff}
+.hero-sub{
+  margin-top:22px;max-width:640px;color:var(--ink-soft);font-size:17px;
+}
+.hero-meta{
+  margin-top:38px;display:grid;grid-template-columns:repeat(4,1fr);
+  border:1.5px solid var(--ink);background:var(--card);
+}
+.hero-meta div{
+  padding:16px 18px;border-right:1.5px solid var(--ink);
+}
+.hero-meta div:last-child{border-right:none}
+.hero-meta dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:var(--ink-soft);margin-bottom:6px}
+.hero-meta dd{font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:19px;line-height:1.35}
+.hero-meta dd small{display:block;font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+
+/* ───────── stamps ───────── */
+.stamp{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-weight:600;
+  font-size:11.5px;letter-spacing:.1em;padding:5px 12px 4px;border-radius:3px;
+  border:2px solid currentColor;transform:rotate(-2deg);white-space:nowrap;
+}
+.stamp.s-fact{color:var(--navy)}
+.stamp.s-ctx{color:var(--amber)}
+.stamp.s-deny{color:var(--stamp)}
+.stamp.s-claim{color:var(--ink-soft)}
+.stamp.s-pend{color:#7A5A0A;background:rgba(154,110,18,.08)}
+
+/* ───────── sections ───────── */
+section{padding:52px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.sec-no{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--stamp);
+  letter-spacing:.2em;font-weight:600;
+}
+h2{
+  font-family:'Nanum Myeongjo',serif;font-weight:800;
+  font-size:clamp(23px,3.4vw,32px);line-height:1.3;
+}
+.sec-desc{color:var(--ink-soft);max-width:720px;margin:10px 0 26px;font-size:15.5px}
+hr.rule{border:none;border-top:1.5px solid var(--line);margin:34px 0 0}
+
+/* ───────── onion timeline ───────── */
+.onion{
+  border:1.5px solid var(--ink);background:var(--card);margin-top:8px;
+}
+.onion-row{display:grid;grid-template-columns:120px 1fr;border-bottom:1px dashed var(--line)}
+.onion-row:last-child{border-bottom:none}
+.onion-row>time{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;
+  padding:16px 14px;border-right:1px dashed var(--line);
+  color:var(--navy);background:rgba(29,46,78,.04);
+}
+.onion-row>p{padding:16px 20px;font-size:15px}
+.onion-row>p b{font-weight:700}
+.peel-tag{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:.12em;color:#fff;background:var(--stamp);border-radius:2px;
+  padding:1px 7px;margin-right:8px;vertical-align:2px;
+}
+.peel-tag.t2{background:var(--navy)}
+
+/* ───────── suspicion cards ───────── */
+.cards{display:grid;gap:26px;margin-top:8px}
+article.card{
+  border:1.5px solid var(--ink);background:var(--card);
+  box-shadow:5px 5px 0 rgba(29,46,78,.12);
+}
+.card-head{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+  padding:20px 24px 0;
+}
+.card-head h3{
+  font-family:'Nanum Myeongjo',serif;font-size:21px;font-weight:800;line-height:1.4;
+}
+.card-head h3 .idx{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--stamp);
+  display:block;letter-spacing:.18em;margin-bottom:4px;font-weight:600;
+}
+.card-head .stamp{flex-shrink:0;margin-top:6px}
+.card-body{padding:14px 24px 22px}
+.card-body p{font-size:15px;color:var(--ink);margin-bottom:12px}
+.card-body p:last-child{margin-bottom:0}
+.tagline{font-size:13px;color:var(--ink-soft)}
+.redact{
+  display:inline-block;background:var(--ink);color:transparent;
+  border-radius:2px;padding:0 .3em;cursor:help;
+  transition:background .3s,color .3s;
+}
+.redact:hover{background:var(--stamp);color:#fff}
+.note-box{
+  border-left:4px solid var(--navy);background:rgba(29,46,78,.055);
+  padding:12px 16px;margin-top:14px;font-size:14px;
+}
+.note-box.denied{border-color:var(--stamp);background:rgba(179,38,30,.05)}
+.note-box .nb-label{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;
+  font-weight:600;display:block;margin-bottom:4px;
+}
+.note-box .nb-label.navy{color:var(--navy)}
+.note-box .nb-label.red{color:var(--stamp)}
+
+/* ───────── two-column debate ───────── */
+.debate{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.debate-col{border:1.5px solid var(--ink);background:var(--card)}
+.debate-col h3{
+  font-family:'Nanum Myeongjo',serif;font-size:18px;font-weight:800;
+  padding:14px 20px;border-bottom:1.5px solid var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+}
+.debate-col h3 .stamp{transform:rotate(-2deg) scale(.88)}
+.debate-col ul{list-style:none;padding:16px 20px}
+.debate-col li{
+  font-size:14.5px;padding:9px 0 9px 20px;position:relative;
+  border-bottom:1px dashed var(--line);
+}
+.debate-col li:last-child{border-bottom:none}
+.debate-col li::before{content:"▸";position:absolute;left:0;color:var(--navy)}
+.debate-col.oppose li::before{color:var(--stamp)}
+.debate-col li small{color:var(--ink-soft)}
+
+/* ───────── background timeline ───────── */
+.bg-line{border-left:2px solid var(--navy);margin-left:8px;padding-left:0;margin-top:8px}
+.bg-item{position:relative;padding:0 0 22px 26px}
+.bg-item::before{
+  content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;
+  background:var(--paper);border:2.5px solid var(--stamp);border-radius:50%;
+}
+.bg-item time{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--stamp);letter-spacing:.06em}
+.bg-item h4{font-family:'Nanum Myeongjo',serif;font-size:16.5px;font-weight:700;margin:2px 0 3px}
+.bg-item p{font-size:14.5px;color:var(--ink-soft);max-width:760px}
+
+/* ───────── profile strip ───────── */
+.profile{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1.5px solid var(--ink);background:var(--card)}
+.profile div{padding:14px 20px;border-bottom:1px dashed var(--line);border-right:1px dashed var(--line)}
+.profile div:nth-child(2n){border-right:none}
+.profile div:nth-last-child(-n+2){border-bottom:none}
+.profile dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--ink-soft)}
+.profile dd{font-size:15px;font-weight:500}
+
+/* ───────── sources ───────── */
+.sources ol{list-style:none;counter-reset:src;margin-top:8px}
+.sources li{
+  counter-increment:src;padding:12px 0 12px 44px;position:relative;
+  border-bottom:1px dashed var(--line);font-size:14.5px;
+}
+.sources li::before{
+  content:"["counter(src)"]";position:absolute;left:0;top:12px;
+  font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--navy);
+}
+.sources li a{font-weight:600}
+.sources li small{display:block;color:var(--ink-soft);font-size:13px}
+
+/* ───────── footer ───────── */
+footer{
+  margin-top:60px;background:var(--navy-deep);color:#B9BEC9;
+  padding:34px 0 44px;font-size:13px;line-height:1.8;
+}
+footer .wrap p+p{margin-top:10px}
+footer strong{color:#E8E4D8}
+
+/* ───────── responsive ───────── */
+@media (max-width:820px){
+  .hero-meta{grid-template-columns:1fr 1fr}
+  .hero-meta div:nth-child(2n){border-right:none}
+  .hero-meta div{border-bottom:1.5px solid var(--ink)}
+  .hero-meta div:nth-last-child(-n+2){border-bottom:none}
+  .debate{grid-template-columns:1fr}
+  .profile{grid-template-columns:1fr}
+  .profile div{border-right:none}
+  .profile div:nth-last-child(-n+2){border-bottom:1px dashed var(--line)}
+  .profile div:last-child{border-bottom:none}
+  .onion-row{grid-template-columns:88px 1fr}
+  .onion-row>time{padding:12px 8px;font-size:11px}
+}
+@media (max-width:560px){
+  .card-head{flex-direction:column;gap:10px}
+  .onion-row{grid-template-columns:1fr}
+  .onion-row>time{border-right:none;border-bottom:1px dashed var(--line)}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>INSPECTION DOSSIER · 인사검증 파일 No.2026-1123-03</span><span class="red">상위 비밀 — 기밀해제</span><span>작성일 2026. 11. 26.</span></div></div>
+<header class="hero"><div class="wrap"><span class="kicker">FACT DOSSIER · 강유정 문화체육관광부 장관 후보자</span>
+<h1>신춘문예 3관왕 출신 '1호 대변인'<br>— 속기록 삭제·고소 입건·60억 아파트</h1>
+<p class="hero-sub">2026년 11월 23일, 강유정 청와대 수석대변인이 문화체육관광부 장관 후보자로 지명됐다. 영화·문학평론가 출신의 문화 전문가이자 이재명 정부의 '1호 대변인'이지만, 대변인 시절의 속기록 삭제 논란과 명예훼손 고소 입건, 반포 아크로리버파크 보유 이력이 청문회 최대 화력선이 될 전망이다. 이 페이지는 쟁점 4건을 사실관계·해명·판정으로 나눠 정리한다.</p>
+<dl class="hero-meta"><div><dt>후보자</dt><dd>강유정<small>1975년생 · 고려대 국어교육과</small></dd></div><div><dt>지명일</dt><dd>2026. 11. 23.<small>5개 부처 개각</small></dd></div><div><dt>핵심 경력</dt><dd>청와대 수석대변인<small>2026. 4.~</small><small>영화·문학평론가 · 강남대 교수</small></dd></div><div><dt>국회</dt><dd>22대 비례의원<small>2024. 4.</small><small>원내대변인 · 문체위 위원</small></dd></div></dl></div></header>
+<section><div class="sec-head"><span class="sec-no">SECTION 01</span><h2>매일 아침 까지는 것들 — 공개 타임라인</h2></div><p class="sec-desc">지명일(11.23) 기준의 공개 순서 기록. 사실관계는 SECTION 02의 검증 카드와 연결된다.</p><div class="onion"><div class="onion-row"><time>11.23 (일)</time><p><b>후보자 지명.</b> 임광현 비서실장 "문화예술에 대한 깊은 이해와 참신한 시각으로… K컬처로 세계를 선도하는 문화강국 이끌 적임자". 국민의힘 정점식 원내대표는 "재활용 돌려막기 인사"라고 즉각 비판.</p></div><div class="onion-row"><time>11.24 (화)</time><p><span class="peel-tag">껍질 1</span><b>전문성·회전문 공세</b> — 국민의힘 박성훈 수석대변인 "그들만의 잔치일 뿐". 대변인 출신 소통 특화 인사가 부처 행정을 짊어질 수 있나가 반대 논거로 부상.</p></div><div class="onion-row"><time>11.25 (화)</time><p><span class="peel-tag">껍질 2</span><b>대변인 시절 실책 3연타</b> 재조명 — 2025. 9. 속기록 삭제·발언 번복, OBS 기자 명예훼손 고소 입건, 6·27 부동산 대책 "대통령실 대책이 아니다" 발언.</p></div><div class="onion-row"><time>진행 중</time><p><span class="peel-tag">껍질 3</span><b>재산·부동산 검증</b> — 반포 아크로리버파크(배우자 명의, 신고 43억 원) 보유와 2026년 2~3월 용인 아파트 처분을 통한 다주택 해소 전력. 청문회 일정은 아직 공고되지 않았다.</p></div></div>
+</section>
+<section><div class="sec-head"><span class="sec-no">SECTION 02</span><h2>의혹 검증 파일 — 4건</h2></div><p class="sec-desc">판정 기준: 보도·기록으로 직접 확인된 것, 수사 결과가 미확인인 것, 평가가 유보되는 것으로 나눴다.</p><div class="cards"><article class="card"><div class="card-head"><h3><span class="idx">FILE 01</span>속기록 삭제와 "원칙적으로 공감한다" — 기록물 문제</h3><span class="stamp s-fact">사실 확인 · 복원됨</span></div><div class="card-body"><p>2025년 9월 15일 브리핑에서 강 당시 대변인은 추미애 법사위원장의 조희대 대법원장 사퇴 요구와 관련해 "시대적·국민적 요구가 있다면 그 이유에 대해 돌이켜볼 필요가 있다는 점에 <b>원칙적으로 공감한다</b>"고 말했다. 다수 매체가 해당 발언에 방점을 찍자 약 1시간 20분 뒤 "브리핑 취지를 오독한 것"이라며 번복했고, 더 큰 문제는 대통령실이 <b>해당 발언을 삭제한 속기록을 배포</b>했다는 점이다 — 기자단 항의로 50여 분 뒤 원문이 복원됐다. 한국일보 사설은 "대통령기록물을 임의로 바꾸는 건 실정법 위반 소지도 있다"고 지적했다.</p><div class="note-box"><span class="nb-label navy">해명 · 반론</span>우상호 당시 정무수석: "오해를 살 수 있는 발言이나, 대법원장 사퇴 주장이 아니라 사법부 개혁 취지에 공감한다는 의미였다." 야당은 송언석 원내대표 "명백한 위법이고 국민 기만", 최보윤 수석대변인 "즉각 해임 촉구"로 해명을 받지 않았다. 청문회에서 가장 세밀하게 검증될 구간이다.</div></div></div></article>
+<article class="card"><div class="card-head"><h3><span class="idx">FILE 02</span>OBS 기자의 명예훼손 고소 입건</h3><span class="stamp s-fact">사실 확인 · 수사 결과 미확인</span></div><div class="card-body"><p>2025년 6월 대통령 비공개 일정 질문 과정의 브리핑 설전 이후, 전직 대통령실 출입기자인 OBS 최한성 기자가 강 당시 대변인을 <b>명예훼손으로 고소</b>했다. 최 기자는 "대변인님 전에 그 잘못된 사실을 말씀을 해서 제가 사이버 폭력을 당하고 있다"고 밝혔고, 서울 서대문경찰서는 2025년 8월 19일 고소장을 접수, 21일 입건해 수사에 착수했다.</p><p>"소통 담당자"였던 대변인이 기자에게 고소당했다는 점 자체가 청문회 질문 소재로 예상된다. <b>수사 결과(불송치·불기소 여부)는 이번 조사에서 확인되지 않았다.</b></p></div></div></article>
+<article class="card"><div class="card-head"><h3><span class="idx">FILE 03</span>반포 아크로리버파크와 재산 — 다주택 해소 전력</h3><span class="stamp s-fact">사실 확인</span></div><div class="card-body"><p>강 후보자는 배우자 명의로 서초구 반포동 <b>아크로리버파크 전용 112.93㎡(약 45평)</b>를 보유했고, 시민단체 분석에서 "대통령 비서실 집값 1위"로 지목되며 <b>시세 60억 원 훌쩍</b>이라는 보도가 나왔다(KBS 방송). 2025년 12월 31일 기준 재산 신고는 총 <b>37억 9,000만 원</b>(반포 아파트 43억 원 신고 · 채무 13억 3,100만 원). 이재명 대통령이 다주택 문제를 거듭 언급하자 2026년 2월 용인 아파트를 매물로 내놓았고 3월 매매 계약으로 <b>청와대 참모 중 첫 다주택 해소</b> 사례가 됐다. 처분 시점·가격의 적절성은 청문회 검증 대상이 될 전망이다.</p></div></div></article>
+<article class="card"><div class="card-head"><h3><span class="idx">FILE 04</span>강점 자산 — 평론가 전문성과 "전세가" 왜곡 정정</h3><span class="stamp s-fact">경력 배경</span></div><div class="card-body"><p>2005년 동아일보 영화평론·조선일보·경향신문 문학평론 부문 <b>신춘문예 3관왕</b>으로 데뷔해 평론가·강남대 교수를 거쳤고, 민주당 게임특별위원장으로 WHO 게임이용장애 질병코드 등재 대응·게임산업진흥법 개정에 관여한 "게임산업을 아는" 후보자다. 국회에서 법안 발의 34건. 2026년 9월에는 대통령 "전세가 사라져야 한다" 왜곡 보도가 퍼지자 KBS 라디오에서 <i>"사라져야 한다와 사라질 것으로 예측된다는 사실 매우 큰 차이가 있죠"</i>라고 정정 논리를 전개했다.</p><p>2024년 12월 3일 비상계엄 당시 남편과 함께 국회로 향해 담을 넘은 에피소드도 재조명됐다 — "집을 나서며 딸을 안아줄 때 돌아오지 못할 수도 있겠다는 생각이 들었다."</p></div></div></article>
+</div></section>
+<section><div class="sec-head"><span class="sec-no">SECTION 03</span><h2>찬성 vs 반대 — 인사 적합성 공방</h2></div><p class="sec-desc">동일한 사실 집합에서 양측이 서로 다른 결론을 내고 있다.</p><div class="debate"><div class="debate-col support"><h3>지지 · 해명 측 <span class="stamp s-fact">찬성론</span></h3><ul><li><b>청와대(임광현):</b> "기초예술 뿌리를 더 튼튼히 하고… K컬처로 세계를 선도하는 문화강국 이끌 적임자"<small> (뉴시스 인용)</small></li><li><b>전문성:</b> 신춘문예 3관왕·20년 평론가·교수 경력 — "실질 문화 전문가 후보"<small> (뉴시스·ZDNet)</small></li><li><b>게임산업:</b> 게임특위 위원장으로 진흥법 개정 관여 — 업계 환영<small> (테크엠)</small></li><li><b>국정경험:</b> 문체위 위원 + 수석대변인의 이중 경험, 법안 34건<small> (테크엠)</small></li></ul></div><div class="debate-col oppose"><h3>반대 · 철회 요구 측 <span class="stamp s-claim">반대론</span></h3><ul><li><b>정점식 국민의힘 원내대표:</b> "재활용 돌려막기 인사… 레임덕 징후가 완전히 나타나는 인선"<small> (한겨레)</small></li><li><b>속기록 삭제:</b> "대통령기록물을 임의로 바꾸는 건 실정법 위반 소지" — 대변인 공신력 추락<small> (한국일보 사설)</small></li><li><b>언론과의 갈등:</b> 브리핑 설전 → 고소 입건 — 소통 담당자의 이력으로는 역설<small> (조선·오마이뉴스)</small></li><li><b>60억대 반포 아파트</b> 보유 이력 — 부동산 대책 국면에서 검증 요구<small> (KBS·경향)</small></li></ul></div></div>
+</section>
+<section><div class="sec-head"><span class="sec-no">SECTION 05</span><h2>후보자 이력 한눈에</h2></div><p class="sec-desc">논란이 됐거나 맥락 설명이 필요한 이력에는 표식을 달았다.</p><dl class="profile"><div><dt>1975. 12. 15.</dt><dd>서울 출생<small>한영외고 독일어과 · 고려대 국어교육과·대학원 박사</small><small></small></dd></div><div><dt>2005</dt><dd>신춘문예 3관왕<small>동아일보 영화평론 + 조선·경향 문학평론 당선</small><small></small></dd></div><div><dt>~2024</dt><dd>평론가·강남대 교수<small>민음사 편집위원 · 부천판타스틱영화제 조직위</small><small></small></dd></div><div><dt>2024. 4.</dt><dd>22대 비례의원<small>더불어민주연합 9번 — 원내대변인·문체위</small><small></small></dd></div><div><dt>2025. 6. 4.</dt><dd>대통령실 대변인<small>출범 첫날 발탁 — 의원직 사퇴·승계. 속기록 삭제·고소 입건 FILE 01~02</small><small></small></dd></div><div><dt>2026. 2.–3.</dt><dd>용인 아파트 처분<small>참모 중 첫 다주택 해소 — 재산 총 37억 9,000만 원 신고</small><small></small></dd></div><div><dt>2026. 4.</dt><dd>청와대 수석대변인 승진<small>100분 기자회견 사회 등</small><small></small></dd></div><div><dt>2026. 11. 23.</dt><dd><b>문체부장관 후보자 지명</b><small>최휘영 후임</small><small></small></dd></div><div><dt>진행 중</dt><dd>인사청문회 검증 대기<small>속기록·재산 소명 예상 — 일정 미공고<small></small></dd></div></dl>
+</section>
+<section id="sources" class="sources"><div class="sec-head"><span class="sec-no">SOURCES</span><h2>출처</h2></div><p class="sec-desc">이 파일의 모든 사실관계는 아래 공개 보도에 근거한다. 클릭하면 원문으로 이동한다.</p><ol><li><a href="생년·학력·전경력·비서실장 평가 원문">뉴시스 "[프로필] 靑수석대변인, 문체부 장관 후보자"</a><small>https://mobile.newsis.com/view/NISX20261123_0003879578</small></li><li><a href="프로필 + 게임특위">ZDNet "[프로필] 강유정 문체부 장관 후보자…영화평론가 출신 게임특위 활동 눈길"</a><small>https://zdnet.co.kr/view/?no=20261123153642</small></li><li><a href="게임특위 상세·법안 34건">테크엠 "강유정 수석대변인 문체부 장관 후보 지명…게임산업 정통한 인사 발탁"</a><small>https://www.techm.kr/news/articleView.html?idxno=157716</small></li><li><a href="대변인·수석 승진 경력">경향신문 "강유정 문체부 장관 내정자, 영화·문학평론가 출신…이재명 정부 1호 대변인"</a><small>https://www.khan.co.kr/article/202611232104025</small></li><li><a href="속기록 논란 전말">한국일보 사설 "속기록 삭제 논란 강유정, 대통령의 입에 걸맞은 처신을"</a><small>https://www.hankookilbo.com/news/article/A2025091714320001667</small></li><li><a href="야당 공세 원문 인용">경향신문 "국힘 원칙적 공감 발언·번복… 강유정 대변인 해임하라"</a><small>https://www.khan.co.kr/article/202509161121011</small></li><li><a href="우상호 해명·해임 유보 배경">펜마이크 "기록 삭제한 강유정, 대통령실이 해임하지 않는 이유"</a><small>https://www.pennmike.com/news/articleView.html?idxno=107864</small></li><li><a href="고소 입건 사실">조선일보 "[단독] 경찰, 강유정 대통령실 대변인 명예훼손 혐의로 입건"</a><small>https://www.chosun.com/national/national_general/2025/08/21/GQYFQHHZIFCUTOC4GPGDQNQPOU/</small></li><li><a href="고소 경위">오마이뉴스 "강유정 대통령실 대변인, 출입기자에게 명예훼손으로 고소 당해"</a><small>https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003159630</small></li><li><a href="전세 정정 인터뷰 원문">KBS "[전격시사] 사라져야한다 vs 사라질 것이다 전혀 다른 뜻"</a><small>https://news.kbs.co.kr/news/view.do?ncd=8668436</small></li><li><a href="2026.11.23 개각 여야 반응">한겨레 "국힘 레임덕 인사 혹평…민주 국민 삶 더할 인선 평가"</a><small>https://www.hani.co.kr/arti/politics/assembly/1288725.html</small></li><li><a href="가족·계엄 에피소드·재산 내역">아티브뉴스 "대변인 출신 강유정 문체부 장관 남편 & 자녀 발언 재조명"</a><small>https://www.artivenews.co.kr/news/articleView.html?idxno=4017</small></li><li><a href="부동산 처분 경과">이인포맥스 "강유정 靑대변인, 용인 아파트 처분…참모 중 첫 다주택 해소"</a><small>https://news.einfomax.co.kr/news/articleView.html?idxno=4405620</small></li></ol></section>
+<section class="sec" id="assets-sec"><h2>재산공개 현황</h2><style>.asst-wrap{margin-top:8px}.asst-tbl{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0 6px}.asst-tbl th,.asst-tbl td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}.asst-tbl th{background:var(--panel2);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--ink)}.asst-tbl td b{font-weight:700}.asst-note{font-size:13px;color:var(--ink-soft);margin-top:10px;line-height:1.7}.asst-src{font-size:13px;margin-top:10px}.asst-src a{color:var(--navy)}</style><div class="asst-wrap"><p>강유정 후보자는 <b>제22대 국회의원이 아니다</b>(현직 청와대 수석대변인) — 따라서 토지와 자유의 22대 국회의원 재산공개 명부(294명)에는 등재돼 있지 않다(사이트 확인 결과). 다만 국회 공직자윤리위원회의 정기 재산공개 체계는 공직자 전체에 적용되므로, 후보자 재산공개 자료(2026. 3. 26. 공개 · 기준일 2025. 12. 31. · 신고가액)는 아래와 같이 보도돼 있다.</p><table class="asst-tbl"><tr><th style="width:32%">항목</th><th>내역</th></tr><tr><th>신고 재산 총액</th><td><b>37억 9,000만원</b></td></tr><tr><th>본인 명의</th><td>경기 용인시 기흥구 아파트(139.25㎡) — 신고가액 3억 3,300만원</td></tr><tr><th>배우자 명의</th><td>서울 서초구 반포동 아크로리버파크 아파트(112.93㎡) — 신고가액 <b>43억원</b></td></tr><tr><th>가족 예금</th><td>총 4억 8,700만원</td></tr><tr><th>채무</th><td>13억 3,100만원</td></tr></table><p class="asst-note">공직자 재산공개는 국회 공직자윤리위원회가 2026년 3월 26일 0시 국회공보로 공개한 「2026년 정기 재산변동사항」이며, 신고 기준일은 2025년 12월 31일, 금액은 모두 <b>신고가액</b> 기준이다(실시가·시세 아님). 배우자 명의 아파트의 신고가액(43억)은 감정·취득가 등 신고 기준에 따른 것으로 실제 시세와는 다를 수 있다.</p><p class="asst-src">출처: <a href="https://www.mt.co.kr/politics/2026/11/23/2026112316021226438" target="_blank" rel="noopener">머니투데이 — "강유정 문체부 장관 후보자 재산 37.9억…한준호 행안장관 후보자 7.7억"(2026. 11. 23.)</a> · (22대 의원 명부 부재 확인) <a href="https://www.landnliberty.kr/22%EB%8C%80-%EA%B5%AD%ED%9A%8C%EC%9D%98%EC%9B%90-%EA%B3%B5%EA%B0%9C%EC%B6%94%EC%A0%81-%EA%B0%B1%EC%8B%A0%EB%B3%B8/assets.html" target="_blank" rel="noopener">토지와 자유 — 22대 국회의원 재산공개 현황(294명, 2026. 11. 21. 전수 갱신)</a></p></div></section>
+<footer><div class="wrap"><p><strong>파일에 대한 각주.</strong> 이 도시어는 2026. 11. 26. 기준 공개 보도를 정리한 것이다. 후보자는 아직 국회 인사청문회를 거치지 않았다. OBS 기자 고소의 수사 결과는 확인되지 않았고(미확인), 여성 문체부장관 몇 번째인가에 대해서는 매체 간 집계가 상이하다(세대일보 3번째 · 헤럴드경제 5번째). '사실 확인' 판정은 행위·기록의 존재를 확인한 것이며 평가·해석은 독자의 몫이다.</p><p>수정·반박 자료가 나오면 갱신한다. <span style="font-family:'IBM Plex Mono',monospace;letter-spacing:.14em">— END OF FILE.</span></p></div></footer>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

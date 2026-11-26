@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>임웅순 외교부 장관 후보자 의혹 파일 — 기밀해제 도시어</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDEAE2;
+  --paper-deep:#E3DFD4;
+  --ink:#1B1916;
+  --ink-soft:#4A463F;
+  --navy:#1D2E4E;
+  --navy-deep:#12203A;
+  --stamp:#B3261E;
+  --amber:#9A6E12;
+  --ok:#2E6B4F;
+  --line:#C9C3B4;
+  --card:#F7F5EF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans KR',sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(29,46,78,.035) 31px 32px);
+}
+a{color:var(--navy)}
+:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* ───────── top bar ───────── */
+.topbar{
+  background:var(--navy-deep);color:#E8E4D8;
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;
+  padding:9px 0;border-bottom:3px double var(--stamp);
+}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar .red{color:#E9695F}
+
+/* ───────── hero ───────── */
+header.hero{padding:64px 0 40px;position:relative;overflow:hidden}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;
+  color:var(--stamp);font-weight:600;margin-bottom:22px;
+}
+.kicker::before{content:"";width:34px;height:2px;background:var(--stamp)}
+h1{
+  font-family:'Nanum Myeongjo',serif;font-weight:800;
+  font-size:clamp(30px,5.4vw,54px);line-height:1.28;letter-spacing:-.01em;
+  max-width:820px;
+}
+h1 .redact{
+  display:inline-block;background:var(--ink);color:transparent;
+  border-radius:2px;padding:0 .18em;user-select:none;cursor:help;
+  transition:background .3s,color .3s;
+}
+h1 .redact:hover{background:var(--stamp);color:#fff}
+.hero-sub{
+  margin-top:22px;max-width:640px;color:var(--ink-soft);font-size:17px;
+}
+.hero-meta{
+  margin-top:38px;display:grid;grid-template-columns:repeat(4,1fr);
+  border:1.5px solid var(--ink);background:var(--card);
+}
+.hero-meta div{
+  padding:16px 18px;border-right:1.5px solid var(--ink);
+}
+.hero-meta div:last-child{border-right:none}
+.hero-meta dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:var(--ink-soft);margin-bottom:6px}
+.hero-meta dd{font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:19px;line-height:1.35}
+.hero-meta dd small{display:block;font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+
+/* ───────── stamps ───────── */
+.stamp{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-weight:600;
+  font-size:11.5px;letter-spacing:.1em;padding:5px 12px 4px;border-radius:3px;
+  border:2px solid currentColor;transform:rotate(-2deg);white-space:nowrap;
+}
+.stamp.s-fact{color:var(--navy)}
+.stamp.s-ctx{color:var(--amber)}
+.stamp.s-deny{color:var(--stamp)}
+.stamp.s-claim{color:var(--ink-soft)}
+.stamp.s-pend{color:#7A5A0A;background:rgba(154,110,18,.08)}
+
+/* ───────── sections ───────── */
+section{padding:52px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.sec-no{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--stamp);
+  letter-spacing:.2em;font-weight:600;
+}
+h2{
+  font-family:'Nanum Myeongjo',serif;font-weight:800;
+  font-size:clamp(23px,3.4vw,32px);line-height:1.3;
+}
+.sec-desc{color:var(--ink-soft);max-width:720px;margin:10px 0 26px;font-size:15.5px}
+hr.rule{border:none;border-top:1.5px solid var(--line);margin:34px 0 0}
+
+/* ───────── onion timeline ───────── */
+.onion{
+  border:1.5px solid var(--ink);background:var(--card);margin-top:8px;
+}
+.onion-row{display:grid;grid-template-columns:120px 1fr;border-bottom:1px dashed var(--line)}
+.onion-row:last-child{border-bottom:none}
+.onion-row>time{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;
+  padding:16px 14px;border-right:1px dashed var(--line);
+  color:var(--navy);background:rgba(29,46,78,.04);
+}
+.onion-row>p{padding:16px 20px;font-size:15px}
+.onion-row>p b{font-weight:700}
+.peel-tag{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:.12em;color:#fff;background:var(--stamp);border-radius:2px;
+  padding:1px 7px;margin-right:8px;vertical-align:2px;
+}
+.peel-tag.t2{background:var(--navy)}
+
+/* ───────── suspicion cards ───────── */
+.cards{display:grid;gap:26px;margin-top:8px}
+article.card{
+  border:1.5px solid var(--ink);background:var(--card);
+  box-shadow:5px 5px 0 rgba(29,46,78,.12);
+}
+.card-head{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+  padding:20px 24px 0;
+}
+.card-head h3{
+  font-family:'Nanum Myeongjo',serif;font-size:21px;font-weight:800;line-height:1.4;
+}
+.card-head h3 .idx{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--stamp);
+  display:block;letter-spacing:.18em;margin-bottom:4px;font-weight:600;
+}
+.card-head .stamp{flex-shrink:0;margin-top:6px}
+.card-body{padding:14px 24px 22px}
+.card-body p{font-size:15px;color:var(--ink);margin-bottom:12px}
+.card-body p:last-child{margin-bottom:0}
+.tagline{font-size:13px;color:var(--ink-soft)}
+.redact{
+  display:inline-block;background:var(--ink);color:transparent;
+  border-radius:2px;padding:0 .3em;cursor:help;
+  transition:background .3s,color .3s;
+}
+.redact:hover{background:var(--stamp);color:#fff}
+.note-box{
+  border-left:4px solid var(--navy);background:rgba(29,46,78,.055);
+  padding:12px 16px;margin-top:14px;font-size:14px;
+}
+.note-box.denied{border-color:var(--stamp);background:rgba(179,38,30,.05)}
+.note-box .nb-label{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;
+  font-weight:600;display:block;margin-bottom:4px;
+}
+.note-box .nb-label.navy{color:var(--navy)}
+.note-box .nb-label.red{color:var(--stamp)}
+
+/* ───────── two-column debate ───────── */
+.debate{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.debate-col{border:1.5px solid var(--ink);background:var(--card)}
+.debate-col h3{
+  font-family:'Nanum Myeongjo',serif;font-size:18px;font-weight:800;
+  padding:14px 20px;border-bottom:1.5px solid var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+}
+.debate-col h3 .stamp{transform:rotate(-2deg) scale(.88)}
+.debate-col ul{list-style:none;padding:16px 20px}
+.debate-col li{
+  font-size:14.5px;padding:9px 0 9px 20px;position:relative;
+  border-bottom:1px dashed var(--line);
+}
+.debate-col li:last-child{border-bottom:none}
+.debate-col li::before{content:"▸";position:absolute;left:0;color:var(--navy)}
+.debate-col.oppose li::before{color:var(--stamp)}
+.debate-col li small{color:var(--ink-soft)}
+
+/* ───────── background timeline ───────── */
+.bg-line{border-left:2px solid var(--navy);margin-left:8px;padding-left:0;margin-top:8px}
+.bg-item{position:relative;padding:0 0 22px 26px}
+.bg-item::before{
+  content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;
+  background:var(--paper);border:2.5px solid var(--stamp);border-radius:50%;
+}
+.bg-item time{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--stamp);letter-spacing:.06em}
+.bg-item h4{font-family:'Nanum Myeongjo',serif;font-size:16.5px;font-weight:700;margin:2px 0 3px}
+.bg-item p{font-size:14.5px;color:var(--ink-soft);max-width:760px}
+
+/* ───────── profile strip ───────── */
+.profile{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1.5px solid var(--ink);background:var(--card)}
+.profile div{padding:14px 20px;border-bottom:1px dashed var(--line);border-right:1px dashed var(--line)}
+.profile div:nth-child(2n){border-right:none}
+.profile div:nth-last-child(-n+2){border-bottom:none}
+.profile dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--ink-soft)}
+.profile dd{font-size:15px;font-weight:500}
+
+/* ───────── sources ───────── */
+.sources ol{list-style:none;counter-reset:src;margin-top:8px}
+.sources li{
+  counter-increment:src;padding:12px 0 12px 44px;position:relative;
+  border-bottom:1px dashed var(--line);font-size:14.5px;
+}
+.sources li::before{
+  content:"["counter(src)"]";position:absolute;left:0;top:12px;
+  font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--navy);
+}
+.sources li a{font-weight:600}
+.sources li small{display:block;color:var(--ink-soft);font-size:13px}
+
+/* ───────── footer ───────── */
+footer{
+  margin-top:60px;background:var(--navy-deep);color:#B9BEC9;
+  padding:34px 0 44px;font-size:13px;line-height:1.8;
+}
+footer .wrap p+p{margin-top:10px}
+footer strong{color:#E8E4D8}
+
+/* ───────── responsive ───────── */
+@media (max-width:820px){
+  .hero-meta{grid-template-columns:1fr 1fr}
+  .hero-meta div:nth-child(2n){border-right:none}
+  .hero-meta div{border-bottom:1.5px solid var(--ink)}
+  .hero-meta div:nth-last-child(-n+2){border-bottom:none}
+  .debate{grid-template-columns:1fr}
+  .profile{grid-template-columns:1fr}
+  .profile div{border-right:none}
+  .profile div:nth-last-child(-n+2){border-bottom:1px dashed var(--line)}
+  .profile div:last-child{border-bottom:none}
+  .onion-row{grid-template-columns:88px 1fr}
+  .onion-row>time{padding:12px 8px;font-size:11px}
+}
+@media (max-width:560px){
+  .card-head{flex-direction:column;gap:10px}
+  .onion-row{grid-template-columns:1fr}
+  .onion-row>time{border-right:none;border-bottom:1px dashed var(--line)}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>INSPECTION DOSSIER · 인사검증 파일 No.2026-1123-01</span><span class="red">상위 비밀 — 기밀해제</span><span>작성일 2026. 11. 26.</span></div></div>
+<header class="hero"><div class="wrap"><span class="kicker">FACT DOSSIER · 임웅순 외교부 장관 후보자</span>
+<h1>38년차 정통 외교관의 외교장관 후보<br>— 지명 사흘 만에 터진 '하루짜리 병역' 의혹</h1>
+<p class="hero-sub">2026년 11월 23일, 이재명 대통령의 5개 부처 개각에서 임웅순 국가안보실 제2차장이 외교부 장관 후보자로 지명됐다. 대미 관세협상·G7 정상외교를 총괄한 '북미통'이었지만, 지명 사흘 만에 병역 기록과 통화유출 감봉 이력이 쟁점으로 떠올랐다. 이 페이지는 보도된 쟁점 4건을 사실관계·해명·판정으로 나눠 정리한다.</p>
+<dl class="hero-meta"><div><dt>후보자</dt><dd>임웅순<small>1964년생 · 외무고시 22회</small></dd></div><div><dt>지명일</dt><dd>2026. 11. 23.<small>5개 부처 개각</small></dd></div><div><dt>핵심 경력</dt><dd>국가안보실 제2차장<small>2025. 6.~ · 주캐나다대사</small></dd></div><div><dt>외교 경력</dt><dd>38년<small>1988년 외무고시 22회 입부</small></dd></div></dl></div></header>
+<section><div class="sec-head"><span class="sec-no">SECTION 01</span><h2>매일 아침 까지는 것들 — 공개 타임라인</h2></div><p class="sec-desc">지명일(11.23) 기준, 무엇이 어느 날 공개·보도됐는지의 기록. 사실관계는 SECTION 02의 검증 카드와 연결된다.</p><div class="onion"><div class="onion-row"><time>11.23 (일)</time><p><b>후보자 지명.</b> 임광현 비서실장 "철통같은 한미동맹을 기반으로… 국익 중심 실용외교 성과를 극대화해 나갈 적임자". 강금실 국정원·홍익표 통일·한준호 행안·강유정 문체부와 동시 지명.</p></div><div class="onion-row"><time>11.24 (월)</time><p><span class="peel-tag">껍질 1</span><b>"하루짜리 병역" SBS 단독 보도</b> — 병무청 기록상 1991. 2. 9. 소위 임관 당일 전역. 같은 날 <b>외교부 해명</b> — 병역휴직 후 석사장교 제도로 약 6개월 복무. 국민의힘은 "인맥풀 인사" 공세 개시.</p></div><div class="onion-row"><time>11.25 (화)</time><p><span class="peel-tag">껍질 2</span><b>2019년 한미정상 통화유출 감봉 이력</b> 재조명 — 주미 정무공사 시절 보안책임자로 감봉 3개월을 받았으나, 법원이 징계를 취소한 전력이 함께 공개됨.</p></div><div class="onion-row"><time>11.26 (수)</time><p><b>청문준비단 첫 출근</b>(외교부 청사 인근 대우빌딩) — 인사청문회 일정·임명동의안 처리 일정은 아직 공고되지 않았다.</p></div></div>
+</section>
+<section><div class="sec-head"><span class="sec-no">SECTION 02</span><h2>의혹 검증 파일 — 4건</h2></div><p class="sec-desc">판정 기준: 보도·기록으로 직접 확인된 것, 해명과 충돌하는 것, 평가가 유보되는 것으로 나눴다.</p><div class="cards"><article class="card"><div class="card-head"><h3><span class="idx">FILE 01</span>"하루짜리 병역" 의혹 — 석사장교 제도를 둘러싼 공방</h3><span class="stamp s-ctx">사실 확인 · 해명과 충돌</span></div><div class="card-body"><p>SBS가 병무청 기록을 조회한 결과, 임 후보자는 <b>1991년 2월 9일 육군 소위로 임관한 당일 복무 만료에 따라 전역</b>한 것으로 확인됐다 — 임관일과 전역일이 같은 기록이다. 당시 제도는 석사 학위 소지자가 6개월간 기초군사훈련만 받고 소위로 임관과 동시에 전역하는 <b>석사장교(특수전문요원) 제도</b>로, 1982년 만들어져 1990년대 초반 <b>"사회 고위층 자녀들의 군 회피 수단으로 악용된다"는 지적과 함께 폐지</b>됐다. SBS 질의에 후보자 측은 "1991년 당시 외교부 휴직을 하고 군사 훈련을 받은 것이냐"는 질문에 답하지 않았다.</p><div class="note-box"><span class="nb-label navy">외교부 해명 · 11.24.</span>"장관 후보자는 <b>병역 휴직 하에</b> 당시 단기장교 복무제도인 석사장교 제도에 따라 병역의무를 이행했다." 연합뉴스는 1990. 8. 13. 입대~1991. 2. 9. 전역, 즉 <b>약 6개월의 병역 이행</b>으로 정리했다. 다만 "석사장교는 임관과 동시에 전역이 원칙"이라는 보도와 "6개월 복무"라는 해명이 어떻게 정합되는지는 청문회 확인 과제로 남았다. 제반 사안은 "청문회에서 성실히 설명하겠다"고 덧붙였다.</div></div></div></article>
+<article class="card"><div class="card-head"><h3><span class="idx">FILE 02</span>2019년 한미정상 통화유출 사건과 감봉 — 법원은 징계를 취소</h3><span class="stamp s-fact">사실 확인 · 징계 취소 판결</span></div><div class="card-body"><p>2019년 주미대사관 정무공사 재직 당시, 부하 직원인 참사관이 고교 선배인 당시 자유한국당 의원에게 <b>문재인 대통령과 도널드 트럼프 미국 대통령의 통화내용을 유출</b>한 사건이 터졌다. 임 후보자는 감씨의 상관으로 <b>"비밀관리 업무에 소홀했다"며 감봉 3개월 징계</b>를 받았다. 무단 출력한 부하 직원은 감봉 3개월, 유출한 참사관은 파면됐다.</p><blockquote style="margin:14px 0;padding:10px 16px;border-left:3px solid #1D2E4E;background:rgba(29,46,78,0.05);font-size:0.92em;line-height:1.7;"><b>서울행정법원 행정6부(2021. 2.)</b> — <i>"직접 잘못을 저지른 건 부하 직원이 감봉 3개월 징계를 받은 만큼, 상급자에게 감독 책임을 물으려면 이 징계보다 수위가 낮아야 한다."</i> <small>(MBC 보도 인용)</small></blockquote><p>임 후보자는 징계에 불복해 낸 행정소송에서 <b>승소(징계 취소)</b>했다. 다만 보안 사고의 보안책임자였던 이력 자체는 공인된 기록으로, 청문회에서 "외교부 보안관리 적임자인가"의 재검증 소재가 될 수 있다.</p></div></div></article>
+<article class="card"><div class="card-head"><h3><span class="idx">FILE 03</span>대미 관세협상·G7·한중·한일 — 실용외교 전력</h3><span class="stamp s-fact">경력 배경</span></div><div class="card-body"><p>연합뉴스 프로필 기준, 임 후보자는 새 정부 출범 직후인 2025년 6월 15일 국가안보실 제2차장에 임명돼 <b>이 대통령의 정상외교를 비롯한 외교 정책을 도맡아 진두지휘</b>했다. 2025년 6월 캐나다 G7 정상회의에서의 첫 정상외교 현지 준비를 총괄했고, <b>대미 관세협상과 중동 전쟁 대응 등 외교적 난제를 안정적으로 관리</b>하면서 한중 관계 복원과 한일 셔틀외교 정착 등 "실용 외교 성과를 남기는 데 일조했다"는 평가다. 외교부 내에서는 "온화하고 너그러운 인품, 합리적 업무 스타일"로 좋은 평가를 받아온 것으로 전해졌다.</p><p>경력은 주오스트리아·주케냐·주미·주이탈리아·주프랑스·주미 정무공사·주스페인 공사·주뉴욕 부총영사·북핵외교기획부단장을 거쳐 <b>2022년 10월 주캐나다대사</b>에 올랐다. 경향신문은 청와대 안보실 수장 위성락과의 연결을 두고 <b>"위성락 라인"</b>이라는 표현으로 정리했다.</p></div></div></article>
+<article class="card"><div class="card-head"><h3><span class="idx">FILE 04</span>측근·회전문 인사 공세</h3><span class="stamp s-claim">의견 공세 · 정치적 평가</span></div><div class="card-body"><p>국민의힘은 지명 즉시 공세에 나섰다. 박충권 수석대변인: <b>"이 대통령은 후보자들을 인재풀이 아니라 인맥풀에서 고른 것인가."</b> 장동혁 대표는 SNS에서 이번 인선 전반을 "탈옥지원단이 출범했다"고 강도 높게 비판했고, 배준영 의원도 "참신함과 거리가 먼 회전문 측근 인사"라고 주장했다. 전·현직 청와대 참모와 대통령 측근의 대거 기용이라는 구조적 비판으로, 사실관계라기보다 정치적 평가에 해당한다.</p></div></div></article>
+</div></section>
+<section><div class="sec-head"><span class="sec-no">SECTION 03</span><h2>찬성 vs 반대 — 인사 적합성 공방</h2></div><p class="sec-desc">동일한 사실 집합에서 양측이 서로 다른 결론을 내고 있다. 어느 쪽도 판정이 아니라 논거의 목록이다.</p><div class="debate"><div class="debate-col support"><h3>지지 · 해명 측 <span class="stamp s-fact">찬성론</span></h3><ul><li><b>청와대(임광현 비서실장):</b> "철통같은 한미동맹을 기반으로… 국익 중심 실용외교 성과를 극대화해 나갈 적임자"<small> (조선비즈 인용)</small></li><li><b>전문성:</b> 주미 정무공사·뉴욕 부총영사·주캐나다대사의 북미통 + 안보실에서 관세·통상·안보 직접 총괄 — 트럼프 2기 행정부 대응에 적임자라는 평가 다수<small> (연합·서울신문)</small></li><li><b>병역:</b> 병역휴직 후 당시 합법 제도(석사장교)에 따른 이행이라는 외교부 공식 해명<small> (연합뉴스)</small></li><li><b>통화유출 징계:</b> 상급자에게 부하와 같은 수위 감봉은 과도하다는 법원 판단 — 징계 자체가 취소됨<small> (서울행정법원 2021. 2.)</small></li></ul></div><div class="debate-col oppose"><h3>반대 · 철회 요구 측 <span class="stamp s-claim">반대론</span></h3><ul><li><b>장동혁:</b> "탈옥지원단이 출범했다" — 전면 회전문·측근 인사 프레임<small> (SNS)</small></li><li><b>박충권:</b> "인재풀이 아니라 인맥풀에서 고른 것인가"<small> (뉴스웍스)</small></li><li><b>병역:</b> 임관 당일 전역 기록 + "군 회피 수단으로 악용"돼 폐지된 제도라는 조합 — 특혜 시비<small> (SBS)</small></li><li><b>보안:</b> 한미정상 통화유출 사건의 보안책임자 이력 — 외교부 수장 자격 재검증 요구<small> (연합 등)</small></li></ul></div></div>
+</section>
+<section><div class="sec-head"><span class="sec-no">SECTION 05</span><h2>후보자 이력 한눈에</h2></div><p class="sec-desc">논란이 됐거나 맥락 설명이 필요한 이력에는 표식을 달았다.</p><dl class="profile"><div><dt>1964. 12. 22.</dt><dd>대전 출생<small>서대전고 · 연세대 경제학과</small><small></small></dd></div><div><dt>1988</dt><dd>제22회 외무고시 합격<small>외교부 입부 — 38년 직업 외교관</small><small></small></dd></div><div><dt>1990–1991</dt><dd>병역 이행<small>병역휴직 후 석사장교(소위) — 임관일 전역 기록 논란 FILE 01</small><small></small></dd></div><div><dt>2019</dt><dd>주미대사관 정무공사<small>통화유출 사건 감봉 3개월 → 2021. 2. 법원서 징계 취소 FILE 02</small><small></small></dd></div><div><dt>2022. 10.</dt><dd>주캐나다대사 부임<small>윤석열 정부 임명</small><small></small></dd></div><div><dt>2025. 6. 15.</dt><dd>국가안보실 제2차장<small>이재명 정부 — G7 정상외교·대미 관세협상 총괄</small><small></small></dd></div><div><dt>2026. 11. 23.</dt><dd><b>외교부 장관 후보자 지명</b><small>제43대(조현 장관 후임) — 이 정부 첫 외교장관 교체</small><small></small></dd></div><div><dt>진행 중</dt><dd>인사청문회 검증 대기<small>병역·보안 이력 소명 예상 — 일정 미공고</small><small></small></dd></div></dl>
+</section>
+<section id="sources" class="sources"><div class="sec-head"><span class="sec-no">SOURCES</span><h2>출처</h2></div><p class="sec-desc">이 파일의 모든 사실관계는 아래 공개 보도에 근거한다. 클릭하면 원문으로 이동한다.</p><ol><li><a href="경력 전체·통화유출 감봉과 소송 취소·임광현 평가">연합뉴스 "[프로필] 대미 관세협상·중동 전쟁…실용 외교 성과"</a><small>https://www.yna.co.kr/view/AKR20261123133800001</small></li><li><a href="생년·학력·외무고시 22회·G7 준비·2019 감봉 소송">조선비즈 프로필</a><small>https://biz.chosun.com/international/international_general/2026/11/23/P4EPQVOCPZFXHOMDDWXVCXT44Y/</small></li><li><a href="외교부 해명 — 1990.8.13 입대~1991.2.9 전역">연합뉴스 "임웅순 후보자, 휴직 후 석사장교로 병역 이행"</a><small>https://www.yna.co.kr/amp/view/AKR20261124173300504</small></li><li><a href="병무청 기록상 임관·전역 동일일자, 후보자 측 무답변">SBS [단독] "하루짜리 병역…석사장교 근무?"</a><small>https://news.sbs.co.kr/news/endPage.do?news_id=N1008859677</small></li><li><a href="외교부 해명 "약 6개월 병역 이행"">뉴스1 "임웅순 장관 후보자, 병역휴직 내고 석사장교로 복무"</a><small>https://www.news1.kr/diplomacy/defense-diplomacy/6364789</small></li><li><a href="서울행정법원 징계 취소 판결 원문">MBC "'한미정상 통화유출' 방치, 상관 외교관까지 감봉은 부당"</a><small>https://imnews.imbc.com/news/2021/society/article/6075201_34873.html</small></li><li><a href="2019 감봉 이력·안보실 라인">경향신문 "외교장관 내정자 임웅순, 정통 외교관 출신…'위성락 라인'"</a><small>https://www.khan.co.kr/article/202611231706001</small></li><li><a href="박충권·장동혁·배준영의 반대 논거 전문">뉴스웍스 "국힘, 강금실·홍익표·임웅순 인물별 공세…청문회 격돌 예고"</a><small>https://www.newsworks.co.kr/news/articleView.html?idxno=904257</small></li><li><a href="청문회 준비 일정">연합뉴스 "임웅순 외교장관 후보자, 내일 첫 출근…인사청문 준비 시동"</a><small>https://www.yna.co.kr/view/AKR20261125137300504</small></li><li><a href="실용외교 역할 정리">한국일보 "[프로필] 대미외교 경험 풍부…실용 외교 적임자"</a><small>https://www.hankookilbo.com/news/article/A2026112315320005804</small></li><li><a href="2026.11.23 개각 전체 지명 명단">한겨레 "외교장관 후보자 임웅순…통일 홍익표, 행안 한준호, 문체 강유정"</a><small>https://www.hani.co.kr/arti/politics/bluehouse/1288647.html</small></li></ol></section>
+<footer><div class="wrap"><p><strong>파일에 대한 각주.</strong> 이 도시어는 2026. 11. 26. 기준 공개 보도를 정리한 것이다. 후보자는 아직 국회 인사청문회를 거치지 않았다. 병역 관련 SBS 보도와 외교부 해명은 아직 정합되지 않은 상태이며, 통화유출 사건의 징계는 법원에서 취소됐다. '사실 확인' 판정은 행위·기록의 존재를 확인한 것이며 평가·해석은 독자의 몫이다. 후보자의 대학원 학력·청문회 확정 일정은 이번 조사에서 확인되지 않았다(미확인).</p><p>수정·반박 자료가 나오면 갱신한다. <span style="font-family:'IBM Plex Mono',monospace;letter-spacing:.14em">— END OF FILE.</span></p></div></footer>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>혐오 표현·집회 규제 3대 법안 비교 및 쟁점 리포트</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-alt: #f1f5f9;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --primary: #1e3a8a;
+      --primary-light: #eff6ff;
+      --primary-accent: #2563eb;
+      --dem-color: #004ea2;
+      --ind-color: #64748b;
+      --pro-bg: #ecfdf5;
+      --pro-border: #a7f3d0;
+      --pro-text: #065f46;
+      --con-bg: #fef2f2;
+      --con-border: #fecaca;
+      --con-text: #991b1b;
+      --badge-amber-bg: #fffbeb;
+      --badge-amber-text: #b45309;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header.hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 48px 20px 56px;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: #cbd5e1;
+      max-width: 760px;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-top: -32px;
+      padding: 0 20px;
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .kpi-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+
+    .kpi-value {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .kpi-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    main {
+      padding: 40px 20px 80px;
+    }
+
+    section {
+      margin-bottom: 52px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .section-header h2 {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .section-header p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .view-toggle {
+      display: inline-flex;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 3px;
+      gap: 4px;
+    }
+
+    .view-toggle button {
+      border: none;
+      background: transparent;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .view-toggle button.active {
+      background: var(--surface);
+      color: var(--primary);
+      box-shadow: var(--shadow);
+    }
+
+    /* Bill Cards */
+    .bill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 20px;
+    }
+
+    .bill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .bill-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .bill-no {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--primary-light);
+      color: var(--primary-accent);
+      padding: 3px 9px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid #bfdbfe;
+    }
+
+    .bill-no:hover {
+      background: #dbeafe;
+    }
+
+    .status-badge {
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--badge-amber-bg);
+      color: var(--badge-amber-text);
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid #fde68a;
+    }
+
+    .bill-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .bill-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: var(--surface-alt);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+
+    .bill-meta div span {
+      display: block;
+      font-size: 11px;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    .bill-meta div strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .bill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .bill-list li {
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .bill-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--primary-accent);
+      font-weight: 800;
+    }
+
+    .bill-footer {
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    /* Matrix Table */
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      font-size: 14px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    thead th {
+      background: var(--surface-alt);
+      font-weight: 700;
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: #f8fafc; }
+
+    .hidden { display: none !important; }
+
+    /* Issue Tabs */
+    .tab-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tab-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .issue-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .issue-summary {
+      font-size: 15px;
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pro-con-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 16px;
+    }
+
+    .stance-card {
+      border-radius: 10px;
+      padding: 18px;
+      border: 1px solid;
+    }
+
+    .stance-card.pro {
+      background: var(--pro-bg);
+      border-color: var(--pro-border);
+    }
+
+    .stance-card.con {
+      background: var(--con-bg);
+      border-color: var(--con-border);
+    }
+
+    .stance-title {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .stance-card.pro .stance-title { color: var(--pro-text); }
+    .stance-card.con .stance-title { color: var(--con-text); }
+
+    .stance-card ul {
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* Sponsors Section */
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .filter-btn.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: #93c5fd;
+    }
+
+    .search-input {
+      padding: 8px 13px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      min-width: 220px;
+      background: var(--surface);
+    }
+
+    .sponsor-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .party-bar-wrap {
+      margin-bottom: 18px;
+    }
+
+    .party-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .party-bar {
+      height: 10px;
+      border-radius: 999px;
+      overflow: hidden;
+      display: flex;
+      background: var(--surface-alt);
+    }
+
+    .bar-dem { background: var(--dem-color); }
+    .bar-ind { background: var(--ind-color); }
+
+    .sponsor-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+    }
+
+    .chip.lead {
+      background: #eff6ff;
+      border-color: #93c5fd;
+      color: var(--primary);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot.dem { background: var(--dem-color); }
+    .dot.ind { background: var(--ind-color); }
+
+    .note-box {
+      margin-top: 16px;
+      padding: 12px 14px;
+      background: var(--surface-alt);
+      border-left: 3px solid var(--primary-accent);
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .btn-copy {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-copy:hover {
+      background: var(--surface-alt);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-light);
+      background: var(--surface);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.2s ease;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <span class="hero-tag">토지와 자유 + 디지털 대동법 연구소 · 제22대 국회 입법 분석 리포트</span>
+      <h1>혐오 표현·집회 규제 3대 법안 비교 및 쟁점 정리</h1>
+      <p>
+        특정 국가·국민·인종을 겨냥한 혐오 표현과 시위를 규율하기 위해 발의된
+        <strong>양부남(형법)·김태년(집시법)·고민정(교육환경법)</strong> 의원 대표발의안의
+        핵심 조항, 찬반 쟁점, 확인된 발의 의원 명단을 한눈에 비교합니다.
+      </p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">분석 대상 법안</div>
+        <div class="kpi-value">3건</div>
+        <div class="kpi-sub">형법 · 집시법 · 교육환경법 개정안</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">소관 상임위원회</div>
+        <div class="kpi-value">3곳</div>
+        <div class="kpi-sub">법사위 · 행안위 · 교육위</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">양부남안 진행 상태</div>
+        <div class="kpi-value">법사위 소위</div>
+        <div class="kpi-sub">2026.09.09 상정 후 법안심사소위 계류</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">핵심 규제 접근 방식</div>
+        <div class="kpi-value">형사 · 집회 · 구역</div>
+        <div class="kpi-sub">처벌 신설 / 시위 제한 / 학교 200m 금지</div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- Section 1: 3 Bills Comparison -->
+    <section id="bills">
+      <div class="section-header">
+        <div>
+          <h2>1. 3대 법안 핵심 내용 비교</h2>
+          <p>의안번호를 클릭하면 클립보드에 복사됩니다. 카드 뷰와 비교 표를 전환해 살펴보세요.</p>
+        </div>
+        <div class="view-toggle" role="tablist">
+          <button id="btn-card-view" class="active" onclick="switchView('card')">카드 상세</button>
+          <button id="btn-table-view" onclick="switchView('table')">매트릭스 표</button>
+        </div>
+      </div>
+
+      <div id="card-view" class="bill-grid">
+        <!-- Bill 1 -->
+        <article class="bill-card">
+          <div class="bill-top">
+            <button class="bill-no" onclick="copyText('2213884', '의안번호 2213884')">의안번호 2213884</button>
+            <span class="status-badge">법사위 소위 계류</span>
+          </div>
+          <h3 class="bill-title">형법 일부개정법률안</h3>
+          <div class="bill-meta">
+            <div><span>대표발의</span><strong>양부남 (더불어민주당)</strong></div>
+            <div><span>발의일</span><strong>2025.11.04</strong></div>
+            <div><span>소관 상임위</span><strong>법제사법위원회</strong></div>
+            <div><span>발의 인원</span><strong>총 11인 (민주 10·무소속 1)</strong></div>
+          </div>
+          <ul class="bill-list">
+            <li><strong>특정 집단 명예훼손(제307조의2 신설):</strong> 허위사실 적시로 특정 국가·국민·인종 명예훼손 시 5년 이하 징역, 10년 이하 자격정지 또는 1,000만 원 이하 벌금.</li>
+            <li><strong>특정 집단 모욕(제311조의2 신설):</strong> 공연히 특정 국가·국민·인종 모욕 시 1년 이하 징역·금고 또는 200만 원 이하 벌금.</li>
+            <li><strong>수사 요건 완화:</strong> 반의사불벌죄·친고죄 규정을 준용하지 않아 피해자 고소 없이도 수사 가능.</li>
+          </ul>
+          <div class="bill-footer">
+            <span>규제 방식: 형사 처벌 조항 신설</span>
+            <span>2026.09.09 법사위 상정</span>
+          </div>
+        </article>
+
+        <!-- Bill 2 -->
+        <article class="bill-card">
+          <div class="bill-top">
+            <button class="bill-no" onclick="copyText('2213476', '의안번호 2213476')">의안번호 2213476</button>
+            <span class="status-badge">상임위 심사</span>
+          </div>
+          <h3 class="bill-title">집회 및 시위에 관한 법률 개정안</h3>
+          <div class="bill-meta">
+            <div><span>대표발의</span><strong>김태년 (더불어민주당)</strong></div>
+            <div><span>발의일</span><strong>2025.10.02</strong></div>
+            <div><span>소관 상임위</span><strong>행정안전위원회</strong></div>
+            <div><span>발의 취지</span><strong>혐오·차별 시위 제한</strong></div>
+          </div>
+          <ul class="bill-list">
+            <li><strong>혐오·차별 집회 제한:</strong> 특정 집단에 대한 차별과 혐오를 조장·선동하는 집회 또는 시위를 금지·제한.</li>
+            <li><strong>입법 배경:</strong> 이른바 '혐중 시위' 등을 겨냥해 타인의 인격권을 침해하는 행위는 표현의 자유로 보호될 수 없다는 취지로 발의.</li>
+            <li><strong>규율 대상:</strong> 형사 처벌보다 집회·시위 행위 자체의 사전·현장 제한에 초점.</li>
+          </ul>
+          <div class="bill-footer">
+            <span>규제 방식: 집회·시위 자체 제한</span>
+            <span>2025년 하반기 발의</span>
+          </div>
+        </article>
+
+        <!-- Bill 3 -->
+        <article class="bill-card">
+          <div class="bill-top">
+            <button class="bill-no" onclick="copyText('2213911', '의안번호 2213911')">의안번호 2213911</button>
+            <span class="status-badge">상임위 심사</span>
+          </div>
+          <h3 class="bill-title">교육환경 보호에 관한 법률 개정안</h3>
+          <div class="bill-meta">
+            <div><span>대표발의</span><strong>고민정 (더불어민주당)</strong></div>
+            <div><span>발의일</span><strong>2025.11.05</strong></div>
+            <div><span>소관 상임위</span><strong>교육위원회</strong></div>
+            <div><span>보호 범위</span><strong>학교 경계 200m 이내</strong></div>
+          </div>
+          <ul class="bill-list">
+            <li><strong>교육환경보호구역 내 시위 금지:</strong> 학교 경계로부터 200m 이내에서 출신 국가·지역·민족·인종·피부색 등을 이유로 한 차별·혐오 시위 금지.</li>
+            <li><strong>입법 배경:</strong> 대림역 인근 등 학교 밀집 지역에서 열린 시위의 소음과 폭언으로부터 학생들의 학습권을 보호하기 위해 발의.</li>
+            <li><strong>규율 특징:</strong> 일반 표현 전반이 아닌 학교 주변 특정 공간에 한정해 규율.</li>
+          </ul>
+          <div class="bill-footer">
+            <span>규제 방식: 특정 구역 내 시위 금지</span>
+            <span>2025년 하반기 발의</span>
+          </div>
+        </article>
+      </div>
+
+      <div id="table-view" class="table-wrap hidden">
+        <table>
+          <thead>
+            <tr>
+              <th>구분</th>
+              <th>양부남 의원안 (2213884)</th>
+              <th>김태년 의원안 (2213476)</th>
+              <th>고민정 의원안 (2213911)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>대상 법률</strong></td>
+              <td>형법</td>
+              <td>집회 및 시위에 관한 법률</td>
+              <td>교육환경 보호에 관한 법률</td>
+            </tr>
+            <tr>
+              <td><strong>발의일</strong></td>
+              <td>2025년 11월 4일</td>
+              <td>2025년 10월 2일</td>
+              <td>2025년 11월 5일</td>
+            </tr>
+            <tr>
+              <td><strong>소관 상임위</strong></td>
+              <td>법제사법위원회 (2026.09.09 상정·소위 계류)</td>
+              <td>행정안전위원회</td>
+              <td>교육위원회</td>
+            </tr>
+            <tr>
+              <td><strong>핵심 규제 방식</strong></td>
+              <td>특정 국가·국민·인종 대상 허위사실 명예훼손·모욕 형사 처벌</td>
+              <td>특정 집단 차별·혐오 조장 및 선동 집회·시위 금지·제한</td>
+              <td>학교 경계 200m 이내 교육환경보호구역 내 혐오 시위 금지</td>
+            </tr>
+            <tr>
+              <td><strong>특이 사항</strong></td>
+              <td>반의사불벌죄·친고죄 미준용 (고소 없이 수사 가능)</td>
+              <td>타인의 인격권 침해 시 집회 제한 강조</td>
+              <td>학생 학습권 보호 및 소음·폭언 차단 목적</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Issues -->
+    <section id="issues">
+      <div class="section-header">
+        <div>
+          <h2>2. 주요 쟁점별 찬반 입장 분석</h2>
+          <p>표현의 자유, 처벌 범위, 수사 요건, 형평성 등 4대 핵심 쟁점을 탭별로 비교합니다.</p>
+        </div>
+      </div>
+
+      <div class="tab-bar" id="issue-tabs">
+        <button class="tab-btn active" onclick="selectIssue(0)">① 표현의 자유와 위헌 논란</button>
+        <button class="tab-btn" onclick="selectIssue(1)">② 보호 대상 및 기준의 명확성</button>
+        <button class="tab-btn" onclick="selectIssue(2)">③ 수사·집행 요건 완화</button>
+        <button class="tab-btn" onclick="selectIssue(3)">④ 입법 배경 및 정치적 형평성</button>
+      </div>
+
+      <div class="issue-box" id="issue-content"></div>
+    </section>
+
+    <!-- Section 3: Sponsors -->
+    <section id="sponsors">
+      <div class="section-header">
+        <div>
+          <h2>3. 발의 의원 명단 및 정당 구성</h2>
+          <p>법안별 필터와 검색으로 확인된 발의 의원을 조회하고 명단을 복사할 수 있습니다.</p>
+        </div>
+        <button class="btn-copy" onclick="copyVisibleSponsors()">표시된 명단 복사</button>
+      </div>
+
+      <div class="controls-bar">
+        <div class="filter-group" id="bill-filters">
+          <button class="filter-btn active" onclick="filterSponsors('all')">전체 보기</button>
+          <button class="filter-btn" onclick="filterSponsors('2213884')">양부남안 (2213884)</button>
+          <button class="filter-btn" onclick="filterSponsors('2213476')">김태년안 (2213476)</button>
+          <button class="filter-btn" onclick="filterSponsors('2213911')">고민정안 (2213911)</button>
+        </div>
+        <input
+          type="text"
+          id="sponsor-search"
+          class="search-input"
+          placeholder="의원명 또는 정당 검색..."
+          oninput="renderSponsors()"
+        />
+      </div>
+
+      <div class="sponsor-panel">
+        <div class="party-bar-wrap">
+          <div class="party-bar-label">
+            <span id="party-summary">더불어민주당 12명 · 무소속 1명 (확인된 명단 기준)</span>
+            <span id="visible-count">총 13건</span>
+          </div>
+          <div class="party-bar">
+            <div id="bar-dem" class="bar-dem" style="width: 92.3%;"></div>
+            <div id="bar-ind" class="bar-ind" style="width: 7.7%;"></div>
+          </div>
+        </div>
+
+        <div class="sponsor-chips" id="sponsor-chips"></div>
+
+        <div class="note-box">
+          <strong>명단 안내:</strong> 양부남 의원 대표발의안(2213884)은 대표발의자 1인과 공동발의자 10인(총 11인) 전체 명단이 반영되어 있습니다.
+          김태년(2213476)·고민정(2213911) 의원안은 확인된 대표발의자 기준으로 표기되었으며, 전체 공동발의자 명단은 국회 의안정보시스템에서 의안번호로 조회할 수 있습니다.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>토지와 자유 + 디지털 대동법 연구소</strong> · 제22대 국회 발의 혐오 표현·집회 규제 3대 법안 비교 리포트 · 기준 정보: 국회 법사위 상정 현황 및 발의안 요약
+  </footer>
+
+  <div id="toast" class="toast">복사되었습니다.</div>
+
+  <script>
+    const issues = [
+      {
+        summary: "특정 국가·국민·인종을 겨냥한 혐오 표현을 형사 처벌하거나 집회를 제한할 때, 헌법상 표현의 자유 및 집회의 자유와 충돌할 수 있는지 여부가 핵심 쟁점입니다.",
+        pro: [
+          "특정 집단을 향한 허위사실 유포와 모욕, 폭언은 타인의 인격권과 학습권을 침해하는 행위로 표현의 자유 범위를 벗어남.",
+          "기존 형법상 명예훼손·모욕죄와 동일한 수준의 법정형을 적용해 혐오 확산을 실효적으로 차단할 필요가 있음."
+        ],
+        con: [
+          "'특정 국가' 자체를 보호 대상에 포함할 경우 외교·안보·정치적 맥락의 정당한 국가 비판까지 처벌 대상이 될 수 있음.",
+          "형벌을 통한 표현 규제는 위축 효과를 유발해 헌법상 표현의 자유를 과도하게 제한할 위헌 소지가 큼."
+        ]
+      },
+      {
+        summary: "형법과 집시법, 교육환경법에서 규정하는 '특정 국가·집단', '모욕', '차별·혐오 선동'의 범위가 죄형법정주의의 명확성 원칙을 충족하는지가 논의됩니다.",
+        pro: [
+          "출신 국가·지역·민족·인종·피부색 등 구체적 표지를 명시해(고민정안 등) 규제 대상을 특정하고자 함.",
+          "양부남안은 특정 국가(중국)만을 한정해 보호하는 법이 아니라 모든 국가·국민·인종에 보편적으로 적용되는 일반 규정임을 강조."
+        ],
+        con: [
+          "추상적인 집단 전체에 대한 '명예'나 '모욕'의 성립 기준이 모호해 수사기관의 자의적 법 집행 우려가 있음.",
+          "집회 현장에서 단순 정치적 구호와 '혐오·차별 선동'을 구분하는 객관적 기준 마련이 어려움."
+        ]
+      },
+      {
+        summary: "양부남 의원안이 기존 명예훼손죄(반의사불벌죄)와 모욕죄(친고죄) 규정을 준용하지 않도록 설계하면서 수사 개시 범위가 대폭 넓어지는 점이 쟁점입니다.",
+        pro: [
+          "불특정 다수의 집단이 피해자인 특성상 개별 피해자의 고소나 처벌 의사를 확인하기 어렵다는 현실적 한계를 보완.",
+          "공익적 차원에서 수사기관이 혐오 범죄에 적극 대응할 수 있는 법적 근거를 마련."
+        ],
+        con: [
+          "피해자의 고소 없이도 제3자 고발이나 수사기관의 직권 인지로 수사가 가능해져 정치적 고발 남발 우려.",
+          "개인 대상 명예훼손·모욕죄보다 집단 대상 범죄의 수사 요건이 더 완화되는 형사법 체계상 불균형 지적."
+        ]
+      },
+      {
+        summary: "2025년 하반기 대림역 인근 등에서의 반중 시위 논란 직후 법안이 잇따라 발의되면서, 특정 시위 겨냥 여부와 정치적 형평성 논란이 제기되었습니다.",
+        pro: [
+          "학교 밀집 지역 등에서 발생한 시위의 소음과 폭언으로부터 주민과 학생의 학습권·평온권을 보호하려는 시급한 민생·인권 입법.",
+          "'중국인 한정 보호법'이라는 명칭은 법률 문언과 입법 취지를 왜곡한 프레임이라는 반박."
+        ],
+        con: [
+          "사실상 특정 성향의 집회(반중 시위 등)를 겨냥한 맞춤형 규제 입법이라는 비판.",
+          "반미 집회 등 다른 국가를 향한 기존 정치 집회와 비교할 때 법 적용의 형평성 문제가 발생할 수 있다는 지적."
+        ]
+      }
+    ];
+
+    const sponsors = [
+      { name: "양부남", party: "더불어민주당", role: "대표발의", bill: "2213884", billName: "형법 개정안" },
+      { name: "이광희", party: "더불어민주당", role: "공동발의", bill: "2213884", billName: "형법 개정안" },
+      { name: "신정훈", party: "더불어민주당", role: "공동발의", bill: "2213884", billName: "형법 개정안" },
+      { name: "박정현", party: "더불어민주당", role: "공동발의", bill: "2213884", billName: "형법 개정안" },
+      { name: "윤건영", party: "더불어민주당", role: "공동발의", bill: "2213884", billName: "형법 개정안" },
+      { name: "이상식", party: "더불어민주당", role: "공동발의", bill: "2213884", billName: "형법 개정안" },
+      { name: "박균택", party: "더불어민주당", role: "공동발의", bill: "2213884", billName: "형법 개정안" },
+      { name: "허성무", party: "더불어민주당", role: "공동발의", bill: "2213884", billName: "형법 개정안" },
+      { name: "서영교", party: "더불어민주당", role: "공동발의", bill: "2213884", billName: "형법 개정안" },
+      { name: "권칠승", party: "더불어민주당", role: "공동발의", bill: "2213884", billName: "형법 개정안" },
+      { name: "최혁진", party: "무소속", role: "공동발의", bill: "2213884", billName: "형법 개정안" },
+      { name: "김태년", party: "더불어민주당", role: "대표발의", bill: "2213476", billName: "집시법 개정안" },
+      { name: "고민정", party: "더불어민주당", role: "대표발의", bill: "2213911", billName: "교육환경법 개정안" }
+    ];
+
+    let currentFilter = "all";
+
+    function switchView(mode) {
+      document.getElementById("card-view").classList.toggle("hidden", mode !== "card");
+      document.getElementById("table-view").classList.toggle("hidden", mode !== "table");
+      document.getElementById("btn-card-view").classList.toggle("active", mode === "card");
+      document.getElementById("btn-table-view").classList.toggle("active", mode === "table");
+    }
+
+    function selectIssue(idx) {
+      const tabs = document.querySelectorAll("#issue-tabs .tab-btn");
+      tabs.forEach((btn, i) => btn.classList.toggle("active", i === idx));
+      const item = issues[idx];
+      document.getElementById("issue-content").innerHTML = `
+        <div class="issue-summary">${item.summary}</div>
+        <div class="pro-con-grid">
+          <div class="stance-card pro">
+            <div class="stance-title">발의자·찬성 측 입장</div>
+            <ul>${item.pro.map(t => `<li>${t}</li>`).join("")}</ul>
+          </div>
+          <div class="stance-card con">
+            <div class="stance-title">비판·우려 측 입장</div>
+            <ul>${item.con.map(t => `<li>${t}</li>`).join("")}</ul>
+          </div>
+        </div>
+      `;
+    }
+
+    function filterSponsors(billNo) {
+      currentFilter = billNo;
+      const btns = document.querySelectorAll("#bill-filters .filter-btn");
+      btns.forEach(btn => {
+        const match = (billNo === "all" && btn.textContent.includes("전체")) || btn.textContent.includes(billNo);
+        btn.classList.toggle("active", match);
+      });
+      renderSponsors();
+    }
+
+    function getFilteredSponsors() {
+      const q = document.getElementById("sponsor-search").value.trim().toLowerCase();
+      return sponsors.filter(s => {
+        const matchBill = currentFilter === "all" || s.bill === currentFilter;
+        const matchText = !q || s.name.toLowerCase().includes(q) || s.party.toLowerCase().includes(q) || s.billName.toLowerCase().includes(q);
+        return matchBill && matchText;
+      });
+    }
+
+    function renderSponsors() {
+      const list = getFilteredSponsors();
+      const dem = list.filter(s => s.party === "더불어민주당").length;
+      const ind = list.filter(s => s.party === "무소속").length;
+      const total = list.length || 1;
+
+      document.getElementById("party-summary").textContent = `더불어민주당 ${dem}명 · 무소속 ${ind}명`;
+      document.getElementById("visible-count").textContent = `총 ${list.length}명`;
+      document.getElementById("bar-dem").style.width = `${(dem / total) * 100}%`;
+      document.getElementById("bar-ind").style.width = `${(ind / total) * 100}%`;
+
+      const container = document.getElementById("sponsor-chips");
+      if (list.length === 0) {
+        container.innerHTML = `<span style="color:#64748b;font-size:14px;">검색 결과가 없습니다.</span>`;
+        return;
+      }
+
+      container.innerHTML = list.map(s => `
+        <span class="chip ${s.role === "대표발의" ? "lead" : ""}">
+          <span class="dot ${s.party === "더불어민주당" ? "dem" : "ind"}"></span>
+          <span>${s.name}</span>
+          <span style="font-size:11px;opacity:0.75;">${s.party} · ${s.role} (${s.billName})</span>
+        </span>
+      `).join("");
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      toast.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2000);
+    }
+
+    function copyText(text, label) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => showToast(`${label} 복사 완료`));
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        showToast(`${label} 복사 완료`);
+      }
+    }
+
+    function copyVisibleSponsors() {
+      const list = getFilteredSponsors();
+      const text = list.map(s => `${s.name}(${s.party}, ${s.role}, ${s.billName} ${s.bill})`).join(", ");
+      copyText(text, "발의 의원 명단");
+    }
+
+    selectIssue(0);
+    renderSponsors();
+  </script>
+</body>
+</html>

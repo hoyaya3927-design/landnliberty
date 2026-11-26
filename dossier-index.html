@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이재명 정부 2차 중폭 개각 — 청문회 대상 후보자 검증 파일 인덱스</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDEAE2;
+  --paper-deep:#E3DFD4;
+  --ink:#1B1916;
+  --ink-soft:#4A463F;
+  --navy:#1D2E4E;
+  --navy-deep:#12203A;
+  --stamp:#B3261E;
+  --amber:#9A6E12;
+  --ok:#2E6B4F;
+  --line:#C9C3B4;
+  --card:#F7F5EF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans KR',sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(29,46,78,.035) 31px 32px);
+}
+a{color:var(--navy)}
+:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* ───────── top bar ───────── */
+.topbar{
+  background:var(--navy-deep);color:#E8E4D8;
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;
+  padding:9px 0;border-bottom:3px double var(--stamp);
+}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar .red{color:#E9695F}
+
+/* ───────── hero ───────── */
+header.hero{padding:64px 0 40px;position:relative;overflow:hidden}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;
+  color:var(--stamp);font-weight:600;margin-bottom:22px;
+}
+.kicker::before{content:"";width:34px;height:2px;background:var(--stamp)}
+h1{
+  font-family:'Nanum Myeongjo',serif;font-weight:800;
+  font-size:clamp(30px,5.4vw,54px);line-height:1.28;letter-spacing:-.01em;
+  max-width:820px;
+}
+h1 .redact{
+  display:inline-block;background:var(--ink);color:transparent;
+  border-radius:2px;padding:0 .18em;user-select:none;cursor:help;
+  transition:background .3s,color .3s;
+}
+h1 .redact:hover{background:var(--stamp);color:#fff}
+.hero-sub{
+  margin-top:22px;max-width:640px;color:var(--ink-soft);font-size:17px;
+}
+.hero-meta{
+  margin-top:38px;display:grid;grid-template-columns:repeat(4,1fr);
+  border:1.5px solid var(--ink);background:var(--card);
+}
+.hero-meta div{
+  padding:16px 18px;border-right:1.5px solid var(--ink);
+}
+.hero-meta div:last-child{border-right:none}
+.hero-meta dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:var(--ink-soft);margin-bottom:6px}
+.hero-meta dd{font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:19px;line-height:1.35}
+.hero-meta dd small{display:block;font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+
+/* ───────── stamps ───────── */
+.stamp{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-weight:600;
+  font-size:11.5px;letter-spacing:.1em;padding:5px 12px 4px;border-radius:3px;
+  border:2px solid currentColor;transform:rotate(-2deg);white-space:nowrap;
+}
+.stamp.s-fact{color:var(--navy)}
+.stamp.s-ctx{color:var(--amber)}
+.stamp.s-deny{color:var(--stamp)}
+.stamp.s-claim{color:var(--ink-soft)}
+.stamp.s-pend{color:#7A5A0A;background:rgba(154,110,18,.08)}
+
+/* ───────── sections ───────── */
+section{padding:52px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.sec-no{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--stamp);
+  letter-spacing:.2em;font-weight:600;
+}
+h2{
+  font-family:'Nanum Myeongjo',serif;font-weight:800;
+  font-size:clamp(23px,3.4vw,32px);line-height:1.3;
+}
+.sec-desc{color:var(--ink-soft);max-width:720px;margin:10px 0 26px;font-size:15.5px}
+hr.rule{border:none;border-top:1.5px solid var(--line);margin:34px 0 0}
+
+/* ───────── onion timeline ───────── */
+.onion{
+  border:1.5px solid var(--ink);background:var(--card);margin-top:8px;
+}
+.onion-row{display:grid;grid-template-columns:120px 1fr;border-bottom:1px dashed var(--line)}
+.onion-row:last-child{border-bottom:none}
+.onion-row>time{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;
+  padding:16px 14px;border-right:1px dashed var(--line);
+  color:var(--navy);background:rgba(29,46,78,.04);
+}
+.onion-row>p{padding:16px 20px;font-size:15px}
+.onion-row>p b{font-weight:700}
+.peel-tag{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:.12em;color:#fff;background:var(--stamp);border-radius:2px;
+  padding:1px 7px;margin-right:8px;vertical-align:2px;
+}
+.peel-tag.t2{background:var(--navy)}
+
+/* ───────── suspicion cards ───────── */
+.cards{display:grid;gap:26px;margin-top:8px}
+article.card{
+  border:1.5px solid var(--ink);background:var(--card);
+  box-shadow:5px 5px 0 rgba(29,46,78,.12);
+}
+.card-head{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+  padding:20px 24px 0;
+}
+.card-head h3{
+  font-family:'Nanum Myeongjo',serif;font-size:21px;font-weight:800;line-height:1.4;
+}
+.card-head h3 .idx{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--stamp);
+  display:block;letter-spacing:.18em;margin-bottom:4px;font-weight:600;
+}
+.card-head .stamp{flex-shrink:0;margin-top:6px}
+.card-body{padding:14px 24px 22px}
+.card-body p{font-size:15px;color:var(--ink);margin-bottom:12px}
+.card-body p:last-child{margin-bottom:0}
+.tagline{font-size:13px;color:var(--ink-soft)}
+.redact{
+  display:inline-block;background:var(--ink);color:transparent;
+  border-radius:2px;padding:0 .3em;cursor:help;
+  transition:background .3s,color .3s;
+}
+.redact:hover{background:var(--stamp);color:#fff}
+.note-box{
+  border-left:4px solid var(--navy);background:rgba(29,46,78,.055);
+  padding:12px 16px;margin-top:14px;font-size:14px;
+}
+.note-box.denied{border-color:var(--stamp);background:rgba(179,38,30,.05)}
+.note-box .nb-label{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;
+  font-weight:600;display:block;margin-bottom:4px;
+}
+.note-box .nb-label.navy{color:var(--navy)}
+.note-box .nb-label.red{color:var(--stamp)}
+
+/* ───────── two-column debate ───────── */
+.debate{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.debate-col{border:1.5px solid var(--ink);background:var(--card)}
+.debate-col h3{
+  font-family:'Nanum Myeongjo',serif;font-size:18px;font-weight:800;
+  padding:14px 20px;border-bottom:1.5px solid var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+}
+.debate-col h3 .stamp{transform:rotate(-2deg) scale(.88)}
+.debate-col ul{list-style:none;padding:16px 20px}
+.debate-col li{
+  font-size:14.5px;padding:9px 0 9px 20px;position:relative;
+  border-bottom:1px dashed var(--line);
+}
+.debate-col li:last-child{border-bottom:none}
+.debate-col li::before{content:"▸";position:absolute;left:0;color:var(--navy)}
+.debate-col.oppose li::before{color:var(--stamp)}
+.debate-col li small{color:var(--ink-soft)}
+
+/* ───────── background timeline ───────── */
+.bg-line{border-left:2px solid var(--navy);margin-left:8px;padding-left:0;margin-top:8px}
+.bg-item{position:relative;padding:0 0 22px 26px}
+.bg-item::before{
+  content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;
+  background:var(--paper);border:2.5px solid var(--stamp);border-radius:50%;
+}
+.bg-item time{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--stamp);letter-spacing:.06em}
+.bg-item h4{font-family:'Nanum Myeongjo',serif;font-size:16.5px;font-weight:700;margin:2px 0 3px}
+.bg-item p{font-size:14.5px;color:var(--ink-soft);max-width:760px}
+
+/* ───────── profile strip ───────── */
+.profile{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1.5px solid var(--ink);background:var(--card)}
+.profile div{padding:14px 20px;border-bottom:1px dashed var(--line);border-right:1px dashed var(--line)}
+.profile div:nth-child(2n){border-right:none}
+.profile div:nth-last-child(-n+2){border-bottom:none}
+.profile dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--ink-soft)}
+.profile dd{font-size:15px;font-weight:500}
+
+/* ───────── sources ───────── */
+.sources ol{list-style:none;counter-reset:src;margin-top:8px}
+.sources li{
+  counter-increment:src;padding:12px 0 12px 44px;position:relative;
+  border-bottom:1px dashed var(--line);font-size:14.5px;
+}
+.sources li::before{
+  content:"["counter(src)"]";position:absolute;left:0;top:12px;
+  font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--navy);
+}
+.sources li a{font-weight:600}
+.sources li small{display:block;color:var(--ink-soft);font-size:13px}
+
+/* ───────── footer ───────── */
+footer{
+  margin-top:60px;background:var(--navy-deep);color:#B9BEC9;
+  padding:34px 0 44px;font-size:13px;line-height:1.8;
+}
+footer .wrap p+p{margin-top:10px}
+footer strong{color:#E8E4D8}
+
+/* ───────── responsive ───────── */
+@media (max-width:820px){
+  .hero-meta{grid-template-columns:1fr 1fr}
+  .hero-meta div:nth-child(2n){border-right:none}
+  .hero-meta div{border-bottom:1.5px solid var(--ink)}
+  .hero-meta div:nth-last-child(-n+2){border-bottom:none}
+  .debate{grid-template-columns:1fr}
+  .profile{grid-template-columns:1fr}
+  .profile div{border-right:none}
+  .profile div:nth-last-child(-n+2){border-bottom:1px dashed var(--line)}
+  .profile div:last-child{border-bottom:none}
+  .onion-row{grid-template-columns:88px 1fr}
+  .onion-row>time{padding:12px 8px;font-size:11px}
+}
+@media (max-width:560px){
+  .card-head{flex-direction:column;gap:10px}
+  .onion-row{grid-template-columns:1fr}
+  .onion-row>time{border-right:none;border-bottom:1px dashed var(--line)}
+}
+
+.idx-card{display:block;border:1.5px solid var(--ink);background:var(--card);box-shadow:5px 5px 0 rgba(29,46,78,.12);text-decoration:none;color:var(--ink);margin-top:22px;transition:transform .15s,box-shadow .15s}
+.idx-card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(179,38,30,.15)}
+.idx-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:20px 26px 0;flex-wrap:wrap}
+.idx-head h3{font-family:'Nanum Myeongjo',serif;font-size:22px;font-weight:800}
+.idx-head h3 .idx{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--stamp);display:block;letter-spacing:.18em;margin-bottom:4px;font-weight:600}
+.idx-body{padding:8px 26px 20px;font-size:15px;color:var(--ink-soft)}
+.idx-open{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;color:var(--stamp);font-weight:600}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>INSPECTION DOSSIER · INDEX No.2026-1123</span><span class="red">상위 비밀 — 기밀해제</span><span>작성일 2026. 11. 26.</span></div></div>
+<header class="hero"><div class="wrap"><span class="kicker">INSPECTION DOSSIER · 인덱스</span>
+<h1>이재명 정부 2차 중폭 개각<br>— 청문회 대상 후보자 5인 검증 파일</h1>
+<p class="hero-sub">2026년 11월 23일, 이재명 대통령은 국가정보원장과 외교·통일·행정안전·문화체육관광부 수장 5인을 동시에 교체했다. 각 후보자의 경력·의혹·청문회 쟁점을 강금실 파일과 동일한 형식의 인사검증 파일로 정리했고, 이 인덱스가 그 전체를 묶는다. 청문회 일정은 아직 공고되지 않았다(2026. 11. 26. 기준).</p>
+<dl class="hero-meta"><div><dt>개각</dt><dd>2026. 11. 23.<small>5개 부처 동시 교체</small></dd></div><div><dt>후보자</dt><dd>5인<small>국정원장 1 + 장관 4</small></dd></div><div><dt>파일 수</dt><dd>5건<small>인덱스 1 + 개별 파일 5</small></dd></div><div><dt>상태</dt><dd>청문회 대기<small>일정 미공고</small></dd></div></dl></div></header>
+<main class="wrap"><a class="idx-card" href="kang-geumsil-dossier.html"><div class="idx-head"><h3><span class="idx">FILE 01 · 국가정보원장</span>강금실 — 전 법무부장관</h3><span class="stamp s-pend">청문회 대기</span></div><div class="idx-body">중국 지방정부 특별고문 10년 · 사드 "결사반대" 발언 · 코닝 기술유출 피고인 변호 전력 · 정보·방첩 경력 0년<br><span class="idx-open">파일 열기 → kang-geumsil-dossier.html</span> <small style="color:var(--ink-soft)">| 판정 구성: 사실 확인 3 · 발언 사실 2 · 검증 대기 1</small></div></a>
+<a class="idx-card" href="lim-woong-soon.html"><div class="idx-head"><h3><span class="idx">FILE 02 · 외교부 장관</span>임웅순 — 국가안보실 제2차장</h3><span class="stamp s-pend">청문회 대기</span></div><div class="idx-body">"하루짜리 병역"(석사장교) 의혹 · 2019 한미정상 통화유출 감봉(법원서 취소) · 대미 관세협상·G7 실용외교 총괄<br><span class="idx-open">파일 열기 → lim-woong-soon.html</span> <small style="color:var(--ink-soft)">| 판정 구성: 사실 확인 2 · 해명과 충돌 1 · 의견 공세 1</small></div></a>
+<a class="idx-card" href="hong-ik-pyo.html"><div class="idx-head"><h3><span class="idx">FILE 03 · 통일부 장관</span>홍익표 — 전 청와대 정무수석</h3><span class="stamp s-pend">청문회 대기</span></div><div class="idx-body">박사논문 "자기표절" 의혹 · 2016 대북 발언 원문("응징은 하책" 등) · 연임·공소취소 발언 · "의중 왜곡 전달" 파문<br><span class="idx-open">파일 열기 → hong-ik-pyo.html</span> <small style="color:var(--ink-soft)">| 판정 구성: 의혹 1 · 발언 사실 2 · 사실 확인 1</small></div></a>
+<a class="idx-card" href="han-jun-ho.html"><div class="idx-head"><h3><span class="idx">FILE 04 · 행정안전부 장관</span>한준호 — 더불어민주당 의원</h3><span class="stamp s-pend">청문회 대기</span></div><div class="idx-body">행안 소관 법안 9/143건 · 중수청·경찰 관할 "친위 인사" 비판 · KBS 탄원서 보도 외압 논란 · "토리 엄마" 사과 전력<br><span class="idx-open">파일 열기 → han-jun-ho.html</span> <small style="color:var(--ink-soft)">| 판정 구성: 사실 확인 2 · 논거 1 · 의혹(미확정) 1</small></div></a>
+<a class="idx-card" href="kang-yu-jung.html"><div class="idx-head"><h3><span class="idx">FILE 05 · 문화체육관광부 장관</span>강유정 — 청와대 수석대변인</h3><span class="stamp s-pend">청문회 대기</span></div><div class="idx-body">속기록 삭제·"원칙적 공감" 번복 · OBS 기자 명예훼손 고소 입건 · 반포 아크로리버파크·재산 37.9억 신고<br><span class="idx-open">파일 열기 → kang-yu-jung.html</span> <small style="color:var(--ink-soft)">| 판정 구성: 사실 확인 3 · 수사 결과 미확인 1</small></div></a>
+</main>
+<footer><div class="wrap"><p><strong>인덱스에 대한 각주.</strong> 2026년 8월 30일 개각(재경·법무·국방·성평등·중소벤처·국토 6개 부처) 후보자들은 9월 청문회 슈퍼위크를 거쳐 임명됐으므로 이번 인덱스에서 제외했다. 이 파일들은 2026. 11. 26. 기준 공개 보도를 정리한 것으로, 각 파일의 '사실 확인' 판정은 행위·기록의 존재를 확인한 것이며 평가·해석은 독자의 몫이다. 개별 파일의 미확인 항목(수사 결과, 논문 판정, 외압 해명문 등)은 각 파일의 각주에 명시돼 있다.</p><p>파일 간 이동은 다운로드 후 같은 폴더에 둘 때 상대 링크로 동작한다. <span style="font-family:'IBM Plex Mono',monospace;letter-spacing:.14em">— END OF INDEX.</span></p></div></footer>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

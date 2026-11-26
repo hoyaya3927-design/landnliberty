@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법률안·결정 감시 인덱스 — 주권자 감시 | LandnLiberty.kr</title>
+<meta name="description" content="국회 법안과 헌법재판소 결정을 통과 전에 읽는 감시 인덱스. 혐오 표현·집회 규제 3대 법안, 국가보안법, 외국인 정치활동 금지 헌법불합치 결정 리포트.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDEAE2;
+  --paper-deep:#E3DFD4;
+  --ink:#1B1916;
+  --ink-soft:#4A463F;
+  --navy:#1D2E4E;
+  --navy-deep:#12203A;
+  --stamp:#B3261E;
+  --amber:#9A6E12;
+  --ok:#2E6B4F;
+  --line:#C9C3B4;
+  --card:#F7F5EF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans KR',sans-serif;
+  font-size:16px;line-height:1.75;word-break:keep-all;
+  -webkit-font-smoothing:antialiased;
+  background-image:repeating-linear-gradient(0deg,transparent 0 31px,rgba(29,46,78,.035) 31px 32px);
+}
+a{color:var(--navy)}
+:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* top bar */
+.topbar{background:var(--navy-deep);color:#E8E4D8;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;padding:9px 0;border-bottom:3px double var(--stamp)}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar .red{color:#E9695F}
+.topbar a{color:#E8E4D8;text-decoration:none;border-bottom:1px solid rgba(232,228,216,.35)}
+.topbar a:hover{color:#fff;border-bottom-color:#fff}
+
+/* hero */
+header.hero{padding:64px 0 40px;position:relative;overflow:hidden}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;color:var(--stamp);font-weight:600;margin-bottom:22px}
+.kicker::before{content:"";width:34px;height:2px;background:var(--stamp)}
+h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(30px,5vw,50px);line-height:1.24;letter-spacing:-.02em;max-width:18em}
+h1 em{font-style:normal;color:var(--stamp)}
+.lead{margin-top:20px;max-width:46em;color:var(--ink-soft);font-size:16.5px}
+.lead b{color:var(--ink);font-weight:600}
+
+/* meta strip */
+.meta{display:flex;flex-wrap:wrap;gap:0;margin-top:34px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.meta div{padding:14px 22px 14px 0;margin-right:22px;border-right:1px solid var(--line)}
+.meta div:last-child{border-right:0;margin-right:0;padding-right:0}
+.meta dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:var(--ink-soft);text-transform:uppercase}
+.meta dd{font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:19px}
+
+/* section head */
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:8px 0 26px}
+.section-head h2{font-family:'Nanum Myeongjo',serif;font-size:24px;letter-spacing:-.01em}
+.section-head span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--ink-soft)}
+
+/* cards */
+.list{display:grid;gap:16px;padding-bottom:26px}
+.card{position:relative;display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--navy);padding:26px 28px;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+.card:hover{transform:translateY(-2px);border-left-color:var(--stamp);box-shadow:0 10px 26px rgba(27,25,22,.10)}
+.card:active{transform:none}
+.card-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.num{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--paper);background:var(--navy);padding:2px 8px}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--stamp);border:1px solid rgba(179,38,30,.35);padding:2px 8px}
+.tag.amber{color:var(--amber);border-color:rgba(154,110,18,.35)}
+.tag.ok{color:var(--ok);border-color:rgba(46,107,79,.35)}
+.card h3{font-family:'Nanum Myeongjo',serif;font-size:23px;line-height:1.4;letter-spacing:-.01em;margin-bottom:8px}
+.card:hover h3{color:var(--stamp)}
+.card p{color:var(--ink-soft);font-size:15px;max-width:52em}
+.card ul{margin:12px 0 0 0;list-style:none;display:grid;gap:5px}
+.card li{position:relative;padding-left:14px;font-size:14px;color:var(--ink-soft)}
+.card li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:1px;background:var(--stamp)}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:18px;padding-top:14px;border-top:1px dashed var(--line)}
+.file{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-soft);word-break:break-all;overflow-wrap:anywhere}
+.go{font-weight:600;font-size:14px;color:var(--navy);white-space:nowrap}
+.card:hover .go{color:var(--stamp)}
+
+/* nav + footer */
+.crossnav{display:flex;gap:12px;flex-wrap:wrap;padding:26px 0 0;border-top:1px solid var(--line)}
+.crossnav a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:1px solid var(--line);background:var(--card);padding:10px 16px;font-size:14px;font-weight:600;color:var(--navy)}
+.crossnav a:hover{border-color:var(--navy);background:#fff}
+.crossnav a.primary{background:var(--navy);border-color:var(--navy);color:#F2EFE6}
+.crossnav a.primary:hover{background:var(--navy-deep)}
+footer{padding:34px 0 60px;color:var(--ink-soft);font-size:12.5px;font-family:'IBM Plex Mono',monospace;letter-spacing:.02em}
+footer p+p{margin-top:6px}
+.note{margin-top:26px;border-left:3px solid var(--amber);background:rgba(154,110,18,.07);padding:14px 18px;font-size:13.5px;color:var(--ink-soft)}
+@media(max-width:680px){
+  header.hero{padding:44px 0 28px}
+  .card{padding:20px 18px}
+  .card h3{font-size:20px}
+  .meta div{padding:12px 16px 12px 0;margin-right:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>주권자 감시 <span class="red">/</span> 법률안-결정 감시</span>
+    <span>LAND &amp; LIBERTY <span class="red">·</span> 입법·사법 기록</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">SOVEREIGN WATCH · LEGISLATION &amp; DECISION</span>
+    <h1>법안은 통과되기 전에,<br>결정은 확정되기 전에 <em>읽습니다</em></h1>
+    <p class="lead">
+      국회에 올라온 법안과 헌법재판소 결정은, 통과된 뒤에는 되돌리기 어렵습니다.
+      이 인덱스는 <b>표결 전에 확인해야 할 조항·쟁점·이력</b>을 정리한 1차 검증 리포트 세 건을 묶은 기록입니다.
+      요약이 아니라 원문 조항과 발의·결정 근거를 따라갑니다.
+    </p>
+
+    <dl class="meta">
+      <div><dt>Reports</dt><dd>3건</dd></div>
+      <div><dt>분야</dt><dd>법안 · 헌법재판</dd></div>
+      <div><dt>갱신</dt><dd>2026.11.27</dd></div>
+      <div><dt>상위 탭</dt><dd>주권자 감시</dd></div>
+    </dl>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="section-head">
+    <h2>감시 대상 리포트</h2>
+    <span>03 REPORTS / 01 INDEX</span>
+  </div>
+
+  <div class="list">
+
+    <a class="card" href="hate_speech_bills_report-v2.html">
+      <div class="card-top">
+        <span class="num">01</span>
+        <span class="tag">법안 비교</span>
+      </div>
+      <h3>혐오 표현·집회 규제 3대 법안</h3>
+      <p>
+        특정 국가·국민·인종을 겨냥한 혐오 표현과 시위를 규율하기 위해 발의된
+        양부남(형법)·김태년(집시법)·고민정(교육환경법) 대표발의안을 조항 단위로 나란히 놓고 비교했습니다.
+      </p>
+      <ul>
+        <li>3개 법안의 핵심 조항 및 처벌 구조 대조</li>
+        <li>찬반 쟁점과 소관 상임위 3곳</li>
+        <li>확인된 발의 의원 명단</li>
+      </ul>
+      <div class="card-foot">
+        <span class="file">hate_speech_bills_report-v2.html</span>
+        <span class="go">리포트 열기 →</span>
+      </div>
+    </a>
+
+    <a class="card" href="national_security_law_research-v2.html">
+      <div class="card-top">
+        <span class="num">02</span>
+        <span class="tag amber">비교 리서치</span>
+      </div>
+      <h3>한국·홍콩 국가보안법</h3>
+      <p>
+        대한민국 국가보안법(1948)과 홍콩 국가보안법(2020·2024)의 법적 구조 차이,
+        제22대 국회의 폐지 추진 배경과 찬반 논리를 함께 정리했습니다.
+      </p>
+      <ul>
+        <li>두 법의 구성·죄명·절차 구조 비교</li>
+        <li>22대 국회 폐지 추진 경과와 쟁점</li>
+        <li>중앙선거관리위원회 전과기록·공개 추적 명부 등재 당선인 23명의 관련 이력</li>
+      </ul>
+      <div class="card-foot">
+        <span class="file">national_security_law_research-v2.html</span>
+        <span class="go">리포트 열기 →</span>
+      </div>
+    </a>
+
+    <a class="card" href="foreigner_political_activity_report-v3.html">
+      <div class="card-top">
+        <span class="num">03</span>
+        <span class="tag ok">헌법재판 결정</span>
+      </div>
+      <h3>외국인 정치활동 금지 헌법불합치</h3>
+      <p>
+        2026년 11월 26일 헌법재판소의 출입국관리법 제17조 제2항 헌법불합치 결정(6:3)과
+        그 후속 입법 공백, 그리고 정당 가입·창설 논란을 한 번에 정리했습니다.
+      </p>
+      <ul>
+        <li>1977년 조항 도입 후 49년 만의 판단, 국회 입법 시한 2028.12.31</li>
+        <li>중국인 무비자 입국 연장과의 연계 위험</li>
+        <li>해외 주요국 규제 사례, 영주권자 지방선거권·상호주의 개정 논의</li>
+      </ul>
+      <div class="card-foot">
+        <span class="file">foreigner_political_activity_report-v3.html</span>
+        <span class="go">리포트 열기 →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="note">
+    이 인덱스는 <b>감시 목록</b>입니다. 각 카드는 개별 리포트 원문으로 연결되며,
+    법안의 최종 처리 결과와 결정의 확정 여부는 국회 의안정보시스템·헌법재판소 결정 원문에서 다시 확인하십시오.
+  </div>
+
+  <nav class="crossnav" aria-label="관련 인덱스">
+    <a class="primary" href="dossier-index.html">청문회 감시 · 도시어 인덱스</a>
+    <a href="index.html">토지와 자유 홈</a>
+    <a href="assembly-reset.html">실질적 국회 해산</a>
+  </nav>
+
+  <footer>
+    <p>주권자 감시 — 법률안·결정 감시 인덱스 · LandnLiberty.kr</p>
+    <p>최종 갱신 2026.11.27 · 리포트 3건 연결</p>
+  </footer>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>외국인 정치활동 금지 헌법불합치 결정 및 주요 쟁점 종합 보고서</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-alt: #f1f5f9;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --primary: #1e3a8a;
+      --primary-light: #eff6ff;
+      --primary-border: #bfdbfe;
+      --accent: #b45309;
+      --accent-bg: #fffbeb;
+      --accent-border: #fde68a;
+      --danger: #dc2626;
+      --danger-dark: #991b1b;
+      --danger-bg: #fef2f2;
+      --danger-bg-strong: #fee2e2;
+      --danger-border: #fca5a5;
+      --success: #065f46;
+      --success-bg: #ecfdf5;
+      --success-border: #a7f3d0;
+      --shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.04);
+      --radius: 12px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0b1120;
+      --surface: #111827;
+      --surface-alt: #1e293b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --primary: #60a5fa;
+      --primary-light: rgba(59, 130, 246, 0.14);
+      --primary-border: rgba(96, 165, 250, 0.35);
+      --accent: #fbbf24;
+      --accent-bg: rgba(245, 158, 11, 0.12);
+      --accent-border: rgba(251, 191, 36, 0.3);
+      --danger: #f87171;
+      --danger-dark: #fca5a5;
+      --danger-bg: rgba(220, 38, 38, 0.14);
+      --danger-bg-strong: rgba(220, 38, 38, 0.24);
+      --danger-border: rgba(248, 113, 113, 0.45);
+      --success: #34d399;
+      --success-bg: rgba(16, 185, 129, 0.12);
+      --success-border: rgba(52, 211, 153, 0.3);
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+      font-size: 15.5px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    /* Top Bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .topbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: all 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--surface-alt);
+      color: var(--text);
+    }
+
+    .nav-links a.nav-risk {
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    .nav-links a.nav-risk:hover {
+      background: var(--danger-bg);
+      color: var(--danger-dark);
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #f8fafc;
+      padding: 56px 24px 48px;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #e2e8f0;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      color: #cbd5e1;
+      font-size: 1rem;
+      margin-bottom: 28px;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+    }
+
+    .kpi-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    .kpi-card.kpi-risk {
+      background: rgba(220, 38, 38, 0.22);
+      border: 1.5px solid rgba(248, 113, 113, 0.75);
+    }
+
+    .kpi-card.kpi-risk .kpi-label,
+    .kpi-card.kpi-risk .kpi-sub {
+      color: #fecaca;
+    }
+
+    .kpi-card.kpi-risk .kpi-value {
+      color: #fee2e2;
+    }
+
+    .kpi-label {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      margin-bottom: 4px;
+    }
+
+    .kpi-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .kpi-sub {
+      font-size: 0.78rem;
+      color: #93c5fd;
+      margin-top: 2px;
+    }
+
+    /* Main Layout */
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 36px 24px 72px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    section.card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 32px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 76px;
+    }
+
+    section.card.risk-section {
+      border: 2px solid var(--danger-border);
+      box-shadow: 0 4px 18px rgba(220, 38, 38, 0.08);
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .section-tag.risk-tag {
+      color: var(--danger-dark);
+      background: var(--danger-bg-strong);
+      border-color: var(--danger-border);
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .risk-section h2 {
+      color: var(--danger-dark);
+      border-bottom-color: var(--danger-border);
+    }
+
+    h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin: 22px 0 10px;
+      color: var(--text);
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    /* Red Risk Highlight Utilities */
+    .risk-text {
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    .risk-pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #ffffff;
+      background: #dc2626;
+      padding: 2px 7px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .risk-table-wrap {
+      overflow-x: auto;
+      margin: 16px 0;
+      border: 1.5px solid var(--danger-border);
+      border-radius: 10px;
+    }
+
+    .risk-table th {
+      background: var(--danger-bg-strong);
+      color: var(--danger-dark);
+      border-bottom: 1.5px solid var(--danger-border);
+    }
+
+    .risk-table td {
+      background: var(--danger-bg);
+      border-bottom: 1px solid var(--danger-border);
+    }
+
+    .risk-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .risk-title {
+      color: var(--danger-dark);
+      font-weight: 800;
+      display: block;
+    }
+
+    /* Callouts */
+    .callout {
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      border-left: 4px solid var(--primary);
+      background: var(--primary-light);
+    }
+
+    .callout.warning {
+      border-left-color: var(--accent);
+      background: var(--accent-bg);
+    }
+
+    .callout.danger {
+      border-left-color: var(--danger);
+      background: var(--danger-bg);
+    }
+
+    .callout.danger .callout-title {
+      color: var(--danger-dark);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-size: 0.96rem;
+    }
+
+    /* Split Ratio Bar (6 vs 3) */
+    .vote-bar-wrap {
+      margin: 16px 0 20px;
+    }
+
+    .vote-bar {
+      display: flex;
+      height: 36px;
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .vote-majority {
+      width: 66.67%;
+      background: #1d4ed8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vote-minority {
+      width: 33.33%;
+      background: #64748b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Grid Cards */
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+      margin: 14px 0;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin: 14px 0;
+    }
+
+    .subcard {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+
+    .subcard h4 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    /* Timeline */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .step {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .step-date {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .step-title {
+      font-weight: 700;
+      font-size: 0.96rem;
+      margin-bottom: 6px;
+    }
+
+    .step-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      min-width: 620px;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--surface-alt);
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Progress / Stat Bars */
+    .stat-box {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 16px 0;
+    }
+
+    .bar-row {
+      margin-bottom: 12px;
+    }
+
+    .bar-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .bar-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .bar-track {
+      height: 12px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: #1d4ed8;
+    }
+
+    .bar-fill.muted {
+      background: #64748b;
+    }
+
+    /* Footer */
+    footer {
+      max-width: 1120px;
+      margin: 0 auto 48px;
+      padding: 0 24px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      section.card {
+        padding: 22px 18px;
+      }
+      .topbar-inner {
+        padding: 10px 16px;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .topbar, .actions {
+        display: none !important;
+      }
+      body {
+        background: #ffffff;
+        color: #000000;
+      }
+      section.card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">토지와 자유 + 디지털 대동법 연구소</div>
+      <nav class="nav-links" aria-label="목차">
+        <a href="#sec1">1. 헌법불합치 결정</a>
+        <a href="#sec2">2. 정당 가입·창설</a>
+        <a href="#sec3" class="nav-risk">3. 중국 비자 완화 (위험 강조)</a>
+        <a href="#sec4">4. 해외 규제 비교</a>
+        <a href="#sec5">5. 지방선거권·상호주의</a>
+      </nav>
+      <div class="actions">
+        <button class="btn" type="button" onclick="toggleTheme()">테마 전환</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <span class="badge">토지와 자유 + 디지털 대동법 연구소 · 2026년 11월 26일 헌법재판소 결정 종합 분석</span>
+      <h1>외국인 정치활동 금지 헌법불합치 결정 및 주요 쟁점 정리</h1>
+      <p>
+        출입국관리법 제17조 제2항에 대한 헌법재판소의 헌법불합치 결정 내용과 함께, 외국인의 정당 가입·창설 논란,
+        중국인 무비자 입국 연장과의 연계 위험 요인(빨간색 강조), 해외 주요국 규제 사례, 그리고 국내 영주권자 지방선거권 및 상호주의 개정 논의를 한눈에 정리했습니다.
+      </p>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">헌법재판소 결정 (2026.11.26)</div>
+          <div class="kpi-value">6 : 3 헌법불합치</div>
+          <div class="kpi-sub">1977년 조항 도입 후 49년 만의 판단</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">국회 대체 입법 시한</div>
+          <div class="kpi-value">2028.12.31</div>
+          <div class="kpi-sub">미개정 시 2029.01.01 효력 상실</div>
+        </div>
+        <div class="kpi-card kpi-risk">
+          <div class="kpi-label">⚠ 중국 단체관광객 무비자 (핵심 위험 연계)</div>
+          <div class="kpi-value">2027.12.31까지 연장</div>
+          <div class="kpi-sub">단기 체류자 정치 시위·안보 공백 우려</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">외국인 지방선거 유권자 (2026)</div>
+          <div class="kpi-value">15만 명 돌파</div>
+          <div class="kpi-sub">중국 국적 비중 약 79~81%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Section 1 -->
+    <section id="sec1" class="card">
+      <span class="section-tag">SECTION 01</span>
+      <h2>외국인 정치활동 금지 헌법불합치 결정 상세 내용</h2>
+      <p>
+        2026년 11월 26일 헌법재판소는 국내 체류 외국인의 정치활동을 전면 금지한 <strong>출입국관리법 제17조 제2항</strong>에 대해
+        <strong>헌법불합치</strong> 결정을 내렸습니다. 1977년 해당 조항이 도입된 지 49년 만의 판단입니다.
+      </p>
+
+      <h3>사건 배경 및 심판 대상</h3>
+      <ul>
+        <li>
+          <strong>심판 대상:</strong> 출입국관리법 제17조 제2항 ("대한민국에 체류하는 외국인은 이 법 또는 다른 법률에서 정하는 경우를 제외하고는 정치활동을 해서는 안 된다").
+          위반 시 형사처벌 대상은 아니나 활동 중지 명령, 출국 권고·명령, 비영주권자의 경우 강제퇴거까지 가능합니다.
+        </li>
+        <li>
+          <strong>청구 배경:</strong> 2021년 제20대 대선을 앞두고 유학(D-2) 자격으로 체류하던 몽골 국적 유학생 2명이 대선 예비후보들에게 외국인 기본권 보장 정책을 요청하려다 해당 조항에 막히자 헌법소원을 청구했습니다. (1명은 청구기간 도과로 각하, 1명 인용)
+        </li>
+      </ul>
+
+      <h3>재판관 의견 및 핵심 논리 (6 대 3)</h3>
+      <div class="vote-bar-wrap">
+        <div class="vote-bar" role="img" aria-label="헌법불합치 다수의견 6인 대 합헌 반대의견 3인">
+          <div class="vote-majority">헌법불합치 6인 (다수의견)</div>
+          <div class="vote-minority">합헌 3인 (반대의견)</div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="subcard">
+          <h4>다수의견 (김상환 소장 등 6인 — 헌법불합치)</h4>
+          <ul>
+            <li>금지되는 '정치활동'의 범위가 지나치게 포괄적이어서, 외국인이 자신의 처우 개선을 요구하거나 단순한 의견을 표명하는 것까지 위축시켜 <strong>표현의 자유를 침해</strong>한다고 판단했습니다.</li>
+            <li>모든 정치활동을 허용하자는 취지가 아니라, <strong>독일 체류법 제47조</strong>처럼 원칙적으로 허용하되 금지가 필요한 행위를 구체적으로 열거하는 방식으로 법을 개정해야 한다고 밝혔습니다.</li>
+          </ul>
+        </div>
+        <div class="subcard">
+          <h4>반대의견 (정형식·김복형·조한창 재판관 3인 — 합헌)</h4>
+          <ul>
+            <li>'정치활동'은 국가의 안전·질서·이익에 위협을 끼치는 활동으로 축소 해석할 수 있어 명확성 원칙과 과잉금지 원칙에 위배되지 않는다고 보았습니다.</li>
+            <li>외교 관계와 국제 정세에 따라 새롭게 나타나는 정치활동을 미리 법에 열거하기 어렵고, 실제 해당 조항으로 강제퇴거된 사례도 없다는 점을 들었습니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>향후 입법 일정</h3>
+      <div class="timeline">
+        <div class="step">
+          <div class="step-date">2026년 11월 26일</div>
+          <div class="step-title">헌법불합치 결정 선고</div>
+          <p class="step-desc">즉시 위헌 결정에 따른 입법 공백과 혼란을 방지하기 위해 잠정 적용 결정</p>
+        </div>
+        <div class="step">
+          <div class="step-date">~ 2028년 12월 31일</div>
+          <div class="step-title">국회 대체 입법 시한</div>
+          <p class="step-desc">현행 출입국관리법 제17조 제2항 효력 유지, 금지 행위를 구체화하는 개정 입법 필요</p>
+        </div>
+        <div class="step">
+          <div class="step-date">2029년 1월 1일</div>
+          <div class="step-title">미개정 시 효력 상실</div>
+          <p class="step-desc">국회가 기한 내 대체 입법을 마련하지 않을 경우 해당 조항의 효력이 자동 상실됨</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="sec2" class="card">
+      <span class="section-tag">SECTION 02</span>
+      <h2>외국인의 정당 가입·창설 관련 쟁점과 문제점</h2>
+
+      <div class="callout danger">
+        <div class="callout-title">이번 결정으로 외국인의 정당 가입·창설이 허용되는가? — 허용되지 않습니다.</div>
+        <p style="margin-bottom: 0;">
+          헌재는 이번 결정이 외국인의 선거운동, 정당 가입, 정치자금 기부 등을 허용하는 것이 아님을 분명히 했습니다.
+          이러한 핵심 정치활동은 이미 <strong>정당법, 공직선거법, 정치자금법</strong> 등 개별 법률에서 별도로 금지하고 있기 때문입니다.
+        </p>
+      </div>
+
+      <h3>향후 정당 가입·창설 논의로 확대될 경우의 구조적 문제점</h3>
+      <div class="three-col">
+        <div class="subcard">
+          <h4>1. 국민주권 원칙 훼손 및 내정 간섭 우려</h4>
+          <p style="margin-bottom: 0;">
+            정당은 국가 권력을 창출하고 핵심 정책·입법을 결정하는 기구입니다. 국적이 없는 외국인이 정당을 창설하거나 당원으로 가입해 공천·당론 결정에 참여하면, 대한민국 국민의 자주적 주권 행사가 침해될 수 있습니다.
+          </p>
+        </div>
+        <div class="subcard">
+          <h4>2. 권리와 의무의 불균형</h4>
+          <p style="margin-bottom: 0;">
+            국방의 의무 등 국민으로서의 핵심 의무를 온전히 부담하지 않는 외국인에게 국가의 정치적 의사결정권(정당 활동·참정권)을 부여하는 것은 공동체의 형평성에 어긋난다는 지적이 있습니다.
+          </p>
+        </div>
+        <div class="subcard">
+          <h4>3. 특정 국적 편중 및 상호주의 위배</h4>
+          <p style="margin-bottom: 0;">
+            국내 체류 외국인 및 영주권자 중 특정 국적(중국 등)의 비중이 압도적으로 높은 현실에서 정당 활동·참정권이 확대되면 특정 국가의 이해관계가 국내 정치에 과도하게 반영될 수 있으며, 상대국에서 한국인에게 동일한 권리를 보장하지 않는 상호주의 위반 논란이 큽니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 (Red Highlighted Risk Section) -->
+    <section id="sec3" class="card risk-section">
+      <span class="section-tag risk-tag">SECTION 03 · 위험 요인 강조</span>
+      <h2>중국인 입국 비자 완화와 맞물린 문제점 및 위험 요인</h2>
+      <p>
+        헌재의 결정이 나온 같은 날(2026년 11월 26일), 정부는 올해 말 종료 예정이던
+        <span class="risk-text">중국인 단체관광객 무비자 입국 제도를 2027년 12월 31일까지 1년 연장</span>하기로 발표했습니다.
+        두 사안이 맞물리며 다음과 같은 <span class="risk-text">핵심 위험 요인</span>이 제기되고 있습니다.
+      </p>
+
+      <div class="risk-table-wrap">
+        <table class="risk-table">
+          <thead>
+            <tr>
+              <th style="width: 26%;">위험 요인</th>
+              <th>구체적 우려 및 문제점</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="risk-pill">위험 1</span>
+                <span class="risk-title">단기 체류자의 조직적 정치 시위</span>
+              </td>
+              <td>
+                무비자 입국이 확대된 상태에서 출입국관리법상 포괄적 정치활동 금지 조항이 완화되면,
+                <span class="risk-text">단기 입국한 외국인들이 국내에서 친본국 여론전이나 외교적 갈등을 유발하는 집회·시위에 참여해도 즉각적인 제재(활동 중지·강제퇴거)가 어려워질 수 있습니다.</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="risk-pill">위험 2</span>
+                <span class="risk-title">규제 사각지대 및 안보 공백</span>
+              </td>
+              <td>
+                반대의견 재판관들의 지적처럼, 국제 정세 변화에 따른
+                <span class="risk-text">신종 정치 개입(위장 집회, 조직적 여론 개입 등)을 법 조문에 일일이 열거하기 어렵습니다. 열거되지 않은 활동은 단속 근거가 사라져 치안·안보상 공백이 생길 수 있습니다.</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="risk-pill">위험 3</span>
+                <span class="risk-title">상호주의 형평성 논란</span>
+              </td>
+              <td>
+                한국 정부가 중국인 단체관광객 무비자 제도를 선제적으로 연장하는 동안
+                <span class="risk-text">상대국의 상응 조치가 미흡하다는 비판과, 국내 외국인의 정치적 권리 확대 기류가 겹치며 국민적 반발이 커지고 있습니다.</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout danger">
+        <div class="callout-title">⚠ 입법 과제 및 법적 구분 참고</div>
+        <p style="margin-bottom: 0;">
+          단기 무비자 관광객은 영주권자가 아니므로, 영주권 취득 후 3년이 지난 외국인에게 부여되는 지방선거권이나 정당 가입 문제와는 법적으로 직접 연결되지 않습니다.
+          다만 국회가 2028년 말까지 대체 입법을 마련하는 과정에서 국내 장기 체류 외국인의 정당한 인권·처우 개선 요구(표현의 자유)는 보장하되,
+          <span class="risk-text">단기 체류자의 정치적 집회 개입, 외교적 갈등 유발, 내정 간섭 행위</span>를 명확히 차단할 구체적 기준을 세우는 것이 핵심 과제입니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="sec4" class="card">
+      <span class="section-tag">SECTION 04</span>
+      <h2>해외 주요국의 외국인 정치활동 규제 사례 비교</h2>
+      <p>
+        주요 선진국들은 한국처럼 출입국관리법에서 외국인의 정치활동을 '전면 금지'하기보다,
+        <strong>표현의 자유는 원칙적으로 보장하되 국가안보·주권·선거에 영향을 미치는 행위를 구체적으로 제한</strong>하는 방식을 택하고 있습니다.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 11%;">국가</th>
+              <th style="width: 22%;">기본 원칙</th>
+              <th style="width: 44%;">주요 규제 방식 및 금지 행위</th>
+              <th style="width: 23%;">위반 시 제재</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>독일</strong></td>
+              <td><strong>원칙적 허용 / 구체적 열거 금지</strong><br>(체류법 제47조)</td>
+              <td>
+                • 정치적 의사형성 방해, 평화적 공존 저해, 공공안전·질서 위협 시 제한·금지<br>
+                • 폭력 행사·선동, 민주적 기본질서 위협, 독일의 외교적 이익이나 국제법적 의무 위반 행위는 <strong>절대 금지</strong>
+              </td>
+              <td>활동 금지·제한 명령, 위반 시 체류허가 취소 및 추방</td>
+            </tr>
+            <tr>
+              <td><strong>미국</strong></td>
+              <td><strong>표현의 자유 보장 / 선거·자금·로비 엄격 통제</strong></td>
+              <td>
+                • 수정헌법 제1조에 따라 일반 집회·시위·의견 표명 허용<br>
+                • <strong>연방선거운동법(FECA):</strong> 영주권자 제외 외국인의 선거 기부·지출·선거운동 직접 관여 전면 금지<br>
+                • <strong>외국대리인등록법(FARA):</strong> 외국 정부·단체를 대리한 정치·여론 활동 시 법무부 등록 의무화
+              </td>
+              <td>거액의 벌금, 징역형(형사처벌), 비자 취소 및 추방</td>
+            </tr>
+            <tr>
+              <td><strong>일본</strong></td>
+              <td><strong>원칙적 허용 / 체류 갱신 재량으로 통제</strong></td>
+              <td>
+                • 출입국관리법상 포괄적 정치활동 금지 조항은 없음<br>
+                • <strong>맥린(McLean) 판결(1978):</strong> 외국인의 정치활동 자유는 '일본의 정치적 의사결정 및 실시에 영향을 미치는 활동'을 제외한 범위에서만 인정<br>
+                • <strong>정치자금규정법:</strong> 외국인의 정치헌금 전면 금지
+              </td>
+              <td>정치활동 자체를 사유로 <strong>체류기간 갱신 불허</strong> 가능 (법무대신의 광범위한 재량 인정)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>한국 입법 과제에 주는 시사점</h3>
+      <ul>
+        <li>헌재가 대안으로 언급한 <strong>독일 체류법 제47조</strong> 모델은 '원칙 허용, 예외 금지' 구조를 취하면서도 <strong>외교적 이익 침해, 공공질서 위협, 폭력 선동</strong> 등을 명확히 금지해 안보 공백을 막습니다.</li>
+        <li>미국은 일반적 표현의 자유를 폭넓게 인정하는 대신 <strong>자금 흐름(FECA)</strong>과 <strong>외국 정부의 조직적 여론 개입(FARA)</strong>을 형사처벌 대상으로 강하게 통제하는 투트랙 전략을 사용합니다.</li>
+      </ul>
+    </section>
+
+    <!-- Section 5 -->
+    <section id="sec5" class="card">
+      <span class="section-tag">SECTION 05</span>
+      <h2>국내 영주권자 외국인 지방선거권 현황 및 상호주의 개정 논의</h2>
+      <p>
+        한국은 2005년 공직선거법 개정을 통해 아시아 국가 중 유일하게 외국인에게 지방선거권을 부여하고 있습니다.
+      </p>
+
+      <h3>부여 기준 및 현황</h3>
+      <ul>
+        <li><strong>부여 기준 (공직선거법 제15조):</strong> 대통령선거와 국회의원선거는 불가하며, <strong>영주권(F-5) 취득 후 3년이 경과</strong>하고 해당 지자체 외국인등록대장에 올라 있는 만 18세 이상 외국인에게 지방선거권만 부여합니다.</li>
+        <li><strong>유권자 규모 증가:</strong> 2026년 6·3 지방선거 기준 외국인 유권자는 <strong>15만 명을 처음으로 돌파</strong>했습니다. 이는 2022년(12만 7,623명)보다 약 2만 3,000명 늘어난 수치이며, 10년 새 3배 이상 증가했습니다.</li>
+        <li><strong>특정 국적 편중:</strong> 전체 외국인 유권자 중 <strong>중국 국적자가 약 79~81%</strong>로 압도적 다수를 차지합니다.</li>
+      </ul>
+
+      <div class="stat-box">
+        <div class="bar-row">
+          <div class="bar-header">
+            <span>외국인 지방선거 유권자 중 중국 국적 비중</span>
+            <span>약 79~81%</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 80%;"></div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-header">
+            <span>기타 국적 전체 비중</span>
+            <span>약 19~21%</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill muted" style="width: 20%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>핵심 논란: 상호주의 위반과 정주 요건 미흡</h3>
+      <ul>
+        <li><strong>상호주의 위배:</strong> 한국은 출신 국가와 무관하게 지방선거권을 부여하지만, 유권자의 80%가량을 차지하는 중국을 비롯해 아시아 주요국은 한국인 영주권자에게 선거권을 부여하지 않습니다.</li>
+        <li><strong>실제 거주 요건 부재:</strong> 현행법상 영주권 취득 후 3년이 지나면 국내에 실제로 계속 거주하지 않더라도(일정 기간 해외 체류 후 입국 등) 선거권이 유지되는 허점이 지적되어 왔습니다.</li>
+        <li><strong>지방자치 영향력 확대:</strong> 외국인 유권자가 밀집한 수도권 일부 기초지자체(안산·수원·구로·영등포 등)에서는 당락을 좌우할 수 있는 변수로 작용하며, 교육·복지·예산 집행 등 지역 현안에 직접적인 영향을 미칩니다.</li>
+      </ul>
+
+      <h3>국회 개정 논의 동향</h3>
+      <div class="three-col">
+        <div class="subcard">
+          <h4>상호주의 도입</h4>
+          <p style="margin-bottom: 0;">대한민국 국민에게 선거권을 부여하는 국가의 국민에게만 지방선거권을 인정하도록 명문화하는 방안 (2026년 3월 임종득 의원 대표발의안 등)</p>
+        </div>
+        <div class="subcard">
+          <h4>체류 기간 및 정주 요건 강화</h4>
+          <p style="margin-bottom: 0;">영주권 취득 후 경과 기간을 현행 3년에서 <strong>5년 또는 7년 이상</strong>으로 늘리고, 실질적인 국내 계속 거주 기간을 요건으로 추가하는 방안</p>
+        </div>
+        <div class="subcard">
+          <h4>선거권 폐지 및 국민청원</h4>
+          <p style="margin-bottom: 0;">2026년 하반기에도 공직선거법 제15조의 외국인 지방선거권 조항을 즉각 폐지하고 상호주의를 도입하라는 국민청원이 제기되었으나, 선관위와 국회는 입법정책적 판단 사안으로 결론을 내리지 못한 채 논의가 이어지고 있음</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-title">종합 전망</div>
+        <p style="margin-bottom: 0;">
+          외국인 정치활동 금지 조항의 대체 입법 시한(2028년 12월 31일)이 다가오면서, 국회에서는 출입국관리법 개정과 함께
+          공직선거법상 외국인 지방선거권의 상호주의 도입 여부도 맞물려 본격적인 입법 공방이 벌어질 가능성이 큽니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>토지와 자유 + 디지털 대동법 연구소</strong> · 본 문서는 오프라인에서도 바로 열어볼 수 있는 단일 HTML 웹페이지로 제작되었습니다.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const current = root.getAttribute("data-theme");
+      root.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+    }
+  </script>
+</body>
+</html>

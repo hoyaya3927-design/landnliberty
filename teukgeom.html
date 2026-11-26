@@ -310,6 +310,7 @@ footer a{color:var(--neon)}
         <a class="gt" data-g="salriki" role="tab" aria-selected="false" href="salriki.html#/salriki" data-page="salriki">대한민국 살리기</a>
         <a class="gt" data-g="jozak" role="tab" aria-selected="false" href="jojakkiso_teukgeom_factsheet.html">조작기소 특검</a>
         <a class="gt" data-g="reset" role="tab" aria-selected="false" href="assembly-reset.html">실질적 국회 해산</a>
+        <a class="gt" data-g="watch" role="tab" aria-selected="false" href="dossier-index.html">주권자 감시</a>
       </div>
       <div class="st-wrap">
         <div class="st-row" data-g="land" hidden>
@@ -344,6 +345,10 @@ footer a{color:var(--neon)}
           <a class="st" href="election-reform-campaign.html">사전투표 폐지</a>
           <a class="st" href="22대-국회의원-공개추적-갱신본/index.html">22대 국회 공개정보 추적</a>
           <a class="st" href="22대-국회-전과-지도.html">22대 국회 전과지도</a>
+        </div>
+        <div class="st-row" data-g="watch" hidden>
+          <a class="st" href="dossier-index.html">청문회 감시</a>
+          <a class="st" href="bills-watch-index.html">법률안-결정 감시</a>
         </div>
       </div>
     </nav>
@@ -402,7 +407,14 @@ footer a{color:var(--neon)}
           <a href="22대-국회-전과-지도.html">22대 국회 전과지도</a>
         </div>
       </div>
-</div>
+      <div class="mm-g">
+        <b>주권자 감시</b>
+        <div class="mm-l">
+          <a href="dossier-index.html">청문회 감시</a>
+          <a href="bills-watch-index.html">법률안-결정 감시</a>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -927,6 +939,7 @@ footer a{color:var(--neon)}
   <a href="liberty.html" class="cur">자유 Liberty</a>
   <a href="salriki.html" class="">대한민국 살리기</a>
   <a href="index.html#/home#join">함께하기</a>
+  <a href="dossier-index.html">주권자 감시</a>
 </div>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
@@ -1267,6 +1280,8 @@ footer a{color:var(--neon)}
   DOCK_GROUP['jojakkiso_teukgeom_factsheet.html']='joz';
   DOCK_GROUP['jozakkiso_teukgeom_factsheet.html']='joz';
   DOCK_GROUP['assembly-reset.html']='rst';
+  DOCK_GROUP['dossier-index.html']='wch';
+  DOCK_GROUP['bills-watch-index.html']='wch';
   DOCK_GROUP['index.html']='land';
   DOCK_GROUP['policy.html']='land';
   DOCK_GROUP['land-dividend-manifesto.html']='land';
@@ -1289,6 +1304,7 @@ footer a{color:var(--neon)}
       else if(g==='sal') ix=dockFind('salriki');
       else if(g==='joz') ix=dockFind('jojakkiso');
       else if(g==='rst') ix=dockFind('assembly-reset');
+      else if(g==='wch') ix=dockFind('dossier-index');
       else ix=dockFind('#/');
     }
     return ix<0?0:ix;

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>강금실 국정원장 후보자 의혹 파일 — 기밀해제 도시어</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDEAE2;
+  --paper-deep:#E3DFD4;
+  --ink:#1B1916;
+  --ink-soft:#4A463F;
+  --navy:#1D2E4E;
+  --navy-deep:#12203A;
+  --stamp:#B3261E;
+  --amber:#9A6E12;
+  --ok:#2E6B4F;
+  --line:#C9C3B4;
+  --card:#F7F5EF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans KR',sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(29,46,78,.035) 31px 32px);
+}
+a{color:var(--navy)}
+:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* ───────── top bar ───────── */
+.topbar{
+  background:var(--navy-deep);color:#E8E4D8;
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;
+  padding:9px 0;border-bottom:3px double var(--stamp);
+}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar .red{color:#E9695F}
+
+/* ───────── hero ───────── */
+header.hero{padding:64px 0 40px;position:relative;overflow:hidden}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;
+  color:var(--stamp);font-weight:600;margin-bottom:22px;
+}
+.kicker::before{content:"";width:34px;height:2px;background:var(--stamp)}
+h1{
+  font-family:'Nanum Myeongjo',serif;font-weight:800;
+  font-size:clamp(30px,5.4vw,54px);line-height:1.28;letter-spacing:-.01em;
+  max-width:820px;
+}
+h1 .redact{
+  display:inline-block;background:var(--ink);color:transparent;
+  border-radius:2px;padding:0 .18em;user-select:none;cursor:help;
+  transition:background .3s,color .3s;
+}
+h1 .redact:hover{background:var(--stamp);color:#fff}
+.hero-sub{
+  margin-top:22px;max-width:640px;color:var(--ink-soft);font-size:17px;
+}
+.hero-meta{
+  margin-top:38px;display:grid;grid-template-columns:repeat(4,1fr);
+  border:1.5px solid var(--ink);background:var(--card);
+}
+.hero-meta div{
+  padding:16px 18px;border-right:1.5px solid var(--ink);
+}
+.hero-meta div:last-child{border-right:none}
+.hero-meta dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:var(--ink-soft);margin-bottom:6px}
+.hero-meta dd{font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:19px;line-height:1.35}
+.hero-meta dd small{display:block;font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+
+/* ───────── stamps ───────── */
+.stamp{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-weight:600;
+  font-size:11.5px;letter-spacing:.1em;padding:5px 12px 4px;border-radius:3px;
+  border:2px solid currentColor;transform:rotate(-2deg);white-space:nowrap;
+}
+.stamp.s-fact{color:var(--navy)}
+.stamp.s-ctx{color:var(--amber)}
+.stamp.s-deny{color:var(--stamp)}
+.stamp.s-claim{color:var(--ink-soft)}
+.stamp.s-pend{color:#7A5A0A;background:rgba(154,110,18,.08)}
+
+/* ───────── sections ───────── */
+section{padding:52px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.sec-no{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--stamp);
+  letter-spacing:.2em;font-weight:600;
+}
+h2{
+  font-family:'Nanum Myeongjo',serif;font-weight:800;
+  font-size:clamp(23px,3.4vw,32px);line-height:1.3;
+}
+.sec-desc{color:var(--ink-soft);max-width:720px;margin:10px 0 26px;font-size:15.5px}
+hr.rule{border:none;border-top:1.5px solid var(--line);margin:34px 0 0}
+
+/* ───────── onion timeline ───────── */
+.onion{
+  border:1.5px solid var(--ink);background:var(--card);margin-top:8px;
+}
+.onion-row{display:grid;grid-template-columns:120px 1fr;border-bottom:1px dashed var(--line)}
+.onion-row:last-child{border-bottom:none}
+.onion-row>time{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;
+  padding:16px 14px;border-right:1px dashed var(--line);
+  color:var(--navy);background:rgba(29,46,78,.04);
+}
+.onion-row>p{padding:16px 20px;font-size:15px}
+.onion-row>p b{font-weight:700}
+.peel-tag{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:.12em;color:#fff;background:var(--stamp);border-radius:2px;
+  padding:1px 7px;margin-right:8px;vertical-align:2px;
+}
+.peel-tag.t2{background:var(--navy)}
+
+/* ───────── suspicion cards ───────── */
+.cards{display:grid;gap:26px;margin-top:8px}
+article.card{
+  border:1.5px solid var(--ink);background:var(--card);
+  box-shadow:5px 5px 0 rgba(29,46,78,.12);
+}
+.card-head{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+  padding:20px 24px 0;
+}
+.card-head h3{
+  font-family:'Nanum Myeongjo',serif;font-size:21px;font-weight:800;line-height:1.4;
+}
+.card-head h3 .idx{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--stamp);
+  display:block;letter-spacing:.18em;margin-bottom:4px;font-weight:600;
+}
+.card-head .stamp{flex-shrink:0;margin-top:6px}
+.card-body{padding:14px 24px 22px}
+.card-body p{font-size:15px;color:var(--ink);margin-bottom:12px}
+.card-body p:last-child{margin-bottom:0}
+.tagline{font-size:13px;color:var(--ink-soft)}
+.redact{
+  display:inline-block;background:var(--ink);color:transparent;
+  border-radius:2px;padding:0 .3em;cursor:help;
+  transition:background .3s,color .3s;
+}
+.redact:hover{background:var(--stamp);color:#fff}
+.note-box{
+  border-left:4px solid var(--navy);background:rgba(29,46,78,.055);
+  padding:12px 16px;margin-top:14px;font-size:14px;
+}
+.note-box.denied{border-color:var(--stamp);background:rgba(179,38,30,.05)}
+.note-box .nb-label{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;
+  font-weight:600;display:block;margin-bottom:4px;
+}
+.note-box .nb-label.navy{color:var(--navy)}
+.note-box .nb-label.red{color:var(--stamp)}
+
+/* ───────── two-column debate ───────── */
+.debate{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.debate-col{border:1.5px solid var(--ink);background:var(--card)}
+.debate-col h3{
+  font-family:'Nanum Myeongjo',serif;font-size:18px;font-weight:800;
+  padding:14px 20px;border-bottom:1.5px solid var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+}
+.debate-col h3 .stamp{transform:rotate(-2deg) scale(.88)}
+.debate-col ul{list-style:none;padding:16px 20px}
+.debate-col li{
+  font-size:14.5px;padding:9px 0 9px 20px;position:relative;
+  border-bottom:1px dashed var(--line);
+}
+.debate-col li:last-child{border-bottom:none}
+.debate-col li::before{content:"▸";position:absolute;left:0;color:var(--navy)}
+.debate-col.oppose li::before{color:var(--stamp)}
+.debate-col li small{color:var(--ink-soft)}
+
+/* ───────── background timeline ───────── */
+.bg-line{border-left:2px solid var(--navy);margin-left:8px;padding-left:0;margin-top:8px}
+.bg-item{position:relative;padding:0 0 22px 26px}
+.bg-item::before{
+  content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;
+  background:var(--paper);border:2.5px solid var(--stamp);border-radius:50%;
+}
+.bg-item time{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--stamp);letter-spacing:.06em}
+.bg-item h4{font-family:'Nanum Myeongjo',serif;font-size:16.5px;font-weight:700;margin:2px 0 3px}
+.bg-item p{font-size:14.5px;color:var(--ink-soft);max-width:760px}
+
+/* ───────── profile strip ───────── */
+.profile{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1.5px solid var(--ink);background:var(--card)}
+.profile div{padding:14px 20px;border-bottom:1px dashed var(--line);border-right:1px dashed var(--line)}
+.profile div:nth-child(2n){border-right:none}
+.profile div:nth-last-child(-n+2){border-bottom:none}
+.profile dt{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--ink-soft)}
+.profile dd{font-size:15px;font-weight:500}
+
+/* ───────── sources ───────── */
+.sources ol{list-style:none;counter-reset:src;margin-top:8px}
+.sources li{
+  counter-increment:src;padding:12px 0 12px 44px;position:relative;
+  border-bottom:1px dashed var(--line);font-size:14.5px;
+}
+.sources li::before{
+  content:"["counter(src)"]";position:absolute;left:0;top:12px;
+  font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--navy);
+}
+.sources li a{font-weight:600}
+.sources li small{display:block;color:var(--ink-soft);font-size:13px}
+
+/* ───────── footer ───────── */
+footer{
+  margin-top:60px;background:var(--navy-deep);color:#B9BEC9;
+  padding:34px 0 44px;font-size:13px;line-height:1.8;
+}
+footer .wrap p+p{margin-top:10px}
+footer strong{color:#E8E4D8}
+
+/* ───────── responsive ───────── */
+@media (max-width:820px){
+  .hero-meta{grid-template-columns:1fr 1fr}
+  .hero-meta div:nth-child(2n){border-right:none}
+  .hero-meta div{border-bottom:1.5px solid var(--ink)}
+  .hero-meta div:nth-last-child(-n+2){border-bottom:none}
+  .debate{grid-template-columns:1fr}
+  .profile{grid-template-columns:1fr}
+  .profile div{border-right:none}
+  .profile div:nth-last-child(-n+2){border-bottom:1px dashed var(--line)}
+  .profile div:last-child{border-bottom:none}
+  .onion-row{grid-template-columns:88px 1fr}
+  .onion-row>time{padding:12px 8px;font-size:11px}
+}
+@media (max-width:560px){
+  .card-head{flex-direction:column;gap:10px}
+  .onion-row{grid-template-columns:1fr}
+  .onion-row>time{border-right:none;border-bottom:1px dashed var(--line)}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>INSPECTION DOSSIER · 인사검증 파일 No.2026-1123</span>
+    <span class="red">상위 비밀 — 기밀해제</span>
+    <span>작성일 2026. 11. 26.</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">FACT DOSSIER · 강금실 국가정보원장 후보자</span>
+    <h1>이력서가 양파 껍질처럼 까지는 검증 파일<br>
+      — 강금실, 정보·방첩 경력 0년의 방첩 수장</h1>
+    <p class="hero-sub">
+      2026년 11월 23일, 이재명 대통령의 2차 중폭 개각에서 강금실 전 법무부 장관이 국가정보원장 후보자로 지명됐다.
+      지명 다음 날부터 하루에 하나씩 과거가 공개되며 여야의 공방이 시작됐다.
+      이 페이지는 현재까지 보도된 <strong>의혹 6건을 사실관계·해명·판정</strong>으로 나눠 정리한 것이다.
+    </p>
+    <dl class="hero-meta">
+      <div><dt>후보자</dt><dd>강금실(康錦實)<small>1957년생 · 사법시험 23회</small></dd></div>
+      <div><dt>지명일</dt><dd>2026. 11. 23.<small>2차 중폭 개각</small></dd></div>
+      <div><dt>핵심 경력</dt><dd>제55대 법무부장관<small>판사 13년 · 기후환경대사</small></dd></div>
+      <div><dt>정보·방첩 경력</dt><dd>0년<small>정보기관 근무 전무</small></dd></div>
+    </dl>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ── 01 onion peel ── -->
+  <section id="onion">
+    <div class="sec-head"><span class="sec-no">SECTION 01</span><h2>매일 아침 까지는 것들 — 공개 타임라인</h2></div>
+    <p class="sec-desc">지명일(11.23)을 기준으로, 어떤 이력이 어느 날 공개·보도됐는지의 순서 기록. 아래 각 항목의 사실관계는 SECTION 02의 검증 카드와 연결된다.</p>
+    <div class="onion">
+      <div class="onion-row"><time>11.23 (일)</time><p><b>후보자 지명.</b> 이재명 대통령, 강금실 전 법무부장관을 국정원장 후보자로 지명. 외교·통일·행안·문체부와 함께 개각.</p></div>
+      <div class="onion-row"><time>11.24 (월)</time><p><span class="peel-tag">껍질 1</span><b>중국 지방정부 특별고문 경력</b> — 안철수 의원이 치치하얼시·연변조선족자치주 고문 위촉식 사진과 함께 지명 철회 요구. <span class="peel-tag">껍질 2</span><b>시진핑 리더십 찬양 발언</b>(올해 4월 기후대사 행보) 공개.</p></div>
+      <div class="onion-row"><time>11.25 (화)</time><p><span class="peel-tag">껍질 3</span><b>사드 결사반대 발언</b>(2016) 재소환 — 장동혁 국민의힘 대표 "임명은 무모한 결정". 같은 날 국정원, "중국의 대미 공작 제안" 보도에 대해 <b>"전혀 사실 아니다"</b> 공식 부인.</p></div>
+      <div class="onion-row"><time>11.26 (수)</time><p><span class="peel-tag">껍질 4</span><b>코닝-삼성 합작사 기술유출 재판 피고인 변호 전력</b> — SBS 단독 보도(1심 무죄 → 2심 유죄 → 2023년 대법원 확정 사건). 주진우 의원 "도둑에게 곳간 열쇠를 맡기는 격"이라며 지명 철회 촉구.</p></div>
+      <div class="onion-row"><time>진행 중</time><p><span class="peel-tag">껍질 5</span><b>고문 위촉 중 받은 예우·포상금 의혹</b> — 연변주 포상금 제도(최대 50만 위안)와 헤이룽장성 부성급 의전 논란. 후보자 측 보수 공개치 않아, <b>인사청문회에서 규명 예정</b>.</p></div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ── 02 suspicion cards ── -->
+  <section id="cards">
+    <div class="sec-head"><span class="sec-no">SECTION 02</span><h2>의혹 검증 파일 — 6건</h2></div>
+    <p class="sec-desc">판정 기준: 보도·기록으로 <em>직접 확인</em>된 것, 발언은 확인되나 <em>맥락 평가가 유보</em>되는 것, 당사자가 <em>공식 부인</em>한 것, 아직 <em>검증 대기</em>인 것으로 나눴다.</p>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-head">
+          <h3><span class="idx">FILE 01</span>중국 지방정부 특별고문 2관왕</h3>
+          <span class="stamp s-fact">사실 확인</span>
+        </div>
+        <div class="card-body">
+          <p>법무법인 원 홈페이지 이력 기준, <b>2013년 헤이룽장성 치치하얼시 인민정부 투자유치 특별고문</b>, <b>2014년 지린성 연변조선족자치주 경제특별고문</b> 위촉은 사실이다. 위촉 창구는 외자유치 전담 부서인 연변주 상무국이었고, 맡은 업무는 <span class="tagline">한국 기업의 중국 진출·투자·합작에 관한 법률 자문</span>이었다.</p>
+          <p>관계는 일회성이 아니었다. 2016년 연변 한중 경제협력 투자설명회에서 경제특별고문 자격으로 투자계약 체결식에 입회했고, <b>2019년 4월 재위촉될 때 발표된 임기는 2022년까지</b>였다. 첫 위촉부터 헤아리면 약 10년의 관계다. 2014년 위촉 행사(제10회 연길·두만강 국제투자무역 상담회)에는 한덕수 당시 한국무역협회장 등 국내 경제인도 다수 참석했으며, 당시 소속 법무법인이 2014년 9월 2일자 언론에 "한국 기업의 중국 투자 길잡이"로 소개됐다. 박근혜 정부 시절 한중 경제교류의 일환일 뿐, 야권 주장과 달리 자문 활동이 <b>한국 국익을 침해했다는 구체적 사례는 제시되지 않았다.</b></p>
+          <div class="note-box"><span class="nb-label navy">해명 · 반론</span>
+            위촉 자체가 법무법인 해외투자 업무의 통상적 자문이었다는 해명. 여야 인사도 당시 행사에 함께한 사례(한덕수 무역협회장, 농심 백산수 김병순 대표 등)가 있다. 윤건영 정보위 간사는 "같이 중국에 간 한덕수도 간첩이냐"고 반문했다.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3><span class="idx">FILE 02</span>"파리협약도 시진핑이 글로벌 리더십으로" 발언</h3>
+          <span class="stamp s-ctx">발언 사실 · 맥락 유보</span>
+        </div>
+        <div class="card-body">
+          <p>올해 4월, <b>글로벌기후환경대사 신분</b>(2026. 1. 30. 외교부 임명)으로 "파리협약도 시진핑 주석이 글로벌 리더십을 발휘해 가능했던 일", "중국은 지도층이 계획을 세워 속도감 있게 실행하는 장점이 있다"고 말한 것으로 확인됐다. 안철수 의원은 이를 "중국 지도자를 찬양한 사람"이라며 문제 삼았다.</p>
+          <div class="note-box"><span class="nb-label navy">해명 · 반론</span>
+            발언은 기후·환경 정책 홍보가 임무인 기후대사의 공식 행보에서 나온 것으로, 국정원장 지명 발표 후 야권이 원문 전체 맥락 확인 없이 발췌했다는 평가도 있다. <b>주간경향 팩트체크</b>는 사드 발언과 이 발언 모두 "원문과 전체 맥락을 추가로 확인할 필요가 있다"고 단서를 달았다.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3><span class="idx">FILE 03</span>2016년 사드 배치 "결사반대" 발언</h3>
+          <span class="stamp s-ctx">발언 사실 · 맥락 유보</span>
+        </div>
+        <div class="card-body">
+          <p>2016년 사드(THAAD) 배치 당시 강 후보자가 "무모한 결정이며 결사반대해야 한다"고 말한 것으로 야권이 주장했다. 장동혁 대표는 이 표현을 그대로 되돌려주며 "이리 봐도 반미, 저리 봐도 친중"이라고 비판했다.</p>
+          <p>단, 당시 사드 배치에 대한 반대·유보는 이명박·박근혜 정부 관료와 야당 전반에 걸친 <span class="tagline">널리 퍼진 입장</span>이었다 — 안철수 의원 자신도 2016년 7월 "사드 배치는 종합적으로 국익에 도움이 되지 않는다"며 국민투표 부치는 방안까지 검토해야 한다고 말한 전력이 있다(그리고 2023년 전당대회에서 이를 공격받자 "마타도어, 색깔 논쟁"이라고 반발했다 — 오마이뉴스는 이를 이중 잣대로 지적).</p>
+          <div class="note-box"><span class="nb-label navy">해명 · 반론</span>
+            발언 원문 전체와 시점 맥락은 아직 공개 검증되지 않았다. 배치 반대 자체가 중국 치중 판정의 근거가 되는지에 대한 평가는 청문회 과제다.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3><span class="idx">FILE 04</span>코닝-삼성 합작사 기술유출 피고인 변호 전력</h3>
+          <span class="stamp s-fact">보도 확인 · 판결 경과 정정</span>
+        </div>
+        <div class="card-body">
+          <p>SBS 단독 보도 <a href="https://stockinfo7.com/news/url/50085181">"'기술 안보 적임자' 강조했는데… '중국 유출' 변론"</a>(2026. 11. 26.)에 따르면, 강 후보자는 변호사 활동 당시 <b>중국 기업으로 핵심 기술을 빼돌린 뒤 고액 연봉을 받고 이직한 피고인들</b>을 무죄라고 주장하며 변호했다. 사건의 실체는 <b>세계 1위 LCD 기판유리 기업 코닝과 삼성의 합작사 코닝정밀소재(옛 삼성코닝정밀소재)</b> 직원들이 2013~2016년 <b>퓨전 공법(녹인 유리 용액을 수직으로 낙하·냉각하는 기술) 기반 LCD용 기판유리 제조 영업비밀</b>을 중국 둥시(동욱)집단유한공사에 넘긴 혐의였다. A씨는 설계도면 9개 등 영업비밀 14개를 알려주고 통역인 경유로 담긴 문서 78개를 전달했고, B씨는 유리 절단 공정 수치를 넘겼다.</p>
+          <p>재판 경과는 <b>1심 무죄 → 2심·대법원 유죄</b>의 6년 공방이었다. 대전지검은 2016년 11월 영업비밀 국외누설(부정경쟁방지법 위반)·업무상 배임 혐의로 불구속 기소했고, <b>대전지법 천안지원은 2020년 2월 혐의 대부분을 무죄</b>로 판단했다. 검찰이 추가 수사로 증거를 보완한 끝에 <b>대전지법 형사항소 4부가 2022년 12월 1심을 깨고 징역 2년</b>을 선고했고, <b>대법원 1부(박정화 재판장)는 2023년 6월 1일 원심대로 유죄를 확정</b>했다(A씨 징역 2년, B씨 벌금 200만 원·집행유예 1년).</p>
+          <blockquote style="margin:14px 0;padding:10px 16px;border-left:3px solid #1D2E4E;background:rgba(29,46,78,0.05);font-size:0.92em;line-height:1.7;">
+            <b>1심 재판부(대전지법 천안지원, 2020. 2. 무죄)</b> — <i>"일부 사실은 영업 비밀에 해당하지 않으며, 일부는 누설됐다는 증명이 부족하다."</i> <small>(연합·KBS·한국경제 공통 인용)</small><br>
+            <b>2심 재판부(대전지법 형사항소 4부, 2022. 12. 유죄)</b> — 검찰이 추가 수사를 통해 특정한 <i>"영업비밀 누설 일시와 경위, 영업비밀의 범위 등 증거 자료"</i>를 토대로 혐의가 입증된다고 보고 1심을 뒤집었다. KBS 보도에 따르면 A씨는 이직을 결심한 뒤 퇴사 직전 설계도면을 <b>83차례 열람</b>했고, 이직 후에도 후배 B씨에게 설비 정보를 요구해 전달받은 것으로 조사됐다. <small>(대법원 판결문 전문은 공개된 웹 출처에서 확인되지 않아, 위 인용은 언론이 전한 재판부 판단 취지다.)</small>
+          </blockquote>
+          <p class="tagline">⚠ 검증 메모 — 일부에서 "국정원 산업기밀보호센터가 추적해 적발한 사건"이라는 주장이 돌고 있으나, 공개 보도 기준 수사·기소 주체는 대전지방검찰청이며 산업기밀보호센터 개입은 확인되지 않았다. 코닝 측은 애초 2013년 별도 민사(영업비밀 침해금지·20억 원 배상 청구)로 대응했다. 다만 "기술유출범을 맡은 변호인이 산업기밀 방지를 맡는 국정원장으로 온다"는 구조적 지적 자체는 여전히 야권 공세의 핵심이다.</p>
+          <div class="note-box denied"><span class="nb-label red">후보자 측 해명</span>
+            "당시 법무법인 대표변호사로서 통상적인 절차에 따라 변호인의 조력을 받을 권리를 대리했을 뿐, 공직 수행과는 무관하다." — 변호사의 수임 행위 자체는 문제 삼을 수 없다는 게 통상적 법조계 평가이나, 방첩 수장 자격 논란으로 이어지고 있다. 참고로 무죄 주장이 관철된 1심(2020) 이후 2심에서 유죄로 뒤집혔으므로, 강 후보자의 변론이 공방된 시점은 주로 1심 단계(2016~2020)로 추정된다.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3><span class="idx">FILE 05</span>고문 재임 중 예우·포상금 의혹</h3>
+          <span class="stamp s-pend">검증 대기 · 청문회 안건</span>
+        </div>
+        <div class="card-body">
+          <p>뉴데일리가 정리한 중국 지방정부 고문 위촉 관행에 따르면, 헤이룽장성은 고문에게 교통·숙박비 지원, 비서 동행을 허용하고 <b>부성급(副省級) 지도자에 준하는 의전</b>을 보장한다. 연변주는 투자유치 실적에 따라 <b>개인에게 최대 50만 위안(약 1억 원)의 포상금</b>을 지급해 왔다.</p>
+          <p>강 후보자가 실제로 어느 정도의 보수와 포상금을 받았는지는 <b>공개되지 않았다.</b> 랴오닝성처럼 고문에게 정부 문건 열람을 허용한 성도 있고, 푸젠성 일부 도시는 "중국 대외정책 옹호"를 위촉 요건으로 내거는 사례도 있다 — 강 후보자의 위촉 조건이 어느 유형이었는지가 쟁점이다.</p>
+          <div class="note-box"><span class="nb-label navy">다음 단계</span>
+            인사청문회에서 위촉 계약서·수임료·포상금 수령 여부 자료 제출이 요구될 것으로 관측된다. 현재까지 개인 수령 사실의 공개 확인은 없다.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3><span class="idx">FILE 06</span>"중국 억류 정보원 구출 중 대미 공작 제안" 의혹</h3>
+          <span class="stamp s-deny">국정원 공식 부인</span>
+        </div>
+        <div class="card-body">
+          <p>국내 언론 보도(11.25.)에 따르면, 우리 정보당국이 올해 초 중국에서 붙잡힌 정보원(휴민트)을 빼내는 과정에서 <b>중국으로부터 대미 공작 활동을 제안받았고, 미국이 이 정황을 포착해 강하게 항의</b>했다는 의혹이 제기됐다. 표면적 원인은 통일부 장관의 '구성 우라늄 농축시설' 발언으로 알려졌지만, 정보당국의 중국 내 활동 자체에 미국이 문제를 제기했다는 미확인 정보가 끊이지 않았다.</p>
+          <div class="note-box denied"><span class="nb-label red">국정원 공식 입장 (11.25. 언론 안내문)</span>
+            "국정원은 중국 당국으로부터 그러한 제안을 받은 사실이 <b>전혀 없다</b>." 또 "한미 간 정보협력은 방첩을 포함한 다양한 분야에서 쌍방향 호혜적으로 활발하게 이뤄지고 있다"고 밝혔다.</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ── 03 debate ── -->
+  <section id="debate">
+    <div class="sec-head"><span class="sec-no">SECTION 03</span><h2>찬성 vs 반대 — 인사 적합성 공방</h2></div>
+    <p class="sec-desc">동일한 사실 집합에서 양측이 서로 다른 결론을 내고 있다. 어느 쪽도 판정이 아니라 논거의 목록이다.</p>
+    <div class="debate">
+      <div class="debate-col support">
+        <h3>지지 · 해명 측 <span class="stamp s-fact">찬성론</span></h3>
+        <ul>
+          <li><b>청와대:</b> 국정원에 대한 <b>민주적 통제를 강화할 적임자</b>라며, "미국·영국도 여성 정보기관장을 뒀다"고 정보 경력 결격론 반박<small> (마케팅타임스 인용, 수석 해명)</small></li>
+          <li><b>전례:</b> 법무부 장관 출신 국정원장은 노무현 정부의 <b>김승규</b>(2005), 이명박 정부의 <b>김중로</b>(2008) 두 차례 — 정보 경력 무경력 원장은 이례적이지 않음<small> (주간경향)</small></li>
+          <li>고문 업무는 <b>한국 기업의 중국 진출 지원</b>이었고, 국익 침해 구체 사례는 미제시<small> (주간경향 팩트체크)</small></li>
+          <li><b>윤건영 정보위 간사:</b> "정보원장 임명에 미국 눈치부터 봐야 하느냐", "한덕수도 간첩이냐" — '간첩' 프레임은 근거 없는 색깔 공세</li>
+          <li>변호인 조력권 대리는 <b>법조인의 통상적 직무</b>로, 결격 사유가 아님<small> (후보자 측 해명)</small></li>
+        </ul>
+      </div>
+      <div class="debate-col oppose">
+        <h3>반대 · 철회 요구 측 <span class="stamp s-claim">반대론</span></h3>
+        <ul>
+          <li><b>안철수:</b> "미국은 '중국 간첩'이 대한민국 국정원을 접수했다고 판단하지 않겠느냐" — 중국을 위해 <b>공적으로 일하고</b> 중국 지도자를 찬양한 인물<small> (페이스북)</small></li>
+          <li><b>주진우:</b> 기술유출 옹호 변호 전력까지 나온 인사에게 산업스파이 방지를 — <b>"도둑에게 곳간 열쇠"</b>. 국가보안법 폐지론자라는 지적도</li>
+          <li><b>이준석:</b> 한미 정보협력 마비 상황에서 <b>미국의 신뢰를 얻기 어려운 인사</b> — "전문성은 빼고, 해명할 거리는 더한 인사"</li>
+          <li><b>장동혁:</b> 시진핑 찬양·중국 지방정부 복무 전력 — "임명은 무모한 결정"</li>
+          <li>정보·방첩 경력 0년 + 중국 고문 경력 조합이 <b>방첩 수장의 신뢰 조건</b>과 상충<small> (뉴데일리 분석: 워싱턴 눈엔 '親中 본색')</small></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ── 04 background ── -->
+  <section id="background">
+    <div class="sec-head"><span class="sec-no">SECTION 04</span><h2>왜 지금, 이 지명이 무거운가 — 한미 정보갈등 연표</h2></div>
+    <p class="sec-desc">이번 인사는 한미 정보 공유가 <b>8개월째 제한</b>된 상황에서 나왔다. 배경을 모르면 '정보 경력 0년' 논란의 무게가 달리 보이지 않는다.</p>
+    <div class="bg-line">
+      <div class="bg-item"><time>2026. 3. 6.</time><h4>정동영 통일부장관의 '구성' 발언</h4>
+        <p>국회에서 평안북도 구성시를 북한 제3 핵시설(우라늄 농축)로 공개 지목. 트럼프 행정부는 이를 한미 연합비밀 누설로 규정하고 대북 정보 공유를 일부 제한(국정원 보고 기준: 위성영상 정보 중 좁은 범위).</p></div>
+      <div class="bg-item"><time>2026. 6.</time><h4>한미일 실무그룹 회의에서 국정원 배제</h4>
+        <p>워싱턴DC의 북한 사이버위협 대응 한미일 정보당국 실무그룹 회의에서 미국 측 요구로 국정원이 참석 대상에서 빠지는 초유의 사태. 핵추진잠수함·원자력협정 킥오프 회의도 후속 일정이 좌초.</p></div>
+      <div class="bg-item"><time>2026. 9. 18.</time><h4>루비오 미 국무장관의 정보공유 문제 직접 제기</h4>
+        <p>한미 외교장관 회담 테이블에서 정보기관 사안이 거론된 것은 관례상 매우 이례적. 미 고위 당국자는 "한국이 수십 년 동맹의 기준을 준수하길 기대한다. 특히 정보·방첩 관련 사안에서"라는 답변 공개.</p></div>
+      <div class="bg-item"><time>2026. 10.</time><h4>강경화 주미대사의 '최대 난제' 인정</h4>
+        <p>국정감사에서 "정보 협력이 한미 관계의 최대 난제"라며 백악관 고위급 소통 한계 시인. 국정원은 '이종석 원장 방미 거부' 보도에 대해 명백한 오보라고 정정.</p></div>
+      <div class="bg-item"><time>2026. 11. 23.</time><h4>개각 — 자주파 물리고 강금실 지명</h4>
+        <p>외교·통일·국정원 라인을 '동맹파' 중심으로 교체하며 미국의 불신 회복이 사실상 첫 과제로 명시된 가운데, 정작 국정원장 자리에 중국 연고 후보자가 지명되며 트랙이 충돌. 신디케이타임스 등은 "미국엔 쇄신 신호, 중국엔 구애 손짓"이라는 투트랙 해석을 전했다.</p></div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ── 05 profile ── -->
+  <section id="profile">
+    <div class="sec-head"><span class="sec-no">SECTION 05</span><h2>후보자 이력 한눈에</h2></div>
+    <p class="sec-desc">논란이 됐거나 맥락 설명이 필요한 이력에는 표식을 달았다.</p>
+    <dl class="profile">
+      <div><dt>1957</dt><dd>서울 출생<small>서울대 생물학과 — 판사 시험 합격(1981, 사법 23회) 전 재학</small></dd></div>
+      <div><dt>1983–1995</dt><dd>판사 재직 13년<small>서울고등법원 등</small></dd></div>
+      <div><dt>1995–2003</dt><dd>변호사 · 법무법인 지평 로펌 대표 등<small>노무협동조합 창립 간사 등 참여활동</small></dd></div>
+      <div><dt>2003–2004</dt><dd><b>제55대 법무부장관</b><small>노무현 정부 — 헌정사상 최연소·여성 최초</small></dd></div>
+      <div><dt>2006–2007</dt><dd>여성인권대사</dd></div>
+      <div><dt>2008</dt><dd>열린우리당 서울시장 후보 출마<small>이후 정계 은퇴 · 학원·강단 활동</small></dd></div>
+      <div><dt>2013</dt><dd>치치하얼시 인민정부 특별고문<small>투자유치 — 본 파일 FILE 01</small></dd></div>
+      <div><dt>2014–2022</dt><dd>연변조선족자치주 경제특별고문<small>2019 재위촉, 임기 2022년까지</small></dd></div>
+      <div><dt>2016</dt><dd>코닝정밀소재 기술유출 재판 피고인 변호<small>법무법인 원 대표변호사 — 1심 단계 변론(2심서 유죄 뒤집힘) 본 파일 FILE 04</small></dd></div>
+      <div><dt>2026. 1.</dt><dd>글로벌기후환경대사<small>외교부 — 시진핑 리더십 언급 발언(4월)</small></dd></div>
+      <div><dt>2026. 11. 23.</dt><dd><b>국가정보원장 후보자 지명</b><small>정보·방첩 실무 경력 없음</small></dd></div>
+      <div><dt>진행 중</dt><dd>인사청문회 검증 대기<small>예우·포상금 자료 제출 예상</small></dd></div>
+    </dl>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ── sources ── -->
+  <section id="sources" class="sources">
+    <div class="sec-head"><span class="sec-no">SOURCES</span><h2>출처</h2></div>
+    <p class="sec-desc">이 파일의 모든 사실관계는 아래 공개 보도에 근거한다. 클릭하면 원문으로 이동한다.</p>
+    <ol>
+      <li><a href="https://v.daum.net/v/buvGqce4yt">미스터동 [뉴스추적] "강금실을 국정원장 시킨다고? 왜 논란일까"</a><small>동맹파·자주파 개각 배경, 한미 정보 갈등 상세 · 2026. 11.</small></li>
+      <li><a href="https://weekly.khan.co.kr/article/202611241345001">주간경향 팩트체크 "'중국 정부 특별고문' 강금실, 업무 살펴보니"</a><small>고문 업무 내용, 한덕수 참석, 정보공유 제한 국정원 보고 · 2026. 11. 24.</small></li>
+      <li><a href="https://www.newdaily.co.kr/site/data/html/2026/11/25/2026112550284.html">뉴데일리 "왜 하필 연변 고문 강금실인가"</a><small>예우·포상금 관행, 투트랙 해석 · 2026. 11. 25.</small></li>
+      <li><a href="https://m.dailian.co.kr/news/view/1720002/">데일리안 "강금실, 변호사 시절 '중국 유출' 변론 논란"</a><small>주진우 의원 발언 전문 · 2026. 11. 26.</small></li>
+      <li><a href="https://news.jtbc.co.kr/article/NB12329559">JTBC "'강금실, 시진핑 치켜세운 사람'… 안철수 '즉각 지명철회해야'"</a><small>안철수 주장 · 2026. 11.</small></li>
+      <li><a href="https://www.mindlenews.com/news/articleView.html?idxno=23347">민들레뉴스 "덩샤오핑 극찬·사드 반대… 안철수도 '중국 간첩'?"</a><small>안철수 과거 발언, 윤건영 반론 · 2026. 11.</small></li>
+      <li><a href="https://m.ohmynews.com/NWS_Web/Mobile/amp.aspx?CNTN_CD=A0003287698">오마이뉴스 "강금실에 '중국 간첩' 꺼낸 안철수, 3년 전 그가 했던 말"</a><small>청와대 해명(민주적 통제), 이중 잣대 분석 · 2026. 11.</small></li>
+      <li><a href="https://www.yna.co.kr/view/AKR20261125186300504">연합뉴스 "국내 언론 '미측이 파악하고 항의'… 국정원 '한미간 정보협력 활발'"</a><small>대미 공작 제안 의혹 부인 전문 · 2026. 11. 25.</small></li>
+      <li><a href="https://mnews.sbs.co.kr/news/endPage.do?newsId=N1008863786">SBS [단독] "'기술 안보 적임자' 강조했는데… '중국 유출' 변론"</a><small>SBS 원문 보도 — 강 후보자 무죄 주장 변호 확인 · 2026. 11. 26.</small></li>
+      <li><a href="https://www.hankyung.com/article/202212055245i">한국경제 "[단독] '中기업에 기밀 유출' 코닝정밀소재 전 직원 징역 2년"</a><small>1심 무죄를 뒤집은 2심(항소심) 판결 · 2022. 12. 5.</small></li>
+      <li><a href="https://news.kbs.co.kr/news/view.do?ncd=5617051">KBS "중국에 영업비밀 유출한 코닝정밀소재 전 직원, 항소심서 유죄"</a><small>1심 무죄 판단 인용 · 2심(대전지법 형사항소 4부) 판단 취지, 설계도면 83차례 열람 등 조사 결과 · 2022. 12.</small></li>
+      <li><a href="https://blog.naver.com/hk_business/223734409167">한국경제 김진성의 판례 읽기 "중국에 핵심 기술 빼돌린 코닝정밀소재 前 직원… 유죄 확정"</a><small>1심 무죄(대전지법 천안지원 2020. 2.) → 대법원 확정(2023. 6. 1., A 징역 2년 · B 벌금 200만 원 집행유예) 전경, 퓨전 공법 유출 상세</small></li>
+      <li><a href="https://www.tjb.co.kr/real-time-news/category/view/id/4969/version/1">TJB/서울신문 "삼성코닝, 중국기업 상대 영업비밀 침해 승소"</a><small>동욱집단 상대 민사 — 10년 기술사용 금지·20억 원 배상 · 2013. 6.</small></li>
+      <li><a href="https://www.mt.co.kr/index.php/politics/2026/11/24/2026112420395192234">마이데일리 "강금실 적절성 논란에… 靑 '美·英도 여성 정보기관장'"</a><small>청와대 수석 해명 · 2026. 11. 24.</small></li>
+      <li><a href="https://www.khan.co.kr/article/202601300945001">경향신문 "강금실 전 법무부 장관, 글로벌기후환경대사 임명"</a><small>기후대사 임명과 이력 · 2026. 1. 30.</small></li>
+      <li><a href="https://namu.wiki/w/%EA%B0%95%EA%B8%88%EC%8B%A4">나무위키 · 위키백과 "강금실"</a><small>기본 이력(생년, 사법 23회, 판사 13년, 법무부장관)</small></li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>파일에 대한 각주.</strong> 이 도시어는 2026. 11. 26. 기준 공개 보도를 정리한 것이다. 후보자는 아직 국회 인사청문회를 거치지 않았고, FILE 05의 예우·포상금 수령 여부 등 일부 항목은 검증 대기 상태다. '사실 확인' 판정은 발언·위촉 등 행위 자체의 존재를 확인한 것이며, 그에 대한 <strong>평가·해석은 독자의 몫</strong>이다. 야권 주장에는 근거 제시가 없는 부분(예: 국익 침해 구체 사례)이 있고, 여권 해명에도 원문 맥락이 확인되지 않은 부분이 있다 — 양쪽 모두 청문회에서 검증되어야 한다.</p>
+    <p>수정·반박 자료가 나오면 갱신한다. <span style="font-family:'IBM Plex Mono',monospace;letter-spacing:.14em">— 기밀해제 완료. END OF FILE.</span></p>
+  </div>
+</footer>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
